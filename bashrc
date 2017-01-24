@@ -8,7 +8,7 @@
 
 # On a mac, add this to .bash_profile
 # if [ -f $HOME/.bashrc ]; then
-        # . $HOME/.bashrc
+#       . $HOME/.bashrc
 # fi
 
 # Specify terminal depending on the machine
@@ -44,7 +44,8 @@ else
     alias agu="sudo apt-get update"
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;35:ex=0;31:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
-    #xmodmap .xmodmap
+    setxkbmap -option shift:both_capslock
+    setxkbmap -option altwin:swap_alt_win
 fi
 
 ## Environment vars
@@ -89,7 +90,7 @@ alias lilypond='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond "$@"'
 # network
 alias wifi="sudo networksetup -setairportnetwork en0"
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
-alias efgh="ssh efgh@efgh"
+alias efgh="ssh efgh@192.168.1.12"
 alias hrcommons="open vnc://141.117.114.20"
 
 # misc shortcuts
