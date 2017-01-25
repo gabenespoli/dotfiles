@@ -49,6 +49,7 @@ filetype plugin indent on    " required
 " ------------
 let mapleader = "\<Space>"
 set timeoutlen=300
+inoremap <Tab> <Esc>
 inoremap jk <Esc>
 
 " common actions
@@ -261,6 +262,7 @@ set showtabline=0
 set linebreak           " stop soft wrapping in the middle of words
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
+set shiftwidth=4
 set expandtab           " tabs are spaces
 set backspace=indent,eol,start " enable backspacing text that was inserted previously
 set ignorecase
