@@ -37,6 +37,9 @@ then
 
 # Linux Options
 else
+    if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
+    fi
     alias ls="ls -hl --color"
     alias la="ls -hla --color"
     alias lsa="ls -hla --color"
@@ -96,5 +99,4 @@ alias hrcommons="open vnc://141.117.114.20"
 # misc shortcuts
 alias paper="vim ~/r/gv/paper/NespoliRusso2016_groove.md"
 alias gitlog="git log --graph --decorate --oneline"
-
 
