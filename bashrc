@@ -35,6 +35,11 @@ then
     # disable ctrl-y as delayed suspend so that it can be re-bound in mutt
     #stty dsusp undef
 
+    #powerline-daemon -q
+    #POWERLINE_BASH_CONTINUATION=1
+    #POWERLINE_BASH_SELECT=1
+    #. /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
 # Linux Options
 else
     if [ -f ~/.bash_aliases ]; then
@@ -79,14 +84,15 @@ alias th="todo.sh list @home"
 function notes() { vim "$(gf $@)/notes.md" ; }
 
 # applications
+alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
 alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
-alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+alias rate='python $HOME/bin/utils/rate.py'
 alias openx="open -a Microsoft\ Excel.app"
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+function vman() { vim -c "SuperMan $*"; if [ "$?" != "0" ]; then echo "No manual entry for $*"; fi }
 function vimsyntax() { vim "/usr/local/Cellar/vim/8.0.0130/share/vim/vim80/syntax/$1.vim" ; }
 alias vimsyntax_pandoc="vim ~/.vim/bundle/vim-pandoc-syntax/syntax/pandoc.vim"
-function vman() { vim -c "SuperMan $*"; if [ "$?" != "0" ]; then echo "No manual entry for $*"; fi }
-alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias lilyjazz='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include="$HOME/.lyp/packages/lilyjazz@0.2.0" "$@"'
 alias lilypond='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond "$@"'
 
@@ -98,5 +104,6 @@ alias hrcommons="open vnc://141.117.114.20"
 
 # misc shortcuts
 alias paper="vim ~/r/gv/paper/NespoliRusso2016_groove.md"
+alias dis="vim ~/r/gv/paper/PhD\ Proposal/Nespoli_PhDProposal.md"
 alias gitlog="git log --graph --decorate --oneline"
 

@@ -16,6 +16,8 @@ $if mode=vi
     "\C-l": clear-screen
     "\C-p": history-search-backward
     "\C-n": history-search-forward
+    "\C-a": beginning-of-line
+    "\C-e": end-of-line
     "jk": vi-movement-mode
 $endif
 
@@ -25,3 +27,18 @@ $endif
 
 set completion-ignore-case on
 set show-all-if-ambiguous on
+
+# up
+# down
+# forward
+# backward
+# forward-word
+# backward-word
+# end
+# home
+# delete
+# backspace
+# delete word
+# backspace word
+# delete to end
+# delete to beginning

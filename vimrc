@@ -19,10 +19,10 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 "Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'Yggdroot/indentLine'
-"Plugin 'bling/vim-bufferline'
+Plugin 'bling/vim-bufferline'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdtree.git'
 "Plugin 'chrisbra/csv.vim'
 "Plugin 'godlygeek/tabular'
 "Plugin 'jez/vim-superman'
@@ -49,8 +49,9 @@ filetype plugin indent on    " required
 " ------------
 let mapleader = "\<Space>"
 set timeoutlen=300
-inoremap <Tab> <Esc>
-inoremap jk <Esc>
+inoremap <Tab> <Esc>l
+inoremap <Esc> <Esc>l
+inoremap jk <Esc>l
 
 " common actions
 nnoremap <leader>e :e<Space>
@@ -114,6 +115,7 @@ vnoremap W 5w
 vnoremap B 5b
 nnoremap <leader>b :set scrollbind<CR>
 nnoremap <leader>B :set noscrollbind<CR>
+inoremap <C-i> <Tab>
 
 " emacs movement
 "nnoremap <C-h> X
@@ -201,6 +203,9 @@ let g:gitgutter_map_keys = 0 "unmap bindings that conflict with <leader>h
 let g:indentLine_char = '|'
 let g:indentLine_color_term = 242
 
+" NERDTree
+nnoremap <leader>O :NERDTreeToggle<CR>
+
 " Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
@@ -217,11 +222,14 @@ filetype on
 
 "" Functions
 " ---------
-"function! GetListOfBuffers()
-"    autocmd VimEnter *
-"        \ let &listofbuffers='%{bufferline#refresh_status()}' . bufferline#get_status_string()
-"    return listofbuffers
-"endfunction
+function! GetListOfBuffers()
+    autocmd VimEnter *
+        \ let &listofbuffers='%{bufferline#refresh_status()}' . bufferline#get_status_string()
+    return listofbuffers
+endfunction
+"let g:bufferline_echo = 0
+"autocmd VimEnter *
+"  \ let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
 
 " get syntax hi under cursor
 function! GetSyntax() 
@@ -391,8 +399,11 @@ hi link markdownItalic Italic
 hi link markdownBold Bold
 hi link shFunctionKey Statement
 hi link pythonTripleQuotes Comment
+hi link matlabDelimiter Operator
 hi link rPreProc Include
 hi link rAssign Operator
+hi link htmlTag Operator
+hi link htmlEndTag Operator
 
 " misc
 hi NonText term=bold cterm=bold ctermfg=33 guifg=#0087ff
