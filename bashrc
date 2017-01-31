@@ -50,7 +50,7 @@ else
     alias lsa="ls -hla --color"
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
-    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;35:ex=0;31:' ; export LS_COLORS
+    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;35:ex=0;31:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
     setxkbmap -option altwin:swap_alt_win
