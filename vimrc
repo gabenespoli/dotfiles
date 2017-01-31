@@ -442,6 +442,8 @@ hi SumachBrightMagenta  ctermfg=141 guifg=#af87ff
 hi SumachBrightCyan     ctermfg=44  guifg=#00d7d7
 hi SumachBrightWhite    ctermfg=252 guifg=#d0d0d0
 
+" prevent macvim from changing colors after loading this vimrc
+let macvim_skip_colorscheme=1
 
 "" xterm 256 color names, codes, hex values, "rgb values
 " -----------------------------------------------------
