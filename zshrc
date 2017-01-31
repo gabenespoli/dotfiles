@@ -4,6 +4,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 ## oh my zsh stuff
 # ----------------
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+export ZSH_CUSTOM="$HOME/.zsh"
 
 # Themes: https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="sumach"
@@ -20,8 +22,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd" # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 
 plugins=()
-source $ZSH/oh-my-zsh.sh
-export ZSH_CUSTOM="$HOME/.zsh"
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
