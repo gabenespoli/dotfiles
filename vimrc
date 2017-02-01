@@ -142,6 +142,7 @@ nnoremap <leader>N :set invnumber<CR>
 nnoremap <leader>F zi
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :call StatusToggle()<CR>
+nnoremap <leader>f :call StatusToggle()<CR>
 "nnoremap <leader>m :il /#\ <CR> " this is now in .vim/ftplugin/*.vim
 
 "" Plugin settings
