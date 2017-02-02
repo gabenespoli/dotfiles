@@ -25,12 +25,7 @@ then
     alias la="ls -hla"
     alias lsa="ls -hla"
     export LSCOLORS=exFxbxdxBxegedabagacad # colors for ls
-    #alias dropbox="dropbox.py"
-
-    # Set the iTerm tab title to the current directory, not full path.
-    #if [ $ITERM_SESSION_ID ]; then
-    #export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
-    #fi
+    export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"' # tab titles
     
     # disable ctrl-y as delayed suspend so that it can be re-bound in mutt
     #stty dsusp undef
@@ -106,4 +101,5 @@ alias hrcommons="open vnc://141.117.114.20"
 alias paper="vim ~/r/gv/paper/NespoliRusso2016_groove.md"
 alias dis="vim ~/r/gv/paper/PhD\ Proposal/Nespoli_PhDProposal.md"
 alias gitlog="git log --graph --decorate --oneline"
+#source $HOME/bin/utils/tabnew.sh
 
