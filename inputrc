@@ -1,5 +1,5 @@
 # default to vim editing mode
-set editing-mode emacs
+set editing-mode vi
 
 # prepend prompt with character indicating the editing mode
 set show-mode-in-prompt on
@@ -13,17 +13,19 @@ $if mode=vi
     "\C-l": clear-screen
     
     set keymap vi-insert
-    "\C-l": clear-screen
+    "jk": vi-movement-mode
     "\C-p": history-search-backward
     "\C-n": history-search-forward
     "\C-a": beginning-of-line
     "\C-e": end-of-line
-    "jk": vi-movement-mode
+    "\C-d": forward-backward-delete-char
+    "\C-l": clear-screen
+    "\C-x": re-read-init-file
 $endif
 
 # scroll through history based on what is already entered at the prompt
-"\e[A": history-search-backward            # arrow up
-"\e[B": history-search-forward             # arrow down
+#"\e[A": history-search-backward            # arrow up
+#"\e[B": history-search-forward             # arrow down
 
 set completion-ignore-case on
 set show-all-if-ambiguous on
