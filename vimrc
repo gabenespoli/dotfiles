@@ -13,6 +13,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'tpope/fugitive'
 Plugin 'toyamarinyon/vim-swift'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
@@ -57,7 +58,6 @@ inoremap jk <Esc>l
 nnoremap <leader>e :e<Space>
 nnoremap <leader>o :e<Space>
 nnoremap <leader>n :enew<CR>
-nnoremap <leader>t :enew<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>S :saveas<space>
@@ -139,11 +139,10 @@ nnoremap <leader>X :SyntasticToggleMode<CR>
 nnoremap <leader>G :GitGutterToggle<CR>
 nnoremap <leader>I :IndentLinesToggle<CR>
 nnoremap <leader>N :set invnumber<CR>
-nnoremap <leader>F zi
 nnoremap <leader>/ :set hlsearch!<CR>
-nnoremap <leader>\ :call StatusToggle()<CR>
-nnoremap <leader>f :call StatusToggle()<CR>
-"nnoremap <leader>m :il /#\ <CR> " this is now in .vim/ftplugin/*.vim
+"nnoremap <leader>\ :call StatusToggle()<CR>
+nnoremap <leader>F :call StatusToggle()<CR>
+"nnoremap <leader>t " this is mapped in .vim/ftplugin/*.vim for showing TOC
 
 "" Plugin settings
 " ---------------
@@ -159,6 +158,8 @@ nnoremap <leader>f :call StatusToggle()<CR>
 " Pandoc
 "let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#toc#position = 'left'
+let g:pandoc#toc#close_after_navigating = 0
 hi pandocAtxStart ctermfg=35 guifg=#00af5f
 hi pandocEmphasis ctermbg=39 guibg=#00afff ctermfg=233 guifg=#121212
 hi pandocStrong cterm=bold ctermfg=33 guifg=#0087ff
@@ -213,6 +214,9 @@ set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
 
+" tmux set tab title to vim filename; reset when quitting vim
+autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
+autocmd VimLeave * call system("tmux setw automatic-rename")
 " vim-tmux navigator
 "let g:tmux_navigator_no_mappings = 1
 "nnoremap <silent> <C-w><C-h> :TmuxNavigateLeft<CR>
