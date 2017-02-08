@@ -5,7 +5,7 @@ highlight clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name = "sumach"
+let g:colors_name="sumach"
 
 " Default Groups
 " --------------
@@ -140,6 +140,11 @@ hi DiffAdd ctermfg=42 guifg=#00d787
 hi DiffChange ctermbg=220 guibg=#ffd700
 hi DiffDelete cterm=bold ctermfg=211 guifg=#ff87af ctermbg=44 guibg=#00d7d7
 hi DiffText cterm=bold ctermbg=211 guibg=#ff87af
+
+" status line change color for insert mode
+hi StatusLineColorToggle ctermfg=252 guifg=#d0d0d0 ctermbg=242 guibg=#6c6c6c
+au InsertEnter * hi StatusLineColorToggle ctermfg=233 guifg=#121212 ctermbg=220 guibg=#ffd700
+au InsertLeave * hi StatusLineColorToggle ctermfg=252 guifg=#d0d0d0 ctermbg=242 guibg=#6c6c6c
 
 "colorscheme sumach
 " Sumach Colors chosen from xterm 256

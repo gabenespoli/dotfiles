@@ -24,7 +24,7 @@ then
     alias ls="ls -hl"
     alias la="ls -hla"
     alias lsa="ls -hla"
-    export LSCOLORS=exFxbxdxBxegedabagacad # colors for ls
+    #export LSCOLORS=exFxbxdxBxegedabagacad # colors for ls
     export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"' # tab titles
     
     # disable ctrl-y as delayed suspend so that it can be re-bound in mutt
@@ -45,6 +45,7 @@ else
     alias lsa="ls -hla --color"
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
+    eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;35:ex=0;31:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
@@ -57,7 +58,7 @@ export PATH="$HOME/bin:$HOME/bin/pandoc:/usr/local/texbin:/usr/local/lib:/usr/lo
 export EDITOR='vim' # set default text editor
 export GOOGLER_COLORS=Lecgxy
 export CLICOLOR=1 # colors for ls
-PS1='\[\e[0;34m\] \w \[\e[1;30m\]\$\[\e[m\] '
+export PS1='\[\e[0;34m\] \w \[\e[0;37m\]\$\[\e[m\] '
 #PS1='\[\e[0;34m\]\h:\W \$\[\e[m\] '
 export VIMPAGER_RC="$HOME/.vimrc"
 
