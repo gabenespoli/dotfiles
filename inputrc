@@ -32,17 +32,3 @@ $endif
 set completion-ignore-case on
 set show-all-if-ambiguous on
 
-# up
-# down
-# forward
-# backward
-# forward-word
-# backward-word
-# end
-# home
-# delete
-# backspace
-# delete word
-# backspace word
-# delete to end
-# delete to beginning
