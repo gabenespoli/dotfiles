@@ -9,7 +9,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'gabenespoli/vim-sumach-colors'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -30,7 +29,6 @@ Plugin 'scrooloose/nerdtree.git'
 "Plugin 'chrisbra/csv.vim'
 "Plugin 'godlygeek/tabular'
 "Plugin 'jez/vim-superman'
-"Plugin 'kien/ctrlp.vim'
 "Plugin 'severin-lemaignan/vim-minimap'
 "Plugin 'hrother/offlineimaprc.vim'
 
@@ -297,31 +295,30 @@ set visualbell          " no sound
 " Status Line
 " -----------
 set statusline=
-"set statusline+=\ \ \ 
+"set statusline+=\ 
 "set statusline+=%#StatusLineColorToggle#   " switch hi
 "set statusline+=%2n\        " buffer number
 "set statusline+=%*          " switch back to regular hi
-set statusline+=%f           " filepath
+"set statusline+=%f           " filepath
 hi ModifiedFlagColor ctermfg=1
 set statusline+=%#ModifiedFlagColor#
 set statusline+=%m          " modified flag
 set statusline+=%*          " switch back to regular hi
-set statusline+=\           " <space>
+"set statusline+=\           " <space>
 set statusline+=%y          " filetype
 set statusline+=[%{GetSyntax()}]
 set statusline+=%=          " switch to the right side
-set statusline+=[%{WordCount()}]
+set statusline+={%{WordCount()}}
 set statusline+=\           " <space>
 set statusline+=%3c         " current column
 set statusline+=\           " <space>
-set statusline+=%5l         " current line
-set statusline+=/           " <space>
-set statusline+=%L          " total lines
+set statusline+=%4l/%L      " current line/total lines
+set statusline+=\ \         " <space><space>
 
 " status line change color for insert mode
-hi StatusLineColorToggle ctermfg=white ctermbg=darkgrey 
-au InsertEnter * hi StatusLineColorToggle ctermfg=black ctermbg=3
-au InsertLeave * hi StatusLineColorToggle ctermfg=white ctermbg=darkgrey
+"hi StatusLineColorToggle ctermfg=white ctermbg=darkgrey 
+"au InsertEnter * hi StatusLineColorToggle ctermfg=black ctermbg=3
+"au InsertLeave * hi StatusLineColorToggle ctermfg=white ctermbg=darkgrey
 
 "" Misc
 " ----
@@ -335,10 +332,7 @@ set splitbelow
 " (especially italics (emphasis); why is this always cterm=reverse?!)
 hi pandocAtxStart ctermfg=7
 hi pandocAtxHeader cterm=bold ctermfg=7*
-hi clear pandocEmphasis
-hi pandocEmphasis ctermfg=7
 hi pandocOperator ctermfg=darkgrey
 hi pandocStrong cterm=bold ctermfg=7*
-
+au VimEnter * hi pandocEmphasis cterm=none ctermfg=7
 nnoremap <leader>i :hi clear pandocEmphasis<CR>:hi pandocEmphasis ctermfg=7<CR>
-
