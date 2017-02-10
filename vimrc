@@ -30,7 +30,7 @@ Plugin 'scrooloose/nerdtree.git'
 "Plugin 'godlygeek/tabular'
 "Plugin 'jez/vim-superman'
 "Plugin 'severin-lemaignan/vim-minimap'
-"Plugin 'hrother/offlineimaprc.vim'
+Plugin 'hrother/offlineimaprc.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -310,12 +310,14 @@ set statusline=
 "set statusline+=%#StatusLineColorToggle#   " switch hi
 "set statusline+=%2n\        " buffer number
 "set statusline+=%*          " switch back to regular hi
-"set statusline+=%f           " filepath
+hi FilepathStatusColor ctermfg=Green
+set statusline+=%#FilepathStatusColor#
+set statusline+=%f           " filepath
 hi ModifiedFlagColor ctermfg=1
 set statusline+=%#ModifiedFlagColor#
 set statusline+=%m          " modified flag
 set statusline+=%*          " switch back to regular hi
-"set statusline+=\           " <space>
+set statusline+=\           " <space>
 set statusline+=%y          " filetype
 set statusline+=[%{GetSyntax()}]
 set statusline+=%=          " switch to the right side
