@@ -158,7 +158,7 @@ nnoremap <leader>F :call StatusToggle()<CR>
 "let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#toc#position = 'left'
-let g:pandoc#toc#close_after_navigating = 0
+let g:pandoc#toc#close_after_navigating = 1
 
 " CriticMarkup
 nnoremap <leader>a :Critic accept<CR>
