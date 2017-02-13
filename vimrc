@@ -66,9 +66,9 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>S :saveas<space>
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>.d :bd!<CR>
-nnoremap <leader>.q :q!<CR>
+nnoremap <leader>q :qa<CR>
+nnoremap <leader>D :bd!<CR>
+nnoremap <leader>Q :qa!<CR>
 
 " copy/paste with system clipboard
 vnoremap <leader>y "+y
@@ -117,8 +117,6 @@ nnoremap W 5w
 nnoremap B 5b
 vnoremap W 5w
 vnoremap B 5b
-nnoremap <leader>b :set scrollbind<CR>
-nnoremap <leader>B :set noscrollbind<CR>
 inoremap <C-i> <Tab>
 
 " emacs movement
@@ -136,11 +134,12 @@ nnoremap <leader>z= 1z=
 " Toggles
 nnoremap <leader>X :SyntasticToggleMode<CR>
 nnoremap <leader>G :GitGutterToggle<CR>
+nnoremap <leader>g :call ToggleBigGutter()<CR>
 nnoremap <leader>I :IndentLinesToggle<CR>
 nnoremap <leader>N :set invnumber<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
-"nnoremap <leader>\ :call StatusToggle()<CR>
-nnoremap <leader>F :call StatusToggle()<CR>
+"nnoremap <leader>\ :call ToggleStatus()<CR>
+nnoremap <leader>F :call ToggleStatus()<CR>
 "nnoremap <leader>t " this is mapped in .vim/ftplugin/*.vim for showing TOC
 
 "" Plugin settings
@@ -167,9 +166,9 @@ nnoremap <leader>c F{df}
 " edit syntax highlighing in ~/.vim/vim-criticmarkup/autoload/ ??
 
 " Goyo
-nnoremap <leader>g :Goyo<CR>
+"nnoremap <leader>g :Goyo<CR>
 let g:goyo_height=100
-let g:goyo_width=100
+let g:goyo_width=80
 function! s:goyo_enter()
   silent !tmux set status off
   "silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
@@ -226,11 +225,11 @@ autocmd VimLeave * call system("tmux setw automatic-rename")
 
 "" Functions
 " ---------
-function! GetListOfBuffers()
-    autocmd VimEnter *
-        \ let &listofbuffers='%{bufferline#refresh_status()}' . bufferline#get_status_string()
-    return listofbuffers
-endfunction
+"function! GetListOfBuffers()
+"    autocmd VimEnter *
+"        \ let &listofbuffers='%{bufferline#refresh_status()}' . bufferline#get_status_string()
+"    return listofbuffers
+"endfunction
 "let g:bufferline_echo = 0
 "autocmd VimEnter *
 "  \ let &statusline='%{bufferline#refresh_status()}' .bufferline#get_status_string()
@@ -253,7 +252,7 @@ function! WordCount()
 endfunction
 
 " show/hide statusline, airline, tabline
-function! StatusToggle()
+function! ToggleStatus()
         if &laststatus==2
                 set laststatus=0
                 "set showtabline=0
@@ -262,6 +261,90 @@ function! StatusToggle()
                 "set showtabline=2
         endif
 endfunction
+
+" big gutter
+function! ToggleBigGutter()
+    if (&foldcolumn != 12)
+        set foldcolumn=12
+        set numberwidth=10
+    else
+        set foldcolumn=0
+        set numberwidth=4
+    endif
+endfunc
+
+" settings for proper formatting of emails function! ToggleMailMode()
+function! MuttMailMode()
+    exe ":call CreateCenterWindow()"
+    setlocal textwidth=0 wrapmargin=0 wrap linebreak laststatus=0 nonumber
+    "setlocal nocp 
+    exe "?^$"
+endfunc
+
+" Create a new window on the left side of the current one and
+" return the cursor back to it.
+"function! ToggleCenterWindow(width)
+function! CreateCenterWindow()
+    " remove all other panes than current
+    "exe "normal! \<C-w>o"
+    let currentsplitrightvalue = &splitright
+    " add left side pad pane
+    set nosplitright
+    vnew
+    set nobuflisted
+    setlocal nonumber
+    setlocal statusline=%(%)
+    hi NonText ctermfg=8
+    exe "vert resize 39" 
+    " move back to current pane
+    exe "normal! \<C-w>l"
+    " add right side pad pane
+    set splitright
+    vnew
+    set nobuflisted
+    setlocal nonumber
+    setlocal statusline=%(%)
+    hi NonText ctermfg=8
+    " move back to current pane
+    exe "normal! \<C-w>h"
+    exe "vert resize 80"
+    hi VertSplit ctermfg=8
+    let &splitright=currentsplitrightvalue
+endfunc
+nnoremap <leader>\ :call CreateCenterWindow()<CR>
+
+function! RemoveCenterWindow()
+    "exe "normal! \<C-w>h"
+    "exe "bd"
+    "exe "normal! \<C-w>l"
+    "exe "bd"
+    exe "normal! \<C-w>o"
+    execute 'colorscheme ' . g:colors_name
+endfunc
+nnoremap <leader>\\ :call RemoveCenterWindow()<CR>
+
+""" FocusMode
+function! ToggleFocusMode()
+  if (&foldcolumn != 12)
+    set foldcolumn=12
+    set laststatus=0
+    set numberwidth=10
+    set noruler
+    set nonumber
+    hi FoldColumn ctermbg=none
+    hi LineNr ctermfg=0* ctermbg=none
+    hi NonText ctermfg=0*
+  else
+    set foldcolumn=0
+    set laststatus=2
+    set numberwidth=4
+    set ruler
+    set number
+    execute 'colorscheme ' . g:colors_name
+  endif
+endfunc
+nnoremap <leader>T :call ToggleFocusMode()<CR>
+
 
 "" Colors and design
 " -----------------
