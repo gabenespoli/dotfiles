@@ -1,0 +1,50 @@
+## Mutt Key Bindings
+# Gabe Nespoli (gabenespoli@gmail.com)
+
+## Jumping (and limiting)
+macro   index,pager     gi      "<change-folder>=INBOX<enter>"                          "Go to Inbox"
+macro   index,pager     ga      "<change-folder>=Archive<enter><limit>all<enter>"       "Go to Archive"
+macro   index,pager     gd      "<change-folder>=Drafts<enter>"                         "Go to Drafts"
+macro   index,pager     gx      "<change-folder>=Trash<enter>"                          "Go to Trash"
+macro   index,pager     gf      "<change-folder>=Archive<enter><limit>~F<enter>"        "Go to Starred conversations"
+macro   index,pager     gs      "<change-folder>=Archive<enter><limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Go to Sent messages"
+
+## Navigation
+bind    index           gg      first-entry # // default is =
+bind    index           G       last-entry # // default is *
+bind    generic         i       exit
+bind    index           i       noop # // unbind i in the index so that it doesn't exit mutt
+bind    attach          i       exit # // i for exit like the pager
+macro   index           \Cb     '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro   pager           \Cb     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind generic                    N       search-opposite # // default is \eN
+bind index,pager,compose        N       search-opposite # // default for N is mark as new
+
+## Scrolling
+bind pager              gg      top # // default is ^
+bind pager              G       bottom # // default is <End>
+bind index,pager        \Cd     half-down # // default is ]
+bind index,pager        }       half-down
+bind index,pager        \Cu     half-up # // default is [
+bind index,pager        {       half-up
+
+## Actions
+#bind    index,pager     R       group-reply # // default (g) is used for go to top; default for R is recall-message
+bind    index,pager     a       group-reply # // default (g) is used for go to top; default for a is adding an alias
+bind    index,pager     p       recall-message # // default (R) is used for group-reply; default for p is to print
+bind    compose         p       postpone-message
+macro   compose         g       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n"
+macro   compose         r       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n"
+macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
+macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
+
+## External
+bind    editor          <Tab>   complete-query # goobook auto-completion
+#macro   pager           b       "<pipe-message>urlview<enter>"                              "Call urlview to open links."
+macro   pager           b       "<pipe-message>urlscan --compact<enter>"                    "Call urlview to open links."
+macro   pager           B       "<pipe-message>urlscan<enter>"                              "Call urlview to open links."
+macro   index,pager     \er     "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
+macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
+#bind    attach          <enter> view-mailcap # // force viewing using mailcap, default is m
+#macro   index,pager     a       "<pipe-message>goobook add<enter>"                          "Add sender to Google contacts."
+

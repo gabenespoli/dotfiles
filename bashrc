@@ -16,7 +16,7 @@
 #then export TERM=xterm-256color-italic
 #else export TERM=xterm-256color
 #fi
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 # Mac Options
 if [ "$(uname)" == "Darwin" ]
@@ -66,6 +66,8 @@ export VIMPAGER_RC="$HOME/.vimrc"
 # -------------------
 function cdl { cd $1; ls;}
 alias grep="grep --color"
+alias df="df -h"
+alias du="du -hs"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias gf="python $HOME/bin/gf.py"
@@ -91,6 +93,26 @@ function vimsyntax() { vim "/usr/local/Cellar/vim/8.0.0130/share/vim/vim80/synta
 alias vimsyntax_pandoc="vim ~/.vim/bundle/vim-pandoc-syntax/syntax/pandoc.vim"
 alias lilyjazz='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include="$HOME/.lyp/packages/lilyjazz@0.2.0" "$@"'
 alias lilypond='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond "$@"'
+alias ql='qlmanage -p &>/dev/null'
+alias ta="tmux a"
+alias hangups="hangups \
+    --date-format '< %Y-%m-%d >' \
+    --disable-notifications \
+    --key-close-tab 'ctrl x' \
+    --col-tab-background-fg yellow \
+    --col-tab-background-bg 'dark gray' \
+    --col-active-tab-fg white \
+    --col-active-tab-bg black \
+    --col-inactive-tab-fg yellow \
+    --col-inactive-tab-bg black \
+    --col-status-line-fg yellow \
+    --col-status-line-bg black \
+    --col-msg-date-fg 'light green' \
+    --col-msg-date-bg black \
+    --col-msg-sender-fg 'light magenta' \
+    --col-msg-sender-bg default \
+    --col-msg-self-fg 'dark blue' \
+    --col-msg-self-bg default"
 
 # network
 alias wifi="sudo networksetup -setairportnetwork en0"
@@ -99,8 +121,8 @@ alias efgh="ssh efgh@192.168.1.12"
 alias hrcommons="open vnc://141.117.114.20"
 
 # misc shortcuts
-alias paper="vim ~/r/gv/paper/NespoliRusso2016_groove.md"
-alias dis="vim ~/r/gv/paper/PhD\ Proposal/Nespoli_PhDProposal.md"
 alias gitlog="git log --graph --decorate --oneline"
+alias paper="vim -c 'call ToggleCenteredWindow(100)' ~/r/gv/paper/Nespoli2017.md"
+alias dis="vim -c 'call ToggleCenteredWindow(100)' ~/r/phd/NespoliPhDProposal.md"
 #source $HOME/bin/utils/tabnew.sh
 

@@ -4,6 +4,8 @@
 
 # add save hook to set default dir for saving attachments http://unix.stackexchange.com/questions/241994/how-can-i-change-the-default-save-folder-in-mutt
 
+# thoughts for composing in a separate tmux pane: http://mutt-users.mutt.narkive.com/WHpZ33fG/keep-mutt-open-while-editing-new-message
+
 ## Paths
 set alias_file          = ~/.mutt/alias            # where to store aliases
 set mailcap_path        = ~/.mutt/mailcap          # entries for filetypes
@@ -16,16 +18,19 @@ set tmpdir              = ~/.mail/temp             # where to keep temp files
 
 ## Account Settings
 set realname            = "Gabe Nespoli"
+#send-hook               '~t ryerson\.ca$' 'my_hdr From: Gabriel A. Nespoli <gabe@psych.ryerson.ca>'
 set from                = "gabenespoli@gmail.com"
-set spoolfile           = "+INBOX"
-set mbox                = "+Archive"
-set postponed           = "+Drafts"
-set sendmail            = "/usr/local/bin/msmtp -a home"
-mailboxes +INBOX \
-          +Archive \
-          +Drafts \
-          +Chats \
-          +Trash \
+alternates              "gabe@psych.ryerson.ca|gabenespoli@gmail.com"
+set spoolfile           = "=INBOX"
+set mbox                = "=Archive"
+set postponed           = "=Drafts"
+set sendmail            = "/usr/local/bin/msmtp -a Home"
+set sendmail_wait   = 0
+unset record
+mailboxes =INBOX \
+          =Archive \
+          =Drafts \
+          =Trash \
 
 ## Basic Options
 set wait_key = no        # shut up, mutt
@@ -41,6 +46,7 @@ unset mark_old           # read/new is good enough for me
 #set pipe_decode          # strip headers and eval mimes when piping
 #set thorough_search      # strip headers and eval mimes before searching
 set mail_check_stats
+#set arrow_cursor
 
 ## Index View Options
 set date_format = "%Y-%m-%d"
@@ -52,7 +58,7 @@ set sort_re                                # thread based on regex
 #set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 ## Viewing Options
-set pager_index_lines = 10 # number of index lines to show
+set pager_index_lines = 0  # number of index lines to show
 set pager_context = 3      # number of context lines to show
 set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
@@ -60,7 +66,7 @@ set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 auto_view text/html
 alternative_order text/plain text/enriched text/html
-set sidebar_visible = yes
+set sidebar_visible = no
 set sidebar_width   = 27
 set sidebar_format  = "%B%?F?[%F]?%* %?N?%N/?%S%?L?[%L]?"
 
@@ -84,16 +90,12 @@ set include                                 # include message in replies
 set forward_quote                           # include message in forwards
 set text_flowed                             # don't add line break if line ends with white space
 
-## msmtp
-set from            = "gabenespoli@gmail.com"
-set sendmail        = "/usr/local/bin/msmtp -a Home"
-set sendmail_wait   = 0
-unset record
-
 ## goobook
 set query_command   = "goobook query %s"
 
 ## Source colors and keybindings
-source ~/dotfiles/mutt/colors.muttrc
-source ~/dotfiles/mutt/keybindings.muttrc
+source ~/.mutt/colors.muttrc
+#source ~/.mutt/colors256.muttrc
+#source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/keybindings.muttrc
 
