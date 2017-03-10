@@ -61,27 +61,29 @@ export CLICOLOR=1 # colors for ls
 export PS1='\[\e[0;34m\] \w \[\e[0;37m\]\$\[\e[m\] '
 #PS1='\[\e[0;34m\]\h:\W \$\[\e[m\] '
 export VIMPAGER_RC="$HOME/.vimrc"
+#export LESS_TERMCAP_so=$'\e[30;43m'
 
 ## Aliases & Functions
 # -------------------
-function cdl { cd $1; ls;}
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
+alias mc="mc -b"
+alias ql='qlmanage -p &>/dev/null'
+alias ta="tmux a"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias gf="python $HOME/bin/gf.py"
+function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
-
-# todo
-alias t="todo.sh"
-alias tw="todo.sh list @work"
-alias th="todo.sh list @home"
-#function todo() { vimcat "$(gf $@)/todo.md" ; }
 function notes() { vim "$(gf $@)/notes.md" ; }
 
-# applications
+# calendar and todo
+alias trello="$HOME/bin/trello-cli/bin/trello"
+alias t="$HOME/bin/trello-cli_wrapper.sh"
+alias gcal="gcalcli"
+alias c="$HOME/bin/gcalcli_wrapper.sh"
 alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
 alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
@@ -93,8 +95,6 @@ function vimsyntax() { vim "/usr/local/Cellar/vim/8.0.0130/share/vim/vim80/synta
 alias vimsyntax_pandoc="vim ~/.vim/bundle/vim-pandoc-syntax/syntax/pandoc.vim"
 alias lilyjazz='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include="$HOME/.lyp/packages/lilyjazz@0.2.0" "$@"'
 alias lilypond='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond "$@"'
-alias ql='qlmanage -p &>/dev/null'
-alias ta="tmux a"
 alias hangups="hangups \
     --date-format '< %Y-%m-%d >' \
     --disable-notifications \
@@ -106,7 +106,7 @@ alias hangups="hangups \
     --col-inactive-tab-fg yellow \
     --col-inactive-tab-bg black \
     --col-status-line-fg yellow \
-    --col-status-line-bg black \
+    --col-status-line-bg 'dark gray' \
     --col-msg-date-fg 'light green' \
     --col-msg-date-bg black \
     --col-msg-sender-fg 'light magenta' \

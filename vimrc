@@ -10,27 +10,27 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-bufferline'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'tpope/fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'rickhowe/diffchar.vim'
-Plugin 'toyamarinyon/vim-swift'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'Yggdroot/indentLine'
-Plugin 'bling/vim-bufferline'
+"Plugin 'hrother/offlineimaprc.vim'
+"Plugin 'toyamarinyon/vim-swift'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree.git'
+"Plugin 'scrooloose/nerdtree.git'
 "Plugin 'chrisbra/csv.vim'
 "Plugin 'godlygeek/tabular'
 "Plugin 'jez/vim-superman'
-Plugin 'severin-lemaignan/vim-minimap'
-Plugin 'hrother/offlineimaprc.vim'
+"Plugin 'severin-lemaignan/vim-minimap'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,7 +92,7 @@ set wildmode=longest,list,full
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " hi matching [{()}]
 set visualbell          " no sound
-set laststatus=0        " 0 = no status bar, 2 = show status bar
+set laststatus=2        " 0 = no status bar, 2 = show status bar
 set showtabline=0
 set hidden
 set splitright
@@ -263,12 +263,12 @@ filetype on
 
 " tmux navigator stuff
 " https://github.com/christoomey/vim-tmux-navigator/issues/59
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
-nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
-nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
-nnoremap <silent> <c-w>; :TmuxNavigatePrevious<cr>
+"let g:tmux_navigator_no_mappings = 1
+"nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
+"nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
+"nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
+"nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
+"nnoremap <silent> <c-w>; :TmuxNavigatePrevious<cr>
 
 " tmux set tab title to vim filename; reset when quitting vim
 "autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
