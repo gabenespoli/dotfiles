@@ -14,19 +14,16 @@ Plugin 'bling/vim-bufferline'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rickhowe/diffchar.vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
-"Plugin 'christoomey/vim-tmux-navigator'
-"Plugin 'vim-syntastic/syntastic'
-"Plugin 'Yggdroot/indentLine'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/todo-txt.vim'
+Plugin 'tpope/vim-unimpaired'
+"Plugin 'airblade/vim-gitgutter'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'scrooloose/nerdtree.git'
 "Plugin 'chrisbra/csv.vim'
 "Plugin 'godlygeek/tabular'
 "Plugin 'jez/vim-superman'
@@ -99,12 +96,12 @@ set splitright
 set splitbelow
 set incsearch           " highlight search results as you type
 
-"" Status Line
+" Status Line
 " -----------
 set statusline=
 "set statusline+=\ 
 "set statusline+=%#StatusLineColorToggle#   " switch hi
-"set statusline+=%2n\        " buffer number
+set statusline+=[%n]\        " buffer number
 "set statusline+=%*          " switch back to regular hi
 hi FilepathStatusColor ctermfg=12 ctermbg=0
 set statusline+=%#FilepathStatusColor#
@@ -139,11 +136,9 @@ vnoremap jk <Esc>
 
 " common actions
 nnoremap <leader>e :e<Space>
-nnoremap <leader>o :e<Space>
 nnoremap <leader>n :enew<CR>
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :w
 nnoremap <leader>s :w<CR>
-nnoremap <leader>S :saveas<space>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>q :qa<CR>
 nnoremap <leader>D :bd!<CR>
@@ -168,14 +163,10 @@ nnoremap <leader>6 :b6<CR>
 nnoremap <leader>7 :b7<CR>
 nnoremap <leader>8 :b8<CR>
 nnoremap <leader>9 :b9<CR>
+nnoremap <leader>b :ls<CR>
+nnoremap <leader>B :ls!<CR>
 nnoremap <leader>J :tabprevious<CR>
 nnoremap <leader>K :tabnext<CR>
-nnoremap <leader>0 :ls<CR>
-nnoremap <leader>) :ls!<CR>
-
-" panes
-map <leader>v :vs<CR>
-map <leader>c :close<CR>
 
 " movement
 nnoremap j gj
@@ -208,35 +199,74 @@ nnoremap <leader>N :set invnumber<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
 nnoremap <leader>F :call ToggleStatusBar()<CR>
-"nnoremap <leader>t " this is mapped in .vim/ftplugin/*.vim for showing TOC
 
 " work signature
 nnoremap <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
 
+"" MyPlugin settings
+" -------------------
+" CenWin
+so ~/.vim/myplugins/vim-cenwin/autoload/cenwin.vim
+nnoremap <leader>C :call CenWinToggle(0)<CR>
+nnoremap <leader>O :call CenWinOutlineToggle()<CR>
+nnoremap <leader>t :call CenWinTodoToggle()<CR>
+hi CenWinOutlineHeader1 cterm=reverse ctermfg=4 ctermbg=8
+hi CenWinOutlineHeader2 cterm=none ctermfg=4 ctermbg=8
+hi CenWinOutlineHeader3 cterm=none ctermfg=6 ctermbg=8
+hi CenWinTodo cterm=none ctermfg=5 ctermbg=8
+
 "" Plugin settings
 " ---------------
+" CtrlP
+let g:ctrlp_map = '<leader>o'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_prompt_mappings = { 
+            \ 'PrtSelectMove("j")':     ['<C-n>'],
+            \ 'PrtSelectMove("k")':     ['<C-p>'],
+            \ 'PrtHistory(-1)':         ['<down>'],
+            \ 'PrtHistory(1)':          ['<up>'],
+            \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'], 
+            \ 'ToggleType(1)':          ['<C-b>', '<C-down>'],
+            \ 'ToggleType(-1)':         ['<C-f>', '<C-up>'],
+            \ }
+
 " Char Diff
 let g:solarized_diffmode = 'high'
 
 " Pandoc
-"let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#modules#enabled = ["command","bibliographies","completion","keyboard"]
+let g:pandoc#biblio#sources = "g"
+let g:pandoc#biblio#bibs = ["~/bin/cite/library.bib"]
+let g:pandoc#completion#bib#mode = "citeproc"
+let g:pandoc#keyboard#enabled_submodules = ["sections"]
+
+" Pandoc Syntax
 let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#toc#position = 'left'
-let g:pandoc#toc#close_after_navigating = 1
 
 " CriticMarkup
-nnoremap <leader>a :Critic accept<CR>
-nnoremap <leader>r :Critic reject<CR>
-nnoremap <leader>h :call criticmarkup#InjectHighlighting()<CR>
-"nnoremap <leader>c F{df}
-" edit syntax highlighing in ~/.vim/vim-criticmarkup/autoload/ ??
+" see settings in .vim/ftplugin/markdown.vim
+
+" Todo.txt
+hi TodoPriorityA ctermfg=1
+hi TodoPriorityB ctermfg=7
+hi TodoPriorityC ctermfg=14
+hi TodoProject ctermfg=6
+hi TodoContext ctermfg=13
+hi TodoDone ctermfg=11
+
+" Use todo#complete as the omni complete function for todo files
+au filetype todo setlocal omnifunc=todo#Complete
+" Auto complete projects
+"au filetype todo imap <buffer> + +<C-X><C-O>
+" Auto complete contexts
+"au filetype todo imap <buffer> @ @<C-X><C-O>
 
 " CSV
 function! FormatTSV()
     " http://alangrow.com/blog/turn-vim-into-excel-tips-for-tabular-data-editing
     setlocal number noexpandtab shiftwidth=20 softtabstop=20 tabstop=20 nowrap
 endfunc
-nnoremap <leader>T :call FormatTSV()<CR>
+"nnoremap <leader>T :call FormatTSV()<CR>
 
 " GitGutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
@@ -247,7 +277,7 @@ let g:indentLine_char = '|'
 let g:indentLine_color_term = 242
 
 " NERDTree
-nnoremap <leader>O :NERDTreeToggle<CR>
+"nnoremap <leader>O :NERDTreeToggle<CR>
 
 " minimap
 "let g:minimap_show='<leader>ms'
@@ -277,7 +307,8 @@ filetype on
 "" Functions
 " ---------
 function! GetSyntaxUnderCursor() 
-    return synIDattr(synID(line("."),col("."),1),"name")
+    let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
+    return g:SyntaxUnderCursor
 endfunction
 
 " http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
@@ -301,76 +332,11 @@ endfunction
 
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
-    exe ":call ToggleCenteredWindow(80)"
+    exe ":call CenWinToggle(80)"
     setlocal textwidth=0 wrapmargin=0 wrap linebreak laststatus=0 nonumber
     "setlocal nocp 
     exe "/^$"
 endfunc
-
-" center the pane by creating two empty panes on either side
-" first arg is width of centered window (default 80)
-" second arg is the width of the left-hand pad 
-"   (default (winwidth - centerwidth) / 2)
-let g:CenteredWindow = 0
-let g:CenteredWindowPadLeft = 0 " buffer number of pad so it can be reused
-let g:CenteredWindowPadRight = 0
-function! ToggleCenteredWindow(...)
-
-    if g:CenteredWindow != 0
-        exe "normal! \<C-w>o"
-        "execute "colorscheme ".g:colors_name
-        hi nonText ctermfg=0
-        hi VertSplit ctermfg=10
-        let g:CenteredWindow = 0
-
-    else
-        let currentsplitrightvalue = &splitright
-        hi NonText ctermfg=8
-        hi VertSplit ctermfg=8
-        if a:0 < 2
-            "TODO round leftpadwidth to avoid decimals
-            let leftpadwidth = (winwidth('%') - a:1) / 2
-        else
-            let leftpadwidth = a:2
-        end
-
-        " add left side pad pane and move focus back to current
-        set nosplitright
-        if g:CenteredWindowPadLeft == 0
-            vnew
-            let g:CenteredWindowPadLeft = bufnr('%') 
-            set nobuflisted
-            setlocal nonumber
-            setlocal statusline=%(%)
-        else
-            vsplit
-            exe "buffer".g:CenteredWindowPadLeft
-        endif
-        exe "vert resize ".leftpadwidth 
-        exe "normal! \<C-w>l"
-
-        " add right side pad pane and move focus back to current
-        set splitright
-        if g:CenteredWindowPadRight == 0
-            vnew
-            let g:CenteredWindowPadRight = bufnr('%')
-            set nobuflisted
-            setlocal nonumber
-            setlocal statusline=%(%)
-        else
-            vsplit
-            exe "buffer".g:CenteredWindowPadRight
-        endif
-        exe "normal! \<C-w>h"
-
-        " resize center window, reset splitright value
-        exe "vert resize ".a:1
-        let g:CenteredWindow = bufnr('%')
-        let &splitright=currentsplitrightvalue
-
-    endif
-endfunc
-nnoremap <leader>C :call ToggleCenteredWindow(100)<CR>
 
 " Change cursor shape from block (command mode) to line (insert mode)
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
@@ -382,17 +348,4 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
-" force some pandoc highlighting cause it always screws up
-" (especially italics (emphasis); why is this always cterm=reverse?!)
-hi pandocAtxStart ctermfg=7
-hi pandocAtxHeader cterm=bold ctermfg=15
-hi pandocOperator ctermfg=darkgrey
-hi pandocStrong cterm=bold ctermfg=15
-au VimEnter * hi pandocEmphasis cterm=none ctermfg=7
-au VimEnter * hi pandocStrongEmphasis cterm=none ctermfg=15
-au VimEnter * hi pandocStrongInEmphasis cterm=none ctermfg=15
-au VimEnter * hi pandocEmphasisInStrong cterm=none ctermfg=7
-nnoremap <leader>i :hi pandocEmphasis cterm=none<CR>:hi pandocStrongEmphasis cterm=none<CR>:hi pandocEmphasisInStrong cterm=none<CR>
-":hi clear markdownItalic<CR>:hi markdownItalic ctermfg=7<CR>
 
