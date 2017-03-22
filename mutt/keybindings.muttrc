@@ -22,7 +22,9 @@ bind    pager           J       next-undeleted      # default is j; J is default
 bind    pager           K       previous-undeleted  # default is k; K is default for next-entry
 bind    index           o       display-message     # default is <Space>
 bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
+bind    attach          <Space> view-attach         # <Space> is not bound by default in attach
 bind    generic         i       exit
+bind    index           i       noop                # unbind i in the index so we don't exit mutt
 #bind    pager,attach    i       exit                # default is q (sometimes i)
 bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message

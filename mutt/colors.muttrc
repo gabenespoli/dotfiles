@@ -32,7 +32,7 @@ color markers       red             white
 color attachment    white           default         
 color search        brightblack     brightred
 color status        brightyellow    black           
-color indicator     brightblack     blue          
+color indicator     brightblack     white          
 color tree          yellow          default                                     # arrow in threads
 
 # basic monocolor screen
@@ -62,11 +62,11 @@ color index         cyan            default         "~p!~F"                     
 color index         cyan            default         "~N~p!~F"                   # new messages to me
 color index         cyan            default         "~U~p!~F"                   # unread messages to me
 color index         brightgreen     default         "~R~p!~F"                   # messages to me
-color index         red             default         "~F"                        # flagged messages
-color index         red             default         "~F~p"                      # flagged messages to me
-color index         red             default         "~N~F"                      # new flagged messages
-color index         red             default         "~N~F~p"                    # new flagged messages to me
-color index         red             default         "~U~F~p"                    # new flagged messages to me
+color index         brightred       default         "~F"                        # flagged messages
+color index         brightred       default         "~F~p"                      # flagged messages to me
+color index         brightred       default         "~N~F"                      # new flagged messages
+color index         brightred       default         "~N~F~p"                    # new flagged messages to me
+color index         brightred       default         "~U~F~p"                    # new flagged messages to me
 color index         black           red             "~D"                        # deleted messages
 color index         brightcyan      default         "~v~(!~N)"                  # collapsed thread with no unread
 color index         yellow          default         "~v~(~N)"                   # collapsed thread with some unread

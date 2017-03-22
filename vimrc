@@ -9,6 +9,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+"Plugin 'file:///Users/gmac/Dropbox/dotfiles/vim/myplugins/vim-cenwin/autoload'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-pandoc/vim-pandoc'
@@ -21,6 +22,8 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/todo-txt.vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/TaskList.vim'
+Plugin 'itchyny/calendar.vim'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
@@ -45,25 +48,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "" Colorscheme 
-"  -----------
-colorscheme solarized
-"let s:vmode       = "cterm"
-"let s:base03      = "8"
-"let s:base02      = "0"
-"let s:base01      = "10"
-"let s:base00      = "11"
-"let s:base0       = "12"
-"let s:base1       = "14"
-"let s:base2       = "7"
-"let s:base3       = "15"
-"let s:yellow      = "3"
-"let s:orange      = "9"
-"let s:red         = "1"
-"let s:magenta     = "5"
-"let s:violet      = "13"
-"let s:blue        = "4"
-"let s:cyan        = "6"
-"let s:green       = "2"
+colorscheme gaberized
 syntax enable
 set background=dark
 
@@ -103,10 +88,8 @@ set statusline=
 "set statusline+=%#StatusLineColorToggle#   " switch hi
 set statusline+=[%n]\        " buffer number
 "set statusline+=%*          " switch back to regular hi
-hi FilepathStatusColor ctermfg=12 ctermbg=0
 set statusline+=%#FilepathStatusColor#
 set statusline+=%f           " filepath
-hi ModifiedFlagColor ctermfg=1 ctermbg=0
 set statusline+=%#ModifiedFlagColor#
 set statusline+=%m          " modified flag
 set statusline+=%*          " switch back to regular hi
@@ -120,14 +103,10 @@ set statusline+=%3c         " current column
 set statusline+=\           " <space>
 set statusline+=%4l/%L      " current line/total lines
 set statusline+=\ \         " <space><space>
+set statusline+=(%P)
 
-" status line change color for insert mode
-"hi StatusLineColorToggle ctermfg=white ctermbg=darkgrey 
-"au InsertEnter * hi StatusLineColorToggle ctermfg=black ctermbg=3
-"au InsertLeave * hi StatusLineColorToggle ctermfg=white ctermbg=darkgrey
-
-"" Key bindings
-"  ------------
+"" Keybindings
+"  -----------
 let mapleader = "\<Space>"
 set timeoutlen=500
 "inoremap <Esc> <Esc>l
@@ -140,9 +119,9 @@ nnoremap <leader>n :enew<CR>
 nnoremap <leader>w :w
 nnoremap <leader>s :w<CR>
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>q :qa<CR>
+nnoremap <leader>q :qa
 nnoremap <leader>D :bd!<CR>
-nnoremap <leader>Q :qa!<CR>
+nnoremap <leader>Q :qa!
 
 " copy/paste with system clipboard
 vnoremap <leader>y "+y
@@ -170,14 +149,21 @@ nnoremap <leader>K :tabnext<CR>
 
 " movement
 nnoremap j gj
+vnoremap j gj
 nnoremap k gk
+vnoremap k gk
 nnoremap <Down> gj
+vnoremap <Down> gj
 nnoremap <Up> gk
+vnoremap <Up> gk
 nnoremap W 5w
-nnoremap B 5b
 vnoremap W 5w
+nnoremap B 5b
 vnoremap B 5b
 inoremap <C-i> <Tab>
+
+"vimdiff
+nnoremap du :diffupdate<CR>
 
 " emacs movement
 "nnoremap <C-h> X
@@ -206,17 +192,22 @@ nnoremap <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Stu
 "" MyPlugin settings
 " -------------------
 " CenWin
-so ~/.vim/myplugins/vim-cenwin/autoload/cenwin.vim
+so ~/.vim/myplugins/cenwin/plugin/cenwin.vim
 nnoremap <leader>C :call CenWinToggle(0)<CR>
-nnoremap <leader>O :call CenWinOutlineToggle()<CR>
-nnoremap <leader>t :call CenWinTodoToggle()<CR>
-hi CenWinOutlineHeader1 cterm=reverse ctermfg=4 ctermbg=8
-hi CenWinOutlineHeader2 cterm=none ctermfg=4 ctermbg=8
-hi CenWinOutlineHeader3 cterm=none ctermfg=6 ctermbg=8
-hi CenWinTodo cterm=none ctermfg=5 ctermbg=8
+nnoremap <localleader>l :call CenWinOutlineEnable(0,1)<CR>
+nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
+nnoremap <localleader>q :call CenWinTodoToggle()<CR>
+nnoremap <localleader>t :call CenWinTodoAdd()<CR>
+nnoremap <localleader>T :call CenWinTodoRemove()<CR>
 
 "" Plugin settings
 " ---------------
+" calendar.vim
+let g:calendar_google_calendar = 1
+let g:calendar_week_number = 1
+let g:calendar_views = ['year', 'month', 'week', 'day_4', 'agenda', 'event']
+let g:calendar_view = 'agenda'
+
 " CtrlP
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -230,9 +221,6 @@ let g:ctrlp_prompt_mappings = {
             \ 'ToggleType(-1)':         ['<C-f>', '<C-up>'],
             \ }
 
-" Char Diff
-let g:solarized_diffmode = 'high'
-
 " Pandoc
 let g:pandoc#modules#enabled = ["command","bibliographies","completion","keyboard"]
 let g:pandoc#biblio#sources = "g"
@@ -245,21 +233,6 @@ let g:pandoc#syntax#conceal#use = 0
 
 " CriticMarkup
 " see settings in .vim/ftplugin/markdown.vim
-
-" Todo.txt
-hi TodoPriorityA ctermfg=1
-hi TodoPriorityB ctermfg=7
-hi TodoPriorityC ctermfg=14
-hi TodoProject ctermfg=6
-hi TodoContext ctermfg=13
-hi TodoDone ctermfg=11
-
-" Use todo#complete as the omni complete function for todo files
-au filetype todo setlocal omnifunc=todo#Complete
-" Auto complete projects
-"au filetype todo imap <buffer> + +<C-X><C-O>
-" Auto complete contexts
-"au filetype todo imap <buffer> @ @<C-X><C-O>
 
 " CSV
 function! FormatTSV()
@@ -276,33 +249,11 @@ let g:gitgutter_enabled = 0 " toggle to start vim with gitgutter enabled
 let g:indentLine_char = '|'
 let g:indentLine_color_term = 242
 
-" NERDTree
-"nnoremap <leader>O :NERDTreeToggle<CR>
-
-" minimap
-"let g:minimap_show='<leader>ms'
-"let g:minimap_update='<leader>mu'
-"let g:minimap_close='<leader>gc'
-"let g:minimap_toggle='<leader>gt'
-
 " Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
-
-" tmux navigator stuff
-" https://github.com/christoomey/vim-tmux-navigator/issues/59
-"let g:tmux_navigator_no_mappings = 1
-"nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
-"nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
-"nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
-"nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
-"nnoremap <silent> <c-w>; :TmuxNavigatePrevious<cr>
-
-" tmux set tab title to vim filename; reset when quitting vim
-"autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
-"autocmd VimLeave * call system("tmux setw automatic-rename")
 
 "" Functions
 " ---------

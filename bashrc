@@ -71,9 +71,11 @@ alias du="du -hs"
 alias mc="mc -b"
 alias ql='qlmanage -p &>/dev/null'
 alias ta="tmux a"
+alias fold="fold -s"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
-alias gf="python $HOME/bin/gf.py"
+alias lsl='printf "\033c" && ls'
+alias gf="python $HOME/bin/utils/gf.py"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
@@ -81,9 +83,18 @@ function notes() { vim "$(gf $@)/notes.md" ; }
 
 # calendar and todo
 alias trello="$HOME/bin/trello-cli/bin/trello"
-alias t="$HOME/bin/trello-cli_wrapper.sh"
-alias gcal="gcalcli"
+#alias t="$HOME/bin/trello-cli_wrapper.sh"
+alias t="todo.sh -a"
+alias gcal="gcalcli --includeRc"
 alias c="$HOME/bin/gcalcli_wrapper.sh"
+#alias ca="c agenda Gabe EGcal Research trello"
+alias cme='printf "\033c" && gcalcli agenda --calendar Gabe --calendar EGcal --calendar Research --calendar https://trello.com/calendar/556dc4e1306181318b7faca9/58c0446572e43a9ffe490439/567e8f2d9cb740e5cf2db6fec6b17947.ics'
+alias cfam='printf "\033c" && gcalcli agenda --calendar Gabe --calendar erin.nespoli@gmail.com --calendar Olly --calendar yespleasefolk@gmail.com --calendar EGcal --calendar EGtravel'
+alias cwork='printf "\033c" && gcalcli agenda --calendar Research --calendar https://trello.com/calendar/556dc4e1306181318b7faca9/58c0446572e43a9ffe490439/567e8f2d9cb740e5cf2db6fec6b17947.ics'
+alias clab='printf "\033c" && gcalcli agenda --calendar SINGS --calendar AUDIOMETER\ booking'
+
+# others
+alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number'"
 alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
 alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
@@ -122,7 +133,7 @@ alias hrcommons="open vnc://141.117.114.20"
 
 # misc shortcuts
 alias gitlog="git log --graph --decorate --oneline"
-alias paper="vim -c 'call ToggleCenteredWindow(100)' ~/r/gv/paper/Nespoli2017.md"
-alias dis="vim -c 'call ToggleCenteredWindow(100)' ~/r/phd/NespoliPhDProposal.md"
+alias paper="vim -c 'call CenWinEnable(100)' ~/r/gv/paper/Nespoli2017.md"
+alias dis="vim -c 'call CenWinEnable(100)' -c 'call CenWinTodoEnable()' ~/r/phd/NespoliPhDProposal.md"
 #source $HOME/bin/utils/tabnew.sh
 
