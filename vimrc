@@ -164,9 +164,11 @@ inoremap <C-i> <Tab>
 
 "vimdiff
 nnoremap du :diffupdate<CR>
+" force this diffchar.vim highlight cause it always reverts
+nnoremap dh :hi _DiffDelPos ctermfg=1 ctermbg=0 cterm=underline<CR>
 
 " emacs movement
-"nnoremap <C-h> X
+"nnoremap <C-h> X " this one seems to already work, no need to remap
 inoremap <C-d> <Del>
 inoremap <C-n> <C-o>gj
 inoremap <C-p> <C-o>gk
@@ -174,17 +176,17 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
 " Spell checking
-nnoremap <leader>Z :set spell!<CR>
-nnoremap <leader>z 1z=
+"nnoremap <leader>Z :set spell!<CR>
+"nnoremap <leader>z 1z=
+nnoremap <leader>S :set spell!<CR>
+nnoremap <localleader>s 1z=
 
 " Toggles
-nnoremap <leader>X :SyntasticToggleMode<CR>
 nnoremap <leader>G :GitGutterToggle<CR>
-nnoremap <leader>I :IndentLinesToggle<CR>
 nnoremap <leader>N :set invnumber<CR>
+nnoremap <leader>F :call ToggleStatusBar()<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
-nnoremap <leader>F :call ToggleStatusBar()<CR>
 
 " work signature
 nnoremap <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
