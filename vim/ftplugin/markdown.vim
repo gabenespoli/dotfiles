@@ -1,5 +1,5 @@
-set nonumber
-set spell
+set nonumber    " don't show line numbers
+set spell       " enable live spell checking
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 "au VimEnter * :GitGutterDisable

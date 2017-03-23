@@ -68,8 +68,8 @@ set foldlevel=20        " set a high fold level so that folds are open by defaul
 
 "" UI Config
 " ---------
-set nonumber            " show line numbers
-set showcmd             " show command in bottom bar
+set number              " show line numbers
+set noshowcmd           " show command in bottom bar
 set wildmode=longest,list,full
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " hi matching [{()}]
