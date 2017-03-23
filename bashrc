@@ -79,7 +79,11 @@ alias gf="python $HOME/bin/utils/gf.py"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
+
+# notes
 function notes() { vim "$(gf $@)/notes.md" ; }
+alias wf="python ~/bin/Workflows/Workflows.py ~/r/notes/"
+
 
 # calendar and todo
 alias trello="$HOME/bin/trello-cli/bin/trello"
@@ -94,7 +98,7 @@ alias cwork='printf "\033c" && gcalcli agenda --calendar Research --calendar htt
 alias clab='printf "\033c" && gcalcli agenda --calendar SINGS --calendar AUDIOMETER\ booking'
 
 # others
-alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number'"
+alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
 alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
 alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
