@@ -9,7 +9,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'file:///Users/gmac/Dropbox/dotfiles/vim/myplugins/vim-cenwin/autoload'
+Plugin 'gabenespoli/vim-cenwin'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-pandoc/vim-pandoc'
@@ -191,10 +192,9 @@ nnoremap <leader>\ :set hlsearch!<CR>
 " work signature
 nnoremap <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
 
-"" MyPlugin settings
-" -------------------
+"" Plugin settings
+" ---------------
 " CenWin
-so ~/.vim/myplugins/cenwin/plugin/cenwin.vim
 nnoremap <leader>C :call CenWinToggle(0)<CR>
 nnoremap <localleader>l :call CenWinOutlineEnable(0,1)<CR>
 nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
@@ -202,8 +202,6 @@ nnoremap <localleader>q :call CenWinTodoToggle()<CR>
 nnoremap <localleader>t :call CenWinTodoAdd()<CR>
 nnoremap <localleader>T :call CenWinTodoRemove()<CR>
 
-"" Plugin settings
-" ---------------
 " calendar.vim
 let g:calendar_google_calendar = 1
 let g:calendar_week_number = 1
