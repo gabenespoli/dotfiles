@@ -95,7 +95,5 @@ set query_command   = "goobook query %s"
 
 ## Source colors and keybindings
 source ~/.mutt/colors.muttrc
-#source ~/.mutt/colors256.muttrc
-#source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
 source ~/.mutt/keybindings.muttrc
 
