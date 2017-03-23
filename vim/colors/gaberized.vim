@@ -1,7 +1,5 @@
-" source solorized
+" source solorized and force colorscheme name to be gaberized
 so ~/.vim/colors/solarized.vim
-
-" force the coloscheme name to be this one; solarized sets it to solarized
 let g:colors_name='gaberized'
 
 " Solarized customizations
@@ -18,27 +16,27 @@ hi DiffAdd              ctermfg=2   ctermbg=0
 hi DiffDelete           ctermfg=1   ctermbg=0
 
 " Plugin color customizations
-" Diffs and DiffChar plugin
-hi _DiffDelPos          ctermfg=9   ctermbg=0
+" DiffChar
+hi _DiffDelPos          ctermfg=1   ctermbg=0   cterm=underline
 
-" CenWin plugin
-hi CenWinOutlineHeader1 ctermfg=4   ctermbg=8 cterm=reverse 
-hi CenWinOutlineHeader2 ctermfg=4   ctermbg=8 cterm=none 
-hi CenWinOutlineHeader3 ctermfg=6   ctermbg=8 cterm=none
-hi CenWinTodo           ctermfg=5   ctermbg=8 cterm=none
+" CenWin
+hi CenWinOutlineHeader1 ctermfg=4   ctermbg=8   cterm=reverse 
+hi CenWinOutlineHeader2 ctermfg=4   ctermbg=8   cterm=none 
+hi CenWinOutlineHeader3 ctermfg=6   ctermbg=8   cterm=none
+hi CenWinTodo           ctermfg=5   ctermbg=8   cterm=none
 
 " Todo and Todo.txt plugin
-hi Todo                 ctermfg=13  cterm=reverse 
+hi Todo                 ctermfg=13              cterm=reverse 
 hi TodoPriorityA        ctermfg=1
 hi TodoPriorityB        ctermfg=5
 hi TodoPriorityC        ctermfg=13
-hi TodoProject          ctermfg=6
-hi TodoContext          ctermfg=4
+hi TodoProject          ctermfg=6   ctermbg=0
+hi TodoContext          ctermfg=4   ctermbg=0
 hi TodoDone             ctermfg=11
-hi TodoKey              ctermfg=10
-hi TodoDate             ctermfg=9
+hi TodoKey              ctermfg=10  ctermbg=0
+hi TodoDate             ctermfg=9   ctermbg=0
 
-" Status line highlights
+" Custom statusline highlight groups
 hi FilepathStatusColor  ctermfg=12  ctermbg=0
 hi ModifiedFlagColor    ctermfg=1   ctermbg=0
 
