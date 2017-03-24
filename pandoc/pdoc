@@ -6,28 +6,32 @@
 # example output: mypaper.md.docx
 # author: gabenespoli@gmail.com
 
-# parse input
-filename="$1"
-shift
-extension=".${filename##*.}"
-if [ "$extension" == '.md' ]; then
-    outputType="docx"
-elif [ "$extension" == '.docx' ]; then
-    outputType="md"
-else
-    echo "invalid filetype"
-    return
-fi
-outputfile=${filename}.${outputType}
-
-# defaults
+## defaults
 args=""
 bibtexfile="$HOME/.pandoc/library.bib"
 cslfile="$HOME/.pandoc/apa-no-doi-no-issue.csl"
 refdocx="$HOME/.pandoc/apa.docx"
 open_after_convert=false
 
-# loop input and set args
+## parse filename and set output type
+inputFile="$1"
+shift
+inputExt=".${inputFile##*.}"
+if [ "$inputExt" == '.md' ]; then
+    inputType="markdown"
+    outputType="docx"
+    outputExt=".docx"
+elif [ "$inputExt" == '.docx' ]; then
+    inputType="docx"
+    outputType="markdown"
+    outputExt=".md"
+else
+    echo "Invalid filetype."
+    return
+fi
+outputFile=${inputFile}${outputExt}
+
+## user-defined
 for arg in $@
 do
     case "$arg" in
@@ -40,38 +44,74 @@ do
     esac
 done
 
-# create a temp file so that changes may be made to the file before converting it
-tmpfile=".tmp_"$filename
-cp "$filename" "$tmpfile"
-outputfile=${filename}.${outputType}
+## prepare input
+case "$inputType" in
+    md )
+        tmpFile="${inputFile}.tmp" # don't want to change original .md file
+        cp "$inputFile" "$tmpFile"
+        inputFile="$tmpFile" # set temp file name to filename
+        perl -pi -e 's/\{\=\=(.*?)\=\=\}/\{\=\=\<span\ custom\-style\=\"CriticHighlight\"\>\1\<\/span\>\=\=\}/g' "$inputFile"
+        perl -pi -e 's/\{\>\>(.*?)\<\<\}/\{\>\>\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>\<\<\}/g' "$inputFile"
+        perl -pi -e 's/\{\-\-(.*?)\-\-\}/\{\-\-\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>\-\-\}/g' "$inputFile"
+        perl -pi -e 's/\{\+\+(.*?)\+\+\}/\{\+\+\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>\+\+\}/g' "$inputFile"
+        perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpFile"
+        #TODO delete critic parts marked for deletion? optionally?
+        args="${args} --reference-docx=${refdocx}" # reference file for styles
+        ;;
+    docx )
+        args="${args} --wrap=none --atx-headers --extract-media=docxmedia --track-changes=all"
+        ;;
+esac
 
-# stuff specific to docx
-if [ $outputType == "docx" ]; then
-    # add word character styles to critic markdown tags
-    perl -pi -e 's/\{\=\=(.*?)\=\=\}/\{\=\=\<span\ custom\-style\=\"CriticHighlight\"\>\1\<\/span\>\=\=\}/g' "$tmpfile"
-    perl -pi -e 's/\{\>\>(.*?)\<\<\}/\{\>\>\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>\<\<\}/g' "$tmpfile"
-    perl -pi -e 's/\{\-\-(.*?)\-\-\}/\{\-\-\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>\-\-\}/g' "$tmpfile"
-    perl -pi -e 's/\{\+\+(.*?)\+\+\}/\{\+\+\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>\+\+\}/g' "$tmpfile"
-    perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpfile"
-#TODO delete critic parts marked for deletion? optionally?
-    #perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpfile"
-    # reference file for styles
-    args="${args} --reference-docx=${refdocx}"
-fi
-
-# actual call to pandoc
+## call pandoc
 pandoc \
--f markdown $tmpfile \
--t $outputType -o $outputfile \
+-f $inputType $inputFile \
+-t $outputType -o $outputFile \
 --smart \
 --standalone \
 $args
 
-# remove the temp file
-rm $tmpfile
+## adjust output
+case "$outputType" in
+    md )
+        # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
+        perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$2"
 
-# open the new file
+        # first match a space before to avoid double spaces 
+        # word doesn't include the deleted space in the deletion, and instead uses smart spacing itself
+        # this means we have to do some smart spacing ourselves
+        perl -pi -e 's/\ \[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$2"
+        perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$2"
+        perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$2"
+
+        # replace backslash-escaped square brackets with plain square brackets
+        # (this is so that pandoc citations are interpreted as code and not text)
+        perl -pi -e 's/\\\[/\[/g' "$2"
+        perl -pi -e 's/\\\]/\]/g' "$2"
+
+        # replace &lt; and &gt; with < and >
+        perl -pi -e 's/\&lt\;/\</g' "$2"
+        perl -pi -e 's/\&gt\;/\>/g' "$2"
+
+        # replace curly apostrophes and quotes with straight ones
+        perl -pi -e 's/”/"/g' "$2"
+        perl -pi -e 's/“/"/g' "$2"
+        perl -pi -e "s/’/'/g" "$2"
+        perl -pi -e "s/‘/'/g" "$2"
+
+        # replace en and em dashes with pandoc multi-hyphens
+        perl -pi -e 's/–/--/g' "$2"
+        perl -pi -e 's/—/---/g' "$2"
+
+        # TODO replace elipses with dots
+        ;;
+    docx )
+        #rm "$tmpFile"
+        ;;
+esac
+
+## open the new file
 if [ $open_after_convert == true ]; then
-    open $outputfile
+    open $outputFile
 fi
 
