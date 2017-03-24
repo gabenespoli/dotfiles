@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# pandoc_docxtomd
+#   USAGE: pandoc_docxtomd input.docx output.md
+
+pandoc -s -S \
+-f docx $1 \
+-t markdown -o $2 \
+--wrap=none \
+--atx-headers \
+--extract-media=docxmedia \
+--track-changes=all \
+--filter=span2git.py
+
+# the span2critic.py filter comes from here: https://groups.google.com/forum/#!topic/pandoc-discuss/GKBP_9lzZKg
+# span2critic.py:  https://gist.github.com/HeirOfNorton/3dc2795f6307145cf7cb
+# criticpandoc.py: https://gist.github.com/HeirOfNorton/7dbcaa7c22297fe1b303
+
+# use this code if using span2critic.py to fix comments (span2critic doesn't convert comments to critic markup)
+# (capture 1 is the comment; capture 3 is the highlighted text)
+perl -pi -e 's/\[(?!\-|\@)(.*?)\]\{\.comment\-start(.*?)\}(.*?)\[\]\{\.comment\-end(.*?)\}/\ \{\=\=\3\=\=\}\{\>\>\1\<\<\}/g' $2
+
+
+# use this code if NOT using span2critic.py
+# this replaces the output from the --track-changes=all tag with critic markup instead of span tags
+# (capture 2 is the comment; capture 3 is the highlight)
+#perl -pi -e 's/\<span\sclass\=\"comment\-start\"(.*?)\>(.*?)\<\/span\>(.*?)\<span\sclass\=\"comment\-end\"(.*?)\<\/span\>/\{\=\=\3\=\=\}\{\>\>\2\<\<\}/g' $2
+#perl -pi -e 's/\<span\sclass\=\"insertion\"(.*?)\>(.*?)\<\/span\>/\{\+\+\2\+\+\}/g' $2
+#perl -pi -e 's/\<span\sclass\=\"deletion\"(.*?)\>(.*?)\<\/span\>/\{\-\-\2\-\-\}/g' $2
+
+# replace backslash-escaped square brackets with plain square brackets
+# (this is so that pandoc citations are interpreted as code and not text)
+perl -pi -e 's/\\\[/\[/g' $2
+perl -pi -e 's/\\\]/\]/g' $2
+
+# replace &lt; and &gt; with < and >
+perl -pi -e 's/\&lt\;/\</g' $2
+perl -pi -e 's/\&gt\;/\>/g' $2
+

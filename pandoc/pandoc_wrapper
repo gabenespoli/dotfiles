@@ -1,0 +1,82 @@
+#!/bin/bash
+
+# pandoc wrapper
+# usage: pandoc_wrapper input.md [options]
+# output eg: input.docx
+
+# gabenespoli@gmail.com
+
+# defaults
+outputType="docx"
+args=""
+argStandalone="--standalone"
+argSmart="--smart"
+bibtexfile="$HOME/bin/cite/library.bib"
+cslfile="$HOME/bin/pandoc/apa-no-doi-no-issue.csl"
+refdocx="$HOME/bin/pandoc/apa.docx"
+open_after_convert=false
+
+# loop input and set args
+for arg in $@
+do
+    case "$arg" in
+        standalone|s )
+            argStandalone="--standalone" ;;
+        nostandalone|nos )
+            argStandalone="" ;;
+        smart|S )
+            args="--smart" ;;
+        nosmart|noS )
+            argSmart="" ;;
+        toc )
+            args="${args} --toc" ;;
+        refs|ref )
+            args="${args} --filter pandoc-citeproc --bibliography=${bibtexfile} --csl=${cslfile}" ;;
+        docx|latex )
+            outputType="$arg" ;;
+        open )
+            open_after_convert=true ;;
+        * )
+            pathname=$(dirname "${arg}")
+            cd $pathname
+            fullname=$(basename "${arg}")
+            extension=".${fullname##*.}"
+            #filename=$(basename "${fullname} .md")
+            filename="$fullname"
+            ;;
+    esac
+done
+
+# create a temp file so that changes may be made to the file before converting it
+tmpfile=".tmp_"$filename
+cp "$filename" "$tmpfile"
+outputfile=${filename}.${outputType}
+
+# stuff specific to docx
+if [ $outputType == "docx" ]; then
+    # add word character styles to critic markdown tags
+    perl -pi -e 's/\{\=\=(.*?)\=\=\}/\{\=\=\<span\ custom\-style\=\"CriticHighlight\"\>\1\<\/span\>\=\=\}/g' "$tmpfile"
+    perl -pi -e 's/\{\>\>(.*?)\<\<\}/\{\>\>\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>\<\<\}/g' "$tmpfile"
+    perl -pi -e 's/\{\-\-(.*?)\-\-\}/\{\-\-\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>\-\-\}/g' "$tmpfile"
+    perl -pi -e 's/\{\+\+(.*?)\+\+\}/\{\+\+\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>\+\+\}/g' "$tmpfile"
+    perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpfile"
+#TODO delete critic parts marked for deletion? optionally?
+    #perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpfile"
+    # reference file for styles
+    args="${args} --reference-docx=${refdocx}"
+fi
+
+# actual call to pandoc
+pandoc \
+-f markdown $tmpfile \
+-t $outputType -o $outputfile \
+$argStandalone $argSmart \
+$args
+
+# remove the temp file
+rm $tmpfile
+
+# open the new file
+if [ $open_after_convert == true ]; then
+    open $outputfile
+fi

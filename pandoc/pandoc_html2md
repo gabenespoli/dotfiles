@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# pandoc_html2md
+#   USAGE: pandoc_html2md input.html output.md
+
+pandoc -s -S \
+-f html $1 \
+-t markdown -o $2 \
+--wrap=none \
+--atx-headers
+
+# remove all html tags
+perl -0777 -pe 's/<[^>]*>//gs' $2 > $2"~"
+mv $2"~" $2
+
+# remove duplicated newlines
+cat -s $2 > $2"~"
+mv $2"~" $2

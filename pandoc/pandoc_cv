@@ -1,0 +1,8 @@
+#!/bin/bash
+
+filename=$(basename -s .md $1)".docx"
+
+pandoc -s -S \
+-f markdown $1 \
+-t docx -o $filename \
+--reference-docx $HOME/Dropbox/research/admin/cv/cv_template.docx \
