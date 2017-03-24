@@ -1,42 +1,20 @@
 #!/bin/bash
 
-# .bashrc file for Gabriel A. Nespoli
-# gabenespoli@gmail.com
+# https://github.com/gabenespoli/dotfiles/bashrc
 
-# System-specific stuff
-# ---------------------
+## System-specific options
 
-# On a mac, add this to .bash_profile
-# if [ -f $HOME/.bashrc ]; then
-#       . $HOME/.bashrc
-# fi
-
-# Specify terminal depending on the machine
-#if [ $HOSTNAME == "gmac" ] || [ $HOSTNAME == "gmac.local" ] || [ $HOSTNAME == "smartmacpro" ]
-#then export TERM=xterm-256color-italic
-#else export TERM=xterm-256color
-#fi
-#export TERM=xterm-256color
-
-# Mac Options
-if [ "$(uname)" == "Darwin" ]
-then
+if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias ls="ls -hl"
     alias la="ls -hla"
     alias lsa="ls -hla"
-    #export LSCOLORS=exFxbxdxBxegedabagacad # colors for ls
+   #export LSCOLORS=exfxcxdxbxegedabagacad # macOS default from `man ls`
+   #                1 2 3 4 5 6 7 8 9 1011
+   #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made
+    export LSCOLORS=exgxcxdxfxegedabagacad
     export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"' # tab titles
     
-    # disable ctrl-y as delayed suspend so that it can be re-bound in mutt
-    #stty dsusp undef
-
-    #powerline-daemon -q
-    #POWERLINE_BASH_CONTINUATION=1
-    #POWERLINE_BASH_SELECT=1
-    #. /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-
-# Linux Options
-else
+else # Linux options
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
@@ -46,7 +24,7 @@ else
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     eval `dircolors $HOME/.dir_colors/dircolors`
-    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;35:ex=0;31:ow=30;42:' ; export LS_COLORS
+    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
     setxkbmap -option altwin:swap_alt_win
@@ -64,7 +42,6 @@ export VIMPAGER_RC="$HOME/.vimrc"
 #export LESS_TERMCAP_so=$'\e[30;43m'
 
 ## Aliases & Functions
-# -------------------
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
@@ -75,17 +52,21 @@ alias fold="fold -s"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias lsl='printf "\033c" && ls'
-alias lsg='git status'
-alias gls='git status'
 alias gf="python $HOME/bin/utils/gf.py"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
 
+# git
+alias lsg='git status'
+alias gls='git status'
+alias gc='git commit'
+alias gd='git diff'
+alias gitlog="git log --graph --decorate --oneline"
+
 # notes
 function notes() { vim "$(gf $@)/notes.md" ; }
 alias wf="python ~/bin/Workflows/Workflows.py ~/r/notes/"
-
 
 # calendar and todo
 alias trello="$HOME/bin/trello-cli/bin/trello"
@@ -139,8 +120,6 @@ alias efgh="ssh efgh@192.168.1.12"
 alias hrcommons="open vnc://141.117.114.20"
 
 # misc shortcuts
-alias gitlog="git log --graph --decorate --oneline"
 alias paper="vim -c 'call CenWinEnable(100)' ~/r/gv/paper/Nespoli2017.md"
 alias dis="vim -c 'call CenWinEnable(100)' -c 'call CenWinTodoEnable()' ~/r/phd/NespoliPhDProposal.md"
-#source $HOME/bin/utils/tabnew.sh
 
