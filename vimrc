@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'gabenespoli/vim-cenwin'
 
+Plugin 'vifm/vifm.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-pandoc/vim-pandoc'
@@ -207,6 +208,9 @@ let g:calendar_google_calendar = 1
 let g:calendar_week_number = 1
 let g:calendar_views = ['year', 'month', 'week', 'day_4', 'agenda', 'event']
 let g:calendar_view = 'agenda'
+
+" vifm
+nnoremap <leader>O :EditVifm
 
 " CtrlP
 let g:ctrlp_map = '<leader>o'
