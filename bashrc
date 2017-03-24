@@ -58,8 +58,7 @@ function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
 
 # git
-alias lsg='git status'
-alias gls='git status'
+alias gs='git status'
 alias gc='git commit'
 alias gd='git diff'
 alias gitlog="git log --graph --decorate --oneline"
