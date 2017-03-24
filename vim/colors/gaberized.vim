@@ -5,10 +5,11 @@ let g:colors_name='gaberized'
 " Solarized customizations
 hi StatusLine           ctermfg=0   ctermbg=14  cterm=reverse
 hi StatusLineNC         ctermfg=0   ctermbg=10  cterm=reverse
-hi Search               ctermfg=9   ctermbg=8   cterm=reverse
 hi LineNr               ctermfg=8   ctermbg=10  cterm=reverse
-hi VertSplit            ctermfg=8   ctermbg=10  cterm=reverse
 hi FoldColumn           ctermfg=8   ctermbg=12  cterm=reverse
+hi VertSplit            ctermfg=8   ctermbg=0   cterm=reverse
+hi Search               ctermfg=9   ctermbg=8   cterm=reverse
+hi NonText              ctermfg=0   ctermbg=8   cterm=none
 
 hi DiffText             ctermfg=9   ctermbg=0
 hi DiffChange           ctermfg=12  ctermbg=0
