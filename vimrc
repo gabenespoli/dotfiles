@@ -55,7 +55,6 @@ syntax enable
 set background=dark
 
 "" Spaces & Tabs
-" -------------
 set linebreak           " stop soft wrapping in the middle of words
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
@@ -69,7 +68,6 @@ set foldlevel=20        " set a high fold level so that folds are open by defaul
 "set digraph             " use <BS> for accents (e.g., e<BS>' for é; e<BS>! for è; o<BS>: for ö)
 
 "" UI Config
-" ---------
 set number              " show line numbers
 set noshowcmd           " show command in bottom bar
 set wildmode=longest,list,full
@@ -108,7 +106,6 @@ set statusline+=\ \         " <space><space>
 set statusline+=(%P)
 
 "" Keybindings
-"  -----------
 let mapleader = "\<Space>"
 set timeoutlen=500
 "inoremap <Esc> <Esc>l
@@ -151,12 +148,16 @@ nnoremap <leader>K :tabnext<CR>
 
 " movement
 nnoremap j gj
-vnoremap j gj
 nnoremap k gk
-vnoremap k gk
+nnoremap gj j
+nnoremap gk k
 nnoremap <Down> gj
-vnoremap <Down> gj
 nnoremap <Up> gk
+vnoremap j gj
+vnoremap k gk
+vnoremap gj j
+vnoremap gk k
+vnoremap <Down> gj
 vnoremap <Up> gk
 nnoremap W 5w
 vnoremap W 5w
@@ -189,14 +190,15 @@ nnoremap <leader>N :set invnumber<CR>
 nnoremap <leader>F :call ToggleStatusBar()<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
+nnoremap <leader>i :set list!<CR>
 
 " work signature
 nnoremap <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
 
 "" Plugin settings
-" ---------------
 " CenWin
-nnoremap <leader>C :call CenWinToggle(0)<CR>
+nnoremap <leader>c :call CenWinToggle(80)<CR>
+nnoremap <leader>C :call CenWinToggle(100)<CR>
 nnoremap <localleader>l :call CenWinOutlineEnable(0,1)<CR>
 nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
 nnoremap <localleader>q :call CenWinTodoToggle()<CR>
@@ -210,7 +212,7 @@ let g:calendar_views = ['year', 'month', 'week', 'day_4', 'agenda', 'event']
 let g:calendar_view = 'agenda'
 
 " vifm
-nnoremap <leader>O :EditVifm
+nnoremap <leader>O :EditVifm<CR>
 
 " CtrlP
 let g:ctrlp_map = '<leader>o'
@@ -260,7 +262,6 @@ set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
 
 "" Functions
-" ---------
 function! GetSyntaxUnderCursor() 
     let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
     return g:SyntaxUnderCursor
