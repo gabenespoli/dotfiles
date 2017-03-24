@@ -54,7 +54,7 @@ fi
 
 ## Environment vars
 # ----------------
-export PATH="$HOME/bin:$HOME/bin/pandoc:/usr/local/texbin:/usr/local/lib:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/texbin:/usr/local/lib:/usr/local/bin:$PATH"
 export EDITOR='vim' # set default text editor
 export GOOGLER_COLORS=Lecgxy
 export CLICOLOR=1 # colors for ls
@@ -100,6 +100,7 @@ alias cwork='printf "\033c" && gcalcli agenda --calendar Research --calendar htt
 alias clab='printf "\033c" && gcalcli agenda --calendar SINGS --calendar AUDIOMETER\ booking'
 
 # others
+alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
 alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
