@@ -375,7 +375,7 @@ nnoremap <f8> :delete<cr>
 
 
 nnoremap q :q<cr>
-map <C-j> <cr>
 nnoremap o l
 nnoremap i h
 nnoremap dt :! trash %f &<cr>
+nnoremap gp :! $HOME/.pandoc/pdoc %f &<cr>
