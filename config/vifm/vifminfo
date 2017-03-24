@@ -1,0 +1,206 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/Users/gmac/
+	..
+1490311507
+'b
+	/Users/gmac/bin/
+	..
+1490311507
+'h
+	/Users/gmac/
+	..
+1490311507
+'z
+	/Users/gmac/.config/vifm
+	..
+1490311507
+
+# Bookmarks:
+
+# TUI:
+ar
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/Users/gmac
+	Desktop
+2
+d/Users/gmac/Desktop
+	..
+0
+d/Users/gmac
+	Dropbox
+5
+d/Users/gmac/Dropbox
+	EGshare
+3
+d/Users/gmac/Dropbox/EGshare
+	..
+0
+d/Users/gmac/Dropbox
+	EGshare
+3
+d/Users/gmac
+	Music
+9
+d/Users
+	gmac
+2
+d/
+	Users
+4
+d/Users
+	gmac
+2
+d/Users/gmac
+	bin
+12
+d/Users/gmac/bin
+	r
+13
+d/Users/gmac/bin/r
+	..
+0
+d/Users/gmac/bin
+	r
+13
+d/Users/gmac/bin/r
+	cortable.r
+1
+d/Users/gmac/bin
+	r
+13
+d/Users/gmac
+	Desktop
+2
+d/Users/gmac/Desktop
+	..
+0
+d/Users/gmac
+	Desktop
+2
+d/Users/gmac/Desktop
+	..
+0
+d/Users/gmac
+	Desktop
+2
+d/Users/gmac/.config
+	vifm
+14
+d/Users/gmac/.config/vifm
+	colors
+1
+d/Users/gmac/.config/vifm/colors
+	solarized-dark.vifm
+2
+d/Users/gmac
+	eeg_options.m
+23
+d/Users/gmac/.config/vifm
+	vifmrc
+6
+d/Users/gmac/r/ec
+	scripts
+7
+d
+
+# Right window history (oldest to newest):
+D/Users/gmac/Desktop
+	..
+0
+D/Users/gmac/r
+	..
+0
+D/Users/gmac
+	Desktop
+2
+D/Users/gmac/Desktop
+	..
+0
+D/Users/gmac/r
+	..
+0
+D/Users/gmac/Desktop
+	..
+0
+D/Users/gmac
+	Desktop
+2
+D/Users/gmac/Desktop
+	..
+0
+D/Users/gmac
+	local
+16
+D/Users/gmac/local
+	matlab
+1
+D/Users/gmac/local/matlab
+	..
+0
+D/Users/gmac/local
+	matlab
+1
+D/Users/gmac
+	notes
+20
+D/Users/gmac/notes
+	..
+0
+D/Users/gmac
+	r
+22
+D/Users/gmac/r
+	gv
+5
+D/Users/gmac/r/gv
+	all.csv
+10
+D
+
+# Command line history (oldest to newest):
+:touch test.md
+:h
+:colorscheme
+:colorscheme solarized-dark
+:q
+:cd .config
+:map i
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+ptest.md
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/Users/gmac/.local/share/vifm/Trash/000_project meeting +gv 2017-03-23.md
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/Users/gmac/.local/share/vifm/Trash/000_meeting with carson 2017-03-23.md
+	/Users/gmac/notes/meeting with carson 2017-03-23.md
+t/Users/gmac/.local/share/vifm/Trash/000_project meeting +gv 2017-03-23.md
+	/Users/gmac/notes/project meeting +gv 2017-03-23.md
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
