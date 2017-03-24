@@ -45,6 +45,7 @@ macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to t
 bind    index               <Esc>n  toggle-new # // default is N
 bind    generic             N       search-opposite # // default is \eN; N is default for toggle-new
 bind    index,pager,compose N       search-opposite
+bind    index               =       limit # // default is l; this is the filter key in vifm
 
 ## External
 bind    editor          <Tab>   complete-query # goobook auto-completion
