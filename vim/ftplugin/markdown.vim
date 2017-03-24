@@ -16,6 +16,7 @@ nnoremap <localleader>c F{df}
 
 " Pandoc Plugin
 au VimEnter * :set syntax=pandoc
+au VimEnter * :call CenWinEnable(100)
 function! GabePandocForce()
     hi pandocEmphasis cterm=none ctermfg=7
     hi pandocStrongEmphasis cterm=none ctermfg=15
