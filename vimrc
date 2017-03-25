@@ -26,6 +26,8 @@ Plugin 'vim-scripts/todo-txt.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/TaskList.vim'
 Plugin 'itchyny/calendar.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-scripts/YankRing.vim'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
@@ -54,6 +56,10 @@ colorscheme gaberized
 syntax enable
 set background=dark
 
+"" File stuff
+set undofile
+set gdefault
+
 "" Spaces & Tabs
 set linebreak           " stop soft wrapping in the middle of words
 set tabstop=4           " number of visual spaces per TAB
@@ -69,6 +75,7 @@ set foldlevel=20        " set a high fold level so that folds are open by defaul
 
 "" UI Config
 set number              " show line numbers
+set relativenumber
 set noshowcmd           " show command in bottom bar
 set wildmode=longest,list,full
 set wildmenu            " visual autocomplete for command menu
@@ -192,13 +199,10 @@ nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
 nnoremap <leader>i :set list!<CR>
 
-" work signature
-nnoremap <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
-
 "" Plugin settings
 " CenWin
-nnoremap <leader>c :call CenWinToggle(80)<CR>
-nnoremap <leader>C :call CenWinToggle(100)<CR>
+nnoremap <leader>C :call CenWinToggle(0)<CR>
+nnoremap <localleader>c :call CenWinToggleWidth()<CR>
 nnoremap <localleader>l :call CenWinOutlineEnable(0,1)<CR>
 nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
 nnoremap <localleader>q :call CenWinTodoToggle()<CR>
@@ -290,6 +294,7 @@ endfunction
 function! MuttMailMode()
     exe ":call CenWinToggle(80)"
     setlocal textwidth=0 wrapmargin=0 wrap linebreak laststatus=0 nonumber
+    nnoremap <buffer> <localleader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
     "setlocal nocp 
     exe "/^$"
 endfunc
