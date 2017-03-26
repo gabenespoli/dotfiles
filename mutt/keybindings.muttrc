@@ -30,6 +30,9 @@ bind    index,pager     I       sort-mailbox        # default (o) is used for op
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro   index           c       '<change-folder>?<toggle-mailboxes>'    # default is y
+bind    index           y       change-folder                           # default is c
+macro   index           P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>'
 
 ## Actions
 #bind    index,pager     R       group-reply        # default (g) is used for go to top; default for R is recall-message
