@@ -218,6 +218,9 @@ let g:calendar_view = 'agenda'
 " vifm
 nnoremap <leader>O :EditVifm<CR>
 
+" yankring
+let g:yankring_history_dir = '$VIM'
+
 " CtrlP
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -293,7 +296,8 @@ endfunction
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
     exe ":call CenWinToggle(80)"
-    setlocal textwidth=0 wrapmargin=0 wrap linebreak laststatus=0 nonumber
+    setlocal textwidth=0 wrapmargin=0 wrap linebreak laststatus=0
+    set nonumber
     nnoremap <buffer> <localleader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
     "setlocal nocp 
     exe "/^$"
