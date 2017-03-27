@@ -68,9 +68,10 @@ function notes() { vim "$(gf $@)/notes.md" ; }
 alias wf="python ~/bin/Workflows/Workflows.py ~/r/notes/"
 
 # calendar and todo
+alias tasks='printf "\033c" && task calendar && task next && task summary'
+alias t="todo.sh -a"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 #alias t="$HOME/bin/trello-cli_wrapper.sh"
-alias t="todo.sh -a"
 alias gcal="gcalcli --includeRc"
 alias c="$HOME/bin/gcalcli_wrapper.sh"
 #alias ca="c agenda Gabe EGcal Research trello"
