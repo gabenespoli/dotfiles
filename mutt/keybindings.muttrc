@@ -2,45 +2,45 @@
 # Gabe Nespoli (gabenespoli@gmail.com)
 
 ## Scrolling (like vim)
+bind    pager           j       next-line
+bind    pager           k       previous-line
+bind    index,pager     \Ce     next-line           # default is <Enter>; ^E is default for edit-type
+bind    index,pager     \Cy     previous-line       # default is <Backspace>
+bind    index,pager     \Cd     half-down           # default for index is ]
+bind    index,pager     \Cu     half-up             # default for index is [
+bind    index,pager     \Cf     next-page           # default is <Space>; ^F is default for forget-passphrase
+bind    index,pager     \Cb     previous-page       # default is -; ^B is default for urlview/urlscan
 bind    index           gg      first-entry         # default is =; g is default for group-reply
 bind    index           G       last-entry          # default is *
 bind    pager           gg      top                 # default is ^; g is default for group-reply
 bind    pager           G       bottom              # default is <End>
-bind    index,pager     \Ce     next-line           # default is <Enter>; ^E is default for edit-type
-bind    index,pager     \Cy     previous-line       # default is <Backspace>
-bind    pager           j       next-line
-bind    pager           k       previous-line
-bind    index,pager     \Cu     half-up             # default for index is [
-bind    index,pager     \Cd     half-down           # default for index is ]
-bind    pager           [       half-up             # by default this is not bound in the pager
-bind    pager           ]       half-down           # by default this is not bound in the pager
-bind    index,pager     \Cb     previous-page       # default is -; ^B is default for urlview/urlscan
-bind    index,pager     \Cf     next-page           # default is <Space>; ^F is default for forget-passphrase
-
-## Navigation
 bind    pager           J       next-undeleted      # default is j; J is default for next-entry
 bind    pager           K       previous-undeleted  # default is k; K is default for next-entry
+bind    pager           [       half-up             # by default this is not bound in the pager
+bind    pager           ]       half-down           # by default this is not bound in the pager
+
+## Navigation
 bind    index           o       display-message     # default is <Space>
 bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    attach          <Space> view-attach         # <Space> is not bound by default in attach
-bind    generic         i       exit
-bind    index           i       noop                # unbind i in the index so we don't exit mutt
-#bind    pager,attach    i       exit                # default is q (sometimes i)
+#bind    generic         i       exit
+macro   index           i       '<change-mailbox>=INBOX<enter>' # change i in the index so we don't exit mutt
+bind    pager,attach    i       exit                # default is q (sometimes i)
 bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 macro   index           c       '<change-folder>?<toggle-mailboxes>'    # default is y
 bind    index           y       change-folder                           # default is c
-macro   index           P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>'
 
 ## Actions
 #bind    index,pager     R       group-reply        # default (g) is used for go to top; default for R is recall-message
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
 bind    index,pager     p       recall-message      # default (R) is used for group-reply; default for p is to print
 bind    compose         p       postpone-message
-macro   compose         g       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n"
-macro   compose         r       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n"
+macro   index           P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>'
+macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
+macro   compose         f       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n" "Set from to alternate email <gabe@psych.ryerson.ca>"
 macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
 macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 
@@ -63,6 +63,6 @@ macro   index,pager     gi      "<change-folder>=INBOX<enter>"                  
 macro   index,pager     ga      "<change-folder>=Archive<enter><limit>all<enter>"       "Go to Archive"
 macro   index,pager     gd      "<change-folder>=Drafts<enter>"                         "Go to Drafts"
 macro   index,pager     gx      "<change-folder>=Trash<enter>"                          "Go to Trash"
-macro   index,pager     gf      "<change-folder>=Archive<enter><limit>~F<enter>"        "Go to Starred conversations"
+macro   index,pager     gf      "<change-folder>=Archive<enter><limit>~F<enter>"        "Go to Flagged conversations"
 macro   index,pager     gs      "<change-folder>=Archive<enter><limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Go to Sent messages"
 
