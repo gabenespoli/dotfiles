@@ -138,6 +138,10 @@ command! reload :write | restart
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+" text files
+fileviewer *.m 
+        \ vimpager %c -
+
 " Pdf
 filextype *.pdf
         \ {Open in Preview}
@@ -288,7 +292,7 @@ fileviewer *.docx, docx2txt.pl %f -
 " Like in previous versions of vifm
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+set vifminfo=dhistory,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " ------------------------------------------------------------------------------
@@ -372,10 +376,12 @@ nnoremap <f8> :delete<cr>
 " nnoremap <left> <nop>
 
 
-
+" these are my custom settings
 
 nnoremap q :q<cr>
 nnoremap o l
 nnoremap i h
 nnoremap dt :! trash %f &<cr>
 nnoremap gp :! $HOME/.pandoc/pdoc %f &<cr>
+
+set sort=name,dir
