@@ -9,10 +9,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'gabenespoli/vim-cenwin'
+"Plugin 'gabenespoli/vim-cenwin'
+Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 Plugin 'vifm/vifm.vim'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -137,8 +138,8 @@ nnoremap <leader>p "+p
 set clipboard=unnamed
 
 " buffers & tabs
-nnoremap <leader>j :bprevious<CR>
-nnoremap <leader>k :bnext<CR>
+nnoremap <leader>[ :bprevious<CR>
+nnoremap <leader>] :bnext<CR>
 nnoremap <leader>1 :b1<CR>
 nnoremap <leader>2 :b2<CR>
 nnoremap <leader>3 :b3<CR>
@@ -147,11 +148,13 @@ nnoremap <leader>5 :b5<CR>
 nnoremap <leader>6 :b6<CR>
 nnoremap <leader>7 :b7<CR>
 nnoremap <leader>8 :b8<CR>
-nnoremap <leader>9 :b9<CR>
+nnoremap <leader>9 :bprevious<CR>
+nnoremap <leader>0 :bnext<CR>
+
 nnoremap <leader>b :ls<CR>
 nnoremap <leader>B :ls!<CR>
-nnoremap <leader>J :tabprevious<CR>
-nnoremap <leader>K :tabnext<CR>
+nnoremap <leader>{ :tabprevious<CR>
+nnoremap <leader>} :tabnext<CR>
 
 " movement
 nnoremap j gj
@@ -193,7 +196,7 @@ nnoremap <localleader>s 1z=
 
 " Toggles
 nnoremap <leader>G :GitGutterToggle<CR>
-nnoremap <leader>N :set invnumber<CR>
+nnoremap <leader>N :set invrelativenumber<CR>:set invnumber<CR>
 nnoremap <leader>F :call ToggleStatusBar()<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
@@ -297,7 +300,7 @@ endfunction
 function! MuttMailMode()
     exe ":call CenWinToggle(80)"
     setlocal textwidth=0 wrapmargin=0 wrap linebreak laststatus=0
-    set nonumber
+    set norelativenumber nonumber
     nnoremap <buffer> <localleader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
     "setlocal nocp 
     exe "/^$"
