@@ -1,3 +1,4 @@
 .*~
 .DS_Store
 task/*.data
+config/vifm/vifminfo
