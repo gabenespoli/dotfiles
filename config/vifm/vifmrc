@@ -86,7 +86,7 @@ set scrolloff=4
 set slowfs=curlftpfs
 
 " Set custom status line look
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+set statusline="  %= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 mark b ~/bin/
@@ -139,8 +139,9 @@ command! reload :write | restart
 " program.
 
 " text files
+filextype *.m vim %c
 fileviewer *.m 
-        \ vimpager %c -
+        \ vimcat %f
 
 " Pdf
 filextype *.pdf
@@ -255,9 +256,12 @@ filetype *.img open
 filetype *.pkg open
 
 " Office files
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt open -a Microsoft\ Word.app
+filextype *.odt,*.doc,*.docx,*.odp open -a Microsoft\ Word.app
+filextype *.xls,*.xlsx open -a Microsoft\ Excel.app
+filextype *.pptx,*.ppt open -a Microsoft\ PowerPoint.app
 fileviewer *.doc antiword -
-fileviewer *.docx, docx2txt.pl %f -
+"fileviewer *.docx, docx2txt.pl %f -
+fileviewer *.docx, pandoc -f docx -t markdown %f --atx-headers
 
 " Syntax highlighting in preview
 "
@@ -317,10 +321,6 @@ nnoremap s :shell<cr>
 " Display sorting dialog
 nnoremap S :sort<cr>
 
-" Toggle visibility of preview window
-nnoremap w :view<cr>
-vnoremap w :view<cr>gv
-
 " Open file in new MacVim tab
 "nnoremap o :!mvim --remote-tab-silent %f<cr>
 " Open file in new MacVim window
@@ -379,9 +379,19 @@ nnoremap <f8> :delete<cr>
 " these are my custom settings
 
 nnoremap q :q<cr>
+" open files (or go forward) with o
 nnoremap o l
+" go back with i
 nnoremap i h
+" move to trash (mac only)
 nnoremap dt :! trash %f &<cr>
+" convert between docx & md using pdoc, my pandoc wrapper
 nnoremap gp :! $HOME/.pandoc/pdoc %f &<cr>
+" set w to switch between panes (kind of like move by word)
+nnoremap w <Space>
+" Toggle visibility of preview window
+nnoremap <Space> :view<cr>
+vnoremap <Space> :view<cr>gv
+
 
 set sort=name,dir
