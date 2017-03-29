@@ -24,7 +24,7 @@ bind    index           o       display-message     # default is <Space>
 bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    attach          <Space> view-attach         # <Space> is not bound by default in attach
 #bind    generic         i       exit
-macro   index           i       '<change-mailbox>=INBOX<enter>' # change i in the index so we don't exit mutt
+macro   index           i       '<change-folder>=INBOX<enter>' # change i in the index so we don't exit mutt
 bind    pager,attach    i       exit                # default is q (sometimes i)
 bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message
@@ -38,7 +38,7 @@ bind    index           y       change-folder                           # defaul
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
 bind    index,pager     p       recall-message      # default (R) is used for group-reply; default for p is to print
 bind    compose         p       postpone-message
-macro   index           P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>'
+macro   index,pager     P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>' 'Open drafts in new tmux pane'
 macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
 macro   compose         f       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n" "Set from to alternate email <gabe@psych.ryerson.ca>"
 macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
