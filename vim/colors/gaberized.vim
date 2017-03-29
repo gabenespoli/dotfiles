@@ -8,7 +8,7 @@ hi StatusLineNC         ctermfg=0   ctermbg=10  cterm=reverse
 hi LineNr               ctermfg=8   ctermbg=10  cterm=reverse
 hi FoldColumn           ctermfg=8   ctermbg=12  cterm=reverse
 hi VertSplit            ctermfg=8   ctermbg=0   cterm=reverse
-hi Search               ctermfg=9   ctermbg=8   cterm=reverse
+hi Search               ctermfg=12  ctermbg=8   cterm=reverse
 hi NonText              ctermfg=0   ctermbg=8   cterm=none
 
 hi DiffText             ctermfg=9   ctermbg=0
@@ -21,6 +21,17 @@ hi mailHeader           ctermfg=10
 hi mailHeaderKey        ctermfg=4
 hi mailHeaderEmail      ctermfg=6
 hi mailSubject          ctermfg=3
+
+" Markdown
+hi markdownItalic       ctermfg=7   ctermbg=8   cterm=none
+hi markdownBold         ctermfg=15  ctermbg=8   cterm=none
+hi markdownHeadingDelimiter ctermfg=15  ctermbg=8   cterm=none
+hi markdownH1           ctermfg=15  ctermbg=8   cterm=none
+hi markdownH2           ctermfg=15  ctermbg=8   cterm=none
+hi markdownH3           ctermfg=15  ctermbg=8   cterm=none
+hi markdownH4           ctermfg=15  ctermbg=8   cterm=none
+hi markdownH5           ctermfg=15  ctermbg=8   cterm=none
+hi markdownH6           ctermfg=15  ctermbg=8   cterm=none
 
 " Plugin color customizations
 " DiffChar
