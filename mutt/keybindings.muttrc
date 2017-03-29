@@ -34,9 +34,8 @@ macro   index           c       '<change-folder>?<toggle-mailboxes>'    # defaul
 bind    index           y       change-folder                           # default is c
 
 ## Actions
-#bind    index,pager     R       group-reply        # default (g) is used for go to top; default for R is recall-message
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
-bind    index,pager     p       recall-message      # default (R) is used for group-reply; default for p is to print
+bind    index,pager     p       recall-message      # default (R) is used for offlineimap; default for p is to print
 bind    compose         p       postpone-message
 macro   index,pager     P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>' 'Open drafts in new tmux pane'
 macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
@@ -55,6 +54,7 @@ bind    editor          <Tab>   complete-query # goobook auto-completion
 macro   pager           b       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 macro   pager           B       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
 macro   index,pager     \er     "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
+macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
 macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
 #macro   index,pager     a       "<pipe-message>goobook add<enter>"                          "Add sender to Google contacts."
 
