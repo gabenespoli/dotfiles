@@ -32,7 +32,7 @@ color markers       red             white
 color attachment    white           default         
 color search        brightblack     brightred
 color status        brightyellow    black           
-color indicator     brightblack     blue          
+color indicator     brightblack     cyan
 color tree          yellow          default                                     # arrow in threads
 
 # basic monocolor screen
