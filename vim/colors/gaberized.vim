@@ -16,6 +16,12 @@ hi DiffChange           ctermfg=12  ctermbg=0
 hi DiffAdd              ctermfg=2   ctermbg=0
 hi DiffDelete           ctermfg=1   ctermbg=0
 
+" Mail compose colors
+hi mailHeader           ctermfg=10
+hi mailHeaderKey        ctermfg=4
+hi mailHeaderEmail      ctermfg=6
+hi mailSubject          ctermfg=3
+
 " Plugin color customizations
 " DiffChar
 hi _DiffDelPos          ctermfg=1   ctermbg=0   cterm=underline
