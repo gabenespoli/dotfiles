@@ -46,14 +46,14 @@ done
 
 ## prepare input
 case "$inputType" in
-    md )
+    md|markdown )
         tmpFile="${inputFile}.tmp" # don't want to change original .md file
         cp "$inputFile" "$tmpFile"
         inputFile="$tmpFile" # set temp file name to filename
-        perl -pi -e 's/\{\=\=(.*?)\=\=\}/\{\=\=\<span\ custom\-style\=\"CriticHighlight\"\>\1\<\/span\>\=\=\}/g' "$inputFile"
-        perl -pi -e 's/\{\>\>(.*?)\<\<\}/\{\>\>\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>\<\<\}/g' "$inputFile"
-        perl -pi -e 's/\{\-\-(.*?)\-\-\}/\{\-\-\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>\-\-\}/g' "$inputFile"
-        perl -pi -e 's/\{\+\+(.*?)\+\+\}/\{\+\+\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>\+\+\}/g' "$inputFile"
+        perl -pi -e 's/(\{\=\=.*?\=\=\})/\<span\ custom\-style\=\"CriticHighlight\"\>\1\<\/span\>/g' "$inputFile"
+        perl -pi -e 's/(\{\>\>.*?\<\<\})/\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>/g' "$inputFile"
+        perl -pi -e 's/(\{\-\-.*?\-\-\})/\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>/g' "$inputFile"
+        perl -pi -e 's/(\{\+\+.*?\+\+\})/\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpFile"
         #TODO delete critic parts marked for deletion? optionally?
         args="${args} --reference-docx=${refdocx}" # reference file for styles
@@ -64,16 +64,13 @@ case "$inputType" in
 esac
 
 ## call pandoc
-pandoc \
--f $inputType $inputFile \
--t $outputType -o $outputFile \
---smart \
---standalone \
-$args
+allargs="-f $inputType $inputFile -t $outputType -o $outputFile --smart --standalone $args"
+echo "pandoc "$allargs
+pandoc $allargs
 
 ## adjust output
 case "$outputType" in
-    md )
+    md|markdown )
         # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
         perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$2"
 
