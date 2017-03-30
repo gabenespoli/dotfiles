@@ -23,9 +23,9 @@ bind    pager           ]       half-down           # by default this is not bou
 bind    index           o       display-message     # default is <Space>
 bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    attach          <Space> view-attach         # <Space> is not bound by default in attach
-#bind    generic         i       exit
-macro   index           i       '<change-folder>=INBOX<enter>' # change i in the index so we don't exit mutt
+bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
 bind    pager,attach    i       exit                # default is q (sometimes i)
+macro   index           i       '<change-folder>=INBOX<enter>' # change i in the index so we don't exit mutt
 bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
