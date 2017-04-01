@@ -25,7 +25,26 @@ uda.trellolistname.default=Todo
 
 # Custom reports
 report.t.description=My custom report
-report.t.columns=id,depends,project,description,due.remaining,urgency
-report.t.labels=ID,Deps,Proj,Description,Due,Urg
+report.t.columns=id,project,description,due.remaining,urgency
+report.t.labels=ID,Proj,Description,Due,Urg
 report.t.sort=urgency-/,project+
 report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
+
+# Custom urgency coefficients
+urgency.user.tag.next.coefficient           = 15.0
+urgency.due.coefficient                     = 12.0
+urgency.blocking.coefficient                = 8.0
+urgency.uda.priority.H.coefficient          = 6.0
+urgency.uda.priority.M.coefficient          = 3.9
+urgency.uda.priority.L.coefficient          = 1.8
+urgency.active.coefficient                  = 4.0
+urgency.scheduled.coefficient               = 4.0
+urgency.age.coefficient                     = 0.0   # default 2.0
+urgency.annotations.coefficient             = 0.0   # default 1.0
+urgency.tags.coefficient                    = 0.0   # default 1.0
+urgency.project.coefficient                 = 0.0   # default 1.0
+urgency.blocked.coefficient                 = 0.0   # default -5.0
+urgency.waiting.coefficient                 = -3.0
+urgency.user.project.<project>.coefficient  = 5.0
+urgency.user.tag.<tag>.coefficient          = 5.0
+urgency.uda.<name>.coefficient              = 5.0
