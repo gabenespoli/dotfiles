@@ -3,19 +3,31 @@ so ~/.vim/colors/solarized.vim
 let g:colors_name='gaberized'
 
 " Solarized customizations
-hi StatusLine           ctermfg=0   ctermbg=14  cterm=reverse
-hi StatusLineNC         ctermfg=0   ctermbg=10  cterm=reverse
-hi LineNr               ctermfg=8   ctermbg=10  cterm=reverse
-hi FoldColumn           ctermfg=8   ctermbg=12  cterm=reverse
-hi VertSplit            ctermfg=8   ctermbg=0   cterm=reverse
-hi Search               ctermfg=12  ctermbg=8   cterm=reverse
-hi NonText              ctermfg=0   ctermbg=8   cterm=none
+hi StatusLine                                           cterm=none
+hi StatusLineNC                                         cterm=none
+hi TabLine              ctermfg=11      ctermbg=0       cterm=none
+hi TabLineFill          ctermfg=11      ctermbg=8       cterm=none
+hi TabLineSel           ctermfg=7       ctermbg=0       cterm=none
+hi LineNr               ctermfg=8       ctermbg=10      cterm=reverse
+hi FoldColumn           ctermfg=8       ctermbg=12      cterm=reverse
+hi VertSplit            ctermfg=8       ctermbg=0       cterm=reverse
+hi NonText              ctermfg=0       ctermbg=8       cterm=none
+hi MatchParen           ctermfg=1       ctermbg=10    
+
+hi Search               ctermfg=12      ctermbg=8       cterm=reverse
+hi IncSearch            ctermfg=12      ctermbg=8       cterm=reverse
+hi Visual               ctermfg=12      ctermbg=8       cterm=reverse
 
 hi DiffText             ctermfg=9   ctermbg=0
 hi DiffChange           ctermfg=12  ctermbg=0
 hi DiffAdd              ctermfg=2   ctermbg=0
 hi DiffDelete           ctermfg=1   ctermbg=0
 
+"" My custom statusline highlight groups
+hi ModifiedFlagColor    ctermfg=1    ctermbg=0
+"hi link ModifiedFlagColor StatusLine
+
+"" Syntax-specific
 " Mail compose colors
 hi mailHeader           ctermfg=10
 hi mailHeaderKey        ctermfg=4
@@ -33,7 +45,10 @@ hi markdownH4           ctermfg=15  ctermbg=8   cterm=none
 hi markdownH5           ctermfg=15  ctermbg=8   cterm=none
 hi markdownH6           ctermfg=15  ctermbg=8   cterm=none
 
-" Plugin color customizations
+" MATLAB
+hi matlabCellComment    ctermfg=11  ctermbg=0
+
+"" Plugin color customizations
 " DiffChar
 hi _DiffDelPos          ctermfg=1   ctermbg=0   cterm=underline
 
@@ -54,11 +69,7 @@ hi TodoDone             ctermfg=11
 hi TodoKey              ctermfg=10  ctermbg=0
 hi TodoDate             ctermfg=9   ctermbg=0
 
-" Custom statusline highlight groups
-hi FilepathStatusColor  ctermfg=12  ctermbg=0
-hi ModifiedFlagColor    ctermfg=1   ctermbg=0
-
-" solarized color codes reference
+"" solarized color codes reference
 "let s:vmode       = "cterm"
 "let s:base03      = "8"
 "let s:base02      = "0"
