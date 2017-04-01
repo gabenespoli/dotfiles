@@ -70,12 +70,12 @@ color.due.today=color8 on color9
 color.overdue=color15 on color1
 
 # Command: calendar
-color.calendar.today=color8 on color7
+color.calendar.today=color8 on color4
 color.calendar.due=color8 on color2
 color.calendar.due.today=color8 on color9
 color.calendar.overdue=color15 on color1
 color.calendar.holiday=color8 on color13
-color.calendar.weekend=color11
+color.calendar.weekend=on color0
 color.calendar.weeknumber=color10
 
 # Project
