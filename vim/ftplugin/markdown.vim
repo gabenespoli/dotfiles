@@ -5,6 +5,8 @@ nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 "au VimEnter * :GitGutterDisable
 
+hi NonText ctermfg=8
+
 " make html tags solarized base colors so they blend into the background
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
