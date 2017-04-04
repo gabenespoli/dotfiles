@@ -11,10 +11,10 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/.task
+data.location=~/bin/private/task
 
 # Color theme
-include ~/.task/colors.theme
+include ~/dotfiles/task/colors.theme
 
 # TrelloWarrior
 uda.trelloid.type=string

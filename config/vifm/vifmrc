@@ -259,7 +259,7 @@ filetype *.pkg open
 filextype *.odt,*.doc,*.docx,*.odp open -a Microsoft\ Word.app
 filextype *.xls,*.xlsx open -a Microsoft\ Excel.app
 filextype *.pptx,*.ppt open -a Microsoft\ PowerPoint.app
-fileviewer *.doc antiword -
+fileviewer *.doc antiword
 "fileviewer *.docx, docx2txt.pl %f -
 fileviewer *.docx, pandoc -f docx -t markdown %f --atx-headers
 

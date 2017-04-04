@@ -68,13 +68,15 @@ function notes() { vim "$(gf $@)/notes.md" ; }
 alias wf="python ~/bin/Workflows/Workflows.py ~/r/notes/"
 
 # calendar and todo
-alias tasks='printf "\033c" && task calendar && task next && task summary'
-alias t="todo.sh -a"
-alias trello="$HOME/bin/trello-cli/bin/trello"
-#alias t="$HOME/bin/trello-cli_wrapper.sh"
+alias t="task"
+alias tt='printf "\033c" && task calendar && task t'
+alias ttmt='printf "\033c" && task calendar && task t project:mt'
+alias ttgv='printf "\033c" && task calendar && task t project:gv'
+alias ttem='printf "\033c" && task calendar && task t project:em'
+alias tta='printf "\033c" && task calendar && task t project:admin'
+alias tsync='python $HOME/bin/task2todotxt/task2todotxt.py'
+alias todo="todo.sh -a"
 alias gcal="gcalcli --includeRc"
-alias c="$HOME/bin/gcalcli_wrapper.sh"
-#alias ca="c agenda Gabe EGcal Research trello"
 alias cme='printf "\033c" && gcalcli agenda --calendar Gabe --calendar EGcal --calendar Research --calendar https://trello.com/calendar/556dc4e1306181318b7faca9/58c0446572e43a9ffe490439/567e8f2d9cb740e5cf2db6fec6b17947.ics'
 alias cfam='printf "\033c" && gcalcli agenda --calendar Gabe --calendar erin.nespoli@gmail.com --calendar Olly --calendar yespleasefolk@gmail.com --calendar EGcal --calendar EGtravel'
 alias cwork='printf "\033c" && gcalcli agenda --calendar Research --calendar https://trello.com/calendar/556dc4e1306181318b7faca9/58c0446572e43a9ffe490439/567e8f2d9cb740e5cf2db6fec6b17947.ics'
