@@ -69,11 +69,7 @@ alias wf="python ~/bin/Workflows/Workflows.py ~/r/notes/"
 
 # calendar and todo
 alias t="task"
-alias tt='printf "\033c" && task calendar && task t'
-alias ttmt='printf "\033c" && task calendar && task t project:mt'
-alias ttgv='printf "\033c" && task calendar && task t project:gv'
-alias ttem='printf "\033c" && task calendar && task t project:em'
-alias tta='printf "\033c" && task calendar && task t project:admin'
+alias tt='printf "\033c" && task calendar && task t && tsync'
 alias tsync='python $HOME/bin/task2todotxt/task2todotxt.py'
 alias todo="todo.sh -a"
 alias gcal="gcalcli --includeRc"
