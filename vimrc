@@ -256,7 +256,6 @@ nnoremap <leader>F :call ToggleStatusBar()<CR>:call ToggleTabline()<CR>
 nnoremap <leader>N :set invrelativenumber<CR>:set invnumber<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
-nnoremap <leader>G :GitGutterSignsToggle<CR>
 
 "" Plugin settings
 " CenWin
@@ -341,6 +340,7 @@ endfunc
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
 let g:gitgutter_enabled = 0 " toggle to start vim with gitgutter enabled
 let g:gitgutter_signs = 0
+nnoremap <leader>G :GitGutterSignsToggle<CR>
 
 " Fugitive
 nnoremap gs :Gstatus<CR>
