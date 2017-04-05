@@ -329,12 +329,6 @@ let g:pandoc#syntax#conceal#use = 0
 " CriticMarkup
 " see settings in .vim/ftplugin/markdown.vim
 
-" CSV
-function! FormatTSV()
-    " http://alangrow.com/blog/turn-vim-into-excel-tips-for-tabular-data-editing
-    setlocal number noexpandtab shiftwidth=20 softtabstop=20 tabstop=20 nowrap
-endfunc
-
 " GitGutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
 let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
