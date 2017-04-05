@@ -338,13 +338,13 @@ endfunc
 
 " GitGutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
-let g:gitgutter_enabled = 0 " toggle to start vim with gitgutter enabled
+let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
 let g:gitgutter_signs = 0
 nnoremap <leader>G :GitGutterSignsToggle<CR>
 
 " Fugitive
 nnoremap gs :Gstatus<CR>
-nnoremap gc :Gwrite<CR>:Gcommit<CR>
+nnoremap gc :Gwrite<CR>:Gcommit<CR>i
 nnoremap gd :Gdiff 
 
 " IndentLine
