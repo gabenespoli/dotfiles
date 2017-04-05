@@ -7,9 +7,9 @@ hi Title                ctermfg=15      ctermbg=none    cterm=none
 hi Operator             ctermfg=7       ctermbg=none    cterm=none
 hi WarningMsg           ctermfg=1       ctermbg=0       cterm=none
 
-hi StatusLine           ctermfg=14      ctermbg=0       cterm=none
-hi StatusLineNC         ctermfg=10      ctermbg=0       cterm=none
-hi StatusLineFill       ctermfg=10      ctermbg=8       cterm=none
+hi StatusLine           ctermfg=0       ctermbg=14      cterm=reverse
+hi StatusLineNC         ctermfg=0       ctermbg=10      cterm=reverse
+hi StatusLineFill       ctermfg=8       ctermbg=10      cterm=reverse
 hi TabLineFill          ctermfg=10      ctermbg=8       cterm=none
 hi TabLine              ctermfg=10      ctermbg=0       cterm=none
 hi TabNum               ctermfg=10      ctermbg=0       cterm=none
@@ -22,18 +22,18 @@ hi TabModSel            ctermfg=1       ctermbg=0       cterm=none
 
 hi LineNr               ctermfg=10      ctermbg=8       cterm=none
 hi FoldColumn           ctermfg=8       ctermbg=12      cterm=reverse
-hi VertSplit            ctermfg=0       ctermbg=8       cterm=none
+hi VertSplit            ctermfg=8       ctermbg=0       cterm=reverse
 hi NonText              ctermfg=0       ctermbg=8       cterm=none
-hi MatchParen           ctermfg=8       ctermbg=10    
+hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
 
 hi Search               ctermfg=12      ctermbg=8       cterm=reverse
 hi IncSearch            ctermfg=12      ctermbg=8       cterm=reverse
 hi Visual               ctermfg=12      ctermbg=8       cterm=reverse
 
-hi DiffText             ctermfg=9       ctermbg=0
-hi DiffChange           ctermfg=12      ctermbg=0
 hi DiffAdd              ctermfg=2       ctermbg=0
+hi DiffChange           ctermfg=12      ctermbg=0
 hi DiffDelete           ctermfg=1       ctermbg=0
+hi DiffText             ctermfg=9       ctermbg=0
 
 "" Syntax-specific
 " Mail compose colors
