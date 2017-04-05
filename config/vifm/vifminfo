@@ -18,7 +18,7 @@
 
 # TUI:
 al
-q1
+q0
 v2
 ov
 m-1
@@ -26,168 +26,6 @@ l2,14
 r2,14
 
 # Left window history (oldest to newest):
-d/Users/gmac/Dropbox/research/archive
-	2013
-2
-d/Users/gmac/Dropbox/research
-	archive
-4
-d/Users/gmac/Dropbox
-	bin
-4
-d/Users/gmac/Dropbox/bin
-	..
-0
-d/Users/gmac/Dropbox
-	bin
-4
-d/Users/gmac
-	local
-17
-d/Users/gmac/local
-	matlab
-1
-d/Users/gmac/local/matlab
-	fieldtrip
-7
-d/Users/gmac/local/matlab/fieldtrip
-	trialfun
-43
-d/Users/gmac/local/matlab/fieldtrip/trialfun
-	ft_trialfun_general.m
-5
-d/Users/gmac/r/gv/scripts
-	..
-0
-d/Users/gmac/r/gv
-	paper
-13
-d/Users/gmac/r/gv/paper
-	Nespoli2017.docx
-2
-d/Users/gmac/r/gv
-	paper
-13
-d/Users/gmac/r
-	gv
-6
-d/Users/gmac/r/gv
-	paper
-13
-d/Users/gmac/r/gv/paper
-	Nespoli2017.md
-3
-d/Users/gmac/r/gv
-	scripts
-16
-d/Users/gmac/r/gv/scripts
-	gv_dip.m
-6
-d/Users/gmac/r/gv
-	scripts
-16
-d/Users/gmac/r/gv/scripts
-	gv_dip.m
-6
-d/Users/gmac/r/gv
-	scripts
-16
-d/Users/gmac/r/gv/scripts
-	gv_recordinginfo.m
-20
-d/Users/gmac/r/gv
-	scripts
-16
-d/Users/gmac/r/gv/scripts
-	gv_precompfft.m
-18
-d/Users/gmac/Dropbox/research/archive/2017/PS8527/pres1
-	script_fieldtrip2.m
-6
-d/Users/gmac/dotfiles/config/vifm
-	colors
-1
-d/Users/gmac/dotfiles/config/vifm/colors
-	..
-0
-d/Users/gmac/dotfiles/config/vifm
-	colors
-1
-d/Users/gmac/dotfiles/config/vifm/colors
-	solarized-dark.vifm
-2
-d/Users/gmac/Applications/Chrome Apps.localized
-	Profile 1 blpcfgokakmgnkcojhhkbfbldkacnbeo.app
-4
-d/Users/gmac/Applications
-	Chrome Apps.localized
-1
-d/Users/gmac
-	Applications
-1
-d/Users/gmac/dotfiles/config/vifm
-	colors
-1
-d/Users/gmac/dotfiles/config/vifm/colors
-	solarized-dark.vifm
-2
-d/Users/gmac/r
-	PS8527
-3
-d/Users/gmac/r/PS8527
-	syllabus-PS8527-W2017.pdf
-8
-d/Users/gmac/r
-	PS8527
-3
-d/Users/gmac
-	.task
-37
-d/Users/gmac/.task
-	colors.theme
-19
-d/Users/gmac
-	.task
-37
-d/Users/gmac/.task
-	..
-0
-d/Users/gmac
-	dotfiles
-40
-d/Users/gmac/dotfiles
-	task
-25
-d/Users/gmac/dotfiles/task
-	..
-0
-d/Users/gmac/dotfiles
-	config
-14
-d/Users/gmac/dotfiles/config
-	..
-0
-d/Users/gmac/dotfiles
-	task
-25
-d/Users/gmac
-	bin
-12
-d/Users/gmac/bin
-	private
-37
-d/Users/gmac/bin/private
-	..
-0
-d/Users/gmac/bin
-	private
-37
-d/Users/gmac
-	bin
-12
-d/Users
-	gmac
-2
 d/Users/gmac
 	.task
 40
@@ -326,56 +164,170 @@ d/Users/gmac/dotfiles
 d/Users/gmac/dotfiles/vim/ftplugin
 	todo.vim
 3
+d/Users/gmac/r/archive/2016
+	conferences
+5
+d/Users/gmac/r/archive/2016/conferences
+	STAR
+4
+d/Users/gmac/r/archive/2016/conferences/STAR
+	..
+0
+d/Users/gmac/r/archive/2016/conferences
+	ICMPC
+3
+d/Users/gmac/r/archive/2016/conferences/ICMPC
+	reimbursements
+9
+d/Users/gmac/r/archive/2016/conferences/ICMPC/reimbursements
+	..
+0
+d/Users/gmac/r/archive/2016/conferences/ICMPC
+	program
+8
+d/Users/gmac/r/archive/2016/conferences/ICMPC/program
+	..
+0
+d/Users/gmac/r/archive/2016/conferences/ICMPC
+	program
+8
+d/Users/gmac/r/archive/2016/conferences
+	AWC
+2
+d/Users/gmac/r/archive/2016/conferences/AWC
+	reimbursements
+10
+d/Users/gmac/r/archive/2016/conferences/AWC/reimbursements
+	451401XXXXXX9935-2016Jun08-2016Jul07.pdf
+4
+d/Users/gmac/r/archive/2016/conferences/AWC
+	reimbursements
+10
+d/Users/gmac/r/archive/2016/conferences
+	AWC
+2
+d/Users/gmac/r/archive/2016
+	conferences
+5
+d/Users/gmac/r/archive
+	2017
+7
+d/Users/gmac/r/archive/2017
+	Neuromusic
+2
+d/Users/gmac/r/archive/2017/Neuromusic
+	Nespoli Proof of Enrollment April 2017.pdf
+2
+d/Users/gmac/r/archive/2017
+	Neuromusic
+2
+d/Users/gmac/r/archive
+	2015
+5
+d/Users/gmac/r/archive/2017
+	em
+5
+d/Users/gmac/r/archive
+	2017
+7
+d/Users/gmac/r
+	em
+7
+d/Users/gmac/r/em
+	scripts
+1
+d/Users/gmac/r
+	gv
+8
+d/Users/gmac/r/gv
+	stimuli
+19
+d/Users/gmac/r
+	em
+7
+d/Users/gmac/r/em
+	stimuli
+2
+d/Users/gmac/r/em/stimuli
+	..
+0
+d/Users/gmac/r/em
+	stimuli
+2
+d/Users/gmac/r/em/stimuli
+	..
+0
+d/Users/gmac/r/em
+	scripts
+1
+d/Users/gmac/r/em/scripts
+	..
+0
+d/Users/gmac/r/em
+	scripts
+1
+d/Users/gmac/r
+	em
+7
+d/Users/gmac/r/em
+	scripts
+1
+d/Users/gmac/r/em/scripts
+	..
+0
+d/Users/gmac/r/em
+	scripts
+1
+d/Users/gmac/r
+	gv
+8
+d/Users/gmac/r/gv
+	scripts
+17
+d/Users/gmac/r/gv/scripts
+	gv_mir.m
+20
+d/Users/gmac/Dropbox/research/archive/2017/PS8527/pres2
+	..
+0
+d/Users/gmac/Dropbox/research/archive/2017/PS8527
+	pres1
+7
+d/Users/gmac/Dropbox/research/archive/2017/PS8527/pres1
+	.script_fieldtrip2.m.un~
+6
+d/Users/gmac/Dropbox/research/archive/2017/PS8527
+	pres2
+8
+d/Users/gmac/Dropbox/research/archive/2017/PS8527/pres2
+	Nespoli_extractMIR_PS8527.md
+31
+d/Users/gmac/Dropbox/music/openbook
+	
+0
+d/Users/gmac/Dropbox/music
+	.DS_Store
+1
+d/Users/gmac/r/archive/2017
+	STAR
+5
+d/Users/gmac/r/archive/2017/STAR
+	..
+0
+d/Users/gmac/r/archive/2017
+	STAR
+5
+d/Users/gmac/r/archive
+	2017
+7
+d/Users/gmac/r
+	notes
+10
+d/Users/gmac
+	r
+44
 
 # Right window history (oldest to newest):
-D/Users/gmac
-	.subversion
-10
-D/Users/gmac/.subversion
-	config
-0
-D/Users/gmac
-	.sup_backup
-11
-D/Users/gmac/.sup_backup
-	..
-0
-D/Users/gmac
-	.vim
-17
-D/Users/gmac/.vim
-	spell
-0
-D/Users/gmac
-	Applications
-21
-D/Users/gmac/Applications
-	..
-0
-D/Users/gmac
-	.bash_profile
-28
-D/Users/gmac/.vim
-	bundle
-0
-D/Users/gmac/.vim/bundle
-	vim-colors-solarized
-6
-D/Users/gmac/.vim/bundle/vim-colors-solarized
-	autoload
-0
-D/Users/gmac/.vim/bundle/vim-colors-solarized/autoload
-	..
-0
-D/Users/gmac/.vim/bundle/vim-colors-solarized
-	bitmaps
-0
-D/Users/gmac/.vim/bundle/vim-colors-solarized/bitmaps
-	togglebg.png
-0
-D/Users/gmac/.vim/bundle/vim-colors-solarized
-	colors
-0
 D/Users/gmac/.vim/bundle/vim-colors-solarized/colors
 	solarized.vim
 0
@@ -628,8 +580,58 @@ D/Users/gmac
 D/Users/gmac/dotfiles/vim/ftplugin
 	
 0
+D/Users/gmac
+	..
+0
+D/Users
+	gmac
+2
+D/Users/gmac
+	bin
+13
+D/Users/gmac/bin
+	matlab
+18
+D/Users/gmac/bin/matlab
+	MIRtoolbox1.6.1
+6
+D/Users/gmac/bin/matlab/MIRtoolbox1.6.1
+	AuditoryToolbox
+1
+D/Users/gmac/bin/matlab/MIRtoolbox1.6.1/AuditoryToolbox
+	..
+0
+D/Users/gmac/bin/matlab/MIRtoolbox1.6.1
+	MIRToolbox
+3
+D/Users/gmac/bin/matlab/MIRtoolbox1.6.1/MIRToolbox
+	..
+0
+D/Users/gmac/bin/matlab/MIRtoolbox1.6.1
+	manual1.6.1.pdf
+7
+D/Users/gmac/Dropbox/research/archive/2017/PS8527/pres2
+	..
+0
+D/Users/gmac/Dropbox/research/archive/2017/PS8527/pres1
+	..
+0
+D/Users/gmac/Dropbox/research/archive/2017/PS8527/pres2
+	..
+0
+D/Users/gmac/Dropbox/music/openbook
+	
+0
+D/Users/gmac/Dropbox/music
+	..
+0
+D/Users/gmac
+	..
+0
 
 # Command line history (oldest to newest):
+:cd bin/private/
+:mkdir intheAM
 :! vim
 :touch Nespoli_Fieldtrip_PS8527.md
 :!vim %c
@@ -698,10 +700,16 @@ D/Users/gmac/dotfiles/vim/ftplugin
 :mkdir task
 :mkdir archives
 :cd ~/dotfiles
+:mkdir em
+:mkdir scripts
+:touch
+:cdd mir
+:!cdd mir
+:touch Nespoli_extractMIR.md
+:mkdir STAR
 
 # Search history (oldest to newest):
-/bin
-/matl
+/read
 /eeg
 /ind
 /gitcon
@@ -721,6 +729,9 @@ D/Users/gmac/dotfiles/vim/ftplugin
 /.task
 /dotfiles
 /.offline
+/bin
+/matl
+/mir
 
 # Prompt history (oldest to newest):
 preceipt-registration.pdf
@@ -746,6 +757,8 @@ p2016-04-29 meeting.md
 p2016-06-24 meeting.md
 pNespoli_OGSREF1.pdf
 pNespoli_OGSREF2.pdf
+pNespoli Proof of Enrollment April 2017.pdf
+pNespoli_extractMIR_PS8527.md
 
 # Local filter history (oldest to newest):
 |mut
@@ -753,7 +766,7 @@ pNespoli_OGSREF2.pdf
 |stats
 
 # Registers:
-""/Users/gmac/.local/share/vifm/Trash/000_vimrc.vim
+""/Users/gmac/.local/share/vifm/Trash/000_mt
 
 # Directory stack (oldest to newest):
 
@@ -868,6 +881,12 @@ t/Users/gmac/.local/share/vifm/Trash/000_python.vim
 	/Users/gmac/dotfiles/vim/ftplugin/python.vim
 t/Users/gmac/.local/share/vifm/Trash/000_vimrc.vim
 	/Users/gmac/dotfiles/vim/ftplugin/vimrc.vim
+t/Users/gmac/.local/share/vifm/Trash/000_.DS_Store
+	/Users/gmac/r/em/stimuli/.DS_Store
+t/Users/gmac/.local/share/vifm/Trash/000_stimuli
+	/Users/gmac/Dropbox/research/archive/2017/PS8527/pres2/stimuli
+t/Users/gmac/.local/share/vifm/Trash/000_mt
+	/Users/gmac/r/mt
 
 # State:
 f

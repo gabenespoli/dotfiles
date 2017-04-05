@@ -448,12 +448,11 @@ endif
 function! MuttMailMode()
     exe ":call CenWinToggle(80)"
     setlocal textwidth=0 wrapmargin=0 wrap linebreak 
-    setlocal statusline=%=%#WarningMs#%m%r%*
+    setlocal statusline=%=%#WarningMsg#%m%r%*
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
-    nnoremap <buffer> <leader>q :q<CR>
-    nnoremap <buffer> <localleader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
+    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
     "setlocal nocp 
     exe "/^$"
 endfunction

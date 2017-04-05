@@ -16,7 +16,7 @@ highlight TopLine       ctermfg=white          ctermbg=none         cterm=none
 highlight TopLineSel    ctermfg=white          ctermbg=black        cterm=none 
 highlight StatusLine    ctermfg=11             ctermbg=none         cterm=none 
 highlight Border        ctermfg=blue           ctermbg=none         cterm=none 
-highlight Selected      ctermfg=magenta        ctermbg=default      cterm=none 
+highlight Selected      ctermfg=13             ctermbg=default      cterm=none 
 highlight CurrLine      ctermfg=8              ctermbg=12           cterm=none
 highlight CmdLine       ctermfg=default        ctermbg=default      cterm=none 
 highlight ErrorMsg      ctermfg=red            ctermbg=black        cterm=none 
