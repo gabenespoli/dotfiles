@@ -242,28 +242,26 @@ let colors_name = "solarized"
 " neutral gray monotone palette component)
 if (has("gui_running") && g:solarized_degrade == 0)
     let s:vmode       = "gui"
-    let s:base03      = "#002b36"
-    let s:base02      = "#073642"
-    let s:base01      = "#586e75"
-    let s:base00      = "#657b83"
-    let s:base0       = "#839496"
-    let s:base1       = "#93a1a1"
-    let s:base2       = "#eee8d5"
-    let s:base3       = "#fdf6e3"
-    let s:yellow      = "#b58900"
-    let s:orange      = "#cb4b16"
-    let s:red         = "#dc322f"
-    let s:magenta     = "#d33682"
-    let s:violet      = "#6c71c4"
-    let s:blue        = "#268bd2"
-    let s:cyan        = "#2aa198"
-    "let s:green       = "#859900" "original
-    let s:green       = "#719e07" "experimental
+    let s:base03      = "#1c1c1c"
+    let s:base02      = "#262626"
+    let s:base01      = "#4e4e4e"
+    let s:base00      = "#585858"
+    let s:base0       = "#808080"
+    let s:base1       = "#8a8a70"
+    let s:base2       = "#d7d7af"
+    let s:base3       = "#ffffd7"
+    let s:yellow      = "#d78700"
+    let s:orange      = "#d75f00"
+    let s:red         = "#d11c24"
+    let s:magenta     = "#af5f87"
+    let s:violet      = "#5f5faf"
+    let s:blue        = "#0087af"
+    let s:cyan        = "#008787"
+    let s:green       = "#00875f"
 elseif (has("gui_running") && g:solarized_degrade == 1)
     " These colors are identical to the 256 color mode. They may be viewed
     " while in gui mode via "let g:solarized_degrade=1", though this is not
     " recommened and is for testing only.
-    let s:vmode       = "gui"
     let s:base03      = "#1c1c1c"
     let s:base02      = "#262626"
     let s:base01      = "#4e4e4e"
@@ -272,14 +270,14 @@ elseif (has("gui_running") && g:solarized_degrade == 1)
     let s:base1       = "#8a8a8a"
     let s:base2       = "#d7d7af"
     let s:base3       = "#ffffd7"
-    let s:yellow      = "#af8700"
+    let s:yellow      = "#d78700"
     let s:orange      = "#d75f00"
-    let s:red         = "#af0000"
-    let s:magenta     = "#af005f"
+    let s:red         = "#d70000"
+    let s:magenta     = "#af5f87"
     let s:violet      = "#5f5faf"
-    let s:blue        = "#0087ff"
-    let s:cyan        = "#00afaf"
-    let s:green       = "#5f8700"
+    let s:blue        = "#0087af"
+    let s:cyan        = "#008787"
+    let s:green       = "#00875f"
 elseif g:solarized_termcolors != 256 && &t_Co >= 16
     let s:vmode       = "cterm"
     let s:base03      = "8"
@@ -308,14 +306,14 @@ elseif g:solarized_termcolors == 256
     let s:base1       = "245"
     let s:base2       = "187"
     let s:base3       = "230"
-    let s:yellow      = "136"
+    let s:yellow      = "172"
     let s:orange      = "166"
     let s:red         = "124"
-    let s:magenta     = "125"
+    let s:magenta     = "132"
     let s:violet      = "61"
-    let s:blue        = "33"
-    let s:cyan        = "37"
-    let s:green       = "64"
+    let s:blue        = "31"
+    let s:cyan        = "30"
+    let s:green       = "29"
 else
     let s:vmode       = "cterm"
     let s:bright      = "* term=bold cterm=bold"
@@ -561,6 +559,7 @@ exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
 "        Operator        "sizeof", "+", "*", etc.
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
+exe "hi! Operator"       .s:fmt_none    .s:fg_base2 .s:bg_none
 
 exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
 "       *PreProc         generic Preprocessor
@@ -607,30 +606,31 @@ elseif  (g:solarized_visibility=="low")
     exe "hi! NonText"    .s:fmt_bold   .s:fg_base02 .s:bg_none
 else
     exe "hi! SpecialKey" .s:fmt_bold   .s:fg_base00 .s:bg_base02
-    exe "hi! NonText"    .s:fmt_bold   .s:fg_base00 .s:bg_none
+    exe "hi! NonText"    .s:fmt_none   .s:fg_base02 .s:bg_none
 endif
-exe "hi! StatusLine"     .s:fmt_none   .s:fg_base1  .s:bg_base02 .s:fmt_revbb
-exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
-exe "hi! Visual"         .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
+exe "hi! StatusLine"     .s:fmt_none   .s:fg_base02 .s:bg_base1  .s:fmt_revbb
+exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base02 .s:bg_base01 .s:fmt_revbb
+exe "hi! StatusLineFill" .s:fmt_none   .s:fg_base03 .s:bg_base01 .s:fmt_revbb
+exe "hi! Visual"         .s:fmt_none   .s:fg_base0  .s:bg_base03 .s:fmt_revbb
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
-exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
-exe "hi! Search"         .s:fmt_revr   .s:fg_yellow .s:bg_none
+exe "hi! IncSearch"      .s:fmt_revr   .s:fg_base0  .s:bg_none
+exe "hi! Search"         .s:fmt_revr   .s:fg_base0  .s:bg_none
 exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
-exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
+exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base03
 exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
 if ( has("gui_running") || &t_Co > 8 )
     exe "hi! VertSplit"  .s:fmt_none   .s:fg_base00 .s:bg_base00
 else
-    exe "hi! VertSplit"  .s:fmt_revbb  .s:fg_base00 .s:bg_base02
+    exe "hi! VertSplit"  .s:fmt_revbb  .s:fg_base03 .s:bg_base02
 endif
-exe "hi! Title"          .s:fmt_bold   .s:fg_orange .s:bg_none
+exe "hi! Title"          .s:fmt_bold   .s:fg_base3  .s:bg_none
 exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
-exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_red    .s:bg_none
+exe "hi! WarningMsg"     .s:fmt_none   .s:fg_red    .s:bg_none
 exe "hi! WildMenu"       .s:fmt_none   .s:fg_base2  .s:bg_base02 .s:fmt_revbb
 exe "hi! Folded"         .s:fmt_undb   .s:fg_base0  .s:bg_base02  .s:sp_base03
-exe "hi! FoldColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
+exe "hi! FoldColumn"     .s:fmt_revr   .s:fg_base03 .s:bg_base0
 if      (g:solarized_diffmode=="high")
 exe "hi! DiffAdd"        .s:fmt_revr   .s:fg_green  .s:bg_none
 exe "hi! DiffChange"     .s:fmt_revr   .s:fg_yellow .s:bg_none
@@ -642,17 +642,10 @@ exe "hi! DiffChange"     .s:fmt_undr   .s:fg_yellow .s:bg_none   .s:sp_yellow
 exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_none
 exe "hi! DiffText"       .s:fmt_undr   .s:fg_blue   .s:bg_none   .s:sp_blue
 else " normal
-    if has("gui_running")
-exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
-exe "hi! DiffChange"     .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
-exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_base02
-exe "hi! DiffText"       .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
-    else
 exe "hi! DiffAdd"        .s:fmt_none   .s:fg_green  .s:bg_base02 .s:sp_green
-exe "hi! DiffChange"     .s:fmt_none   .s:fg_yellow .s:bg_base02 .s:sp_yellow
+exe "hi! DiffChange"     .s:fmt_none   .s:fg_base0  .s:bg_base02 .s:sp_base0
 exe "hi! DiffDelete"     .s:fmt_none   .s:fg_red    .s:bg_base02
-exe "hi! DiffText"       .s:fmt_none   .s:fg_blue   .s:bg_base02 .s:sp_blue
-    endif
+exe "hi! DiffText"       .s:fmt_none   .s:fg_orange .s:bg_base02 .s:sp_orange
 endif
 exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0
 exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
@@ -669,10 +662,11 @@ exe "hi! TabLineFill"    .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
 exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base01 .s:bg_base2   .s:sp_base0  .s:fmt_revbbu
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
+exe "hi! CursorLineNR"   .s:fmt_none   .s:fg_none   .s:bg_base02  .s:sp_base1
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
-exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base01
+exe "hi! MatchParen"     .s:fmt_none   .s:fg_base03 .s:bg_base01
 
 "}}}
 " vim syntax highlighting "{{{
@@ -968,6 +962,15 @@ exe "hi! pandocMetadata"                 .s:fg_blue   .s:bg_none   .s:fmt_none
 exe "hi! pandocMetadataKey"              .s:fg_blue   .s:bg_none   .s:fmt_none
 exe "hi! pandocMetadata"                 .s:fg_blue   .s:bg_none   .s:fmt_bold
 hi! link pandocMetadataTitle             pandocMetadata
+
+" My custom highlight groups and customizations
+" ---------------------------------------------------------------------
+" DiffChar plugin
+exe "hi! _DiffDelPos"    .s:fmt_none   .s:fg_red    .s:bg_base02
+" Buffergator
+exe "hi! BuffergatorBufferNr"   .s:fmt_none .s:fg_base01    .s:bg_base03
+" MATLAB
+exe "hi! matlabCellComment"     .s:fmt_none .s:fg_base0     .s:bg_base02
 
 "}}}
 " Utility autocommand "{{{
