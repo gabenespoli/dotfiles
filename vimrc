@@ -252,7 +252,6 @@ nnoremap <leader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 
 " Toggles
-nnoremap <leader>F :call ToggleStatusBar()<CR>:call ToggleTabline()<CR>
 nnoremap <leader>N :set invrelativenumber<CR>:set invnumber<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
@@ -374,16 +373,6 @@ function! WordCount()
     return n
 endfunction
 
-function! ToggleStatusBar()
-    if &laststatus == 2
-        set laststatus=0
-        set showmode
-    elseif &laststatus == 0
-        set laststatus=2
-        set noshowmode
-    endif
-endfunction
-
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
@@ -394,6 +383,16 @@ function! ToggleTabline()
         set showtabline=0
     endif
 endfunction
+nnoremap <leader>F :call ToggleTabline()<CR>
+
+function! ToggleStatusBar()
+    if &laststatus == 2
+        set laststatus=0
+    elseif &laststatus == 0
+        set laststatus=2
+    endif
+endfunction
+nnoremap <leader>f :call ToggleStatusBar()<CR>
 
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
