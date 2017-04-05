@@ -103,6 +103,7 @@ set foldlevel=20        " set a high fold level so that folds are open by defaul
 "set digraph             " use <BS> for accents (e.g., e<BS>' for é; e<BS>! for è; o<BS>: for ö)
 
 "" UI Config
+set number
 set relativenumber
 set showcmd             " show command in bottom bar
 "set noshowmode          " show mode below status line
@@ -284,8 +285,9 @@ nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
 
 " submode
-let g:submode_timeout = 0 " disable submode timeouts
-let g:submode_keep_leaving_key = 1 " don't consume submode-leaving key
+let g:submode_timeout = 1
+let g:submode_tiemoutlen = 1500
+let g:submode_keep_leaving_key = 1
 
 " calendar.vim
 let g:calendar_google_calendar = 1
