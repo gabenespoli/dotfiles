@@ -256,7 +256,7 @@ nnoremap <leader>F :call ToggleStatusBar()<CR>:call ToggleTabline()<CR>
 nnoremap <leader>N :set invrelativenumber<CR>:set invnumber<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
-nnoremap <leader>G :GitGutterToggle<CR>
+nnoremap <leader>G :GitGutterSignsToggle<CR>
 
 "" Plugin settings
 " CenWin
