@@ -229,7 +229,7 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "solarized"
+let colors_name = "solarizedSumach"
 
 "}}}
 " GUI & CSApprox hexadecimal palettes"{{{
@@ -621,9 +621,9 @@ exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base03
 exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
 if ( has("gui_running") || &t_Co > 8 )
-    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base00 .s:bg_base00
+    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base03 .s:bg_base02
 else
-    exe "hi! VertSplit"  .s:fmt_revbb  .s:fg_base03 .s:bg_base02
+    exe "hi! VertSplit"  .s:fmt_none   .s:fg_base03 .s:bg_base02
 endif
 exe "hi! Title"          .s:fmt_bold   .s:fg_base3  .s:bg_none
 exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revbb
@@ -657,12 +657,18 @@ exe "hi! Pmenu"          .s:fmt_none   .s:fg_base0  .s:bg_base02  .s:fmt_revbb
 exe "hi! PmenuSel"       .s:fmt_none   .s:fg_base01 .s:bg_base2   .s:fmt_revbb
 exe "hi! PmenuSbar"      .s:fmt_none   .s:fg_base2  .s:bg_base0   .s:fmt_revbb
 exe "hi! PmenuThumb"     .s:fmt_none   .s:fg_base0  .s:bg_base03  .s:fmt_revbb
-exe "hi! TabLine"        .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
-exe "hi! TabLineFill"    .s:fmt_undr   .s:fg_base0  .s:bg_base02  .s:sp_base0
-exe "hi! TabLineSel"     .s:fmt_undr   .s:fg_base01 .s:bg_base2   .s:sp_base0  .s:fmt_revbbu
+exe "hi! TabLineFill"    .s:fmt_none   .s:fg_base01 .s:bg_base03  .s:sp_base0
+exe "hi! TabLine"        .s:fmt_none   .s:fg_base01 .s:bg_base02  .s:sp_base0
+exe "hi! TabNum"         .s:fmt_none   .s:fg_base01 .s:bg_base02  .s:sp_base0
+exe "hi! TabWinNum"      .s:fmt_none   .s:fg_base01 .s:bg_base02  .s:sp_base0
+exe "hi! TabMod"         .s:fmt_none   .s:fg_red    .s:bg_base02  .s:sp_base0
+exe "hi! TabLineSel"     .s:fmt_none   .s:fg_base2  .s:bg_base02  .s:sp_base0
+exe "hi! TabNumSel"      .s:fmt_none   .s:fg_base2  .s:bg_base02  .s:sp_base0
+exe "hi! TabWinNumSel"   .s:fmt_none   .s:fg_base2  .s:bg_base02  .s:sp_base0
+exe "hi! TabModSel"      .s:fmt_none   .s:fg_red    .s:bg_base02  .s:sp_base0
 exe "hi! CursorColumn"   .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! CursorLine"     .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
-exe "hi! CursorLineNR"   .s:fmt_none   .s:fg_none   .s:bg_base02  .s:sp_base1
+exe "hi! CursorLineNR"   .s:fmt_uopt   .s:fg_none   .s:bg_base02  .s:sp_base1
 exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
