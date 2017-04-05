@@ -66,7 +66,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "" Colorscheme 
-colorscheme gaberized
+if has("gui_running")
+    colorscheme solarizedSumach
+    set guicursor=n-v-c-i:blinkon0
+else
+    colorscheme gaberized
+endif
 syntax enable
 set background=dark
 
@@ -338,7 +343,7 @@ nnoremap <leader>G :GitGutterSignsToggle<CR>
 " Fugitive
 nnoremap gs :Gstatus<CR>
 nnoremap gc :Gwrite<CR>:Gcommit<CR>i
-nnoremap gd :Gdiff 
+nnoremap gd :Gdiff<CR>
 
 " IndentLine
 let g:indentLine_char = '|'
