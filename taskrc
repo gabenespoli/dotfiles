@@ -16,21 +16,6 @@ data.location=~/bin/private/task
 # Color theme
 include ~/dotfiles/task/colors.theme
 
-# TrelloWarrior
-uda.trelloid.type=string
-uda.trelloid.label=Trello ID
-uda.trellolistname.type=string
-uda.trellolistname.label=Trello List Name
-uda.trellolistname.default=Todo
-
-# inthe.AM
-taskd.certificate=~/bin/private/intheAM/private.certificate.pem
-taskd.key=~/bin/private/intheAM/private.key.pem
-taskd.ca=~/bin/private/intheAM/ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=inthe_am/gabenespoli/d3be7721-0946-4d04-89df-57aa21d982d5
-taskd.trust=ignore hostname
-
 # Custom reports
 report.t.description=My custom report
 report.t.columns=id,project,description,due.remaining,urgency
