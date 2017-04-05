@@ -22,7 +22,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " git
 Plugin 'tpope/vim-fugitive'
 Plugin 'rickhowe/diffchar.vim'
-"Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 " tmux
 Plugin 'tmux-plugins/vim-tmux'
@@ -211,7 +211,7 @@ nnoremap Y y$
 " stuff for tmux from https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
 
-" movement
+" swap j/k with gj/gk
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -224,6 +224,8 @@ vnoremap gj j
 vnoremap gk k
 vnoremap <Down> gj
 vnoremap <Up> gk
+
+" misc movement
 nnoremap W 5w
 vnoremap W 5w
 nnoremap B 5b
