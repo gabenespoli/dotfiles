@@ -95,11 +95,13 @@ if !isdirectory(expand(&directory))
 endif
 
 "" Spaces & Tabs
-set linebreak           " stop soft wrapping in the middle of words
+set linebreak           " stop soft wrapping in the middle of words  
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 set shiftwidth=4
 set expandtab           " tabs are spaces
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list                " show invisibles
 set backspace=indent,eol,start " enable backspacing text that was inserted previously
 set ignorecase
 set smartcase           " if [search terms] has uppercase, then case sensitive
@@ -464,6 +466,19 @@ function! MuttMailMode()
     "setlocal nocp 
     exe "/^$"
 endfunction
+
+function! ToggleInvisibles()
+    if &list==1
+        set nolist
+        hi NonText ctermfg=8
+        hi SpecialKey ctermfg=11 cterm=none
+    else
+        set list
+        hi NonText ctermfg=10
+        hi SpecialKey ctermfg=5 cterm=reverse
+    endif
+endfunction
+    nnoremap <leader>i :call ToggleInvisibles()<CR>
 
 " Change cursor shape from block (command mode) to line (insert mode)
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
