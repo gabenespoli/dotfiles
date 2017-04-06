@@ -101,7 +101,7 @@ set softtabstop=4       " number of spaces in tab when editing
 set shiftwidth=4
 set expandtab           " tabs are spaces
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list                " show invisibles
+set nolist              " show invisibles
 set backspace=indent,eol,start " enable backspacing text that was inserted previously
 set ignorecase
 set smartcase           " if [search terms] has uppercase, then case sensitive
@@ -292,7 +292,7 @@ nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
 
 " submode
-let g:submode_timeout = 1
+let g:submode_timeout = 0
 let g:submode_tiemoutlen = 1500
 let g:submode_keep_leaving_key = 1
 
@@ -470,15 +470,25 @@ endfunction
 function! ToggleInvisibles()
     if &list==1
         set nolist
-        hi NonText ctermfg=8
-        hi SpecialKey ctermfg=11 cterm=none
     else
         set list
-        hi NonText ctermfg=10
-        hi SpecialKey ctermfg=5 cterm=reverse
     endif
 endfunction
-    nnoremap <leader>i :call ToggleInvisibles()<CR>
+nnoremap <leader>i :call ToggleInvisibles()<CR>
+
+function! ToggleCsvTsv()
+    if exists("b:delimiter")
+        if b:delimiter==","
+            exe "%s/,/\t/g"
+            let b:delimiter="\t"
+        elseif b:delimiter=="\t"
+            exe "%s/\t/,/g"
+            let b:delimiter=","
+        endif
+    else
+        echo "b:delimiter is not defined."
+    endif
+endfunction
 
 " Change cursor shape from block (command mode) to line (insert mode)
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence

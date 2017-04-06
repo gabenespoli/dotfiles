@@ -1,3 +1,7 @@
-" http://alangrow.com/blog/turn-vim-into-excel-tips-for-tabular-data-editing
-setlocal number noexpandtab shiftwidth=20 softtabstop=20 tabstop=20 nowrap
-
+setlocal noexpandtab
+setlocal tabstop=20
+setlocal softtabstop=20
+setlocal shiftwidth=20
+setlocal nowrap
+let b:delimiter = "\t"
+nnoremap <buffer> <localleader>, :call ToggleCsvTsv()<CR>
