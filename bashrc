@@ -84,6 +84,7 @@ alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDel
 alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
 alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
+alias octave="octave --no-gui"
 alias rate='python $HOME/bin/utils/rate.py'
 alias openx="open -a Microsoft\ Excel.app"
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
