@@ -38,12 +38,12 @@ Plugin 'vim-scripts/todo-txt.vim'
 "Plugin 'chrisbra/csv.vim'
 "Plugin 'godlygeek/tabular'
 "Plugin 'jez/vim-superman'
-
 " vim
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kana/vim-submode'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'gcmt/taboo.vim'
+Plugin 'vim-scripts/Rename'
 "Plugin 'scrooloose/nerdcommenter'
 "Plugin 'itchyny/calendar.vim'
 "Plugin 'blindFS/vim-taskwarrior'
@@ -131,9 +131,9 @@ set statusline=\                                "
 set statusline+=%{mode()}                       " mode character
 set statusline+=\                               " 
 set statusline+=[%{tabpagenr()}\|%{winnr()}]    " tab#|win#
+set statusline+=%#WarningMsg#%m%r%*             " modified/read-only
 set statusline+=\                               " 
-set statusline+=%t%*                            " :filename
-set statusline+=%#WarningMsg#%m%r%*      " modified/read-only
+set statusline+=%t                              " :filename
 set statusline+=\                               " 
 set statusline+=%y[%{GetSyntaxUnderCursor()}]   " filetype & syntax
 set statusline+=\                               " 
@@ -169,7 +169,7 @@ nnoremap <leader>q :qa
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit %<CR>') 
-call submode#enter_with('TABS', 'n', '', '<leader>w', ':close<CR>') 
+call submode#enter_with('TABS', 'n', '', '<leader>W', ':close<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>1', '1gt') 
 call submode#enter_with('TABS', 'n', '', '<leader>2', '2gt') 
 call submode#enter_with('TABS', 'n', '', '<leader>3', '3gt') 
@@ -184,7 +184,7 @@ call submode#enter_with('TABS', 'n', '', '<leader>(', ':bprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>)', ':bnext<CR>') 
 call submode#leave_with('TABS', 'n', '', '<Esc>') 
 call submode#map('TABS', 'n', '', 't', ':tabedit %<CR>')
-call submode#map('TABS', 'n', '', 'w', ':close<CR>')
+call submode#map('TABS', 'n', '', 'W', ':close<CR>')
 call submode#map('TABS', 'n', '', '1', '1gt') 
 call submode#map('TABS', 'n', '', '2', '2gt') 
 call submode#map('TABS', 'n', '', '3', '3gt') 
@@ -306,7 +306,7 @@ let g:calendar_view = 'agenda'
 nnoremap <leader>O :EditVifm<CR>
 
 " yankring
-let g:yankring_history_dir = '$VIM'
+let g:yankring_history_dir = '$HOME/.vim'
 
 " CtrlP
 let g:ctrlp_map = '<leader>o'
@@ -413,6 +413,7 @@ if exists("+showtabline")
             let s .= ''
             let wn = tabpagewinnr(i,'$')
 
+            "tab/window number
             let s .= (i == t ? '%#TabNumSel#' : '%#TabNum#')
             let s .= '['
             let s .= i
@@ -421,10 +422,14 @@ if exists("+showtabline")
                 let s .= (i == t ? '%#TabWinNumSel#' : '%#TabWinNum#')
                 let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
             end
+            let s .= ']%*'
 
-            let s .= '] %*'
+            "modified flag
+            let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
+            let s .= ' %*'
+
+            "filename
             let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-
             if TabooTabName(i) == ''
                 let bufnr = buflist[winnr - 1]
                 let file = bufname(bufnr)
@@ -443,8 +448,8 @@ if exists("+showtabline")
                 let file = TabooTabName(i)
             endif
             let s .= file
-            let s .= (i == t ? '%#TabModSel#%m%r %*' : '%#TabMod# %*')
             let s .= ' '
+            let s .= '%#TablineFill# %*'
             let i = i + 1
         endwhile
         let s .= '%T%#TabLineFill#%='
@@ -456,9 +461,11 @@ endif
 
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
-    exe ":call CenWinToggle(80)"
+    exe ':call CenWinToggle(80)'
     setlocal textwidth=0 wrapmargin=0 wrap linebreak 
-    setlocal statusline=%=%#WarningMsg#%m%r%*
+    hi StatusLine ctermfg=8
+    hi StatusLineNC ctermfg=8
+    setlocal statusline=%*%#WarningMsg#%m%r%*
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
