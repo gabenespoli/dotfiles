@@ -18,10 +18,11 @@ include ~/dotfiles/task/colors.theme
 
 # Custom reports
 report.t.description=My custom report
-report.t.columns=id,project,description,due.remaining,urgency
-report.t.labels=ID,Proj,Description,Due,Urg
+report.t.columns=id,project,tags,description,due.remaining,urgency
+report.t.labels=ID,Proj,Tags,Description,Due,Urg
 report.t.sort=urgency-/,project+
-report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
+#report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
+report.t.filter=status:pending
 
 # Custom urgency coefficients
 urgency.user.tag.next.coefficient           = 15.0
