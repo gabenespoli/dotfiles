@@ -62,7 +62,7 @@ color.recurring=
 color.scheduled=
 color.until=
 color.blocked=on color0
-color.blocking=color4
+color.blocking=color14
 
 # Due
 color.due=color2
