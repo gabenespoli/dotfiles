@@ -14,7 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 " files
-Plugin 'vifm/vifm.vim'
+"Plugin 'vifm/vifm.vim'
+Plugin 'francoiscabrol/ranger.vim'
 "Plugin 'bling/vim-bufferline'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -163,9 +164,10 @@ vnoremap jk <Esc>
 " common actions
 nnoremap <leader>e :e<Space>
 "<leader>o opens ctrlp plugin
-"<leader>O opens vifm
+"<leader>O opens ranger / vifm
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :qa
+nnoremap <leader>D :bdelete<CR>
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit %<CR>') 
@@ -302,8 +304,12 @@ let g:calendar_week_number = 1
 let g:calendar_views = ['year', 'month', 'week', 'day_4', 'agenda', 'event']
 let g:calendar_view = 'agenda'
 
+" ranger
+let g:ranger_map_keys = 0
+nnoremap <leader>O :RangerNewTab<CR>
+
 " vifm
-nnoremap <leader>O :EditVifm<CR>
+"nnoremap <leader>O :EditVifm<CR>
 
 " yankring
 let g:yankring_history_dir = '$HOME/.vim'
@@ -430,7 +436,7 @@ if exists("+showtabline")
 
             "filename
             let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-            if TabooTabName(i) == ''
+            if !exists("TabooTabName(i)") || TabooTabName(i) == ''
                 let bufnr = buflist[winnr - 1]
                 let file = bufname(bufnr)
                 let buftype = getbufvar(bufnr, 'buftype')
