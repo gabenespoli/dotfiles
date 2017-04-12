@@ -24,7 +24,7 @@ set spoolfile           = "=INBOX"
 set mbox                = "=Archive"
 set postponed           = "=Drafts"
 set sendmail            = "/usr/local/bin/msmtp -a Home"
-set sendmail_wait   = 0
+set sendmail_wait       = 0
 unset record
 mailboxes =INBOX \
           =Archive \
@@ -57,7 +57,7 @@ set sort_re                                # thread based on regex
 #set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 ## Viewing Options
-set pager_index_lines = 0  # number of index lines to show
+set pager_index_lines = 6  # number of index lines to show
 set pager_context = 3      # number of context lines to show
 set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
