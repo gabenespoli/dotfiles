@@ -2,6 +2,6 @@
 .*~
 *.pyo
 task/*.data
-config/vifm/vifminfo*
+config/vifm/vifminfo
 config/ranger/history
-config/
+config/ranger/bookmarks
