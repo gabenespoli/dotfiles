@@ -3,16 +3,22 @@
 # https://github.com/gabenespoli/dotfiles/bashrc
 
 ## System-specific options
-
 if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias ls="ls -hl"
     alias la="ls -hla"
     alias lsa="ls -hla"
+    alias agi="brew install"
+    alias agu="brew update && brew upgrade && brew cleanup"
+    alias ql='qlmanage -p &>/dev/null'
+    alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
+    alias openx="open -a Microsoft\ Excel.app"
+    alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+    alias wifi="sudo networksetup -setairportnetwork en0"
    #export LSCOLORS=exfxcxdxbxegedabagacad # macOS default from `man ls`
    #                1 2 3 4 5 6 7 8 9 1011
-   #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made
+   #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
     export LSCOLORS=exgxcxdxfxegedabagacad
-    export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}\007"' # tab titles
+    export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
     
 else # Linux options
     if [ -f ~/.bash_aliases ]; then
@@ -23,6 +29,7 @@ else # Linux options
     alias lsa="ls -hla --color"
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
+    alias sambastart="sudo /etc/init.d/samba start"
     eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
@@ -31,22 +38,16 @@ else # Linux options
 fi
 
 ## Environment vars
-# ----------------
 export PATH="$HOME/bin:/usr/local/texbin:/usr/local/lib:/usr/local/bin:$PATH"
-export EDITOR='vim' # set default text editor
-export GOOGLER_COLORS=Lecgxy
-export CLICOLOR=1 # colors for ls
+export EDITOR='vim'
+export CLICOLOR=1
 export PS1='\[\e[0;34m\] \w \[\e[0;37m\]\$\[\e[m\] '
-#PS1='\[\e[0;34m\]\h:\W \$\[\e[m\] '
-export VIMPAGER_RC="$HOME/.vimrc"
-#export LESS_TERMCAP_so=$'\e[30;43m'
 
 ## Aliases & Functions
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
 alias mc="mc -b"
-alias ql='qlmanage -p &>/dev/null'
 alias ta="tmux a"
 alias fold="fold -s"
 alias exe="chmod u+x"
@@ -63,36 +64,34 @@ alias gc='git commit'
 alias gd='git diff'
 alias gitlog="git log --graph --decorate --oneline"
 
-# notes
-function notes() { vim "$(gf $@)/notes.md" ; }
-alias wf="python ~/bin/Workflows/Workflows.py ~/r/notes/"
-
-# calendar and todo
+# todo, notes, and calendar
 alias t="task"
-alias tt='printf "\033c" && task calendar && task t && tsync'
-alias tsync='python $HOME/bin/task2todotxt/task2todotxt.py'
+alias tt="printf '\033c' && task calendar && task t && tsync"
+alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
 alias todo="todo.sh -a"
 alias gcal="gcalcli --includeRc"
-alias cme='printf "\033c" && gcalcli agenda --calendar Gabe --calendar EGcal --calendar Research --calendar https://trello.com/calendar/556dc4e1306181318b7faca9/58c0446572e43a9ffe490439/567e8f2d9cb740e5cf2db6fec6b17947.ics'
-alias cfam='printf "\033c" && gcalcli agenda --calendar Gabe --calendar erin.nespoli@gmail.com --calendar Olly --calendar yespleasefolk@gmail.com --calendar EGcal --calendar EGtravel'
-alias cwork='printf "\033c" && gcalcli agenda --calendar Research --calendar https://trello.com/calendar/556dc4e1306181318b7faca9/58c0446572e43a9ffe490439/567e8f2d9cb740e5cf2db6fec6b17947.ics'
-alias clab='printf "\033c" && gcalcli agenda --calendar SINGS --calendar AUDIOMETER\ booking'
+alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
+function notes() { vim "$(gf $@)/notes.md" ; }
+function note() {
+    notesDir="$HOME/notes/"
+    title="$*"
+    filename="$notesDir/$title.md"
+    if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
+    dateTitle="## "`date +%Y-%m-%d`
+    updatedToday=`grep -c "^$dateTitle" "$filename"`
+    if [ "$updatedToday" -eq "0" ]; then echo "$dateTitle"$'\n' >> "$filename"; fi
+    vim "$filename" "+normal G"
+}
 
 # others
 alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
-alias gmail="mutt -F ~/dotfiles/muttrc_gmail"
+alias gmail="mutt -F $HOME/dotfiles/muttrc_gmail"
 alias cite="python $HOME/bin/cite/cite.py"
-alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
 alias octave="octave --no-gui"
-alias rate='python $HOME/bin/utils/rate.py'
-alias openx="open -a Microsoft\ Excel.app"
-alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-function vman() { vim -c "SuperMan $*"; if [ "$?" != "0" ]; then echo "No manual entry for $*"; fi }
-function vimsyntax() { vim "/usr/local/Cellar/vim/8.0.0130/share/vim/vim80/syntax/$1.vim" ; }
-alias vimsyntax_pandoc="vim ~/.vim/bundle/vim-pandoc-syntax/syntax/pandoc.vim"
-alias lilyjazz='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include="$HOME/.lyp/packages/lilyjazz@0.2.0" "$@"'
-alias lilypond='$HOME/.lyp/lilyponds/2.18.2/bin/lilypond "$@"'
+alias rate="python $HOME/bin/utils/rate.py"
+alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
+alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 alias hangups="hangups \
     --date-format '< %Y-%m-%d >' \
     --disable-notifications \
@@ -113,12 +112,53 @@ alias hangups="hangups \
     --col-msg-self-bg default"
 
 # network
-alias wifi="sudo networksetup -setairportnetwork en0"
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias efgh="ssh efgh@192.168.1.12"
 alias hrcommons="open vnc://141.117.114.20"
+function ltm() {
+    if [ ! -d ~/ltm ]; then mkdir ~/ltm; fi
+    mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart/Projects/Gabe ~/ltm
+}
+function eg () {
+    if [ ! -d ~/eg ]; then mkdir ~/eg; fi
+    mount -t smbfs //efgh@192.168.1.12/egdata ~/eg
+}
+function dns() {
+    case $1 in
+        on )
+            sudo networksetup -setdnsservers Wi-Fi 192.254.74.201 198.27.106.150 208.110.81.50 ;;
+        off )
+            sudo networksetup -setdnsservers Wi-Fi empty ;;
+        list|show|get )
+            networksetup -getdnsservers Wi-Fi ;;
+    esac
+}
+
 
 # misc shortcuts
 alias paper="vim -c 'call CenWinEnable(100)' ~/r/gv/paper/Nespoli2017.md"
 alias dis="vim -c 'call CenWinEnable(100)' -c 'call CenWinTodoEnable()' ~/r/phd/NespoliPhDProposal.md"
 
+# open websites with keywords
+function web() {
+    case $1 in
+        # research
+        r|rye|ryerson|myryerson ) webpage="https://my.ryerson.ca" ;;
+        l|lib ) webpage="http://learn.library.ryerson.ca/psychology" ;;
+        s|scholar|sch ) webpage="http://scholar.google.com" ;;
+        m|mendeley ) webpage="https://www.mendeley.com/library/" ;;
+        # accounts
+        b|bank|rbc ) webpage="https://www1.royalbank.com/cgi-bin/rbaccess/rbunxcgi?F6=1&F7=IB&F21=IB&F22=IB&REQUEST=ClientSignin&LANGUAGE=ENGLISH" ;;
+        aft|ad|adfreetime ) webpage="https://adfreetime.com/service/" ;;
+        presto ) webpage="https://www.prestocard.ca/en/" ;;
+        # sports
+        nhl ) webpage="https://www.nhl.com/tv" ;;
+        mlb ) webpage="http://mlb.mlb.com/mediacenter/" ;;
+        ashl ) webpage="https://bench.icesports.com/apex/pbHome" ;;
+        tssc ) webpage="http://www.torontossc.com/profile/" ;;
+        # misc
+        f|fb|facebook ) webpage="http://www.facebook.com" ;;
+    esac
+    command="open "$webpage
+    $command
+}
