@@ -59,9 +59,10 @@ function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
 
 # git
-alias gs='git status'
-alias gc='git commit'
-alias gd='git diff'
+alias gs="git status"
+alias gc="git commit"
+alias gd="git diff"
+alias gr="git reset"
 alias gitlog="git log --graph --decorate --oneline"
 
 # todo, notes, and calendar
