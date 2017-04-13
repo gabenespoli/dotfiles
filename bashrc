@@ -51,6 +51,9 @@ export EDITOR='vim'
 export CLICOLOR=1
 export PS1='\[\e[0;34m\] \w \[\e[0;37m\]\$\[\e[m\] '
 
+# setup ruby env (requires rbenv to be installed)
+eval "$(rbenv init -)"
+
 ## Aliases & Functions
 alias grep="grep --color"
 alias df="df -h"
