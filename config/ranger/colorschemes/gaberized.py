@@ -26,6 +26,8 @@ class Default(ColorScheme):
             else:
                 attr = normal
             if context.empty or context.error:
+                attr |= bold
+                fg = white
                 bg = red
             if context.border:
                 fg = default
@@ -86,6 +88,7 @@ class Default(ColorScheme):
             elif context.tab:
                 if context.good:
                     bg = green
+                    fg = black
             elif context.link:
                 fg = cyan
 
