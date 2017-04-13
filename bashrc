@@ -2,7 +2,7 @@
 
 # https://github.com/gabenespoli/dotfiles/bashrc
 
-## System-specific options
+## OS-specific options
 if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias ls="ls -hl"
     alias la="ls -hla"
@@ -14,6 +14,14 @@ if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
+    function findershowhidden() {
+        case $1 in
+            on|true ) command="TRUE" ;;
+            off|false ) command="FALSE" ;;
+        esac
+        defaults write com.apple.finder AppleShowAllFiles "$command"
+        killall Finder
+    }
    #export LSCOLORS=exfxcxdxbxegedabagacad # macOS default from `man ls`
    #                1 2 3 4 5 6 7 8 9 1011
    #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
