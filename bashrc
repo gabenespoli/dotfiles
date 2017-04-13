@@ -68,6 +68,7 @@ alias gf="python $HOME/bin/utils/gf.py"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
+function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 
 # git
 alias gs="git status"
