@@ -323,8 +323,8 @@ let g:ctrlp_prompt_mappings = {
             \ 'PrtHistory(-1)':         ['<down>'],
             \ 'PrtHistory(1)':          ['<up>'],
             \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'], 
-            \ 'ToggleType(1)':          ['<C-b>', '<C-down>'],
-            \ 'ToggleType(-1)':         ['<C-f>', '<C-up>'],
+            \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+            \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
 
 " Pandoc
