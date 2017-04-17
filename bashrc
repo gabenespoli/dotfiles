@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# https://github.com/gabenespoli/dotfiles/bashrc
-
 ## OS-specific options
 if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias ls="ls -hl"
@@ -124,8 +122,10 @@ alias hangups="hangups \
     --col-msg-sender-bg default \
     --col-msg-self-fg 'dark blue' \
     --col-msg-self-bg default"
+alias paper="vim ~/r/gv/paper/Nespoli2017.md"
+alias dis="vim ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 
-# network
+## network
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias efgh="ssh efgh@192.168.1.12"
 alias hrcommons="open vnc://141.117.114.20"
@@ -137,21 +137,16 @@ function eg () {
     if [ ! -d ~/eg ]; then mkdir ~/eg; fi
     mount -t smbfs //efgh@192.168.1.12/egdata ~/eg
 }
+
+## internet
+# dns servers
 function dns() {
     case $1 in
-        on )
-            sudo networksetup -setdnsservers Wi-Fi 192.254.74.201 198.27.106.150 208.110.81.50 ;;
-        off )
-            sudo networksetup -setdnsservers Wi-Fi empty ;;
-        list|show|get )
-            networksetup -getdnsservers Wi-Fi ;;
+        on ) sudo networksetup -setdnsservers Wi-Fi 192.254.74.201 198.27.106.150 208.110.81.50 ;;
+        off ) sudo networksetup -setdnsservers Wi-Fi empty ;;
+        list|show|get ) networksetup -getdnsservers Wi-Fi ;;
     esac
 }
-
-
-# misc shortcuts
-alias paper="vim -c 'call CenWinEnable(100)' ~/r/gv/paper/Nespoli2017.md"
-alias dis="vim -c 'call CenWinEnable(100)' -c 'call CenWinTodoEnable()' ~/r/phd/NespoliPhDProposal.md"
 
 # open websites with keywords
 function web() {
@@ -173,6 +168,5 @@ function web() {
         # misc
         f|fb|facebook ) webpage="http://www.facebook.com" ;;
     esac
-    command="open "$webpage
-    $command
+    open $webpage
 }
