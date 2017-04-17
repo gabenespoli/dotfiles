@@ -120,7 +120,7 @@ set wildmenu            " visual autocomplete for command menu
 set showmatch           " hi matching [{()}]
 set visualbell          " no sound
 set laststatus=2        " 0 = no status bar, 2 = show status bar
-set showtabline=1       " 0 = no tabline, 1 = show if > 1 tab, 2 = always
+set showtabline=2       " 0 = no tabline, 1 = show if > 1 tab, 2 = always
 set tabpagemax=8
 set hidden
 set splitright
@@ -322,7 +322,8 @@ let g:ctrlp_prompt_mappings = {
             \ 'PrtSelectMove("k")':     ['<C-p>'],
             \ 'PrtHistory(-1)':         ['<down>'],
             \ 'PrtHistory(1)':          ['<up>'],
-            \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'], 
+            \ 'AcceptSelection("e")':   ['<C-j>'],
+            \ 'AcceptSelection("t")':   ['<C-m>', '<CR>', '<2-LeftMouse>'],
             \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
@@ -383,7 +384,7 @@ endfunction
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
-       set showtabline=1
+       set showtabline=2
     elseif &showtabline==1
         set showtabline=0
     elseif &showtabline==2
