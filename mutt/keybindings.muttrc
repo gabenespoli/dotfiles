@@ -2,8 +2,6 @@
 # Gabe Nespoli (gabenespoli@gmail.com)
 
 ## Scrolling (like vim)
-bind    pager           j       next-line
-bind    pager           k       previous-line
 bind    index,pager     \Ce     next-line           # default is <Enter>; ^E is default for edit-type
 bind    index,pager     \Cy     previous-line       # default is <Backspace>
 bind    index,pager     \Cd     half-down           # default for index is ]
@@ -14,30 +12,45 @@ bind    index           gg      first-entry         # default is =; g is default
 bind    index           G       last-entry          # default is *
 bind    pager           gg      top                 # default is ^; g is default for group-reply
 bind    pager           G       bottom              # default is <End>
-bind    pager           J       next-undeleted      # default is j; J is default for next-entry
-bind    pager           K       previous-undeleted  # default is k; K is default for next-entry
 bind    pager           [       half-up             # by default this is not bound in the pager
 bind    pager           ]       half-down           # by default this is not bound in the pager
+#bind    pager           j       next-line
+#bind    pager           k       previous-line
+#bind    pager           J       next-undeleted      # default is j; J is default for next-entry
+#bind    pager           K       previous-undeleted  # default is k; K is default for next-entry
 
 ## Navigation
-bind    index           o       display-message     # default is <Space>
-bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
-bind    attach          <Space> view-attach         # <Space> is not bound by default in attach
+# make hjkl for movement between sections
 bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
-bind    pager,attach    i       exit                # default is q (sometimes i)
-macro   index           i       '<change-folder>=INBOX<enter>' # change i in the index so we don't exit mutt
-bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
+bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
+bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
+bind    pager           l       view-attachments
+bind    attach          l       view-attach         # default is <Enter> (or m for force open with mailcap)
+macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
+macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
+
+# some corrections for the hjkl adjustments
+bind    pager           i       display-toggle-weed # no default binding for i
+bind    index           L       limit               # default for L is list reply (which I don't need)
+macro   index           i       '<change-folder>=INBOX<enter>' # handy way to get back to the inbox; can also use gi
+
+# other navigation
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 macro   index           c       '<change-folder>?<toggle-mailboxes>'    # default is y
 bind    index           y       change-folder                           # default is c
+#bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
+#bind    index           o       display-message     # default is <Space>
+#bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
+#bind    attach          <Space> view-attach         # <Space> is not bound by default in attach
+#bind    pager,attach    i       exit                # default is q (sometimes i)
 
 ## Actions
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
 bind    index,pager     p       recall-message      # default (R) is used for offlineimap; default for p is to print
 bind    compose         p       postpone-message
-macro   index,pager     P       '<shell-escape>tmux split-window "vim ~/.mail/Drafts/new/*"<enter>' 'Open drafts in new tmux pane'
+macro   index,pager     P       "<shell-escape>tmux split-window 'vim -c 'set syntax=mail' ~/.mail/Drafts/new/*'<enter>" "Open drafts in new tmux pane"
 macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
 macro   compose         f       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n" "Set from to alternate email <gabe@psych.ryerson.ca>"
 macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
@@ -51,8 +64,6 @@ bind    index               =       limit # // default is l; this is the filter 
 
 ## External
 bind    editor          <Tab>   complete-query # goobook auto-completion
-macro   pager           b       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
-macro   pager           B       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
 macro   index,pager     \er     "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
 macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
 macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
