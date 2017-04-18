@@ -110,7 +110,7 @@ alias hangups="hangups \
     --key-close-tab 'ctrl x' \
     --col-tab-background-fg yellow \
     --col-tab-background-bg 'dark gray' \
-    --col-active-tab-fg white \
+    --col-active-tab-fg 'light gray' \
     --col-active-tab-bg black \
     --col-inactive-tab-fg yellow \
     --col-inactive-tab-bg black \
