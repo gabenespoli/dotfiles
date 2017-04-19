@@ -51,7 +51,7 @@ color.alternate=
 color.header=color4
 color.footnote=color6
 color.warning=color0 on color3
-color.error=color6
+color.error=color1
 color.debug=color6
 
 # Task state
