@@ -26,6 +26,7 @@ bind    pager,attach    h       exit                # make hjkl movement keys; d
 bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
 bind    pager           l       view-attachments
 bind    attach          l       view-attach         # default is <Enter> (or m for force open with mailcap)
+bind    attach          <Space> view-attach         # default is <Enter> (or m for force open with mailcap)
 macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
 
