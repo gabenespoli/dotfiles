@@ -201,8 +201,6 @@ call submode#map('TABS', 'n', '', '9', ':tabprevious<CR>')
 call submode#map('TABS', 'n', '', '0', ':tabnext<CR>')
 call submode#map('TABS', 'n', '', '(', ':bprevious<CR>') 
 call submode#map('TABS', 'n', '', ')', ':bnext<CR>')
-call submode#map('TABS', 'n', '', 'b', ':BuffergatorToggle<CR>')
-call submode#map('TABS', 'n', '', 'T', ':BuffergatorTabsToggle<CR>')
 
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
