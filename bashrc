@@ -64,6 +64,7 @@ alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias lsl='printf "\033c" && ls'
 alias gf="python $HOME/bin/utils/gf.py"
+alias vim="vim -p" # open multiple files in tabs
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
