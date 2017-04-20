@@ -171,7 +171,8 @@ nnoremap <leader>D :bdelete<CR>
 nnoremap <leader>w :close<CR>
 
 " tabs, windows/panes, buffers
-call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit %<CR>') 
+call submode#enter_with('TABS', 'n', '', '<leader>n', ':tab new<CR>') 
+call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit #<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>W', ':close<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>1', '1gt') 
 call submode#enter_with('TABS', 'n', '', '<leader>2', '2gt') 
