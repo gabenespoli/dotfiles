@@ -168,6 +168,7 @@ nnoremap <leader>e :e<Space>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :qa
 nnoremap <leader>D :bdelete<CR>
+nnoremap <leader>w :close<CR>
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit %<CR>') 
