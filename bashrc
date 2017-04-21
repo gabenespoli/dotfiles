@@ -125,6 +125,7 @@ alias hangups="hangups \
     --col-msg-self-bg default"
 alias paper="vim ~/r/gv/paper/Nespoli2017.md"
 alias dis="vim ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
+alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
