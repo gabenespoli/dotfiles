@@ -129,6 +129,7 @@ alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
+alias smarts="open vnc://smartmacpro.arts.ryerson.ca"
 alias efgh="ssh efgh@192.168.1.12"
 alias hrcommons="open vnc://141.117.114.20"
 function ltm() {
