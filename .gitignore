@@ -2,6 +2,9 @@
 .*~
 *.pyo
 task/*.data
-config/vifm/vifminfo
+config/ranger/commands.py
+config/ranger/commands_full.py
 config/ranger/history
 config/ranger/bookmarks
+config/vifm/vifminfo
+pandoc/library.bib
