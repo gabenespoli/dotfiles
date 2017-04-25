@@ -79,8 +79,14 @@ alias gitlog="git log --graph --decorate --oneline"
 
 # todo, notes, and calendar
 alias t="task"
-alias tt="printf '\033c' && task calendar && task t && tsync"
 alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
+function tt() {
+    tsync
+    printf "\033c"
+    echo " task" $@
+    task calendar
+    task t $@
+}
 alias todo="todo.sh -a"
 alias gcal="gcalcli --includeRc"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
