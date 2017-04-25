@@ -135,17 +135,10 @@ alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
-alias smarts="open vnc://smartmacpro.arts.ryerson.ca"
+alias smarts="open vnc://smartmacpro.local"
 alias efgh="ssh efgh@192.168.1.12"
-alias hrcommons="open vnc://141.117.114.20"
-function ltm() {
-    if [ ! -d ~/ltm ]; then mkdir ~/ltm; fi
-    mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart/Projects/Gabe ~/ltm
-}
-function eg () {
-    if [ ! -d ~/eg ]; then mkdir ~/eg; fi
-    mount -t smbfs //efgh@192.168.1.12/egdata ~/eg
-}
+function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart/Projects/Gabe ~/ltm }
+function eg () { mount -t smbfs //efgh@192.168.1.12/egdata ~/eg }
 
 ## internet
 # dns servers
