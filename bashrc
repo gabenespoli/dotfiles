@@ -37,7 +37,7 @@ else # Linux options
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
     alias matlab="/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodesktop"
-    eval `dircolors $HOME/.dir_colors/dircolors`
+    #eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
