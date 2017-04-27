@@ -44,7 +44,7 @@ unset mark_old           # read/new is good enough for me
 set sort_alias=alias
 set reverse_alias=yes
 #set beep_new             # bell on new mails
-#set pipe_decode          # strip headers and eval mimes when piping
+set pipe_decode          # strip headers and eval mimes when piping
 #set thorough_search      # strip headers and eval mimes before searching
 set mail_check_stats
 #set arrow_cursor
