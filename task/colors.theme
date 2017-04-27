@@ -62,18 +62,18 @@ color.recurring=
 color.scheduled=
 color.until=
 color.blocked=on color0
-color.blocking=color7
+color.blocking=color14
 
 # Due
 color.due=color2
 color.due.today=color8 on color9
-color.overdue=color15 on color1
+color.overdue=color8 on color1
 
 # Command: calendar
 color.calendar.today=color8 on color4
 color.calendar.due=color8 on color2
 color.calendar.due.today=color8 on color9
-color.calendar.overdue=color15 on color1
+color.calendar.overdue=color8 on color1
 color.calendar.holiday=color8 on color13
 color.calendar.weekend=on color0
 color.calendar.weeknumber=color10
