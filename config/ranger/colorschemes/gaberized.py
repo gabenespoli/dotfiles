@@ -27,27 +27,24 @@ class Default(ColorScheme):
                 attr = normal
             if context.empty or context.error:
                 attr |= bold
-                fg = white
-                bg = red
+                fg = green
             if context.border:
                 fg = default
             if context.media:
                 if context.image:
-                    fg = yellow
+                    fg = default
                 else:
                     fg = magenta
             if context.container:
                 fg = red
             if context.directory:
-                #attr |= bold
                 fg = blue
             elif context.executable and not \
                     any((context.media, context.container,
                          context.fifo, context.socket)):
-                #attr |= bold
                 fg = magenta
             if context.socket:
-                #fg = magenta
+                fg = magenta
                 attr |= bold
             if context.fifo:
                 fg = yellow
@@ -69,7 +66,6 @@ class Default(ColorScheme):
                 #if context.selected:
                     #attr |= bold
                 if context.marked:
-                    attr |= bold
                     fg = yellow
             if context.badinfo:
                 if attr & reverse:
@@ -81,7 +77,6 @@ class Default(ColorScheme):
                 fg = cyan
 
         elif context.in_titlebar:
-            attr |= bold
             if context.hostname:
                 fg = red if context.bad else green
             elif context.directory:
@@ -100,11 +95,10 @@ class Default(ColorScheme):
                 elif context.bad:
                     fg = magenta
             if context.marked:
-                attr |= bold | reverse
+                attr |= reverse
                 fg = yellow
             if context.message:
                 if context.bad:
-                    attr |= bold
                     fg = red
             if context.loaded:
                 bg = self.progress_bar_color
