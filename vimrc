@@ -45,6 +45,7 @@ Plugin 'kana/vim-submode'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'vim-scripts/Rename'
+Plugin 'jceb/vim-orgmode'
 "Plugin 'scrooloose/nerdcommenter'
 "Plugin 'itchyny/calendar.vim'
 "Plugin 'blindFS/vim-taskwarrior'
@@ -219,6 +220,8 @@ nnoremap <leader>p "+p
 nnoremap Y y$
 " stuff for tmux from https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
+
+nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
 
 " swap j/k with gj/gk
 nnoremap j gj
