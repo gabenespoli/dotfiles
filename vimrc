@@ -167,9 +167,10 @@ nnoremap <leader>e :e<Space>
 "<leader>o opens ctrlp plugin
 "<leader>O opens ranger / vifm
 nnoremap <leader>s :w<CR>
-nnoremap <leader>q :qa
-nnoremap <leader>D :bdelete<CR>
 nnoremap <leader>w :close<CR>
+nnoremap <leader>D :bdelete<CR>
+nnoremap <leader>X :bwipe<CR>
+nnoremap <leader>q :qa
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>n', ':tab new<CR>') 
