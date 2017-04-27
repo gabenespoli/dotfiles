@@ -65,7 +65,7 @@ color.blocked=on color0
 color.blocking=color2
 
 # Due
-color.due=color2
+color.due=color8 on color2
 color.due.today=color8 on color9
 color.overdue=color8 on color1
 
