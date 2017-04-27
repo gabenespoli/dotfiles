@@ -72,10 +72,11 @@ function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # u
 
 # git
 alias gs="git status"
-alias gc="git commit"
 alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
 alias gr="git reset"
-alias gitlog="git log --graph --decorate --oneline"
+alias Glog="git log --graph --decorate --oneline"
 
 # todo, notes, and calendar
 alias t="task"
@@ -98,7 +99,7 @@ function note() {
     if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
     dateTitle="## "`date +%Y-%m-%d`
     updatedToday=`grep -c "^$dateTitle" "$filename"`
-    if [ "$updatedToday" -eq "0" ]; then echo "$dateTitle"$'\n' >> "$filename"; fi
+    if [ "$updatedToday" -eq "0" ]; then echo "$dateTitle"$'\n\n' >> "$filename"; fi
     vim "$filename" "+normal G"
 }
 
