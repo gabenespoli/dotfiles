@@ -139,7 +139,7 @@ alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias smarts="open vnc://smartmacpro.arts.ryerson.ca"
 alias efgh="ssh efgh@192.168.1.12"
-function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart/Projects/Gabe ~/ltm ; }
+function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
 function eg () { mount -t smbfs //efgh@192.168.1.12/egdata ~/eg ; }
 
 ## internet
