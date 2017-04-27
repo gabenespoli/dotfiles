@@ -25,8 +25,8 @@ function! GabePandocForce()
     hi pandocStrongEmphasis cterm=none ctermfg=15
     hi pandocEmphasisInStrong cterm=none ctermfg=7
     hi pandocStrongInEmphasis cterm=none ctermfg=7
-    hi pandocAtxStart ctermfg=7
-    hi pandocAtxHeader cterm=bold ctermfg=15
+    hi pandocAtxStart ctermfg=7 ctermbg=0
+    hi pandocAtxHeader cterm=bold ctermfg=15 ctermbg=0
     hi pandocOperator ctermfg=darkgrey
     hi pandocStrong cterm=bold ctermfg=15
     syn match mdTodo /^\s*TODO.*/
