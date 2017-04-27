@@ -18,9 +18,9 @@ include ~/dotfiles/task/colors.theme
 
 # Custom reports
 report.t.description=My custom report
-report.t.columns=id,project,tags,description,scheduled.remaining,due.remaining,urgency
-report.t.labels=ID,Proj,Tags,Description,Do,Due,Urg
-report.t.sort=urgency-/,project+
+report.t.columns=id,project,tags,description,scheduled.remaining,due.remaining
+report.t.labels=ID,Proj,Tags,Description,Do,Due
+report.t.sort=tags+/,urgency-
 #report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
 report.t.filter=status:pending
 
