@@ -98,9 +98,6 @@ function note() {
     title="$*"
     filename="$notesDir/$title.md"
     if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
-    dateTitle="## "`date +%Y-%m-%d`
-    updatedToday=`grep -c "^$dateTitle" "$filename"`
-    if [ "$updatedToday" -eq "0" ]; then echo "$dateTitle"$'\n\n' >> "$filename"; fi
     vim "$filename" "+normal G"
 }
 
