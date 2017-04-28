@@ -225,16 +225,16 @@ set clipboard=unnamed
 nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
 
 " swap j/k with gj/gk
-"nnoremap j gj
-"nnoremap k gk
-"nnoremap gj j
-"nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 nnoremap <Down> gj
 nnoremap <Up> gk
-"vnoremap j gj
-"vnoremap k gk
-"vnoremap gj j
-"vnoremap gk k
+vnoremap j gj
+vnoremap k gk
+vnoremap gj j
+vnoremap gk k
 vnoremap <Down> gj
 vnoremap <Up> gk
 
