@@ -5,7 +5,7 @@ Description = "gaberized2"
 Default	        = { Colour="#808080" }
 Canvas	        = { Colour="#1c1c1c" }
 Number	        = { Colour="#008787" }
-Escape	        = { Colour="#d70000" }
+Escape	        = { Colour="#b71717" }
 String	        = { Colour="#008787" }
 BlockComment	= { Colour="#4e4e4e" }
 StringPreProc   = String
