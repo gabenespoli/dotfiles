@@ -3,6 +3,7 @@ set nonumber    " don't show line numbers
 set spell       " enable live spell checking
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
+nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
 "au VimEnter * :GitGutterDisable
 
 hi NonText ctermfg=8
