@@ -4,7 +4,7 @@ let g:colors_name='gaberized'
 
 " Solarized customizations
 hi Title                ctermfg=15      ctermbg=none    cterm=none
-hi Operator             ctermfg=7       ctermbg=none    cterm=none
+"hi Operator             ctermfg=7       ctermbg=none    cterm=none
 hi WarningMsg           ctermfg=1       ctermbg=0       cterm=none
 
 hi StatusLine           ctermfg=0       ctermbg=14      cterm=reverse
@@ -27,8 +27,8 @@ hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
 hi NonText              ctermfg=10      ctermbg=8       cterm=none
 hi SpecialKey           ctermfg=10      ctermbg=0       cterm=none
 
-hi Search               ctermfg=12      ctermbg=8       cterm=reverse
-hi IncSearch            ctermfg=12      ctermbg=8       cterm=reverse
+hi Search               ctermfg=11      ctermbg=8       cterm=reverse
+hi IncSearch            ctermfg=11      ctermbg=8       cterm=reverse
 hi Visual               ctermfg=12      ctermbg=8       cterm=reverse
 
 hi DiffAdd              ctermfg=2       ctermbg=0
