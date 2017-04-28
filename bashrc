@@ -58,8 +58,8 @@ alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
 alias mc="mc -b"
-alias ta="tmux attach"
-alias td="tmux detach"
+alias wa="tmux attach"
+alias wd="tmux detach"
 alias fold="fold -s"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
@@ -72,15 +72,23 @@ function lss() { ls "$(gf "$@")" ; }
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 
 # git
-alias gs="git status"
+alias gs="printf '\033c' && git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
+function Gc() {
+    printf "\033c"
+    git diff $@
+    tmux split-window -h -c "#{pane_current_path}" "git commit $@"
+    
+}
+
 alias gr="git reset"
 alias Glog="git log --graph --decorate --oneline"
 
 # todo, notes, and calendar
 alias t="task"
+alias ta="task add"
 alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
 function tt() {
     tsync
