@@ -1,5 +1,4 @@
-set norelativenumber
-set nonumber    " don't show line numbers
+"set nonumber    " don't show line numbers
 set spell       " enable live spell checking
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
@@ -32,6 +31,11 @@ function! GabePandocForce()
     hi pandocStrong cterm=bold ctermfg=15
     syn match mdTodo /^\s*TODO.*/
     hi link mdTodo Todo
+
+    hi criticAdd cterm=reverse ctermfg=2 ctermbg=8
+    hi criticDel cterm=reverse ctermfg=1 ctermbg=8
+    hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
+    hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunc
 au VimEnter * :call GabePandocForce()
 nnoremap <localleader>i :call GabePandocForce()<CR>
