@@ -8,7 +8,7 @@
 
 ## Paths
 set alias_file          = ~/bin/private/mutt/aliases
-set mailcap_path        = ~/.mutt/mailcap
+set mailcap_path        = ~/dotfiles/mutt/mailcap
 set folder              = ~/.mail
 set header_cache        = ~/.mail/cache/headers
 set message_cachedir    = ~/.mail/cache/bodies
@@ -17,7 +17,6 @@ set tmpdir              = ~/.mail/temp
 
 ## Account Settings
 set realname            = "Gabe Nespoli"
-#send-hook               '~t ryerson\.ca$' 'my_hdr From: Gabriel A. Nespoli <gabe@psych.ryerson.ca>'
 set from                = "gabenespoli@gmail.com"
 alternates              "gabe@psych.ryerson.ca|gabenespoli@gmail.com"
 set spoolfile           = "=INBOX"
@@ -68,7 +67,7 @@ unset markers              # no ugly plus signs
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 set sidebar_visible = no
-set sidebar_width   = 27
+set sidebar_width   = 30
 set sidebar_format  = "%B%?F?[%F]?%* %?N?%N/?%S%?L?[%L]?"
 
 ## Compose View Options
@@ -95,6 +94,7 @@ set text_flowed                             # don't add line break if line ends 
 set query_command   = "goobook query %s"
 
 ## Source colors and keybindings
-source ~/.mutt/colors.muttrc
-source ~/.mutt/keybindings.muttrc
+source ~/dotfiles/mutt/colors.muttrc
+source ~/dotfiles/mutt/keybindings.muttrc
 source $alias_file
+
