@@ -54,8 +54,6 @@ bind    compose         p       postpone-message
 macro   index,pager     P       "<shell-escape>tmux split-window 'vim -c 'set syntax=mail' ~/.mail/Drafts/new/*'<enter>" "Open drafts in new tmux pane"
 macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
 macro   compose         f       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n" "Set from to alternate email <gabe@psych.ryerson.ca>"
-macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
-macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 
 ## Misc
 bind    index               <Esc>n  toggle-new # // default is N
@@ -70,11 +68,13 @@ macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap<enter>"
 macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
 #macro   index,pager     a       "<pipe-message>goobook add<enter>"                          "Add sender to Google contacts."
 
-## Jumping (and limiting)
+## Jumping and Limititing
 macro   index,pager     gi      "<change-folder>=INBOX<enter>"                          "Go to Inbox"
 macro   index,pager     ga      "<change-folder>=Archive<enter><limit>all<enter>"       "Go to Archive"
 macro   index,pager     gd      "<change-folder>=Drafts<enter>"                         "Go to Drafts"
 macro   index,pager     gx      "<change-folder>=Trash<enter>"                          "Go to Trash"
 macro   index,pager     gf      "<change-folder>=Archive<enter><limit>~F<enter>"        "Go to Flagged conversations"
 macro   index,pager     gs      "<change-folder>=Archive<enter><limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Go to Sent messages"
+macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
+macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 
