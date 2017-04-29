@@ -19,10 +19,8 @@ nnoremap <localleader>c F{df}
 
 "au VimEnter * :call CenWinEnable()
 
-
-
-au VimEnter * :set syntax=pandoc
 " Pandoc Plugin
+au VimEnter * :set syntax=pandoc
 let g:pandoc#modules#enabled = ["command","completion","keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
 let g:pandoc#biblio#sources = "g"
