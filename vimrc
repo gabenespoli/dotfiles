@@ -332,19 +332,7 @@ let g:ctrlp_prompt_mappings = {
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
 
-" Pandoc
-let g:pandoc#modules#enabled = ["command","completion","keyboard"]
-let g:pandoc#keyboard#enabled_submodules = ["sections"]
-"let g:pandoc#biblio#sources = "g"
-"let g:pandoc#biblio#bibs = ["~/.pandoc/library.bib"]
-"let g:pandoc#completion#bib#mode = "citeproc"
-let g:pandoc#command#autoexec_on_writes = 0
-"let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx='~/dotfiles/pandoc/apa.docx'"
-
-" Pandoc Syntax
-let g:pandoc#syntax#conceal#use = 0
-
-" CriticMarkup
+" Pandoc, Pandoc Syntax, & CriticMarkup
 " see settings in .vim/ftplugin/markdown.vim
 
 " GitGutter 
