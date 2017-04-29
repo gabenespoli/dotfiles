@@ -17,9 +17,22 @@ nnoremap <localleader>r :Critic reject<CR>
 nnoremap <localleader>h :call criticmarkup#InjectHighlighting()<CR>
 nnoremap <localleader>c F{df}
 
-" Pandoc Plugin
-au VimEnter * :set syntax=pandoc
 "au VimEnter * :call CenWinEnable()
+
+
+
+au VimEnter * :set syntax=pandoc
+" Pandoc Plugin
+let g:pandoc#modules#enabled = ["command","completion","keyboard"]
+let g:pandoc#keyboard#enabled_submodules = ["sections"]
+let g:pandoc#biblio#sources = "g"
+let g:pandoc#biblio#bibs = ["~/dotfiles/pandoc/library.bib"]
+let g:pandoc#completion#bib#mode = "citeproc"
+let g:pandoc#command#autoexec_on_writes = 0
+let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
+
+" Pandoc Syntax
+let g:pandoc#syntax#conceal#use = 0
 function! GabePandocForce()
     hi pandocEmphasis cterm=none ctermfg=7
     hi pandocStrongEmphasis cterm=none ctermfg=15
@@ -39,3 +52,4 @@ function! GabePandocForce()
 endfunc
 au VimEnter * :call GabePandocForce()
 nnoremap <localleader>i :call GabePandocForce()<CR>
+
