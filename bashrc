@@ -112,8 +112,8 @@ function note() {
 # others
 alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
-alias mail="offlineimap && mutt"
-alias gmail="mutt -F $HOME/bin/private/mutt/gmail.muttrc"
+alias mail="mutt -F $HOME/dotfiles/muttrc"
+alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
 alias cite="python $HOME/bin/cite/cite.py"
 alias octave="octave --no-gui"
 alias rate="python $HOME/bin/utils/rate.py"
