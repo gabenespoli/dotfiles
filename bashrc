@@ -30,6 +30,8 @@ else # Linux options
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
+    mount_egdata
+    mount_nas
     alias ls="ls -hl --color"
     alias la="ls -hla --color"
     alias lsa="ls -hla --color"
@@ -41,7 +43,6 @@ else # Linux options
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
-    #setxkbmap -option altwin:swap_alt_win
 fi
 
 ## Environment vars
