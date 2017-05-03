@@ -72,17 +72,18 @@ macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBO
 
 ## Jumping and Limiting
 macro   index,pager     gi      "<change-folder>=INBOX<enter>"      "Go to Inbox folder."
-macro   index,pager     ga      "<change-folder>=Archive<enter>"    "Go to Archive folder."
+macro   index,pager     gA      "<change-folder>=Archive<enter>"    "Go to Archive folder."
 macro   index,pager     gd      "<change-folder>=Drafts<enter>"     "Go to Drafts folder."
 macro   index,pager     gx      "<change-folder>=Trash<enter>"      "Go to Trash folder."
 
-macro   index           gr      "<limit>all<enter>"                 "Show all messages (reset limiting)."
+macro   index           ga      "<limit>all<enter>"                 "Show all messages."
 macro   index           gf      "<limit>~F|~N<enter>"               "Show new and flagged messages."
 macro   index           gF      "<limit>~F<enter>"                  "Show flagged messages."
 macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
 macro   index           gs      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages"
 
-macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
-macro   index,pager     E       "<change-folder>=INBOX<enter><tag-pattern>all<enter><tag-prefix><save-message>=Archive<enter><untag-pattern>all<enter><change-folder>=Archive<enter>" "Archive all messages in Inbox."
-macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
+# there is a setting in Gmail for what to do when a message dissappears from all IMAP folders. Options are to archive, move to trash, or delete. If this is set to 'move to trash', then d can be actual delete (instead of save-message to trash folder).
+#macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
+macro   index           e       "<set-flag>O"                       "Mark as old (kind of like Gmail archive when in all mail)."
+macro   index           E       "<change-folder>=INBOX<enter><delete-pattern>~A<enter><change-folder>=Archive<enter><tag-pattern>~N<enter><tag-prefix><set-flag>O<untag-pattern>~O<enter>" "Delete all messages from Inbox (Gmail archive) and mark all new as old" 
 
