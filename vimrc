@@ -331,8 +331,7 @@ let g:ctrlp_prompt_mappings = {
             \ 'PrtSelectMove("k")':     ['<C-p>'],
             \ 'PrtHistory(-1)':         ['<down>'],
             \ 'PrtHistory(1)':          ['<up>'],
-            \ 'AcceptSelection("e")':   ['<C-j>'],
-            \ 'AcceptSelection("t")':   ['<C-m>', '<CR>', '<2-LeftMouse>'],
+            \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
             \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
