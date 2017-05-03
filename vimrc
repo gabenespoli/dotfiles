@@ -28,6 +28,7 @@ Plugin 'airblade/vim-gitgutter'
 " tmux
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'jpalardy/vim-slime'
 
 " syntax
 Plugin 'vim-pandoc/vim-pandoc'
@@ -278,6 +279,10 @@ nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
 nnoremap <localleader>q :call CenWinTodoToggle()<CR>
 nnoremap <localleader>t :call CenWinTodoAdd()<CR>
 nnoremap <localleader>T :call CenWinTodoRemove()<CR>
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 
 " Taboo
 let g:taboo_tabline = 0
