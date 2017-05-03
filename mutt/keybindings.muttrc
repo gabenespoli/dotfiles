@@ -33,12 +33,14 @@ macro   pager           U       "<pipe-message>urlscan<enter>"                  
 # some corrections for the hjkl adjustments
 bind    pager           i       display-toggle-weed # no default binding for i
 bind    index           L       limit               # default for L is list reply (which I don't need)
-macro   index           i       '<change-folder>=INBOX<enter>' # handy way to get back to the inbox; can also use gi
 
 # other navigation
 bind    index           \Cv     collapse-all        # default is <Esc>V; <Space> is default for display-message
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro   index,pager     \Cn     '<sidebar-next>'
+macro   index,pager     \Cp     '<sidebar-prev>'
+macro   index,pager     \Cj     '<sidebar-open>'
 macro   index           c       '<change-folder>?<toggle-mailboxes>'    # default is y
 bind    index           y       change-folder                           # default is c
 #bind    index,pager     I       sort-mailbox        # default (o) is used for open; default for i is exit from pager
@@ -68,13 +70,19 @@ macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap<enter>"
 macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
 #macro   index,pager     a       "<pipe-message>goobook add<enter>"                          "Add sender to Google contacts."
 
-## Jumping and Limititing
-macro   index,pager     gi      "<change-folder>=INBOX<enter>"                          "Go to Inbox"
-macro   index,pager     ga      "<change-folder>=Archive<enter><limit>all<enter>"       "Go to Archive"
-macro   index,pager     gd      "<change-folder>=Drafts<enter>"                         "Go to Drafts"
-macro   index,pager     gx      "<change-folder>=Trash<enter>"                          "Go to Trash"
-macro   index,pager     gf      "<change-folder>=Archive<enter><limit>~F<enter>"        "Go to Flagged conversations"
-macro   index,pager     gs      "<change-folder>=Archive<enter><limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Go to Sent messages"
+## Jumping and Limiting
+macro   index,pager     gi      "<change-folder>=INBOX<enter>"      "Go to Inbox folder."
+macro   index,pager     ga      "<change-folder>=Archive<enter>"    "Go to Archive folder."
+macro   index,pager     gd      "<change-folder>=Drafts<enter>"     "Go to Drafts folder."
+macro   index,pager     gx      "<change-folder>=Trash<enter>"      "Go to Trash folder."
+
+macro   index           gr      "<limit>all<enter>"                 "Show all messages (reset limiting)."
+macro   index           gf      "<limit>~F|~N<enter>"               "Show new and flagged messages."
+macro   index           gF      "<limit>~F<enter>"                  "Show flagged messages."
+macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
+macro   index           gs      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages"
+
 macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
+macro   index,pager     E       "<change-folder>=INBOX<enter><tag-pattern>all<enter><tag-prefix><save-message>=Archive<enter><untag-pattern>all<enter><change-folder>=Archive<enter>" "Archive all messages in Inbox."
 macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 
