@@ -19,7 +19,7 @@ set tmpdir              = ~/.mail/temp
 set realname            = "Gabe Nespoli"
 set from                = "gabenespoli@gmail.com"
 alternates              "gabe@psych.ryerson.ca|gabenespoli@gmail.com"
-set spoolfile           = "=INBOX"
+set spoolfile           = "=Archive"
 set mbox                = "=Archive"
 set postponed           = "=Drafts"
 set sendmail            = "/usr/local/bin/msmtp -a Home"
