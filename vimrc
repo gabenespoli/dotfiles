@@ -322,15 +322,18 @@ nnoremap <leader>O :RangerNewTab<CR>
 
 " yankring
 let g:yankring_history_dir = '$HOME/.vim'
+let g:yankring_replace_n_pkey = '<up>'
+let g:yankring_replace_n_nkey = '<down>'
 
 " CtrlP
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
-            \ 'PrtSelectMove("j")':     ['<C-n>'],
-            \ 'PrtSelectMove("k")':     ['<C-p>'],
-            \ 'PrtHistory(-1)':         ['<down>'],
-            \ 'PrtHistory(1)':          ['<up>'],
+            \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+            \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+            \ 'PrtHistory(-1)':         [],
+            \ 'PrtHistory(1)':          [],
+            \ 'AcceptSelection("e")':   [],
             \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
             \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
