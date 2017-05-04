@@ -12,6 +12,7 @@ source ~/bin/private/mutt/gmail_private.muttrc
 ## folders
 set spoolfile = "=INBOX"
 set postponed = "=[Gmail]/Drafts"
+set trash     = "=[Gmail]/Trash"
 
 # sidebar
 unmailboxes * # remove other mailboxes from sidebar first
