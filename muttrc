@@ -32,6 +32,7 @@ mailboxes =INBOX \
           =Trash \
 
 ## Basic Options
+folder-hook . "push <first-entry>" # go to first message, not first unread
 set wait_key = no        # shut up, mutt
 set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
