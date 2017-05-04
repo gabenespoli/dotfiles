@@ -27,7 +27,8 @@ macro   pager           u       "<pipe-message>urlscan --compact<enter>"        
 macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
 
 # some corrections for the hjkl adjustments
-bind    pager           i       display-toggle-weed # no default binding for i
+bind    index,pager     i       display-toggle-weed # no default binding for i
+bind    index           h       noop # default for h is display toggle weed
 bind    index           L       limit               # default for L is list reply (which I don't need)
 
 # sidebar
