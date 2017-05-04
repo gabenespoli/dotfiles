@@ -7,7 +7,7 @@
 # thoughts for composing in a separate tmux pane: http://mutt-users.mutt.narkive.com/WHpZ33fG/keep-mutt-open-while-editing-new-message
 
 ## Paths
-set alias_file          = ~/bin/private/mutt/aliases
+set alias_file          = ~/private/mutt/aliases.muttrc
 set mailcap_path        = ~/dotfiles/mutt/mailcap
 set folder              = ~/.mail
 set header_cache        = ~/.mail/cache/headers
