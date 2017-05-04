@@ -22,6 +22,7 @@ alternates              "gabe@psych.ryerson.ca|gabenespoli@gmail.com"
 set spoolfile           = "=Archive"
 set mbox                = "=Archive"
 set postponed           = "=Drafts"
+set trash               = "=Trash"
 set sendmail            = "/usr/local/bin/msmtp -a Home"
 set sendmail_wait       = 0
 unset record
@@ -35,18 +36,19 @@ set wait_key = no        # shut up, mutt
 set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
-unset move               # gmail does that
+set move               # gmail does that
 set delete               # don't ask, just do
+unset maildir_trash
 unset confirmappend      # don't ask, just do!
 set quit                 # don't ask, just do!!
-unset mark_old           # read/new is good enough for me
+unset mark_old          # set mail as old after opening mutt once
 set sort_alias=alias
 set reverse_alias=yes
-#set beep_new             # bell on new mails
+unset beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
-#set thorough_search      # strip headers and eval mimes before searching
+unset thorough_search      # strip headers and eval mimes before searching
 set mail_check_stats
-#set arrow_cursor
+unset arrow_cursor
 
 ## Index View Options
 set date_format = "%Y-%m-%d"
