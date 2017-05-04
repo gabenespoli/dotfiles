@@ -28,7 +28,6 @@ macro   pager           U       "<pipe-message>urlscan<enter>"                  
 
 # some corrections for the hjkl adjustments
 bind    index,pager     i       display-toggle-weed # no default binding for i
-bind    index           h       noop # default for h is display toggle weed
 bind    index           L       limit               # default for L is list reply (which I don't need)
 
 # sidebar
@@ -71,6 +70,7 @@ macro   index,pager     gd      "<change-folder>=Drafts<enter>"     "Go to Draft
 macro   index,pager     gx      "<change-folder>=Trash<enter>"      "Go to Trash folder."
 
 macro   index           gr      "<limit>all<enter>"                 "Show all messages (reset limiting)."
+macro   index           h       "<limit>all<enter>"                 "Show all messages (reset limiting)." # default for h is display toggle weed
 macro   index           gf      "<limit>~F|~N<enter>"               "Show new and flagged messages."
 macro   index           gF      "<limit>~F<enter>"                  "Show flagged messages."
 macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
