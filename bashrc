@@ -77,6 +77,8 @@ alias gs="printf '\033c' && git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
+alias gpl="git pull"
+alias gph="git push"
 function Gc() {
     printf "\033c"
     git diff $@
