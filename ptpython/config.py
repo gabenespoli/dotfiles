@@ -152,87 +152,87 @@ def configure(repl):
     """
 
 
-# Custom colorscheme for the UI. See `ptpython/layout.py` and
-# `ptpython/style.py` for all possible tokens.
-_custom_ui_colorscheme = {
-    # Blue prompt (don't know what this does)
-    Token.Layout.Prompt:                          'bg:#eeeeff #000000 bold',
+    # Custom colorscheme for the UI. See `ptpython/layout.py` and
+    # `ptpython/style.py` for all possible tokens.
+    _custom_ui_colorscheme = {
+        # Blue prompt (don't know what this does)
+        #Token.Layout.Prompt:                          'bg:#eeeeff #000000 bold',
 
-    # Classic prompt.
-    Token.Prompt:                                 'bold',
-    Token.Prompt.Dots:                            'noinherit',
+        # Classic prompt.
+        Token.Prompt:                                 '',
+        Token.Prompt.Dots:                            'noinherit',
 
-    # (IPython <5.0) Prompt: "In [1]:"
-    Token.In:                                     'bold #008800',
-    Token.In.Number:                              '',
+        # (IPython <5.0) Prompt: "In [1]:"
+        Token.In:                                     '#00875f',
+        Token.In.Number:                              '',
 
-    # Return value.
-    Token.Out:                                    '#ff0000',
-    Token.Out.Number:                             '#ff0000',
+        # Return value.
+        Token.Out:                                    '#ff0000',
+        Token.Out.Number:                             '#ff0000',
 
-    # Separator between windows. (Used above docstring.)
-    Token.Separator:                              '#bbbbbb',
+        # Separator between windows. (Used above docstring.)
+        Token.Separator:                              '#bbbbbb',
 
-    # Search toolbar.
-    Token.Toolbar.Search:                         '#22aaaa noinherit',
-    Token.Toolbar.Search.Text:                    'noinherit',
+        # Search toolbar.
+        Token.Toolbar.Search:                         '#22aaaa noinherit',
+        Token.Toolbar.Search.Text:                    'noinherit',
 
-    # System toolbar
-    Token.Toolbar.System:                         '#22aaaa noinherit',
+        # System toolbar
+        Token.Toolbar.System:                         '#22aaaa noinherit',
 
-    # "arg" toolbar.
-    Token.Toolbar.Arg:                            '#22aaaa noinherit',
-    Token.Toolbar.Arg.Text:                       'noinherit',
+        # "arg" toolbar.
+        Token.Toolbar.Arg:                            '#22aaaa noinherit',
+        Token.Toolbar.Arg.Text:                       'noinherit',
 
-    # Signature toolbar.
-    Token.Toolbar.Signature:                      'bg:#44bbbb #000000',
-    Token.Toolbar.Signature.CurrentName:          'bg:#008888 #ffffff bold',
-    Token.Toolbar.Signature.Operator:             '#000000 bold',
+        # Signature toolbar.
+        Token.Toolbar.Signature:                      'bg:#44bbbb #000000',
+        Token.Toolbar.Signature.CurrentName:          'bg:#008888 #ffffff bold',
+        Token.Toolbar.Signature.Operator:             '#000000 bold',
 
-    Token.Docstring:                              '#888888',
+        Token.Docstring:                              '#888888',
 
-    # Validation toolbar.
-    Token.Toolbar.Validation:                     'bg:#440000 #aaaaaa',
+        # Validation toolbar.
+        Token.Toolbar.Validation:                     'bg:#440000 #aaaaaa',
 
-    # Status toolbar.
-    Token.Toolbar.Status:                         'bg:#222222 #aaaaaa',
-    Token.Toolbar.Status.Title:                   'underline',
-    Token.Toolbar.Status.InputMode:               'bg:#222222 #ffffaa',
-    Token.Toolbar.Status.Key:                     'bg:#000000 #888888',
-    Token.Toolbar.Status.PasteModeOn:             'bg:#aa4444 #ffffff',
-    Token.Toolbar.Status.PythonVersion:           'bg:#222222 #ffffff bold',
+        # Status toolbar.
+        Token.Toolbar.Status:                         'bg:#222222 #aaaaaa',
+        Token.Toolbar.Status.Title:                   'underline',
+        Token.Toolbar.Status.InputMode:               'bg:#222222 #ffffaa',
+        Token.Toolbar.Status.Key:                     'bg:#000000 #888888',
+        Token.Toolbar.Status.PasteModeOn:             'bg:#aa4444 #ffffff',
+        Token.Toolbar.Status.PythonVersion:           'bg:#222222 #ffffff bold',
 
-    # When Control-C has been pressed. Grayed.
-    Token.Aborted:                                '#888888',
+        # When Control-C has been pressed. Grayed.
+        Token.Aborted:                                '#888888',
 
-    # The options sidebar.
-    Token.Sidebar:                                'bg:#bbbbbb #000000',
-    Token.Sidebar.Title:                          'bg:#668866 #ffffff',
-    Token.Sidebar.Label:                          'bg:#bbbbbb #222222',
-    Token.Sidebar.Status:                         'bg:#dddddd #000011',
-    Token.Sidebar.Selected.Label:                 'bg:#222222 #eeeeee',
-    Token.Sidebar.Selected.Status:                'bg:#444444 #ffffff bold',
+        # The options sidebar.
+        Token.Sidebar:                                'bg:#bbbbbb #000000',
+        Token.Sidebar.Title:                          'bg:#668866 #ffffff',
+        Token.Sidebar.Label:                          'bg:#bbbbbb #222222',
+        Token.Sidebar.Status:                         'bg:#dddddd #000011',
+        Token.Sidebar.Selected.Label:                 'bg:#222222 #eeeeee',
+        Token.Sidebar.Selected.Status:                'bg:#444444 #ffffff bold',
 
-    Token.Sidebar.Separator:                      'bg:#bbbbbb #ffffff underline',
-    Token.Sidebar.Key:                            'bg:#bbddbb #000000 bold',
-    Token.Sidebar.Key.Description:                'bg:#bbbbbb #000000',
-    Token.Sidebar.HelpText:                       'bg:#fdf6e3 #000011',
+        Token.Sidebar.Separator:                      'bg:#bbbbbb #ffffff underline',
+        Token.Sidebar.Key:                            'bg:#bbddbb #000000 bold',
+        Token.Sidebar.Key.Description:                'bg:#bbbbbb #000000',
+        Token.Sidebar.HelpText:                       'bg:#fdf6e3 #000011',
 
-    # Styling for the history layout.
-    Token.History.Line:                          '',
-    Token.History.Line.Selected:                 'bg:#008800  #000000',
-    Token.History.Line.Current:                  'bg:#ffffff #000000',
-    Token.History.Line.Selected.Current:         'bg:#88ff88 #000000',
-    Token.History.ExistingInput:                  '#888888',
+        # Styling for the history layout.
+        Token.History.Line:                          '',
+        Token.History.Line.Selected:                 'bg:#008800  #000000',
+        Token.History.Line.Current:                  'bg:#ffffff #000000',
+        Token.History.Line.Selected.Current:         'bg:#88ff88 #000000',
+        Token.History.ExistingInput:                  '#888888',
 
-    # Help Window.
-    Token.Window.Border:                          '#bbbbbb',
-    Token.Window.Title:                           'bg:#bbbbbb #000000',
+        # Help Window.
+        Token.Window.Border:                          '#bbbbbb',
+        Token.Window.Title:                           'bg:#bbbbbb #000000',
 
-    # Meta-enter message.
-    Token.AcceptMessage:                          'bg:#ffff88 #444444',
+        # Meta-enter message.
+        Token.AcceptMessage:                          'bg:#ffff88 #444444',
 
-    # Exit confirmation.
-    Token.ExitConfirmation:                       'bg:#884444 #ffffff',
+        # Exit confirmation.
+        Token.ExitConfirmation:                       'bg:#884444 #ffffff',
 
-}
+    }
