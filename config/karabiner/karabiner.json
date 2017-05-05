@@ -32,8 +32,8 @@
                 "f8": "vk_consumer_play",
                 "f9": "vk_consumer_next"
             },
-            "name": "gmac",
-            "selected": true,
+            "name": "Mac",
+            "selected": false,
             "simple_modifications": {
                 "caps_lock": "left_control",
                 "escape": "grave_accent_and_tilde",
@@ -60,8 +60,8 @@
                 "f8": "play_or_pause",
                 "f9": "fastforward"
             },
-            "name": "windows",
-            "selected": false,
+            "name": "Windows",
+            "selected": true,
             "simple_modifications": {
                 "caps_lock": "left_control",
                 "escape": "grave_accent_and_tilde",
