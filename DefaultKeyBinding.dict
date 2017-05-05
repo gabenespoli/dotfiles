@@ -2,21 +2,25 @@
 
     /* put this file in ~/Library/KeyBindings */
 
+    /* use the following to view defaults */
+    /* plutil -convert xml1 /System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict -o -|pl|grep -v noop:|ruby -pe'$_.gsub!(/[^ -~\n]/){"\\U%04x"%$&.ord}' */
+
     /* useful sites to help edit this file: */
     /* http://xahlee.info/kbd/osx_keybinding.html */
     /* http://xahlee.info/kbd/osx_keybinding_key_syntax.html */
     /* http://xahlee.info/kbd/osx_keybinding_action_code.html */
+    /* http://osxnotes.net/keybindings.html */
 
     /* return and enter */
     "^j" = "insertLineBreak:";
     "^m" = "insertNewline:";
 
-    /* these are default in macos I think */
-    /* "^n" = "moveDown:"; */
-    /* "^p" = "moveUp:"; */
+    /* deleting */
+    "^w" = "deleteWordBackward:";    
 
     /* karabiner-elements swaps esc and tilde */ 
     /* these bindings put tilde and backtick back on that key */
     "$\U001B" = ("insertText:", "~"); /* shift-escape for tilde */
     "@$\U001B" = ("insertText:", "`"); /* command-shift-escape for backtick */
+
 }
