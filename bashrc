@@ -100,6 +100,8 @@ function tt() {
     task calendar
     task t $@
 }
+alias tw="tt -home"
+alias th="tt +home"
 alias todo="todo.sh -a"
 alias gcal="gcalcli --includeRc"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
