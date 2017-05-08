@@ -30,8 +30,6 @@ else # Linux options
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
-    mount_egdata
-    mount_nas
     alias ls="ls -hl --color"
     alias la="ls -hla --color"
     alias lsa="ls -hla --color"
