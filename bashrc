@@ -114,7 +114,7 @@ function note() {
 
 # others
 alias mail="mutt -F $HOME/dotfiles/muttrc -e 'push <limit>~F|~N<enter>'"
-alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc"
+alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder>=INBOX<enter><delete-pattern>~A<enter><change-folder>=Archive<enter>'"
 alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
 alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
 alias pdoc="$HOME/dotfiles/pandoc/pdoc"

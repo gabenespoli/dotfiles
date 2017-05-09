@@ -14,35 +14,33 @@ set header_cache        = ~/.mail/cache/headers
 set message_cachedir    = ~/.mail/cache/bodies
 set certificate_file    = ~/.mail/certificates
 set tmpdir              = ~/.mail/temp
+set spoolfile           = "=Archive"
+set mbox                = "=Archive"
+set postponed           = "=Drafts"
+#set trash               = "=Trash" # move deleted messages here
 
 ## Account Settings
 set realname            = "Gabe Nespoli"
 set from                = "gabenespoli@gmail.com"
 alternates              "gabe@psych.ryerson.ca|gabenespoli@gmail.com"
-set spoolfile           = "=Archive"
-set mbox                = "=Archive"
-set postponed           = "=Drafts"
-set trash               = "=Trash"
 set sendmail            = "/usr/local/bin/msmtp -a Home"
 set sendmail_wait       = 0
-unset record
+unset record            # gmail will move sent messages to sent
+unset move              # gmail will move messages from spool to mbox
+set delete              # actually delete email when sync or quit
+unset mark_old          # set mail as old after opening mutt once
+set mbox_type           = Maildir
 mailboxes =INBOX \
           =Archive \
           =Drafts \
-          =Trash \
 
 ## Basic Options
 folder-hook . "push <first-entry>" # go to first message, not first unread
 set wait_key = no        # shut up, mutt
-set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
-set move               # gmail does that
-set delete               # don't ask, just do
-unset maildir_trash
-unset confirmappend      # don't ask, just do!
-set quit                 # don't ask, just do!!
-unset mark_old          # set mail as old after opening mutt once
+unset confirmappend
+set quit                 # confirm when quitting
 set sort_alias=alias
 set reverse_alias=yes
 unset beep_new             # bell on new mails

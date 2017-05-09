@@ -60,7 +60,7 @@ bind    index               =       limit # // default is l; this is the filter 
 bind    editor          <Tab>   complete-query # goobook auto-completion
 macro   index,pager     \er     "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
 macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap<enter>"            "Run offlineimap to sync all mail."
-macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
+#macro   index,pager     \Cr     "<sync-mailbox><shell-escape>offlineimap -f INBOX<enter>"   "Run offlineimap to sync inbox only."
 #macro   index,pager     a       "<pipe-message>goobook add<enter>"                          "Add sender to Google contacts."
 
 ## Jumping and Limiting
@@ -76,8 +76,10 @@ macro   index           gF      "<limit>~F<enter>"                  "Show flagge
 macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
 macro   index           gs      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages."
 
+
+# some keybindings to play nice with gmail
 #macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
-macro   index,pager     $       "<tag-pattern>~D<enter><tag-prefix><save-message>=Trash<enter><sync-mailbox>" "Move deleted messages to trash."
 macro   index           e       "<set-flag>O"                       "Mark as old (kind of like Gmail archive when in all mail)."
-macro   index           E       "<change-folder>=Archive<enter><tag-pattern>~N<enter><tag-prefix><set-flag>O<untag-pattern>~O<enter>" "Mark all new as old" 
-macro   index           I       "<change-folder>=INBOX<enter><tag-pattern>~A<enter><tag-prefix><save-message>=Trash<enter><change-folder>=Archive<enter>" "Delete all messages from Inbox (Gmail archive)" # there is a setting in Gmail for what to do when a message dissappears from all IMAP folders. Options are to archive, move to trash, or delete. If this is set to 'move to trash', then this can actually delete (instead of save-message to trash folder).
+#macro   index,pager     E       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
+#macro   index           E       "<change-folder>=INBOX<enter><tag-pattern>~A<enter><tag-prefix><save-message>=Archive<enter><change-folder>=Archive<enter>" "Archive the Inbox" 
+macro   index           E       "<change-folder>=INBOX<enter><delete-pattern>~A<enter><change-folder>=Archive<enter>" "Delete all messages in the Inbox"
