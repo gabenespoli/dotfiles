@@ -1,4 +1,4 @@
-note|docx --reference-docx='~/dotfiles/pandoc/note.docx'
+note|docx --reference-docx=~/dotfiles/pandoc/note.docx
 apa|docx --reference-docx=~/dotfiles/pandoc/apa.docx
 aparefs|docx --reference-docx=~/dotfiles/pandoc/apa.docx --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
 pdf|pdf --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
