@@ -185,8 +185,8 @@ call submode#enter_with('TABS', 'n', '', '<leader>W', ':close<CR>')
 "call submode#enter_with('TABS', 'n', '', '<leader>6', '6gt') 
 "call submode#enter_with('TABS', 'n', '', '<leader>7', '7gt') 
 "call submode#enter_with('TABS', 'n', '', '<leader>8', '8gt') 
-call submode#enter_with('TABS', 'n', '', '<leader>9', ':tabprevious<CR>')
-call submode#enter_with('TABS', 'n', '', '<leader>0', ':tabnext<CR>') 
+call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
+call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>(', ':bprevious<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>)', ':bnext<CR>') 
 call submode#leave_with('TABS', 'n', '', '<Esc>') 
@@ -200,8 +200,8 @@ call submode#map('TABS', 'n', '', 'W', ':close<CR>')
 "call submode#map('TABS', 'n', '', '6', '6gt') 
 "call submode#map('TABS', 'n', '', '7', '7gt') 
 "call submode#map('TABS', 'n', '', '8', '8gt') 
-call submode#map('TABS', 'n', '', '9', ':tabprevious<CR>') 
-call submode#map('TABS', 'n', '', '0', ':tabnext<CR>')
+call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
+call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
 call submode#map('TABS', 'n', '', '(', ':bprevious<CR>') 
 call submode#map('TABS', 'n', '', ')', ':bnext<CR>')
 
@@ -297,7 +297,8 @@ let g:buffergator_suppress_keymaps = 1
 "nnoremap <leader>B :BuffergatorClose<CR>
 "nnoremap <leader>t :BuffergatorTabsOpen<CR>
 "nnoremap <leader>T :BuffergatorTabsClose<CR>
-nnoremap <leader>b :BuffergatorToggle<CR>
+nnoremap <leader>j :BuffergatorToggle<CR>
+nnoremap <leader>k :BuffergatorToggle<CR>
 nnoremap <leader>T :BuffergatorTabsToggle<CR>
 nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
