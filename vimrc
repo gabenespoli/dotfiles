@@ -477,7 +477,8 @@ function! MuttMailMode()
     set laststatus=2 showtabline=0
     nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
     "setlocal nocp 
-    exe "/^$"
+    "exe "/^$"
+    exe "normal! gg}O\<Esc>o"
 endfunction
 
 function! ToggleInvisibles()
