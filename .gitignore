@@ -9,8 +9,5 @@ config/ranger/bookmarks
 config/vifm/vifminfo
 pandoc/library.bib
 mutt/cache/*
-ipython/*
-!ipython/profile_default/
-ipython/profile_default/*
-!ipython/profile_default/ipython_config.py
+ipython/profile_default/startup/README
 
