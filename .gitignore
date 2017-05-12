@@ -10,4 +10,5 @@ config/vifm/vifminfo
 pandoc/library.bib
 mutt/cache/*
 ipython/profile_default/startup/README
-
+ipython/*.pyc
+ipython/profile_default/history.sqlite
