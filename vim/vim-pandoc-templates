@@ -1,4 +1,5 @@
-note|docx --reference-docx=~/dotfiles/pandoc/note.docx
-apa|docx --reference-docx=~/dotfiles/pandoc/apa.docx
-aparefs|docx --reference-docx=~/dotfiles/pandoc/apa.docx --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
-pdf|pdf --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
+docxnote|docx --reference-docx=~/dotfiles/pandoc/note.docx
+docxapa|docx --filter pandoc-fignos --filter pandoc-tablenos --reference-docx=~/dotfiles/pandoc/apa.docx
+docxapapretty|docx --filter pandoc-fignos --filter pandoc-tablenos --variable=toc --reference-docx=~/dotfiles/pandoc/apa.docx --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
+html|html --filter pantable --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
+pdf|pdf --filter pantable --filter pandoc-fignos --filter pandoc-tablenos --variable=toc --variable=lof --template=~/dotfiles/pandoc/default.latex --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
