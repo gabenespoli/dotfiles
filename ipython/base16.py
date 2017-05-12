@@ -66,34 +66,42 @@ class Base16Style(Style):
     highlight_color = base02
     default_style = base0
 
-#    styles = {
-#        Text: base0,
-#        Error: red,
-#        Comment: base00,
-#        Keyword: green,
-#        Keyword.Constant: cyan,
-#        Keyword.Namespace: blue,
-#        Name.Builtin: blue,
-#        Name.Function: blue,
-#        Name.Class: blue,
-#        Name.Decorator: red,
-#        Name.Exception: red,
-#        Number: cyan,
-#        Operator.Word: green,
-#        Literal: cyan,
-#        String: cyan
-#    }
+    # this needs to be change to the ansi colors so it uses the terminal
+    # values. it keeps throwing an error when I do, so for now I've 
+    # hard coded the Sumach Dark values (2017-05-12 16:12:58)
+    styles = {
+        Text: '#808080', # base0 (light blue)
+        Error: '#d70000', # red
+        Comment: '#4e4e4e', # base01 (light green)
+        Keyword: '#00875f', # green
+        Keyword.Constant: '#008787', # cyan
+        Keyword.Namespace: '#0087af', # blue
+        Name.Builtin: '#0087af', # blue
+        Name.Function: '#0087af', # blue
+        Name.Class: '#0087af', # blue
+        Name.Decorator: '#d70000', # blue
+        Name.Exception: '#d70000', # blue
+        Number: '#008787', # cyan
+        Operator.Word: '#00875f', # green
+        Literal: '#008787', # cyan
+        String: '#008787', # cyan
+    }
 
 
 # See https://github.com/jonathanslenders/python-prompt-toolkit/blob/master/prompt_toolkit/styles/defaults.py
 # for a description of prompt_toolkit related pseudo-tokens.
 
 overrides = {
-    Token.Prompt: blue,
+    Token.PromptViInp: yellow,
+    Token.PromptViNav: green,
+    Token.PromptEmacs: violet,
+    Token.PromptWhoKnows: red,
+    Token.PromptPath: blue,
+    Token.Prompt: base2,
     Token.PromptNum: base2,
-    Token.OutPrompt: blue,
+    Token.OutPrompt: base2,
     Token.OutPromptNum: base2,
     Token.Menu.Completions.Completion: 'bg:%s %s' % (base02, base0),
     Token.Menu.Completions.Completion.Current: 'bg:%s %s' % (base0, base02),
-    Token.MatchingBracket.Other: 'bg:%s %s' % (base02, base03)
+    Token.MatchingBracket.Other: 'bg:%s %s' % (base01, base03)
 }
