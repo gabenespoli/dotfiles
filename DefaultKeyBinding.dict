@@ -15,6 +15,12 @@
     "^j" = "insertLineBreak:";
     "^m" = "insertNewline:";
 
+    /* arrow keys */
+    "^n" = "moveDown:";
+    "^p" = "moveUp:";
+    "^f" = "moveRight:";
+    "^b" = "moveLeft:";
+
     /* deleting */
     "^w" = "deleteWordBackward:";    
 
