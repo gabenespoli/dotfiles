@@ -66,8 +66,8 @@ import os
 class MyPrompt(Prompts):
      def in_prompt_tokens(self, cli=None):
          return [(Token.PromptWhoKnows, '? '),
-                 (Token.PromptPath, os.getcwd()),
-                 (Token.Prompt, ' >>> ')]
+                 #(Token.PromptPath, os.getcwd()),
+                 (Token.Prompt, '>>> ')]
 
 c.TerminalInteractiveShell.prompts_class = MyPrompt
 
