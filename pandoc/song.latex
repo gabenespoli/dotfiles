@@ -236,7 +236,6 @@ $include-before$
 
 $endfor$
 $if(toc)$
-\pagebreak
 {
 $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
@@ -246,11 +245,9 @@ $endif$
 }
 $endif$
 $if(lot)$
-\pagebreak
 \listoftables
 $endif$
 $if(lof)$
-\pagebreak
 \listoffigures
 $endif$
 $body$
