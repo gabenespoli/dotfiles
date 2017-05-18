@@ -20,15 +20,20 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" git
+" programs
 Plugin 'tpope/vim-fugitive'
 Plugin 'rickhowe/diffchar.vim'
 Plugin 'airblade/vim-gitgutter'
-
-" tmux
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'jpalardy/vim-slime'
+Plugin 'julienr/vim-cellmode'
+"Plugin 'jpalardy/vim-slime'
+"Plugin 'ivanov/vim-ipython'
+"Plugin 'jceb/vim-orgmode'
+"Plugin 'blindFS/vim-taskwarrior'
+Plugin 'malithsen/trello-vim'
+"Plugin 'itchyny/calendar.vim'
+"Plugin 'jez/vim-superman'
 
 " syntax
 Plugin 'vim-pandoc/vim-pandoc'
@@ -39,17 +44,16 @@ Plugin 'vim-scripts/todo-txt.vim'
 "Plugin 'toyamarinyon/vim-swift'
 "Plugin 'chrisbra/csv.vim'
 "Plugin 'godlygeek/tabular'
-"Plugin 'jez/vim-superman'
+Plugin 'jvirtanen/vim-octave'
+
 " vim
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kana/vim-submode'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'vim-scripts/Rename'
-Plugin 'jceb/vim-orgmode'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/nerdcommenter'
-"Plugin 'itchyny/calendar.vim'
-"Plugin 'blindFS/vim-taskwarrior'
 "Plugin 'vim-scripts/TaskList.vim'
 "Plugin 'severin-lemaignan/vim-minimap'
 
@@ -362,6 +366,13 @@ nnoremap gd :Gdiff<CR>
 let g:indentLine_char = '|'
 let g:indentLine_color_term = 242
 
+" vim-cellmode
+let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
+let g:cellmode_tmux_windowname=''
+let g:cellmode_tmux_panenumber='1'
+let g:cellmode_screen_sessionname='ipython'
+let g:cellmode_screen_window='0'
+
 " Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
@@ -480,7 +491,7 @@ function! MuttMailMode()
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
-    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| SMART Lab<CR>Psychology \| Ryerson University<CR>105 Bond St, Toronto, ON M5B 1Y3<CR>gabe@psych.ryerson.ca<Esc>
+    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| Ryerson University<Esc>
     "setlocal nocp 
     "exe "/^$"
     exe "normal! gg}O\<Esc>o"
