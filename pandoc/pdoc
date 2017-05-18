@@ -71,34 +71,36 @@ pandoc $allargs
 ## adjust output
 case "$outputType" in
     md|markdown )
+        echo "Making adjustments for markdown output..."
+
         # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
-        perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$2"
+        perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$outputFile"
 
         # first match a space before to avoid double spaces 
         # word doesn't include the deleted space in the deletion, and instead uses smart spacing itself
         # this means we have to do some smart spacing ourselves
-        perl -pi -e 's/\ \[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$2"
-        perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$2"
-        perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$2"
+        perl -pi -e 's/\ \[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
+        perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
+        perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$outputFile"
 
         # replace backslash-escaped square brackets with plain square brackets
         # (this is so that pandoc citations are interpreted as code and not text)
-        perl -pi -e 's/\\\[/\[/g' "$2"
-        perl -pi -e 's/\\\]/\]/g' "$2"
+        perl -pi -e 's/\\\[/\[/g' "$outputFile"
+        perl -pi -e 's/\\\]/\]/g' "$outputFile"
 
         # replace &lt; and &gt; with < and >
-        perl -pi -e 's/\&lt\;/\</g' "$2"
-        perl -pi -e 's/\&gt\;/\>/g' "$2"
+        perl -pi -e 's/\&lt\;/\</g' "$outputFile"
+        perl -pi -e 's/\&gt\;/\>/g' "$outputFile"
 
         # replace curly apostrophes and quotes with straight ones
-        perl -pi -e 's/”/"/g' "$2"
-        perl -pi -e 's/“/"/g' "$2"
-        perl -pi -e "s/’/'/g" "$2"
-        perl -pi -e "s/‘/'/g" "$2"
+        perl -pi -e 's/”/"/g' "$outputFile"
+        perl -pi -e 's/“/"/g' "$outputFile"
+        perl -pi -e "s/’/'/g" "$outputFile"
+        perl -pi -e "s/‘/'/g" "$outputFile"
 
         # replace en and em dashes with pandoc multi-hyphens
-        perl -pi -e 's/–/--/g' "$2"
-        perl -pi -e 's/—/---/g' "$2"
+        perl -pi -e 's/–/--/g' "$outputFile"
+        perl -pi -e 's/—/---/g' "$outputFile"
 
         # TODO replace elipses with dots
         ;;
