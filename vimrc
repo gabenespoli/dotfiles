@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 " my plugins
 "Plugin 'gabenespoli/vim-cenwin'
 Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
+Plugin 'file:///Users/gmac/bin/vim/CapitalList'
 
 " files
 "Plugin 'vifm/vifm.vim'
@@ -191,10 +192,6 @@ call submode#enter_with('TABS', 'n', '', '<leader>W', ':close<CR>')
 "call submode#enter_with('TABS', 'n', '', '<leader>8', '8gt') 
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
-call submode#enter_with('TABS', 'n', '', '<leader>9', ':tabprevious<CR>')
-call submode#enter_with('TABS', 'n', '', '<leader>0', ':tabnext<CR>') 
-call submode#enter_with('TABS', 'n', '', '<leader>(', ':bprevious<CR>') 
-call submode#enter_with('TABS', 'n', '', '<leader>)', ':bnext<CR>') 
 call submode#leave_with('TABS', 'n', '', '<Esc>') 
 call submode#map('TABS', 'n', '', 't', ':tabedit %<CR>')
 call submode#map('TABS', 'n', '', 'W', ':close<CR>')
@@ -208,10 +205,12 @@ call submode#map('TABS', 'n', '', 'W', ':close<CR>')
 "call submode#map('TABS', 'n', '', '8', '8gt') 
 call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
 call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
-call submode#map('TABS', 'n', '', '9', ':tabprevious<CR>') 
-call submode#map('TABS', 'n', '', '0', ':tabnext<CR>')
-call submode#map('TABS', 'n', '', '(', ':bprevious<CR>') 
-call submode#map('TABS', 'n', '', ')', ':bnext<CR>')
+
+call submode#enter_with('BUFFERS', 'n', '', '<localleader>[', ':bprevious<CR>')
+call submode#enter_with('BUFFERS', 'n', '', '<localleader>]', ':bnext<CR>')
+call submode#map('BUFFERS', 'n', '', '[', ':bprevious<CR>')
+call submode#map('BUFFERS', 'n', '', ']', ':bnext<CR>')
+call submode#leave_with('BUFFERS', 'n', '', '<Esc>') 
 
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
@@ -281,12 +280,13 @@ nnoremap <leader>\ :set hlsearch!<CR>
 "" Plugin settings
 " CenWin
 nnoremap <leader>C :call CenWinToggle(0)<CR>
-nnoremap <localleader>c :call CenWinToggleWidth()<CR>
-nnoremap <localleader>l :call CenWinOutlineEnable(0,1)<CR>
-nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
-nnoremap <localleader>q :call CenWinTodoToggle()<CR>
-nnoremap <localleader>t :call CenWinTodoAdd()<CR>
-nnoremap <localleader>T :call CenWinTodoRemove()<CR>
+"* check functions at bottom for quickfix and location list keybindings
+"nnoremap <localleader>c :call CenWinToggleWidth()<CR>
+"nnoremap <localleader>l :call CenWinOutlineEnable(0,1)<CR>
+"nnoremap <localleader>L :call CenWinOutlineEnable(0,2)<CR>
+"nnoremap <localleader>q :call CenWinTodoToggle()<CR>
+"nnoremap <localleader>t :call CenWinTodoAdd()<CR>
+"nnoremap <localleader>T :call CenWinTodoRemove()<CR>
 
 " vim-slime
 let g:slime_target = "tmux"
@@ -372,6 +372,11 @@ let g:cellmode_tmux_windowname=''
 let g:cellmode_tmux_panenumber='1'
 let g:cellmode_screen_sessionname='ipython'
 let g:cellmode_screen_window='0'
+let g:cellmode_default_mappings='0'
+vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
+"noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
+noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
+
 
 " Lilypond
 filetype off
@@ -481,6 +486,17 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
 endif
 
+" Change cursor shape from block (command mode) to line (insert mode)
+" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
     exe ':call CenWinToggle(80)'
@@ -491,10 +507,10 @@ function! MuttMailMode()
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
-    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student \| Ryerson University<Esc>
+    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
     "setlocal nocp 
     "exe "/^$"
-    exe "normal! gg}O\<Esc>o"
+    "exe "normal! gg}O\<Esc>o"
 endfunction
 
 function! ToggleInvisibles()
@@ -519,15 +535,4 @@ function! ToggleCsvTsv()
         echo "b:delimiter is not defined."
     endif
 endfunction
-
-" Change cursor shape from block (command mode) to line (insert mode)
-" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
-" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
 
