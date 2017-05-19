@@ -1,2 +1,4 @@
 setenv('GNUTERM','qt')
 graphics_toolkit('gnuplot');
+
+PS1 ("\033[0;37m>> ")
