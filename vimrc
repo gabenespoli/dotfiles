@@ -326,9 +326,6 @@ let g:calendar_view = 'agenda'
 let g:ranger_map_keys = 0
 nnoremap <leader>O :RangerNewTab<CR>
 
-" vifm
-"nnoremap <leader>O :EditVifm<CR>
-
 " yankring
 let g:yankring_history_dir = '$HOME/.vim'
 let g:yankring_replace_n_pkey = '<up>'
