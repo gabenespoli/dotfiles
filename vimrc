@@ -278,6 +278,10 @@ nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
 
 "" Plugin settings
+" CapitalL
+nnoremap <localleader>l :Ltoggle()<CR>
+nnoremap <localleader><localleader>l :Lcycle()<CR>
+
 " CenWin
 nnoremap <leader>C :call CenWinToggle(0)<CR>
 "* check functions at bottom for quickfix and location list keybindings
