@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 " my plugins
 "Plugin 'gabenespoli/vim-cenwin'
 Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
-Plugin 'file:///Users/gmac/bin/vim/CapitalL'
+Plugin 'file:///Users/gmac/bin/vim/capitalL.vim'
 
 " files
 "Plugin 'vifm/vifm.vim'
