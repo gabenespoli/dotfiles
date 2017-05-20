@@ -6,6 +6,7 @@ let g:colors_name='gaberized'
 hi Title                ctermfg=15      ctermbg=none    cterm=none
 "hi Operator             ctermfg=7       ctermbg=none    cterm=none
 hi WarningMsg           ctermfg=1       ctermbg=0       cterm=none
+hi ErrorMsg             ctermfg=7       ctermbg=1       cterm=none
 
 hi StatusLine           ctermfg=0       ctermbg=14      cterm=reverse
 hi StatusLineNC         ctermfg=0       ctermbg=10      cterm=reverse
