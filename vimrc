@@ -53,6 +53,7 @@ Plugin 'kana/vim-submode'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'vim-scripts/Rename'
+Plugin 'vim-scripts/taglist.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vim-scripts/TaskList.vim'
@@ -307,15 +308,8 @@ nnoremap <leader>R :TabooReset<CR>
 
 " buffergator
 let g:buffergator_suppress_keymaps = 1
-"nnoremap <leader>b :BuffergatorOpen<CR>
-"nnoremap <leader>B :BuffergatorClose<CR>
-"nnoremap <leader>t :BuffergatorTabsOpen<CR>
-"nnoremap <leader>T :BuffergatorTabsClose<CR>
-nnoremap <leader>j :BuffergatorToggle<CR>
-nnoremap <leader>k :BuffergatorToggle<CR>
-nnoremap <leader>T :BuffergatorTabsToggle<CR>
-nnoremap gb :BuffergatorMruCyclePrev<CR>
-nnoremap gB :BuffergatorMruCycleNext<CR>
+nnoremap <leader>b :BuffergatorToggle<CR>
+nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
 " submode
 let g:submode_timeout = 0
