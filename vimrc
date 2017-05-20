@@ -216,6 +216,7 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+
 " tab to cycle between panes
 nnoremap <Tab> <C-w>w
 " split with next or previous file
@@ -279,8 +280,9 @@ nnoremap <leader>\ :set hlsearch!<CR>
 
 "" Plugin settings
 " CapitalL
-nnoremap <localleader>l :Ltoggle()<CR>
-nnoremap <localleader><localleader>l :Lcycle()<CR>
+let g:CapitalL_DefaultKeybindings = 0
+nnoremap <localleader>l :Ltoggle<CR>
+nnoremap <localleader>L :Lcycle<CR>
 
 " CenWin
 nnoremap <leader>C :call CenWinToggle(0)<CR>
@@ -503,7 +505,7 @@ endif
 
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
-    exe ':call CenWinToggle(80)'
+    "exe ':call CenWinToggle(80)'
     setlocal textwidth=0 wrapmargin=0 wrap linebreak 
     hi StatusLine ctermfg=8
     hi StatusLineNC ctermfg=8
