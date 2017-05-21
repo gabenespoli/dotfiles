@@ -63,89 +63,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"" Plugin settings
-" gabenespoli/capitalL.vim
-let g:CapitalL_DefaultKeybindings = 0
-nnoremap <localleader>l :Ltoggle<CR>
-nnoremap <localleader>L :Lcycle<CR>
-
-" gabenespoli/vim-cenwin
-nnoremap <leader>C :call CenWinToggle(0)<CR>
-
-" vim-scripts/YankRing.vim
-let g:yankring_history_dir = '$HOME/.vim'
-let g:yankring_replace_n_pkey = '<up>'
-let g:yankring_replace_n_nkey = '<down>'
-
-" tpope/vim-fugitive
-nnoremap gs :Gstatus<CR>
-nnoremap gc :Gwrite<CR>:Gcommit<CR>i
-nnoremap gd :Gdiff<CR>
-
-" airblade/vim-gitgutter 
-let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
-let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
-let g:gitgutter_signs = 0
-nnoremap <leader>G :GitGutterSignsToggle<CR>
-
-" kana/vim-submode
-let g:submode_timeout = 0
-let g:submode_tiemoutlen = 1500
-let g:submode_keep_leaving_key = 1
-
-" gcmt/taboo.vim
-let g:taboo_tabline = 0
-"let g:taboo_tab_format = ' %f%m '
-"let g:taboo_renamed_tab_format = ' [%l]%m'
-nnoremap <leader>r :TabooRename 
-nnoremap <leader>R :TabooReset<CR>
-
-" ctrlpvim/ctrp.vim
-let g:ctrlp_map = '<leader>o'
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_prompt_mappings = { 
-            \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-            \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-            \ 'PrtHistory(-1)':         [],
-            \ 'PrtHistory(1)':          [],
-            \ 'AcceptSelection("e")':   [],
-            \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-            \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-            \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-            \ }
-
-" francoiscabrol/ranger.vim
-let g:ranger_map_keys = 0
-nnoremap <leader>O :RangerNewTab<CR>
-
-" jeetsukumaran/vim-buffergator
-let g:buffergator_suppress_keymaps = 1
-nnoremap <leader>b :BuffergatorToggle<CR>
-nnoremap <leader>B :BuffergatorTabsToggle<CR>
-
-" vim-slime
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
-
-" vim-cellmode
-let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
-let g:cellmode_tmux_windowname=''
-let g:cellmode_tmux_panenumber='1'
-let g:cellmode_screen_sessionname='ipython'
-let g:cellmode_screen_window='0'
-let g:cellmode_default_mappings='0'
-vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
-"noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
-noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
-
-" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
-" see settings in .vim/ftplugin/markdown.vim
-
-" Lilypond
-filetype off
-set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
-"set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
-filetype on
 
 "" Colorscheme 
 if has("gui_running")
@@ -352,6 +269,92 @@ nnoremap <leader>N :set invrelativenumber<CR>:set invnumber<CR>
 nnoremap <leader>/ :set hlsearch!<CR>
 nnoremap <leader>\ :set hlsearch!<CR>
 
+"" Plugin settings
+" gabenespoli/capitalL.vim
+let g:CapitalL_enableKeybindings = 1
+nnoremap <localleader>l :Ltoggle<CR>
+
+" gabenespoli/vim-cenwin
+nnoremap <leader>C :call CenWinToggle(0)<CR>
+
+" vim-scripts/YankRing.vim
+let g:yankring_history_dir = '$HOME/.vim'
+let g:yankring_replace_n_pkey = '<up>'
+let g:yankring_replace_n_nkey = '<down>'
+
+" vim-scripts/taglist.vim
+let Tlist_GainFocus_On_ToggleOpen = 1
+nnoremap <localleader>t :TlistToggle<CR>
+
+" tpope/vim-fugitive
+nnoremap gs :Gstatus<CR>
+nnoremap gc :Gwrite<CR>:Gcommit<CR>i
+nnoremap gd :Gdiff<CR>
+
+" airblade/vim-gitgutter 
+let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
+let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
+let g:gitgutter_signs = 0
+nnoremap <leader>G :GitGutterSignsToggle<CR>
+
+" kana/vim-submode
+let g:submode_timeout = 0
+let g:submode_tiemoutlen = 1500
+let g:submode_keep_leaving_key = 1
+
+" gcmt/taboo.vim
+let g:taboo_tabline = 0
+"let g:taboo_tab_format = ' %f%m '
+"let g:taboo_renamed_tab_format = ' [%l]%m'
+nnoremap <leader>r :TabooRename 
+nnoremap <leader>R :TabooReset<CR>
+
+" ctrlpvim/ctrp.vim
+let g:ctrlp_map = '<leader>o'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_prompt_mappings = { 
+            \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+            \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+            \ 'PrtHistory(-1)':         [],
+            \ 'PrtHistory(1)':          [],
+            \ 'AcceptSelection("e")':   [],
+            \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+            \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+            \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+            \ }
+
+" francoiscabrol/ranger.vim
+let g:ranger_map_keys = 0
+nnoremap <leader>O :RangerNewTab<CR>
+
+" jeetsukumaran/vim-buffergator
+let g:buffergator_suppress_keymaps = 1
+nnoremap <leader>b :BuffergatorToggle<CR>
+nnoremap <leader>B :BuffergatorTabsToggle<CR>
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+
+" vim-cellmode
+let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
+let g:cellmode_tmux_windowname=''
+let g:cellmode_tmux_panenumber='1'
+let g:cellmode_screen_sessionname='ipython'
+let g:cellmode_screen_window='0'
+let g:cellmode_default_mappings='0'
+vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
+"noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
+noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
+
+" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
+" see settings in .vim/ftplugin/markdown.vim
+
+" Lilypond
+filetype off
+set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
+"set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
+filetype on
 "" Functions
 function! GetSyntaxUnderCursor() 
     let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
