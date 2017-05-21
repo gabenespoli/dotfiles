@@ -46,14 +46,14 @@ hi mailSubject          ctermfg=3
 
 " Markdown
 hi markdownItalic       ctermfg=7       ctermbg=8       cterm=none
-hi markdownBold         ctermfg=15      ctermbg=8       cterm=none
-hi markdownHeadingDelimiter ctermfg=15  ctermbg=8       cterm=none
-hi markdownH1           ctermfg=15      ctermbg=8       cterm=none
-hi markdownH2           ctermfg=15      ctermbg=8       cterm=none
-hi markdownH3           ctermfg=15      ctermbg=8       cterm=none
-hi markdownH4           ctermfg=15      ctermbg=8       cterm=none
-hi markdownH5           ctermfg=15      ctermbg=8       cterm=none
-hi markdownH6           ctermfg=15      ctermbg=8       cterm=none
+hi markdownBold         ctermfg=15      ctermbg=8       cterm=bold
+hi markdownHeadingDelimiter ctermfg=7   ctermbg=0       cterm=none
+hi markdownH1           ctermfg=7       ctermbg=0       cterm=none
+hi markdownH2           ctermfg=7       ctermbg=0       cterm=none
+hi markdownH3           ctermfg=7       ctermbg=0       cterm=none
+hi markdownH4           ctermfg=7       ctermbg=0       cterm=none
+hi markdownH5           ctermfg=7       ctermbg=0       cterm=none
+hi markdownH6           ctermfg=7       ctermbg=0       cterm=none
 
 " MATLAB
 hi matlabCellComment    ctermfg=11      ctermbg=0
