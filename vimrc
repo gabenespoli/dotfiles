@@ -22,6 +22,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rickhowe/diffchar.vim'
 Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 
 " files
@@ -259,54 +260,51 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
 " Spell checking
-"nnoremap <leader>Z :set spell!<CR>
-"nnoremap <leader>z 1z=
-nnoremap <leader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 
-" Toggles
-nnoremap <leader>N :set invrelativenumber<CR>:set invnumber<CR>
-nnoremap <leader>/ :set hlsearch!<CR>
-nnoremap <leader>\ :set hlsearch!<CR>
-
 "" Plugin settings
-" gabenespoli/capitalL.vim
+""" gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
 
-" gabenespoli/vim-cenwin
+""" gabenespoli/vim-cenwin
 nnoremap <leader>C :call CenWinToggle(0)<CR>
 
-" vim-scripts/YankRing.vim
+""" vim-scripts/YankRing.vim
 let g:yankring_history_dir = '$HOME/.vim'
 
-" vim-scripts/taglist.vim
+""" vim-scripts/taglist.vim
 let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <localleader>t :TlistToggle<CR>
 
-" tpope/vim-fugitive
+""" tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>
 nnoremap gc :Gwrite<CR>:Gcommit<CR>i
 nnoremap gd :Gdiff<CR>
 
-" airblade/vim-gitgutter 
+""" airblade/vim-gitgutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
 let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
 let g:gitgutter_signs = 0
 nnoremap <leader>G :GitGutterSignsToggle<CR>
 
-" kana/vim-submode
+""" rickhowe/diffchar.vim
+" I've commented out the keymaps in plugin/diffchar.vim
+
+""" kana/vim-submode
 let g:submode_timeout = 0
 let g:submode_tiemoutlen = 1500
 let g:submode_keep_leaving_key = 1
 
-" gcmt/taboo.vim
+""" gcmt/taboo.vim
 let g:taboo_tabline = 0
 "let g:taboo_tab_format = ' %f%m '
 "let g:taboo_renamed_tab_format = ' [%l]%m'
 nnoremap <leader>r :TabooRename 
 nnoremap <leader>R :TabooReset<CR>
 
-" ctrlpvim/ctrp.vim
+""" srooloose/NERDTree
+
+""" ctrlpvim/ctrp.vim
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
@@ -320,20 +318,20 @@ let g:ctrlp_prompt_mappings = {
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
 
-" francoiscabrol/ranger.vim
+""" francoiscabrol/ranger.vim
 let g:ranger_map_keys = 0
 nnoremap <leader>O :RangerNewTab<CR>
 
-" jeetsukumaran/vim-buffergator
+""" jeetsukumaran/vim-buffergator
 let g:buffergator_suppress_keymaps = 1
 nnoremap <leader>b :BuffergatorToggle<CR>
 nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
-" vim-slime
+""" vim-slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 
-" vim-cellmode
+""" vim-cellmode
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
 let g:cellmode_tmux_windowname=''
 let g:cellmode_tmux_panenumber='1'
@@ -344,10 +342,10 @@ vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
 "noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
 noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
 
-" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
+""" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
 
-" Lilypond
+""" Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
@@ -480,15 +478,6 @@ function! MuttMailMode()
     "exe "/^$"
     "exe "normal! gg}O\<Esc>o"
 endfunction
-
-function! ToggleInvisibles()
-    if &list==1
-        set nolist
-    else
-        set list
-    endif
-endfunction
-nnoremap <leader>i :call ToggleInvisibles()<CR>
 
 function! ToggleCsvTsv()
     if exists("b:delimiter")
