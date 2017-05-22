@@ -56,7 +56,7 @@ hi markdownH5           ctermfg=7       ctermbg=0       cterm=none
 hi markdownH6           ctermfg=7       ctermbg=0       cterm=none
 
 " CapitalL plugin markdown location lists
-hi LmarkdownH1          ctermfg=0       ctermbg=12      cterm=none
+hi LmarkdownH1          ctermfg=0       ctermbg=10      cterm=none
 hi LmarkdownH2          ctermfg=14      ctermbg=0       cterm=none
 hi LmarkdownH3          ctermfg=12      ctermbg=8       cterm=none
 hi LmarkdownH4          ctermfg=12      ctermbg=8       cterm=none
