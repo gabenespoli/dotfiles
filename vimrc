@@ -13,7 +13,7 @@ Plugin 'file:///Users/gmac/bin/vim/capitalL.vim'
 Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 " vim and git
-Plugin 'vim-scripts/YankRing.vim'
+"Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/Rename'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-unimpaired'
