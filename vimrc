@@ -271,7 +271,6 @@ nnoremap <leader>\ :set hlsearch!<CR>
 
 "" Plugin settings
 " gabenespoli/capitalL.vim
-let g:CapitalL_enableKeybindings = 1
 nnoremap <localleader>l :Ltoggle<CR>
 
 " gabenespoli/vim-cenwin
@@ -279,8 +278,6 @@ nnoremap <leader>C :call CenWinToggle(0)<CR>
 
 " vim-scripts/YankRing.vim
 let g:yankring_history_dir = '$HOME/.vim'
-let g:yankring_replace_n_pkey = '<up>'
-let g:yankring_replace_n_nkey = '<down>'
 
 " vim-scripts/taglist.vim
 let Tlist_GainFocus_On_ToggleOpen = 1
