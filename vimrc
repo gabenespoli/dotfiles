@@ -270,7 +270,9 @@ nnoremap <localleader>l :Ltoggle<CR>
 nnoremap <leader>C :call CenWinToggle(0)<CR>
 
 """ vim-scripts/YankRing.vim
-let g:yankring_history_dir = '$HOME/.vim'
+"let g:yankring_history_dir = '$HOME/.vim'
+"let g:yankring_replace_n_pkey = '<leader>p'
+"let g:yankring_replace_n_nkey = '<leader>P'
 
 """ vim-scripts/taglist.vim
 let Tlist_GainFocus_On_ToggleOpen = 1
