@@ -8,7 +8,8 @@ if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias agi="brew install"
     alias agu="brew update && brew upgrade && brew cleanup"
     alias ql='qlmanage -p &>/dev/null'
-    alias matlab="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
+    alias matlabR2016a="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
+    alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
@@ -36,7 +37,8 @@ else # Linux options
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
-    alias matlab="/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodesktop"
+    alias matlabR2016a="/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodesktop"
+    alias matlab="/usr/local/MATLAB/R2017a/bin/matlab -nosplash -nodesktop"
     #eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
@@ -69,6 +71,7 @@ function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
+function settitle() { printf "\033k$1\033\\" ; }
 
 # git
 alias gs="printf '\033c' && git status"
@@ -153,7 +156,7 @@ function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
 function eg () { mount -t smbfs //efgh@192.168.1.12/egdata ~/eg ; }
 
 ## internet
-# dns servers
+### dns servers
 function dns() {
     case $1 in
         on ) sudo networksetup -setdnsservers Wi-Fi 192.254.74.201 198.27.106.150 208.110.81.50 ;;
@@ -162,7 +165,7 @@ function dns() {
     esac
 }
 
-# open websites with keywords
+### open websites with keywords
 function web() {
     case $1 in
         # research
