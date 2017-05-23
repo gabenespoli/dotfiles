@@ -245,6 +245,7 @@ vnoremap W 5w
 nnoremap B 5b
 vnoremap B 5b
 inoremap <C-i> <Tab>
+nnoremap zz zz12<C-e>
 
 "vimdiff
 nnoremap du :diffupdate<CR>
@@ -266,6 +267,7 @@ nnoremap <localleader>s 1z=
 """ gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
 nnoremap <localleader>q :Ctoggle<CR>
+nnoremap <localLeader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
 
