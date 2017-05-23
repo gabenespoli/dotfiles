@@ -265,6 +265,8 @@ nnoremap <localleader>s 1z=
 "" Plugin settings
 """ gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
+let g:CapitalL_qf_defaultPosition = "right"
+let g:CapitalL_qf_defaultWidth = 40
 
 """ gabenespoli/vim-cenwin
 nnoremap <leader>C :call CenWinToggle(0)<CR>
