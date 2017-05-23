@@ -292,7 +292,7 @@ nnoremap gd :Gdiff<CR>
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
 let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
 let g:gitgutter_signs = 0
-nnoremap <leader>G :GitGutterSignsToggle<CR>
+nnoremap cog :GitGutterSignsToggle<CR>
 
 """ rickhowe/diffchar.vim
 " I've commented out the keymaps in plugin/diffchar.vim
