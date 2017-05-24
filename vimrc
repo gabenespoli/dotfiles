@@ -296,7 +296,7 @@ nnoremap gd :Gdiff<CR>
 """ airblade/vim-gitgutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
 let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
-let g:gitgutter_signs = 0
+let g:gitgutter_signs = 1
 nnoremap cog :GitGutterSignsToggle<CR>
 
 """ rickhowe/diffchar.vim
