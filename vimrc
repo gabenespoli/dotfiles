@@ -213,6 +213,8 @@ nnoremap <leader>l <C-w>l
 nnoremap <Tab> <C-w>w
 " split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
+nnoremap <leader>J <C-w>s:bnext<CR>
+nnoremap <leader>K <C-w>s:bprevious<CR>
 nnoremap <leader>L <C-w>v:bnext<CR>
 
 " copy/paste with system clipboard
@@ -357,14 +359,15 @@ filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
+
 "" Functions
 function! GetSyntaxUnderCursor() 
     let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
     return g:SyntaxUnderCursor
 endfunction
 
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
 function! WordCount()
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
     let lnum = 1
     let n = 0
     while lnum <= line('$')
