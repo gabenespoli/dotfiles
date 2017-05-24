@@ -288,6 +288,7 @@ nnoremap <localleader>t :TlistToggle<CR>
 
 """ tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>
+nnoremap ga :Gwrite<CR>
 nnoremap gc :Gwrite<CR>:Gcommit<CR>i
 nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
 nnoremap gd :Gdiff<CR>
