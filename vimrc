@@ -33,6 +33,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 " programs
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'julienr/vim-cellmode'
 "Plugin 'jpalardy/vim-slime'
 "Plugin 'ivanov/vim-ipython'
@@ -335,6 +336,21 @@ nnoremap <leader>O :RangerNewTab<CR>
 let g:buffergator_suppress_keymaps = 1
 nnoremap <leader>b :BuffergatorToggle<CR>
 nnoremap <leader>B :BuffergatorTabsToggle<CR>
+
+""" vim-tmux-navigator
+" iTerm sends escape sequences for the function keys
+" This way I can 'use' meta to switch vim panes
+" http://aperiodic.net/phil/archives/Geekery/term-function-keys.html
+" <M-h>     <F5>    ^[ [15~
+" <M-j>     <F6>    ^[ [17~
+" <M-k>     <F7>    ^[ [18~
+" <M-l>     <F8>    ^[ [19~
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <F5> :TmuxNavigateLeft<CR>
+nnoremap <silent> <F6> :TmuxNavigateDown<CR>
+nnoremap <silent> <F7> :TmuxNavigateUp<CR>
+nnoremap <silent> <F8> :TmuxNavigateRight<CR>
+"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 """ vim-slime
 let g:slime_target = "tmux"
