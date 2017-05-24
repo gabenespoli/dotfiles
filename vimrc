@@ -248,7 +248,7 @@ vnoremap W 5w
 nnoremap B 5b
 vnoremap B 5b
 inoremap <C-i> <Tab>
-nnoremap zz zt12<C-e>
+nnoremap zz zt12<C-y>
 
 "vimdiff
 nnoremap du :diffupdate<CR>
