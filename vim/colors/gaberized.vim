@@ -2,7 +2,7 @@
 so ~/.vim/colors/solarized.vim
 let g:colors_name='gaberized'
 
-" Solarized customizations
+"" Solarized customizations
 hi Title                ctermfg=15      ctermbg=none    cterm=none
 "hi Operator             ctermfg=7       ctermbg=none    cterm=none
 hi WarningMsg           ctermfg=1       ctermbg=0       cterm=none
@@ -38,13 +38,13 @@ hi DiffDelete           ctermfg=1       ctermbg=0
 hi DiffText             ctermfg=9       ctermbg=0
 
 "" Syntax-specific
-" Mail compose colors
+""" Mail compose colors
 hi mailHeader           ctermfg=10
 hi mailHeaderKey        ctermfg=4
 hi mailHeaderEmail      ctermfg=6
 hi mailSubject          ctermfg=3
 
-" Markdown
+""" Markdown
 hi markdownItalic       ctermfg=7       ctermbg=8       cterm=none
 hi markdownBold         ctermfg=15      ctermbg=8       cterm=bold
 hi markdownHeadingDelimiter ctermfg=7   ctermbg=0       cterm=none
@@ -55,7 +55,7 @@ hi markdownH4           ctermfg=7       ctermbg=0       cterm=none
 hi markdownH5           ctermfg=7       ctermbg=0       cterm=none
 hi markdownH6           ctermfg=7       ctermbg=0       cterm=none
 
-" CapitalL plugin markdown location lists
+""" CapitalL plugin markdown location lists
 hi LmarkdownH1          ctermfg=0       ctermbg=10      cterm=none
 hi LmarkdownH2          ctermfg=14      ctermbg=0       cterm=none
 hi LmarkdownH3          ctermfg=12      ctermbg=8       cterm=none
@@ -63,23 +63,23 @@ hi LmarkdownH4          ctermfg=12      ctermbg=8       cterm=none
 hi LmarkdownH5          ctermfg=12      ctermbg=8       cterm=none
 hi LmarkdownH6          ctermfg=12      ctermbg=8       cterm=none
 
-" MATLAB
+""" MATLAB
 hi matlabCellComment    ctermfg=11      ctermbg=0
 
 "" Plugin color customizations
-" Buffergator
+""" Buffergator
 hi BuffergatorBufferNr  ctermfg=10      ctermbg=8       cterm=none
 
-" DiffChar
+""" DiffChar
 hi _DiffDelPos          ctermfg=1       ctermbg=0       cterm=underline
 
-" CenWin
+""" CenWin
 hi CenWinOutlineHeader1 ctermfg=4       ctermbg=8       cterm=reverse 
 hi CenWinOutlineHeader2 ctermfg=4       ctermbg=8       cterm=none 
 hi CenWinOutlineHeader3 ctermfg=6       ctermbg=8       cterm=none
 hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 
-" Todo and Todo.txt plugin
+""" Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
 hi TodoPriorityA        ctermfg=1
 hi TodoPriorityB        ctermfg=5
