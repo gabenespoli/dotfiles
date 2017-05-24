@@ -350,7 +350,14 @@ nnoremap <silent> <F5> :TmuxNavigateLeft<CR>
 nnoremap <silent> <F6> :TmuxNavigateDown<CR>
 nnoremap <silent> <F7> :TmuxNavigateUp<CR>
 nnoremap <silent> <F8> :TmuxNavigateRight<CR>
-"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+inoremap <silent> <F5> <Esc>:TmuxNavigateLeft<CR>
+inoremap <silent> <F6> <Esc>:TmuxNavigateDown<CR>
+inoremap <silent> <F7> <Esc>:TmuxNavigateUp<CR>
+inoremap <silent> <F8> <Esc>:TmuxNavigateRight<CR>
+vnoremap <silent> <F5> <Esc>:TmuxNavigateLeft<CR>
+vnoremap <silent> <F6> <Esc>:TmuxNavigateDown<CR>
+vnoremap <silent> <F7> <Esc>:TmuxNavigateUp<CR>
+vnoremap <silent> <F8> <Esc>:TmuxNavigateRight<CR>
 
 """ vim-slime
 let g:slime_target = "tmux"
