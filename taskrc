@@ -16,6 +16,12 @@ data.location=~/bin/private/task
 # Color theme
 include ~/dotfiles/task/colors.theme
 
+# TrelloWarrior
+uda.trelloid.type=string
+uda.trelloid.label=Trello ID
+uda.trellolistname.type=string
+uda.trellolistname.label=Trello List Name
+
 # Custom reports
 report.t.description=My custom report
 report.t.columns=id,project,tags,description,scheduled.remaining,due.remaining
