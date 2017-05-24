@@ -6,11 +6,11 @@ c = get_config()
 #c.InteractiveShellApp.extensions = [
 #    'myextension'
 #]
-#c.InteractiveShellApp.exec_lines = [
-#    'import numpy as np',
-#    'import scipy as sp',
-#    'import pandas as pd'
-#]
+c.InteractiveShellApp.exec_lines = [
+    'import numpy as np',
+    'import pandas as pd',
+#    'import scipy as sp'
+]
 #c.InteractiveShellApp.exec_files = [
     #'mycode.py',
     #'fancy.ipy'
@@ -64,10 +64,11 @@ from prompt_toolkit.key_binding.vi_state import InputMode
 import os
 
 class MyPrompt(Prompts):
-     def in_prompt_tokens(self, cli=None):
-         return [(Token.PromptWhoKnows, '? '),
-                 #(Token.PromptPath, os.getcwd()),
-                 (Token.Prompt, '>>> ')]
+    def in_prompt_tokens(self, cli=None):
+        return [(Token.Prompt, '>>> ')]
+                #(Token.PromptPath, os.getcwd()),
+                #(Token.PromptNum, str(self.shell.execution_count)),
+                #(Token.PromptWhoKnows, '*'),
 
 c.TerminalInteractiveShell.prompts_class = MyPrompt
 
