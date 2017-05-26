@@ -173,7 +173,7 @@ nnoremap <leader>q :qa<CR>
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>n', ':tab new<CR>') 
-call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit<CR>') 
+call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit %<CR>:bnext<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>W', ':close<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
@@ -186,7 +186,7 @@ call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>')
 "call submode#enter_with('TABS', 'n', '', '<leader>7', '7gt') 
 "call submode#enter_with('TABS', 'n', '', '<leader>8', '8gt') 
 call submode#leave_with('TABS', 'n', '', '<Esc>') 
-call submode#map('TABS', 'n', '', 't', ':tabedit %<CR>')
+call submode#map('TABS', 'n', '', 't', ':tabedit %<CR>:bnext<CR>')
 call submode#map('TABS', 'n', '', 'W', ':close<CR>')
 call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
 call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
