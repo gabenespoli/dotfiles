@@ -22,7 +22,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rickhowe/diffchar.vim'
 Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 
 " files
@@ -173,7 +173,7 @@ nnoremap <leader>q :qa<CR>
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>n', ':tab new<CR>') 
-call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit #<CR>') 
+call submode#enter_with('TABS', 'n', '', '<leader>t', ':tabedit<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>W', ':close<CR>') 
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
