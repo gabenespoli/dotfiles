@@ -163,8 +163,8 @@ vnoremap jk <Esc>
 
 " common actions
 nnoremap <leader>e :e<Space>
-"<leader>o opens ctrlp plugin
-"<leader>O opens ranger / vifm
+"<leader>O opens ctrlp plugin
+"<leader>o opens ranger
 nnoremap <leader>s :w<CR>
 nnoremap <leader>w :close<CR>
 nnoremap <leader>D :bdelete<CR>
@@ -296,7 +296,7 @@ nnoremap <leader>R :TabooReset<CR>
 """ srooloose/NERDTree
 
 """ ctrlpvim/ctrp.vim
-let g:ctrlp_map = '<leader>o'
+let g:ctrlp_map = '<leader>O'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
@@ -311,7 +311,7 @@ let g:ctrlp_prompt_mappings = {
 
 """ francoiscabrol/ranger.vim
 let g:ranger_map_keys = 0
-nnoremap <leader>O :RangerNewTab<CR>
+nnoremap <leader>o :RangerNewTab<CR>
 
 """ jeetsukumaran/vim-buffergator
 let g:buffergator_suppress_keymaps = 1
