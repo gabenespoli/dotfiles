@@ -173,7 +173,6 @@ nnoremap <leader>q :qa<CR>
 nnoremap q :q<CR>
 nnoremap <leader>Q q
 
-
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
