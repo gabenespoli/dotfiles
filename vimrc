@@ -489,7 +489,7 @@ function! MuttMailMode()
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
-    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Student<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
+    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
     "setlocal nocp 
     "exe "/^$"
     "exe "normal! gg}O\<Esc>o"
