@@ -1,4 +1,8 @@
-
+--calendar Olly#green
+--calendar EGcal#brightmagenta
+--calendar Gabe#blue
+--calendar Research#cyan
+--calendar EGtravel#brightred
 --color_border='brightgreen'
 --color_date='brightgreen'
 --color_now_marker='white'
