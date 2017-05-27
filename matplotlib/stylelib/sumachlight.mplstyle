@@ -1,0 +1,30 @@
+# Sumach Light colorscheme for matplotlib
+# gabenespoli@gmail.com
+
+lines.color: 444444
+patch.edgecolor: 444444
+
+text.color: 444444
+
+axes.facecolor: ffffff
+axes.edgecolor: 444444
+axes.labelcolor: 444444
+# matplotlib default order:
+#   blue, orange, green, red, violet, brown, magenta, grey, yellow, cyan
+# matlab default order:
+#   blue, orange, yellow, violet, green, cyan, red
+# sumach light order: 
+#   blue, orange, green, yellow, magenta, cyan, violet, red
+axes.prop_cycle: cycler('color', ['005fff', 'ff5f00', '00af5f', 'ffaf00', 'ff5f87', '00afaf', '5f5fff', 'ff0000'])
+
+xtick.color: 444444
+ytick.color: 444444
+
+grid.color: 444444
+
+figure.facecolor: ffffff
+figure.edgecolor: ffffff
+
+savefig.facecolor: ffffff
+savefig.edgecolor: ffffff
+
