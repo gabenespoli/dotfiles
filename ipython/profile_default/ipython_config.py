@@ -66,9 +66,20 @@ import os
 class MyPrompt(Prompts):
     def in_prompt_tokens(self, cli=None):
         return [(Token.Prompt, '>>> ')]
-                #(Token.PromptPath, os.getcwd()),
-                #(Token.PromptNum, str(self.shell.execution_count)),
-                #(Token.PromptWhoKnows, '*'),
 
+    #def continuation_prompt_tokens(self, cli=None width=None):
+        #if width is None:
+            #width = self._width()
+        #return[(Token.Prompt, (' ' * (width - 5)) + '... ')]
+    def continuation_prompt_tokens(self, cli=None, width=None):
+        if width is None:
+            width = self._width()
+        return [
+            (Token.Prompt, (' ' * (width - 5)) + '... '),
+        ]
+
+    def out_prompt_tokens(self):
+        return [(Token.OutPrompt, '==> ')]
+    
 c.TerminalInteractiveShell.prompts_class = MyPrompt
 
