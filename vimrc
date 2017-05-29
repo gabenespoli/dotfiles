@@ -17,6 +17,7 @@ Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 Plugin 'vim-scripts/Rename'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rickhowe/diffchar.vim'
@@ -268,10 +269,10 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <localleader>t :TlistToggle<CR>
 
 """ tpope/vim-fugitive
-nnoremap gs :Gstatus<CR>
-nnoremap ga :Gwrite<CR>
-nnoremap gc :Gwrite<CR>:Gcommit<CR>i
-nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
+"nnoremap gs :Gstatus<CR>
+"nnoremap ga :Gwrite<CR>
+"nnoremap gc :Gwrite<CR>:Gcommit<CR>i
+"nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
 nnoremap gd :Gdiff<CR>
 
 """ airblade/vim-gitgutter 
