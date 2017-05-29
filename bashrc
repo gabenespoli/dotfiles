@@ -67,7 +67,7 @@ alias lsl='printf "\033c" && ls'
 alias gf="python $HOME/bin/utils/gf.py"
 alias vim="vim -p" # open multiple files in tabs
 alias pylab="ipython --pylab"
-alias matlab="$MATLAB/bin/matlab -nosplash -nodesktop"
+alias matlab="rlwrap -c -a dummy_arg $MATLAB/bin/matlab -nosplash -nodesktop"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
