@@ -146,10 +146,10 @@ set statusline+=%=                              " switch to the right side
 set statusline+=%*
 set statusline+=%l                              " current line
 "set statusline+=/%L                             " total lines
-set statusline+=\,                              " 
+set statusline+=\,                              ",
 set statusline+=%c                              " current column
-set statusline+=\ \                            ""
-set statusline+=(%P)                              " percent through file
+set statusline+=\                               " 
+set statusline+=(%P)                            " percent through file
 
 " tpope's statusline:
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
