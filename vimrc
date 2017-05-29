@@ -145,7 +145,7 @@ set statusline+=%#StatusLineFill#
 set statusline+=%=                              " switch to the right side
 set statusline+=%*
 set statusline+=%l                              " current line
-"set statusline+=/%L                             " total lines
+set statusline+=/%L                             " total lines
 set statusline+=\,                              ",
 set statusline+=%c                              " current column
 set statusline+=\                               " 
