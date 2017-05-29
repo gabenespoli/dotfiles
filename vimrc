@@ -153,7 +153,13 @@ set statusline+=\                               "
 set statusline+=%4l/%L                          " current line/total lines
 set statusline+=\ \                             ""
 set statusline+=(%P)                            " percent through file
-set statusline+=\                                " 
+set statusline+=\                               " 
+set statusline+=%#warningmsg#                   " syntastic defaults
+set statusline+=%{SyntasticStatuslineFlag()}    " syntastic defaults
+set statusline+=%*                              " syntastic defaults
+
+" tpope's statusline:
+" set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 "" Keybindings
 let mapleader = "\<Space>"
@@ -359,10 +365,6 @@ vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
 noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
 
 """ vim-syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
