@@ -1,9 +1,8 @@
-"set nonumber    " don't show line numbers
 set spell       " enable live spell checking
+set statusline+={%{WordCount()}}
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
-"au VimEnter * :GitGutterDisable
 
 hi NonText ctermfg=8
 
@@ -51,3 +50,13 @@ endfunc
 au VimEnter * :call GabePandocForce()
 nnoremap <localleader>i :call GabePandocForce()<CR>
 
+function! WordCount()
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+    let lnum = 1
+    let n = 0
+    while lnum <= line('$')
+        let n = n + len(split(getline(lnum)))
+        let lnum = lnum + 1
+    endwhile
+    return n
+endfunction
