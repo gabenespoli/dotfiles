@@ -277,7 +277,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <localleader>t :TlistToggle<CR>
 
 """ tpope/vim-fugitive
-nnoremap gs :Gstatus<CR>
+nnoremap gs :Gstatus<CR>7j
 nnoremap gd :Gdiff<CR>
 nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
 
