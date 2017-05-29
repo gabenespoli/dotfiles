@@ -170,9 +170,10 @@ nnoremap <leader>s :w<CR>
 nnoremap <leader>w :close<CR>
 nnoremap <leader>D :bdelete<CR>
 nnoremap <leader>X :bwipe<CR>
-nnoremap <leader>q :qa<CR>
 nnoremap q :q<CR>
-nnoremap <leader>Q q
+nnoremap Q :qa<CR>
+nnoremap <leader>q q
+nnoremap <leader>Q Q
 
 " tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
