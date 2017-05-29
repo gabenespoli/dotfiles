@@ -1,5 +1,5 @@
 set spell       " enable live spell checking
-set statusline+={%{WordCount()}}
+set statusline+=\ {%{WordCount()}}
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
