@@ -273,6 +273,7 @@ nnoremap <localleader>t :TlistToggle<CR>
 nnoremap gs :Gstatus<CR>7j
 nnoremap gd :Gdiff<CR>
 nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
+nnoremap g<C-g> <C-g>
 
 """ airblade/vim-gitgutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
