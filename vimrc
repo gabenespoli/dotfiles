@@ -270,11 +270,9 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <localleader>t :TlistToggle<CR>
 
 """ tpope/vim-fugitive
-"nnoremap gs :Gstatus<CR>
-"nnoremap ga :Gwrite<CR>
-"nnoremap gc :Gwrite<CR>:Gcommit<CR>i
-"nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
+nnoremap gs :Gstatus<CR>
 nnoremap gd :Gdiff<CR>
+nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
 
 """ airblade/vim-gitgutter 
 let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
