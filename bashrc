@@ -8,8 +8,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias agi="brew install"
     alias agu="brew update && brew upgrade && brew cleanup"
     alias ql='qlmanage -p &>/dev/null'
-    alias matlabR2016a="/Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
-    alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
+    export MATLAB="/Applications/MATLAB_R2017a.app"
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
@@ -37,8 +36,7 @@ else # Linux options
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
-    alias matlabR2016a="/usr/local/MATLAB/R2016a/bin/matlab -nosplash -nodesktop"
-    alias matlab="/usr/local/MATLAB/R2017a/bin/matlab -nosplash -nodesktop"
+    export MATLAB="/usr/local/MATLAB/R2017a"
     #eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
@@ -69,6 +67,7 @@ alias lsl='printf "\033c" && ls'
 alias gf="python $HOME/bin/utils/gf.py"
 alias vim="vim -p" # open multiple files in tabs
 alias pylab="ipython --pylab"
+alias matlab="$MATLAB/bin/matlab -nosplash -nodesktop"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
