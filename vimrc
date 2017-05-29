@@ -139,27 +139,20 @@ set statusline+=\                               "
 set statusline+=%t                              " :filename
 set statusline+=\                               " 
 set statusline+=%y[%{GetSyntaxUnderCursor()}]   " filetype & syntax
-set statusline+=\                               " 
+set statusline+=%{fugitive#statusline()}
+set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%*
 set statusline+=%#StatusLineFill#
 set statusline+=%=                              " switch to the right side
 set statusline+=%*
-set statusline+=\                               " 
-set statusline+=%{fugitive#statusline()}
-set statusline+=\                               " 
-set statusline+={%{WordCount()}}                " word count
-set statusline+=\                               " 
-set statusline+=%3c                             " current column
-set statusline+=\                               " 
-set statusline+=%4l/%L                          " current line/total lines
-set statusline+=\ \                             ""
-set statusline+=(%P)                            " percent through file
-set statusline+=\                               " 
-set statusline+=%#warningmsg#                   " syntastic defaults
-set statusline+=%{SyntasticStatuslineFlag()}    " syntastic defaults
-set statusline+=%*                              " syntastic defaults
+set statusline+=%l                              " current line
+"set statusline+=/%L                             " total lines
+set statusline+=\,                              " 
+set statusline+=%c                              " current column
+set statusline+=\ \                            ""
+set statusline+=(%P)                              " percent through file
 
 " tpope's statusline:
-" set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
+"set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 "" Keybindings
 let mapleader = "\<Space>"
@@ -385,17 +378,6 @@ function! GetSyntaxUnderCursor()
     return g:SyntaxUnderCursor
 endfunction
 
-function! WordCount()
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-    let lnum = 1
-    let n = 0
-    while lnum <= line('$')
-        let n = n + len(split(getline(lnum)))
-        let lnum = lnum + 1
-    endwhile
-    return n
-endfunction
-
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
@@ -522,3 +504,12 @@ function! ToggleCsvTsv()
     endif
 endfunction
 
+" from tpope's vimrc
+" make sure a function exists before trying to put it in the statusline
+function! SL(function)
+  if exists('*'.a:function)
+    return call(a:function,[])
+  else
+    return ''
+  endif
+endfunction
