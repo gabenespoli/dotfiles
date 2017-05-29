@@ -42,6 +42,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'malithsen/trello-vim'
 
 " syntax
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
@@ -356,6 +357,16 @@ let g:cellmode_default_mappings='0'
 vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
 "noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
 noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
+
+""" vim-syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """ vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
