@@ -193,8 +193,6 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
-" tab to cycle between panes
-nnoremap <Tab> <C-w>w
 " split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
 nnoremap <leader>J <C-w>s:bnext<CR>
