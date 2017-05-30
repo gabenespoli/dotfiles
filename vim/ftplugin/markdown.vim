@@ -31,7 +31,7 @@ let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles
 
 " Pandoc Syntax
 let g:pandoc#syntax#conceal#use = 0
-function! GabePandocForce()
+function! PandocForceHighlighting()
     hi pandocEmphasis cterm=none ctermfg=7
     hi pandocStrongEmphasis cterm=none ctermfg=15
     hi pandocEmphasisInStrong cterm=none ctermfg=7
@@ -48,8 +48,8 @@ function! GabePandocForce()
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunc
-au VimEnter * :call GabePandocForce()
-nnoremap <localleader>i :call GabePandocForce()<CR>
+au VimEnter * :call PandocForceHighlighting()
+nnoremap <localleader>i :call PandocForceHighlighting()<CR>
 
 function! WordCount()
 " http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
