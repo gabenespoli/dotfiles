@@ -508,3 +508,14 @@ function! SL(function)
     return ''
   endif
 endfunction
+
+function! WordCount()
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+    let lnum = 1
+    let n = 0
+    while lnum <= line('$')
+        let n = n + len(split(getline(lnum)))
+        let lnum = lnum + 1
+    endwhile
+    return n
+endfunction
