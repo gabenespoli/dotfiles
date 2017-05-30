@@ -130,26 +130,22 @@ set splitbelow
 set incsearch           " highlight search results as you type
 
 "" Status Line
-set statusline=\                                " 
-set statusline+=%{mode()}                       " mode character
-set statusline+=\                               " 
-set statusline+=[%{tabpagenr()}\|%{winnr()}]    " tab#|win#
-set statusline+=%#WarningMsg#%m%r%*             " modified/read-only
-set statusline+=\                               " 
-set statusline+=%t                              " :filename
-set statusline+=\                               " 
-set statusline+=%y[%{GetSyntaxUnderCursor()}]   " filetype & syntax
+" mode [tab#|win#][+][RO] filename [type][syntax][fugitive][syntastic] ... line/lines,col (pct)
+set statusline=
+set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\%t%y[%{GetSyntaxUnderCursor()}]
 set statusline+=%{fugitive#statusline()}
-set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%*
-set statusline+=%#StatusLineFill#
-set statusline+=%=                              " switch to the right side
-set statusline+=%*
-set statusline+=%l                              " current line
-set statusline+=/%L                             " total lines
-set statusline+=\,                              ",
-set statusline+=%c                              " current column
-set statusline+=\                               " 
-set statusline+=(%P)                            " percent through file
+set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
+set statusline+=%#StatusLineFill#%=%*                      
+set statusline+=%l/%L\,%c\ (%P)                           
+
+augroup filetype_markdown
+    autocmd FileType markdown set statusline=
+    autocmd FileType markdown set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\%t%y[%{GetSyntaxUnderCursor()}]
+    autocmd Filetype markdown set statusline+=%{fugitive#statusline()}
+    autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
+    autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
+    autocmd FileType markdown set statusline+=\ {%{WordCount()}}
+augroup END
 
 " tpope's statusline:
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
@@ -204,7 +200,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>y V"+y
 nnoremap <leader>p "+p
 nnoremap Y y$
-" stuff for tmux from https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
+" for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
 
 nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
