@@ -3,6 +3,7 @@ set statusline+=\ {%{WordCount()}}
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
+nnoremap gd :Gdiff<CR>:windo set wrap<CR>
 
 hi NonText ctermfg=8
 
