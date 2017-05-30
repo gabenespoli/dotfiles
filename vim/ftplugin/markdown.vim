@@ -1,5 +1,4 @@
 set spell       " enable live spell checking
-set statusline+=\ {%{WordCount()}}
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
@@ -51,13 +50,3 @@ endfunc
 au VimEnter * :call PandocForceHighlighting()
 nnoremap <localleader>i :call PandocForceHighlighting()<CR>
 
-function! WordCount()
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-    let lnum = 1
-    let n = 0
-    while lnum <= line('$')
-        let n = n + len(split(getline(lnum)))
-        let lnum = lnum + 1
-    endwhile
-    return n
-endfunction
