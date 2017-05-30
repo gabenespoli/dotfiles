@@ -59,16 +59,48 @@ do
     esac
 done
 
-# install homebrew and brews
+## install homebrew
 #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+### essentials
 #brew install git
 #brew install bash
+#brew install vim
 #brew install tmux
 #brew install reattach-to-user-namespace
-#brew install vim
-#brew install pandoc
+#brew install ranger
 
-# change shell to brew's version of bash
+### languages
+#brew install python
+#brew install octave
+#brew install r
+#brew install rbenv
+
+### research
+#pip install ipython
+#pip install scipy
+#pip install numpy
+#pip install matplotlib
+#pip install pandas
+#pip install scikit-learn
+
+### email
+#brew install mutt
+#brew install offlineimap
+#brew install msmtp
+#brew install urlview
+#pip install urlscan
+#pip install goobook
+
+### docs
+#brew install pandoc
+#brew install pandoc-citeproc
+
+### other
+#brew install rlwrap
+
+## change shell to brew's version of bash
 #sudo echo "/usr/local/bin/bash" >> /etc/shells
 #sudo chsh -s /usr/local/bin/bash
 
+## python packages
