@@ -107,7 +107,7 @@ function tt() {
     task t $@
 }
 alias todo="todo.sh -a"
-alias gcal="gcalcli --includeRc"
+alias gcal="$HOME/bin/gcalcli_wrapper.sh"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
 function notes() { vim "$(gf $@)/notes.md" ; }
 function note() {
