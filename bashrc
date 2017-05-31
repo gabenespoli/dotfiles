@@ -92,8 +92,12 @@ alias gr="git reset"
 alias Glog="git log --graph --decorate --oneline"
 
 # todo, notes, and calendar
+alias trello="$HOME/bin/trello-cli/bin/trello"
+alias ts="trello show-cards -b scrum -l sprint"
+alias ta="trello add-card -b scrum -l sprint"
+alias td="trello delete-card -b scrum -l sprint"
+alias tr="trello refresh"
 alias t="task"
-alias ta="task add"
 alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
 function tt() {
     tsync
@@ -102,8 +106,6 @@ function tt() {
     task calendar
     task t $@
 }
-alias tw="tt -home"
-alias th="tt +home"
 alias todo="todo.sh -a"
 alias gcal="gcalcli --includeRc"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
