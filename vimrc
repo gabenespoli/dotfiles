@@ -158,7 +158,7 @@ set timeoutlen=500
 inoremap jk <Esc>
 vnoremap jk <Esc>
 
-" common actions
+""" common actions
 nnoremap <leader>e :e<Space>
 "<leader>O opens ctrlp plugin
 "<leader>o opens ranger
@@ -171,7 +171,7 @@ nnoremap Q :qa<CR>
 nnoremap <leader>q q
 nnoremap <leader>Q Q
 
-" tabs, windows/panes, buffers
+""" tabs, windows/panes, buffers
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
 call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
@@ -189,7 +189,10 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
-" split with next or previous file
+nnoremap <C-w>{ <C-w>H
+nnoremap <C-w>} <C-w>L
+
+""" split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
 nnoremap <leader>J <C-w>s:bnext<CR>
 nnoremap <leader>K <C-w>s:bprevious<CR>
@@ -353,8 +356,8 @@ vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
 noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
 
 """ vim-syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
