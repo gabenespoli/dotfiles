@@ -97,7 +97,7 @@ alias Glog="git log --graph --decorate --oneline"
 # todo, notes, and calendar
 alias t="trello_wrapper"
 alias trello="$HOME/bin/trello-cli/bin/trello"
-alias ts="trello_wrapper status"
+alias ts="printf '\033c' && trello_wrapper status"
 alias ta="trello_wrapper add"
 alias td="trello_wrapper rm"
 alias tr="trello_wrapper refresh"
