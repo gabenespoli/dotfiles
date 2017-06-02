@@ -9,6 +9,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac options
     alias agu="brew update && brew upgrade && brew cleanup"
     alias ql='qlmanage -p &>/dev/null'
     export MATLAB="/Applications/MATLAB_R2017a.app"
+    export MATLAB2="/Applications/MATLAB_R2016a.app"
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
@@ -37,6 +38,7 @@ else # Linux options
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
     export MATLAB="/usr/local/MATLAB/R2017a"
+    export MATLAB2="/usr/local/MATLAB/R2016a"
     #eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
@@ -68,6 +70,7 @@ alias gf="python $HOME/bin/utils/gf.py"
 alias vim="vim -p" # open multiple files in tabs
 alias pylab="ipython --pylab"
 alias matlab="rlwrap -c -a dummy_arg $MATLAB/bin/matlab -nosplash -nodesktop"
+alias matlab2="rlwrap -c -a dummy_arg $MATLAB2/bin/matlab -nosplash -nodesktop"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
