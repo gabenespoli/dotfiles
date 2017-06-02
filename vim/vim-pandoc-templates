@@ -2,5 +2,5 @@ docxnote|docx --reference-docx=~/dotfiles/pandoc/note.docx
 docxapa|docx --filter pandoc-fignos --filter pandoc-tablenos --reference-docx=~/dotfiles/pandoc/apa.docx
 docxapapretty|docx --filter pandoc-fignos --filter pandoc-tablenos --variable=toc --reference-docx=~/dotfiles/pandoc/apa.docx --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
 html|html --filter pantable --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
-pdf|pdfapa --latex-engine=pdflatex --filter pantable --filter pandoc-fignos --filter pandoc-tablenos --variable=toc --variable=lof --template=~/dotfiles/pandoc/apa.latex --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
+pdfapa|pdf --latex-engine=pdflatex --filter pantable --filter pandoc-fignos --filter pandoc-tablenos --variable=toc --variable=lof --template=~/dotfiles/pandoc/apa.latex --filter pandoc-citeproc --bibliography=~/dotfiles/pandoc/library.bib --csl=~/dotfiles/pandoc/apa-no-doi-no-issue.csl
 song|pdf --latex-engine=pdflatex --template=~/dotfiles/pandoc/song.latex
