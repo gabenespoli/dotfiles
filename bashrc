@@ -95,12 +95,12 @@ alias gr="git reset"
 alias Glog="git log --graph --decorate --oneline"
 
 # todo, notes, and calendar
+alias t="trello_wrapper"
 alias trello="$HOME/bin/trello-cli/bin/trello"
-alias ts="trello show-cards -b scrum -l sprint"
-alias ta="trello add-card -b scrum -l sprint"
-alias td="trello delete-card -b scrum -l sprint"
-alias tr="trello refresh"
-alias t="task"
+alias ts="trello_wrapper status"
+alias ta="trello_wrapper add"
+alias td="trello_wrapper rm"
+alias tr="trello_wrapper refresh"
 alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
 function tt() {
     tsync
