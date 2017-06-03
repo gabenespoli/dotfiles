@@ -106,9 +106,9 @@ alias twsync="python $HOME/bin/trellowarrior/trellowarrior.py"
 function tt() {
     tsync
     printf "\033c"
-    echo " task" $@
+    echo -e " \033[0;37m$\033[1;34m task calendar && task" $@
     task calendar
-    task t $@
+    task $@
 }
 alias todo="todo.sh -a"
 alias gcal="$HOME/bin/gcalcli_wrapper.sh"
