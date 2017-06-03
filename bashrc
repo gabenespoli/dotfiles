@@ -102,6 +102,7 @@ alias ta="trello_wrapper add"
 alias td="trello_wrapper rm"
 alias tr="trello_wrapper refresh"
 alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
+alias twsync="python $HOME/bin/trellowarrior/trellowarrior.py"
 function tt() {
     tsync
     printf "\033c"
