@@ -67,6 +67,13 @@ hi LmarkdownH6          ctermfg=12      ctermbg=8       cterm=none
 hi matlabCellComment    ctermfg=11      ctermbg=0
 
 "" Plugin color customizations
+
+""" Syntastic
+hi SyntasticErrorSign   ctermfg=1       ctermbg=8       cterm=none
+hi SyntasticWarningSign ctermfg=9       ctermbg=8       cterm=none
+"hi SyntasticErrorLine   ctermfg=1       ctermbg=8       cterm=none
+"hi SyntasticWarningLine ctermfg=1       ctermbg=8       cterm=none
+
 """ Buffergator
 hi BuffergatorBufferNr  ctermfg=10      ctermbg=8       cterm=none
 
