@@ -52,8 +52,9 @@ unset arrow_cursor
 ## Index View Options
 set date_format = "%Y-%m-%d"
 set index_format = "%5C [%Z] %X  %D  %-20.20F  %s"
-set sort = threads                         # like gmail
-set sort_aux = reverse-last-date-received  # like gmail
+set sort = reverse-date
+#set sort = threads                         # like gmail
+#set sort_aux = reverse-last-date-received  # like gmail (sort_aux only used with sort=threads)
 set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 #set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
