@@ -23,6 +23,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rickhowe/diffchar.vim'
 Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
+Plugin 'ervandew/supertab'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 
@@ -239,8 +240,8 @@ nnoremap dh :hi _DiffDelPos ctermfg=1 ctermbg=0 cterm=underline<CR>
 " emacs movement
 "nnoremap <C-h> X " this one seems to already work, no need to remap
 inoremap <C-d> <Del>
-inoremap <C-n> <C-o>gj
-inoremap <C-p> <C-o>gk
+"inoremap <C-n> <C-o>gj
+"inoremap <C-p> <C-o>gk
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
@@ -294,8 +295,6 @@ let g:submode_keep_leaving_key = 1
 let g:taboo_tabline = 0
 "let g:taboo_tab_format = ' %f%m '
 "let g:taboo_renamed_tab_format = ' [%l]%m'
-
-""" srooloose/NERDTree
 
 """ ctrlpvim/ctrp.vim
 let g:ctrlp_map = '<leader>O'
