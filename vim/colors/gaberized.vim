@@ -20,6 +20,8 @@ hi TabLineSel           ctermfg=7       ctermbg=0       cterm=none
 hi TabNumSel            ctermfg=7       ctermbg=0       cterm=none
 hi TabWinNumSel         ctermfg=7       ctermbg=0       cterm=none
 hi TabModSel            ctermfg=1       ctermbg=0       cterm=none
+hi Pmenu                ctermfg=0       ctermbg=12      cterm=reverse
+hi PmenuSel             ctermfg=12      ctermbg=8       cterm=reverse
 
 hi LineNr               ctermfg=10      ctermbg=8       cterm=none
 hi FoldColumn           ctermfg=8       ctermbg=12      cterm=reverse
