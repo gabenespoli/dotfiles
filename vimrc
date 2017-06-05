@@ -132,7 +132,8 @@ set incsearch           " highlight search results as you type
 "" Status Line
 " mode [tab#|win#][+][RO] filename [type][syntax][fugitive][syntastic] ... line/lines,col (pct)
 set statusline=
-set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\%t%y[%{GetSyntaxUnderCursor()}]
+"set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\ %t\ %y[%{GetSyntaxUnderCursor()}]
+set statusline+=%{mode()}\ %t\ %#WarningMsg#%m%r%*%y[%{GetSyntaxUnderCursor()}]
 set statusline+=%{fugitive#statusline()}
 set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
 set statusline+=%#StatusLineFill#%=%*                      
@@ -266,6 +267,9 @@ nnoremap <leader>C :call CenWinToggle(0)<CR>
 let Tlist_GainFocus_On_ToggleOpen = 1
 nnoremap <localleader>t :TlistToggle<CR>
 
+""" tpope/vim-commentary
+autocmd FileType octave setlocal commentstring=%\ %s
+
 """ tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>7j
 nnoremap gd :Gdiff<CR>
@@ -356,7 +360,7 @@ vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
 noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
 
 """ vim-syntastic
-let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
