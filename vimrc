@@ -294,8 +294,6 @@ let g:submode_keep_leaving_key = 1
 let g:taboo_tabline = 0
 "let g:taboo_tab_format = ' %f%m '
 "let g:taboo_renamed_tab_format = ' [%l]%m'
-nnoremap <leader>r :TabooRename 
-nnoremap <leader>R :TabooReset<CR>
 
 """ srooloose/NERDTree
 
