@@ -97,7 +97,7 @@ alias Glog="git log --graph --decorate --oneline"
 # todo, notes, and calendar
 #alias t="trello_wrapper"
 alias trello="$HOME/bin/trello-cli/bin/trello"
-alias ts="printf '\033c' && trello show-cards -b scrum -l sprint"
+alias ts="printf '\033c' && echo 'trello show-cards -b scrum -l sprint' && trello show-cards -b scrum -l sprint"
 alias ta="trello add-card -b scrum -l sprint"
 alias td="trello delete-card -b scrum -l sprint && ts"
 alias tr="trello refresh"
