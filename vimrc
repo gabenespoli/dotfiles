@@ -271,6 +271,10 @@ nnoremap <localleader>t :TlistToggle<CR>
 """ tpope/vim-commentary
 autocmd FileType octave setlocal commentstring=%\ %s
 
+""" tpope/vim-unimpaired
+" my own macro binding of the default ones
+nnoremap coN :set relativenumber!<CR>:set number!<CR>
+
 """ tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>7j
 nnoremap gd :Gdiff<CR>
