@@ -25,8 +25,8 @@ bind    attach          l       view-attach         # default is <Enter> (or m f
 bind    attach          <Space> view-attach         # default is <Enter> (or m for force open with mailcap)
 macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
-bind    postpone        <C-j>   select-entry
-bind    postpone        l       select-entry
+bind   postpone,browser <C-j>   select-entry
+bind   postpone,browser l       select-entry
 
 # some corrections for the hjkl adjustments
 bind    index,pager     i       display-toggle-weed # no default binding for i
