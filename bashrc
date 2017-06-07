@@ -71,6 +71,7 @@ alias vim="vim -p" # open multiple files in tabs
 alias pylab="ipython --pylab"
 alias matlab="rlwrap -c -a dummy_arg $MATLAB/bin/matlab -nosplash -nodesktop"
 alias matlab2="rlwrap -c -a dummy_arg $MATLAB2/bin/matlab -nosplash -nodesktop"
+alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }
 function lss() { ls "$(gf "$@")" ; }
