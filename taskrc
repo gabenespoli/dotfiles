@@ -27,12 +27,12 @@ uda.trellolistname.type=string
 uda.trellolistname.label=Trello List Name
 
 ## Custom reports
+report.t.columns=id,project,tags,depends,description,scheduled.remaining,due.remaining,pts
 report.t.description=My custom report
-report.t.columns=id,project,tags,description,scheduled.remaining,due.remaining,pts
-report.t.labels=ID,Proj,Tags,Description,Do,Due,Pts
-report.t.sort=tags-,urgency-
-#report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
 report.t.filter=status:pending
+report.t.labels=ID,Proj,Tags,Deps,Description,Do,Due,Pts
+report.t.sort=urgency-
+#report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
 
 ## Custom urgency coefficients
 urgency.user.tag.next.coefficient           = 15.0
