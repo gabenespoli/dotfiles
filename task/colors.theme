@@ -92,9 +92,9 @@ color.tag.none=
 color.tagged=
 
 # Report: burndown
-color.burndown.done=color0 on color6
-color.burndown.pending=color0 on color1
-color.burndown.started=color0 on color3
+color.burndown.done=color0 on color10
+color.burndown.pending=color0 on color2
+color.burndown.started=color0 on color4
 
 # Report: history
 color.history.add=color0 on color1
