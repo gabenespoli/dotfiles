@@ -10,11 +10,10 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
-## Files
+## Some defaults
 data.location=~/bin/private/task
-
-## Color theme
 include ~/dotfiles/task/colors.theme
+default.command=t
 
 ## UDAs
 ### scrum task points
