@@ -103,6 +103,7 @@ alias taec="task add project:ec"
 alias taphd="task add project:phd"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias todo="todo.sh -a"
+alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
 alias gcal="$HOME/bin/gcalcli_wrapper.sh"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
 function notes() { vim "$(gf $@)/notes.md" ; }
