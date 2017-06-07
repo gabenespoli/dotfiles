@@ -78,7 +78,7 @@ function lss() { ls "$(gf "$@")" ; }
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
 
-# git
+### git
 alias gs="printf '\033c' && git status"
 alias gd="git diff"
 alias ga="git add"
@@ -95,22 +95,13 @@ function Gc() {
 alias gr="git reset"
 alias Glog="git log --graph --decorate --oneline"
 
-# todo, notes, and calendar
-#alias t="trello_wrapper"
+### todo, notes, and calendar
+alias t="task"
+alias ta="task add"
+alias tagv="task add project:gv"
+alias taec="task add project:ec"
+alias taphd="task add project:phd"
 alias trello="$HOME/bin/trello-cli/bin/trello"
-alias ts="printf '\033c' && echo 'trello show-cards -b scrum -l sprint' && trello show-cards -b scrum -l sprint"
-alias ta="trello add-card -b scrum -l sprint"
-alias td="trello delete-card -b scrum -l sprint && ts"
-alias tr="trello refresh"
-alias tsync="python $HOME/bin/task2todotxt/task2todotxt.py"
-alias twsync="python $HOME/bin/trellowarrior/trellowarrior.py"
-function tt() {
-    tsync
-    printf "\033c"
-    echo -e " \033[0;37m$\033[1;34m task calendar && task" $@
-    task calendar
-    task $@
-}
 alias todo="todo.sh -a"
 alias gcal="$HOME/bin/gcalcli_wrapper.sh"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
