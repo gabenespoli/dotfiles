@@ -252,9 +252,29 @@ nnoremap <localleader>s 1z=
 """ gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
 nnoremap <localleader>q :Ctoggle<CR>
-nnoremap <localLeader>r :call CapitalL_formatLists()<CR>
+nnoremap <localleader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
+nnoremap <localleader>c :call FauxCenwinOpen()<CR>
+nnoremap <localleader>C :call FauxCenwinClose()<CR>
+
+function! FauxCenwinOpen()
+    :Ltoggle
+    :set nocursorline
+    :set nonumber
+    :set norelativenumber
+    :Ctoggle
+    :set nocursorline
+    :set nonumber
+    :set norelativenumber
+    wincmd l
+    ''
+endfunction
+
+function! FauxCenwinClose()
+    :Lclose
+    :Cclose
+endfunction
 
 """ gabenespoli/vim-cenwin
 nnoremap <leader>C :call CenWinToggle(0)<CR>
