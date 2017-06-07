@@ -10,27 +10,32 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
-# Files
+## Files
 data.location=~/bin/private/task
 
-# Color theme
+## Color theme
 include ~/dotfiles/task/colors.theme
 
-# TrelloWarrior
+## UDAs
+### scrum task points
+uda.pts.type=numeric
+uda.pts.label=Pts
+
+### TrelloWarrior
 uda.trelloid.type=string
 uda.trelloid.label=Trello ID
 uda.trellolistname.type=string
 uda.trellolistname.label=Trello List Name
 
-# Custom reports
+## Custom reports
 report.t.description=My custom report
-report.t.columns=id,project,tags,description,scheduled.remaining,due.remaining
-report.t.labels=ID,Proj,Tags,Description,Do,Due
+report.t.columns=id,project,tags,description,scheduled.remaining,due.remaining,pts
+report.t.labels=ID,Proj,Tags,Description,Do,Due,Pts
 report.t.sort=tags-,urgency-
 #report.t.filter=status:pending and (trellolistname:Todo or trellolistname:Doing)
 report.t.filter=status:pending
 
-# Custom urgency coefficients
+## Custom urgency coefficients
 urgency.user.tag.next.coefficient           = 15.0
 urgency.due.coefficient                     = 12.0
 urgency.blocking.coefficient                = 8.0
