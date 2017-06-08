@@ -142,8 +142,8 @@ set statusline+=%l/%L\,%c\ (%P)
 
 augroup filetype_markdown
     autocmd FileType markdown set statusline=
-    "autocmd FileType markdown set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\%t%y[%{GetSyntaxUnderCursor()}]
-    autocmd FileType markdown set statusline+=%{mode()}\ %t\ %#WarningMsg#%m%r%*\%t%y[%{GetSyntaxUnderCursor()}]
+    "autocmd FileType markdown set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\ %t\ %y[%{GetSyntaxUnderCursor()}]
+    autocmd FileType markdown set statusline+=%{mode()}\ %t\ %#WarningMsg#%m%r%*%y[%{GetSyntaxUnderCursor()}]
     autocmd Filetype markdown set statusline+=%{fugitive#statusline()}
     autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
     autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
