@@ -265,6 +265,7 @@ function! FauxCenwinOpen()
     :set nonumber
     :set norelativenumber
     :hi NonText ctermfg=8 ctermbg=8
+    execute bufwinnr(bufnum) . "wincmd w"
     :Copen
     :set nocursorline
     :set nonumber
