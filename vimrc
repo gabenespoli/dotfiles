@@ -259,15 +259,18 @@ nnoremap <localleader>c :call FauxCenwinOpen()<CR>
 nnoremap <localleader>C :call FauxCenwinClose()<CR>
 
 function! FauxCenwinOpen()
-    :Ltoggle
+    let bufnum = bufnr('%')
+    :Lopen
     :set nocursorline
     :set nonumber
     :set norelativenumber
-    :Ctoggle
+    :hi NonText ctermfg=8 ctermbg=8
+    :Copen
     :set nocursorline
     :set nonumber
     :set norelativenumber
-    wincmd l
+    :hi NonText ctermfg=8 ctermbg=8
+    execute bufwinnr(bufnum) . "wincmd w"
     ''
 endfunction
 
