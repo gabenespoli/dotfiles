@@ -11,10 +11,10 @@ hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
 
 " Critic Markdown Plugin
-nnoremap <localleader>a :Critic accept<CR>
-nnoremap <localleader>r :Critic reject<CR>
-nnoremap <localleader>h :call criticmarkup#InjectHighlighting()<CR>
-nnoremap <localleader>c F{df}
+"nnoremap <localleader>a :Critic accept<CR>
+"nnoremap <localleader>r :Critic reject<CR>
+"nnoremap <localleader>h :call criticmarkup#InjectHighlighting()<CR>
+"nnoremap <localleader>c F{df}
 
 "au VimEnter * :call CenWinEnable()
 
