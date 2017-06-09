@@ -131,23 +131,17 @@ set splitbelow
 set incsearch           " highlight search results as you type
 
 "" Status Line
-" mode [tab#|win#][+][RO] filename [type][syntax][fugitive][syntastic] ... line/lines,col (pct)
+" mode [+][RO] 'filename' [type][fugitive][syntastic] ... line/lines,col (pct)
+" use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
-"set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\ %t\ %y[%{GetSyntaxUnderCursor()}]
-set statusline+=%{mode()}\ %t\ %#WarningMsg#%m%r%*%y[%{GetSyntaxUnderCursor()}]
+set statusline+=%{mode()}\ \"%t\"\ %#WarningMsg#%m%r%*%y
 set statusline+=%{fugitive#statusline()}
 set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
 set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%l/%L\,%c\ (%P)                           
-
+" add word count for markdown files (on the far right)
 augroup filetype_markdown
-    autocmd FileType markdown set statusline=
-    "autocmd FileType markdown set statusline+=%{mode()}\ [%{tabpagenr()}\|%{winnr()}]%#WarningMsg#%m%r%*\ %t\ %y[%{GetSyntaxUnderCursor()}]
-    autocmd FileType markdown set statusline+=%{mode()}\ %t\ %#WarningMsg#%m%r%*%y[%{GetSyntaxUnderCursor()}]
-    autocmd Filetype markdown set statusline+=%{fugitive#statusline()}
-    autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
-    autocmd FileType markdown set statusline+={%{WordCount()}}\ 
-    autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
+    autocmd FileType markdown set statusline+=\ {%{WordCount()}}
 augroup END
 
 " tpope's statusline:
@@ -405,6 +399,7 @@ function! GetSyntaxUnderCursor()
     let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
     return g:SyntaxUnderCursor
 endfunction
+nnoremap <leader>x :echo GetSyntaxUnderCursor()<CR>
 
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
