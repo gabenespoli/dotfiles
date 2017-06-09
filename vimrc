@@ -146,8 +146,8 @@ augroup filetype_markdown
     autocmd FileType markdown set statusline+=%{mode()}\ %t\ %#WarningMsg#%m%r%*%y[%{GetSyntaxUnderCursor()}]
     autocmd Filetype markdown set statusline+=%{fugitive#statusline()}
     autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
+    autocmd FileType markdown set statusline+={%{WordCount()}}\ 
     autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
-    autocmd FileType markdown set statusline+=\ {%{WordCount()}}
 augroup END
 
 " tpope's statusline:
