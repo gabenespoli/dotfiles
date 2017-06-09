@@ -224,7 +224,6 @@ nnoremap W 5w
 vnoremap W 5w
 nnoremap B 5b
 vnoremap B 5b
-inoremap <C-i> <Tab>
 nnoremap zz zt12gk12gj
 
 "vimdiff
@@ -318,6 +317,9 @@ let g:submode_keep_leaving_key = 1
 let g:taboo_tabline = 0
 "let g:taboo_tab_format = ' %f%m '
 "let g:taboo_renamed_tab_format = ' [%l]%m'
+
+""" ervandew/supertab
+let g:SuperTabMappingForward = '<S-Tab>'
 
 """ ctrlpvim/ctrp.vim
 let g:ctrlp_map = '<leader>O'
