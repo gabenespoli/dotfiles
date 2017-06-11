@@ -159,6 +159,7 @@ vnoremap jk <Esc>
 nnoremap <leader>e :e<Space>
 "<leader>O opens ctrlp plugin
 "<leader>o opens ranger
+nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>w :close<CR>
 nnoremap <leader>D :bdelete<CR>
