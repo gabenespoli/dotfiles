@@ -134,7 +134,7 @@ set incsearch           " highlight search results as you type
 " mode [+][RO] 'filename' [type][fugitive][syntastic] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
-set statusline+=%{mode()}\ \"%t\"\ %#WarningMsg#%m%r%*%y
+set statusline+=%{mode()}\ %#WarningMsg#%m%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
 set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
 set statusline+=%#StatusLineFill#%=%*                      
