@@ -78,8 +78,8 @@ macro   index           gs      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych
 
 
 # some keybindings to play nice with gmail
-#macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
-macro   index           e       "<set-flag>O"                       "Mark as old (kind of like Gmail archive when in all mail)."
-#macro   index,pager     E       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
-#macro   index           E       "<change-folder>=INBOX<enter><tag-pattern>~A<enter><tag-prefix><save-message>=Archive<enter><change-folder>=Archive<enter>" "Archive the Inbox" 
-macro   index           E       "<change-folder>=INBOX<enter><delete-pattern>~A<enter><change-folder>=Archive<enter>" "Delete all messages in the Inbox"
+macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
+# macro   index           e       "<set-flag>O"                       "Mark as old (kind of like Gmail archive when in all mail)."
+# macro   index,pager     E       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
+macro   index           E       "<change-folder>=INBOX<enter><tag-pattern>~A<enter><tag-prefix><save-message>=Archive<enter><change-folder>=Archive<enter>" "Archive the Inbox" 
+# macro   index           E       "<change-folder>=INBOX<enter><delete-pattern>~A<enter><change-folder>=Archive<enter>" "Delete all messages in the Inbox"
