@@ -113,7 +113,7 @@ function note() {
     title="$*"
     filename="$notesDir/$title.md"
     if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
-    vim "$filename" "+normal G"
+    vim "$filename"
 }
 
 # others
