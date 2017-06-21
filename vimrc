@@ -141,6 +141,12 @@ set statusline+=%#StatusLineFill#%=%*
 set statusline+=%l/%L\,%c\ (%P)                           
 " add word count for markdown files (on the far right)
 augroup filetype_markdown
+    autocmd FileType markdown set statusline=
+    autocmd FileType markdown set statusline+=%{mode()}\ %#WarningMsg#%m%r%*\"%t\"\ %y
+    autocmd FileType markdown set statusline+=%{fugitive#statusline()}
+    autocmd FileType markdown set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
+    autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
+    autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
     autocmd FileType markdown set statusline+=\ {%{WordCount()}}
 augroup END
 
@@ -515,6 +521,7 @@ function! MuttMailMode()
     "setlocal nocp 
     "exe "/^$"
     "exe "normal! gg}O\<Esc>o"
+    exe "normal! gg"
 endfunction
 
 function! ToggleCsvTsv()
