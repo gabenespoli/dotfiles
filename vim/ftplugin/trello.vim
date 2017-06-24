@@ -1,4 +1,5 @@
 "" general
+setlocal cursorbind
 setlocal norelativenumber
 autocmd BufEnter <buffer> setlocal cursorline
 autocmd BufLeave <buffer> setlocal nocursorline
@@ -9,8 +10,8 @@ nnoremap <buffer> h <C-w>h0
 nnoremap <buffer> l <C-w>l0
 
 """ moving cards around TODO
-nnoremap <buffer> H dd<C-w>hp
-nnoremap <buffer> L dd<C-w>lp
+nnoremap <buffer> H dd<C-w>hP
+nnoremap <buffer> L dd<C-w>lP
 nnoremap <buffer> J :move +1<CR>
 nnoremap <buffer> K :move -2<CR>
 
