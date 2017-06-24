@@ -5,16 +5,15 @@ autocmd BufLeave <buffer> setlocal nocursorline
 
 "" keybindings
 """ cursor movement
-" nnoremap <buffer> h :setlocal nocursorline<CR><C-w>h0:setlocal cursorline<CR>
-" nnoremap <buffer> l :setlocal nocursorline<CR><C-w>l0:setlocal cursorline<CR>
 nnoremap <buffer> h <C-w>h0
 nnoremap <buffer> l <C-w>l0
 
 """ moving cards around TODO
 nnoremap <buffer> H dd<C-w>hp
 nnoremap <buffer> L dd<C-w>lp
-nnoremap <buffer> J ddp
-nnoremap <buffer> K 
+" these are dependant on vim-unimpaired (https://github.com/tpope/vim-unimpaired)
+nnoremap <buffer> J ]e
+nnoremap <buffer> K [e
 
 """ task points (1 2 3 5 8)
 nnoremap <localleader>1 :call AddTaskPoints(1)<CR>
