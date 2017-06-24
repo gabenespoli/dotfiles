@@ -10,8 +10,8 @@ autocmd BufWrite <buffer> execute "normal! 0"
 "" keybindings
 """ cursor movement
 nnoremap <buffer> h <C-w>h0
-nnoremap <buffer> j j
-nnoremap <buffer> k k
+nnoremap <buffer> j j0
+nnoremap <buffer> k k0
 nnoremap <buffer> l <C-w>l0
 
 """ moving lines
