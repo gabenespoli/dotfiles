@@ -33,8 +33,17 @@ nnoremap <localleader>9 :call VelloAddTaskPoints(13)<CR>
 nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 
 """ checkboxes
-nnoremap <buffer> x :s/^\[\ \]/\[x\]/e<CR>
-nnoremap <buffer> X :s/^\[x\]/\[\ \]/e<CR>
+nnoremap <buffer> <localleader><Space> I[ ] <Esc>0
+nnoremap <buffer> <localleader>X :s/^\[.\]/\[\ \]/e<CR>
+nnoremap <buffer> <localleader>x :s/^\[.\]/\[x\]/e<CR>
+nnoremap <buffer> <localleader>m :s/^\[.\]/\[M\]/e<CR>
+nnoremap <buffer> <localleader>t :s/^\[.\]/\[T\]/e<CR>
+nnoremap <buffer> <localleader>w :s/^\[.\]/\[W\]/e<CR>
+nnoremap <buffer> <localleader>r :s/^\[.\]/\[R\]/e<CR>
+nnoremap <buffer> <localleader>f :s/^\[.\]/\[F\]/e<CR>
+nnoremap <buffer> <localleader>s :s/^\[.\]/\[S\]/e<CR>
+nnoremap <buffer> <localleader>u :s/^\[.\]/\[U\]/e<CR>
+
 
 "" functions
 """ syntax matches
