@@ -129,6 +129,7 @@ set hidden
 set splitright
 set splitbelow
 set incsearch           " highlight search results as you type
+let loaded_matchparen = 1 " don't match parentheses, use % instead
 
 "" Status Line
 " mode [+][RO] 'filename' [type][fugitive][syntastic] ... line/lines,col (pct)
