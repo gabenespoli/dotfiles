@@ -11,9 +11,8 @@ nnoremap <buffer> l <C-w>l0
 """ moving cards around TODO
 nnoremap <buffer> H dd<C-w>hp
 nnoremap <buffer> L dd<C-w>lp
-" these are dependant on vim-unimpaired (https://github.com/tpope/vim-unimpaired)
-nnoremap <buffer> J ]e
-nnoremap <buffer> K [e
+nnoremap <buffer> J :move +1<CR>
+nnoremap <buffer> K :move -2<CR>
 
 """ task points (1 2 3 5 8)
 nnoremap <localleader>1 :call AddTaskPoints(1)<CR>
