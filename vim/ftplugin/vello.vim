@@ -3,6 +3,7 @@
 "" general
 setlocal cursorbind
 setlocal norelativenumber
+execute "NoMatchParen"
 autocmd BufEnter <buffer> setlocal cursorline
 autocmd BufLeave <buffer> setlocal nocursorline
 autocmd BufWrite <buffer> execute "normal! 0"
