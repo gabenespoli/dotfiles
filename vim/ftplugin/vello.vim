@@ -32,13 +32,19 @@ nnoremap <localleader>9 :call VelloAddTaskPoints(13)<CR>
 nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 
 "" highlighting
-hi NonText ctermfg=8
-syn match VelloHeading /^#.*/
-hi link VelloHeading MarkdownH1
-syn match VelloTaskPoints /(\\d*)$/
-hi VelloTaskPoints ctermfg=2 ctermbg=0
 
 "" functions
+""" syntax matches
+function! VelloForceHighlighting()
+    syn match VelloHeading /^#.*/
+    syn match VelloTaskPoints /(\d*)/
+    hi NonText ctermfg=8
+    hi link VelloHeading Title
+    hi VelloTaskPoints ctermfg=2 ctermbg=0
+endfunction
+autocmd VimEnter * call VelloForceHighlighting()
+nnoremap <localleader>i :windo call VelloForceHighlighting()<CR>
+
 """ add task points
 function! VelloAddTaskPoints(val)
     " remove previous task points
@@ -49,6 +55,3 @@ function! VelloAddTaskPoints(val)
     endif
 endfunction
 
-"TODO function to move between lists keeping the same line number
-
-"" syntax
