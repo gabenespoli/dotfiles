@@ -5,6 +5,7 @@ setlocal cursorbind
 setlocal norelativenumber
 autocmd BufEnter <buffer> setlocal cursorline
 autocmd BufLeave <buffer> setlocal nocursorline
+autocmd BufWrite <buffer> execute "normal! 0"
 
 "" keybindings
 """ cursor movement
