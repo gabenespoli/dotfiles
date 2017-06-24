@@ -32,7 +32,9 @@ nnoremap <localleader>8 :call VelloAddTaskPoints(8)<CR>
 nnoremap <localleader>9 :call VelloAddTaskPoints(13)<CR>
 nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 
-"" highlighting
+""" checkboxes
+nnoremap x :s/^\[\ \]/\[x\]/e<CR>
+nnoremap X :s/^\[x\]/\[\ \]/e<CR>
 
 "" functions
 """ syntax matches
@@ -41,7 +43,7 @@ function! VelloForceHighlighting(winnum)
     syn match VelloTaskPoints /(\d*)$/
     syn match VelloProjectTag /+\S*/
     hi NonText ctermfg=8
-    hi link VelloHeading Title
+    hi VelloHeading ctermfg=8 ctermbg=10
     hi VelloTaskPoints ctermfg=2
     hi VelloProjectTag ctermfg=4
     execute a:winnum . "wincmd w"
