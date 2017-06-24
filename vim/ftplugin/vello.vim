@@ -37,7 +37,7 @@ nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 """ syntax matches
 function! VelloForceHighlighting(winnum)
     syn match VelloHeading /^#.*/
-    syn match VelloTaskPoints /(\d*)/
+    syn match VelloTaskPoints /(\d*)$/
     hi NonText ctermfg=8
     hi link VelloHeading Title
     hi VelloTaskPoints ctermfg=2 ctermbg=0
