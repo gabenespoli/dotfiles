@@ -35,15 +35,16 @@ nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 
 "" functions
 """ syntax matches
-function! VelloForceHighlighting()
+function! VelloForceHighlighting(winnum)
     syn match VelloHeading /^#.*/
     syn match VelloTaskPoints /(\d*)/
     hi NonText ctermfg=8
     hi link VelloHeading Title
     hi VelloTaskPoints ctermfg=2 ctermbg=0
+    execute a:winnum . "wincmd w"
 endfunction
-autocmd VimEnter * windo call VelloForceHighlighting()
-nnoremap <localleader>i :windo call VelloForceHighlighting()<CR>
+autocmd VimEnter * windo call VelloForceHighlighting(1)
+nnoremap <localleader>i :windo call VelloForceHighlighting(1)<CR>
 
 """ add task points
 function! VelloAddTaskPoints(val)
