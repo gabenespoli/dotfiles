@@ -42,7 +42,7 @@ function! VelloForceHighlighting()
     hi link VelloHeading Title
     hi VelloTaskPoints ctermfg=2 ctermbg=0
 endfunction
-autocmd VimEnter * call VelloForceHighlighting()
+autocmd VimEnter * windo call VelloForceHighlighting()
 nnoremap <localleader>i :windo call VelloForceHighlighting()<CR>
 
 """ add task points
