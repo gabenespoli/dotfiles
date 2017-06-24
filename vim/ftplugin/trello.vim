@@ -1,12 +1,14 @@
-
 "" general
 setlocal norelativenumber
-au BufEnter 
+autocmd BufEnter <buffer> setlocal cursorline
+autocmd BufLeave <buffer> setlocal nocursorline
 
 "" keybindings
 """ cursor movement
-nnoremap <buffer> h :setlocal nocursorline<CR><C-w>h0:setlocal cursorline<CR>
-nnoremap <buffer> l :setlocal nocursorline<CR><C-w>l0:setlocal cursorline<CR>
+" nnoremap <buffer> h :setlocal nocursorline<CR><C-w>h0:setlocal cursorline<CR>
+" nnoremap <buffer> l :setlocal nocursorline<CR><C-w>l0:setlocal cursorline<CR>
+nnoremap <buffer> h <C-w>h0
+nnoremap <buffer> l <C-w>l0
 
 """ moving cards around TODO
 nnoremap <buffer> H dd<C-w>hp
