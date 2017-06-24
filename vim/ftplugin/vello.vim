@@ -1,8 +1,7 @@
 " Vello: vim plugin to manage multiple lists like Trello
 
 "" general
-setlocal cursorbind
-setlocal norelativenumber
+setlocal cursorbind norelativenumber nonumber
 autocmd BufEnter <buffer> setlocal cursorline
 autocmd BufLeave <buffer> setlocal nocursorline
 autocmd BufWrite <buffer> execute "normal! 0"
