@@ -14,9 +14,7 @@ autocmd BufWrite <buffer> execute "normal! 0"
 " nnoremap <buffer> I 0f]la
 " nnoremap <buffer> <Enter> <Enter>[ ] 
 
-"" add to taskwarrior with vim-slime
-" prepend 'task add ', call vim-slime, delete 'task add '
-nnoremap <C-t> Itask add <Esc>:execute "normal \<Plug>SlimeLineSend"<CR>09dlIx <Esc>0
+nnoremap <C-t> :call AddToTaskWarrior()<CR>
 
 """ cursor movement
 " nnoremap <buffer> h <C-w>h
@@ -93,3 +91,19 @@ function! VelloAddTaskPoints(val)
     endif
 endfunction
 
+"" add to taskwarrior with vim-slime
+" prepend 'task add ', call vim-slime, delete 'task add '
+function! AddToTaskWarrior()
+    execute "s/+/proj:/ge"
+    execute "s/@/+/ge"
+    execute "s/(\\(\\d*\\))/pts:\\1/ge"
+    execute "normal! Itask add "
+
+    execute "normal \<Plug>SlimeLineSend"
+
+    execute "s/^task\ add\ //ge"
+    execute "s/pts:\\(\\d*\\)/(\\1)/ge"
+    execute "s/+/@/ge"
+    execute "s/proj:/+/ge"
+    execute "normal! Ix "
+endfunction
