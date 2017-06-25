@@ -39,7 +39,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'julienr/vim-cellmode'
 Plugin 'jpalardy/vim-slime'
 "Plugin 'ivanov/vim-ipython'
-"Plugin 'blindFS/vim-taskwarrior'
+Plugin 'blindFS/vim-taskwarrior'
 "Plugin 'malithsen/trello-vim'
 
 " syntax
@@ -214,16 +214,16 @@ set clipboard=unnamed
 nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
 
 " swap j/k with gj/gk
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+" nnoremap j gj
+" nnoremap k gk
+" nnoremap gj j
+" nnoremap gk k
 nnoremap <Down> gj
 nnoremap <Up> gk
-vnoremap j gj
-vnoremap k gk
-vnoremap gj j
-vnoremap gk k
+" vnoremap j gj
+" vnoremap k gk
+" vnoremap gj j
+" vnoremap gk k
 vnoremap <Down> gj
 vnoremap <Up> gk
 
@@ -377,6 +377,7 @@ vnoremap <silent> <F8> <Esc>:TmuxNavigateRight<CR>
 """ vim-slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+let g:slime_dont_ask_default = 1
 
 """ vim-cellmode
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
