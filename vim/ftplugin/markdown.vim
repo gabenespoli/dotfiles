@@ -1,11 +1,23 @@
+"" general
 set spell       " enable live spell checking
+
+"" keybindings
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
 nnoremap gd :Gdiff<CR>:windo set wrap<CR>
 
-hi NonText ctermfg=8
+nnoremap <localleader>0 :s/^#*\ *//ge<CR>
+nnoremap <localleader>1 :s/^#*\ */#\ /ge<CR>
+nnoremap <localleader>2 :s/^#*\ */##\ /ge<CR>
+nnoremap <localleader>3 :s/^#*\ */###\ /ge<CR>
+nnoremap <localleader>4 :s/^#*\ */####\ /ge<CR>
+nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
+nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
+
+"" highlights
+hi NonText ctermfg=8
 " make html tags solarized base colors so they blend into the background
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
@@ -18,7 +30,7 @@ hi htmlTagName ctermfg=11
 
 "au VimEnter * :call CenWinEnable()
 
-" Pandoc Plugin
+"" Pandoc Plugin
 au VimEnter * :set syntax=pandoc
 let g:pandoc#modules#enabled = ["command","completion","keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
@@ -28,7 +40,7 @@ let g:pandoc#completion#bib#mode = "citeproc"
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 
-" Pandoc Syntax
+"" Pandoc Syntax
 let g:pandoc#syntax#conceal#use = 0
 function! PandocForceHighlighting()
     hi pandocEmphasis cterm=none ctermfg=7
