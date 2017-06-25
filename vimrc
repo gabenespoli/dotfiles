@@ -164,8 +164,8 @@ vnoremap jk <Esc>
 
 """ common actions
 nnoremap <leader>e :e<Space>
-"<leader>O opens ctrlp plugin
-"<leader>o opens ranger
+"<leader>o opens ctrlp plugin
+"<leader>O opens ranger
 nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>w :close<CR>
@@ -330,7 +330,7 @@ let g:taboo_tabline = 0
 let g:SuperTabMappingForward = '<S-Tab>'
 
 """ ctrlpvim/ctrp.vim
-let g:ctrlp_map = '<leader>O'
+let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
@@ -345,7 +345,7 @@ let g:ctrlp_prompt_mappings = {
 
 """ francoiscabrol/ranger.vim
 let g:ranger_map_keys = 0
-nnoremap <leader>o :RangerNewTab<CR>
+nnoremap <leader>O :RangerNewTab<CR>
 
 """ jeetsukumaran/vim-buffergator
 let g:buffergator_suppress_keymaps = 1
