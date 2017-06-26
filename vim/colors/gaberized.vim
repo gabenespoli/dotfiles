@@ -85,8 +85,8 @@ hi Todo                 ctermfg=13                      cterm=reverse
 hi TodoPriorityA        ctermfg=1
 hi TodoPriorityB        ctermfg=5
 hi TodoPriorityC        ctermfg=13
-hi TodoProject          ctermfg=6       ctermbg=0
-hi TodoContext          ctermfg=4       ctermbg=0
+hi TodoProject          ctermfg=4       ctermbg=0
+hi TodoContext          ctermfg=6       ctermbg=8
 hi TodoDone             ctermfg=11
 hi TodoKey              ctermfg=10      ctermbg=0
 hi TodoDate             ctermfg=9       ctermbg=0
