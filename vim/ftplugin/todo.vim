@@ -20,7 +20,7 @@ nnoremap <localleader>8 :call TodoAddTaskPoints(8)<CR>
 nnoremap <localleader>9 :call TodoAddTaskPoints(13)<CR>
 nnoremap <localleader>0 :call TodoAddTaskPoints(0)<CR>
 
-"" syntax
+"" syntax highlighting
 """ these lines are changed in .vim/bundle/todo-txt.vim/syntax/todo.vim to omit the leading bol/space. they don't work here for some reason
 " syntax  match  TodoProject    '\(^\|\W\)+[^[:blank:]]\+'  contains=NONE
 " syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
@@ -28,9 +28,9 @@ nnoremap <localleader>0 :call TodoAddTaskPoints(0)<CR>
 " syn match TodoContext /@\S*/
 syn match TodoTaskPoints /(\d*)$/
 syn match TodoTaskPoints /pts:\d*/
+hi NonText ctermfg=8
 
 "" functions
-""" task points
 function! TodoAddTaskPoints(val)
     " remove previous task points
     execute "s/\ (\\d*)$//ge"
@@ -40,9 +40,8 @@ function! TodoAddTaskPoints(val)
     endif
 endfunction
 
-"" add to taskwarrior with vim-slime
-" prepend 'task add ', call vim-slime, delete 'task add '
 function! TodoAddToTaskWarrior()
+" prepend 'task add ', call vim-slime, delete 'task add '
     execute "s/+/proj:/ge"
     execute "s/@/+/ge"
     execute "s/(\\(\\d*\\))/pts:\\1/ge"
