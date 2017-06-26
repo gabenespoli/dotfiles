@@ -18,8 +18,8 @@ nnoremap <C-t> :call AddToTaskWarrior()<CR>
 
 """ cursor movement
 " nnoremap <buffer> h <C-w>h
-nnoremap <buffer> j j
-nnoremap <buffer> k k
+" nnoremap <buffer> j j
+" nnoremap <buffer> k k
 " nnoremap <buffer> l <C-w>l
 
 """ moving lines
@@ -41,8 +41,8 @@ nnoremap <localleader>9 :call VelloAddTaskPoints(13)<CR>
 nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 
 """ checkboxes
-nnoremap <buffer> <localleader>X :s/^x\ //ge<CR>
-nnoremap <buffer> <localleader>x 0ix 
+" nnoremap <buffer> <localleader>X :s/^x\ //ge<CR>
+" nnoremap <buffer> <localleader>x 0ix 
 " nnoremap <buffer> <localleader><Space> I[ ] <Esc>0
 " nnoremap <buffer> <localleader>X :s/^\[.\]/\[\ \]/e<CR>
 " nnoremap <buffer> <localleader>x :s/^\[.\]/\[x\]/e<CR>
@@ -54,26 +54,25 @@ nnoremap <buffer> <localleader>x 0ix
 " nnoremap <buffer> <localleader>s :s/^\[.\]/\[S\]/e<CR>
 " nnoremap <buffer> <localleader>u :s/^\[.\]/\[U\]/e<CR>
 
-
 "" functions
 """ syntax matches
 function! VelloForceHighlighting(winnum)
     syn match VelloHeading /^#.*/
     syn match VelloTaskPoints /(\d*)$/
     syn match VelloTaskPoints /pts:\d*/
-    syn match VelloProject /+\S*/
-    syn match VelloContext /+@\S*/
-    syn match VelloProject /project:\S*/
-    syn match VelloProject /proj:\S*/
-    syn match VelloContext /@\S*/
+    " syn match VelloProject /+\S*/
+    " syn match VelloContext /+@\S*/
+    " syn match VelloProject /project:\S*/
+    " syn match VelloProject /proj:\S*/
+    " syn match VelloContext /@\S*/
     " syn match VelloDoneCheckbox /^\[x\].*/
-    syn match VelloDoneCheckbox /^x\ .*/
+    " syn match VelloDoneCheckbox /^x\ .*/
 
     hi VelloHeading ctermfg=15 ctermbg=10
     hi VelloTaskPoints ctermfg=2 ctermbg=8
-    hi VelloProject ctermfg=4 ctermbg=0
-    hi VelloContext ctermfg=13 ctermbg=8
-    hi VelloDoneCheckbox ctermfg=10
+    " hi VelloProject ctermfg=4 ctermbg=0
+    " hi VelloContext ctermfg=13 ctermbg=8
+    " hi VelloDoneCheckbox ctermfg=10
 
     hi NonText ctermfg=8
     execute a:winnum . "wincmd w"
@@ -98,9 +97,11 @@ function! AddToTaskWarrior()
     execute "s/@/+/ge"
     execute "s/(\\(\\d*\\))/pts:\\1/ge"
     execute "normal! Itask add "
+    execute "normal! A && printf \"\\033c\" && task"
 
     execute "normal \<Plug>SlimeLineSend"
 
+    execute "normal! $d25hx"
     execute "s/^task\ add\ //ge"
     execute "s/pts:\\(\\d*\\)/(\\1)/ge"
     execute "s/+/@/ge"
