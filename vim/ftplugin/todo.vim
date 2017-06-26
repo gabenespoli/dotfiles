@@ -1,7 +1,7 @@
 set number norelativenumber
 set laststatus=0
 nnoremap <localleader>0 :call todo#RemovePriority()<CR>
-nnoremap <localleader><localleader> :sort<CR>
+nnoremap <localleader><localleader> :call todo#RemovePriority()<CR>:call todo#MarkAsDone('')<CR>ddGp''
 nnoremap <localleader>ss :sort<CR>
 
 "" these lines are changed in .vim/bundle/todo-txt.vim/syntax/todo.vim to omit the leading bol/space. they don't work here for some reason
