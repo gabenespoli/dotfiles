@@ -1,7 +1,8 @@
 "" general
 set number norelativenumber
 setlocal cursorbind
-" set laststatus=0
+set laststatus=0
+autocmd BufLeave * execute "write"
 
 "" keybindings
 nnoremap <localleader>z :call todo#RemovePriority()<CR>
