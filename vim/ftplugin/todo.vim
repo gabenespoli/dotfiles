@@ -3,7 +3,7 @@ set number norelativenumber
 set laststatus=0
 
 "" keybindings
-nnoremap <localleader>0 :call todo#RemovePriority()<CR>
+nnoremap <localleader>z :call todo#RemovePriority()<CR>
 nnoremap <localleader><localleader> :call todo#RemovePriority()<CR>:call todo#MarkAsDone('')<CR>ddGp''
 nnoremap <localleader>ss :sort<CR>
 nnoremap <C-t> :call TodoAddToTaskWarrior()<CR>
