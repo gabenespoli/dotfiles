@@ -87,7 +87,7 @@ hi TodoPriorityB        ctermfg=2
 hi TodoPriorityC        ctermfg=2
 hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=6
-hi TodoDone             ctermfg=11
+hi TodoDone             ctermfg=10
 hi TodoKey              ctermfg=10      ctermbg=0
 hi TodoDate             ctermfg=11      ctermbg=8
 "hi TodoTaskPoints       ctermfg=2
