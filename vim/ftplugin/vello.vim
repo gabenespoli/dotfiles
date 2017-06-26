@@ -58,20 +58,19 @@ nnoremap <localleader>0 :call VelloAddTaskPoints(0)<CR>
 """ syntax matches
 function! VelloForceHighlighting(winnum)
     syn match VelloHeading /^#.*/
-    syn match VelloTaskPoints /(\d*)$/
-    syn match VelloTaskPoints /pts:\d*/
+    hi VelloHeading ctermfg=15 ctermbg=10
+
     " syn match VelloProject /+\S*/
-    " syn match VelloContext /+@\S*/
     " syn match VelloProject /project:\S*/
     " syn match VelloProject /proj:\S*/
+    " hi VelloProject ctermfg=4 ctermbg=0
+
+    " syn match VelloContext /+@\S*/
     " syn match VelloContext /@\S*/
+    " hi VelloContext ctermfg=13 ctermbg=8
+
     " syn match VelloDoneCheckbox /^\[x\].*/
     " syn match VelloDoneCheckbox /^x\ .*/
-
-    hi VelloHeading ctermfg=15 ctermbg=10
-    hi VelloTaskPoints ctermfg=2 ctermbg=8
-    " hi VelloProject ctermfg=4 ctermbg=0
-    " hi VelloContext ctermfg=13 ctermbg=8
     " hi VelloDoneCheckbox ctermfg=10
 
     hi NonText ctermfg=8
@@ -80,31 +79,3 @@ endfunction
 autocmd VimEnter * windo call VelloForceHighlighting(1)
 nnoremap <localleader>i :windo call VelloForceHighlighting(1)<CR>
 
-""" add task points
-function! VelloAddTaskPoints(val)
-    " remove previous task points
-    execute "s/\ (\\d*)$//ge"
-    if a:val > 0
-        execute "normal! A (" . a:val . ")"
-        execute "normal! 0"
-    endif
-endfunction
-
-"" add to taskwarrior with vim-slime
-" prepend 'task add ', call vim-slime, delete 'task add '
-function! AddToTaskWarrior()
-    execute "s/+/proj:/ge"
-    execute "s/@/+/ge"
-    execute "s/(\\(\\d*\\))/pts:\\1/ge"
-    execute "normal! Itask add "
-    execute "normal! A && printf \"\\033c\" && task"
-
-    execute "normal \<Plug>SlimeLineSend"
-
-    execute "normal! $d25hx"
-    execute "s/^task\ add\ //ge"
-    execute "s/pts:\\(\\d*\\)/(\\1)/ge"
-    execute "s/+/@/ge"
-    execute "s/proj:/+/ge"
-    execute "normal! Ix "
-endfunction
