@@ -91,20 +91,15 @@ function Gc() {
     tmux split-window -h -c "#{pane_current_path}" "git commit $@"
     
 }
-
 alias gr="git reset"
 alias Glog="git log --graph --decorate --oneline"
 
 ### todo, notes, and calendar
-alias t="task"
-alias ta="task add"
-alias tagv="task add project:gv"
-alias taec="task add project:ec"
-alias taphd="task add project:phd"
+alias t="todo.sh -a"
+alias todo="vim $HOME/todo/todo.txt"
+alias vello=". $HOME/todo/todo"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias ts="trello show-cards -b scrum -l sprint"
-#alias todo="todo.sh -a"
-alias todo=". $HOME/bin/todo/todo"
 alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
 alias gcal="$HOME/bin/gcalcli_wrapper.sh"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
@@ -147,6 +142,7 @@ alias hangups="hangups \
     --col-msg-self-fg 'dark blue' \
     --col-msg-self-bg default"
 alias paper="vim ~/r/gv/paper/Nespoli2017.md"
+alias ecpaper="vim ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md"
 alias dis="vim ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
