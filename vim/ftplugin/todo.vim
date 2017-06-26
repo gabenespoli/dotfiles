@@ -1,12 +1,19 @@
 "" general
 set number norelativenumber
-set laststatus=0
+setlocal cursorbind
+" set laststatus=0
 
 "" keybindings
 nnoremap <localleader>z :call todo#RemovePriority()<CR>
 nnoremap <localleader><localleader> :call todo#RemovePriority()<CR>:call todo#MarkAsDone('')<CR>ddGp''
 nnoremap <localleader>ss :sort<CR>
 nnoremap <C-t> :call TodoAddToTaskWarrior()<CR>
+
+""" moving lines
+nnoremap <buffer> H dd<C-w>hP
+nnoremap <buffer> J :move +1<CR>
+nnoremap <buffer> K :move -2<CR>
+nnoremap <buffer> L dd<C-w>lP
 
 """ task points (1 2 3 5 8)
 nnoremap <localleader>1 :call TodoAddTaskPoints(1)<CR>
