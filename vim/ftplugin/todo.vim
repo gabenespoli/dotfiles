@@ -3,6 +3,7 @@ set number norelativenumber
 " setlocal cursorbind
 set laststatus=0
 autocmd BufLeave * execute "write"
+autocmd BufEnter * execute "edit"
 
 "" keybindings
 nnoremap <localleader>z :call todo#RemovePriority()<CR>
