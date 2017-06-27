@@ -1,6 +1,6 @@
 "" general
 set number norelativenumber
-setlocal cursorbind
+" setlocal cursorbind
 set laststatus=0
 autocmd BufLeave * execute "write"
 
@@ -34,11 +34,17 @@ nnoremap <localleader>0 :call TodoAddTaskPoints(0)<CR>
 " syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
 " syn match TodoProject /+\S*/
 " syn match TodoContext /@\S*/
-syn match TodoTaskPoints /(\d*)$/
-syn match TodoTaskPoints /pts:\d*/
 hi NonText ctermfg=8
 
 "" functions
+function! TodoHighlighting(winnum)
+    syn match TodoTaskPoints /(\d*)$/
+    syn match TodoTaskPoints /pts:\d*/
+    execute a:winnum . "wincmd w"
+endfunction
+autocmd VimEnter * windo call TodoHighlighting(1)
+nnoremap <localleader>i :windo call TodoHighlighting(1)<CR>
+
 function! TodoAddTaskPoints(val)
     " remove previous task points
     execute "s/\ (\\d*)$//ge"
