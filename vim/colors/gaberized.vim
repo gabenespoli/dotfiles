@@ -89,7 +89,7 @@ hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=2
 hi TodoDone             ctermfg=10
 hi TodoKey              ctermfg=10
-hi TodoDate             ctermfg=11
+hi TodoDate             ctermfg=9
 hi TodoTaskPoints       ctermfg=5
 
 "" solarized color codes reference
