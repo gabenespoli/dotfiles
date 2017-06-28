@@ -86,11 +86,11 @@ hi TodoPriorityA        ctermfg=9
 hi TodoPriorityB        ctermfg=2
 hi TodoPriorityC        ctermfg=2
 hi TodoProject          ctermfg=4
-hi TodoContext          ctermfg=6
+hi TodoContext          ctermfg=2
 hi TodoDone             ctermfg=10
-hi TodoKey              ctermfg=10      ctermbg=0
-hi TodoDate             ctermfg=11      ctermbg=8
-"hi TodoTaskPoints       ctermfg=2
+hi TodoKey              ctermfg=10
+hi TodoDate             ctermfg=11
+hi TodoTaskPoints       ctermfg=5
 
 "" solarized color codes reference
 "let s:vmode       = "cterm"
