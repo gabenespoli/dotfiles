@@ -1,9 +1,5 @@
 "" general
-set number norelativenumber
-" setlocal cursorbind
-set laststatus=0
 autocmd BufLeave * execute "write"
-autocmd BufEnter * execute "edit"
 
 "" keybindings
 nnoremap <localleader>z :call todo#RemovePriority()<CR>
@@ -41,6 +37,8 @@ hi NonText ctermfg=8
 function! TodoHighlighting(winnum)
     syn match TodoTaskPoints /(\d*)$/
     syn match TodoTaskPoints /pts:\d*/
+    syn match TodoHeading /^#\s.*/
+    hi link TodoHeading MarkdownH1
     execute a:winnum . "wincmd w"
 endfunction
 autocmd VimEnter * windo call TodoHighlighting(1)
