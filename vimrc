@@ -400,6 +400,9 @@ let g:syntastic_check_on_wq = 0
 """ vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
 
+""" todo-txt.vim
+let g:Todo_txt_do_not_map = 1
+
 """ Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
