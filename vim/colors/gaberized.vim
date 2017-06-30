@@ -82,14 +82,12 @@ hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 
 """ Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
-hi TodoPriorityA        ctermfg=9
-hi TodoPriorityB        ctermfg=2
-hi TodoPriorityC        ctermfg=2
+hi TodoWeek             ctermfg=12
+hi TodoToday            ctermfg=4
+hi TodoDoing            ctermfg=9
+hi TodoDone             ctermfg=10
 hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=2
-hi TodoDone             ctermfg=10
-hi TodoKey              ctermfg=10
-hi TodoDate             ctermfg=9
 hi TodoTaskPoints       ctermfg=5
 
 "" solarized color codes reference
