@@ -5,7 +5,6 @@ autocmd BufLeave * execute "write"
 nnoremap <localleader>z :call todo#RemovePriority()<CR>
 nnoremap <localleader><localleader> :call todo#RemovePriority()<CR>:call todo#MarkAsDone('')<CR>ddGp''
 nnoremap <localleader>ss :sort<CR>
-nnoremap <C-t> :call TodoAddToTaskWarrior()<CR>
 
 """ moving lines
 nnoremap <buffer> H dd<C-w>hP
@@ -53,21 +52,22 @@ function! TodoAddTaskPoints(val)
     endif
 endfunction
 
-function! TodoAddToTaskWarrior()
-" prepend 'task add ', call vim-slime, delete 'task add '
-    execute "s/+/proj:/ge"
-    execute "s/@/+/ge"
-    execute "s/(\\(\\d*\\))/pts:\\1/ge"
-    execute "normal! Itask add "
-    execute "normal! A && printf \"\\033c\" && task"
+" function! TodoAddToTaskWarrior()
+" " prepend 'task add ', call vim-slime, delete 'task add '
+"     execute "s/+/proj:/ge"
+"     execute "s/@/+/ge"
+"     execute "s/(\\(\\d*\\))/pts:\\1/ge"
+"     execute "normal! Itask add "
+"     execute "normal! A && printf \"\\033c\" && task"
 
-    execute "normal \<Plug>SlimeLineSend"
+"     execute "normal \<Plug>SlimeLineSend"
 
-    execute "normal! $d25hx"
-    execute "s/^task\ add\ //ge"
-    execute "s/pts:\\(\\d*\\)/(\\1)/ge"
-    execute "s/+/@/ge"
-    execute "s/proj:/+/ge"
-    execute "normal! Ix "
-endfunction
+"     execute "normal! $d25hx"
+"     execute "s/^task\ add\ //ge"
+"     execute "s/pts:\\(\\d*\\)/(\\1)/ge"
+"     execute "s/+/@/ge"
+"     execute "s/proj:/+/ge"
+"     execute "normal! Ix "
+" endfunction
+" nnoremap <C-t> :call TodoAddToTaskWarrior()<CR>
 
