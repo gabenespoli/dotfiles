@@ -82,7 +82,7 @@ hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 
 """ Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
-hi TodoWeek             ctermfg=12
+hi TodoWeek             ctermfg=6
 hi TodoToday            ctermfg=4
 hi TodoDoing            ctermfg=9
 hi TodoDone             ctermfg=10
