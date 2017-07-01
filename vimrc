@@ -47,7 +47,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
-Plugin 'vim-scripts/todo-txt.vim'
+"Plugin 'vim-scripts/todo-txt.vim'
 Plugin 'jvirtanen/vim-octave'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
@@ -213,6 +213,7 @@ nnoremap Y y$
 set clipboard=unnamed
 
 nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
+    " normal! 0"=strftime("%Y-%m-%d ")
 
 " swap j/k with gj/gk
 " nnoremap j gj
@@ -313,6 +314,8 @@ let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
 let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
 let g:gitgutter_signs = 1
 nnoremap cog :GitGutterSignsToggle<CR>
+nmap [c <Plug>GitGutterPrevHunk
+nmap ]c <Plug>GitGutterNextHunk
 
 """ rickhowe/diffchar.vim
 " I've commented out the keymaps in plugin/diffchar.vim
