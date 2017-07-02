@@ -433,7 +433,7 @@ nnoremap <leader>F :call ToggleTabline()<CR>
 
 function! ToggleStatusBar()
     if &laststatus == 2
-        set laststatus=0
+        silent set laststatus=0
     elseif &laststatus == 0
         set laststatus=2
     endif
