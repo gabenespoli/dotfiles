@@ -83,16 +83,8 @@ alias gs="printf '\033c' && git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
-alias gpull="git pull"
-alias gpush="git push"
-function Gc() {
-    printf "\033c"
-    git diff $@
-    tmux split-window -h -c "#{pane_current_path}" "git commit $@"
-    
-}
 alias gr="git reset"
-alias Glog="git log --graph --decorate --oneline"
+alias glog="git log --graph --decorate --oneline"
 
 ### todo, notes, and calendar
 alias t="todo.sh -a"
