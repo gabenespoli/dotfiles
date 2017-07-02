@@ -429,7 +429,7 @@ function! ToggleTabline()
         set showtabline=0
     endif
 endfunction
-nnoremap <leader>F :call ToggleTabline()<CR>
+nnoremap <leader>F :silent call ToggleTabline()<CR>
 
 function! ToggleStatusBar()
     if &laststatus == 2
