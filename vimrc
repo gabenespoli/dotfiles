@@ -433,12 +433,12 @@ nnoremap <leader>F :call ToggleTabline()<CR>
 
 function! ToggleStatusBar()
     if &laststatus == 2
-        silent set laststatus=0
+        set laststatus=0
     elseif &laststatus == 0
         set laststatus=2
     endif
 endfunction
-nnoremap <leader>f :call ToggleStatusBar()<CR>
+nnoremap <leader>f :silent call ToggleStatusBar()<CR>
 
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
