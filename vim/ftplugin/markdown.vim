@@ -7,6 +7,8 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
+nnoremap zz zz
+
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
