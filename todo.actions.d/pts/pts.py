@@ -3,7 +3,7 @@ import os
 import re
 
 
-def main(todo_dir):
+def main(todo_dir, ptsDefault=0):
 
     f = open(os.path.join(todo_dir, 'todo.txt'))
     lines = f.readlines()
@@ -13,7 +13,7 @@ def main(todo_dir):
     for line in lines:
         m = re.search("pts:\d*", line)
         if m is None:
-            val = 1
+            val = ptsDefault
         else:
             val = re.search("\d*$", m.group())
             val = int(val.group())
@@ -29,12 +29,11 @@ def main(todo_dir):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: pts.py TODO_DIR")
+        print("Usage: pts.py TODO_DIR [default_pts]")
         sys.exit(1)
 
     if os.path.isdir(sys.argv[1]):
-        main(sys.argv[1])
-
-    else:
-        print('Error: %s is not a directory' % sys.argv[1])
-        sys.exit(1)
+        if len(sys.argv) is 3:
+            main(sys.argv[1], int(sys.argv[2]))
+        else:
+            main(sys.argv[1])
