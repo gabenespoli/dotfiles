@@ -37,3 +37,7 @@ if __name__ == '__main__':
             main(sys.argv[1], int(sys.argv[2]))
         else:
             main(sys.argv[1])
+
+    else:
+        print("Error: %s is not a directory" % sys.argv[1])
+        sys.exit(1)
