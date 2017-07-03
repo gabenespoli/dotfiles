@@ -1,0 +1,21 @@
+#!/bin/bash
+
+action=$1
+flag=$2
+shift
+
+[ "$action" = "usage" ] && {
+  echo ""
+  echo "  Calculate task points total and done"
+  echo ""
+  exit
+}
+[ "$action" = "pts" ] && {
+  # check if python2 is defined
+  if hash python2 2>/dev/null; then
+        python2 "$TODO_ACTIONS_DIR"/pts/pts.py "$TODO_DIR" $flag
+  else
+        # use default python 
+        python "$TODO_ACTIONS_DIR"/pts/pts.py "$TODO_DIR" $flag
+  fi
+}
