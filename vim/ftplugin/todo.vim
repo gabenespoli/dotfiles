@@ -21,13 +21,13 @@ nnoremap <buffer> K :move -2<CR>
 nnoremap <buffer> L dd<C-w>lP
 
 """ task points (1 2 3 5 8)
-nnoremap <localleader>1 :s/\ (\d*)$//ge<CR>A (1)<Esc>
-nnoremap <localleader>2 :s/\ (\d*)$//ge<CR>A (2)<Esc>
-nnoremap <localleader>3 :s/\ (\d*)$//ge<CR>A (3)<Esc>
-nnoremap <localleader>5 :s/\ (\d*)$//ge<CR>A (5)<Esc>
-nnoremap <localleader>8 :s/\ (\d*)$//ge<CR>A (8)<Esc>
-nnoremap <localleader>9 :s/\ (\d*)$//ge<CR>A (13)<Esc>
-nnoremap <localleader>0 :s/\ (\d*)$//ge<CR>
+nnoremap <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>
+nnoremap <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>
+nnoremap <localleader>3 :s/\ pts:\d*//ge<CR>A pts:3<Esc>
+nnoremap <localleader>5 :s/\ pts:\d*//ge<CR>A pts:5<Esc>
+nnoremap <localleader>8 :s/\ pts:\d*//ge<CR>A pts:8<Esc>
+nnoremap <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>
+nnoremap <localleader>0 :s/\ pts:\d*//ge<CR>
 
 """ misc
 nnoremap <buffer> <localleader>ss :sort<CR>
