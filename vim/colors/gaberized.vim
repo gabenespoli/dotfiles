@@ -82,13 +82,13 @@ hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 
 """ Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
-hi TodoWeek             ctermfg=6
-hi TodoToday            ctermfg=3
-hi TodoDoing            ctermfg=9
+hi TodoPriorityA        ctermfg=9
+hi TodoPriorityB        ctermfg=3
+hi TodoPriorityC        ctermfg=6
 hi TodoDone             ctermfg=10
 hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=2
-hi TodoTaskPoints       ctermfg=5
+hi TodoTag              ctermfg=5
 
 "" solarized color codes reference
 "let s:vmode       = "cterm"
