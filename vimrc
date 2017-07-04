@@ -382,6 +382,7 @@ vnoremap <silent> <F8> <Esc>:TmuxNavigateRight<CR>
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_dont_ask_default = 1
+nnoremap <C-c><C-x> :SlimeSendCurrentLine<CR>
 
 """ vim-cellmode
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
