@@ -84,11 +84,11 @@ hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 hi Todo                 ctermfg=13                      cterm=reverse 
 hi TodoPriorityA        ctermfg=9
 hi TodoPriorityB        ctermfg=3
-hi TodoPriorityC        ctermfg=6
+hi TodoPriorityC        ctermfg=12
 hi TodoDone             ctermfg=10
 hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=2
-hi TodoTag              ctermfg=5
+hi TodoTag              ctermfg=10
 
 "" solarized color codes reference
 "let s:vmode       = "cterm"
