@@ -36,13 +36,15 @@ nnoremap <localleader>X :call todo#RemoveCompleted()<CR>
 
 "" functions
 function! TodoHighlighting(winnum)
-    syn match TodoPriorityA /^(A).*/ contains=TodoProject,TodoContext
-    syn match TodoPriorityB /^(B).*/ contains=TodoProject,TodoContext
-    syn match TodoPriorityC /^(C).*/ contains=TodoProject,TodoContext
+    syn match TodoPriorityA /^(A).*/ contains=TodoProject,TodoContext,TodoTag
+    syn match TodoPriorityB /^(B).*/ contains=TodoProject,TodoContext,TodoTag
+    syn match TodoPriorityC /^(C).*/ contains=TodoProject,TodoContext,TodoTag
     syn match TodoDone /^x\ \d\d\d\d-\d\d-\d\d\ .*/
     syn match TodoProject /+\S*/
     syn match TodoContext /@\S*/
-    syn match TodoTag /\S*:\S*/
+    syn match TodoTag /\S*:\S*/ contains=TodoDate,TodoPoints
+    syn match TodoDate /\d\d\d\d-\d\d-\d\d/
+    syn match TodoPoints /\d\{1,2}\(\s\|$\)/
     hi NonText ctermfg=8
     execute a:winnum . "wincmd w"
 endfunction
