@@ -80,10 +80,13 @@ hi CenWinOutlineHeader2 ctermfg=4       ctermbg=8       cterm=none
 hi CenWinOutlineHeader3 ctermfg=6       ctermbg=8       cterm=none
 hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 
+""" CapitalL
+hi CapitalLSearch       ctermfg=none    ctermbg=0       cterm=none
+
 """ Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
-hi TodoPriorityA        ctermfg=9
-hi TodoPriorityB        ctermfg=3
+hi TodoPriorityA        ctermfg=1
+hi TodoPriorityB        ctermfg=9
 hi TodoPriorityC        ctermfg=12
 hi TodoDone             ctermfg=10
 hi TodoProject          ctermfg=4
