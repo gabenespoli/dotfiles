@@ -93,7 +93,7 @@ hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=2
 hi TodoTag              ctermfg=10
 hi TodoDate             ctermfg=9
-hi TodoPoints           ctermfg=5
+hi TodoPoints           ctermfg=13
 
 "" solarized color codes reference
 "let s:vmode       = "cterm"
