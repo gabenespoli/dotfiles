@@ -43,7 +43,6 @@ nnoremap <localleader>E :call FauxCenwinClose()<CR>call PandocForceHighlighting(
 
 "" highlights
 " note: colors are based on the solarized 16 color palette
-au VimEnter * :call PandocForceHighlighting()
 hi NonText ctermfg=8
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
@@ -77,4 +76,5 @@ function! PandocForceHighlighting()
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunction
+au VimEnter * :call PandocForceHighlighting()
 
