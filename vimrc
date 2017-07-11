@@ -36,7 +36,6 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
-"Plugin 'julienr/vim-cellmode'
 Plugin 'jpalardy/vim-slime'
 "Plugin 'ivanov/vim-ipython'
 Plugin 'blindFS/vim-taskwarrior'
@@ -383,17 +382,6 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
-
-""" vim-cellmode
-let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
-let g:cellmode_tmux_windowname=''
-let g:cellmode_tmux_panenumber='1'
-let g:cellmode_screen_sessionname='ipython'
-let g:cellmode_screen_window='0'
-let g:cellmode_default_mappings='0'
-vmap <silent> <leader>g :call RunTmuxPythonChunk()<CR>
-"noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
-noremap <silent> <leader>g :call RunTmuxPythonCell(1)<CR>
 
 """ vim-syntastic
 let g:syntastic_always_populate_loc_list = 1
