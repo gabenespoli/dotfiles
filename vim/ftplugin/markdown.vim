@@ -23,7 +23,11 @@ nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 nnoremap <localleader>o :silent exec "!python $HOME/bin/cite/cite.py -k <C-r><C-w>"<CR><C-l>
-nnoremap <localleader>c :!python $HOME/bin/cite/cite.py 
+nnoremap <localleader>p :!python $HOME/bin/cite/cite.py 
+
+nnoremap <localleader>i :call PandocForceHighlighting()<CR>
+nnoremap <localleader>e :call FauxCenwinOpen()<CR>call PandocForceHighlighting()<CR>
+nnoremap <localleader>E :call FauxCenwinClose()<CR>call PandocForceHighlighting()<CR>
 
 "" highlights
 hi NonText ctermfg=8
@@ -69,5 +73,4 @@ function! PandocForceHighlighting()
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunc
 au VimEnter * :call PandocForceHighlighting()
-nnoremap <localleader>i :call PandocForceHighlighting()<CR>
 
