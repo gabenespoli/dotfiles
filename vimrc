@@ -13,7 +13,6 @@ Plugin 'file:///Users/gmac/bin/vim/capitalL.vim'
 Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 " vim and git
-"Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/Rename'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-unimpaired'
@@ -24,7 +23,6 @@ Plugin 'rickhowe/diffchar.vim'
 Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
 Plugin 'ervandew/supertab'
-"Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 
 " files
@@ -38,8 +36,6 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jpalardy/vim-slime'
 "Plugin 'ivanov/vim-ipython'
-Plugin 'blindFS/vim-taskwarrior'
-"Plugin 'malithsen/trello-vim'
 
 " syntax
 Plugin 'vim-syntastic/syntastic'
@@ -50,7 +46,6 @@ Plugin 'vim-pandoc/vim-criticmarkup'
 Plugin 'jvirtanen/vim-octave'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
-"Plugin 'chrisbra/csv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
