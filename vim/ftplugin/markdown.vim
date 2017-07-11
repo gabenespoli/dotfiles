@@ -2,18 +2,20 @@
 set spell       " enable live spell checking
 
 "" keybindings
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-
+""" general
 nnoremap zz zz
-
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
 nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
 nnoremap gd :Gdiff<CR>:windo set wrap<CR>
 
+""" move up and down by visual line
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
+""" headings
 nnoremap <localleader>0 :s/^#*\ *//ge<CR>
 nnoremap <localleader>1 :s/^#*\ */#\ /ge<CR>
 nnoremap <localleader>2 :s/^#*\ */##\ /ge<CR>
@@ -22,20 +24,11 @@ nnoremap <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
+""" cite.py
 nnoremap <localleader>o :silent exec "!python $HOME/bin/cite/cite.py -k <C-r><C-w>"<CR><C-l>
 nnoremap <localleader>p :!python $HOME/bin/cite/cite.py 
 
-nnoremap <localleader>i :call PandocForceHighlighting()<CR>
-nnoremap <localleader>e :call FauxCenwinOpen()<CR>call PandocForceHighlighting()<CR>
-nnoremap <localleader>E :call FauxCenwinClose()<CR>call PandocForceHighlighting()<CR>
-
-"" highlights
-hi NonText ctermfg=8
-" make html tags solarized base colors so they blend into the background
-hi htmlString ctermfg=11
-hi htmlTagName ctermfg=11
-
-" Critic Markdown Plugin
+""" Critic Markdown Plugin
 nnoremap <localleader>ca :Critic accept<CR>
 nnoremap <localleader>cr :Critic reject<CR>
 nnoremap <localleader>ch :call criticmarkup#InjectHighlighting()<CR>
@@ -43,7 +36,19 @@ nnoremap <localleader>cd F{df}
 nnoremap <localleader>ck /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <localleader>cK ?{==\\|{>>\\|{++\\|{--<CR>
 
-"" Pandoc Plugin
+""" pandoc highlighting issues
+nnoremap <localleader>i :call PandocForceHighlighting()<CR>
+nnoremap <localleader>e :call FauxCenwinOpen()<CR>call PandocForceHighlighting()<CR>
+nnoremap <localleader>E :call FauxCenwinClose()<CR>call PandocForceHighlighting()<CR>
+
+"" highlights
+" note: colors are based on the solarized 16 color palette
+au VimEnter * :call PandocForceHighlighting()
+hi NonText ctermfg=8
+hi htmlString ctermfg=11
+hi htmlTagName ctermfg=11
+
+"" Pandoc Plugin settings
 au VimEnter * :set syntax=pandoc
 let g:pandoc#modules#enabled = ["command","completion","keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
@@ -52,9 +57,9 @@ let g:pandoc#biblio#bibs = ["~/dotfiles/pandoc/library.bib"]
 let g:pandoc#completion#bib#mode = "citeproc"
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
-
-"" Pandoc Syntax
 let g:pandoc#syntax#conceal#use = 0
+
+"" function to force custom pandoc highlighting
 function! PandocForceHighlighting()
     hi pandocEmphasis cterm=none ctermfg=7
     hi pandocStrongEmphasis cterm=none ctermfg=15
@@ -71,6 +76,5 @@ function! PandocForceHighlighting()
     hi criticDel cterm=reverse ctermfg=1 ctermbg=8
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
-endfunc
-au VimEnter * :call PandocForceHighlighting()
+endfunction
 
