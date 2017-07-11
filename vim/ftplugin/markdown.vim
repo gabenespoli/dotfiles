@@ -38,8 +38,8 @@ nnoremap <localleader>cK ?{==\\|{>>\\|{++\\|{--<CR>
 
 """ pandoc highlighting issues
 nnoremap <localleader>i :call PandocForceHighlighting()<CR>
-nnoremap <localleader>e :call FauxCenwinOpen()<CR>call PandocForceHighlighting()<CR>
-nnoremap <localleader>E :call FauxCenwinClose()<CR>call PandocForceHighlighting()<CR>
+nnoremap <localleader>e :call FauxCenwinOpen()<CR>:call PandocForceHighlighting()<CR>
+nnoremap <localleader>E :call FauxCenwinClose()<CR>:call PandocForceHighlighting()<CR>
 
 "" highlights
 " note: colors are based on the solarized 16 color palette
