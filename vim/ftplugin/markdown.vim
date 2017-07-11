@@ -24,10 +24,6 @@ nnoremap <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
-""" cite.py
-nnoremap <localleader>o :silent exec "!python $HOME/bin/cite/cite.py -k <C-r><C-w>"<CR><C-l>
-nnoremap <localleader>p :!python $HOME/bin/cite/cite.py 
-
 """ Critic Markdown Plugin
 nnoremap <localleader>ca :Critic accept<CR>
 nnoremap <localleader>cr :Critic reject<CR>

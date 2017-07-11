@@ -213,17 +213,8 @@ set clipboard=unnamed
 nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
     " normal! 0"=strftime("%Y-%m-%d ")
 
-" swap j/k with gj/gk
-" nnoremap j gj
-" nnoremap k gk
-" nnoremap gj j
-" nnoremap gk k
 nnoremap <Down> gj
 nnoremap <Up> gk
-" vnoremap j gj
-" vnoremap k gk
-" vnoremap gj j
-" vnoremap gk k
 vnoremap <Down> gj
 vnoremap <Up> gk
 
@@ -242,13 +233,15 @@ nnoremap dh :hi _DiffDelPos ctermfg=1 ctermbg=0 cterm=underline<CR>
 " emacs movement
 "nnoremap <C-h> X " this one seems to already work, no need to remap
 inoremap <C-d> <Del>
-"inoremap <C-n> <C-o>gj
-"inoremap <C-p> <C-o>gk
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
 " Spell checking
 nnoremap <localleader>s 1z=
+
+" cite.py
+nnoremap <localleader>o :silent exec "!python $HOME/bin/cite/cite.py -k <C-r><C-w>"<CR><C-l>
+nnoremap <localleader>p :!python $HOME/bin/cite/cite.py 
 
 "" Plugin settings
 """ gabenespoli/capitalL.vim
@@ -283,7 +276,6 @@ function! FauxCenwinClose()
 endfunction
 
 """ gabenespoli/vim-cenwin
-nnoremap <leader>C :call CenWinToggle(0)<CR>
 
 """ vim-scripts/YankRing.vim
 "let g:yankring_history_dir = '$HOME/.vim'
