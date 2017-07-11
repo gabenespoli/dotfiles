@@ -547,3 +547,16 @@ function! WordCount()
     endwhile
     return n
 endfunction
+
+function Cmd_Shell(...)
+" https://github.com/vim-scripts/cmd.vim
+	let Cmd_Cmd = ''
+	for s in a:000
+		let Cmd_Cmd .= s . ' '
+	endfor
+	echo Cmd_Cmd
+	let Cmd_Output = system(Cmd_Cmd)
+	"let Cmd_Output = iconv(Cmd_Output, "utf8", "cp936")
+	echo Cmd_Output
+endfunction
+command! -nargs=* -range=0 -complete=file Cmd call Cmd_Shell(<q-args>)
