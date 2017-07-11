@@ -163,7 +163,6 @@ inoremap jk <Esc>
 vnoremap jk <Esc>
 
 """ common actions
-nnoremap <leader>e :e<Space>
 "<leader>o opens ctrlp plugin
 "<leader>O opens ranger
 nnoremap <leader>n :tabnew<CR>
@@ -258,8 +257,8 @@ nnoremap <localleader>q :Ctoggle<CR>
 nnoremap <localleader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
-nnoremap <localleader>c :call FauxCenwinOpen()<CR>
-nnoremap <localleader>C :call FauxCenwinClose()<CR>
+nnoremap <localleader>e :call FauxCenwinOpen()<CR>
+nnoremap <localleader>E :call FauxCenwinClose()<CR>
 
 function! FauxCenwinOpen()
     let bufnum = bufnr('%')
