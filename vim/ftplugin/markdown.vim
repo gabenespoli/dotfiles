@@ -22,6 +22,7 @@ nnoremap <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
+nnoremap <localleader>o :silent exec "!python $HOME/bin/cite/cite.py -k <C-r><C-w>"<CR><C-l>
 
 "" highlights
 hi NonText ctermfg=8
