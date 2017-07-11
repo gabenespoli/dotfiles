@@ -36,12 +36,12 @@ hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
 
 " Critic Markdown Plugin
-" nnoremap <localleader>a :Critic accept<CR>
-" nnoremap <localleader>r :Critic reject<CR>
-" nnoremap <localleader>h :call criticmarkup#InjectHighlighting()<CR>
-" nnoremap <localleader>c F{df}
-nnoremap <localleader>k /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <localleader>K ?{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <localleader>ca :Critic accept<CR>
+nnoremap <localleader>cr :Critic reject<CR>
+nnoremap <localleader>ch :call criticmarkup#InjectHighlighting()<CR>
+nnoremap <localleader>cd F{df}
+nnoremap <localleader>ck /{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <localleader>cK ?{==\\|{>>\\|{++\\|{--<CR>
 
 "" Pandoc Plugin
 au VimEnter * :set syntax=pandoc
