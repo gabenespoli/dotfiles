@@ -242,43 +242,44 @@ nnoremap <localleader>q :Ctoggle<CR>
 nnoremap <localleader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
-nnoremap <leader>e :call FauxCenwinOpen()<CR>
-nnoremap <leader>E :call FauxCenwinClose()<CR>
-command -nargs=* Lbig call LBigScreen(<q-args>)
+nnoremap <leader>e :call CenwinToggle()<CR>
+command -nargs=* Lscreen call Lscreen(<q-args>)
 
-function! LBigScreen(type)
+function! Lscreen(type)
     if a:0 == 0
         let type = 1
     endif
     if type == 1
         let g:CapitalL_defaultWidth = 76
+        let b:CapitalL_width = 76
         let g:CapitalL_qf_width = 76
     else
         let g:CapitalL_defaultWidth = 40
+        let b:CaptialL_width = 40
         let g:CapitalL_qf_width = 40
     endif
 endfunction
 
-function! FauxCenwinOpen()
-    let bufnum = bufnr('%')
-    :Lopen
-    :set nocursorline
-    :set nonumber
-    :set norelativenumber
-    :hi NonText ctermfg=8 ctermbg=8
-    execute bufwinnr(bufnum) . "wincmd w"
-    :Copen
-    :set nocursorline
-    :set nonumber
-    :set norelativenumber
-    :hi NonText ctermfg=8 ctermbg=8
-    execute bufwinnr(bufnum) . "wincmd w"
-    ''
-endfunction
-
-function! FauxCenwinClose()
-    :Lclose
-    :Cclose
+function! CenwinToggle()
+    if !exists("b:CenwinStatus")
+        let b:CenwinStatus = 0
+    endif
+    if b:CenwinStatus == 0
+        let bufnum = bufnr('%')
+        :Lopen
+        :set nocursorline nonumber norelativenumber
+        :hi NonText ctermfg=8 ctermbg=8
+        execute bufwinnr(bufnum) . "wincmd w"
+        :Copen
+        :set nocursorline nonumber norelativenumber
+        :hi NonText ctermfg=8 ctermbg=8
+        execute bufwinnr(bufnum) . "wincmd w"
+        let b:CenwinStatus = 1
+    else
+        :Lclose
+        :Cclose
+        let b:CenwinStatus = 0
+    endif
 endfunction
 
 """ vim-scripts/YankRing.vim
