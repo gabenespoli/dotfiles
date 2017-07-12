@@ -234,10 +234,6 @@ inoremap <C-b> <Left>
 " Spell checking
 nnoremap <localleader>s 1z=
 
-" cite.py
-nnoremap <localleader>o :silent exec "!python $HOME/bin/cite/cite.py -k <C-r><C-w>"<CR><C-l>
-nnoremap <localleader>p :!python $HOME/bin/cite/cite.py 
-
 "" Plugin settings
 """ gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
@@ -378,8 +374,26 @@ let g:syntastic_check_on_wq = 0
 """ vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
 
+""" Critic Markdown Plugin
+" cite.py (include here because of similar keybindings)
+nnoremap <leader>ca :Critic accept<CR>
+nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
+nnoremap <leader>cci i{>><<}<Esc>hhi
+nnoremap <leader>cca a{>><<}<Esc>hhi
+nnoremap <leader>cd F{df}
+nnoremap <leader>chh I{==<Esc>A==}<Esc>
+nnoremap <leader>chi i{==<Esc>
+nnoremap <leader>cha a==}<Esc>
+nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
+nnoremap <leader>ck /{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <leader>cK ?{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <leader>cn :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
+nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
+nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
+nnoremap <leader>cr :Critic reject<CR>
+
 """ todo-txt.vim
-let g:Todo_txt_do_not_map = 1
+" let g:Todo_txt_do_not_map = 1
 
 """ Lilypond
 filetype off

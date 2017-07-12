@@ -24,14 +24,6 @@ nnoremap <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
-""" Critic Markdown Plugin
-nnoremap <localleader>ca :Critic accept<CR>
-nnoremap <localleader>cr :Critic reject<CR>
-nnoremap <localleader>ch :call criticmarkup#InjectHighlighting()<CR>
-nnoremap <localleader>cd F{df}
-nnoremap <localleader>ck /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <localleader>cK ?{==\\|{>>\\|{++\\|{--<CR>
-
 """ pandoc highlighting issues
 nnoremap <localleader>i :call PandocForceHighlighting()<CR>
 nnoremap <localleader>e :call FauxCenwinOpen()<CR>:call PandocForceHighlighting()<CR>
