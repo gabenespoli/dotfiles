@@ -242,8 +242,22 @@ nnoremap <localleader>q :Ctoggle<CR>
 nnoremap <localleader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
-nnoremap <localleader>e :call FauxCenwinOpen()<CR>
-nnoremap <localleader>E :call FauxCenwinClose()<CR>
+nnoremap <leader>e :call FauxCenwinOpen()<CR>
+nnoremap <leader>E :call FauxCenwinClose()<CR>
+command -nargs=* Lbig call LBigScreen(<q-args>)
+
+function! LBigScreen(type)
+    if a:0 == 0
+        let type = 1
+    endif
+    if type == 1
+        let g:CapitalL_defaultWidth = 76
+        let g:CapitalL_qf_width = 76
+    else
+        let g:CapitalL_defaultWidth = 40
+        let g:CapitalL_qf_width = 40
+    endif
+endfunction
 
 function! FauxCenwinOpen()
     let bufnum = bufnr('%')
@@ -266,8 +280,6 @@ function! FauxCenwinClose()
     :Lclose
     :Cclose
 endfunction
-
-""" gabenespoli/vim-cenwin
 
 """ vim-scripts/YankRing.vim
 "let g:yankring_history_dir = '$HOME/.vim'
