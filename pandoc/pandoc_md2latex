@@ -16,8 +16,8 @@ pandoc \
 --toc \
 --variable lof=true \
 --filter pandoc-citeproc \
---bibliography=$HOME/bin/cite/library.bib \
---csl=$HOME/bin/pandoc/apa-no-doi-no-issue.csl \
+--bibliography=$HOME/dotfiles/pandoc/library.bib \
+--csl=$HOME/dotfiles/pandoc/apa-no-doi-no-issue.csl \
 #--template=$HOME/bin/pandoc/md2latex/apa6template.tex \
 
 rm $tmpfile
