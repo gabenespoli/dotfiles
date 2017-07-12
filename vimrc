@@ -198,9 +198,10 @@ nnoremap <leader>K <C-w>s:bprevious<CR>
 nnoremap <leader>L <C-w>v:bnext<CR>
 
 " copy/paste with system clipboard
-vnoremap <leader>y "+y
-nnoremap <leader>y V"+y
-nnoremap <leader>p "+p
+" <leader>y is now used for syntastic
+" vnoremap <leader>y "+y
+" nnoremap <leader>y V"+y
+" nnoremap <leader>p "+p
 nnoremap Y y$
 " for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
@@ -368,8 +369,13 @@ nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 """ vim-syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { "mode": "passive",
+           "active_filetypes": [],
+           "passive_filetypes": [] }
+nnoremap <leader>y :SyntasticCheck<CR>
+nnoremap <leader>Y :SyntasticToggleMode<CR>
 
 """ vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
