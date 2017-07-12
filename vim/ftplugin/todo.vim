@@ -2,6 +2,9 @@
 " some ideas are take from 
 
 "" keybindings
+""" save all the time
+inoremap jk <Esc>:w<CR>
+
 """ priority
 " [d]oing, [t]oday, [w]eek, [r]emove, [x] is mark as done and move to bottom
 " first try to remove priority, then add
