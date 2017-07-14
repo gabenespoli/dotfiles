@@ -300,13 +300,13 @@ nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 
 function! SearchHighlightToggle()
-    " let fgcolor=synIDattr(hlID('Search'), 'fg#')
     let bgcolor=synIDattr(hlID('Search'), 'bg#')
-    " echo fgcolor." ".bgcolor
     if bgcolor == 1
-        execute "hi Search ctermfg=none ctermbg=0 cterm=none"
-    else
-        execute "hi Search ctermfg=15 ctermbg=1 cterm=none"
+        execute "hi Search ctermbg=0 ctermfg=none cterm=none"
+    elseif bgcolor == 0
+        execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
+    elseif bgcolor == 12
+        execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
     endif
 endfunction!
 
