@@ -297,6 +297,18 @@ autocmd FileType octave setlocal commentstring=%\ %s
 """ tpope/vim-unimpaired
 " my own macro binding of the default ones
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
+nnoremap coH :call SearchHighlightToggle()<CR>
+
+function! SearchHighlightToggle()
+    " let fgcolor=synIDattr(hlID('Search'), 'fg#')
+    let bgcolor=synIDattr(hlID('Search'), 'bg#')
+    " echo fgcolor." ".bgcolor
+    if bgcolor == 1
+        execute "hi Search ctermfg=none ctermbg=0 cterm=none"
+    else
+        execute "hi Search ctermfg=15 ctermbg=1 cterm=none"
+    endif
+endfunction!
 
 """ tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>7j
@@ -574,7 +586,7 @@ function! WordCount()
     return n
 endfunction
 
-function Cmd_Shell(...)
+function! Cmd_Shell(...)
 " https://github.com/vim-scripts/cmd.vim
 	let Cmd_Cmd = ''
 	for s in a:000
