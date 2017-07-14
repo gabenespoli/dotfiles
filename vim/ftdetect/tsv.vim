@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.tsv setfiletype tsv
+au BufRead,BufNewFile *.tsv set filetype=tsv
