@@ -30,8 +30,8 @@ hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
 hi NonText              ctermfg=10      ctermbg=8       cterm=none
 hi SpecialKey           ctermfg=10      ctermbg=0       cterm=none
 
-hi Search               ctermfg=11      ctermbg=8       cterm=reverse
-hi IncSearch            ctermfg=11      ctermbg=8       cterm=reverse
+hi Search               ctermfg=15      ctermbg=1       cterm=none
+hi IncSearch            ctermfg=15      ctermbg=1       cterm=none
 hi Visual               ctermfg=12      ctermbg=8       cterm=reverse
 
 hi DiffAdd              ctermfg=2       ctermbg=0
@@ -79,9 +79,6 @@ hi CenWinOutlineHeader1 ctermfg=4       ctermbg=8       cterm=reverse
 hi CenWinOutlineHeader2 ctermfg=4       ctermbg=8       cterm=none 
 hi CenWinOutlineHeader3 ctermfg=6       ctermbg=8       cterm=none
 hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
-
-""" CapitalL
-hi CapitalLSearch       ctermfg=none    ctermbg=0       cterm=none
 
 """ Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
