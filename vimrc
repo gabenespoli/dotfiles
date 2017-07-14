@@ -245,21 +245,6 @@ let g:CapitalL_qf_width = 40
 nnoremap <leader>e :call CenwinToggle()<CR>
 command -nargs=* Lscreen call Lscreen(<q-args>)
 
-function! Lscreen(type)
-    if a:0 == 0
-        let type = 1
-    endif
-    if type == 1
-        let g:CapitalL_defaultWidth = 76
-        let b:CapitalL_width = 76
-        let g:CapitalL_qf_width = 76
-    else
-        let g:CapitalL_defaultWidth = 40
-        let b:CaptialL_width = 40
-        let g:CapitalL_qf_width = 40
-    endif
-endfunction
-
 function! CenwinToggle()
     if !exists("b:CenwinStatus")
         let b:CenwinStatus = 0
@@ -279,6 +264,24 @@ function! CenwinToggle()
         :Lclose
         :Cclose
         let b:CenwinStatus = 0
+    endif
+    if &filetype = "markdown" || &filetype == "pandoc"
+        execute "call PandocForceHighlighting()"
+    endif
+endfunction
+
+function! Lscreen(type)
+    if a:0 == 0
+        let type = 1
+    endif
+    if type == 1
+        let g:CapitalL_defaultWidth = 76
+        let b:CapitalL_width = 76
+        let g:CapitalL_qf_width = 76
+    else
+        let g:CapitalL_defaultWidth = 40
+        let b:CaptialL_width = 40
+        let g:CapitalL_qf_width = 40
     endif
 endfunction
 
