@@ -1,5 +1,6 @@
 " vim plugin for todo.txt files
-" some ideas are take from 
+" some ideas are take from the todo-txt.vim plugin
+"
 
 "" keybindings
 """ save all the time
@@ -8,27 +9,27 @@ inoremap jk <Esc>:w<CR>
 """ priority
 " [d]oing, [t]oday, [w]eek, [r]emove, [x] is mark as done and move to bottom
 " first try to remove priority, then add
-nnoremap <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>
-nnoremap <localleader>b :s/^([A-Z])\s//ge<CR>I(B) <Esc>
-nnoremap <localleader>c :s/^([A-Z])\s//ge<CR>I(C) <Esc>
-nnoremap <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>
-nnoremap <localleader>z :s/^([A-Z])\s//ge<CR>
-nnoremap <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp''
+nnoremap <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>:w<CR>
+nnoremap <localleader>b :s/^([A-Z])\s//ge<CR>I(B) <Esc>:w<CR>
+nnoremap <localleader>c :s/^([A-Z])\s//ge<CR>I(C) <Esc>:w<CR>
+nnoremap <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>:w<CR>
+nnoremap <localleader>z :s/^([A-Z])\s//ge<CR>:w<CR>
+nnoremap <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp'':w<CR>
 
 """ moving lines
-nnoremap <buffer> H dd<C-w>hP
+nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
 nnoremap <buffer> J :move +1<CR>
 nnoremap <buffer> K :move -2<CR>
-nnoremap <buffer> L dd<C-w>lP
+nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
 
 """ task points (1 2 3 5 8)
-nnoremap <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>
-nnoremap <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>
-nnoremap <localleader>3 :s/\ pts:\d*//ge<CR>A pts:3<Esc>
-nnoremap <localleader>5 :s/\ pts:\d*//ge<CR>A pts:5<Esc>
-nnoremap <localleader>8 :s/\ pts:\d*//ge<CR>A pts:8<Esc>
-nnoremap <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>
-nnoremap <localleader>0 :s/\ pts:\d*//ge<CR>
+nnoremap <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>:w<CR>
+nnoremap <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>:w<CR>
+nnoremap <localleader>3 :s/\ pts:\d*//ge<CR>A pts:3<Esc>:w<CR>
+nnoremap <localleader>5 :s/\ pts:\d*//ge<CR>A pts:5<Esc>:w<CR>
+nnoremap <localleader>8 :s/\ pts:\d*//ge<CR>A pts:8<Esc>:w<CR>
+nnoremap <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>:w<CR>
+nnoremap <localleader>0 :s/\ pts:\d*//ge<CR>:w<CR>
 
 """ misc
 nnoremap <buffer> <localleader>ss :sort<CR>
