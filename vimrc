@@ -202,18 +202,6 @@ set clipboard=unnamed
 nnoremap <leader>d "=strftime("%Y-%m-%d")
 nnoremap <leader>t "=strftime("%Y-%m-%d %H:%M:%S")
 
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-
-" misc movement
-nnoremap W 5w
-vnoremap W 5w
-nnoremap B 5b
-vnoremap B 5b
-nnoremap zz zt12gk12gj
-
 "vimdiff
 nnoremap du :diffupdate<CR>
 " force this diffchar.vim highlight cause it always reverts
