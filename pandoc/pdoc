@@ -57,6 +57,7 @@ case "$inputType" in
         perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpFile"
         #TODO delete critic parts marked for deletion? optionally?
         args="${args} --reference-docx=${refdocx}" # reference file for styles
+        args="${args} --filter pandoc-fignos --filter pandoc-tablenos" # figure and table numbers
         ;;
     docx )
         args="${args} --wrap=none --atx-headers --extract-media=docxmedia --track-changes=all"
