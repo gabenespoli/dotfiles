@@ -246,7 +246,7 @@ function! CenwinToggle()
         :Cclose
         let b:CenwinStatus = 0
     endif
-    if &filetype = "markdown" || &filetype == "pandoc"
+    if &filetype == "markdown" || &filetype == "pandoc"
         execute "call PandocForceHighlighting()"
     endif
 endfunction
