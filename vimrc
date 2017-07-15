@@ -198,8 +198,9 @@ nnoremap Y y$
 " for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
 
-nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
-    " normal! 0"=strftime("%Y-%m-%d ")
+" nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
+nnoremap <leader>d "=strftime("%Y-%m-%d")
+nnoremap <leader>t "=strftime("%Y-%m-%d %H:%M:%S")
 
 nnoremap <Down> gj
 nnoremap <Up> gk
