@@ -394,9 +394,12 @@ nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
 nnoremap <leader>cci i{>><<}<Esc>hhi
 nnoremap <leader>cca a{>><<}<Esc>hhi
 nnoremap <leader>cd F{df}
+nnoremap <leader>cha a==}<Esc>
+nnoremap <leader>chd f}XXxF{xxx
 nnoremap <leader>chh I{==<Esc>A==}<Esc>
 nnoremap <leader>chi i{==<Esc>
-nnoremap <leader>cha a==}<Esc>
+nnoremap <leader>chs (i{==<Esc>)i==}<Esc>
+nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
 nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
 nnoremap <leader>ck /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <leader>cK ?{==\\|{>>\\|{++\\|{--<CR>
