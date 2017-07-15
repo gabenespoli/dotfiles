@@ -62,6 +62,14 @@ hi matlabCellComment    ctermfg=11      ctermbg=0
 
 "" Plugin color customizations
 
+""" CapitalL
+hi LmarkdownH1          ctermbg=8
+hi LmarkdownH2          ctermbg=8
+hi LmarkdownH3          ctermbg=8
+hi LmarkdownH4          ctermbg=8
+hi LmarkdownH5          ctermbg=8
+hi LmarkdownH6          ctermbg=8
+
 """ Syntastic
 hi SyntasticErrorSign   ctermfg=1       ctermbg=8       cterm=none
 hi SyntasticWarningSign ctermfg=9       ctermbg=8       cterm=none
