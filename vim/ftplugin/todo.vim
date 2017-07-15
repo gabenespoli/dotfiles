@@ -12,9 +12,7 @@ nnoremap <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>
 nnoremap <localleader>b :s/^([A-Z])\s//ge<CR>I(B) <Esc>
 nnoremap <localleader>c :s/^([A-Z])\s//ge<CR>I(C) <Esc>
 nnoremap <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>
-nnoremap <localleader>t :s/^([A-Z])\s//ge<CR>I(T) <Esc>
-nnoremap <localleader>w :s/^([A-Z])\s//ge<CR>I(W) <Esc>
-nnoremap <localleader>r :s/^([A-Z])\s//ge<CR>
+nnoremap <localleader>z :s/^([A-Z])\s//ge<CR>
 nnoremap <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp''
 
 """ moving lines
