@@ -171,6 +171,11 @@ nnoremap <leader>q q
 nnoremap <leader>Q Q
 
 """ tabs, windows/panes, buffers
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
 call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
 call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
