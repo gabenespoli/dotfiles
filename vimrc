@@ -393,9 +393,7 @@ nnoremap <leader>Y :SyntasticToggleMode<CR>
 " see settings in .vim/ftplugin/markdown.vim
 
 """ Critic Markdown Plugin
-" cite.py (include here because of similar keybindings)
 nnoremap <leader>ca :Critic accept<CR>
-nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
 nnoremap <leader>cci i{>><<}<Esc>hhi
 nnoremap <leader>cca a{>><<}<Esc>hhi
 nnoremap <leader>cd F{df}
@@ -408,10 +406,14 @@ nnoremap <leader>chw ea==}<Esc>bbi{==<Esc>
 nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
 nnoremap <leader>ck /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <leader>cK ?{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cn :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
+nnoremap <leader>cr :Critic reject<CR>
+
+" cite.py (include here because of similar keybindings)
+nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
+nnoremap <leader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
+nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
-nnoremap <leader>cr :Critic reject<CR>
 
 """ todo-txt.vim
 " let g:Todo_txt_do_not_map = 1
