@@ -60,7 +60,7 @@ case "$inputType" in
         args="${args} --filter pandoc-fignos --filter pandoc-tablenos" # figure and table numbers
         ;;
     docx )
-        args="${args} --wrap=none --atx-headers --extract-media=docxmedia --track-changes=all"
+        args="${args} --wrap=none --atx-headers --extract-media=docxmedia --track-changes=all --reference-location=block"
         ;;
 esac
 
