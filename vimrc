@@ -403,8 +403,8 @@ nnoremap <leader>cha a==}<Esc>
 nnoremap <leader>chd f}XXxF{xxx
 nnoremap <leader>chh I{==<Esc>A==}<Esc>
 nnoremap <leader>chi i{==<Esc>
-nnoremap <leader>chs (i{==<Esc>)i==}<Esc>
 nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
+nnoremap <leader>chw ea==}<Esc>bbi{==<Esc>
 nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
 nnoremap <leader>ck /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <leader>cK ?{==\\|{>>\\|{++\\|{--<CR>
