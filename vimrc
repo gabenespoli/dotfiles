@@ -261,9 +261,9 @@ function! Lscreen(type)
         let type = 1
     endif
     if type == 1
-        let g:CapitalL_defaultWidth = 76
-        let b:CapitalL_width = 76
-        let g:CapitalL_qf_width = 76
+        let g:CapitalL_defaultWidth = 59
+        let b:CapitalL_width = 59
+        let g:CapitalL_qf_width = 59
     else
         let g:CapitalL_defaultWidth = 40
         let b:CaptialL_width = 40
@@ -526,24 +526,6 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
-" settings for proper formatting of emails function! ToggleMailMode()
-function! MuttMailMode()
-    "exe ':call CenWinToggle(80)'
-    setlocal textwidth=0 wrapmargin=0 wrap linebreak 
-    hi StatusLine ctermfg=8
-    hi StatusLineNC ctermfg=8
-    setlocal statusline=%*%#WarningMsg#%m%r%*
-    set norelativenumber nonumber
-    set spell
-    set laststatus=2 showtabline=0
-    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
-    nnoremap <buffer> q :wq<CR>
-    "setlocal nocp 
-    "exe "/^$"
-    "exe "normal! gg}O\<Esc>o"
-    exe "normal! gg"
-endfunction
 
 function! ToggleCsvTsv()
     if exists("b:delimiter")
