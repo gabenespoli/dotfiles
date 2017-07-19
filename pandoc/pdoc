@@ -12,6 +12,7 @@ bibtexfile="$HOME/.pandoc/library.bib"
 cslfile="$HOME/.pandoc/apa-no-doi-no-issue.csl"
 refdocx="$HOME/.pandoc/apa.docx"
 open_after_convert=false
+output_adjustments=true
 
 ## parse filename and set output type
 inputFile="$1"
@@ -41,6 +42,8 @@ do
             args="${args} --filter pandoc-citeproc --bibliography=${bibtexfile} --csl=${cslfile}" ;;
         open )
             open_after_convert=true ;;
+        noadj )
+            output_adjustments=false ;;
     esac
 done
 
@@ -70,45 +73,47 @@ echo "pandoc "$allargs
 pandoc $allargs
 
 ## adjust output
-case "$outputType" in
-    md|markdown )
-        echo "Making adjustments for markdown output..."
+if [ $output_adjustments == true ]; then
+    case "$outputType" in
+        md|markdown )
+            echo "Making adjustments for markdown output..."
 
-        # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
-        perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$outputFile"
+            # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
+            perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$outputFile"
 
-        # first match a space before to avoid double spaces 
-        # word doesn't include the deleted space in the deletion, and instead uses smart spacing itself
-        # this means we have to do some smart spacing ourselves
-        perl -pi -e 's/\ \[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
-        perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
-        perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$outputFile"
+            # first match a space before to avoid double spaces 
+            # word doesn't include the deleted space in the deletion, and instead uses smart spacing itself
+            # this means we have to do some smart spacing ourselves
+            perl -pi -e 's/\ \[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
+            perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
+            perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$outputFile"
 
-        # replace backslash-escaped square brackets with plain square brackets
-        # (this is so that pandoc citations are interpreted as code and not text)
-        perl -pi -e 's/\\\[/\[/g' "$outputFile"
-        perl -pi -e 's/\\\]/\]/g' "$outputFile"
+            # replace backslash-escaped square brackets with plain square brackets
+            # (this is so that pandoc citations are interpreted as code and not text)
+            perl -pi -e 's/\\\[/\[/g' "$outputFile"
+            perl -pi -e 's/\\\]/\]/g' "$outputFile"
 
-        # replace &lt; and &gt; with < and >
-        perl -pi -e 's/\&lt\;/\</g' "$outputFile"
-        perl -pi -e 's/\&gt\;/\>/g' "$outputFile"
+            # replace &lt; and &gt; with < and >
+            perl -pi -e 's/\&lt\;/\</g' "$outputFile"
+            perl -pi -e 's/\&gt\;/\>/g' "$outputFile"
 
-        # replace curly apostrophes and quotes with straight ones
-        perl -pi -e 's/”/"/g' "$outputFile"
-        perl -pi -e 's/“/"/g' "$outputFile"
-        perl -pi -e "s/’/'/g" "$outputFile"
-        perl -pi -e "s/‘/'/g" "$outputFile"
+            # replace curly apostrophes and quotes with straight ones
+            perl -pi -e 's/”/"/g' "$outputFile"
+            perl -pi -e 's/“/"/g' "$outputFile"
+            perl -pi -e "s/’/'/g" "$outputFile"
+            perl -pi -e "s/‘/'/g" "$outputFile"
 
-        # replace en and em dashes with pandoc multi-hyphens
-        perl -pi -e 's/–/--/g' "$outputFile"
-        perl -pi -e 's/—/---/g' "$outputFile"
+            # replace en and em dashes with pandoc multi-hyphens
+            perl -pi -e 's/–/--/g' "$outputFile"
+            perl -pi -e 's/—/---/g' "$outputFile"
 
-        # TODO replace elipses with dots
-        ;;
-    docx )
-        #rm "$tmpFile"
-        ;;
-esac
+            # TODO replace elipses with dots
+            ;;
+        docx )
+            #rm "$tmpFile"
+            ;;
+    esac
+fi
 
 ## open the new file
 if [ $open_after_convert == true ]; then
