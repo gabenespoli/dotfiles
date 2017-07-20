@@ -78,9 +78,12 @@ if [ $output_adjustments == true ]; then
         md|markdown )
             echo "Making adjustments for markdown output..."
 
-            # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
-            perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$outputFile"
+            # possible new workflow
+            # 1. first take care of insertions and deletions
+            # 2. comments with both start and end
+            # 3. remove comment-end stems
 
+            ### insertions and deletions
             # first match a space before to avoid double spaces 
             # word doesn't include the deleted space in the deletion, and instead uses smart spacing itself
             # this means we have to do some smart spacing ourselves
@@ -88,6 +91,17 @@ if [ $output_adjustments == true ]; then
             perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
             perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$outputFile"
 
+            ### highlights and comments
+            # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
+            # perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$outputFile"
+
+            # try matching comment start and end separately, then fix after
+            # \1=comment, \2=id, \3=author, \4=date/time
+            perl -pi -e 's/\[([^\]]*)\]\{\.comment-start\ id="([^"]*)"\ author="([^"]*)"\ date="([^"]*)"\}/\{>>\3\ \(\2\):\ \1<<\}\{\=\=/g' "$outputFile"
+            # 1=id
+            perl -pi -e 's/\[\]\{\.comment-end\ id="([^"]*)"\}/\=\=\}\{>>\(\1\)<<\}/g' "$outputFile"
+
+            ### misc puncuation
             # replace backslash-escaped square brackets with plain square brackets
             # (this is so that pandoc citations are interpreted as code and not text)
             perl -pi -e 's/\\\[/\[/g' "$outputFile"
