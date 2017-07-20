@@ -122,6 +122,15 @@ if [ $output_adjustments == true ]; then
             perl -pi -e 's/—/---/g' "$outputFile"
 
             # TODO replace elipses with dots
+
+            ### replace in-text figure numbers
+            # this is for the fignos and tablenos pandoc extensions
+            perl -pi -e 's/\[\d+?\]\(#fig:(.*?)\)/\@fig:$1/g' "$outputFile"
+            perl -pi -e 's/\[\d+?\]\(#tbl:(.*?)\)/\@tbl:$1/g' "$outputFile"
+
+            ### replace multiple spaces with one
+            perl -pi -e 's/\s{2,}/\ /g' "$outputFile"
+
             ;;
         docx )
             #rm "$tmpFile"
