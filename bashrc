@@ -46,7 +46,7 @@ else # Linux options
 fi
 
 ## Environment vars
-export PATH="$HOME/bin:/usr/local/texbin:/usr/local/lib:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/texbin:$HOME/Library/Haskell/bin:/usr/local/lib:/usr/local/bin:$PATH"
 export PS1='\[\e[0;34m\] \w \[\e[0;37m\]\$\[\e[m\] '
 export EDITOR='vim'
 export CLICOLOR=1
