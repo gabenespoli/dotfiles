@@ -87,6 +87,7 @@ if [ $output_adjustments == true ]; then
             # first match a space before to avoid double spaces 
             # word doesn't include the deleted space in the deletion, and instead uses smart spacing itself
             # this means we have to do some smart spacing ourselves
+            # this will break if there is a "]" (closing square bracket) in the insertion/deletion
             perl -pi -e 's/\ \[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
             perl -pi -e 's/\[([^\]]*)\]\{\.deletion[^\}]*\}//g' "$outputFile"
             perl -pi -e 's/\[([^\]]*)\]\{\.insertion[^\}]*\}/\1/g' "$outputFile"
@@ -95,10 +96,14 @@ if [ $output_adjustments == true ]; then
             # (capture 1 is the comment; capture 2 is the author; capture 3 is the highlighted text)
             # perl -pi -e 's/\[([^\]]*)\]\{\.comment-start.*?author="(.*?)"[^\}]*\}(.*?)\[\]\{\.comment-end[^\}]*\}/{\=\=\3\=\=\}\{\>\>\2\:\ \1\<\<\}/g' "$outputFile"
 
-            # try matching comment start and end separately, then fix after
-            # \1=comment, \2=id, \3=author, \4=date/time
+            # match comment-start and comment-end separately
+            # keep the id so the start and end can be matched manually (or by code later)
+            # this is because 
+            # - nested comments are a problem, I don't think they can be properly matched with regex
+            # - comments on deleted text show up as stems (either only comment-start or only comment-end, with no matching id)
+            # comment-start captures: \1=comment, \2=id, \3=author, \4=date/time
             perl -pi -e 's/\[([^\]]*)\]\{\.comment-start\ id="([^"]*)"\ author="([^"]*)"\ date="([^"]*)"\}/\{>>\3\ \(\2\):\ \1<<\}\{\=\=/g' "$outputFile"
-            # 1=id
+            # comment-end captures: \1=id
             perl -pi -e 's/\[\]\{\.comment-end\ id="([^"]*)"\}/\=\=\}\{>>\(\1\)<<\}/g' "$outputFile"
 
             ### misc puncuation
