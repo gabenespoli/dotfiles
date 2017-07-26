@@ -67,7 +67,7 @@ alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias lsl='printf "\033c" && ls'
 alias gf="python $HOME/bin/utils/gf.py"
-alias vim="vim -p -c 'let g:termWidth = `tput cols`'"
+alias vim="vim -p -c 'let g:termWidth = `tput cols`' -c 'call CenWidth()'"
 alias pylab="ipython --pylab"
 alias matlab="rlwrap -c -a dummy_arg $MATLAB/bin/matlab -nosplash -nodesktop"
 alias matlab2="rlwrap -c -a dummy_arg $MATLAB2/bin/matlab -nosplash -nodesktop"
