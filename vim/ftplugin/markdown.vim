@@ -6,7 +6,6 @@ set spell       " enable live spell checking
 nnoremap zz zz
 nnoremap <localleader>S :set spell!<CR>
 nnoremap <localleader>s 1z=
-nnoremap <localleader>d :r! echo "\#\# `date '+\%Y-\%m-\%d'`"<CR>o
 nnoremap gd :Gdiff<CR>:windo set wrap<CR>
 
 """ move up and down by visual line
@@ -26,8 +25,6 @@ nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 """ pandoc highlighting issues
 nnoremap <localleader>i :call PandocForceHighlighting()<CR>
-nnoremap <localleader>e :call FauxCenwinOpen()<CR>:call PandocForceHighlighting()<CR>
-nnoremap <localleader>E :call FauxCenwinClose()<CR>:call PandocForceHighlighting()<CR>
 
 "" highlights
 " note: colors are based on the solarized 16 color palette
