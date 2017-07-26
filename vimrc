@@ -220,7 +220,6 @@ nnoremap <localleader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
 nnoremap <leader>e :call CenwinToggle()<CR>
-command -nargs=* Lscreen call Lscreen(<q-args>)
 
 function! CenwinToggle()
     if !exists("b:CenwinStatus")
@@ -247,19 +246,20 @@ function! CenwinToggle()
     endif
 endfunction
 
-function! Lscreen(type)
+function! CenWidth(...)
     if a:0 == 0
-        let type = 1
+        let width = 100
     endif
-    if type == 1
-        let g:CapitalL_defaultWidth = 59
-        let b:CapitalL_width = 59
-        let g:CapitalL_qf_width = 59
+    if !exists("g:termWidth")
+        echoerr "g:termWidth does not exist. Using default side widths of 40."
+        let sideWidth = 40
     else
-        let g:CapitalL_defaultWidth = 40
-        let b:CaptialL_width = 40
-        let g:CapitalL_qf_width = 40
+        " let sideWidth = (g:termWidth - width) / 2
+        let sideWidth = g:termWidth / 4
     endif
+    let g:CapitalL_defaultWidth = sideWidth
+    let b:CapitalL_width = sideWidth
+    let g:CapitalL_qf_width = sideWidth
 endfunction
 
 """ vim-scripts/YankRing.vim
