@@ -162,9 +162,6 @@ vnoremap jk <Esc>
 "<leader>O opens ranger
 nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader>w :close<CR>
-nnoremap <leader>D :bdelete<CR>
-nnoremap <leader>X :bwipe<CR>
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
 nnoremap <leader>q q
