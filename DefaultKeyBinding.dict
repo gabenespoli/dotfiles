@@ -11,22 +11,20 @@
     /* http://xahlee.info/kbd/osx_keybinding_action_code.html */
     /* http://osxnotes.net/keybindings.html */
 
-    /* return and enter */
-    "^j" = "insertLineBreak:";
-    "^m" = "insertNewline:";
+    /* deleting */
+    "^w" = "deleteWordBackward:";
 
-    /* arrow keys */
+    /* karabiner-elements swaps escape and tilde/backtick */ 
+    /* these bindings put tilde/backtick back on that key with modifiers*/
+    "$\U001B" = ("insertText:", "~"); /* shift-escape for tilde */
+    "@$\U001B" = ("insertText:", "`"); /* command-shift-escape for backtick */
+
+    /* old lines that karabiner-elements takes care of now */
+    /* "^j" = "insertLineBreak:"; */
+    /* "^m" = "insertNewline:"; */
     /* "^n" = "moveDown:"; */
     /* "^p" = "moveUp:"; */
     /* "^f" = "moveRight:"; */
     /* "^b" = "moveLeft:"; */
-
-    /* deleting */
-    "^w" = "deleteWordBackward:";    
-
-    /* karabiner-elements swaps esc and tilde */ 
-    /* these bindings put tilde and backtick back on that key */
-    "$\U001B" = ("insertText:", "~"); /* shift-escape for tilde */
-    "@$\U001B" = ("insertText:", "`"); /* command-shift-escape for backtick */
 
 }
