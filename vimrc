@@ -182,12 +182,6 @@ call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>')
 call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
 call submode#leave_with('TABS', 'n', '', '<Esc>') 
 
-call submode#enter_with('BUFFERS', 'n', '', '<localleader>[', ':bprevious<CR>')
-call submode#enter_with('BUFFERS', 'n', '', '<localleader>]', ':bnext<CR>')
-call submode#map('BUFFERS', 'n', '', '[', ':bprevious<CR>')
-call submode#map('BUFFERS', 'n', '', ']', ':bnext<CR>')
-call submode#leave_with('BUFFERS', 'n', '', '<Esc>') 
-
 """ split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
 nnoremap <leader>J <C-w>s:bnext<CR>
