@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# original file from:
+# https://gist.github.com/HeirOfNorton/3dc2795f6307145cf7cb
+
 """
 Pandoc filter to convert Tracked Changes in docx
 input to CriticMarkup in the output.

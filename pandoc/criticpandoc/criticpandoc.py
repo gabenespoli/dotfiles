@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# original file from:
+# https://gist.github.com/HeirOfNorton/7dbcaa7c22297fe1b303
+
 """
 Pandoc filter to parse CriticMarkup into Spans for
 Insertion and Deletion. The Docx writer will convert
