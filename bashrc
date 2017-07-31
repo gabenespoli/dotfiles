@@ -174,6 +174,7 @@ function web() {
         tssc ) webpage="http://www.torontossc.com/profile/" ;;
         # misc
         f|fb|facebook ) webpage="http://www.facebook.com" ;;
+        plex ) webpage="http://192.168.1.12:32400/web" ;;
     esac
     open $webpage
 }
