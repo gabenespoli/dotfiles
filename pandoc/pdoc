@@ -32,21 +32,6 @@ else
 fi
 outputFile=${inputFile}${outputExt}
 
-## user-defined
-for arg in $@
-do
-    case "$arg" in
-        toc )
-            args="${args} --toc" ;;
-        refs|ref )
-            args="${args} --filter pandoc-citeproc --bibliography=${bibtexfile} --csl=${cslfile}" ;;
-        open )
-            open_after_convert=true ;;
-        noadj )
-            output_adjustments=false ;;
-    esac
-done
-
 ## prepare input
 case "$inputType" in
     md|markdown )
@@ -66,6 +51,21 @@ case "$inputType" in
         args="${args} --wrap=none --atx-headers --extract-media=docxmedia --track-changes=all --reference-location=block"
         ;;
 esac
+
+## user-defined
+for arg in $@
+do
+    case "$arg" in
+        toc )
+            args="${args} --toc" ;;
+        refs|ref )
+            args="${args} --filter pandoc-citeproc --bibliography=${bibtexfile} --csl=${cslfile}" ;;
+        open )
+            open_after_convert=true ;;
+        noadj )
+            output_adjustments=false ;;
+    esac
+done
 
 ## call pandoc
 allargs="-f $inputType $inputFile -t $outputType -o $outputFile --smart --standalone $args"
