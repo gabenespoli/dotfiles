@@ -197,7 +197,7 @@ set clipboard=unnamed
 
 " nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
 nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>p
-" nnoremap <leader>t "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
+nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 "vimdiff
 nnoremap du :diffupdate<CR>
