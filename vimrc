@@ -162,6 +162,7 @@ vnoremap jk <Esc>
 "<leader>o opens ctrlp plugin
 "<leader>O opens ranger
 nnoremap <leader>n :tabnew<CR>
+nnoremap <leader>N :tabnew %<CR>
 nnoremap <leader>s :w<CR>
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
