@@ -397,8 +397,8 @@ nnoremap <leader>chi i{==<Esc>
 nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
 nnoremap <leader>chw ea==}<Esc>bbi{==<Esc>
 nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
-nnoremap <leader>ck /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cK ?{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <leader>cf /{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <leader>cF ?{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <leader>cr :Critic reject<CR>
 
 " cite.py (include here because of similar keybindings)
