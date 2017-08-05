@@ -46,6 +46,7 @@ Plugin 'vim-pandoc/vim-criticmarkup'
 Plugin 'jvirtanen/vim-octave'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -196,7 +197,7 @@ set clipboard=unnamed
 
 " nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
 nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>t "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
+" nnoremap <leader>t "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 "vimdiff
 nnoremap du :diffupdate<CR>
