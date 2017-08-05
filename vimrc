@@ -391,7 +391,7 @@ nnoremap <leader>cci i{>><<}<Esc>hhi
 nnoremap <leader>cca a{>><<}<Esc>hhi
 nnoremap <leader>cd F{df}
 nnoremap <leader>cha a==}<Esc>
-nnoremap <leader>chd f}XXxF{xxx
+nnoremap <leader>chd F{xxxf}XXx
 nnoremap <leader>chh I{==<Esc>A==}<Esc>
 nnoremap <leader>chi i{==<Esc>
 nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
