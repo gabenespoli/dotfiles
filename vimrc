@@ -217,6 +217,7 @@ nnoremap <localleader>s 1z=
 "" Plugin settings
 """ gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
+nnoremap <leader>l :Lnext<CR>:call PandocForceHighlighting()<CR>
 nnoremap <localleader>q :Ctoggle<CR>
 nnoremap <localleader>r :call CapitalL_formatLists()<CR>
 let g:CapitalL_qf_position = "right"
