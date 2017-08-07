@@ -277,6 +277,8 @@ nnoremap <localleader>t :TlistToggle<CR>
 autocmd FileType octave setlocal commentstring=%\ %s
 
 """ tpope/vim-unimpaired
+nnoremap <C-n> :lnext<CR>
+nnoremap <C-p> :lprevious<CR>
 " my own macro binding of the default ones
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
