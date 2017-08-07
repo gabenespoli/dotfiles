@@ -581,6 +581,10 @@ function! MuttMailMode()
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
+    nnoremap <buffer> j gj
+    nnoremap <buffer> k gk
+    nnoremap <buffer> gj j
+    nnoremap <buffer> gk k
     nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
     nnoremap <buffer> q :wq<CR>
     "setlocal nocp 
