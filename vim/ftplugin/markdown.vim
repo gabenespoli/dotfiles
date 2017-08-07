@@ -3,28 +3,28 @@ set spell       " enable live spell checking
 
 "" keybindings
 """ general
-nnoremap zz zz
-nnoremap <localleader>S :set spell!<CR>
-nnoremap <localleader>s 1z=
-nnoremap gd :Gdiff<CR>:windo set wrap<CR>
+nnoremap <buffer> zz zz
+nnoremap <buffer> <localleader>S :set spell!<CR>
+nnoremap <buffer> <localleader>s 1z=
+nnoremap <buffer> gd :Gdiff<CR>:windo set wrap<CR>
 
 """ move up and down by visual line
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+nnoremap <buffer> j gj
+nnoremap <buffer> k gk
+nnoremap <buffer> gj j
+nnoremap <buffer> gk k
 
 """ headings
-nnoremap <localleader>0 :s/^#*\ *//ge<CR>
-nnoremap <localleader>1 :s/^#*\ */#\ /ge<CR>
-nnoremap <localleader>2 :s/^#*\ */##\ /ge<CR>
-nnoremap <localleader>3 :s/^#*\ */###\ /ge<CR>
-nnoremap <localleader>4 :s/^#*\ */####\ /ge<CR>
-nnoremap <localleader>5 :s/^#*\ */#####\ /ge<CR>
-nnoremap <localleader>6 :s/^#*\ */######\ /ge<CR>
+nnoremap <buffer> <localleader>0 :s/^#*\ *//ge<CR>
+nnoremap <buffer> <localleader>1 :s/^#*\ */#\ /ge<CR>
+nnoremap <buffer> <localleader>2 :s/^#*\ */##\ /ge<CR>
+nnoremap <buffer> <localleader>3 :s/^#*\ */###\ /ge<CR>
+nnoremap <buffer> <localleader>4 :s/^#*\ */####\ /ge<CR>
+nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
+nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 """ pandoc highlighting issues
-nnoremap <localleader>i :call PandocForceHighlighting()<CR>
+nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
 
 "" highlights
 " note: colors are based on the solarized 16 color palette
