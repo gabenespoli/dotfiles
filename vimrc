@@ -217,9 +217,8 @@ nnoremap <localleader>s 1z=
 "" Plugin settings
 """ gabenespoli/capitalL.vim
 nnoremap <localleader>l :Ltoggle<CR>
-nnoremap <leader>l :Lnext<CR>:call PandocForceHighlighting()<CR>
 nnoremap <localleader>q :Ctoggle<CR>
-nnoremap <localleader>r :call CapitalL_formatLists()<CR>
+nnoremap <localleader>r :Lrefresh<CR>
 let g:CapitalL_qf_position = "right"
 let g:CapitalL_qf_width = 40
 nnoremap <leader>e :call CenwinToggle()<CR>
@@ -278,8 +277,6 @@ nnoremap <localleader>t :TlistToggle<CR>
 autocmd FileType octave setlocal commentstring=%\ %s
 
 """ tpope/vim-unimpaired
-nnoremap <C-n> :lnext<CR>zt
-nnoremap <C-p> :lprevious<CR>zt
 " my own macro binding of the default ones
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
