@@ -63,3 +63,5 @@ function! PandocForceHighlighting()
 endfunction
 au VimEnter * :call PandocForceHighlighting()
 
+"" quickfix list with critic comments and todos
+execute "vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
