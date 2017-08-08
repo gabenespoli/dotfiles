@@ -55,7 +55,6 @@ function! PandocForceHighlighting()
     hi pandocStrong cterm=bold ctermfg=15
     syn match mdTodo /^\s*TODO.*/
     hi link mdTodo Todo
-
     hi criticAdd cterm=reverse ctermfg=2 ctermbg=8
     hi criticDel cterm=reverse ctermfg=1 ctermbg=8
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
@@ -68,5 +67,5 @@ function! Qvimgrep_md()
     execute "vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
 endfunction
 execute "call Qvimgrep_md()"
-nnoremap <buffer> <localleader>Q :call Qvimgrep_md()<CR>:Lrefresh<CR>
+nnoremap <buffer> <localleader>Q :call Qvimgrep_md()<CR>:Lrefresh<CR>:call PandocForceHighlighting()<CR>
 
