@@ -64,4 +64,9 @@ endfunction
 au VimEnter * :call PandocForceHighlighting()
 
 "" quickfix list with critic comments and todos
-execute "vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
+function! Qvimgrep_md()
+    execute "vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
+endfunction
+execute "call Qvimgrep_md()"
+nnoremap <buffer> <localleader>Q :call Qvimgrep_md()<CR>:Lrefresh<CR>
+
