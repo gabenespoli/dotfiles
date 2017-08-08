@@ -386,20 +386,25 @@ nnoremap <leader>Y :SyntasticToggleMode<CR>
 " see settings in .vim/ftplugin/markdown.vim
 
 """ Critic Markdown Plugin
-nnoremap <leader>ca :Critic accept<CR>
-nnoremap <leader>cci i{>><<}<Esc>hhi
-nnoremap <leader>cca a{>><<}<Esc>hhi
-nnoremap <leader>cd F{df}
-nnoremap <leader>cha a==}<Esc>
-nnoremap <leader>chd F{xxxf}XXx
-nnoremap <leader>chh I{==<Esc>A==}<Esc>
+" insert tags (comments and highlights)
+nnoremap <leader>ci i{>>Gabe Nespoli: <<}<Esc>hhi
 nnoremap <leader>chi i{==<Esc>
+nnoremap <leader>cha a==}<Esc>
+nnoremap <leader>chh I{==<Esc>A==}<Esc>
 nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
 nnoremap <leader>chw ea==}<Esc>bbi{==<Esc>
-nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
+" nnoremap <leader>cdh :call search('{==','cb',line('.'))<CR>d3l:call search('==}','c',line('.'))<CR>d3l
+
+" remove tags (highlights, whole tags, accept/reject)
+nnoremap <leader>chd F{xxxf}XXx
+nnoremap <leader>cd F{df}
+nnoremap <leader>ca :Critic accept<CR>
+nnoremap <leader>cr :Critic reject<CR>
+
+" search and highlight
 nnoremap <leader>cf /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <leader>cF ?{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cr :Critic reject<CR>
+nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
 
 " cite.py (include here because of similar keybindings)
 nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
