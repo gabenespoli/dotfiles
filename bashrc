@@ -47,7 +47,8 @@ fi
 
 ## Environment vars
 export PATH="$HOME/bin:/usr/local/texbin:$HOME/Library/Haskell/bin:/usr/local/lib:/usr/local/bin:$PATH"
-export PS1='\[\e[0;34m\] \w \[\e[0;37m\]\$\[\e[m\] '
+git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
+export PS1='\[\e[0;34m\] \w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='vim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
