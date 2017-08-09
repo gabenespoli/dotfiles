@@ -16,6 +16,7 @@ Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 Plugin 'vim-scripts/Rename'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -291,6 +292,27 @@ function! SearchHighlightToggle()
         execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
     endif
 endfunction!
+
+""" tpope/vim-repeat
+silent! call repeat#set("\<Plug>unimpairedANext", v:count)
+silent! call repeat#set("\<Plug>unimpairedAPrevious", v:count)
+silent! call repeat#set("\<Plug>unimpairedBNext", v:count)
+silent! call repeat#set("\<Plug>unimpairedBPrevious", v:count)
+silent! call repeat#set("\<Plug>unimpairedLNext", v:count)
+silent! call repeat#set("\<Plug>unimpairedLPrevious", v:count)
+silent! call repeat#set("\<Plug>unimpairedQNext", v:count)
+silent! call repeat#set("\<Plug>unimpairedQPrevious", v:count)
+silent! call repeat#set("\<Plug>unimpairedTNext", v:count)
+silent! call repeat#set("\<Plug>unimpairedTPrevious", v:count)
+silent! call repeat#set("\<Plug>unimpairedMoveDown", v:count)
+silent! call repeat#set("\<Plug>unimpairedMoveUp", v:count)
+silent! call repeat#set("\<Plug>unimpairedDirectoryNext", v:count)
+silent! call repeat#set("\<Plug>unimpairedDirectoryPrevious", v:count)
+silent! call repeat#set("\<Plug>unimpairedContextNext", v:count)
+silent! call repeat#set("\<Plug>unimpairedContextPrevious", v:count)
+
+silent! call repeat#set("\<Plug>GitGutterNextHunk", v:count)
+silent! call repeat#set("\<Plug>GitGutterPreviousHunk", v:count)
 
 """ tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>7j
