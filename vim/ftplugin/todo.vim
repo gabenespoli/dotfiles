@@ -18,8 +18,6 @@ nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-
 
 """ moving lines
 nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
-nnoremap <buffer> J :move +1<CR>:w<CR>
-nnoremap <buffer> K :move -2<CR>:w<CR>
 nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
 
 """ task points (1 2 3 5 8)
