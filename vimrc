@@ -321,12 +321,7 @@ nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
 nnoremap g<C-g> <C-g>
 
 """ airblade/vim-gitgutter 
-let g:gitgutter_map_keys = 0 " unmap bindings that conflict with <leader>h
-let g:gitgutter_enabled = 1 " toggle to start vim with gitgutter enabled
-let g:gitgutter_signs = 1
 nnoremap cog :GitGutterSignsToggle<CR>
-nmap [c <Plug>GitGutterPrevHunk
-nmap ]c <Plug>GitGutterNextHunk
 
 """ rickhowe/diffchar.vim
 " I've commented out the keymaps in plugin/diffchar.vim
