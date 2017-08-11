@@ -1,1 +1,1 @@
-noremap <buffer> <leader>g :silent wq<CR>
+noremap <buffer> <leader>gc :silent wq<CR>
