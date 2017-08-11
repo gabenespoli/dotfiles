@@ -203,8 +203,6 @@ nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 "vimdiff
 nnoremap du :diffupdate<CR>
-" force this diffchar.vim highlight cause it always reverts
-nnoremap dh :hi _DiffDelPos ctermfg=1 ctermbg=0 cterm=underline<CR>
 
 " emacs movement
 "nnoremap <C-h> X " this one seems to already work, no need to remap
