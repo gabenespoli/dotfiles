@@ -126,7 +126,7 @@ if [ $output_adjustments == true ]; then
             perl -pi -e 's/–/--/g' "$outputFile"
             perl -pi -e 's/—/---/g' "$outputFile"
 
-            # TODO replace elipses with dots
+            # replace elipsis with dots
             perl -pi -e 's/…/.../g' "$outputFile"
 
             ### replace in-text figure numbers
