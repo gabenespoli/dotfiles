@@ -6,7 +6,7 @@ set spell       " enable live spell checking
 nnoremap <buffer> zz zz
 nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> <localleader>s 1z=
-nnoremap <buffer> gd :Gdiff<CR>:windo set wrap<CR>
+nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
 """ move up and down by visual line
 nnoremap <buffer> j gj
