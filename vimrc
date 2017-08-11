@@ -315,10 +315,9 @@ silent! call repeat#set("\<Plug>GitGutterNextHunk", v:count)
 silent! call repeat#set("\<Plug>GitGutterPreviousHunk", v:count)
 
 """ tpope/vim-fugitive
-nnoremap gs :Gstatus<CR>7j
-nnoremap gd :Gdiff<CR>
-nnoremap <C-g> :Gwrite<CR>:Gcommit<CR>i
-nnoremap g<C-g> <C-g>
+nnoremap <leader>gs :Gstatus<CR>7j
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gc :Gwrite<CR>:Gcommit<CR>i
 
 """ airblade/vim-gitgutter 
 nnoremap cog :GitGutterSignsToggle<CR>
