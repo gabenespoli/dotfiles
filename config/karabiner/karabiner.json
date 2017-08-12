@@ -364,7 +364,7 @@
                 "f9": "vk_consumer_next"
             },
             "name": "Mac",
-            "selected": false,
+            "selected": true,
             "simple_modifications": {
                 "caps_lock": "left_control",
                 "escape": "grave_accent_and_tilde",
@@ -723,7 +723,7 @@
                 "f9": "fastforward"
             },
             "name": "Windows",
-            "selected": true,
+            "selected": false,
             "simple_modifications": {
                 "caps_lock": "left_control",
                 "escape": "grave_accent_and_tilde",
