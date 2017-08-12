@@ -401,7 +401,7 @@ nnoremap <leader>Y :SyntasticToggleMode<CR>
 
 """ Critic Markdown Plugin
 " insert tags (comments and highlights)
-nnoremap <leader>ci i{>>Gabe Nespoli: <<}<Esc>hhi
+nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
 nnoremap <leader>chi i{==<Esc>
 nnoremap <leader>cha a==}<Esc>
 nnoremap <leader>chh I{==<Esc>A==}<Esc>
