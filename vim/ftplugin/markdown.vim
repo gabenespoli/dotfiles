@@ -66,6 +66,6 @@ au VimEnter * :call PandocForceHighlighting()
 function! Qvimgrep_md()
     execute "vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
 endfunction
-execute "call Qvimgrep_md()"
+execute "silent! call Qvimgrep_md()"
 nnoremap <buffer> <localleader>Q :call Qvimgrep_md()<CR>:Lrefresh<CR>:call PandocForceHighlighting()<CR>
 
