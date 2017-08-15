@@ -40,7 +40,6 @@ Plugin 'jpalardy/vim-slime'
 
 " syntax
 Plugin 'w0rp/ale'
-" Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
@@ -130,7 +129,7 @@ set incsearch           " highlight search results as you type
 let loaded_matchparen = 1 " don't match parentheses, use % instead
 
 "" Status Line
-" mode [+][RO] 'filename' [type][fugitive][syntastic] ... line/lines,col (pct)
+" ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
 set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
@@ -409,15 +408,6 @@ function! LinterStatus(type) abort
         return ''
     endif
 endfunction
-
-""" vim-syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {"mode": "passive", "active_filetypes": [], "passive_filetypes": []}
-nnoremap <leader>y :SyntasticCheck<CR>
-nnoremap <leader>Y :SyntasticToggleMode<CR>
 
 """ vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
