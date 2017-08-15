@@ -5,8 +5,8 @@ let g:colors_name='gaberized'
 "" Solarized customizations
 hi Title                ctermfg=15      ctermbg=none    cterm=none
 "hi Operator             ctermfg=7       ctermbg=none    cterm=none
-hi WarningMsg           ctermfg=1       ctermbg=0       cterm=none
-hi ErrorMsg             ctermfg=7       ctermbg=1       cterm=none
+hi WarningMsg           ctermfg=9       ctermbg=8       cterm=reverse
+hi ErrorMsg             ctermfg=1       ctermbg=7       cterm=reverse
 
 hi StatusLine           ctermfg=0       ctermbg=14      cterm=reverse
 hi StatusLineNC         ctermfg=0       ctermbg=10      cterm=reverse
@@ -38,6 +38,9 @@ hi DiffAdd              ctermfg=2       ctermbg=0
 hi DiffChange           ctermfg=12      ctermbg=0
 hi DiffDelete           ctermfg=1       ctermbg=0
 hi DiffText             ctermfg=9       ctermbg=0
+
+"" Custom
+hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
 
 "" Syntax-specific
 """ Mail compose colors
