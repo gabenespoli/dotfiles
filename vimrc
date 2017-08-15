@@ -21,7 +21,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 " Plugin 'rickhowe/diffchar.vim'
-Plugin 'kana/vim-submode'
+" Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
 Plugin 'ervandew/supertab'
 "Plugin 'Valloric/YouCompleteMe'
@@ -180,11 +180,11 @@ nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
-call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
-call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
-call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
-call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
-call submode#leave_with('TABS', 'n', '', '<Esc>') 
+" call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
+" call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
+" call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
+" call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
+" call submode#leave_with('TABS', 'n', '', '<Esc>') 
 
 """ split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
@@ -331,9 +331,9 @@ nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 " I've commented out the keymaps in plugin/diffchar.vim
 
 """ kana/vim-submode
-let g:submode_timeout = 0
-let g:submode_tiemoutlen = 1500
-let g:submode_keep_leaving_key = 1
+" let g:submode_timeout = 0
+" let g:submode_tiemoutlen = 1500
+" let g:submode_keep_leaving_key = 1
 
 """ gcmt/taboo.vim
 let g:taboo_tabline = 0
