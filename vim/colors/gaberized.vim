@@ -15,11 +15,11 @@ hi TabLineFill          ctermfg=10      ctermbg=8       cterm=none
 hi TabLine              ctermfg=10      ctermbg=0       cterm=none
 hi TabNum               ctermfg=10      ctermbg=0       cterm=none
 hi TabWinNum            ctermfg=10      ctermbg=0       cterm=none
-hi TabMod               ctermfg=1       ctermbg=0       cterm=none
+hi TabMod               ctermfg=3       ctermbg=0       cterm=none
 hi TabLineSel           ctermfg=7       ctermbg=0       cterm=none
 hi TabNumSel            ctermfg=7       ctermbg=0       cterm=none
 hi TabWinNumSel         ctermfg=7       ctermbg=0       cterm=none
-hi TabModSel            ctermfg=1       ctermbg=0       cterm=none
+hi TabModSel            ctermfg=3       ctermbg=0       cterm=none
 hi Pmenu                ctermfg=0       ctermbg=12      cterm=reverse
 hi PmenuSel             ctermfg=12      ctermbg=8       cterm=reverse
 
@@ -40,7 +40,7 @@ hi DiffDelete           ctermfg=1       ctermbg=0
 hi DiffText             ctermfg=9       ctermbg=0
 
 "" Custom
-hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
+hi StatusFlag           ctermfg=3       ctermbg=0       cterm=none
 
 "" Syntax-specific
 """ Mail compose colors
