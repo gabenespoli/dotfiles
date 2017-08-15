@@ -397,6 +397,18 @@ let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
+function! LinterStatus(type) abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    if a:type == 'Errors'
+        return l:all_errors == 0 ? '' : printf('%dE', all_errors)
+    elseif a:type == 'Warnings'
+        return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
+    else
+        return ''
+    endif
+endfunction
 
 """ vim-syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -474,19 +486,6 @@ function! ToggleStatusBar()
     endif
 endfunction
 nnoremap <leader>f :call ToggleStatusBar()<CR>
-
-function! LinterStatus(type) abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    if a:type == 'Errors'
-        return l:all_errors == 0 ? '' : printf('%dE', all_errors)
-    elseif a:type == 'Warnings'
-        return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
-    else
-        return ''
-    endif
-endfunction
 
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
