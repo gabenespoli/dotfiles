@@ -74,12 +74,10 @@ hi LmarkdownH5          ctermbg=8
 hi LmarkdownH6          ctermbg=8
 
 """ Linters / Syntax checking
-hi ALEErrorSign         ctermfg=1       ctermbg=0       cterm=none
-hi ALEWarningSign       ctermfg=9       ctermbg=0       cterm=none
-hi SyntasticErrorSign   ctermfg=1       ctermbg=8       cterm=none
-hi SyntasticWarningSign ctermfg=9       ctermbg=8       cterm=none
-"hi SyntasticErrorLine   ctermfg=1       ctermbg=8       cterm=none
-"hi SyntasticWarningLine ctermfg=1       ctermbg=8       cterm=none
+hi link ALEErrorSign ErrorMsg
+hi link ALEWarningSign WarningMsg
+" hi link SyntasticErrorSign ErrorMsg
+" hi link SyntasticWarningSign WarningMsg
 
 """ Buffergator
 hi BuffergatorBufferNr  ctermfg=10      ctermbg=8       cterm=none
