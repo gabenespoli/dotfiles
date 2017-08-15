@@ -133,32 +133,25 @@ let loaded_matchparen = 1 " don't match parentheses, use % instead
 " mode [+][RO] 'filename' [type][fugitive][syntastic] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
-set statusline+=%{mode()}\ %#WarningMsg#%m%r%*\"%t\"\ %y
+set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
+set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
+" set statusline+=%{mode()}
+set statusline+=\ %#StatusFlag#%m%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
 set statusline+=%#StatusLineFill#%=%*                      
-set statusline+=%#WarningMsg#%{LinterStatus()}%* 
 set statusline+=%l/%L\,%c\ (%P)                           
 " add word count for markdown files (on the far right)
 augroup filetype_markdown
     autocmd FileType markdown set statusline=
-    autocmd FileType markdown set statusline+=%{mode()}\ %#WarningMsg#%m%r%*\"%t\"\ %y
+    autocmd FileType markdown set statusline+=%{mode()}
+    autocmd FileType markdown set statusline+=%#StatusFlag#%m%r%*\"%t\"\ %y
     autocmd FileType markdown set statusline+=%{fugitive#statusline()}
     autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
-    autocmd FileType markdown set statusline+=%#WarningMsg#%{LinterStatus()}\ %* 
+    autocmd FileType markdown set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
+    autocmd FileType markdown set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
     autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
     autocmd FileType markdown set statusline+=\ {%{WordCount()}}
 augroup END
-
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? '' : printf(
-    \   '%dW %dE ',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
 
 " tpope's statusline:
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
@@ -402,6 +395,8 @@ nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
+let g:ale_sign_error = '!!'
+let g:ale_sign_warning = '??'
 
 """ vim-syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -479,6 +474,19 @@ function! ToggleStatusBar()
     endif
 endfunction
 nnoremap <leader>f :call ToggleStatusBar()<CR>
+
+function! LinterStatus(type) abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    if a:type == 'Errors'
+        return l:all_errors == 0 ? '' : printf('%dE', all_errors)
+    elseif a:type == 'Warnings'
+        return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
+    else
+        return ''
+    endif
+endfunction
 
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
@@ -609,7 +617,7 @@ function! MuttMailMode()
     setlocal textwidth=0 wrapmargin=0 wrap linebreak 
     hi StatusLine ctermfg=8
     hi StatusLineNC ctermfg=8
-    setlocal statusline=%*%#WarningMsg#%m%r%*
+    setlocal statusline=%*%#StatusFlag#%m%r%*
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
