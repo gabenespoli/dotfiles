@@ -317,6 +317,7 @@ silent! call repeat#set("\<Plug>GitGutterPreviousHunk", v:count)
 
 """ tpope/vim-fugitive
 nnoremap <leader>gs :Gstatus<CR>7j
+nnoremap <leader>ga :Gadd<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gc :Gwrite<CR>:Gcommit<CR>i
 
