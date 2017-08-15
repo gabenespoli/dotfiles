@@ -180,6 +180,8 @@ nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
+nnoremap <leader>[ gT
+nnoremap <leader>] gt
 " call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
 " call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
 " call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
