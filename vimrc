@@ -135,7 +135,7 @@ set statusline=
 set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
 set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
 " set statusline+=%{mode()}
-set statusline+=\ %#StatusFlag#%m%r%*\"%t\"\ %y
+set statusline+=\ %#StatusMod#%m%*%#StatusFlag#%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
 set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%l/%L\,%c\ (%P)                           
@@ -143,7 +143,7 @@ set statusline+=%l/%L\,%c\ (%P)
 augroup filetype_markdown
     autocmd FileType markdown set statusline=
     autocmd FileType markdown set statusline+=%{mode()}
-    autocmd FileType markdown set statusline+=%#StatusFlag#%m%r%*\"%t\"\ %y
+    autocmd FileType markdown set statusline+=%#StatusMod#%m%*%#StatusFlag#%r%*\"%t\"\ %y
     autocmd FileType markdown set statusline+=%{fugitive#statusline()}
     autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
     autocmd FileType markdown set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*

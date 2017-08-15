@@ -40,7 +40,8 @@ hi DiffDelete           ctermfg=1       ctermbg=0
 hi DiffText             ctermfg=9       ctermbg=0
 
 "" Custom
-hi StatusFlag           ctermfg=3       ctermbg=0       cterm=none
+hi StatusMod            ctermfg=3       ctermbg=0       cterm=none
+hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
 
 "" Syntax-specific
 """ Mail compose colors
