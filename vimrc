@@ -315,15 +315,17 @@ silent! call repeat#set("\<Plug>unimpairedContextPrevious", v:count)
 silent! call repeat#set("\<Plug>GitGutterNextHunk", v:count)
 silent! call repeat#set("\<Plug>GitGutterPreviousHunk", v:count)
 
-""" tpope/vim-fugitive
-nnoremap <leader>gs :Gstatus<CR>7j
-nnoremap <leader>ga :Gwrite<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gc :Gcommit<CR>i
-nnoremap <leader>gC :Gwrite<CR>:Gcommit<CR>i
-
-""" airblade/vim-gitgutter 
-nnoremap cog :GitGutterSignsToggle<CR>
+""" Git (tpope/vim-fugitive & airblade/vim-gitgutter)
+nmap cog :GitGutterSignsToggle<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>ga :Gwrite<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gwc :Gwrite<CR>:Gcommit<CR>
+nmap <leader>ghd <Plug>GitGutterPreviewHunk
+nmap <leader>gha <Plug>GitGutterStageHunk
+nmap <leader>ghu <Plug>GitGutterUndoHunk
+nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 
 """ rickhowe/diffchar.vim
 " I've commented out the keymaps in plugin/diffchar.vim
