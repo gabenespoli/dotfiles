@@ -39,7 +39,8 @@ Plugin 'jpalardy/vim-slime'
 "Plugin 'ivanov/vim-ipython'
 
 " syntax
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
@@ -134,19 +135,30 @@ let loaded_matchparen = 1 " don't match parentheses, use % instead
 set statusline=
 set statusline+=%{mode()}\ %#WarningMsg#%m%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
-set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
 set statusline+=%#StatusLineFill#%=%*                      
+set statusline+=%#WarningMsg#%{LinterStatus()}%* 
 set statusline+=%l/%L\,%c\ (%P)                           
 " add word count for markdown files (on the far right)
 augroup filetype_markdown
     autocmd FileType markdown set statusline=
     autocmd FileType markdown set statusline+=%{mode()}\ %#WarningMsg#%m%r%*\"%t\"\ %y
     autocmd FileType markdown set statusline+=%{fugitive#statusline()}
-    autocmd FileType markdown set statusline+=%#WarningMsg#%{SyntasticStatuslineFlag()}%* 
     autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
+    autocmd FileType markdown set statusline+=%#WarningMsg#%{LinterStatus()}\ %* 
     autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
     autocmd FileType markdown set statusline+=\ {%{WordCount()}}
 augroup END
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? '' : printf(
+    \   '%dW %dE ',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
 
 " tpope's statusline:
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
@@ -189,7 +201,6 @@ nnoremap <leader>K <C-w>s:bprevious<CR>
 nnoremap <leader>L <C-w>v:bnext<CR>
 
 " copy/paste with system clipboard
-" <leader>y is now used for syntastic
 " vnoremap <leader>y "+y
 " nnoremap <leader>y V"+y
 " nnoremap <leader>p "+p
@@ -386,6 +397,11 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
+
+""" w0rp/ale
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_linter_aliases = {'octave': 'matlab',}
 
 """ vim-syntastic
 let g:syntastic_always_populate_loc_list = 1

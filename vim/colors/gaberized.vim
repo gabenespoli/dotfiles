@@ -70,7 +70,9 @@ hi LmarkdownH4          ctermbg=8
 hi LmarkdownH5          ctermbg=8
 hi LmarkdownH6          ctermbg=8
 
-""" Syntastic
+""" Linters / Syntax checking
+hi ALEErrorSign         ctermfg=1       ctermbg=0       cterm=none
+hi ALEWarningSign       ctermfg=9       ctermbg=0       cterm=none
 hi SyntasticErrorSign   ctermfg=1       ctermbg=8       cterm=none
 hi SyntasticWarningSign ctermfg=9       ctermbg=8       cterm=none
 "hi SyntasticErrorLine   ctermfg=1       ctermbg=8       cterm=none
