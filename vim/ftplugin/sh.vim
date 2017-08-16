@@ -1,10 +1,8 @@
-set syntax=muttrc
-
 set foldmethod=expr
-set foldexpr=GetMuttFolds(v:lnum)
-set foldtext=GetMuttFoldText()
+set foldexpr=GetShFolds(v:lnum)
+set foldtext=GetShFoldText()
 
-function! GetMuttFolds(lnum)
+function! GetShFolds(lnum)
     if getline(a:lnum) =~ '^\s*##'
         return '>1'
     else
@@ -12,7 +10,7 @@ function! GetMuttFolds(lnum)
     endif
 endfunction
 
-function! GetMuttFoldText()
+function! GetShFoldText()
     let line = getline(v:foldstart)
     let line = substitute(line, '^\s*##', '', 'g')
     let line = substitute(line, '^#', '  ', 'g')
