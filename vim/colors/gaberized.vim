@@ -25,7 +25,7 @@ hi PmenuSel             ctermfg=12      ctermbg=8       cterm=reverse
 
 hi LineNr               ctermfg=10      ctermbg=8       cterm=none
 hi FoldColumn           ctermfg=8       ctermbg=12      cterm=reverse
-hi Folded               ctermfg=14      ctermbg=0       cterm=none
+hi Folded               ctermfg=14      ctermbg=8       cterm=none
 hi VertSplit            ctermfg=8       ctermbg=0       cterm=reverse
 hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
 hi NonText              ctermfg=10      ctermbg=8       cterm=none
