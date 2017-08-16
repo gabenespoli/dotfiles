@@ -1,3 +1,6 @@
+
+au BufEnter <buffer> syn match CommentHeading "^"".*$"
+
 set foldmethod=expr
 set foldexpr=GetVimFolds(v:lnum)
 set foldtext=GetVimFoldText()
