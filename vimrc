@@ -106,9 +106,12 @@ set nolist              " show invisibles
 set backspace=indent,eol,start " enable backspacing text that was inserted previously
 set ignorecase
 set smartcase           " if [search terms] has uppercase, then case sensitive
-set nofoldenable        " turn off folding by default
-set foldlevel=20        " set a high fold level so that folds are open by default
 "set digraph             " use <BS> for accents (e.g., e<BS>' for é; e<BS>! for è; o<BS>: for ö)
+
+"" Folding
+set foldenable          " turn on folding by default
+" set foldlevel=9         " set a high fold level so that folds are open by default
+set foldminlines=0
 
 "" UI Config
 set number
