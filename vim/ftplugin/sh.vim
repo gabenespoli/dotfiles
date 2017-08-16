@@ -1,5 +1,5 @@
 
-au BufEnter <buffer> syn match commentHeading "^##.*$"
+au BufEnter <buffer> syn match CommentHeading "^##.*$"
 
 set foldmethod=expr
 set foldexpr=GetShFolds(v:lnum)

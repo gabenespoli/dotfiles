@@ -1,2 +1,2 @@
 
-au BufEnter <buffer> syn match commentHeading "^##.*$"
+au BufEnter <buffer> syn match CommentHeading "^##.*$"
