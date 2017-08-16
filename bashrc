@@ -105,7 +105,7 @@ function note() {
     vim "$filename"
 }
 
-# others
+### others
 alias mail="mutt -F $HOME/dotfiles/muttrc"
 alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder>=Archive<enter>'"
 alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
