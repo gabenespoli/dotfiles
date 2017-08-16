@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ## OS-specific options
-if [ "$(uname)" == "Darwin" ]; then # Mac options
+if [ "$(uname)" == "Darwin" ]; then
+    ### Mac options
     alias ls="ls -hl"
     alias la="ls -hla"
     alias lsa="ls -hla"
@@ -26,8 +27,9 @@ if [ "$(uname)" == "Darwin" ]; then # Mac options
    #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
     export LSCOLORS=exgxcxdxfxegedabagacad
     export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
-    
-else # Linux options
+
+else 
+    ### Linux options
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
