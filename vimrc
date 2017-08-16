@@ -326,11 +326,11 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>ga :Gwrite<CR>
 nmap <leader>gc :Gcommit<CR>
-nmap <leader>gwc :Gwrite<CR>:Gcommit<CR>
+nmap <leader>gwc :Gwrite<CR>:Gcommit<CR>i
 nmap <leader>ghd <Plug>GitGutterPreviewHunk
 nmap <leader>gha <Plug>GitGutterStageHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
-nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
+nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 
 """ rickhowe/diffchar.vim
 " I've commented out the keymaps in plugin/diffchar.vim
