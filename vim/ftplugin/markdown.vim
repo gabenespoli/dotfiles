@@ -9,10 +9,10 @@ nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
 """ move up and down by visual line
-nnoremap <buffer> j gj
-nnoremap <buffer> k gk
-nnoremap <buffer> gj j
-nnoremap <buffer> gk k
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+noremap <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
+noremap <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
 
 """ headings
 nnoremap <buffer> <localleader>0 :s/^#*\ *//ge<CR>
