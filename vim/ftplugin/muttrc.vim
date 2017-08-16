@@ -1,5 +1,7 @@
 set syntax=muttrc
 
+au BufEnter <buffer> syn match CommentHeading '^##.*$'
+
 set foldmethod=expr
 set foldexpr=GetMuttFolds(v:lnum)
 set foldtext=GetMuttFoldText()
