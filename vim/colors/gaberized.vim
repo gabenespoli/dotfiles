@@ -1,3 +1,4 @@
+"" Gaberized Colorschme for Vim
 " source solorized and force colorscheme name to be gaberized
 so ~/.vim/colors/solarized.vim
 let g:colors_name='gaberized'
