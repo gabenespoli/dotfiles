@@ -43,6 +43,7 @@ hi DiffText             ctermfg=9       ctermbg=0
 "" Custom
 hi StatusMod            ctermfg=3       ctermbg=0       cterm=none
 hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
+hi CommentHeading       ctermfg=11      ctermbg=0       cterm=none
 
 "" Syntax-specific
 """ Mail compose colors
@@ -63,7 +64,7 @@ hi markdownH5           ctermfg=7       ctermbg=0       cterm=none
 hi markdownH6           ctermfg=7       ctermbg=0       cterm=none
 
 """ MATLAB
-hi matlabCellComment    ctermfg=11      ctermbg=0
+hi link matlabCellComment CommentHeading
 
 "" Plugin color customizations
 
