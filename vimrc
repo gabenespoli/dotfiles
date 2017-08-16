@@ -110,7 +110,7 @@ set smartcase           " if [search terms] has uppercase, then case sensitive
 
 "" Folding
 set foldenable          " turn on folding by default
-set foldlevel=9         " set a high fold level so that folds are open by default
+set foldlevel=1         " set a high fold level so that folds are open by default
 set foldminlines=0
 
 "" UI Config
