@@ -1,6 +1,26 @@
 "" general
 set spell       " enable live spell checking
 
+""" folding
+set foldmethod=expr
+set foldexpr=GetMarkdownFolds(v:lnum)
+set foldtext=GetMarkdownFoldText()
+
+function! GetMarkdownFolds(lnum)
+    if getline(a:lnum) =~ '^#'
+        return '>1'
+    else
+        return '='
+    endif
+endfunction
+
+function! GetMarkdownFoldText()
+    let line = getline(v:foldstart)
+    let temp = substitute(line, '^#', '', 'g')
+    let sub = substitute(temp, '#', '  ', 'g')
+    return '+--' . sub . ' '
+endfunction
+
 "" keybindings
 """ general
 nnoremap <buffer> zz zz
