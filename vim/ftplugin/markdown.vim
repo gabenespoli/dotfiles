@@ -43,26 +43,6 @@ nnoremap <buffer> <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
-""" folding
-set foldmethod=expr
-set foldexpr=GetMarkdownFolds(v:lnum)
-set foldtext=GetMarkdownFoldText()
-
-function! GetMarkdownFolds(lnum)
-    if getline(a:lnum) =~ '^#'
-        return '>1'
-    else
-        return '='
-    endif
-endfunction
-
-function! GetMarkdownFoldText()
-    let line = getline(v:foldstart)
-    let temp = substitute(line, '^#', '', 'g')
-    let sub = substitute(temp, '#', '  ', 'g')
-    return '+--' . sub . ' '
-endfunction
-
 """ pandoc highlighting issues
 nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
 
