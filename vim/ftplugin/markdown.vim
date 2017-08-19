@@ -124,7 +124,7 @@ function! CriticToggleQF()
     else
         execute "copen"
         execute "set modifiable"
-        silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]\{0,30}\).*/\1\2\.\.\./ge
+        silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
         execute "set nomodified"
         let g:qfstatus = 1
     endif
