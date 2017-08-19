@@ -83,9 +83,25 @@ endfunction
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" quickfix list with critic comments and todos
-function! Qvimgrep_md()
-    execute "vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
-endfunction
-execute "silent! call Qvimgrep_md()"
-nnoremap <buffer> <localleader>Q :call Qvimgrep_md()<CR>:Lrefresh<CR>:call PandocForceHighlighting()<CR>
+au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
+nnoremap <localleader>q :call CriticToggleQF()<CR>
 
+function! CriticVimGrep()
+    execute "silent vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
+endfunction
+
+function! CriticToggleQF()
+    if !exists("g:qfstatus")
+        let g:qfstatus = 0
+    endif
+    if g:qfstatus == 1
+        execute "cclose"
+        let g:qfstatus = 0
+    else
+        execute "copen"
+        execute "set modifiable"
+        silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]\{0,30}\).*/\1\2\.\.\./ge
+        execute "set nomodified"
+        let g:qfstatus = 1
+    endif
+endfunction
