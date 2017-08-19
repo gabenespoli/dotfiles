@@ -104,13 +104,7 @@ function! PandocForceHighlighting()
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunction
-<<<<<<< HEAD
 au VimEnter,BufEnter * :call PandocForceHighlighting()
-||||||| merged common ancestors
-au VimEnter * :call PandocForceHighlighting()
-=======
-au BufEnter * :call PandocForceHighlighting()
->>>>>>> 96868b41b6658c1f18d04f1d87cac5e39895772a
 
 "" quickfix list with critic comments and todos
 au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
