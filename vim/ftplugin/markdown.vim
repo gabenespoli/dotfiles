@@ -80,7 +80,7 @@ function! PandocForceHighlighting()
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunction
-au VimEnter * :call PandocForceHighlighting()
+au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" quickfix list with critic comments and todos
 function! Qvimgrep_md()
