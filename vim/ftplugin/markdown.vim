@@ -29,7 +29,7 @@ set foldexpr=GetMarkdownFolds(v:lnum)
 set foldtext=GetMarkdownFoldText()
 
 function! GetMarkdownFolds(lnum)
-    if getline(a:lnum) =~ '^#'
+    if (getline(a:lnum) =~ '^#') || (a:lnum == 1 && getline(1) =~ '^---$')
         return '>1'
     else
         return '='
@@ -38,9 +38,13 @@ endfunction
 
 function! GetMarkdownFoldText()
     let line = getline(v:foldstart)
-    let temp = substitute(line, '^#', '', 'g')
-    let sub = substitute(temp, '#', '  ', 'g')
-    return '+--' . sub . ' '
+    if line == '---'
+        return '+-- YAML '
+    else
+        let temp = substitute(line, '^#', '', 'g')
+        let sub = substitute(temp, '#', '  ', 'g')
+        return '+--' . sub . ' '
+    endif
 endfunction
 
 """ pandoc highlighting issues
