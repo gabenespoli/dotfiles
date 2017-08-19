@@ -619,10 +619,10 @@ function! MuttMailMode()
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
-    noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-    noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-    noremap <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
-    noremap <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
+    noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+    noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+    noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
+    noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
     nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
     nnoremap <buffer> q :wq<CR>
     "setlocal nocp 
