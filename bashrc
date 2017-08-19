@@ -40,6 +40,7 @@ else
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
     alias ranger="/usr/local/bin/ranger"
+    alias trash="gvfs-trash"
     export MATLAB="/usr/local/MATLAB/R2017a"
     export MATLAB2="/usr/local/MATLAB/R2016a"
     #eval `dircolors $HOME/.dir_colors/dircolors`
