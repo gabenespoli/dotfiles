@@ -1,6 +1,26 @@
 "" general
 set spell       " enable live spell checking
 
+""" folding
+set foldmethod=expr
+set foldexpr=GetMarkdownFolds(v:lnum)
+set foldtext=GetMarkdownFoldText()
+
+function! GetMarkdownFolds(lnum)
+    if getline(a:lnum) =~ '^#'
+        return '>1'
+    else
+        return '='
+    endif
+endfunction
+
+function! GetMarkdownFoldText()
+    let line = getline(v:foldstart)
+    let temp = substitute(line, '^#', '', 'g')
+    let sub = substitute(temp, '#', '  ', 'g')
+    return '+--' . sub . ' '
+endfunction
+
 "" keybindings
 """ general
 nnoremap <buffer> zz zz
@@ -84,7 +104,13 @@ function! PandocForceHighlighting()
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunction
+<<<<<<< HEAD
 au VimEnter,BufEnter * :call PandocForceHighlighting()
+||||||| merged common ancestors
+au VimEnter * :call PandocForceHighlighting()
+=======
+au BufEnter * :call PandocForceHighlighting()
+>>>>>>> 96868b41b6658c1f18d04f1d87cac5e39895772a
 
 "" quickfix list with critic comments and todos
 au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
