@@ -107,7 +107,7 @@ endfunction
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" quickfix list with critic comments and todos
-au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
+" au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
 nnoremap <localleader>q :call CriticToggleQF()<CR>
 
 function! CriticVimGrep()
@@ -122,10 +122,12 @@ function! CriticToggleQF()
         execute "cclose"
         let g:qfstatus = 0
     else
+        execute "call CriticVimGrep()"
         execute "copen"
         execute "set modifiable"
         silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
         execute "set nomodified"
+        normal! gg
         let g:qfstatus = 1
     endif
 endfunction
