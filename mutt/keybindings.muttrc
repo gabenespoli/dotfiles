@@ -8,8 +8,10 @@ bind    index,pager     \Cd     half-down           # default for index is ]
 bind    index,pager     \Cu     half-up             # default for index is [
 bind    index,pager     \Cf     next-page           # default is <Space>; ^F is default for forget-passphrase
 bind    index,pager     \Cb     previous-page       # default is -; ^B is default for urlview/urlscan
+bind    index           g       noop                # to stop error "binding gg will alias 'g'
 bind    index           gg      first-entry         # default is =; g is default for group-reply
 bind    index           G       last-entry          # default is *
+bind    pager           g       noop                # to stop error "binding gg will alias 'g'
 bind    pager           gg      top                 # default is ^; g is default for group-reply
 bind    pager           G       bottom              # default is <End>
 bind    pager           [       half-up             # by default this is not bound in the pager
