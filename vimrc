@@ -372,40 +372,30 @@ nnoremap <leader>b :BuffergatorToggle<CR>
 nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
 """ vim-tmux-navigator
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == 'gmac'
-    let g:tmux_navigator_no_mappings = 1
-    nnoremap <silent> <F5> :TmuxNavigateLeft<CR>
-    nnoremap <silent> <F6> :TmuxNavigateDown<CR>
-    nnoremap <silent> <F7> :TmuxNavigateUp<CR>
-    nnoremap <silent> <F8> :TmuxNavigateRight<CR>
-    inoremap <silent> <F5> <Esc>:TmuxNavigateLeft<CR>
-    inoremap <silent> <F6> <Esc>:TmuxNavigateDown<CR>
-    inoremap <silent> <F7> <Esc>:TmuxNavigateUp<CR>
-    inoremap <silent> <F8> <Esc>:TmuxNavigateRight<CR>
-    vnoremap <silent> <F5> <Esc>:TmuxNavigateLeft<CR>
-    vnoremap <silent> <F6> <Esc>:TmuxNavigateDown<CR>
-    vnoremap <silent> <F7> <Esc>:TmuxNavigateUp<CR>
-    vnoremap <silent> <F8> <Esc>:TmuxNavigateRight<CR>
+if substitute(system('hostname'), '\n', '', '') == 'gmac'
+    execute "set <M-h>=\eh"
+    execute "set <M-j>=\ej"
+    execute "set <M-k>=\ek"
+    execute "set <M-l>=\el"
 else
     execute "set <M-h>=h"
     execute "set <M-j>=j"
     execute "set <M-k>=k"
     execute "set <M-l>=l"
-    let g:tmux_navigator_no_mappings = 1
-    nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-    nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
-    nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
-    nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-    inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-    inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-    inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-    inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-    vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-    vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-    vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-    vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 endif
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
+inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 
 """ vim-slime
 let g:slime_target = "tmux"
