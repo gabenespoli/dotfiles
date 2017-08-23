@@ -43,8 +43,9 @@ function! TodoHighlighting(winnum)
     syn match TodoProject /+\S*/
     syn match TodoContext /@\S*/
     syn match TodoTag /\S*:\S*/ contains=TodoDate,TodoPoints
+    syn match TodoPointsTag /pts:/
+    syn match TodoPoints /pts:\d\{1,2}/ contains=TodoPointsTag
     syn match TodoDate /\d\d\d\d-\d\d-\d\d/
-    syn match TodoPoints /\d\{1,2}\(\s\|$\)/
     hi NonText ctermfg=8
     execute a:winnum . "wincmd w"
 endfunction
