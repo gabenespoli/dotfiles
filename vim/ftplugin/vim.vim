@@ -6,7 +6,7 @@ set foldexpr=GetVimFolds(v:lnum)
 set foldtext=GetVimFoldText()
 
 function! GetVimFolds(lnum)
-    if getline(a:lnum) =~ '^\s*\(""\|function\)'
+    if getline(a:lnum) =~ '^\s*""'
         return '>1'
     else
         return '='
@@ -17,6 +17,5 @@ function! GetVimFoldText()
     let line = getline(v:foldstart)
     let line = substitute(line, '^\s*""', '', 'g')
     let line = substitute(line, '^"', '  ', 'g')
-    let line = substitute(line, '^function', ' function', 'g')
     return '+--' . line . ' '
 endfunction
