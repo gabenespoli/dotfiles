@@ -36,9 +36,9 @@ nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 
 "" functions
 function! TodoHighlighting(winnum)
-    syn match TodoPriorityA /^(A).*/ contains=TodoProject,TodoContext,TodoTag
-    syn match TodoPriorityB /^(B).*/ contains=TodoProject,TodoContext,TodoTag
-    syn match TodoPriorityC /^(C).*/ contains=TodoProject,TodoContext,TodoTag
+    syn match TodoPriorityA /^(A)/ contains=TodoProject,TodoContext,TodoTag
+    syn match TodoPriorityB /^(B)/ contains=TodoProject,TodoContext,TodoTag
+    syn match TodoPriorityC /^(C)/ contains=TodoProject,TodoContext,TodoTag
     syn match TodoDone /^x\ \d\d\d\d-\d\d-\d\d\ .*/
     syn match TodoProject /+\S*/
     syn match TodoContext /@\S*/
