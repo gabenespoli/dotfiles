@@ -41,7 +41,6 @@ else
     alias sambastart="sudo /etc/init.d/samba start"
     alias ranger="/usr/local/bin/ranger"
     alias trash="gvfs-trash"
-    alias offlineimap="python $HOME/local/offlineimap/offlineimap.py"
     export MATLAB="/usr/local/MATLAB/R2017a"
     export MATLAB2="/usr/local/MATLAB/R2016a"
     #eval `dircolors $HOME/.dir_colors/dircolors`
