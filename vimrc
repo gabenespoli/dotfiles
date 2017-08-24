@@ -411,21 +411,51 @@ let g:sidepanel_use_rabbit_ui = 0
 let g:sidepanel_config = {}
 let g:sidepanel_config['nerdtree'] = {}
 let g:sidepanel_config['buffergator'] = {}
-" let g:sidepanel_config['tagbar'] = {}
 let g:sidepanel_config['taglist'] = {}
+let g:sidepanel_config['tagbar'] = {}
 let g:sidepanel_config['gundo'] = {}
 let g:sidepanel_config['blank'] = {}
 
-nnoremap <leader>n :SidePanel nerdtree<CR>
-nnoremap <leader>b :SidePanel buffergator<CR>
-" nnoremap <leader>T :SidePanel tagbar<CR>
-nnoremap <leader>t :SidePanel taglist<CR>:set foldcolumn=0<CR>
-nnoremap <leader>u :SidePanel gundo<CR>
-nnoremap <leader>e :SidePanel blank<CR>
-nnoremap <leader>w :SidePanelClose<CR>
+nnoremap <leader>n :SidePanel nerdtree<CR>:call ResetWindowSizes()<CR>
+nnoremap <leader>b :SidePanel buffergator<CR>:call ResetWindowSizes()<CR>
+nnoremap <leader>t :SidePanel taglist<CR>:call ResetWindowSizes()<CR>
+nnoremap <leader>T :SidePanel tagbar<CR>:call ResetWindowSizes()<CR>
+nnoremap <leader>u :SidePanel gundo<CR>:call ResetWindowSizes()<CR>
+nnoremap <leader>e :call SidePanelToggle()<CR>
+
+function! ResetWindowSizes()
+    let current_bufwinnr = bufwinnr('%')
+    if exists('g:sidepanel_isopen') && g:sidepanel_isopen
+        execute 'SidePanelWidth(g:sidewidth)'
+    endif
+    if exists('g:Lbufnr') && g:Lbufnr > 0
+        execute 'call CriticQFResize()'
+    endif
+    execute current_bufwinnr . ' wincmd w'
+endfunction
+
+function! SidePanelToggle()
+    if !exists('g:sidepanel_isopen')
+        let g:sidepanel_isopen = 0
+    endif
+    if g:sidepanel_isopen
+        execute 'SidePanelClose'
+    else
+        execute 'SidePanel blank'
+        execute 'SidePanelWidth(g:sidewidth)'
+        if g:sidepanel_pos == 'left'
+            execute 'wincmd l'
+        elseif g:sidepanel_pos == 'right'
+            execute 'wincmd h'
+        endif
+    endif
+    if exists('g:Lbufnr') && g:Lbufnr > 0
+        execute 'call CriticQFResize()'
+    endif
+endfunction
 
 """ tagbar
-" let g:tagbar_autofocus = 1
+let g:tagbar_autofocus = 1
 
 """ vim-scripts/taglist.vim
 let Tlist_GainFocus_On_ToggleOpen = 1
