@@ -118,35 +118,28 @@ function! CriticVimGrep()
     execute 'silent vimgrep /{>>\|{==\|{++\|{--\|TODO/j %'
 endfunction
 
-function! CriticQFResize()
-    if exists('g:qfstatus') && g:qfstatus > 0 && exists('g:qfpos')
-        let currentBuffer = bufnr('%')
-        execute  g:qfstatus . ' wincmd w'
-        execute 'call CriticQFSetSize(g:qfpos)'
-        execute currentBuffer . ' wincmd w'
-    endif
-endfunction
-
 function! CriticQFOpen()
     if !exists('g:qfpos')
         let g:qfpos = 'vertical'
     endif
+    let currentWindow = bufwinnr('%')
+    execute 'call CriticVimGrep()'
     execute g:qfpos.' copen'
+    execute 'set modifiable'
+    silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
+    execute 'set nomodified'
     execute 'call CriticQFSetSize(g:qfpos)'
+    let g:qfstatus = bufnr('%')
+    normal! gg
+    execute currentWindow . ' wincmd w'
 endfunction
 
-function! CriticQFSetSize(pos)
-    if exists('g:sidepanel_width')
-        let width = g:sidepanel_width
-    elseif exists('$COLS')
-        let width = ($COLS - 100) / 2
-    else
-        let width = 40
-    endif
-    if a:pos =~ 'vertical'
-        execute 'vertical resize ' . width
-    else
-        execute 'resize ' . width
+function! CriticQFClose()
+    execute 'cclose'
+    let g:qfstatus = 0
+    if exists('g:sidepanel_isopen') && g:sidepanel_isopen == 1
+        execute 'SidePanelWidth ' . g:sidewidth
+        execute 'wincmd w'
     endif
 endfunction
 
@@ -155,15 +148,39 @@ function! CriticQFToggle()
         let g:qfstatus = 0
     endif
     if g:qfstatus > 0
-        execute 'cclose'
-        let g:qfstatus = 0
+        execute 'call CriticQFClose()'
     else
-        execute 'call CriticVimGrep()'
         execute 'call CriticQFOpen()'
-        let g:qfstatus = bufnr('%')
-        execute 'set modifiable'
-        silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
-        execute 'set nomodified'
-        normal! gg
+    endif
+endfunction
+
+function! CriticQFResize()
+    if exists('g:qfstatus') && g:qfstatus > 0 && exists('g:qfpos')
+        let currentWindow = bufwinnr('%')
+        execute  bufwinnr(g:qfstatus) . ' wincmd w'
+        execute 'call CriticQFSetSize(g:qfpos)'
+        execute currentWindow . ' wincmd w'
+    endif
+endfunction
+
+function! CriticQFSetSize(pos)
+    if a:pos =~ 'vertical'
+        if exists('g:sidewidth')
+            let width = g:sidewidth
+        elseif exists('$COLS')
+            let width = ($COLS - 100) / 2
+        else
+            let width = 40
+        endif
+        execute 'vertical resize ' . width
+
+    else
+        if exists('g:sideheight')
+            let height = g:sideheight
+        else
+            let height = 8
+        endif
+        execute 'resize ' . height
+
     endif
 endfunction
