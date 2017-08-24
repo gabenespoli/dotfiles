@@ -168,7 +168,6 @@ set notimeout
 set ttimeout
 set timeoutlen=500
 inoremap jk <Esc>
-vnoremap jk <Esc>
 
 """ common actions
 "<leader>o opens ctrlp plugin
