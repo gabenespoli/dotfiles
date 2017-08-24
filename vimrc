@@ -29,6 +29,8 @@ Plugin 'ervandew/supertab'
 " files
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'francoiscabrol/ranger.vim'
+Plugin 'scrooloose/NERDTree'
+Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 
 " programs
@@ -362,7 +364,18 @@ let g:ctrlp_prompt_mappings = {
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
 
-""" francoiscabrol/ranger.vim
+""" NERDTree
+let NERDTreeMapUpdir = 'h'
+let NERDTreeMapChangeRoot = 'l'
+let NERDTreeMapJumpNextSibling = '<C-n>'
+let NERDTreeMapJumpPrevSibling = '<C-p>'
+let NERDTreeMapPreview = 'i'
+let NERDTreeMapOpenSplit = 's'
+let NERDTreeMapOpenVSplit = 'v'
+let NERDTreeMapPreviewSplit = 'gs'
+let NERDTreeMapPreviewVSplit = 'gv'
+
+""" ranger
 let g:ranger_map_keys = 0
 nnoremap <leader>O :RangerNewTab<CR>
 
