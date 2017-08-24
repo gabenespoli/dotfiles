@@ -194,7 +194,8 @@ nnoremap <leader>] gt
 " call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
 " call submode#leave_with('TABS', 'n', '', '<Esc>') 
 
-""" centering the window
+""" resizing window widths based on terminal width
+" this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
 au BufEnter * if !exists('g:width') | let g:width = 100 | end
 au BufEnter * if !exists('g:sidewidth') | let g:sidewidth = ($COLS - g:width) / 2 | endif
 au BufEnter * if !exists('g:sideheight') | let g:sideheight = $LINES / 4 | end
@@ -209,12 +210,7 @@ function! ResizeSideHeight()
 endfunction
 nnoremap <leader>rw :call ResizeWidth()<CR>
 nnoremap <leader>rs :call ResizeSideWidth()<CR>
-nnoremap <leader>rs :call ResizeSideHeight()<CR>
-function! ResizeWidth()
-    execute 'vertical resize '.g:width
-endfunction
-nnoremap <leader>rs :call ResizeSideWidth()<CR>
-nnoremap <leader>rw :call ResizeWidth()<CR>
+nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
 """ split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
