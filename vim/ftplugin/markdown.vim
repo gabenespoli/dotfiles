@@ -111,7 +111,7 @@ au VimEnter,BufEnter * :call PandocForceHighlighting()
 nnoremap <localleader>q :call CriticToggleQF()<CR>
 
 function! CriticVimGrep()
-    execute "silent vimgrep /{>>\\|{==\\|{++\\|{--\\|TODO/j %"
+    execute 'silent vimgrep /{>>\|{==\|{++\|{--\|TODO/j %'
 endfunction
 
 function! CriticToggleQF()
