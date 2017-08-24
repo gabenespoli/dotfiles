@@ -195,6 +195,18 @@ nnoremap <leader>] gt
 " call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
 " call submode#leave_with('TABS', 'n', '', '<Esc>') 
 
+""" centering the window
+au BufEnter * if !exists('b:width') | let b:width = 100 | end
+au BufEnter * if !exists('b:sidewidth') | let b:sidewidth = ($COLS - b:width) / 2 | endif
+function! ResizeSideWidth()
+    execute 'vertical resize '.b:sidewidth
+endfunction
+function! ResizeWidth()
+    execute 'vertical resize '.b:width
+endfunction
+nnoremap <leader>rw :call ResizeSideWidth()<CR>
+nnoremap <leader>rs :call ResizeWidth()<CR>
+
 """ split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
 nnoremap <leader>J <C-w>s:bnext<CR>
