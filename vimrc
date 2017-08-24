@@ -14,7 +14,6 @@ Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 " vim and git
 Plugin 'vim-scripts/Rename'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
@@ -32,6 +31,9 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'scrooloose/NERDTree'
 Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
+" Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'sjl/gundo.vim'
 
 " programs
 Plugin 'tmux-plugins/vim-tmux'
@@ -171,7 +173,7 @@ vnoremap jk <Esc>
 """ common actions
 "<leader>o opens ctrlp plugin
 "<leader>O opens ranger
-nnoremap <leader>n :tabnew<CR>
+" nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>N :tabnew %<CR>
 nnoremap <leader>s :w<CR>
 nnoremap q :q<CR>
@@ -278,10 +280,6 @@ endfunction
 "let g:yankring_replace_n_pkey = '<leader>p'
 "let g:yankring_replace_n_nkey = '<leader>P'
 
-""" vim-scripts/taglist.vim
-let Tlist_GainFocus_On_ToggleOpen = 1
-nnoremap <localleader>t :TlistToggle<CR>
-
 """ tpope/vim-commentary
 autocmd FileType octave setlocal commentstring=%\ %s
 
@@ -381,8 +379,35 @@ nnoremap <leader>O :RangerNewTab<CR>
 
 """ jeetsukumaran/vim-buffergator
 let g:buffergator_suppress_keymaps = 1
-nnoremap <leader>b :BuffergatorToggle<CR>
-nnoremap <leader>B :BuffergatorTabsToggle<CR>
+" nnoremap <leader>B :BuffergatorTabsToggle<CR>
+
+""" sidepanel.vim
+let g:sidepanel_pos = "left"
+let g:sidepanel_width = ($COLS - 100) / 2
+let g:sidepanel_use_rabbit_ui = 0
+let g:sidepanel_config = {}
+let g:sidepanel_config['nerdtree'] = {}
+let g:sidepanel_config['buffergator'] = {}
+" let g:sidepanel_config['tagbar'] = {}
+let g:sidepanel_config['taglist'] = {}
+let g:sidepanel_config['gundo'] = {}
+let g:sidepanel_config['blank'] = {}
+
+nnoremap <leader>n :SidePanel nerdtree<CR>
+nnoremap <leader>b :SidePanel buffergator<CR>
+" nnoremap <leader>T :SidePanel tagbar<CR>
+nnoremap <leader>t :SidePanel taglist<CR>:set foldcolumn=0<CR>
+nnoremap <leader>u :SidePanel gundo<CR>
+nnoremap <leader>e :SidePanel blank<CR>
+nnoremap <leader>E :SidePanelClose<CR>
+
+""" tagbar
+" let g:tagbar_autofocus = 1
+
+""" vim-scripts/taglist.vim
+let Tlist_GainFocus_On_ToggleOpen = 1
+
+""" gundo
 
 """ vim-tmux-navigator
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
