@@ -107,68 +107,71 @@ endfunction
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" quickfix list with critic comments and todos
-" au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
-nnoremap <localleader>q :call CriticQFToggle()<CR>
-nnoremap <localleader>Qh :let g:qfpos = 'topleft vertical'<CR>
-nnoremap <localleader>Qj :let g:qfpos = ''<CR>
-nnoremap <localleader>Qk :let g:qfpos = 'top'<CR>
-nnoremap <localleader>Ql :let g:qfpos = 'vertical'<CR>
+" au VimEnter,BufEnter <buffer> execute "call Lvimgrep()"
+nnoremap <leader>l :call Ltoggle()<CR>
+nnoremap <localleader>lh :let g:Lpos = 'topleft vertical'<CR>
+nnoremap <localleader>lj :let g:Lpos = ''<CR>
+nnoremap <localleader>lk :let g:Lpos = 'top'<CR>
+nnoremap <localleader>ll :let g:Lpos = 'vertical'<CR>
 
-function! CriticVimGrep()
-    execute 'silent vimgrep /{>>\|{==\|{++\|{--\|TODO/j %'
+function! Lvimgrep()
+    execute 'silent lvimgrep /{>>\|{==\|{++\|{--\|TODO/j %'
 endfunction
 
-function! CriticQFOpen()
-    if !exists('g:qfpos')
-        let g:qfpos = 'vertical'
+function! Lopen()
+    if !exists('g:Lpos')
+        let g:Lpos = 'vertical'
     endif
     let currentWindow = bufwinnr('%')
-    execute 'call CriticVimGrep()'
-    execute g:qfpos.' copen'
+    execute 'call Lvimgrep()'
+    execute g:Lpos.' lopen'
     execute 'set modifiable'
     silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
     execute 'set nomodified'
-    execute 'call CriticQFSetSize(g:qfpos)'
-    let g:qfstatus = bufnr('%')
+    execute 'call L_ResizeCurrentWindow(g:Lpos)'
     normal! gg
+    let g:Lbufnr = bufnr('%')
     execute currentWindow . ' wincmd w'
 endfunction
 
-function! CriticQFClose()
-    execute 'cclose'
-    let g:qfstatus = 0
+function! Lclose()
+    execute 'lclose'
+    let g:Lbufnr = 0
     if exists('g:sidepanel_isopen') && g:sidepanel_isopen == 1
         execute 'SidePanelWidth ' . g:sidewidth
         execute 'wincmd w'
     endif
 endfunction
 
-function! CriticQFToggle()
-    if !exists('g:qfstatus')
-        let g:qfstatus = 0
+function! Ltoggle()
+    if !exists('g:Lbufnr')
+        let g:Lbufnr = 0
     endif
-    if g:qfstatus > 0
-        execute 'call CriticQFClose()'
+    if g:Lbufnr > 0
+        execute 'call Lclose()'
     else
-        execute 'call CriticQFOpen()'
+        execute 'call Lopen()'
     endif
 endfunction
 
-function! CriticQFResize()
-    if exists('g:qfstatus') && g:qfstatus > 0 && exists('g:qfpos')
+function! Lresize()
+    " switch to loclist, then call L_ResizeCurrentWindow, switch back
+    if exists('g:Lbufnr') && g:Lbufnr > 0 && exists('g:Lpos')
         let currentWindow = bufwinnr('%')
-        execute  bufwinnr(g:qfstatus) . ' wincmd w'
-        execute 'call CriticQFSetSize(g:qfpos)'
+        execute  bufwinnr(g:Lbufnr) . ' wincmd w'
+        execute 'call L_ResizeCurrentWindow(g:Lpos)'
         execute currentWindow . ' wincmd w'
     endif
 endfunction
 
-function! CriticQFSetSize(pos)
+function! L_ResizeCurrentWindow(pos)
     if a:pos =~ 'vertical'
         if exists('g:sidewidth')
             let width = g:sidewidth
         elseif exists('$COLS')
             let width = ($COLS - 100) / 2
+        elseif exists('g:sidepanel_width')
+            let width = g:sidepanel_width
         else
             let width = 40
         endif
