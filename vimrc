@@ -309,8 +309,8 @@ autocmd FileType octave setlocal commentstring=%\ %s
 " my own macro binding of the default ones
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
-nnoremap <C-n> :lnext<CR>
-nnoremap <C-p> :lprevious<CR>
+nnoremap <C-n> :lnext<CR>zt
+nnoremap <C-p> :lprevious<CR>zt
 
 function! SearchHighlightToggle()
     let bgcolor=synIDattr(hlID('Search'), 'bg#')
