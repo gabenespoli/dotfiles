@@ -204,8 +204,8 @@ endfunction
 function! ResizeWidth()
     execute 'vertical resize '.b:width
 endfunction
-nnoremap <leader>rw :call ResizeSideWidth()<CR>
-nnoremap <leader>rs :call ResizeWidth()<CR>
+nnoremap <leader>rs :call ResizeSideWidth()<CR>
+nnoremap <leader>rw :call ResizeWidth()<CR>
 
 """ split with next or previous file
 nnoremap <leader>H <C-w>v:bprevious<CR>
