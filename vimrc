@@ -332,23 +332,23 @@ nmap <leader>gha <Plug>GitGutterStageHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
 nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 
-""" rickhowe/diffchar.vim
+""" diffchar
 " I've commented out the keymaps in plugin/diffchar.vim
 
-""" kana/vim-submode
+""" submode
 " let g:submode_timeout = 0
 " let g:submode_tiemoutlen = 1500
 " let g:submode_keep_leaving_key = 1
 
-""" gcmt/taboo.vim
+""" taboo.vim
 let g:taboo_tabline = 0
 "let g:taboo_tab_format = ' %f%m '
 "let g:taboo_renamed_tab_format = ' [%l]%m'
 
-""" ervandew/supertab
+""" supertab
 let g:SuperTabMappingForward = '<S-Tab>'
 
-""" ctrlpvim/ctrp.vim
+""" ctrlp
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
@@ -377,7 +377,7 @@ let NERDTreeMapPreviewVSplit = 'gv'
 let g:ranger_map_keys = 0
 nnoremap <leader>O :RangerNewTab<CR>
 
-""" jeetsukumaran/vim-buffergator
+""" buffergator
 let g:buffergator_suppress_keymaps = 1
 " nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
