@@ -31,7 +31,7 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'scrooloose/NERDTree'
 Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
-" Plugin 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'sjl/gundo.vim'
 
