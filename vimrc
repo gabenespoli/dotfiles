@@ -9,8 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " my plugins
-Plugin 'file:///Users/gmac/bin/vim/capitalL.vim'
-Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
+" Plugin 'file:///Users/gmac/bin/vim/capitalL.vim'
+" Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 " vim and git
 Plugin 'vim-scripts/Rename'
@@ -248,53 +248,12 @@ nnoremap <localleader>s 1z=
 
 "" Plugin settings
 """ gabenespoli/capitalL.vim
-nnoremap <localleader>l :Ltoggle<CR>
-nnoremap <localleader>q :Ctoggle<CR>
-nnoremap <localleader>r :Lrefresh<CR>
-let g:CapitalL_qf_position = "right"
-let g:CapitalL_qf_width = 40
-nnoremap <leader>e :call CenwinToggle()<CR>
-
-function! CenwinToggle()
-    if !exists("b:CenwinStatus")
-        let b:CenwinStatus = 0
-    endif
-    if b:CenwinStatus == 0
-        let bufnum = bufnr('%')
-        :Lopen
-        :set nocursorline nonumber norelativenumber
-        :hi NonText ctermfg=8 ctermbg=8
-        execute bufwinnr(bufnum) . "wincmd w"
-        :Copen
-        :set nocursorline nonumber norelativenumber
-        :hi NonText ctermfg=8 ctermbg=8
-        execute bufwinnr(bufnum) . "wincmd w"
-        let b:CenwinStatus = 1
-    else
-        :Lclose
-        :Cclose
-        let b:CenwinStatus = 0
-    endif
-    if &filetype == "markdown" || &filetype == "pandoc"
-        execute "call PandocForceHighlighting()"
-    endif
-endfunction
-
-function! CenWidth(...)
-    if a:0 == 0
-        let width = 100
-    endif
-    if !exists("g:termWidth")
-        echoerr "g:termWidth does not exist. Using default side widths of 40."
-        let sideWidth = 40
-    else
-        " let sideWidth = (g:termWidth - width) / 2
-        let sideWidth = g:termWidth / 4
-    endif
-    let g:CapitalL_defaultWidth = sideWidth
-    let b:CapitalL_width = sideWidth
-    let g:CapitalL_qf_width = sideWidth
-endfunction
+" nnoremap <localleader>l :Ltoggle<CR>
+" nnoremap <localleader>q :Ctoggle<CR>
+" nnoremap <localleader>r :Lrefresh<CR>
+" let g:CapitalL_qf_position = "right"
+" let g:CapitalL_qf_width = 40
+" nnoremap <leader>e :call CenwinToggle()<CR>
 
 """ vim-scripts/YankRing.vim
 "let g:yankring_history_dir = '$HOME/.vim'
