@@ -109,24 +109,41 @@ au VimEnter,BufEnter * :call PandocForceHighlighting()
 "" quickfix list with critic comments and todos
 " au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
 nnoremap <localleader>q :call CriticToggleQF()<CR>
+nnoremap <localleader>Qh :let g:qfpos = 'topleft vertical'<CR>
+nnoremap <localleader>Qj :let g:qfpos = ''<CR>
+nnoremap <localleader>Qk :let g:qfpos = 'top'<CR>
+nnoremap <localleader>Ql :let g:qfpos = 'vertical'<CR>
 
 function! CriticVimGrep()
     execute 'silent vimgrep /{>>\|{==\|{++\|{--\|TODO/j %'
 endfunction
 
 function! CriticToggleQF()
-    if !exists("g:qfstatus")
+    if !exists('g:qfstatus')
         let g:qfstatus = 0
     endif
+    if !exists('g:qfpos')
+        let g:qfpos = 'vertical'
+    endif
+    if !exists('g:sidepanel_width')
+        let width = g:sidepanel_width
+    else
+        let width = 40
+    endif
     if g:qfstatus == 1
-        execute "cclose"
+        execute 'cclose'
         let g:qfstatus = 0
     else
-        execute "call CriticVimGrep()"
-        execute "copen"
-        execute "set modifiable"
+        execute 'call CriticVimGrep()'
+        execute g:qfpos.' copen'
+        if g:qfpos =~ 'vertical'
+            execute 'vertical resize ' . width
+        else
+            execute 'resize ' . width
+        endif
+        execute 'set modifiable'
         silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
-        execute "set nomodified"
+        execute 'set nomodified'
         normal! gg
         let g:qfstatus = 1
     endif
