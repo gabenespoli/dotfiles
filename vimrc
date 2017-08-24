@@ -429,7 +429,7 @@ function! ResetWindowSizes()
         execute 'SidePanelWidth(g:sidewidth)'
     endif
     if exists('g:Lbufnr') && g:Lbufnr > 0
-        execute 'call CriticQFResize()'
+        execute 'call Lresize()'
     endif
     execute current_bufwinnr . ' wincmd w'
 endfunction
@@ -438,20 +438,17 @@ function! SidePanelToggle()
     if !exists('g:sidepanel_isopen')
         let g:sidepanel_isopen = 0
     endif
-    if g:sidepanel_isopen
+    if g:sidepanel_isopen && g:sidepanel_current_panel == 'blank'
         execute 'SidePanelClose'
     else
         execute 'SidePanel blank'
-        execute 'SidePanelWidth(g:sidewidth)'
         if g:sidepanel_pos == 'left'
             execute 'wincmd l'
         elseif g:sidepanel_pos == 'right'
             execute 'wincmd h'
         endif
     endif
-    if exists('g:Lbufnr') && g:Lbufnr > 0
-        execute 'call CriticQFResize()'
-    endif
+    execute 'call ResetWindowSizes()'
 endfunction
 
 """ tagbar
