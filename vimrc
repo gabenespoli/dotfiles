@@ -456,6 +456,7 @@ let g:tagbar_autofocus = 1
 
 """ vim-scripts/taglist.vim
 let Tlist_GainFocus_On_ToggleOpen = 1
+let g:Tlist_Enable_Fold_Column = 0
 
 """ gundo
 
