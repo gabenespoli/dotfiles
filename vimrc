@@ -411,7 +411,7 @@ nnoremap <leader>b :SidePanel buffergator<CR>
 nnoremap <leader>t :SidePanel taglist<CR>:set foldcolumn=0<CR>
 nnoremap <leader>u :SidePanel gundo<CR>
 nnoremap <leader>e :SidePanel blank<CR>
-nnoremap <leader>E :SidePanelClose<CR>
+nnoremap <leader>w :SidePanelClose<CR>
 
 """ tagbar
 " let g:tagbar_autofocus = 1
