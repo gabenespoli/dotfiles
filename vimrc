@@ -198,9 +198,19 @@ nnoremap <leader>] gt
 """ centering the window
 au BufEnter * if !exists('g:width') | let g:width = 100 | end
 au BufEnter * if !exists('g:sidewidth') | let g:sidewidth = ($COLS - g:width) / 2 | endif
+au BufEnter * if !exists('g:sideheight') | let g:sideheight = $LINES / 4 | end
+function! ResizeWidth()
+    execute 'vertical resize '.g:width
+endfunction
 function! ResizeSideWidth()
     execute 'vertical resize '.g:sidewidth
 endfunction
+function! ResizeSideHeight()
+    execute 'resize '.g:sideheight
+endfunction
+nnoremap <leader>rw :call ResizeWidth()<CR>
+nnoremap <leader>rs :call ResizeSideWidth()<CR>
+nnoremap <leader>rs :call ResizeSideHeight()<CR>
 function! ResizeWidth()
     execute 'vertical resize '.g:width
 endfunction
