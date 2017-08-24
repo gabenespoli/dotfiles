@@ -196,13 +196,13 @@ nnoremap <leader>] gt
 " call submode#leave_with('TABS', 'n', '', '<Esc>') 
 
 """ centering the window
-au BufEnter * if !exists('b:width') | let b:width = 100 | end
-au BufEnter * if !exists('b:sidewidth') | let b:sidewidth = ($COLS - b:width) / 2 | endif
+au BufEnter * if !exists('g:width') | let g:width = 100 | end
+au BufEnter * if !exists('g:sidewidth') | let g:sidewidth = ($COLS - g:width) / 2 | endif
 function! ResizeSideWidth()
-    execute 'vertical resize '.b:sidewidth
+    execute 'vertical resize '.g:sidewidth
 endfunction
 function! ResizeWidth()
-    execute 'vertical resize '.b:width
+    execute 'vertical resize '.g:width
 endfunction
 nnoremap <leader>rs :call ResizeSideWidth()<CR>
 nnoremap <leader>rw :call ResizeWidth()<CR>
