@@ -1,1 +1,1 @@
-nnoremap <buffer> <C-j> :call nerdtree#ui_glue#invokeKeyMap("\<CR\>")<CR>
+nnoremap <buffer> <C-j> <CR>
