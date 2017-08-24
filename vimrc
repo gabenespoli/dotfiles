@@ -32,7 +32,6 @@ Plugin 'scrooloose/NERDTree'
 Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/taglist.vim'
 Plugin 'sjl/gundo.vim'
 
 " programs
@@ -365,15 +364,13 @@ let g:sidepanel_use_rabbit_ui = 0
 let g:sidepanel_config = {}
 let g:sidepanel_config['nerdtree'] = {}
 let g:sidepanel_config['buffergator'] = {}
-let g:sidepanel_config['taglist'] = {}
 let g:sidepanel_config['tagbar'] = {}
 let g:sidepanel_config['gundo'] = {}
 let g:sidepanel_config['blank'] = {}
 
 nnoremap <leader>n :SidePanel nerdtree<CR>:call ResetWindowSizes()<CR>
 nnoremap <leader>b :SidePanel buffergator<CR>:call ResetWindowSizes()<CR>
-nnoremap <leader>t :SidePanel taglist<CR>:call ResetWindowSizes()<CR>
-nnoremap <leader>T :SidePanel tagbar<CR>:call ResetWindowSizes()<CR>
+nnoremap <leader>t :SidePanel tagbar<CR>:call ResetWindowSizes()<CR>
 nnoremap <leader>u :SidePanel gundo<CR>:call ResetWindowSizes()<CR>
 nnoremap <leader>e :call SidePanelToggle()<CR>
 
@@ -407,10 +404,6 @@ endfunction
 
 """ tagbar
 let g:tagbar_autofocus = 1
-
-""" vim-scripts/taglist.vim
-let Tlist_GainFocus_On_ToggleOpen = 1
-let g:Tlist_Enable_Fold_Column = 0
 
 """ gundo
 
