@@ -108,7 +108,7 @@ au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" quickfix list with critic comments and todos
 " au VimEnter,BufEnter <buffer> execute "call CriticVimGrep()"
-nnoremap <localleader>q :call CriticToggleQF()<CR>
+nnoremap <localleader>q :call CriticQFToggle()<CR>
 nnoremap <localleader>Qh :let g:qfpos = 'topleft vertical'<CR>
 nnoremap <localleader>Qj :let g:qfpos = ''<CR>
 nnoremap <localleader>Qk :let g:qfpos = 'top'<CR>
@@ -118,33 +118,52 @@ function! CriticVimGrep()
     execute 'silent vimgrep /{>>\|{==\|{++\|{--\|TODO/j %'
 endfunction
 
-function! CriticToggleQF()
-    if !exists('g:qfstatus')
-        let g:qfstatus = 0
+function! CriticQFResize()
+    if exists('g:qfstatus') && g:qfstatus > 0 && exists('g:qfpos')
+        let currentBuffer = bufnr('%')
+        execute  g:qfstatus . ' wincmd w'
+        execute 'call CriticQFSetSize(g:qfpos)'
+        execute currentBuffer . ' wincmd w'
     endif
+endfunction
+
+function! CriticQFOpen()
     if !exists('g:qfpos')
         let g:qfpos = 'vertical'
     endif
-    if !exists('g:sidepanel_width')
+    execute g:qfpos.' copen'
+    execute 'call CriticQFSetSize(g:qfpos)'
+endfunction
+
+function! CriticQFSetSize(pos)
+    if exists('g:sidepanel_width')
         let width = g:sidepanel_width
+    elseif exists('$COLS')
+        let width = ($COLS - 100) / 2
     else
         let width = 40
     endif
-    if g:qfstatus == 1
+    if a:pos =~ 'vertical'
+        execute 'vertical resize ' . width
+    else
+        execute 'resize ' . width
+    endif
+endfunction
+
+function! CriticQFToggle()
+    if !exists('g:qfstatus')
+        let g:qfstatus = 0
+    endif
+    if g:qfstatus > 0
         execute 'cclose'
         let g:qfstatus = 0
     else
         execute 'call CriticVimGrep()'
-        execute g:qfpos.' copen'
-        if g:qfpos =~ 'vertical'
-            execute 'vertical resize ' . width
-        else
-            execute 'resize ' . width
-        endif
+        execute 'call CriticQFOpen()'
+        let g:qfstatus = bufnr('%')
         execute 'set modifiable'
         silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge
         execute 'set nomodified'
         normal! gg
-        let g:qfstatus = 1
     endif
 endfunction
