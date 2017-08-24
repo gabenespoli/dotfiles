@@ -47,7 +47,7 @@ Plugin 'vim-pandoc/vim-criticmarkup'
 Plugin 'jvirtanen/vim-octave'
 "Plugin 'hrother/offlineimaprc.vim'
 "Plugin 'toyamarinyon/vim-swift'
-Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
