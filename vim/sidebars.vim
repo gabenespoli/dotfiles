@@ -7,6 +7,9 @@
 " doing the moving
 " TODO: set capitalL patterns in each ftplugin; set default to TODO
 
+"" Settings
+let g:sidebar_tagbar_cursorline = 1
+
 "" Commands
 command! -nargs=1   SidebarToggle  call SidebarToggle(<f-args>)
 command! -nargs=1   SidebarOpen    call SidebarOpen(<f-args>)
@@ -105,6 +108,9 @@ function! SidebarOpen(name)
         execute 'BuffergatorOpen'
     elseif a:name == 'tagbar'
         execute 'TagbarOpen'
+        if g:sidebar_tagbar_cursorline
+            execute 'set cursorline'
+        endif
     elseif a:name == 'gundo'
         execute 'GundoToggle'
     else
