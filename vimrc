@@ -194,20 +194,22 @@ nnoremap <leader>] gt
 
 """ resizing window widths based on terminal width
 " this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
-au BufEnter * if !exists('g:width') | let g:width = 100 | end
-au BufEnter * if !exists('g:sidewidth') | let g:sidewidth = ($COLS - g:width) / 2 | endif
-au BufEnter * if !exists('g:sideheight') | let g:sideheight = $LINES / 4 | end
-function! ResizeWidth()
-    execute 'vertical resize '.g:width
+let g:centerwidth = 100
+let g:width = ($COLS - g:centerwidth) / 2
+let g:height = $LINES / 4
+au VimEnter,BufEnter * if !exists('g:width') | let g:width = ($COLS - g:centerwidth) / 2 | endif
+au VimEnter,BufEnter * if !exists('g:height') | let g:height = $LINES / 4 | end
+function! ResizeCenterWidth()
+    execute 'vertical resize '.g:centerwidth
 endfunction
 function! ResizeSideWidth()
-    execute 'vertical resize '.g:sidewidth
+    execute 'vertical resize '.g:width
 endfunction
 function! ResizeSideHeight()
-    execute 'resize '.g:sideheight
+    execute 'resize '.g:height
 endfunction
-nnoremap <leader>rw :call ResizeWidth()<CR>
-nnoremap <leader>rs :call ResizeSideWidth()<CR>
+nnoremap <leader>rc :call ResizeCenterWidth()<CR>
+nnoremap <leader>rw :call ResizeSideWidth()<CR>
 nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
 """ split with next or previous file
@@ -395,7 +397,7 @@ let g:gundo_preview_height = 15
 function! ResetWindowSizes()
     let current_bufwinnr = bufwinnr('%')
     if exists('g:sidepanel_isopen') && g:sidepanel_isopen
-        execute 'SidePanelWidth(g:sidewidth)'
+        execute 'SidePanelWidth(g:width)'
     endif
     if exists('g:Lbufnr') && g:Lbufnr > 0
         execute 'call Lresize()'
