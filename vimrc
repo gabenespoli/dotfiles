@@ -735,5 +735,18 @@ function! SidebarClose(name)
         execute 'GundoToggle'
     endif
     let g:sidebar = ''
+    if exists('g:Lbufnr')
+        execute 'call Lresize()'
+    endif
 endfunction
 
+function! ResetWindowSizes()
+    let current_bufwinnr = bufwinnr('%')
+    if exists('g:sidebar') && !empty(g:sidebar)
+        execute 'SidePanelWidth(g:width)'
+    endif
+    if exists('g:Lbufnr') && g:Lbufnr > 0
+        execute 'call Lresize()'
+    endif
+    execute current_bufwinnr . ' wincmd w'
+endfunction
