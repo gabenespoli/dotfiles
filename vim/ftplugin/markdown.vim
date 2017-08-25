@@ -123,7 +123,7 @@ function! Lclose()
     execute 'lclose'
     let g:Lbufnr = 0
     if exists('g:sidepanel_isopen') && g:sidepanel_isopen == 1
-        execute 'SidePanelWidth ' . g:sidewidth
+        execute 'SidePanelWidth ' . g:width
         execute 'wincmd w'
     endif
 endfunction
@@ -151,8 +151,8 @@ endfunction
 
 function! L_ResizeCurrentWindow(pos)
     if a:pos =~ 'vertical'
-        if exists('g:sidewidth')
-            let width = g:sidewidth
+        if exists('g:width')
+            let width = g:width
         elseif exists('$COLS')
             let width = ($COLS - 100) / 2
         elseif exists('g:sidepanel_width')
@@ -163,8 +163,8 @@ function! L_ResizeCurrentWindow(pos)
         execute 'vertical resize ' . width
 
     else
-        if exists('g:sideheight')
-            let height = g:sideheight
+        if exists('g:height')
+            let height = g:height
         else
             let height = 8
         endif
