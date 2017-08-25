@@ -349,6 +349,7 @@
                     },
                     "ignore": false,
                     "simple_modifications": {
+                        "caps_lock": "left_control",
                         "escape": "grave_accent_and_tilde",
                         "grave_accent_and_tilde": "escape"
                     }
@@ -394,9 +395,7 @@
             },
             "name": "Gabe",
             "selected": true,
-            "simple_modifications": {
-                "caps_lock": "left_control"
-            },
+            "simple_modifications": {},
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "ansi"
