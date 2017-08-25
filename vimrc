@@ -377,51 +377,6 @@ let g:gundo_right = 0
 let g:gundo_width = g:width
 let g:gundo_preview_height = 15
 
-""" sidepanel.vim
-" let g:sidepanel_pos = "left"
-" let g:sidepanel_width = ($COLS - 100) / 2
-" let g:sidepanel_use_rabbit_ui = 0
-" let g:sidepanel_config = {}
-" let g:sidepanel_config['nerdtree'] = {}
-" let g:sidepanel_config['buffergator'] = {}
-" let g:sidepanel_config['tagbar'] = {}
-" let g:sidepanel_config['gundo'] = {}
-" let g:sidepanel_config['blank'] = {}
-
-" nnoremap <leader>n :SidePanel nerdtree<CR>:call ResetWindowSizes()<CR>
-" nnoremap <leader>b :SidePanel buffergator<CR>:call ResetWindowSizes()<CR>
-" nnoremap <leader>t :SidePanel tagbar<CR>:call ResetWindowSizes()<CR>
-" nnoremap <leader>u :SidePanel gundo<CR>:call ResetWindowSizes()<CR>
-" nnoremap <leader>e :call SidePanelToggle()<CR>
-
-function! ResetWindowSizes()
-    let current_bufwinnr = bufwinnr('%')
-    if exists('g:sidepanel_isopen') && g:sidepanel_isopen
-        execute 'SidePanelWidth(g:width)'
-    endif
-    if exists('g:Lbufnr') && g:Lbufnr > 0
-        execute 'call Lresize()'
-    endif
-    execute current_bufwinnr . ' wincmd w'
-endfunction
-
-" function! SidePanelToggle()
-"     if !exists('g:sidepanel_isopen')
-"         let g:sidepanel_isopen = 0
-"     endif
-"     if g:sidepanel_isopen && g:sidepanel_current_panel == 'blank'
-"         execute 'SidePanelClose'
-"     else
-"         execute 'SidePanel blank'
-"         if g:sidepanel_pos == 'left'
-"             execute 'wincmd l'
-"         elseif g:sidepanel_pos == 'right'
-"             execute 'wincmd h'
-"         endif
-"     endif
-"     execute 'call ResetWindowSizes()'
-" endfunction
-
 """ vim-tmux-navigator
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
     execute "set <M-h>=\eh"
