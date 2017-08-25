@@ -29,7 +29,7 @@ Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'scrooloose/NERDTree'
-Plugin 'miyakogi/sidepanel.vim'
+" Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
@@ -358,21 +358,21 @@ let g:buffergator_suppress_keymaps = 1
 " nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
 """ sidepanel.vim
-let g:sidepanel_pos = "left"
-let g:sidepanel_width = ($COLS - 100) / 2
-let g:sidepanel_use_rabbit_ui = 0
-let g:sidepanel_config = {}
-let g:sidepanel_config['nerdtree'] = {}
-let g:sidepanel_config['buffergator'] = {}
-let g:sidepanel_config['tagbar'] = {}
-let g:sidepanel_config['gundo'] = {}
-let g:sidepanel_config['blank'] = {}
+" let g:sidepanel_pos = "left"
+" let g:sidepanel_width = ($COLS - 100) / 2
+" let g:sidepanel_use_rabbit_ui = 0
+" let g:sidepanel_config = {}
+" let g:sidepanel_config['nerdtree'] = {}
+" let g:sidepanel_config['buffergator'] = {}
+" let g:sidepanel_config['tagbar'] = {}
+" let g:sidepanel_config['gundo'] = {}
+" let g:sidepanel_config['blank'] = {}
 
-nnoremap <leader>n :SidePanel nerdtree<CR>:call ResetWindowSizes()<CR>
-nnoremap <leader>b :SidePanel buffergator<CR>:call ResetWindowSizes()<CR>
-nnoremap <leader>t :SidePanel tagbar<CR>:call ResetWindowSizes()<CR>
-nnoremap <leader>u :SidePanel gundo<CR>:call ResetWindowSizes()<CR>
-nnoremap <leader>e :call SidePanelToggle()<CR>
+" nnoremap <leader>n :SidePanel nerdtree<CR>:call ResetWindowSizes()<CR>
+" nnoremap <leader>b :SidePanel buffergator<CR>:call ResetWindowSizes()<CR>
+" nnoremap <leader>t :SidePanel tagbar<CR>:call ResetWindowSizes()<CR>
+" nnoremap <leader>u :SidePanel gundo<CR>:call ResetWindowSizes()<CR>
+" nnoremap <leader>e :call SidePanelToggle()<CR>
 
 function! ResetWindowSizes()
     let current_bufwinnr = bufwinnr('%')
@@ -385,27 +385,22 @@ function! ResetWindowSizes()
     execute current_bufwinnr . ' wincmd w'
 endfunction
 
-function! SidePanelToggle()
-    if !exists('g:sidepanel_isopen')
-        let g:sidepanel_isopen = 0
-    endif
-    if g:sidepanel_isopen && g:sidepanel_current_panel == 'blank'
-        execute 'SidePanelClose'
-    else
-        execute 'SidePanel blank'
-        if g:sidepanel_pos == 'left'
-            execute 'wincmd l'
-        elseif g:sidepanel_pos == 'right'
-            execute 'wincmd h'
-        endif
-    endif
-    execute 'call ResetWindowSizes()'
-endfunction
-
-""" tagbar
-let g:tagbar_autofocus = 1
-
-""" gundo
+" function! SidePanelToggle()
+"     if !exists('g:sidepanel_isopen')
+"         let g:sidepanel_isopen = 0
+"     endif
+"     if g:sidepanel_isopen && g:sidepanel_current_panel == 'blank'
+"         execute 'SidePanelClose'
+"     else
+"         execute 'SidePanel blank'
+"         if g:sidepanel_pos == 'left'
+"             execute 'wincmd l'
+"         elseif g:sidepanel_pos == 'right'
+"             execute 'wincmd h'
+"         endif
+"     endif
+"     execute 'call ResetWindowSizes()'
+" endfunction
 
 """ vim-tmux-navigator
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
