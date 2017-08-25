@@ -112,8 +112,8 @@ set smartcase           " if [search terms] has uppercase, then case sensitive
 "set digraph             " use <BS> for accents (e.g., e<BS>' for é; e<BS>! for è; o<BS>: for ö)
 
 "" Folding
-set foldenable          " turn on folding by default
-set foldlevel=1         " set a high fold level so that folds are open by default
+set foldenable
+set foldlevel=1
 set foldminlines=0
 
 "" UI Config
