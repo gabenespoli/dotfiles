@@ -122,10 +122,6 @@ endfunction
 function! Lclose()
     execute 'lclose'
     let g:Lbufnr = 0
-    if exists('g:sidepanel_isopen') && g:sidepanel_isopen == 1
-        execute 'SidePanelWidth ' . g:width
-        execute 'wincmd w'
-    endif
 endfunction
 
 function! Ltoggle()
@@ -155,8 +151,6 @@ function! L_ResizeCurrentWindow(pos)
             let width = g:width
         elseif exists('$COLS')
             let width = ($COLS - 100) / 2
-        elseif exists('g:sidepanel_width')
-            let width = g:sidepanel_width
         else
             let width = 40
         endif
