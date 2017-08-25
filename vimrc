@@ -13,30 +13,29 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
 
 " vim and git
-Plugin 'vim-scripts/Rename'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
+" Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 " Plugin 'rickhowe/diffchar.vim'
 " Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 "Plugin 'Valloric/YouCompleteMe'
+" Plugin 'vim-scripts/Rename'
 
 " files
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'francoiscabrol/ranger.vim'
+" Plugin 'francoiscabrol/ranger.vim'
 Plugin 'scrooloose/NERDTree'
 " Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'majutsushi/tagbar'
 Plugin 'jszakmeister/markdown2ctags'
-Plugin 'sjl/gundo.vim'
+" Plugin 'sjl/gundo.vim'
 
 " programs
-Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jpalardy/vim-slime'
@@ -44,12 +43,13 @@ Plugin 'jpalardy/vim-slime'
 
 " syntax
 Plugin 'w0rp/ale'
+Plugin 'tmux-plugins/vim-tmux'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
-"Plugin 'vim-scripts/todo-txt.vim'
 Plugin 'jvirtanen/vim-octave'
 "Plugin 'hrother/offlineimaprc.vim'
+"Plugin 'vim-scripts/todo-txt.vim'
 "Plugin 'toyamarinyon/vim-swift'
 " Plugin 'dhruvasagar/vim-table-mode'
 
@@ -110,18 +110,12 @@ set nolist              " show invisibles
 set backspace=indent,eol,start " enable backspacing text that was inserted previously
 set ignorecase
 set smartcase           " if [search terms] has uppercase, then case sensitive
-"set digraph             " use <BS> for accents (e.g., e<BS>' for é; e<BS>! for è; o<BS>: for ö)
 
-"" Folding
-set foldenable
-set foldlevel=1
-set foldminlines=0
 
 "" UI Config
 set number
 set relativenumber
-set showcmd             " show command in bottom bar
-"set noshowmode          " show mode below status line
+set showcmd              " show command in bottom bar
 set wildmode=longest,list,full
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " hi matching [{()}]
@@ -146,30 +140,14 @@ set statusline+=\ %#StatusMod#%m%*%#StatusFlag#%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
 set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%l/%L\,%c\ (%P)                           
-" add word count for markdown files (on the far right)
-augroup filetype_markdown
-    autocmd FileType markdown set statusline=
-    autocmd FileType markdown set statusline+=%{mode()}
-    autocmd FileType markdown set statusline+=%#StatusMod#%m%*%#StatusFlag#%r%*\"%t\"\ %y
-    autocmd FileType markdown set statusline+=%{fugitive#statusline()}
-    autocmd FileType markdown set statusline+=%#StatusLineFill#%=%*                      
-    autocmd FileType markdown set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
-    autocmd FileType markdown set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
-    autocmd FileType markdown set statusline+=%l/%L\,%c\ (%P)                           
-    autocmd FileType markdown set statusline+=\ {%{WordCount()}}
-augroup END
-
-" tpope's statusline:
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 "" Keybindings
 let mapleader = "\<Space>"
 set notimeout
 set ttimeout
-set timeoutlen=500
 inoremap jk <Esc>
 
-""" command line mappings
+""" emacs-style command line (cmap)
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
@@ -179,19 +157,13 @@ cnoremap <Esc>b <S-Left>
 cnoremap <C-d> <Del>
 cnoremap <C-i> <C-d>
 
-""" common actions
+""" opening and saving
 "<leader>o opens ctrlp plugin
-"<leader>O opens ranger
 noremap <leader>O :e <C-r>=expand('%:p:h')<CR><CR>
-" nnoremap <leader>n :tabnew<CR>
-nnoremap <leader>N :tabnew %<CR>
+nnoremap <leader>N :tabnew 
 nnoremap <leader>s :w<CR>
-nnoremap q :q<CR>
-nnoremap Q :qa<CR>
-nnoremap <leader>q q
-nnoremap <leader>Q Q
 
-""" tabs, windows/panes, buffers
+""" tab switching
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -199,20 +171,44 @@ nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
 nnoremap <leader>[ gT
 nnoremap <leader>] gt
-" call submode#enter_with('TABS', 'n', '', '<leader>[', ':tabprevious<CR>')
-" call submode#enter_with('TABS', 'n', '', '<leader>]', ':tabnext<CR>') 
-" call submode#map('TABS', 'n', '', '[', ':tabprevious<CR>') 
-" call submode#map('TABS', 'n', '', ']', ':tabnext<CR>')
-" call submode#leave_with('TABS', 'n', '', '<Esc>') 
 
-""" resizing window widths based on terminal width
+""" swap q/Q for <leader>q/Q, so q/Q can be used for quitting
+nnoremap q :q<CR>
+nnoremap Q :qa<CR>
+
+""" status/info toggles
+nmap <leader>W :echo WordCount()<CR>
+nmap <leader>S :call ToggleStatusBar()<CR>
+nmap <leader>F :call ToggleTabline()<CR>
+nmap <leader>X :echo GetSyntaxUnderCursor()<CR>
+
+""" misc
+" copy/paste
+nnoremap Y y$
+" for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
+set clipboard=unnamed
+
+nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
+
+"vimdiff
+nnoremap du :diffupdate<CR>
+
+" emacs movement
+inoremap <C-d> <Del>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
+" Spell checking
+nnoremap <localleader>s 1z=
+
+""" resizing windows based on terminal size
 " this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
 let g:centerwidth = 100
-" let g:width = ($COLS - g:centerwidth) / 2
 let g:width = $COLS / 4
 let g:height = $LINES / 4
-au VimEnter,BufEnter * if !exists('g:width') | let g:width = ($COLS - g:centerwidth) / 2 | endif
-au VimEnter,BufEnter * if !exists('g:height') | let g:height = $LINES / 4 | end
+au VimEnter,BufEnter * if !exists('g:width')  | let g:width  = $COLS  / 2 | endif
+au VimEnter,BufEnter * if !exists('g:height') | let g:height = $LINES / 4 | endif
 function! ResizeCenterWidth()
     execute 'vertical resize '.g:centerwidth
 endfunction
@@ -226,50 +222,7 @@ nnoremap <leader>rc :call ResizeCenterWidth()<CR>
 nnoremap <leader>rw :call ResizeSideWidth()<CR>
 nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
-""" split with next or previous file
-nnoremap <leader>H <C-w>v:bprevious<CR>
-nnoremap <leader>J <C-w>s:bnext<CR>
-nnoremap <leader>K <C-w>s:bprevious<CR>
-nnoremap <leader>L <C-w>v:bnext<CR>
-
-" copy/paste with system clipboard
-" vnoremap <leader>y "+y
-" nnoremap <leader>y V"+y
-" nnoremap <leader>p "+p
-nnoremap Y y$
-" for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
-set clipboard=unnamed
-
-" nnoremap <leader>d :r! date "+\%Y-\%m-\%d \%H:\%M:\%S"<CR>
-nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-
-"vimdiff
-nnoremap du :diffupdate<CR>
-
-" emacs movement
-"nnoremap <C-h> X " this one seems to already work, no need to remap
-inoremap <C-d> <Del>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-
-" Spell checking
-nnoremap <localleader>s 1z=
-
 "" Plugin settings
-""" gabenespoli/capitalL.vim
-" nnoremap <localleader>l :Ltoggle<CR>
-" nnoremap <localleader>q :Ctoggle<CR>
-" nnoremap <localleader>r :Lrefresh<CR>
-" let g:CapitalL_qf_position = "right"
-" let g:CapitalL_qf_width = 40
-" nnoremap <leader>e :call CenwinToggle()<CR>
-
-""" vim-scripts/YankRing.vim
-"let g:yankring_history_dir = '$HOME/.vim'
-"let g:yankring_replace_n_pkey = '<leader>p'
-"let g:yankring_replace_n_nkey = '<leader>P'
-
 """ tpope/vim-commentary
 autocmd FileType octave setlocal commentstring=%\ %s
 
@@ -279,40 +232,6 @@ nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap <C-n> :lnext<CR>zt
 nnoremap <C-p> :lprevious<CR>zt
-
-function! SearchHighlightToggle()
-    let bgcolor=synIDattr(hlID('Search'), 'bg#')
-    if bgcolor == 1
-        execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
-    elseif bgcolor == 12
-        execute "hi Search ctermbg=0 ctermfg=none cterm=none"
-    elseif bgcolor == 0
-        execute "hi Search ctermbg=8 ctermfg=none cterm=none"
-    elseif bgcolor == 8
-        execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
-    endif
-endfunction!
-
-""" tpope/vim-repeat
-silent! call repeat#set("\<Plug>unimpairedANext", v:count)
-silent! call repeat#set("\<Plug>unimpairedAPrevious", v:count)
-silent! call repeat#set("\<Plug>unimpairedBNext", v:count)
-silent! call repeat#set("\<Plug>unimpairedBPrevious", v:count)
-silent! call repeat#set("\<Plug>unimpairedLNext", v:count)
-silent! call repeat#set("\<Plug>unimpairedLPrevious", v:count)
-silent! call repeat#set("\<Plug>unimpairedQNext", v:count)
-silent! call repeat#set("\<Plug>unimpairedQPrevious", v:count)
-silent! call repeat#set("\<Plug>unimpairedTNext", v:count)
-silent! call repeat#set("\<Plug>unimpairedTPrevious", v:count)
-silent! call repeat#set("\<Plug>unimpairedMoveDown", v:count)
-silent! call repeat#set("\<Plug>unimpairedMoveUp", v:count)
-silent! call repeat#set("\<Plug>unimpairedDirectoryNext", v:count)
-silent! call repeat#set("\<Plug>unimpairedDirectoryPrevious", v:count)
-silent! call repeat#set("\<Plug>unimpairedContextNext", v:count)
-silent! call repeat#set("\<Plug>unimpairedContextPrevious", v:count)
-
-silent! call repeat#set("\<Plug>GitGutterNextHunk", v:count)
-silent! call repeat#set("\<Plug>GitGutterPreviousHunk", v:count)
 
 """ Git (tpope/vim-fugitive & airblade/vim-gitgutter)
 let g:gitgutter_eager = 0
@@ -327,21 +246,8 @@ nmap <leader>gha <Plug>GitGutterStageHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
 nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 
-""" diffchar
-" I've commented out the keymaps in plugin/diffchar.vim
-
-""" submode
-" let g:submode_timeout = 0
-" let g:submode_tiemoutlen = 1500
-" let g:submode_keep_leaving_key = 1
-
 """ taboo.vim
 let g:taboo_tabline = 0
-"let g:taboo_tab_format = ' %f%m '
-"let g:taboo_renamed_tab_format = ' [%l]%m'
-
-""" supertab
-let g:SuperTabMappingForward = '<S-Tab>'
 
 """ ctrlp
 let g:ctrlp_map = '<leader>o'
@@ -376,7 +282,7 @@ let NERDTreeMapOpenVSplit = 'v'
 let NERDTreeMapPreviewSplit = 'gs'
 let NERDTreeMapPreviewVSplit = 'gv'
 let NERDTreeShowLineNumbers = 1
-let NERDTreeHijackNetrw = 1
+let NERDTreeHijackNetrw = 0
 
 """ buffergator
 let g:buffergator_viewport_split_policy = "L"
@@ -518,12 +424,7 @@ set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
 
 "" Functions
-function! GetSyntaxUnderCursor() 
-    let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
-    return g:SyntaxUnderCursor
-endfunction
-nnoremap <leader>x :echo GetSyntaxUnderCursor()<CR>
-
+""" Toggles and showing info
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
@@ -534,7 +435,6 @@ function! ToggleTabline()
         set showtabline=0
     endif
 endfunction
-nnoremap <leader>F :call ToggleTabline()<CR>
 
 function! ToggleStatusBar()
     if &laststatus == 2
@@ -543,8 +443,51 @@ function! ToggleStatusBar()
         set laststatus=2
     endif
 endfunction
-nnoremap <leader>S :call ToggleStatusBar()<CR>
 
+function! GetSyntaxUnderCursor() 
+    let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
+    return g:SyntaxUnderCursor
+endfunction
+
+function! WordCount()
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+    let lnum = 1
+    let n = 0
+    while lnum <= line('$')
+        let n = n + len(split(getline(lnum)))
+        let lnum = lnum + 1
+    endwhile
+    return n
+endfunction
+
+function! SearchHighlightToggle()
+    let bgcolor=synIDattr(hlID('Search'), 'bg#')
+    if bgcolor == 1
+        execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
+    elseif bgcolor == 12
+        execute "hi Search ctermbg=0 ctermfg=none cterm=none"
+    elseif bgcolor == 0
+        execute "hi Search ctermbg=8 ctermfg=none cterm=none"
+    elseif bgcolor == 8
+        execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
+    endif
+endfunction!
+
+function! ToggleCsvTsv()
+    if exists("b:delimiter")
+        if b:delimiter==","
+            exe "%s/,/\t/g"
+            let b:delimiter="\t"
+        elseif b:delimiter=="\t"
+            exe "%s/\t/,/g"
+            let b:delimiter=","
+        endif
+    else
+        echo "b:delimiter is not defined."
+    endif
+endfunction
+
+""" Tab names
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
 if exists("+showtabline")
@@ -609,6 +552,7 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
 endif
 
+""" tmux make cursor line when in insert mode
 " Change cursor shape from block (command mode) to line (insert mode)
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -620,54 +564,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-function! ToggleCsvTsv()
-    if exists("b:delimiter")
-        if b:delimiter==","
-            exe "%s/,/\t/g"
-            let b:delimiter="\t"
-        elseif b:delimiter=="\t"
-            exe "%s/\t/,/g"
-            let b:delimiter=","
-        endif
-    else
-        echo "b:delimiter is not defined."
-    endif
-endfunction
-
-" from tpope's vimrc
-" make sure a function exists before trying to put it in the statusline
-function! SL(function)
-  if exists('*'.a:function)
-    return call(a:function,[])
-  else
-    return ''
-  endif
-endfunction
-
-function! WordCount()
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-    let lnum = 1
-    let n = 0
-    while lnum <= line('$')
-        let n = n + len(split(getline(lnum)))
-        let lnum = lnum + 1
-    endwhile
-    return n
-endfunction
-
-function! Cmd_Shell(...)
-" https://github.com/vim-scripts/cmd.vim
-	let Cmd_Cmd = ''
-	for s in a:000
-		let Cmd_Cmd .= s . ' '
-	endfor
-	echo Cmd_Cmd
-	let Cmd_Output = system(Cmd_Cmd)
-	"let Cmd_Output = iconv(Cmd_Output, "utf8", "cp936")
-	echo Cmd_Output
-endfunction
-command! -nargs=* -range=0 -complete=file Cmd call Cmd_Shell(<q-args>)
-
+""" Mutt Mail Mode
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
     "exe ':call CenWinToggle(80)'
