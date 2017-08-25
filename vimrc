@@ -272,10 +272,12 @@ nnoremap <C-p> :lprevious<CR>zt
 function! SearchHighlightToggle()
     let bgcolor=synIDattr(hlID('Search'), 'bg#')
     if bgcolor == 1
+        execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
+    elseif bgcolor == 12
         execute "hi Search ctermbg=0 ctermfg=none cterm=none"
     elseif bgcolor == 0
         execute "hi Search ctermbg=8 ctermfg=none cterm=none"
-    elseif bgcolor == 12
+    elseif bgcolor == 8
         execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
     endif
 endfunction!
