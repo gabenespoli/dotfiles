@@ -83,8 +83,19 @@ hi link ALEWarningSign WarningMsg
 " hi link SyntasticErrorSign ErrorMsg
 " hi link SyntasticWarningSign WarningMsg
 
+""" NERDTree
+hi NERDTreeExecFile     ctermfg=5
+hi NERDTreeLinkDir      ctermfg=6
+hi NERDTreeLinkTarget   ctermfg=12
+" hi NERDTreeOpenable     ctermfg=12
+" hi NERDTreeCloseable    ctermfg=12
+
 """ Buffergator
 hi BuffergatorBufferNr  ctermfg=10      ctermbg=8       cterm=none
+
+""" Tagbar
+hi TagbarType           ctermfg=10
+hi TagbarScope          ctermfg=12
 
 """ DiffChar
 hi _DiffDelPos          ctermfg=1       ctermbg=0       cterm=underline
