@@ -665,3 +665,55 @@ function! MuttMailMode()
     "exe "normal! gg}O\<Esc>o"
     exe "normal! gg"
 endfunction
+
+""" Sidebar Toggles
+" nerdtree, buffergator, tagbar, gundo, loclist, (qf list)
+" TODO choose left or right for each; only close if is same side
+" TODO blank
+
+nmap <leader>f :call SidebarToggle('nerdtree')<CR>
+nmap <leader>b :call SidebarToggle('buffergator')<CR>
+nmap <leader>t :call SidebarToggle('tagbar')<CR>
+nmap <leader>u :call SidebarToggle('gundo')<CR>
+
+function! SidebarToggle(name)
+    if !exists('g:sidebar') || empty(g:sidebar)
+        execute "call SidebarOpen('".a:name."')"
+    elseif g:sidebar != a:name
+        execute "call SidebarClose('".g:sidebar."')"
+        execute "call SidebarOpen('".a:name."')"
+    elseif g:sidebar == a:name
+        execute "call SidebarClose('".a:name."')"
+    endif
+endfunction
+
+function! SidebarOpen(name)
+    if a:name == 'nerdtree'
+        let dir = expand('%:p:h')
+        execute 'NERDTree '.dir
+        let g:sidebar = 'nerdtree'
+    elseif a:name == 'buffergator'
+        execute 'BuffergatorOpen'
+        let g:sidebar = 'buffergator'
+    elseif a:name == 'tagbar'
+        execute 'TagbarOpen'
+        let g:sidebar = 'tagbar'
+    elseif a:name == 'gundo'
+        execute 'GundoToggle'
+        let g:sidebar = 'gundo'
+    endif
+endfunction
+
+function! SidebarClose(name)
+    if a:name == 'nerdtree'
+        execute 'NERDTreeClose'
+    elseif a:name == 'buffergator'
+        execute 'BuffergatorClose'
+    elseif a:name == 'tagbar'
+        execute 'TagbarClose'
+    elseif a:name == 'gundo'
+        execute 'GundoToggle'
+    endif
+    let g:sidebar = ''
+endfunction
+
