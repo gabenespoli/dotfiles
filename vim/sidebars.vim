@@ -62,12 +62,16 @@ function! SidebarToggle(name)
 endfunction
 
 function! SidebarGetBufname(name)
-    if a:name == 'nerdtree'
+    if a:name == 'capitalL'
+        return '[Location List]'
+    elseif a:name == 'nerdtree'
         return 'NERD_tree'
     elseif a:name == 'buffergator'
         return '[[buffergator-buffers]]'
     elseif a:name == 'tagbar'
         return '__Tagbar__'
+    elseif a:name == 'gundo'
+        return '__Gundo__'
     endif
 endfunction
 
