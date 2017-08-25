@@ -113,21 +113,20 @@ set smartcase           " if [search terms] has uppercase, then case sensitive
 
 
 "" UI Config
-set number
-set relativenumber
-set showcmd              " show command in bottom bar
-set wildmode=longest,list,full
-set wildmenu            " visual autocomplete for command menu
-set showmatch           " hi matching [{()}]
-set visualbell          " no sound
-set laststatus=2        " 0 = no status bar, 2 = show status bar
-set showtabline=2       " 0 = no tabline, 1 = show if > 1 tab, 2 = always
+set number relativenumber
+set showcmd                     " show command in bottom bar
+set laststatus=2                " 0 = no status bar, 2 = show status bar
+set showtabline=2               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
 set tabpagemax=8
+set wildmenu                    " visual autocomplete for command menu
+set wildmode=longest,list,full
+set visualbell                  " no sound
 set hidden
-set splitright
-set splitbelow
-set incsearch           " highlight search results as you type
-let loaded_matchparen = 1 " don't match parentheses, use % instead
+set splitright splitbelow
+set incsearch                   " highlight search results as you type
+set showmatch                   " hi matching [{()}]
+let loaded_matchparen = 1       " don't match parentheses, use % instead
+set foldminlines = 0            " 0 means we can close a 1-line fold
 
 "" Status Line
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
