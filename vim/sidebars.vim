@@ -2,8 +2,9 @@
 " Plugin to manage plugins and loclist/qflist that open as sidebars
 " Currently supports: nerdtree, buffergator, tagbar, gundo, loclist, (qf list)
 
-" TODO choose left or right for each; only close if is same side
-" TODO blank
+" TODO: check each time if the window is open by searching the buffer list
+" TODO: blank
+" TODO: set capitalL patterns in each ftplugin; set default to TODO
 
 "" Commands
 command! -nargs=1   SidebarToggle  call SidebarToggle(<f-args>)
@@ -43,20 +44,51 @@ nmap <leader>mtl :SidebarClose tagbar<CR>:let g:tagbar_left = 0<CR>:SidebarOpen 
 function! SidebarToggle(name)
     let l:position = SidebarGetPosition(a:name)
     let l:varname = 'g:sidebar_'.l:position
-    if exists(l:varname) && eval(l:varname) == a:name
-        execute 'SidebarClose '.eval(l:varname)
+    if exists(l:varname) && eval(l:varname) != ''
+        " if there's [supposed to be] something there
+        if eval(l:varname) == a:name
+            " make sure it's actually open before closing it,
+            "   otherwise open it instead
+            let l:bufname = SidebarGetBufname(a:name)
+            if bufwinnr(l:bufname) == -1
+                execute 'SidebarOpen '.a:name
+            else
+                execute 'SidebarClose '.eval(l:varname)
+            endif
+        endif
     else
         execute 'SidebarOpen '.a:name
+    endif
+endfunction
+
+function! SidebarGetBufname(name)
+    if a:name == 'nerdtree'
+        return 'NERD_tree'
+    elseif a:name == 'buffergator'
+        return '[[buffergator-buffers]]'
+    elseif a:name == 'tagbar'
+        return '__Tagbar__'
     endif
 endfunction
 
 function! SidebarOpen(name)
     let l:position = SidebarGetPosition(a:name)
     let l:varname = 'g:sidebar_'.l:position
-    " if something is already there, close it first
-    if exists(l:varname) && eval(l:varname) != '' && eval(l:varname) != a:name
-        execute 'SidebarClose '.eval(l:varname)
+
+    if exists(l:varname) && eval(l:varname) != ''
+        if eval(l:varname) == a:name
+            " if it's there already, move to it instead
+            let l:bufname = SidebarGetBufname(a:name)
+            if bufwinnr(l:bufname) > 0
+                execute bufwinnr(l:bufname) . ' wincmd w'
+                return
+            endif
+        elseif
+            " if something else is there, close it first
+            execute 'SidebarClose '.eval(l:varname)
+        endif
     endif
+
     if a:name == 'blank'
         execute 'call SidebarBlankOpen()'
     elseif a:name == 'capitalL'
@@ -74,6 +106,7 @@ function! SidebarOpen(name)
         echo 'Unknown sidebar (opening).'
         return
     endif
+
     execute "let ".l:varname." = '".a:name."'"
 endfunction
 
