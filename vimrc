@@ -314,6 +314,7 @@ silent! call repeat#set("\<Plug>GitGutterNextHunk", v:count)
 silent! call repeat#set("\<Plug>GitGutterPreviousHunk", v:count)
 
 """ Git (tpope/vim-fugitive & airblade/vim-gitgutter)
+let g:gitgutter_eager = 0
 nmap cog :GitGutterSignsToggle<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
