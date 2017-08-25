@@ -338,7 +338,13 @@ let g:ctrlp_prompt_mappings = {
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
 
+""" ranger
+let g:ranger_map_keys = 0
+nnoremap <leader>O :RangerNewTab<CR>
+
 """ NERDTree
+let NERDTreeWinPos = 'left'
+let NERDTreeWinSize = g:width
 let NERDTreeMapUpdir = 'h'
 let NERDTreeMapChangeRoot = 'l'
 let NERDTreeMapJumpNextSibling = '<C-n>'
@@ -349,13 +355,25 @@ let NERDTreeMapOpenVSplit = 'v'
 let NERDTreeMapPreviewSplit = 'gs'
 let NERDTreeMapPreviewVSplit = 'gv'
 
-""" ranger
-let g:ranger_map_keys = 0
-nnoremap <leader>O :RangerNewTab<CR>
-
 """ buffergator
+let g:buffergator_viewport_split_policy = "L"
+let g:buffergator_vsplit_size = g:width
+let g:buffergator_hsplit_size = g:height
 let g:buffergator_suppress_keymaps = 1
-" nnoremap <leader>B :BuffergatorTabsToggle<CR>
+
+""" tagbar
+let g:tagbar_left = 1
+let g:tagbar_width = g:width
+let g:tagbar_autofocus = 1
+let g:tagbar_compact = 1
+let g:tagbar_show_linenumbers = -1
+let g:tagbar_foldlevel = 1
+let g:tagbar_iconchars = ['+', '-']
+
+""" gundo
+let g:gundo_right = 0
+let g:gundo_width = g:width
+let g:gundo_preview_height = 15
 
 """ sidepanel.vim
 " let g:sidepanel_pos = "left"
