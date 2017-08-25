@@ -91,8 +91,10 @@ function! PandocForceHighlighting()
 endfunction
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 
-"" quickfix list with critic comments and todos
-" au VimEnter,BufEnter <buffer> execute "call Lvimgrep()"
+"" capitalL location list settings
+let b:Lpattern = '{>>\|{==\|{++\|{--\|TODO/'
+let b:Lreformat = 'silent! %s/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge'
+
 nnoremap <leader>l :call Ltoggle()<CR>
 nnoremap <localleader>lh :let g:Lpos = 'topleft vertical'<CR>
 nnoremap <localleader>lj :let g:Lpos = ''<CR>
