@@ -406,6 +406,18 @@ let g:gundo_right = 0
 let g:gundo_width = g:width
 let g:gundo_preview_height = 15
 
+""" sidebars.vim
+source ~/dotfiles/vim/sidebars.vim
+nmap <leader>f :call SidebarToggle('nerdtree')<CR>
+nmap <leader>b :call SidebarToggle('buffergator')<CR>
+nmap <leader>t :call SidebarToggle('tagbar')<CR>
+nmap <leader>u :call SidebarToggle('gundo')<CR>
+nmap <leader>l :call Ltoggle()<CR>
+nmap <localleader>lh :let g:Lpos = 'topleft vertical'<CR>
+nmap <localleader>lj :let g:Lpos = ''<CR>
+nmap <localleader>lk :let g:Lpos = 'top'<CR>
+nmap <localleader>ll :let g:Lpos = 'vertical'<CR>
+
 """ vim-tmux-navigator
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
     execute "set <M-h>=\eh"
