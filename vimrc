@@ -281,7 +281,7 @@ let NERDTreeMapOpenVSplit = 'v'
 let NERDTreeMapPreviewSplit = 'gs'
 let NERDTreeMapPreviewVSplit = 'gv'
 let NERDTreeShowLineNumbers = 1
-let NERDTreeHijackNetrw = 0
+let NERDTreeHijackNetrw = 1
 
 """ buffergator
 let g:buffergator_viewport_split_policy = "L"
