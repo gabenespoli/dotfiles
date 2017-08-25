@@ -176,6 +176,8 @@ cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>b <S-Left>
+cnoremap <C-d> <Del>
+cnoremap <C-i> <C-d>
 
 """ common actions
 "<leader>o opens ctrlp plugin
