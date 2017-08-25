@@ -269,19 +269,20 @@ let g:ctrlp_prompt_mappings = {
 """ NERDTree
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
-let NERDTreeWinPos = 'left'
-let NERDTreeWinSize = g:width
-let NERDTreeMapUpdir = 'h'
-let NERDTreeMapChangeRoot = 'l'
-let NERDTreeMapJumpNextSibling = '<C-n>'
-let NERDTreeMapJumpPrevSibling = '<C-p>'
-let NERDTreeMapPreview = 'i'
-let NERDTreeMapOpenSplit = 's'
-let NERDTreeMapOpenVSplit = 'v'
-let NERDTreeMapPreviewSplit = 'gs'
-let NERDTreeMapPreviewVSplit = 'gv'
-let NERDTreeShowLineNumbers = 1
-let NERDTreeHijackNetrw = 1
+let g:NERDTreeWinPos = 'left'
+let g:NERDTreeWinSize = g:width
+let g:NERDTreeMapUpdir = 'h'
+let g:NERDTreeMapChangeRoot = 'l'
+let g:NERDTreeMapJumpNextSibling = '<C-n>'
+let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+let g:NERDTreeMapPreview = 'i'
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenVSplit = 'v'
+let g:NERDTreeMapPreviewSplit = 'gs'
+let g:NERDTreeMapPreviewVSplit = 'gv'
+let g:NERDTreeShowLineNumbers = 1
+let g:NERDTreeHijackNetrw = 1
+let g:NERDTreeBookmarksFile = '$HOME/bin/vim/NERDTreeBookmarks'
 
 """ buffergator
 let g:buffergator_viewport_split_policy = "L"
