@@ -8,28 +8,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" my plugins
-" Plugin 'file:///Users/gmac/bin/vim/capitalL.vim'
-" Plugin 'file:///Users/gmac/bin/vim/vim-cenwin'
-
 " vim and git
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
-" Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
-" Plugin 'rickhowe/diffchar.vim'
-" Plugin 'kana/vim-submode'
 Plugin 'gcmt/taboo.vim'
-" Plugin 'ervandew/supertab'
-"Plugin 'Valloric/YouCompleteMe'
-" Plugin 'vim-scripts/Rename'
 
 " files
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'francoiscabrol/ranger.vim'
 Plugin 'scrooloose/NERDTree'
-" Plugin 'miyakogi/sidepanel.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'majutsushi/tagbar'
 Plugin 'jszakmeister/markdown2ctags'
@@ -39,7 +28,7 @@ Plugin 'jszakmeister/markdown2ctags'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jpalardy/vim-slime'
-"Plugin 'ivanov/vim-ipython'
+" Plugin 'ivanov/vim-ipython'
 
 " syntax
 Plugin 'w0rp/ale'
@@ -48,10 +37,6 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-criticmarkup'
 Plugin 'jvirtanen/vim-octave'
-"Plugin 'hrother/offlineimaprc.vim'
-"Plugin 'vim-scripts/todo-txt.vim'
-"Plugin 'toyamarinyon/vim-swift'
-" Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
