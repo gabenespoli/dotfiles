@@ -330,18 +330,18 @@ else
     execute "set <M-l>=l"
 endif
 let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
-nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
-nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+nmap <silent> <M-h> :TmuxNavigateLeft<CR>
+nmap <silent> <M-j> :TmuxNavigateDown<CR>
+nmap <silent> <M-k> :TmuxNavigateUp<CR>
+nmap <silent> <M-l> :TmuxNavigateRight<CR>
+imap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+imap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+imap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+imap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+vmap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 
 """ vim-slime
 let g:slime_target = "tmux"
