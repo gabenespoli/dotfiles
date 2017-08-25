@@ -372,6 +372,15 @@ let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = -1
 let g:tagbar_foldlevel = 1
 let g:tagbar_iconchars = ['+', '-']
+let g:tagbar_map_jump = ['<CR>', '<C-j>', 'o']
+let g:tagbar_map_preview = 'i'
+let g:tagbar_map_showproto = 'p'
+let g:tagbar_map_openfold = ['l', '+', 'zo']
+let g:tagbar_map_closefold = ['h', '-', 'zc']
+let g:tagbar_map_togglefold = 'za'
+let g:tagbar_map_toggleautoclose = 'C'
+let g:tagbar_map_togglecaseinsensitive = 'I'
+let g:tagbar_map_zoomwin = 'A'
 
 """ markdown2ctags
 let g:tagbar_type_pandoc = {
