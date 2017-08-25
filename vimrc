@@ -79,6 +79,7 @@ syntax enable
 set background=dark
 
 "" File stuff
+set updatetime=750
 set undofile
 set swapfile
 set undodir=~/.vim/tmp/undo
