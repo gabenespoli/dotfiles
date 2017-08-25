@@ -182,6 +182,7 @@ cnoremap <C-i> <C-d>
 """ common actions
 "<leader>o opens ctrlp plugin
 "<leader>O opens ranger
+noremap <leader>O :e <C-r>=expand('%:p:h')<CR><CR>
 " nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>N :tabnew %<CR>
 nnoremap <leader>s :w<CR>
@@ -357,8 +358,8 @@ let g:ctrlp_prompt_mappings = {
             \ }
 
 """ ranger
-let g:ranger_map_keys = 0
-nnoremap <leader>O :RangerNewTab<CR>
+" let g:ranger_map_keys = 0
+" nnoremap <leader>O :RangerNewTab<CR>
 
 """ NERDTree
 let g:NERDTreeDirArrowExpandable='+'
