@@ -346,6 +346,8 @@ let g:ranger_map_keys = 0
 nnoremap <leader>O :RangerNewTab<CR>
 
 """ NERDTree
+let g:NERDTreeDirArrowExpandable='+'
+let g:NERDTreeDirArrowCollapsible='-'
 let NERDTreeWinPos = 'left'
 let NERDTreeWinSize = g:width
 let NERDTreeMapUpdir = 'h'
