@@ -2,8 +2,9 @@
 " Plugin to manage plugins and loclist/qflist that open as sidebars
 " Currently supports: nerdtree, buffergator, tagbar, gundo, loclist, (qf list)
 
-" TODO: check each time if the window is open by searching the buffer list
 " TODO: blank
+" TODO: make SidbarMove function so that focus stays in the same buffer when
+" doing the moving
 " TODO: set capitalL patterns in each ftplugin; set default to TODO
 
 "" Commands
