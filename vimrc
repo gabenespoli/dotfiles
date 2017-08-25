@@ -169,6 +169,14 @@ set ttimeout
 set timeoutlen=500
 inoremap jk <Esc>
 
+""" command line mappings
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>b <S-Left>
+
 """ common actions
 "<leader>o opens ctrlp plugin
 "<leader>O opens ranger
