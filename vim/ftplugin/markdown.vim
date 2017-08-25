@@ -27,6 +27,7 @@ nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 set foldmethod=expr
 set foldexpr=GetMarkdownFolds(v:lnum)
 set foldtext=GetMarkdownFoldText()
+let g:tagbar_foldlevel = 2
 
 function! GetMarkdownFolds(lnum)
     let current = getline(a:lnum) 
