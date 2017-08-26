@@ -301,13 +301,13 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>ga :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gwc :Gwrite<CR>:Gcommit<CR>i
+nnoremap <leader>gwc :Gwrite<CR>:Gcommit<CR>
 
 " airblade/vim-gitgutter
-nnoremap <leader>ghd <Plug>GitGutterPreviewHunk
-nnoremap <leader>gha <Plug>GitGutterStageHunk
-nnoremap <leader>ghu <Plug>GitGutterUndoHunk
-nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
+nmap <leader>ghd <Plug>GitGutterPreviewHunk
+nmap <leader>gha <Plug>GitGutterStageHunk
+nmap <leader>ghu <Plug>GitGutterUndoHunk
+nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 
