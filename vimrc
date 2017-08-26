@@ -1,5 +1,4 @@
-"" .vimrc file for Gabriel A. Nespoli
-" gabenespoli@gmail.com
+"" .vimrc file for gabenespoli@gmail.com
 
 "" vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
