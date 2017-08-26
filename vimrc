@@ -8,15 +8,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'gcmt/taboo.vim'
-Plug 'sjl/gundo.vim'
 
-" files
+" sidebar-type plugins
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'scrooloose/NERDTree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
+Plug 'sjl/gundo.vim'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -37,8 +37,8 @@ Plug 'vim-pandoc/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
 
 " my plugins
-" Plug '~/bin/vim/vim-capitalL'
-" Plug '~/bin/vim/vim-sidebar'
+Plug '~/bin/vim/vim-capitalL'
+Plug '~/bin/vim/vim-sidebar'
 
 call plug#end()
 
@@ -196,33 +196,22 @@ nnoremap <leader>rw :call ResizeSideWidth()<CR>
 nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
 "" Plugin settings
-""" tpope/vim-commentary
-autocmd FileType octave setlocal commentstring=%\ %s
 
-""" tpope/vim-unimpaired
-" my own macro binding of the default ones
+""" Vim General
+" tpope/vim-unimpaired
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap <C-n> :lnext<CR>zt
 nnoremap <C-p> :lprevious<CR>zt
 
-""" Git (tpope/vim-fugitive & airblade/vim-gitgutter)
-let g:gitgutter_eager = 0
-nmap cog :GitGutterSignsToggle<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>ga :Gwrite<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gwc :Gwrite<CR>:Gcommit<CR>i
-nmap <leader>ghd <Plug>GitGutterPreviewHunk
-nmap <leader>gha <Plug>GitGutterStageHunk
-nmap <leader>ghu <Plug>GitGutterUndoHunk
-nmap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
+" tpope/vim-commentary
+autocmd FileType octave setlocal commentstring=%\ %s
 
-""" taboo.vim
+" gcmt/taboo.vim
 let g:taboo_tabline = 0
 
-""" ctrlp
+""" Sidebar Plugins (files, buffers, tags, undo, lists)
+" ctrlp
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
@@ -236,11 +225,11 @@ let g:ctrlp_prompt_mappings = {
             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
             \ }
 
-""" ranger
+" ranger
 " let g:ranger_map_keys = 0
 " nnoremap <leader>O :RangerNewTab<CR>
 
-""" NERDTree
+" NERDTree
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeWinPos = 'left'
@@ -258,13 +247,13 @@ let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeBookmarksFile = '$HOME/bin/vim/NERDTreeBookmarks'
 
-""" buffergator
+" buffergator
 let g:buffergator_viewport_split_policy = "L"
 let g:buffergator_vsplit_size = g:width
 let g:buffergator_hsplit_size = g:height
 let g:buffergator_suppress_keymaps = 1
 
-""" tagbar
+" tagbar
 let g:tagbar_left = 1
 let g:tagbar_width = g:width
 let g:tagbar_autofocus = 1
@@ -282,7 +271,7 @@ let g:tagbar_map_toggleautoclose = 'C'
 let g:tagbar_map_togglecaseinsensitive = 'I'
 let g:tagbar_map_zoomwin = 'A'
 
-""" markdown2ctags
+" markdown2ctags
 let g:tagbar_type_pandoc = {
     \ 'ctagstype': 'pandoc',
     \ 'ctagsbin' : '~/.vim/bundle/markdown2ctags/markdown2ctags.py',
@@ -298,15 +287,32 @@ let g:tagbar_type_pandoc = {
     \ 'sort': 0,
 \ }
 
-""" gundo
+" gundo
 let g:gundo_right = 0
 let g:gundo_width = g:width
 let g:gundo_preview_height = 15
 
-""" sidebars.vim
-source ~/dotfiles/vim/sidebars.vim
+""" vim-sidebar
+" source ~/dotfiles/vim/sidebars.vim
 
-""" vim-tmux-navigator
+""" git
+" tpope/vim-fugitive
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gwc :Gwrite<CR>:Gcommit<CR>i
+
+" airblade/vim-gitgutter
+nnoremap <leader>ghd <Plug>GitGutterPreviewHunk
+nnoremap <leader>gha <Plug>GitGutterStageHunk
+nnoremap <leader>ghu <Plug>GitGutterUndoHunk
+nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
+nnoremap cog :GitGutterSignsToggle<CR>
+let g:gitgutter_eager = 0
+
+""" tmux
+" vim-tmux-navigator
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
     execute "set <M-h>=\eh"
     execute "set <M-j>=\ej"
@@ -332,13 +338,14 @@ vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
 vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
 vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 
-""" vim-slime
+" vim-slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 
-""" w0rp/ale
+""" syntax
+" w0rp/ale
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
@@ -357,10 +364,10 @@ function! LinterStatus(type) abort
     endif
 endfunction
 
-""" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
+" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
 
-""" Critic Markdown Plugin
+" Critic Markdown Plugin
 " insert tags (comments and highlights)
 nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
 nnoremap <leader>chi i{==<Esc>
@@ -387,9 +394,6 @@ nnoremap <leader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
 nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
-
-""" todo-txt.vim
-" let g:Todo_txt_do_not_map = 1
 
 """ Lilypond
 filetype off
