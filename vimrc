@@ -274,7 +274,7 @@ let g:tagbar_map_zoomwin = 'A'
 " markdown2ctags
 let g:tagbar_type_pandoc = {
     \ 'ctagstype': 'pandoc',
-    \ 'ctagsbin' : '~/.vim/bundle/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',
