@@ -290,9 +290,6 @@ let g:tagbar_type_pandoc = {
 let g:gundo_right = 0
 let g:gundo_preview_height = 15
 
-""" vim-sidebar
-" source ~/dotfiles/vim/sidebars.vim
-
 """ git
 " tpope/vim-fugitive
 nnoremap <leader>gs :Gstatus<CR>
