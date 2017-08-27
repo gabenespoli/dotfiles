@@ -228,11 +228,14 @@ let g:ctrlp_prompt_mappings = {
 " let g:ranger_map_keys = 0
 " nnoremap <leader>O :RangerNewTab<CR>
 
+" vim-sidebar
+let g:SidebarWidth = g:width
+let g:SidebarHeight = g:height
+
 " NERDTree
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeWinPos = 'left'
-let g:NERDTreeWinSize = g:width
 let g:NERDTreeMapUpdir = 'h'
 let g:NERDTreeMapChangeRoot = 'l'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
@@ -248,13 +251,10 @@ let g:NERDTreeBookmarksFile = '$HOME/bin/vim/NERDTreeBookmarks'
 
 " buffergator
 let g:buffergator_viewport_split_policy = "L"
-let g:buffergator_vsplit_size = g:width
-let g:buffergator_hsplit_size = g:height
 let g:buffergator_suppress_keymaps = 1
 
 " tagbar
 let g:tagbar_left = 1
-let g:tagbar_width = g:width
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = -1
@@ -288,7 +288,6 @@ let g:tagbar_type_pandoc = {
 
 " gundo
 let g:gundo_right = 0
-let g:gundo_width = g:width
 let g:gundo_preview_height = 15
 
 """ vim-sidebar
