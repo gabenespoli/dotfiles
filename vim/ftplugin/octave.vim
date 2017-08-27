@@ -20,3 +20,6 @@ function! GetOctaveFoldText()
     let line = substitute(line, '^function', ' function', 'g')
     return '+--' . line . ' '
 endfunction
+
+let b:Lpatterns = ['^\s*function', '"\s*TODO']
+let b:Lreformat = ['[^|]*|[^|]*|\s/', '']
