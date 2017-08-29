@@ -11,11 +11,11 @@ Plug 'gcmt/taboo.vim'
 " sidebar-type plugins
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'scrooloose/NERDTree', { 'on': ['NERDTreeToggle', 'NERDTree'] }
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'majutsushi/tagbar'
+Plug 'scrooloose/NERDTree', { 'on': 'NERDTreeToggle' }
+Plug 'jeetsukumaran/vim-buffergator', { 'on': 'BuffergatorToggle' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'jszakmeister/markdown2ctags'
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
 " git
 Plug 'tpope/vim-fugitive'
