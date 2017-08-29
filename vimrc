@@ -232,6 +232,10 @@ let g:ctrlp_prompt_mappings = {
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
 
+" capitalL
+let g:Lwidth = g:width
+let g:Lheight = g:height
+
 " NERDTree
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
