@@ -87,7 +87,7 @@ function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # u
 function settitle() { printf "\033k$1\033\\" ; }
 
 ### git
-alias gs="printf '\033c' && git status -s"
+alias gs="printf '\033c' && git status -sb"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
