@@ -1,7 +1,6 @@
 " vim plugin for todo.txt files
 " some ideas are take from the todo-txt.vim plugin
 "
-
 "" keybindings
 """ save all the time
 inoremap <buffer> jk <Esc>:w<CR>
@@ -18,6 +17,8 @@ nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-
 
 """ moving lines
 nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
+nnoremap <buffer> J :move +1
+nnoremap <buffer> K :move -2
 nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
 
 """ task points (1 2 3 5 8)
@@ -52,7 +53,7 @@ endfunction
 autocmd VimEnter * windo call TodoHighlighting(1)
 
 "" from todo-txt.vim
-" these function are taken from https://github.com/freitass/todo.txt-vim
+" these functions are taken from https://github.com/freitass/todo.txt-vim
 function! todo#RemoveCompleted()
     " Check if we can write to done.txt before proceeding.
     let l:target_dir = expand('%:p:h')
