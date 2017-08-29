@@ -1,6 +1,5 @@
-"" .vimrc file for gabenespoli@gmail.com
-
-"" vim-plug plugin manager
+" .vimrc file for gabenespoli@gmail.com
+"" vim-plug plugin manager {{{1
 call plug#begin('~/.vim/plugged')
 
 " vim
@@ -41,7 +40,7 @@ Plug '~/bin/vim/vim-sidebar'
 
 call plug#end()
 
-"" Colorscheme 
+"" Colorscheme {{{1
 if has("gui_running")
     colorscheme solarizedSumach
     set guicursor=n-v-c-i:blinkon0
@@ -51,7 +50,7 @@ endif
 syntax enable
 set background=dark
 
-"" File stuff
+"" File stuff {{{1
 set updatetime=750
 set undofile
 set swapfile
@@ -71,7 +70,7 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 
-"" Spaces & Tabs
+"" Spaces & Tabs {{{1
 set linebreak           " stop soft wrapping in the middle of words  
 set breakindent         " auto indent soft wrap line breaks
 set tabstop=4           " number of visual spaces per TAB
@@ -84,8 +83,7 @@ set backspace=indent,eol,start " enable backspacing text that was inserted previ
 set ignorecase
 set smartcase           " if [search terms] has uppercase, then case sensitive
 
-
-"" UI Config
+"" UI Config {{{1
 set number relativenumber
 set showcmd                     " show command in bottom bar
 set laststatus=2                " 0 = no status bar, 2 = show status bar
@@ -101,7 +99,7 @@ set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set foldminlines=0              " 0 means we can close a 1-line fold
 
-"" Status Line
+"" Status Line {{{1
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
@@ -113,13 +111,13 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%l/%L\,%c\ (%P)                           
 
-"" Keybindings
+"" Keybindings {{{1
 let mapleader = "\<Space>"
 set notimeout
 set ttimeout
 inoremap jk <Esc>
 
-""" emacs-style command line (cmap)
+""" emacs-style command line (cmap) {{{2
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
@@ -129,13 +127,13 @@ cnoremap <Esc>b <S-Left>
 cnoremap <C-d> <Del>
 cnoremap <C-i> <C-d>
 
-""" opening and saving
+""" opening and saving {{{2
 "<leader>o opens ctrlp plugin
 noremap <leader>O :e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>N :tabnew 
 nnoremap <leader>s :w<CR>
 
-""" tab switching
+""" tab switching {{{2
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -144,17 +142,17 @@ nnoremap <leader>5 5gt
 nnoremap <leader>[ gT
 nnoremap <leader>] gt
 
-""" swap q/Q for <leader>q/Q, so q/Q can be used for quitting
+""" swap q/Q for <leader>q/Q, so q/Q can be used for quitting {{{2
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
 
-""" status/info toggles
+""" status/info toggles {{{2
 nmap <leader>W :echo WordCount()<CR>
 nmap <leader>S :call ToggleStatusBar()<CR>
 nmap <leader>F :call ToggleTabline()<CR>
 nmap <leader>X :echo GetSyntaxUnderCursor()<CR>
 
-""" misc
+""" misc {{{2
 " copy/paste
 nnoremap Y y$
 " for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
@@ -174,7 +172,7 @@ inoremap <C-b> <Left>
 " Spell checking
 nnoremap <localleader>s 1z=
 
-""" resizing windows based on terminal size
+""" resizing windows based on terminal size {{{2
 " this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
 let g:centerwidth = 100
 let g:width = $COLS / 4
@@ -194,9 +192,9 @@ nnoremap <leader>rc :call ResizeCenterWidth()<CR>
 nnoremap <leader>rw :call ResizeSideWidth()<CR>
 nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
-"" Plugin settings
+"" Plugin settings {{{1
 
-""" Vim General
+""" Vim General {{{2
 " tpope/vim-unimpaired
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
@@ -209,7 +207,7 @@ autocmd FileType octave setlocal commentstring=%\ %s
 " gcmt/taboo.vim
 let g:taboo_tabline = 0
 
-""" Sidebar Plugins (files, buffers, tags, undo, lists)
+""" Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 " ctrlp
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -294,7 +292,7 @@ let g:tagbar_type_pandoc = {
 let g:gundo_right = 0
 let g:gundo_preview_height = 15
 
-""" git
+""" git {{{2
 " tpope/vim-fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
@@ -310,7 +308,7 @@ nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 
-""" tmux
+""" tmux {{{2
 " vim-tmux-navigator
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
     execute "set <M-h>=\eh"
@@ -343,7 +341,7 @@ let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane"
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 
-""" syntax
+""" syntax {{{2
 " w0rp/ale
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
@@ -394,13 +392,13 @@ nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
 
-""" Lilypond
+""" Lilypond {{{2
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
 
-"" Functions
+"" Functions {{{1
 """ Toggles and showing info
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
