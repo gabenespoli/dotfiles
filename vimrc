@@ -235,21 +235,68 @@ let g:Lwidth = g:width
 let g:Lheight = g:height
 
 " NERDTree
+let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
+let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeWinPos = 'left'
-let g:NERDTreeMapUpdir = 'h'
-let g:NERDTreeMapChangeRoot = 'l'
-let g:NERDTreeMapJumpNextSibling = '<C-n>'
-let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+let g:NERDTreeBookmarksFile = '$HOME/bin/vim/NERDTreeBookmarks'
+let g:NERDTreeMapToggleHidden = 'zh'
 let g:NERDTreeMapPreview = 'i'
 let g:NERDTreeMapOpenSplit = 's'
 let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapPreviewSplit = 'gs'
 let g:NERDTreeMapPreviewVSplit = 'gv'
-let g:NERDTreeShowLineNumbers = 1
-let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeBookmarksFile = '$HOME/bin/vim/NERDTreeBookmarks'
+let g:NERDTreeMapJumpNextSibling = '<C-n>'
+let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+" let g:NERDTreeMapActivateNode = 'l'
+autocmd FileType nerdtree nnoremap <silent> <buffer> h :call NERDTree_h()<CR>
+autocmd FileType nerdtree nnoremap <silent> <buffer> l :call NERDTree_l()<CR>
+autocmd FileType nerdtree nnoremap <silent> <buffer> o :call NERDTree_o()<CR>
+
+function! NERDTree_l()
+    let l:syntax = GetSyntaxUnderCursor() 
+    if l:syntax == 'NERDTreeFile' || l:syntax == 'NERDTreeOpenable'
+        " open node or file
+        call nerdtree#ui_glue#invokeKeyMap("o")
+        " check if this line is closable
+        execute "normal! 0f".g:NERDTreeDirArrowCollapsible
+        " if GetSyntaxUnderCursor() != "NERDTreeClosable"
+            " normal! 0
+        " endif
+    endif
+endfunction
+
+function! NERDTree_h()
+    let l:syntax = GetSyntaxUnderCursor() 
+    if l:syntax == 'NERDTreeFile' || l:syntax == 'NERDTreeOpenable'
+        " go to parent
+        call nerdtree#ui_glue#invokeKeyMap("p")
+        " check if this line is closable
+        execute 'normal! 0f'.g:NERDTreeDirArrowCollapsible
+        if GetSyntaxUnderCursor() != 'NERDTreeClosable'
+            normal! 0
+        endif
+    elseif l:syntax == 'NERDTreeClosable'
+        " close the node
+        call nerdtree#ui_glue#invokeKeyMap("o")
+        normal! 0
+    elseif l:syntax == 'NERDTreeCWD'
+        " move up a dir
+        call nerdtree#ui_glue#invokeKeyMap("u")
+    endif
+endfunction
+
+function! NERDTree_o()
+    let l:syntax = GetSyntaxUnderCursor() 
+    if l:syntax == 'NERDTreeFile'
+        " regular functionality
+        call nerdtree#ui_glue#invokeKeyMap("o")
+    elseif l:syntax == 'NERDTreeOpenable' || l:syntax=='NERDTreeClosable'
+        " change tree root to selected dir
+        call nerdtree#ui_glue#invokeKeyMap("C")
+    endif
+endfunction
 
 " buffergator
 let g:buffergator_viewport_split_policy = "L"
