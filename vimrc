@@ -462,6 +462,16 @@ function! ToggleCsvTsv()
     endif
 endfunction
 
+" Line Return
+" from Steve Losh's (sjl) vimrc
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
 """ Tab names
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
