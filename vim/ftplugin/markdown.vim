@@ -93,5 +93,5 @@ endfunction
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" capitalL location list settings
-let b:Lpatterns = ['{>>\|{==\|{++\|{--', 'TODO']
-let b:Lreformat = ['[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2', '']
+let b:Lpatterns = ['{>>\|{==\|{++\|{--', '^\s*TODO']
+let b:Lreformat = ['[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2', '[^|]*|[^|]*|\s*\(TODO.*\)$/\1']

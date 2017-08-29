@@ -21,5 +21,5 @@ function! GetOctaveFoldText()
     return '+--' . line . ' '
 endfunction
 
-let b:Lpatterns = ['^\s*function', '"\s*TODO']
-let b:Lreformat = ['[^|]*|[^|]*|\s/', '']
+let b:Lpatterns = ['^\s*function', '%\+\s*TODO']
+let b:Lreformat = ['[^|]*|[^|]*|\s/', '[^|]*|[^|]*|\s%\+\s*\(TODO.*\)$/\1']
