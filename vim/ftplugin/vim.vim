@@ -15,8 +15,14 @@ endfunction
 
 function! GetVimFoldText()
     let line = getline(v:foldstart)
-    let line = substitute(line, '^\s*""', '', 'g')
-    let line = substitute(line, '^"', '  ', 'g')
+    if &foldmethod == 'expr'
+        let line = substitute(line, '^\s*""', '', 'g')
+        let line = substitute(line, '^"', '  ', 'g')
+    elseif &foldmethod == 'marker'
+        let line = substitute(line, '^\s*""', '', 'g')
+        let line = substitute(line, '^"', '  ', 'g')
+        let line = substitute(line, '{{{.*$', '', '')
+    endif
     return '+--' . line . ' '
 endfunction
 
