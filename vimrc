@@ -233,6 +233,7 @@ let g:SidebarHeight = g:height
 " capitalL
 let g:Lwidth = g:width
 let g:Lheight = g:height
+nnoremap <leader>L :Lcycle<CR>
 
 " NERDTree
 let g:NERDTreeHijackNetrw = 1
