@@ -250,9 +250,8 @@ let g:NERDTreeMapPreviewSplit = 'gs'
 let g:NERDTreeMapPreviewVSplit = 'gv'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
-" let g:NERDTreeMapActivateNode = 'l'
-autocmd FileType nerdtree nnoremap <silent> <buffer> h :call NERDTree_h()<CR>
 autocmd FileType nerdtree nnoremap <silent> <buffer> l :call NERDTree_l()<CR>
+autocmd FileType nerdtree nnoremap <silent> <buffer> h :call NERDTree_h()<CR>
 autocmd FileType nerdtree nnoremap <silent> <buffer> o :call NERDTree_o()<CR>
 
 function! NERDTree_l()
@@ -260,32 +259,25 @@ function! NERDTree_l()
     if l:syntax == 'NERDTreeFile' || l:syntax == 'NERDTreeOpenable'
         " open node or file
         call nerdtree#ui_glue#invokeKeyMap("o")
-        " check if this line is closable
-        execute "normal! 0f".g:NERDTreeDirArrowCollapsible
-        " if GetSyntaxUnderCursor() != "NERDTreeClosable"
-            " normal! 0
-        " endif
     endif
 endfunction
 
 function! NERDTree_h()
+    " first check if this line is closable
+    normal! 0
+    call search(g:NERDTreeDirArrowCollapsible, 'c', line("."))
     let l:syntax = GetSyntaxUnderCursor() 
-    if l:syntax == 'NERDTreeFile' || l:syntax == 'NERDTreeOpenable'
-        " go to parent
-        call nerdtree#ui_glue#invokeKeyMap("p")
-        " check if this line is closable
-        execute 'normal! 0f'.g:NERDTreeDirArrowCollapsible
-        if GetSyntaxUnderCursor() != 'NERDTreeClosable'
-            normal! 0
-        endif
-    elseif l:syntax == 'NERDTreeClosable'
+    if l:syntax == 'NERDTreeClosable'
         " close the node
         call nerdtree#ui_glue#invokeKeyMap("o")
-        normal! 0
+    elseif l:syntax == 'NERDTreeFile' || l:syntax == 'NERDTreeOpenable'
+        " go to parent
+        call nerdtree#ui_glue#invokeKeyMap("p")
     elseif l:syntax == 'NERDTreeCWD'
         " move up a dir
         call nerdtree#ui_glue#invokeKeyMap("u")
     endif
+    normal! 0
 endfunction
 
 function! NERDTree_o()
