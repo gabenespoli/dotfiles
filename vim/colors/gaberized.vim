@@ -86,6 +86,7 @@ hi link ALEWarningSign WarningMsg
 """ NERDTree
 hi NERDTreeExecFile     ctermfg=5
 hi NERDTreeLinkDir      ctermfg=6
+hi NERDTreeLinkFile     ctermfg=6
 hi NERDTreeLinkTarget   ctermfg=12
 " hi NERDTreeOpenable     ctermfg=12
 " hi NERDTreeCloseable    ctermfg=12
