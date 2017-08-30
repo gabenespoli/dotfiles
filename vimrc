@@ -230,6 +230,16 @@ let g:ctrlp_prompt_mappings = {
 " vim-sidebar
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
+let g:SidebarTogglePrefix = '<leader>'
+let g:SidebarEmptyPrefix = '<leader>e'
+let g:SidebarMovePrefix = '<leader>m'
+let g:SidebarToggleKeys = [
+    \ ['capitalL',      'l'],
+    \ ['nerdtree',      'f'],
+    \ ['buffergator',   'b'],
+    \ ['tagbar',        't'],
+    \ ['gundo',         'u'],
+    \ ]
 
 " capitalL
 let g:Lwidth = g:width
