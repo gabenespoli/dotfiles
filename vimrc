@@ -447,7 +447,7 @@ set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
 
 "" Functions {{{1
-""" Toggles and showing info
+""" Toggles and showing info {{{2
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
@@ -520,7 +520,7 @@ augroup line_return
         \ endif
 augroup END
 
-""" Tab names
+""" Tab names {{{2
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
 if exists("+showtabline")
@@ -585,7 +585,7 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
 endif
 
-""" tmux make cursor line when in insert mode
+""" tmux make cursor line when in insert mode {{{2
 " Change cursor shape from block (command mode) to line (insert mode)
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -597,7 +597,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-""" Mutt Mail Mode
+""" Mutt Mail Mode {{{2
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
     "exe ':call CenWinToggle(80)'
