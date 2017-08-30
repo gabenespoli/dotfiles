@@ -98,6 +98,7 @@ set incsearch                   " highlight search results as you type
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set foldminlines=0              " 0 means we can close a 1-line fold
+set noequalalways
 
 "" Status Line {{{1
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
