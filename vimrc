@@ -6,14 +6,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'gcmt/taboo.vim'
-
-" sidebar-type plugins
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 
 " sidebar-type plugins
 Plug 'scrooloose/NERDTree'
-Plug 'jeetsukumaran/vim-buffergator'
+" Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'sjl/gundo.vim'
@@ -248,17 +247,17 @@ nnoremap <leader>b :Buffers<CR>
 
 " ctrlp
 " let g:ctrlp_map = '<leader>o'
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_prompt_mappings = { 
-            \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-            \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-            \ 'PrtHistory(-1)':         [],
-            \ 'PrtHistory(1)':          [],
-            \ 'AcceptSelection("e")':   [],
-            \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-            \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-            \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-            \ }
+" let g:ctrlp_cmd = 'CtrlPMRU'
+" let g:ctrlp_prompt_mappings = { 
+"             \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+"             \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+"             \ 'PrtHistory(-1)':         [],
+"             \ 'PrtHistory(1)':          [],
+"             \ 'AcceptSelection("e")':   [],
+"             \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+"             \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+"             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+"             \ }
 
 " ranger
 " let g:ranger_map_keys = 0
@@ -343,8 +342,8 @@ function! NERDTree_o()
 endfunction
 
 " buffergator
-let g:buffergator_viewport_split_policy = "B"
-let g:buffergator_suppress_keymaps = 1
+" let g:buffergator_viewport_split_policy = "B"
+" let g:buffergator_suppress_keymaps = 1
 
 " tagbar
 let g:tagbar_left = 1
