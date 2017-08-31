@@ -520,11 +520,11 @@ filetype on
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
-       set showtabline=1
+       set showtabline=2
     elseif &showtabline==1
-        set showtabline=2
-    elseif &showtabline==2
         set showtabline=0
+    elseif &showtabline==2
+        set showtabline=1
     endif
     echo 'set showtabline='.&showtabline
 endfunction
