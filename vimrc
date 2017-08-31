@@ -244,6 +244,7 @@ let g:SidebarToggleKeys = [
 " capitalL
 let g:Lwidth = g:width
 let g:Lheight = g:height
+let g:Lposition = 'right'
 nnoremap <leader>L :Lcycle<CR>
 
 " NERDTree
