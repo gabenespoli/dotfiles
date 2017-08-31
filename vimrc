@@ -98,8 +98,33 @@ set incsearch                   " highlight search results as you type
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set noequalalways
+
+syn match FoldHeading /.*{{{.*/
+set fillchars="vert:|,fold:' '"
 set foldminlines=0              " 0 means we can close a 1-line fold
-au BufEnter <buffer> syn match FoldHeading /^.*{{{.*$/
+set foldmethod=marker
+set foldtext=GetFoldText()
+function! GetFoldText()
+    if &foldmethod == 'marker'
+        set foldtext=FoldTextMarker()
+    endif
+endfunction
+
+function! FoldTextMarker()
+    let line = getline(v:foldstart)
+    let line = substitute(line, '{{{\d\=', '', 'g')
+    let cstr = substitute(&commentstring, '%s', '', 'g')
+    let line = substitute(line, '^\s*'.cstr.'\+\s*', ' ', 'g')
+    let lines = v:foldend-v:foldstart + 1
+    let linesdigits = 4
+    if strlen(lines) < linesdigits + 1
+        let lines = repeat(' ', linesdigits-strlen(lines)) . lines
+    endif
+    let prefix = '+-' . repeat('-', &foldlevel)
+    let offset = 24
+    let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
+    return prefix . line . midfix . ' ('. lines .' lines)'
+endfunction
 
 " Status Line {{{2
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
