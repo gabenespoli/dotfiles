@@ -10,6 +10,8 @@ Plug 'gcmt/taboo.vim'
 " sidebar-type plugins
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
+
+" sidebar-type plugins
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
@@ -208,8 +210,44 @@ autocmd FileType octave setlocal commentstring=%\ %s
 " gcmt/taboo.vim
 let g:taboo_tabline = 0
 
+" fzf
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+nnoremap <leader>o :Files ~<CR>
+nnoremap <leader>b :Buffers<CR>
+
 " ctrlp
-let g:ctrlp_map = '<leader>o'
+" let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
@@ -237,10 +275,10 @@ let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarToggleKeys = [
     \ ['capitalL',      'l'],
     \ ['nerdtree',      'f'],
-    \ ['buffergator',   'b'],
     \ ['tagbar',        't'],
     \ ['gundo',         'u'],
     \ ]
+    " \ ['buffergator',   'b'],
 
 " capitalL
 let g:Lwidth = g:width
