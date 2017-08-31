@@ -305,7 +305,7 @@ function! NERDTree_o()
 endfunction
 
 " buffergator
-let g:buffergator_viewport_split_policy = "L"
+let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_suppress_keymaps = 1
 
 " tagbar
