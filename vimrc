@@ -1,8 +1,7 @@
 " .vimrc file for gabenespoli@gmail.com
-"" vim-plug plugin manager {{{1
+" vim-plug plugin manager {{{1
 call plug#begin('~/.vim/plugged')
-
-" vim
+" vim {{{2
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'gcmt/taboo.vim'
@@ -10,24 +9,24 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 
-" sidebar-type plugins
+" sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
-" Plug 'jeetsukumaran/vim-buffergator'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'sjl/gundo.vim'
 
-" git
+" git {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" tmux & external programs
+" tmux & external programs {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
 
-" syntax checker & syntaxes
+" syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
@@ -35,13 +34,13 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
 
-" my plugins
+" my plugins {{{2
 Plug '~/bin/vim/vim-capitalL'
 Plug '~/bin/vim/vim-sidebar'
-
 call plug#end()
 
-"" Colorscheme {{{1
+" General {{{1
+" Colorscheme {{{2
 if has("gui_running")
     colorscheme solarizedSumach
     set guicursor=n-v-c-i:blinkon0
@@ -51,7 +50,7 @@ endif
 syntax enable
 set background=dark
 
-"" File stuff {{{1
+" File stuff {{{2
 set updatetime=750
 set undofile
 set swapfile
@@ -71,7 +70,7 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 
-"" Spaces & Tabs {{{1
+" Spaces & Tabs {{{2
 set linebreak           " stop soft wrapping in the middle of words  
 set breakindent         " auto indent soft wrap line breaks
 set tabstop=4           " number of visual spaces per TAB
@@ -84,7 +83,7 @@ set backspace=indent,eol,start " enable backspacing text that was inserted previ
 set ignorecase
 set smartcase           " if [search terms] has uppercase, then case sensitive
 
-"" UI Config {{{1
+" UI Config {{{2
 set number relativenumber
 set showcmd                     " show command in bottom bar
 set laststatus=2                " 0 = no status bar, 2 = show status bar
@@ -98,10 +97,11 @@ set splitright splitbelow
 set incsearch                   " highlight search results as you type
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
-set foldminlines=0              " 0 means we can close a 1-line fold
 set noequalalways
+set foldminlines=0              " 0 means we can close a 1-line fold
+au BufEnter <buffer> syn match FoldHeading /^.*{{{.*$/
 
-"" Status Line {{{1
+" Status Line {{{2
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
@@ -113,13 +113,14 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%l/%L\,%c\ (%P)                           
 
-"" Keybindings {{{1
+" Keybindings {{{1
+" General {{{2
 let mapleader = "\<Space>"
 set notimeout
 set ttimeout
 inoremap jk <Esc>
 
-""" emacs-style command line (cmap) {{{2
+" emacs-style command line (cmap) {{{2
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
@@ -129,13 +130,13 @@ cnoremap <Esc>b <S-Left>
 cnoremap <C-d> <Del>
 cnoremap <C-i> <C-d>
 
-""" opening and saving {{{2
+" opening and saving {{{2
 "<leader>o opens ctrlp plugin
 noremap <leader>O :e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>N :tabnew 
 nnoremap <leader>s :w<CR>
 
-""" tab switching {{{2
+" tab switching {{{2
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -144,17 +145,17 @@ nnoremap <leader>5 5gt
 nnoremap <leader>[ gT
 nnoremap <leader>] gt
 
-""" swap q/Q for <leader>q/Q, so q/Q can be used for quitting {{{2
+" swap q/Q for <leader>q/Q, so q/Q can be used for quitting {{{2
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
 
-""" status/info toggles {{{2
+" status/info toggles {{{2
 nmap <leader>W :echo WordCount()<CR>
 nmap <leader>S :call ToggleStatusBar()<CR>
 nmap <leader>F :call ToggleTabline()<CR>
 nmap <leader>X :echo GetSyntaxUnderCursor()<CR>
 
-""" misc {{{2
+" misc {{{2
 " copy/paste
 nnoremap Y y$
 " for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
@@ -174,7 +175,7 @@ inoremap <C-b> <Left>
 " Spell checking
 nnoremap <localleader>s 1z=
 
-""" resizing windows based on terminal size {{{2
+" resizing windows based on terminal size {{{2
 " this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
 let g:centerwidth = 100
 let g:width = $COLS / 4
@@ -194,27 +195,26 @@ nnoremap <leader>rc :call ResizeCenterWidth()<CR>
 nnoremap <leader>rw :call ResizeSideWidth()<CR>
 nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
-"" Plugin settings {{{1
-
-""" Vim General {{{2
-" tpope/vim-unimpaired
+" Plugin settings {{{1
+" Vim General {{{2
+" tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap <C-n> :lnext<CR>zt
 nnoremap <C-p> :lprevious<CR>zt
 
-" tpope/vim-commentary
+" tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
 
-" gcmt/taboo.vim
+" gcmt/taboo.vim {{{3
 let g:taboo_tabline = 0
 
-" fzf
+" fzf {{{3
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'up': '~40%' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -244,9 +244,9 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 let g:fzf_command_prefix = 'Fzf'
 nnoremap <leader>o :FzfFiles ~<CR>
-nnoremap <leader>b :FzfBuffers<CR>
+" nnoremap <leader>b :FzfBuffers<CR>
 
-" ctrlp
+" ctrlp {{{3
 " let g:ctrlp_map = '<leader>o'
 " let g:ctrlp_cmd = 'CtrlPMRU'
 " let g:ctrlp_prompt_mappings = { 
@@ -260,12 +260,12 @@ nnoremap <leader>b :FzfBuffers<CR>
 "             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
 "             \ }
 
-" ranger
+" ranger {{{3
 " let g:ranger_map_keys = 0
 " nnoremap <leader>O :RangerNewTab<CR>
 
-""" Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
-" vim-sidebar
+" Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
+" vim-sidebar {{{3
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
 let g:SidebarTogglePrefix = '<leader>'
@@ -275,18 +275,18 @@ let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarToggleKeys = [
     \ ['capitalL',      'l'],
     \ ['nerdtree',      'f'],
+    \ ['buffergator',   'b'],
     \ ['tagbar',        't'],
     \ ['gundo',         'u'],
     \ ]
-    " \ ['buffergator',   'b'],
 
-" capitalL
+" capitalL {{{3
 let g:Lwidth = g:width
 let g:Lheight = g:height
 let g:Lposition = 'right'
 nnoremap <leader>L :Lcycle<CR>
 
-" NERDTree
+" NERDTree {{{3
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
@@ -342,11 +342,12 @@ function! NERDTree_o()
     endif
 endfunction
 
-" buffergator
-" let g:buffergator_viewport_split_policy = "B"
-" let g:buffergator_suppress_keymaps = 1
+" buffergator {{{3
+let g:buffergator_viewport_split_policy = "T"
+let g:buffergator_suppress_keymaps = 1
+" nnoremap <leader>B :let g:buffergator_viewport_split_policy="N"<CR>:BuffergatorOpen<CR>:let g:buffergator_viewport_split_policy="T"<CR>
 
-" tagbar
+" tagbar{{{3
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
@@ -384,15 +385,15 @@ let g:gundo_right = 0
 let g:gundo_preview_height = g:height
 let g:gundo_preview_bottom = 1
 
-""" git {{{2
-" tpope/vim-fugitive
+" git {{{2
+" fugitive {{{3
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>ga :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gwc :Gwrite<CR>:Gcommit<CR>
 
-" airblade/vim-gitgutter
+" gitgutter {{{3
 nmap <leader>ghd <Plug>GitGutterPreviewHunk
 nmap <leader>gha <Plug>GitGutterStageHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
@@ -400,8 +401,8 @@ nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 
-""" tmux {{{2
-" vim-tmux-navigator
+" tmux {{{2
+" vim-tmux-navigator {{{3
 if substitute(system('hostname'), '\n', '', '') == 'gmac'
     execute "set <M-h>=\eh"
     execute "set <M-j>=\ej"
@@ -427,14 +428,14 @@ vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
 vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
 vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 
-" vim-slime
+" vim-slime {{{3
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 
-""" syntax {{{2
-" w0rp/ale
+" syntax {{{2
+" w0rp/ale {{{3
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
@@ -453,10 +454,11 @@ function! LinterStatus(type) abort
     endif
 endfunction
 
+" pandoc {{{3
 " vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
 " see settings in .vim/ftplugin/markdown.vim
 
-" Critic Markdown Plugin
+" Critic Markdown Plugin {{{3
 " insert tags (comments and highlights)
 nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
 nnoremap <leader>chi i{==<Esc>
@@ -484,14 +486,14 @@ nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
 
-""" Lilypond {{{2
+" Lilypond {{{2
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
 
-"" Functions {{{1
-""" Toggles and showing info {{{2
+" Functions {{{1
+" Toggle Tabline {{{2
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
@@ -503,6 +505,7 @@ function! ToggleTabline()
     endif
 endfunction
 
+" Toggle Status Bar {{{2
 function! ToggleStatusBar()
     if &laststatus == 2
         set laststatus=0
@@ -511,11 +514,12 @@ function! ToggleStatusBar()
     endif
 endfunction
 
+" Get Syntax Under Cursor {{{2
 function! GetSyntaxUnderCursor() 
     let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
     return g:SyntaxUnderCursor
 endfunction
-
+" Word Count {{{2
 function! WordCount()
 " http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
     let lnum = 1
@@ -527,6 +531,7 @@ function! WordCount()
     return n
 endfunction
 
+" Toggle Search Highlight Colour {{{2
 function! SearchHighlightToggle()
     let bgcolor=synIDattr(hlID('Search'), 'bg#')
     if bgcolor == 1
@@ -540,6 +545,7 @@ function! SearchHighlightToggle()
     endif
 endfunction!
 
+" Toggle csv tsv {{{2
 function! ToggleCsvTsv()
     if exists("b:delimiter")
         if b:delimiter==","
@@ -554,7 +560,7 @@ function! ToggleCsvTsv()
     endif
 endfunction
 
-" Line Return
+" Line Return {{{3
 " from Steve Losh's (sjl) vimrc
 augroup line_return
     au!
@@ -564,7 +570,7 @@ augroup line_return
         \ endif
 augroup END
 
-""" Tab names {{{2
+" Tab names {{{2
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
 if exists("+showtabline")
@@ -629,7 +635,7 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
 endif
 
-""" tmux make cursor line when in insert mode {{{2
+" tmux make cursor line when in insert mode {{{2
 " Change cursor shape from block (command mode) to line (insert mode)
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -641,7 +647,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-""" Mutt Mail Mode {{{2
+" Mutt Mail Mode {{{2
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
     "exe ':call CenWinToggle(80)'
