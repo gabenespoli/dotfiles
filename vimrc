@@ -242,8 +242,9 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-nnoremap <leader>o :Files ~<CR>
-nnoremap <leader>b :Buffers<CR>
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <leader>o :FzfFiles ~<CR>
+nnoremap <leader>b :FzfBuffers<CR>
 
 " ctrlp
 " let g:ctrlp_map = '<leader>o'
