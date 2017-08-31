@@ -381,7 +381,8 @@ let g:tagbar_type_pandoc = {
 
 " gundo
 let g:gundo_right = 0
-let g:gundo_preview_height = 15
+let g:gundo_preview_height = g:height
+let g:gundo_preview_bottom = 1
 
 """ git {{{2
 " tpope/vim-fugitive
