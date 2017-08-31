@@ -87,7 +87,7 @@ set smartcase           " if [search terms] has uppercase, then case sensitive
 set number relativenumber
 set showcmd                     " show command in bottom bar
 set laststatus=2                " 0 = no status bar, 2 = show status bar
-set showtabline=2               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
+set showtabline=1               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
 set tabpagemax=8
 set wildmenu                    " visual autocomplete for command menu
 set wildmode=longest,list,full
@@ -497,12 +497,13 @@ filetype on
 function! ToggleTabline()
     " 0 = never, 1 = if > 1 tab, 2 = always
     if &showtabline==0
-       set showtabline=2
+       set showtabline=1
     elseif &showtabline==1
-        set showtabline=0
+        set showtabline=2
     elseif &showtabline==2
         set showtabline=0
     endif
+    echo 'set showtabline='.&showtabline
 endfunction
 
 " Toggle Status Bar {{{2
