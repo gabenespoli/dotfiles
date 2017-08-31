@@ -1,20 +1,20 @@
-"" general
+"" general {{{1
 set spell       " enable live spell checking
 
-"" keybindings
-""" general
+"" keybindings {{{1
+""" general {{{2
 nnoremap <buffer> zz zz
 nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
-""" move up and down by visual line
+""" move up and down by visual line {{{2
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
 noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
 
-""" headings
+""" headings {{{2
 nnoremap <buffer> <localleader>0 :s/^#*\ *//ge<CR>
 nnoremap <buffer> <localleader>1 :s/^#*\ */#\ /ge<CR>
 nnoremap <buffer> <localleader>2 :s/^#*\ */##\ /ge<CR>
@@ -23,7 +23,7 @@ nnoremap <buffer> <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
-""" folding
+""" folding {{{2
 set foldmethod=expr
 set foldexpr=GetMarkdownFolds(v:lnum)
 set foldtext=GetMarkdownFoldText()
@@ -53,16 +53,16 @@ function! GetMarkdownFoldText()
     endif
 endfunction
 
-""" pandoc highlighting issues
+""" pandoc highlighting issues {{{2
 nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
 
-"" highlights
+"" highlights {{{1
 " note: colors are based on the solarized 16 color palette
 hi NonText ctermfg=8
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
 
-"" Pandoc Plugin settings
+"" Pandoc Plugin settings {{{1
 au VimEnter * :set syntax=pandoc
 let g:pandoc#modules#enabled = ["command","completion","keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
@@ -73,7 +73,7 @@ let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 let g:pandoc#syntax#conceal#use = 0
 
-"" function to force custom pandoc highlighting
+"" function to force custom pandoc highlighting {{{1
 function! PandocForceHighlighting()
     hi pandocEmphasis cterm=none ctermfg=7
     hi pandocStrongEmphasis cterm=none ctermfg=15
@@ -92,6 +92,6 @@ function! PandocForceHighlighting()
 endfunction
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 
-"" capitalL location list settings
+"" capitalL location list settings {{{1
 let b:Lpatterns = ['{>>\|{==\|{++\|{--', '^\s*TODO']
 let b:Lreformat = ['[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2', '[^|]*|[^|]*|\s*\(TODO.*\)$/\1']
