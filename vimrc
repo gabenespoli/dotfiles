@@ -289,6 +289,7 @@ let g:ctrlp_prompt_mappings = {
 
 " Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 " vim-sidebar {{{3
+let g:SidebarBgColor = 8
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
 let g:SidebarTogglePrefix = '<leader>'
