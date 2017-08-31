@@ -6,7 +6,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'gcmt/taboo.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 
 " sidebar-type plugins {{{2
@@ -237,7 +237,7 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'up': '~40%' }
+let g:fzf_layout = { 'down': '~25%' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -266,22 +266,22 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 let g:fzf_command_prefix = 'Fzf'
-nnoremap <leader>o :FzfFiles ~<CR>
-" nnoremap <leader>b :FzfBuffers<CR>
+nnoremap <leader>o :call fzf#run({'source': 'find ~/Dropbox ~/dotfiles ~/local -type f', 'sink':  'edit'})<CR>
 
 " ctrlp {{{3
-" let g:ctrlp_map = '<leader>o'
-" let g:ctrlp_cmd = 'CtrlPMRU'
-" let g:ctrlp_prompt_mappings = { 
-"             \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-"             \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-"             \ 'PrtHistory(-1)':         [],
-"             \ 'PrtHistory(1)':          [],
-"             \ 'AcceptSelection("e")':   [],
-"             \ 'AcceptSelection("t")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-"             \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-"             \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-"             \ }
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_match_window = 'bottom'
+let g:ctrlp_prompt_mappings = { 
+            \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+            \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+            \ 'PrtHistory(-1)':         [],
+            \ 'PrtHistory(1)':          [],
+            \ 'AcceptSelection("t")':   ['<C-t>'],
+            \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+            \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+            \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+            \ }
 
 " ranger {{{3
 " let g:ranger_map_keys = 0
