@@ -208,7 +208,6 @@ autocmd FileType octave setlocal commentstring=%\ %s
 " gcmt/taboo.vim
 let g:taboo_tabline = 0
 
-""" Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 " ctrlp
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -227,6 +226,7 @@ let g:ctrlp_prompt_mappings = {
 " let g:ranger_map_keys = 0
 " nnoremap <leader>O :RangerNewTab<CR>
 
+""" Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 " vim-sidebar
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
