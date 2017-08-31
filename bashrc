@@ -56,9 +56,6 @@ export PS1='\[\e[0;34m\] \w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='vim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
-# lines and columns for vim easy access for centering panes, etc.
-export LINES=$(tput lines)
-export COLS=$(tput cols)
 export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-kill-word,ctrl-n:down,ctrl-p:up'
 
 # setup ruby env (requires rbenv to be installed)

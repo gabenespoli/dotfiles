@@ -178,18 +178,16 @@ nnoremap <localleader>s 1z=
 " resizing windows based on terminal size {{{2
 " this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
 let g:centerwidth = 100
-let g:width = $COLS / 4
-let g:height = $LINES / 4
-au VimEnter,BufEnter * if !exists('g:width')  | let g:width  = $COLS  / 2 | endif
-au VimEnter,BufEnter * if !exists('g:height') | let g:height = $LINES / 4 | endif
+let g:width = &columns / 5
+let g:height = &lines / 5
 function! ResizeCenterWidth()
-    execute 'vertical resize '.g:centerwidth
+    execute 'vertical resize '.100
 endfunction
 function! ResizeSideWidth()
-    execute 'vertical resize '.g:width
+    execute 'vertical resize '.&columns/4
 endfunction
 function! ResizeSideHeight()
-    execute 'resize '.g:height
+    execute 'resize '.&lines/4
 endfunction
 nnoremap <leader>rc :call ResizeCenterWidth()<CR>
 nnoremap <leader>rw :call ResizeSideWidth()<CR>
