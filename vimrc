@@ -232,6 +232,7 @@ let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
 let g:SidebarTogglePrefix = '<leader>'
 let g:SidebarEmptyPrefix = '<leader>e'
+let g:SidebarEmptySticky = 'e'
 let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarToggleKeys = [
     \ ['capitalL',      'l'],
