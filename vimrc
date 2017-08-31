@@ -366,7 +366,7 @@ function! NERDTree_o()
 endfunction
 
 " buffergator {{{3
-let g:buffergator_viewport_split_policy = "T"
+let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_suppress_keymaps = 1
 " nnoremap <leader>B :let g:buffergator_viewport_split_policy="N"<CR>:BuffergatorOpen<CR>:let g:buffergator_viewport_split_policy="T"<CR>
 
