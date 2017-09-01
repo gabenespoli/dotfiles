@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## OS-specific options
+## OS-specific options {{{1
 if [ "$(uname)" == "Darwin" ]; then
     ### Mac options
     alias ls="ls -hl"
@@ -49,7 +49,7 @@ else
     setxkbmap -option shift:both_capslock
 fi
 
-## Environment vars
+## Environment vars {{{1
 export PATH="$HOME/bin:/usr/local/texbin:$HOME/Library/Haskell/bin:/usr/local/lib:/usr/local/bin:$PATH"
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
 export PS1='\[\e[0;34m\] \w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
@@ -61,7 +61,7 @@ export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-k
 # setup ruby env (requires rbenv to be installed)
 eval "$(rbenv init -)"
 
-## Aliases & Functions
+## Aliases & Functions {{{1
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
@@ -84,7 +84,7 @@ function lss() { ls "$(gf "$@")" ; }
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
 
-### git
+### git {{{2
 alias gs="git status -sb"
 alias gd="git diff"
 alias ga="git add"
@@ -92,7 +92,7 @@ alias gc="git commit"
 alias gr="git reset"
 alias glog="git log --graph --decorate --oneline"
 
-### todo, notes, and calendar
+### todo, notes, and calendar {{{2
 alias t="todo.sh -a"
 alias in="todo.sh -a add +in"
 alias todo="vim -O $HOME/todo/todo.txt $HOME/todo/backlog.txt $HOME/todo/someday.txt"
@@ -110,7 +110,7 @@ function note() {
     vim "$filename"
 }
 
-### others
+### others {{{2
 alias mail="mutt -F $HOME/dotfiles/muttrc"
 alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder>=Archive<enter>'"
 alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
@@ -144,15 +144,15 @@ alias ecpaper='vim +SidebarStickyToggle "+SidebarToggle capitalL" "+SidebarToggl
 alias dis="vim ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
-## network
+## network {{{1
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias smarts="open vnc://gmac@smartmacpro.arts.ryerson.ca"
 alias efgh="ssh efgh@192.168.1.12"
 function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
 function eg () { mount -t smbfs //efgh@192.168.1.12/egdata ~/eg ; }
 
-## internet
-### dns servers
+## internet {{{1
+### dns servers {{{2
 function dns() {
     case $1 in
         on ) sudo networksetup -setdnsservers Wi-Fi 192.254.74.201 198.27.106.150 208.110.81.50 ;;
@@ -161,7 +161,7 @@ function dns() {
     esac
 }
 
-### open websites with keywords
+### open websites with keywords {{{2
 function web() {
     case $1 in
         # research
