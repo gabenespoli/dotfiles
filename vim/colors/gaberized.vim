@@ -26,7 +26,7 @@ hi PmenuSel             ctermfg=12      ctermbg=8       cterm=reverse
 
 hi LineNr               ctermfg=10      ctermbg=8       cterm=none
 hi FoldColumn           ctermfg=8       ctermbg=12      cterm=reverse
-hi Folded               ctermfg=11      ctermbg=8       cterm=none
+hi Folded               ctermfg=11      ctermbg=0       cterm=none
 hi VertSplit            ctermfg=8       ctermbg=0       cterm=reverse
 hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
 hi NonText              ctermfg=10      ctermbg=8       cterm=none
@@ -45,6 +45,7 @@ hi DiffText             ctermfg=9       ctermbg=0
 hi StatusMod            ctermfg=3       ctermbg=0       cterm=none
 hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
 hi CommentHeading       ctermfg=11      ctermbg=0       cterm=none
+hi FoldHeading          ctermfg=11      ctermbg=0       cterm=none
 
 "" Syntax-specific
 """ Mail compose colors
