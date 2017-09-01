@@ -427,16 +427,18 @@ let g:gitgutter_eager = 0
 
 " tmux {{{2
 " vim-tmux-navigator {{{3
-if substitute(system('hostname'), '\n', '', '') == 'gmac'
-    execute "set <M-h>=\eh"
-    execute "set <M-j>=\ej"
-    execute "set <M-k>=\ek"
-    execute "set <M-l>=\el"
-else
-    execute "set <M-h>=h"
-    execute "set <M-j>=j"
-    execute "set <M-k>=k"
-    execute "set <M-l>=l"
+if !has('nvim')
+    if substitute(system('hostname'), '\n', '', '') == 'gmac'
+        execute "set <M-h>=\eh"
+        execute "set <M-j>=\ej"
+        execute "set <M-k>=\ek"
+        execute "set <M-l>=\el"
+    else
+        execute "set <M-h>=h"
+        execute "set <M-j>=j"
+        execute "set <M-k>=k"
+        execute "set <M-l>=l"
+    endif
 endif
 let g:tmux_navigator_no_mappings = 1
 nmap <silent> <M-h> :TmuxNavigateLeft<CR>
