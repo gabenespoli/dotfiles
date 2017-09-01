@@ -2,10 +2,18 @@
 au BufEnter <buffer> syn match CommentHeading '^##.*$'
 
 set foldmethod=expr
-set foldexpr=GetShFolds(v:lnum)
-set foldtext=GetShFoldText()
+set foldexpr=FoldExprDoubleCharSh(v:lnum)
+set foldtext=GetFoldTextSh()
 
-function! GetShFolds(lnum)
+function! GetFoldTextSh()
+    if &foldmethod == 'expr'
+        setlocal foldtext=FoldTextDoubleCharSh()
+    elseif &foldmethod == 'marker'
+        setlocal foldtext=FoldTextMarker()
+    endif
+endfunction
+
+function! FoldExprDoubleCharSh(lnum)
     if getline(a:lnum) =~ '^\s*##'
         return '>1'
     else
@@ -13,7 +21,7 @@ function! GetShFolds(lnum)
     endif
 endfunction
 
-function! GetShFoldText()
+function! FoldTextDoubleCharSh()
     let line = getline(v:foldstart)
     let line = substitute(line, '^\s*##', '', 'g')
     let line = substitute(line, '^#', '  ', 'g')
