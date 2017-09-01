@@ -599,6 +599,7 @@ augroup END
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
 if exists("+showtabline")
+    let s:currentShowtabline = &showtabline
     function! MyTabLine()
         let s = ''
         let wn = ''
@@ -658,6 +659,7 @@ if exists("+showtabline")
     endfunction
     set stal=2
     set tabline=%!MyTabLine()
+    execute 'set showtabline='.s:currentShowtabline
 endif
 
 " tmux make cursor line when in insert mode {{{2
