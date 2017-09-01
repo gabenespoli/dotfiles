@@ -1,29 +1,31 @@
 
-au BufEnter <buffer> syn match CommentHeading '^"".*$'
+" au BufEnter <buffer> syn match CommentHeading '^"".*$'
 
-set foldmethod=expr
-set foldexpr=GetVimFolds(v:lnum)
-set foldtext=GetVimFoldText()
+setlocal foldmethod=marker
+setlocal foldexpr=FoldExprDoubleCharVim(v:lnum)
+setlocal foldtext=GetFoldTextVim()
 
-function! GetVimFolds(lnum)
+function! GetFoldTextVim()
+    if &foldmethod == 'expr'
+        setlocal foldtext=FoldTextDoubleCharVim()
+    elseif &foldmethod == 'marker'
+        setlocal foldtext=FoldTextMarker()
+    endif
+endfunction
+
+function! FoldTextDoubleCharVim()
+    let line = getline(v:foldstart)
+    let line = substitute(line, '^\s*""', '', 'g')
+    let line = substitute(line, '^"', '  ', 'g')
+    return '+--' . line . ' '
+endfunction
+
+function! FoldExprDoubleCharVim(lnum)
     if getline(a:lnum) =~ '^\s*""'
         return '>1'
     else
         return '='
     endif
-endfunction
-
-function! GetVimFoldText()
-    let line = getline(v:foldstart)
-    if &foldmethod == 'expr'
-        let line = substitute(line, '^\s*""', '', 'g')
-        let line = substitute(line, '^"', '  ', 'g')
-    elseif &foldmethod == 'marker'
-        let line = substitute(line, '^\s*""', '', 'g')
-        let line = substitute(line, '^"', '  ', 'g')
-        let line = substitute(line, '{{{.*$', '', '')
-    endif
-    return '+--' . line . ' '
 endfunction
 
 let b:Lpatterns = ['^\s*function', '"\+\s*TODO']
