@@ -266,10 +266,10 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 let g:fzf_command_prefix = 'Fzf'
-nnoremap <leader>o :call fzf#run({'source': 'find ~/Dropbox ~/dotfiles ~/local -type f', 'sink':  'edit'})<CR>
+nnoremap <leader>p :call fzf#run({'source': 'find ~/Dropbox ~/dotfiles ~/local -type f', 'sink':  'edit'})<CR>
 
 " ctrlp {{{3
-let g:ctrlp_map = '<leader>p'
+let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window = 'bottom'
 let g:ctrlp_prompt_mappings = { 
