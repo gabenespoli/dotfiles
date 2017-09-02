@@ -1,5 +1,4 @@
-
-" au BufEnter <buffer> syn match CommentHeading '^"".*$'
+autocmd FileType vim syntax match CommentHeading '^\s*"".*$'
 
 setlocal foldmethod=marker
 setlocal foldexpr=FoldExprDoubleCharVim(v:lnum)
