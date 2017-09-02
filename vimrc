@@ -223,6 +223,12 @@ nnoremap <leader>rh :call ResizeSideHeight()<CR>
 " tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
+nnoremap cofl :set foldmethod=manual<CR>
+nnoremap cofi :set foldmethod=indent<CR>
+nnoremap cofe :set foldmethod=expr<CR>
+nnoremap cofm :set foldmethod=marker<CR>
+nnoremap cofs :set foldmethod=syntax<CR>
+nnoremap cofd :set foldmethod=diff<CR>
 nnoremap <C-n> :lnext<CR>zt
 nnoremap <C-p> :lprevious<CR>zt
 
