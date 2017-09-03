@@ -140,7 +140,7 @@ alias hangups="hangups \
     --col-msg-self-fg 'dark blue' \
     --col-msg-self-bg default"
 alias gvpaper="vim ~/r/gv/paper/Nespoli2017.md"
-alias ecpaper='vim +SidebarStickyToggle "+SidebarToggle capitalL" "+SidebarToggle tagbar" "+2 wincmd w" ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md'
+alias ecpaper='vim ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md'
 alias dis="vim ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
