@@ -486,7 +486,14 @@ endfunction
 
 """" pandoc {{{3
 " vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
-" see settings in .vim/ftplugin/markdown.vim
+" see other settings in .vim/ftplugin/markdown.vim
+let g:pandoc#modules#enabled = ["command","bibliographies","completion","keyboard"]
+let g:pandoc#keyboard#enabled_submodules = ["sections"]
+let g:pandoc#biblio#sources = "g"
+let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
+let g:pandoc#command#autoexec_on_writes = 0
+let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
+let g:pandoc#syntax#conceal#use = 0
 
 """" Critic Markdown Plugin {{{3
 " insert tags (comments and highlights)
