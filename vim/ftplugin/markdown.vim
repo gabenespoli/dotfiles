@@ -64,11 +64,10 @@ hi htmlTagName ctermfg=11
 
 "" Pandoc Plugin settings {{{1
 au VimEnter * :set syntax=pandoc
-let g:pandoc#modules#enabled = ["command","completion","keyboard"]
+let g:pandoc#modules#enabled = ["command","bibliographies","completion","keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
 let g:pandoc#biblio#sources = "g"
-let g:pandoc#biblio#bibs = ["~/dotfiles/pandoc/library.bib"]
-let g:pandoc#completion#bib#mode = "citeproc"
+let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 let g:pandoc#syntax#conceal#use = 0
