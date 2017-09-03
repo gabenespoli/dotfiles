@@ -229,8 +229,6 @@ nnoremap cofe :set foldmethod=expr<CR>
 nnoremap cofm :set foldmethod=marker<CR>
 nnoremap cofs :set foldmethod=syntax<CR>
 nnoremap cofd :set foldmethod=diff<CR>
-nnoremap <C-n> :lnext<CR>zt
-nnoremap <C-p> :lprevious<CR>zt
 
 """" tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
