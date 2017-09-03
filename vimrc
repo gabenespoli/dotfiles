@@ -99,7 +99,8 @@ set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set noequalalways
 
-syn match FoldHeading /.*{{{.*/
+" TODO make this foldheading highlighting work
+" autocmd BufReadPost * :syntax match FoldHeading '^.*{{{.*$'
 set fillchars="vert:|,fold:' '"
 set foldminlines=0              " 0 means we can close a 1-line fold
 set foldmethod=marker
