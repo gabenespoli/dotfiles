@@ -3,7 +3,6 @@ set spell       " enable live spell checking
 
 "" keybindings {{{1
 """ general {{{2
-nnoremap <buffer> zz zz
 nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
