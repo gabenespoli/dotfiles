@@ -33,6 +33,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
+Plug 'guanqun/vim-mutt-aliases-plugin'
 
 """ my plugins {{{2
 Plug '~/bin/vim/vim-capitalL'
