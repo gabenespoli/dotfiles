@@ -3,7 +3,6 @@ set spell       " enable live spell checking
 
 "" keybindings {{{1
 """ general {{{2
-nnoremap <buffer> zz zz
 nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
@@ -53,9 +52,6 @@ function! GetMarkdownFoldText()
     endif
 endfunction
 
-""" pandoc highlighting issues {{{2
-nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
-
 "" highlights {{{1
 " note: colors are based on the solarized 16 color palette
 hi NonText ctermfg=8
@@ -64,16 +60,10 @@ hi htmlTagName ctermfg=11
 
 "" Pandoc Plugin settings {{{1
 au VimEnter * :set syntax=pandoc
-let g:pandoc#modules#enabled = ["command","completion","keyboard"]
-let g:pandoc#keyboard#enabled_submodules = ["sections"]
-let g:pandoc#biblio#sources = "g"
-let g:pandoc#biblio#bibs = ["~/dotfiles/pandoc/library.bib"]
-let g:pandoc#completion#bib#mode = "citeproc"
-let g:pandoc#command#autoexec_on_writes = 0
-let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
-let g:pandoc#syntax#conceal#use = 0
+au VimEnter,BufEnter * :call PandocForceHighlighting()
+nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
 
-"" function to force custom pandoc highlighting {{{1
+" function to force custom pandoc highlighting
 function! PandocForceHighlighting()
     hi pandocEmphasis cterm=none ctermfg=7
     hi pandocStrongEmphasis cterm=none ctermfg=15
@@ -90,7 +80,6 @@ function! PandocForceHighlighting()
     hi criticMeta cterm=reverse ctermfg=6 ctermbg=8
     hi criticHighlighter cterm=reverse ctermfg=3 ctermbg=8
 endfunction
-au VimEnter,BufEnter * :call PandocForceHighlighting()
 
 "" capitalL location list settings {{{1
 let b:Lpatterns = ['{>>\|{==\|{++\|{--', '^\s*TODO']

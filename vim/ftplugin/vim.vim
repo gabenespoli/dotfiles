@@ -1,5 +1,4 @@
-
-" au BufEnter <buffer> syn match CommentHeading '^"".*$'
+autocmd FileType vim syntax match CommentHeading '^\s*"".*$'
 
 setlocal foldmethod=marker
 setlocal foldexpr=FoldExprDoubleCharVim(v:lnum)
@@ -23,7 +22,7 @@ endfunction
 
 function! FoldExprDoubleCharVim(lnum)
     let l:line = getline(a:lnum)
-    if l:line =~ '^\s*""'
+    if l:line =~ '^\s*""\s'
         return '>1'
     elseif l:line =~ '^\s*"""\s'
         return '>2'
