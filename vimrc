@@ -524,6 +524,28 @@ nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
 
+"""" mutt-aliases integrate with nvim-completion-manager
+" ncm's filtering is based on word, so it's better to convert results of
+" muttaliases#CompleteMuttAliases into snippet expension
+func! g:MuttOmniWrap(findstart, base)
+     let ret = muttaliases#CompleteMuttAliases(a:findstart, a:base)
+     if type(ret) == type([])
+         let i=0
+         while i<len(ret)
+             let ret[i]['snippet'] = ret[i]['word']
+             let ret[i]['word'] = ret[i]['abbr']
+             let i+=1
+         endwhile
+     endif
+     return ret
+endfunc
+
+au User CmSetup call cm#register_source({'name' : 'mutt',
+            \ 'priority': 9, 
+            \ 'cm_refresh_length': -1,
+            \ 'cm_refresh_patterns': ['^\w+:\s+'],
+            \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
+            \ })
 """ Lilypond {{{2
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
@@ -699,6 +721,7 @@ function! MuttMailMode()
     set norelativenumber nonumber
     set spell
     set laststatus=2 showtabline=0
+    inoremap <buffer> <Tab> <C-x><C-o>
     noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
     noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
     noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
