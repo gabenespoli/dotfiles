@@ -8,6 +8,12 @@ Plug 'gcmt/taboo.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'roxma/nvim-completion-manager'
+if has('nvim')
+    Plug 'Shougo/neco-vim'
+else
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 """ sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
@@ -292,6 +298,8 @@ let g:ctrlp_prompt_mappings = {
 """" ranger {{{3
 " let g:ranger_map_keys = 0
 " nnoremap <leader>O :RangerNewTab<CR>
+
+"""" nvim-completion-manager
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
