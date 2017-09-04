@@ -223,8 +223,6 @@ nnoremap <leader>rh :call ResizeSideHeight()<CR>
 " tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
-nnoremap <C-n> :lnext<CR>zt
-nnoremap <C-p> :lprevious<CR>zt
 
 " tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
