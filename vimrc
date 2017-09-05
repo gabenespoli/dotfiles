@@ -167,7 +167,7 @@ cnoremap <C-i> <C-d>
 """ opening and saving {{{2
 "<leader>o opens ctrlp plugin
 nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
-nnoremap <leader>T :tabnew 
+nnoremap <leader>T :tabnew<CR>:e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>s :w<CR>
 
 """ tab switching {{{2
