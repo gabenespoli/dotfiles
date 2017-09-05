@@ -165,8 +165,8 @@ cnoremap <C-i> <C-d>
 
 """ opening and saving {{{2
 "<leader>o opens ctrlp plugin
-noremap <leader>O :e <C-r>=expand('%:p:h')<CR><CR>
-nnoremap <leader>N :tabnew 
+nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
+nnoremap <leader>T :tabnew 
 nnoremap <leader>s :w<CR>
 
 """ tab switching {{{2
@@ -296,8 +296,7 @@ let g:ctrlp_prompt_mappings = {
             \ }
 
 """" ranger {{{3
-" let g:ranger_map_keys = 0
-" nnoremap <leader>O :RangerNewTab<CR>
+let g:ranger_map_keys = 0
 
 """" nvim-completion-manager
 let g:cm_complete_start_delay = 750
@@ -313,7 +312,7 @@ let g:SidebarEmptyPrefix = '<leader>e'
 let g:SidebarEmptyStickyKey = 'e'
 let g:SidebarToggleKeys = [
     \ ['capitalL',      'l'],
-    \ ['nerdtree',      'f'],
+    \ ['nerdtree',      'n'],
     \ ['buffergator',   'b'],
     \ ['tagbar',        't'],
     \ ['gundo',         'u'],
