@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 """ vim {{{2
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'gcmt/taboo.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
