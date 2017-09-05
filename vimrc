@@ -343,6 +343,7 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 autocmd FileType nerdtree nnoremap <silent> <buffer> l :call NERDTree_l()<CR>
 autocmd FileType nerdtree nnoremap <silent> <buffer> h :call NERDTree_h()<CR>
 autocmd FileType nerdtree nnoremap <silent> <buffer> o :call NERDTree_o()<CR>
+autocmd FileType nerdtree nnoremap <silent> <buffer> q :q<CR>
 
 function! NERDTree_l()
     let l:syntax = GetSyntaxUnderCursor() 
