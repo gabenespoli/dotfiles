@@ -1,5 +1,5 @@
 "" general {{{1
-set spell       " enable live spell checking
+setlocal spell       " enable live spell checking
 
 "" keybindings {{{1
 """ general {{{2
