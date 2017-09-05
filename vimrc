@@ -304,13 +304,13 @@ let g:cm_complete_start_delay = 750
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
-let g:SidebarBgColor = 8
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
+let g:SidebarBgColor = 8
 let g:SidebarTogglePrefix = '<leader>'
+let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarEmptyPrefix = '<leader>e'
 let g:SidebarEmptyStickyKey = 'e'
-let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarToggleKeys = [
     \ ['capitalL',      'l'],
     \ ['nerdtree',      'f'],
