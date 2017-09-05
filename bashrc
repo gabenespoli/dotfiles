@@ -140,10 +140,12 @@ alias hangups="hangups \
     --col-msg-sender-bg default \
     --col-msg-self-fg 'dark blue' \
     --col-msg-self-bg default"
-alias gvpaper="vim ~/r/gv/paper/Nespoli2017.md"
-alias ecpaper='vim ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md'
-alias dis="vim ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
-alias cv="vim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
+
+function openmd() { nvim +SidebarStickyToggle -c "SidebarToggle tagbar" -c "SidebarToggle CapitalL" $1 ; }
+alias ecpaper="openmd ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md"
+alias gvpaper="openmd ~/r/gv/paper/Nespoli2017.md"
+alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
+alias cv="nvim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network {{{1
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
