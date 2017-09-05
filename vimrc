@@ -363,7 +363,7 @@ function! NERDTree_h()
     elseif l:syntax == 'NERDTreeFile' || l:syntax == 'NERDTreeOpenable'
         " go to parent
         call nerdtree#ui_glue#invokeKeyMap("p")
-    elseif l:syntax == 'NERDTreeCWD'
+    elseif l:syntax == 'NERDTreeCWD' || l:syntax == 'NERDTreeUp' || l:syntax == 'NERDTreeHelp'
         " move up a dir
         call nerdtree#ui_glue#invokeKeyMap("u")
     endif
