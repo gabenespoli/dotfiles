@@ -96,7 +96,7 @@ alias glog="git log --graph --decorate --oneline"
 ### todo, notes, and calendar {{{2
 alias t="todo.sh -a"
 alias in="todo.sh -a add +in"
-alias todo="vim -O $HOME/todo/todo.txt $HOME/todo/backlog.txt $HOME/todo/someday.txt"
+alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt $HOME/todo/someday.txt"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias ts="trello show-cards -b scrum -l sprint"
 alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
