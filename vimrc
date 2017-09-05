@@ -8,11 +8,11 @@ Plug 'gcmt/taboo.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'roxma/nvim-completion-manager'
 if has('nvim')
     Plug 'Shougo/neco-vim'
-else
-    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'roxma/nvim-completion-manager'
+" else
+    " Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 """ sidebar-type plugins {{{2
@@ -300,6 +300,7 @@ let g:ctrlp_prompt_mappings = {
 " nnoremap <leader>O :RangerNewTab<CR>
 
 """" nvim-completion-manager
+let g:cm_complete_start_delay = 750
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
