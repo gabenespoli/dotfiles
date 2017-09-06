@@ -120,6 +120,7 @@ hi TodoTag              ctermfg=10
 hi TodoPointsTag        ctermfg=10
 hi TodoPoints           ctermfg=13
 hi TodoDate             ctermfg=2
+hi TodoWaiting          ctermfg=3
 
 "" solarized color codes reference
 "let s:vmode       = "cterm"
