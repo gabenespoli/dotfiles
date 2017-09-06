@@ -497,6 +497,7 @@ endif
 
 """ syntax {{{2
 """" w0rp/ale {{{3
+nnoremap <leader>y :ALEToggle<CR>
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
