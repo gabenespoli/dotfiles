@@ -496,9 +496,11 @@ endif
 
 """" vim-slime {{{3
 let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
+if exists('$TMUX')
+    let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+endif
 
 """ syntax {{{2
 """" w0rp/ale {{{3
