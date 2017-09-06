@@ -210,10 +210,11 @@ inoremap <C-b> <Left>
 nnoremap <localleader>s 1z=
 
 """ resizing windows based on terminal size {{{2
-" this requires $COLS and $LINES environment vars which are set to `tput cols` and `tput lines`
+" for some reason nvim doesn't know the correct &columns until after startup
+" so, we have to use autocmds for width and height
 let g:centerwidth = 100
-let g:width = &columns / 4
-let g:height = &lines / 4
+autocmd VimEnter * let g:width = &columns / 4
+autocmd VimEnter * let g:height = &lines / 4
 function! ResizeCenterWidth()
     execute 'vertical resize '.100
 endfunction
@@ -304,8 +305,8 @@ let g:cm_complete_start_delay = 750
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
-let g:SidebarWidth = g:width
-let g:SidebarHeight = g:height
+autocmd VimEnter * let g:SidebarWidth = g:width
+autocmd VimEnter * let g:SidebarHeight = g:height
 let g:SidebarBgColor = 8
 let g:SidebarStatusLine = '%#StatusLineFill#%=%*'
 let g:SidebarTogglePrefix = '<leader>'
@@ -321,8 +322,8 @@ let g:SidebarToggleKeys = [
     \ ]
 
 """" capitalL {{{3
-let g:Lwidth = g:width
-let g:Lheight = g:height
+autocmd VimEnter * let g:Lwidth = g:width
+autocmd VimEnter * let g:Lheight = g:height
 let g:Lposition = 'right'
 nnoremap <leader>L :Lcycle<CR>
 
@@ -423,7 +424,7 @@ let g:tagbar_type_pandoc = {
 
 """" gundo {{{3
 let g:gundo_right = 0
-let g:gundo_preview_height = g:height
+autocmd VimEnter * let g:gundo_preview_height = g:height
 let g:gundo_preview_bottom = 1
 
 """ git {{{2
