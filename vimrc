@@ -307,6 +307,7 @@ let g:cm_complete_start_delay = 750
 let g:SidebarWidth = g:width
 let g:SidebarHeight = g:height
 let g:SidebarBgColor = 8
+let g:SidebarStatusLine = '%#StatusLineFill#%=%*'
 let g:SidebarTogglePrefix = '<leader>'
 let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarEmptyPrefix = '<leader>e'
