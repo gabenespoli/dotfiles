@@ -183,14 +183,6 @@ nnoremap <leader>] gt
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
 
-""" swap w/b/e for W/B/E for more natural movement {{{2
-nnoremap w W
-nnoremap W w
-nnoremap b B
-nnoremap B b
-nnoremap e E
-nnoremap E e
-
 """ status/info toggles {{{2
 nmap <leader>W :echo WordCount()<CR>
 nmap <leader>S :call ToggleStatusBar()<CR>
