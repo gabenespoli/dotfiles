@@ -213,8 +213,6 @@ nnoremap <localleader>s 1z=
 " for some reason nvim doesn't know the correct &columns until after startup
 " so, we have to use autocmds for width and height
 let g:centerwidth = 100
-autocmd VimEnter * let g:width = &columns / 4
-autocmd VimEnter * let g:height = &lines / 4
 function! ResizeCenterWidth()
     execute 'vertical resize '.100
 endfunction
@@ -313,9 +311,6 @@ inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
-autocmd VimEnter * let g:SidebarWidth = g:width
-autocmd VimEnter * let g:SidebarHeight = g:height
-let g:SidebarBgColor = 8
 let g:SidebarStatusLine = '%#StatusLineFill#%=%*'
 let g:SidebarTogglePrefix = '<leader>'
 let g:SidebarMovePrefix = '<leader>m'
@@ -330,8 +325,6 @@ let g:SidebarToggleKeys = [
     \ ]
 
 """" capitalL {{{3
-autocmd VimEnter * let g:Lwidth = g:width
-autocmd VimEnter * let g:Lheight = g:height
 let g:Lposition = 'right'
 nnoremap <leader>L :Lcycle<CR>
 
@@ -432,7 +425,6 @@ let g:tagbar_type_pandoc = {
 
 """" gundo {{{3
 let g:gundo_right = 0
-autocmd VimEnter * let g:gundo_preview_height = g:height
 let g:gundo_preview_bottom = 1
 
 """ git {{{2
