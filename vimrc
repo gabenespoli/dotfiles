@@ -539,7 +539,9 @@ let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave"]
 
-"""" Critic Markdown Plugin {{{3
+"""" CriticMarkup Plugin {{{3
+let g:criticmarkup#disable#highlighting = 1
+
 " insert tags (comments and highlights)
 nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
 nnoremap <leader>chi i{==<Esc>
