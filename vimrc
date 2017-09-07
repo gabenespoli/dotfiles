@@ -147,6 +147,11 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%l/%L\,%c\ (%P)                           
 
+""" neovim specific stuff
+if has('nvim')
+    autocmd BufWinEnter,WinEnter term://* startinsert
+endif
+
 "" Keybindings {{{1
 """ General {{{2
 let mapleader = "\<Space>"
