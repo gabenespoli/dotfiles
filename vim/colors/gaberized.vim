@@ -106,6 +106,12 @@ hi BuffergatorBufferNr  ctermfg=10      ctermbg=8       cterm=none
 hi TagbarType           ctermfg=10
 hi TagbarScope          ctermfg=12
 
+""" GitGutter
+hi GitGutterAdd         ctermfg=2       ctermbg=8       cterm=none
+hi GitGutterChange      ctermfg=9       ctermbg=8       cterm=none
+hi GitGutterDelete      ctermfg=1       ctermbg=8       cterm=none
+hi GitGutterChangeDelete ctermfg=9      ctermbg=8       cterm=none
+
 """ DiffChar
 hi _DiffDelPos          ctermfg=1       ctermbg=0       cterm=underline
 
