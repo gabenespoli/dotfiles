@@ -66,6 +66,10 @@ hi markdownH4           ctermfg=7       ctermbg=0       cterm=none
 hi markdownH5           ctermfg=7       ctermbg=0       cterm=none
 hi markdownH6           ctermfg=7       ctermbg=0       cterm=none
 
+""" Pandoc
+hi pandocReferenceLabel ctermfg=13                      cterm=underline
+hi pandocReferenceURL   ctermfg=6                       cterm=none
+
 """ MATLAB
 hi link matlabCellComment CommentHeading
 
