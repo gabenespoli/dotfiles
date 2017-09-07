@@ -187,7 +187,7 @@ nnoremap Q :qa<CR>
 nmap <leader>W :echo WordCount()<CR>
 nmap <leader>S :call ToggleStatusBar()<CR>
 nmap <leader>F :call ToggleTabline()<CR>
-nmap <leader>X :echo GetSyntaxUnderCursor()<CR>
+nmap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 
 """ misc {{{2
 " copy/paste
@@ -233,12 +233,18 @@ nnoremap <leader>rh :call ResizeSideHeight()<CR>
 """" tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
+
+" folding
 nnoremap cofl :set foldmethod=manual<CR>
 nnoremap cofi :set foldmethod=indent<CR>
 nnoremap cofe :set foldmethod=expr<CR>
 nnoremap cofm :set foldmethod=marker<CR>
 nnoremap cofs :set foldmethod=syntax<CR>
 nnoremap cofd :set foldmethod=diff<CR>
+
+" syntax
+nnoremap coym :set syntax=markdown<CR>
+nnoremap coyp :set syntax=pandoc<CR>
 
 """" tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
