@@ -539,6 +539,7 @@ let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles
 " vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave"]
+let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
 """" CriticMarkup Plugin {{{3
 let g:criticmarkup#disable#highlighting = 1
