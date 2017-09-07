@@ -70,6 +70,12 @@ hi link matlabCellComment CommentHeading
 
 "" Plugin color customizations
 
+""" critic markdown
+hi criticAdd            ctermfg=8       ctermbg=2       cterm=none
+hi criticDel            ctermfg=8       ctermbg=1       cterm=none
+hi criticMeta           ctermfg=8       ctermbg=6       cterm=none
+hi criticHighlighter    ctermfg=8       ctermbg=3       cterm=none
+
 """ CapitalL
 hi LmarkdownH1          ctermbg=8
 hi LmarkdownH2          ctermbg=8
