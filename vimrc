@@ -526,15 +526,18 @@ function! LinterStatus(type) abort
 endfunction
 
 """" pandoc {{{3
-" vim-pandoc/vim-pandoc, vim-pandoc/vim-pandoc-syntax, vim-criticmarkup
+" vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
-let g:pandoc#modules#enabled = ["command","bibliographies","completion","keyboard"]
+let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
 let g:pandoc#biblio#sources = "g"
 let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
+
+" vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave"]
 
 """" Critic Markdown Plugin {{{3
 " insert tags (comments and highlights)
