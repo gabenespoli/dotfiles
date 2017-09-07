@@ -302,7 +302,8 @@ let g:ranger_map_keys = 0
 
 """" nvim-completion-manager
 let g:cm_complete_start_delay = 750
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
+inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
