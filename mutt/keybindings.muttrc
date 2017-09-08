@@ -19,24 +19,27 @@ bind    pager           G       bottom              # default is <End>
 bind    index,pager     [       previous-undeleted  # by default this is not bound in the pager
 bind    index,pager     ]       next-undeleted      # by default this is not bound in the pager
 
-## Navigation
-# make hjkl for movement between sections
-bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
+## Navigation (h/l like vim)
 bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
 bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
 bind    pager           l       view-attachments
 bind    attach          l       view-attach         # default is <Enter> (or m for force open with mailcap)
+bind   postpone,browser l       select-entry
+# some corrections for the hjkl adjustments
+bind    index,pager     i       display-toggle-weed # default is h; there is no default binding for i
+bind    index           L       limit               # default for L is list reply (which I don't need)
+
+bind   postpone,browser <C-j>   select-entry
 bind    attach          <Space> view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
 bind    pager           <Return> exit               # default for <Return> in the pager is next-line; this makes it like a quicklook toggle
 macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
-bind   postpone,browser <C-j>   select-entry
-bind   postpone,browser l       select-entry
 
-# some corrections for the hjkl adjustments
-bind    index,pager     i       display-toggle-weed # no default binding for i
-bind    index           L       limit               # default for L is list reply (which I don't need)
+# other navigation
+bind    index           <Tab>   next-new            # C-i is tab
+bind    index           \ei     previous-new        # Esc is close to caps-as-ctrl
+bind    index           \Cv     collapse-all        # default is <Esc>V
 
 # sidebar
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
@@ -44,11 +47,6 @@ macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><re
 macro   index,pager     \Cn     '<sidebar-next>'
 macro   index,pager     \Cp     '<sidebar-prev>'
 macro   index,pager     \Cl     '<sidebar-open>'
-
-# other navigation
-bind    index           <Tab>   next-new            # C-i is tab
-bind    index           \ei     previous-new        # Esc is close to caps-as-ctrl
-bind    index           \Cv     collapse-all        # default is <Esc>V
 
 ## Actions
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
