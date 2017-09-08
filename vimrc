@@ -335,6 +335,7 @@ nnoremap <leader>L :Lcycle<CR>
 
 """" NERDTree {{{3
 let g:NERDTreeHijackNetrw = 1
+let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeShowLineNumbers = 1
