@@ -27,6 +27,8 @@ bind    index           l       display-message     # make hjkl movement keys; d
 bind    pager           l       view-attachments
 bind    attach          l       view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    attach          <Space> view-attach         # default is <Enter> (or m for force open with mailcap)
+bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
+bind    pager           <Return> exit               # default for <Return> in the pager is next-line; this makes it like a quicklook toggle
 macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
 bind   postpone,browser <C-j>   select-entry
