@@ -61,8 +61,8 @@ set sort_re                                # thread based on regex
 #set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 ## Viewing Options
-set pager_index_lines = 0  # number of index lines to show
-set pager_context = 3      # number of context lines to show
+set pager_index_lines = 6  # number of index lines to show
+set pager_context = 5      # number of context lines to show (overlap when paging)
 set pager_stop             # don't go to next message automatically
 unset resolve              # don't go to next message automatically
 set menu_scroll            # scroll in menus
