@@ -2,6 +2,8 @@
 # Gabe Nespoli (gabenespoli@gmail.com)
 
 ## Scrolling (like vim)
+bind    pager           j       next-line           # default is <Enter>; ^E is default for edit-type
+bind    pager           k       previous-line       # default is <Backspace>
 bind    index,pager     \Ce     next-line           # default is <Enter>; ^E is default for edit-type
 bind    index,pager     \Cy     previous-line       # default is <Backspace>
 bind    index,pager     \Cd     half-down           # default for index is ]
@@ -14,8 +16,8 @@ bind    index           G       last-entry          # default is *
 bind    pager           g       noop                # to stop error "binding gg will alias 'g'
 bind    pager           gg      top                 # default is ^; g is default for group-reply
 bind    pager           G       bottom              # default is <End>
-bind    pager           [       half-up             # by default this is not bound in the pager
-bind    pager           ]       half-down           # by default this is not bound in the pager
+bind    index,pager     [       previous-undeleted  # by default this is not bound in the pager
+bind    index,pager     ]       next-undeleted      # by default this is not bound in the pager
 
 ## Navigation
 # make hjkl for movement between sections
