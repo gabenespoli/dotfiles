@@ -30,7 +30,7 @@ hi FoldColumn           ctermfg=10      ctermbg=0       cterm=none
 hi Folded               ctermfg=11      ctermbg=0       cterm=none
 hi VertSplit            ctermfg=0       ctermbg=10      cterm=reverse
 hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
-hi NonText              ctermfg=10      ctermbg=8       cterm=none
+hi NonText              ctermfg=0       ctermbg=8       cterm=none
 hi SpecialKey           ctermfg=10      ctermbg=0       cterm=none
 
 hi Search               ctermfg=15      ctermbg=1       cterm=none
