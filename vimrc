@@ -105,7 +105,6 @@ set splitright splitbelow
 set incsearch                   " highlight search results as you type
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
-set noequalalways
 
 " TODO make this foldheading highlighting work
 " autocmd BufReadPost * :syntax match FoldHeading '^.*{{{.*$'
