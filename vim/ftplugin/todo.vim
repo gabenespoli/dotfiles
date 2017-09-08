@@ -51,7 +51,7 @@ function! TodoHighlighting(winnum)
     hi NonText ctermfg=8
     execute a:winnum . "wincmd w"
 endfunction
-autocmd VimEnter * windo call TodoHighlighting(1)
+autocmd VimEnter,BufEnter * windo call TodoHighlighting(1)
 
 "" from todo-txt.vim
 " these functions are taken from https://github.com/freitass/todo.txt-vim
