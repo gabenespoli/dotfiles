@@ -246,8 +246,8 @@ nnoremap cofs :set foldmethod=syntax<CR>
 nnoremap cofd :set foldmethod=diff<CR>
 
 " syntax
-nnoremap coym :set syntax=markdown<CR>
-nnoremap coyp :set syntax=pandoc<CR>
+nnoremap coYm :set syntax=markdown<CR>
+nnoremap coYp :set syntax=pandoc<CR>
 
 """" tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
@@ -504,7 +504,7 @@ endif
 
 """ syntax {{{2
 """" w0rp/ale {{{3
-nnoremap <leader>y :ALEToggle<CR>
+nnoremap coy :ALEToggle<CR>
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
