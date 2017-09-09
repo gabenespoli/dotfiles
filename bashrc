@@ -96,7 +96,7 @@ alias glog="git log --graph --decorate --oneline"
 ### todo, notes, and calendar {{{2
 alias t="todo.sh -a"
 alias in="todo.sh -a add +in"
-alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt $HOME/todo/someday.txt"
+alias todo="$EDITOR $HOME/todo/todo.txt $HOME/todo/backlog.txt $HOME/todo/someday.txt"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias ts="trello show-cards -b scrum -l sprint"
 alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
@@ -108,7 +108,7 @@ function note() {
     title="$*"
     filename="$notesDir/$title.md"
     if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
-    vim "$filename"
+    "$EDITOR" "$filename"
 }
 function caplog() {
     today=`date +%Y-%m-%d\ %H:%M:%S`
@@ -145,11 +145,11 @@ alias hangups="hangups \
     --col-msg-self-fg 'dark blue' \
     --col-msg-self-bg default"
 
-function openmd() { nvim +SidebarStickyToggle -c "SidebarToggle tagbar" -c "SidebarToggle CapitalL" $1 ; }
+function openmd() { "$EDITOR" +SidebarStickyToggle -c "SidebarToggle tagbar" -c "SidebarToggle CapitalL" "$1" ; }
 alias ecpaper="openmd ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md"
 alias gvpaper="openmd ~/r/gv/paper/Nespoli2017.md"
 alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
-alias cv="nvim ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
+alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network {{{1
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
