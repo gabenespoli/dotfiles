@@ -189,8 +189,8 @@ nnoremap Q :qa<CR>
 
 """ status/info toggles {{{2
 nmap <leader>W :echo WordCount()<CR>
-nmap <leader>S :call ToggleStatusBar()<CR>
-nmap <leader>F :call ToggleTabline()<CR>
+nmap <silent> <leader>S :call ToggleStatusBar()<CR>
+nmap <silent> <leader>F :call ToggleTabline()<CR>
 nmap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 
 """ misc {{{2
