@@ -110,6 +110,10 @@ function note() {
     if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
     vim "$filename"
 }
+function caplog() {
+    today=`date +%Y-%m-%d\ %H:%M:%S`
+    echo "$today > $@" >> "$HOME/todo/caplog.txt"
+}
 
 ### others {{{2
 alias mail="mutt -F $HOME/dotfiles/muttrc"
