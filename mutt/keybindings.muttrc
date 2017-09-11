@@ -34,8 +34,12 @@ bind   postpone,browser \Cj     select-entry
 bind    attach          <Space> view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
 bind    pager           <Return> exit               # default for <Return> in the pager is next-line; this makes it like a quicklook toggle
-macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
-macro   pager           U       "<pipe-message>urlscan<enter>"                              "Call urlscan to open links."
+
+bind    index,pager     F       forward-message     # default for F is flag-message; default for foward-message is f
+bind    index,pager     *       flag-message        # default for * is last-entry (index only); default for flag-message is F
+bind    index           f       flag-message
+macro   pager           f       "<pipe-message>urlscan<enter>" "Call urlscan to open links." # this is like vimium
+# macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 
 # other navigation
 bind    index           <Tab>   next-new            # C-i is tab
