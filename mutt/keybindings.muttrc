@@ -16,8 +16,8 @@ bind    index           G       last-entry          # default is *
 bind    pager           g       noop                # to stop error "binding gg will alias 'g'
 bind    pager           gg      top                 # default is ^; g is default for group-reply
 bind    pager           G       bottom              # default is <End>
-bind    index,pager     [       previous-undeleted  # by default this is not bound in the pager
-bind    index,pager     ]       next-undeleted      # by default this is not bound in the pager
+bind    index,pager     \Cp     previous-undeleted  # by default this is not bound in the pager
+bind    index,pager     \Cn     next-undeleted      # by default this is not bound in the pager
 
 ## Navigation (h/l like vim)
 bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
@@ -45,8 +45,8 @@ bind    index           \Cv     collapse-all        # default is <Esc>V
 # sidebar
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
-macro   index,pager     \Cn     '<sidebar-next>'
-macro   index,pager     \Cp     '<sidebar-prev>'
+macro   index,pager     ]       '<sidebar-next>'
+macro   index,pager     [       '<sidebar-prev>'
 macro   index,pager     \Cl     '<sidebar-open>'
 
 ## Actions
