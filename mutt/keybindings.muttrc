@@ -1,7 +1,7 @@
-## Mutt Key Bindings
+## Mutt Key Bindings {{{1
 # Gabe Nespoli (gabenespoli@gmail.com)
 
-## Scrolling (like vim)
+## Scrolling (like vim) {{{1
 bind    pager           j       next-line           # default is <Enter>; ^E is default for edit-type
 bind    pager           k       previous-line       # default is <Backspace>
 bind    index,pager     \Ce     next-line           # default is <Enter>; ^E is default for edit-type
@@ -19,7 +19,7 @@ bind    pager           G       bottom              # default is <End>
 bind    index,pager     \Cp     previous-undeleted  # by default this is not bound in the pager
 bind    index,pager     \Cn     next-undeleted      # by default this is not bound in the pager
 
-## Navigation (h/l like vim)
+## Navigation (h/l like vim) {{{1
 bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
 bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
 bind    pager           l       view-attachments
@@ -41,19 +41,18 @@ bind    index           f       flag-message
 macro   pager           f       "<pipe-message>urlscan<enter>" "Call urlscan to open links." # this is like vimium
 # macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 
-# other navigation
 bind    index           <Tab>   next-new            # C-i is tab
 bind    index           \ei     previous-new        # Esc is close to caps-as-ctrl
 bind    index           \Cv     collapse-all        # default is <Esc>V
 
-# sidebar
+## sidebar {{{1
 macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 macro   index,pager     ]       '<sidebar-next>'
 macro   index,pager     [       '<sidebar-prev>'
 macro   index,pager     \Cl     '<sidebar-open>'
 
-## Actions
+## Actions {{{1
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
 bind    index,pager     p       recall-message      # default (R) is used for offlineimap; default for p is to print
 bind    compose         p       postpone-message
@@ -61,19 +60,19 @@ macro   index,pager     P       "<shell-escape>tmux split-window 'vim -c 'set sy
 macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
 macro   compose         f       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n" "Set from to alternate email <gabe@psych.ryerson.ca>"
 
-## Misc
+## Misc {{{1
 bind    index               <Esc>n  toggle-new # // default is N
 bind    generic             N       search-opposite # // default is \eN; N is default for toggle-new
 bind    index,pager,compose N       search-opposite
 bind    index               =       limit # // default is l; this is the filter key in vifm
 
-## External
+## External {{{1
 bind    editor          <Tab>   complete-query # goobook auto-completion
 macro   index,pager     \er     '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
 macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>" "Run offlineimap to sync all mail; empty inbox."
 macro   index,pager     \eR     "<sync-mailbox><shell-escape>offlineimap<enter>" "Run offlineimap to sync all mail; empty inbox."
 
-## Jumping and Limiting
+## Jumping and Limiting {{{1
 macro   index,pager     gi      "<change-folder>=INBOX<enter>"      "Go to Inbox folder."
 macro   index,pager     ga      "<change-folder>=Archive<enter>"    "Go to Archive folder."
 macro   index,pager     gd      "<change-folder>=Drafts<enter>"     "Go to Drafts folder."
