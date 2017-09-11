@@ -76,7 +76,7 @@ set sidebar_format  = "%B%?F?[%F]?%* %?N?%N/?%S%?L?[%L]?"
 ## Compose View Options
 #set editor          = "vim" 
 #set editor='vim + -c "setlocal wrapmargin=0 textwidth=0 wrap nocp linebreak nohlsearch"  -c "?^$"'
-set editor='nvim + -c "call MuttMailMode()"'
+set editor='vim + -c "call MuttMailMode()"'
 set envelope_from                           # which from?
 set sig_dashes                              # dashes before sig
 set edit_headers                            # show headers when composing
