@@ -22,7 +22,6 @@ bind    index,pager     \Cn     next-undeleted      # by default this is not bou
 ## Navigation (h/l like vim)
 bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
 bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
-bind    index           \Cj     display-message
 bind    pager           l       view-attachments
 bind    attach          l       view-attach         # default is <Enter> (or m for force open with mailcap)
 bind   postpone,browser l       select-entry
@@ -30,7 +29,8 @@ bind   postpone,browser l       select-entry
 bind    index,pager     i       display-toggle-weed # default is h; there is no default binding for i
 bind    index           L       limit               # default for L is list reply (which I don't need)
 
-bind   postpone,browser <C-j>   select-entry
+bind    index           \Cj     display-message
+bind   postpone,browser \Cj     select-entry
 bind    attach          <Space> view-attach         # default is <Enter> (or m for force open with mailcap)
 bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
 bind    pager           <Return> exit               # default for <Return> in the pager is next-line; this makes it like a quicklook toggle
