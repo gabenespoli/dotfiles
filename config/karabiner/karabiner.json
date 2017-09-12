@@ -368,7 +368,20 @@
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": {},
+                    "fn_function_keys": {
+                        "f1": "f1",
+                        "f10": "f10",
+                        "f11": "f11",
+                        "f12": "f12",
+                        "f2": "f2",
+                        "f3": "f3",
+                        "f4": "f4",
+                        "f5": "f5",
+                        "f6": "f6",
+                        "f7": "f7",
+                        "f8": "f8",
+                        "f9": "f9"
+                    },
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
