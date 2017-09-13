@@ -37,9 +37,8 @@ bind    attach          <Space> view-attach         # default is <Enter> (or m f
 bind    pager           <Space> exit                # <Space> is default page down; this makes space act like quicklook toggle
 bind    pager           <Return> exit               # default for <Return> in the pager is next-line; this makes it like a quicklook toggle
 
-bind    index,pager     F       forward-message     # default for F is flag-message; default for foward-message is f
-bind    index,pager     *       flag-message        # default for * is last-entry (index only); default for flag-message is F
-bind    index           f       flag-message
+bind    index,pager     \ef     forward-message     # default for F is flag-message; default for foward-message is f
+bind    index,pager     F       flag-message        # default for * is last-entry (index only); default for flag-message is F
 macro   pager           f       "<pipe-message>urlscan<enter>" "Call urlscan to open links." # this is like vimium
 # macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 
@@ -55,6 +54,8 @@ macro   index,pager     {       '<sidebar-prev>'
 macro   index,pager     \Cl     '<sidebar-open>'
 
 ## Actions {{{1
+bind    index,pager     \er     reply
+bind    index,pager     \eR     group-reply         # default (g) is used for go to top
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
 bind    index,pager     p       recall-message      # default (R) is used for offlineimap; default for p is to print
 bind    compose         p       postpone-message
@@ -70,9 +71,9 @@ bind    index               =       limit # // default is l; this is the filter 
 
 ## External {{{1
 bind    editor          <Tab>   complete-query # goobook auto-completion
-macro   index,pager     \er     '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
+macro   index,pager     M       '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
 macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>" "Run offlineimap to sync all mail; empty inbox."
-macro   index,pager     \eR     "<sync-mailbox><shell-escape>offlineimap<enter>" "Run offlineimap to sync all mail; empty inbox."
+# macro   index,pager     \eR     "<sync-mailbox><shell-escape>offlineimap<enter>" "Run offlineimap to sync all mail; empty inbox."
 
 ## Jumping and Limiting {{{1
 macro   index,pager     gi      "<change-folder>=INBOX<enter>"      "Go to Inbox folder."
