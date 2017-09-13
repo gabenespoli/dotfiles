@@ -1,4 +1,11 @@
+" nvim-r plugin bindings
+" nnoremap <localleader>r
 
+set equalalways
+if has('nvim')
+    tnoremap <buffer> _ <Space><-<Space>
+
+" comment headings and folding
 au BufEnter <buffer> syn match CommentHeading '^##.*$'
 
 set foldmethod=expr
