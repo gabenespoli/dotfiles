@@ -72,6 +72,7 @@ bind    index               =       limit # // default is l; this is the filter 
 ## External {{{1
 bind    editor          <Tab>   complete-query # goobook auto-completion
 macro   index,pager     M       '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
+macro   index,pager     \em     '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
 macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>" "Run offlineimap to sync all mail; empty inbox."
 # macro   index,pager     \eR     "<sync-mailbox><shell-escape>offlineimap<enter>" "Run offlineimap to sync all mail; empty inbox."
 
