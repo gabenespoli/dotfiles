@@ -4,6 +4,7 @@
 set equalalways
 if has('nvim')
     tnoremap <buffer> _ <Space><-<Space>
+endif
 
 " comment headings and folding
 au BufEnter <buffer> syn match CommentHeading '^##.*$'
