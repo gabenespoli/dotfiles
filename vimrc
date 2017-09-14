@@ -312,7 +312,7 @@ inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
-let g:SidebarStatusLine = '%#StatusLineFill#%=%*'
+let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
 let g:SidebarTogglePrefix = '<leader>'
 let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarEmptyPrefix = '<leader>e'
