@@ -144,7 +144,8 @@ set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
 " set statusline+=%{mode()}
 set statusline+=\ %#StatusMod#%m%*%#StatusFlag#%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
-set statusline+=%#StatusLineFill#%=%*                      
+" set statusline+=%#StatusLineFill#%=%*                      
+set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)                           
 
 """ neovim specific stuff
