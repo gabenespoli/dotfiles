@@ -36,22 +36,6 @@ nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 
 "" functions
-function! TodoHighlighting(winnum)
-    syn match TodoPriorityA /^(A)/ contains=TodoProject,TodoContext,TodoTag
-    syn match TodoPriorityB /^(B)/ contains=TodoProject,TodoContext,TodoTag
-    syn match TodoPriorityC /^(C)/ contains=TodoProject,TodoContext,TodoTag
-    syn match TodoDone /^x\ \d\d\d\d-\d\d-\d\d\ .*/
-    syn match TodoProject /+\S*/
-    syn match TodoContext /@\S*/
-    syn match TodoTag /\S*:\S*/ contains=TodoDate,TodoPoints
-    syn match TodoPointsTag /pts:/
-    syn match TodoPoints /pts:\d\{1,2}/ contains=TodoPointsTag
-    syn match TodoDate /\d\d\d\d-\d\d-\d\d/
-    syn match TodoWaiting /@waiting/
-    hi NonText ctermfg=8
-    execute a:winnum . "wincmd w"
-endfunction
-autocmd VimEnter,BufEnter * windo call TodoHighlighting(1)
 
 "" from todo-txt.vim
 " these functions are taken from https://github.com/freitass/todo.txt-vim
