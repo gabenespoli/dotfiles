@@ -48,7 +48,7 @@ function! GetMarkdownFoldText()
     else
         let temp = substitute(line, '^#', '', 'g')
         let sub = substitute(temp, '#', '  ', 'g')
-        return '+--' . sub . ' '
+        return sub
     endif
 endfunction
 
