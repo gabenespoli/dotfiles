@@ -54,7 +54,6 @@ endfunction
 
 "" highlights {{{1
 " note: colors are based on the solarized 16 color palette
-hi NonText ctermfg=8
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
 
