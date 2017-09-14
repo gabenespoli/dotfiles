@@ -57,6 +57,9 @@ endfunction
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
 
+" because critic markdown never sticks
+autocmd BufEnter * call criticmarkup#InjectHighlighting()
+
 "" Pandoc Plugin settings {{{1
 au VimEnter * :set syntax=pandoc
 au VimEnter,BufEnter * :call PandocForceHighlighting()
