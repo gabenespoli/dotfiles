@@ -111,8 +111,12 @@ function note() {
     "$EDITOR" "$filename"
 }
 function caplog() {
-    today=`date +%Y-%m-%d\ %H:%M:%S`
-    echo "$today > $@" >> "$HOME/todo/caplog.txt"
+    if [ "$#" -eq 0 ]; then
+        cat "$HOME/todo/caplog.txt"
+    else
+        today=`date +%Y-%m-%d\ %H:%M:%S`
+        echo "$today > $@" >> "$HOME/todo/caplog.txt"
+    fi
 }
 
 ### others {{{2
