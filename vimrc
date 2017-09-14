@@ -32,6 +32,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
+Plug 'jalvesaq/Nvim-R'
 
 """ syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
@@ -460,6 +461,17 @@ nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 if exists('$TMUX')
     let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
+
+"""" Nvim-R
+let R_show_args = 1
+let R_objbr_showdf = 0
+let rout_follow_colorscheme = 1
+let Rout_more_colors = 1
+let R_sttline_fmt = "%#Function#%fun%#Delimiter#(%#Normal#%args%#Delimiter#)"
+let R_objbr_place = "console,bottom"
+autocmd Filetype r execute "let R_objbr_h = ".&lines/3
+autocmd Filetype r execute "let R_objbr_w = ".&columns/3
+autocmd Filetype r execute "let R_rconsole_width = ".&columns/3
 
 """ syntax {{{2
 """" w0rp/ale {{{3
