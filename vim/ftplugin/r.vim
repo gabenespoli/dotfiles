@@ -3,7 +3,7 @@
 
 set equalalways
 if has('nvim')
-    tnoremap <buffer> _ <Space><-<Space>
+    tnoremap _ <Space><-<Space>
 endif
 
 " comment headings and folding
