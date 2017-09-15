@@ -467,7 +467,7 @@ let R_sttline_fmt = "%#Function#%fun%#Delimiter#(%#Normal#%args%#Delimiter#)"
 let R_objbr_place = "console,bottom"
 autocmd Filetype r execute "let R_objbr_h = ".&lines/3
 autocmd Filetype r execute "let R_objbr_w = ".&columns/3
-autocmd Filetype r execute "let R_rconsole_width = ".&columns/3
+autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
 
 """ syntax {{{2
 """" w0rp/ale {{{3
