@@ -106,6 +106,7 @@ set splitright splitbelow
 set incsearch                   " highlight search results as you type
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
+set equalalways
 
 " TODO make this foldheading highlighting work
 " autocmd BufReadPost * :syntax match FoldHeading '^.*{{{.*$'
@@ -129,7 +130,8 @@ function! FoldTextMarker()
     if strlen(lines) < linesdigits + 1
         let lines = repeat(' ', linesdigits-strlen(lines)) . lines
     endif
-    let prefix = '+-' . repeat('-', &foldlevel)
+    " let prefix = '+-' . repeat('-', &foldlevel)
+    let prefix = ''
     let offset = 24
     let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
     return prefix . line . midfix . ' ('. lines .' lines)'
