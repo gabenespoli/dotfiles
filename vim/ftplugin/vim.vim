@@ -1,4 +1,4 @@
-autocmd FileType vim syntax match CommentHeading '^\s*"".*$'
+autocmd BufEnter <buffer> syntax match CommentHeading /^\s*"".*$/
 
 setlocal foldmethod=marker
 setlocal foldexpr=FoldExprDoubleCharVim(v:lnum)
