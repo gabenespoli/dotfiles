@@ -53,7 +53,7 @@ fi
 
 ## Environment vars {{{1
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
-export PS1='\[\e[0;34m\] \w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
+export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='nvim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
