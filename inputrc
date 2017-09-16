@@ -3,9 +3,15 @@ set editing-mode vi
 set show-mode-in-prompt on
 
 ### prepend prompt with character indicating the editing mode
-set vi-ins-mode-string \1\e[0;33m\2+\1\e[m\2
-set vi-cmd-mode-string \1\e[0;32m\2:\1\e[m\2
-set emacs-mode-string \1\e[1;35m\2@\1\e[m\2
+# set vi-ins-mode-string \1\e[0;33m\2+\1\e[m\2
+# set vi-cmd-mode-string \1\e[0;32m\2:\1\e[m\2
+# set emacs-mode-string \1\e[1;35m\2@\1\e[m\2
+
+### change cursor shape based on editing mode
+# https://stackoverflow.com/questions/7888387/the-way-to-distinguish-command-mode-and-insert-mode-in-bashs-vi-command-line-ed
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+set emacs-mode-string \1\e[4 q\2
 
 ### vi settings                                         
 $if mode=vi                
