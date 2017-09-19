@@ -1,5 +1,5 @@
 
-au BufEnter <buffer> syn match CommentHeading '^##.*$'
+au VimEnter,BufEnter <buffer> syn match CommentHeading '^##.*$'
 
 set foldmethod=expr
 set foldexpr=GetTmuxFolds(v:lnum)

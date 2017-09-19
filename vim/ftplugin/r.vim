@@ -7,7 +7,7 @@ if has('nvim')
 endif
 
 " comment headings and folding
-au BufEnter <buffer> syn match CommentHeading '^##.*$'
+au VimEnter,BufEnter <buffer> syn match CommentHeading '^##.*$'
 
 set foldmethod=expr
 set foldexpr=GetRFolds(v:lnum)
