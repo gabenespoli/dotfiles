@@ -9,14 +9,14 @@ source ~/bin/private/mutt/gmail_private.muttrc
 
 # then make adjustments to overwrite certain things
 
-## folders
-set spoolfile = "=INBOX"
+## Folders
+set spoolfile = "=[Gmail]/All%20Mail"
 set postponed = "=[Gmail]/Drafts"
 set trash     = "=[Gmail]/Trash"
 
-# sidebar
+## Xidebar
 unmailboxes * # remove other mailboxes from sidebar first
-set sidebar_visible = yes
+set sidebar_visible = no
 mailboxes =INBOX \
           =[Gmail]/Starred \
           =[Gmail]/Important \
@@ -27,16 +27,17 @@ mailboxes =INBOX \
           =[Gmail]/Spam \
           =[Gmail]/Trash \
 
+## Keybindings
 # keybindings for navigating, because the folder names are different
 macro   index,pager     gi      "<change-folder>=INBOX<enter>"                              "Go to Inbox."
-macro   index,pager     ga      "<change-folder>=[Gmail]/All%20Mail<enter>"  "Go to All Mail."
+macro   index,pager     ga      "<change-folder>=[Gmail]/All%20Mail<enter>"                 "Go to All Mail."
 macro   index,pager     gd      "<change-folder>=[Gmail]/Drafts<enter>"                     "Go to Drafts."
 macro   index,pager     gx      "<change-folder>=[Gmail]/Trash<enter>"                      "Go to Trash."
-macro   index,pager     gf      "<change-folder>=[Gmail]/Starred<enter>"                    "Go to Flagged conversations."
+# macro   index,pager     gf      "<change-folder>=[Gmail]/Starred<enter>"                    "Go to Flagged conversations."
 macro   index,pager     gs      "<change-folder>=[Gmail]/Sent Mail<enter>"                  "Go to Sent messages."
 macro   index,pager     gc      "<change-folder>=[Gmail]/Chats<enter>"                      "Go to Chats."
 macro   index,pager     gm      "<change-folder>=[Gmail]/Important<enter>"                  "Go to Important messages."
-macro   index,pager     e       "<save-message>=[Gmail]/All%20Mail<enter>"                    "Archive message." # // default for e is to edit the raw message
+macro   index,pager     e       "<save-message>=[Gmail]/All%20Mail<enter>"                  "Archive message." # // default for e is to edit the raw message
 macro   index,pager     d       "<save-message>=[Gmail]/Trash<enter>"                       "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 macro   index,pager     \#      "<save-message>=[Gmail]/Trash<enter>"                       "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 macro   index,pager     \!      "<save-message>=[Gmail]/Spam<enter>"                        "Mark message as spam."
