@@ -479,6 +479,7 @@ let g:criticmarkup#disable#highlighting = 1
 
 " insert tags (comments and highlights)
 nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
+nnoremap <leader>ct i{>>--TODO: <<}<Esc>hhi
 nnoremap <leader>chi i{==<Esc>
 nnoremap <leader>cha a==}<Esc>
 nnoremap <leader>chh I{==<Esc>A==}<Esc>
