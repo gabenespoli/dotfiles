@@ -78,35 +78,38 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 
-""" Spaces & Tabs {{{2
-set linebreak           " stop soft wrapping in the middle of words  
-set breakindent         " auto indent soft wrap line breaks
-set tabstop=4           " number of visual spaces per TAB
-set softtabstop=4       " number of spaces in tab when editing
-set shiftwidth=4
-set expandtab           " tabs are spaces
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set nolist              " show invisibles
-set backspace=indent,eol,start " enable backspacing text that was inserted previously
-set ignorecase
-set smartcase           " if [search terms] has uppercase, then case sensitive
-
-""" UI Config {{{2
+""" UI {{{2
 set number relativenumber
-set showcmd                     " show command in bottom bar
+set visualbell                  " no sound
+set nolist                      " invisibles
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set wildmenu                    " visual autocomplete for command menu
+set wildmode=longest,list,full
+set backspace=indent,eol,start  " enable backspacing text that was inserted previously
+
 set laststatus=2                " 0 = no status bar, 2 = show status bar
 set showtabline=1               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
 set tabpagemax=8
-set wildmenu                    " visual autocomplete for command menu
-set wildmode=longest,list,full
-set visualbell                  " no sound
+set showcmd                     " show command in bottom bar
 set hidden
 set splitright splitbelow
-set incsearch                   " highlight search results as you type
-set showmatch                   " hi matching [{()}]
-let loaded_matchparen = 1       " don't match parentheses, use % instead
 set equalalways
 
+""" Spacing {{{2
+set linebreak                   " stop soft wrapping in the middle of words  
+set breakindent                 " auto indent soft wrap line breaks
+set tabstop=4                   " number of visual spaces per TAB
+set softtabstop=4               " number of spaces in tab when editing
+set shiftwidth=4
+set expandtab                   " tabs are spaces
+
+""" Searching {{{2
+set ignorecase smartcase
+set showmatch                   " hi matching [{()}]
+set incsearch                   " highlight search results as you type
+let loaded_matchparen = 1       " don't match parentheses, use % instead
+
+""" Folding {{{2
 " TODO make this foldheading highlighting work
 " autocmd BufReadPost * :syntax match FoldHeading '^.*{{{.*$'
 set fillchars="vert:' ',fold:-"
