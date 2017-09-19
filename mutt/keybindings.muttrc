@@ -47,11 +47,11 @@ bind    index           \ei     previous-new        # Esc is close to caps-as-ct
 bind    index           \Cv     collapse-all        # default is <Esc>V
 
 ## sidebar {{{1
-macro   index           \Cs     '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro   pager           \Cs     '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
-macro   index,pager     }       '<sidebar-next>'
-macro   index,pager     {       '<sidebar-prev>'
-macro   index,pager     \Cl     '<sidebar-open>'
+macro   index           &       '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro   pager           &       '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro   index,pager     )       '<sidebar-next>'
+macro   index,pager     (       '<sidebar-prev>'
+macro   index,pager     *       '<sidebar-open>'
 
 ## Actions {{{1
 bind    index,pager     \er     reply
