@@ -77,19 +77,19 @@ done
 #brew install rbenv
 
 ### research
-#pip install ipython
-#pip install scipy
-#pip install numpy
-#pip install matplotlib
-#pip install pandas
-#pip install scikit-learn
+#pip2 install ipython
+#pip2 install scipy
+#pip2 install numpy
+#pip2 install matplotlib
+#pip2 install pandas
+#pip2 install scikit-learn
 
 ### email
 #brew install mutt
 #brew install offlineimap
 #brew install msmtp
 #brew install urlview
-#pip install urlscan
+#pip2 install urlscan
 #pip install goobook
 
 ### docs
@@ -98,6 +98,7 @@ done
 
 ### other
 #brew install rlwrap
+#pip3 install hangups
 
 ## change shell to brew's version of bash
 #sudo echo "/usr/local/bin/bash" >> /etc/shells
