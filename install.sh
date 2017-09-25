@@ -98,6 +98,7 @@ done
 
 ### other
 #brew install rlwrap
+#brew install ctags
 #pip3 install hangups
 
 ## change shell to brew's version of bash
