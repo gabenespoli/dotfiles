@@ -110,6 +110,7 @@ set showmatch                   " hi matching [{()}]
 set incsearch                   " highlight search results as you type
 set nohlsearch                  " don't highlight search results by default
 let loaded_matchparen = 1       " don't match parentheses, use % instead
+set suffixesadd+=.m,.r,.R,.py
 
 """ Folding {{{2
 " TODO make this foldheading highlighting work
