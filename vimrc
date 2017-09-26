@@ -113,7 +113,7 @@ let loaded_matchparen = 1       " don't match parentheses, use % instead
 
 """ Folding {{{2
 " TODO make this foldheading highlighting work
-" autocmd BufReadPost * :syntax match FoldHeading '^.*{{{.*$'
+" autocmd BufReadPost * :syntax match FoldHeading '^.*{'.'{{.*$'
 set fillchars="vert:' ',fold:-"
 set foldminlines=0              " 0 means we can close a 1-line fold
 set foldmethod=marker
@@ -126,9 +126,9 @@ endfunction
 
 function! FoldTextMarker()
     let line = getline(v:foldstart)
-    let l:foldlevel = split(line, '{{{')
+    let l:foldlevel = split(line, '{'.'{{')
     let l:foldlevel = l:foldlevel[-1]
-    let line = substitute(line, '{{{\d\=', '', 'g')
+    let line = substitute(line, '{'.'{{\d\=', '', 'g')
     let cstr = substitute(&commentstring, '%s', '', 'g')
     let line = substitute(line, '^\s*'.cstr.'\+\s*', '', 'g')
     let lines = v:foldend-v:foldstart + 1
