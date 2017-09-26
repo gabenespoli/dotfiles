@@ -126,16 +126,17 @@ endfunction
 
 function! FoldTextMarker()
     let line = getline(v:foldstart)
+    let l:foldlevel = split(line, '{{{')
+    let l:foldlevel = l:foldlevel[-1]
     let line = substitute(line, '{{{\d\=', '', 'g')
     let cstr = substitute(&commentstring, '%s', '', 'g')
-    let line = substitute(line, '^\s*'.cstr.'\+\s*', ' ', 'g')
+    let line = substitute(line, '^\s*'.cstr.'\+\s*', '', 'g')
     let lines = v:foldend-v:foldstart + 1
     let linesdigits = 4
     if strlen(lines) < linesdigits + 1
         let lines = repeat(' ', linesdigits-strlen(lines)) . lines
     endif
-    " let prefix = '+-' . repeat('-', &foldlevel)
-    let prefix = ''
+    let prefix = repeat(' ', l:foldlevel-1) . ' + '
     let offset = 24
     let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
     return prefix . line . midfix . ' ('. lines .' lines)'
