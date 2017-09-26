@@ -699,8 +699,6 @@ endif
 function! MuttMailMode()
     "exe ':call CenWinToggle(80)'
     setlocal textwidth=0 wrapmargin=0 wrap linebreak 
-    hi StatusLine ctermfg=8
-    hi StatusLineNC ctermfg=8
     setlocal statusline=%*%#StatusFlag#%m%r%*
     set norelativenumber nonumber
     set spell
