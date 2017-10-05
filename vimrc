@@ -179,6 +179,9 @@ cnoremap <C-i> <C-d>
 nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>T :tabnew<CR>:e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>s :w<CR>
+if has('mac')
+    nnoremap gO :!open <cfile><CR>
+endif
 
 """ tab switching {{{2
 nnoremap <leader>1 1gt
