@@ -162,36 +162,3 @@ alias efgh="ssh efgh@192.168.1.12"
 function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
 function eg () { mount -t smbfs //efgh@192.168.1.12/egdata ~/eg ; }
 
-## internet {{{1
-### dns servers {{{2
-function dns() {
-    case $1 in
-        on ) sudo networksetup -setdnsservers Wi-Fi 192.254.74.201 198.27.106.150 208.110.81.50 ;;
-        off ) sudo networksetup -setdnsservers Wi-Fi empty ;;
-        list|show|get ) networksetup -getdnsservers Wi-Fi ;;
-    esac
-}
-
-### open websites with keywords {{{2
-function web() {
-    case $1 in
-        # research
-        r|rye|ryerson|myryerson ) webpage="https://my.ryerson.ca" ;;
-        l|lib ) webpage="http://learn.library.ryerson.ca/psychology" ;;
-        s|scholar|sch ) webpage="http://scholar.google.com" ;;
-        m|mendeley ) webpage="https://www.mendeley.com/library/" ;;
-        # accounts
-        b|bank|rbc ) webpage="https://www1.royalbank.com/cgi-bin/rbaccess/rbunxcgi?F6=1&F7=IB&F21=IB&F22=IB&REQUEST=ClientSignin&LANGUAGE=ENGLISH" ;;
-        aft|ad|adfreetime ) webpage="https://adfreetime.com/service/" ;;
-        presto ) webpage="https://www.prestocard.ca/en/" ;;
-        # sports
-        nhl ) webpage="https://www.nhl.com/tv" ;;
-        mlb ) webpage="http://mlb.mlb.com/mediacenter/" ;;
-        ashl ) webpage="https://bench.icesports.com/apex/pbHome" ;;
-        tssc ) webpage="http://www.torontossc.com/profile/" ;;
-        # misc
-        f|fb|facebook ) webpage="http://www.facebook.com" ;;
-        plex ) webpage="http://192.168.1.12:32400/web" ;;
-    esac
-    open $webpage
-}
