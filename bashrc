@@ -58,6 +58,7 @@ export EDITOR='nvim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
 export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-kill-word,ctrl-n:down,ctrl-p:up'
+source ~/private/github
 
 # setup ruby env (requires rbenv to be installed)
 eval "$(rbenv init -)"
