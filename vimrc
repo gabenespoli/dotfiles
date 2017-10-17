@@ -448,6 +448,7 @@ autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
 """ syntax {{{2
 """" w0rp/ale {{{3
 nnoremap coy :ALEToggle<CR>
+let g:ale_sign_column_always = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_linter_aliases = {'octave': 'matlab',}
