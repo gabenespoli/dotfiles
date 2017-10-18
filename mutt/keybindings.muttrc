@@ -24,12 +24,15 @@ bind    index,pager     [       previous-undeleted
 ## Navigation (h/l like vim) {{{1
 bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
 bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
-bind    pager           l       view-attachments
-bind    attach          l       view-attach         # default is <Enter> (or m for force open with mailcap)
-bind   postpone,browser l       select-entry
+bind    index           o       display-message     # make hjkl movement keys; default for o i sort, rebound to i
+bind    pager           o       view-attachments
+bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
+bind   postpone,browser o       select-entry
 # some corrections for the hjkl adjustments
-bind    index,pager     i       display-toggle-weed # default is h; there is no default binding for i
+bind    index,pager     O       display-toggle-weed # default is h; default for O is reverse sort, rebound to I
 bind    index           L       limit               # default for L is list reply (which I don't need)
+bind    index,pager     i       sort-mailbox        # no default for i; default for sort-mailbox is o
+bind    index,pager     I       sort-reverse        # no default for I; default for sort-reverse is O
 
 bind    index           \Cj     display-message
 bind   postpone,browser \Cj     select-entry
