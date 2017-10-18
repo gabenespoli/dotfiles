@@ -88,14 +88,15 @@ macro   index,pager     gx      "<change-folder>=Trash<enter>"      "Go to Trash
 macro   index           gr      "<limit>all<enter>"                 "Show all messages (reset limiting)."
 macro   index           h       "<limit>all<enter>"                 "Show all messages (reset limiting)." # default for h is display toggle weed
 macro   index           gf      "<limit>~F|~N<enter>"               "Show new and flagged messages."
-macro   index           gF      "<limit>~F<enter>"                  "Show flagged messages."
+macro   index           gs      "<limit>~F<enter>"                  "Show flagged messages."
 macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
-macro   index           gs      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages."
+macro   index           gt      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages."
 
 
 # some keybindings to play nice with gmail
 macro   index,pager     d       "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
+macro   index,pager     \#      "<save-message>=Trash<enter>" "Move message to the trash." # default for d is to delete; for gmail we have to move to trash otherwise the message will stay in All Mail
 # macro   index           e       "<set-flag>O"                       "Mark as old (kind of like Gmail archive when in all mail)."
-# macro   index,pager     E       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
-macro   index           E       "<change-folder>=INBOX<enter><tag-pattern>~A<enter><tag-prefix><save-message>=Archive<enter><change-folder>=Archive<enter>" "Archive the Inbox" 
+macro   index,pager     e       "<save-message>=Archive<enter>" "Archive message." # // default for e is to edit the raw message
+# macro   index           E       "<change-folder>=INBOX<enter><tag-pattern>~A<enter><tag-prefix><save-message>=Archive<enter><change-folder>=Archive<enter>" "Archive the Inbox" 
 # macro   index           E       "<change-folder>=INBOX<enter><delete-pattern>~A<enter><change-folder>=Archive<enter>" "Delete all messages in the Inbox"
