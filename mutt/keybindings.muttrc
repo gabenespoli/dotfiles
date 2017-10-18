@@ -21,14 +21,13 @@ bind    index,pager     \Cp     previous-thread  #   is reverse date
 bind    index,pager     ]       next-undeleted
 bind    index,pager     [       previous-undeleted
 
-## Navigation (h/l like vim) {{{1
-bind    pager,attach    h       exit                # make hjkl movement keys; default for h is toggle weed, rebound to i
-bind    index           l       display-message     # make hjkl movement keys; default for l is limit, rebound to L
-bind    index           o       display-message     # make hjkl movement keys; default for o i sort, rebound to i
+## Navigation {{{1
+bind    pager,attach    u       exit                # default for u is undelete, rebound to U
+bind    index,pager     U       undelete-message    # default for U is undelete-pattern, which is not needed
+bind    index           o       display-message     # default for o is sort, rebound to i
 bind    pager           o       view-attachments
 bind    attach          o       view-attach         # default is <Enter> (or m for force open with mailcap)
 bind   postpone,browser o       select-entry
-# some corrections for the hjkl adjustments
 bind    index,pager     O       display-toggle-weed # default is h; default for O is reverse sort, rebound to I
 bind    index           L       limit               # default for L is list reply (which I don't need)
 bind    index,pager     i       sort-mailbox        # no default for i; default for sort-mailbox is o
