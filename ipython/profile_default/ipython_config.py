@@ -59,27 +59,27 @@ c.TerminalInteractiveShell.highlighting_style_overrides = overrides
 
 
 ## Prompt
-from IPython.terminal.prompts import Prompts, Token
-from prompt_toolkit.key_binding.vi_state import InputMode
-import os
+#from IPython.terminal.prompts import Prompts, Token
+#from prompt_toolkit.key_binding.vi_state import InputMode
+#import os
 
-class MyPrompt(Prompts):
-    def in_prompt_tokens(self, cli=None):
-        return [(Token.Prompt, '>>> ')]
+#class MyPrompt(Prompts):
+#    def in_prompt_tokens(self, cli=None):
+#        return [(Token.Prompt, '>>> ')]
 
-    #def continuation_prompt_tokens(self, cli=None width=None):
-        #if width is None:
-            #width = self._width()
-        #return[(Token.Prompt, (' ' * (width - 5)) + '... ')]
-    def continuation_prompt_tokens(self, cli=None, width=None):
-        if width is None:
-            width = self._width()
-        return [
-            (Token.Prompt, (' ' * (width - 5)) + '... '),
-        ]
+#    #def continuation_prompt_tokens(self, cli=None width=None):
+#        #if width is None:
+#            #width = self._width()
+#        #return[(Token.Prompt, (' ' * (width - 5)) + '... ')]
+#    def continuation_prompt_tokens(self, cli=None, width=None):
+#        if width is None:
+#            width = self._width()
+#        return [
+#            (Token.Prompt, (' ' * (width - 5)) + '... '),
+#        ]
 
-    def out_prompt_tokens(self):
-        return [(Token.OutPrompt, '==> ')]
+#    def out_prompt_tokens(self):
+#        return [(Token.OutPrompt, '==> ')]
     
-c.TerminalInteractiveShell.prompts_class = MyPrompt
+#c.TerminalInteractiveShell.prompts_class = MyPrompt
 
