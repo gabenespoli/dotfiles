@@ -127,7 +127,7 @@ hi CenWinTodo           ctermfg=5       ctermbg=8       cterm=none
 
 """ Todo and Todo.txt plugin
 hi Todo                 ctermfg=13                      cterm=reverse 
-hi TodoPriorityA        ctermfg=1
+hi TodoPriorityA        ctermfg=3
 hi TodoPriorityB        ctermfg=2
 hi TodoPriorityC        ctermfg=12
 hi TodoProject          ctermfg=4
