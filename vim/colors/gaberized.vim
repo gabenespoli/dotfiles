@@ -45,7 +45,6 @@ hi DiffText             ctermfg=9       ctermbg=0
 "" Custom
 hi StatusMod            ctermfg=3       ctermbg=0       cterm=none
 hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
-hi link CommentHeading  Title
 hi link FoldHeading     Title
 
 "" Syntax-specific

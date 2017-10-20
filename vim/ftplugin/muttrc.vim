@@ -1,6 +1,6 @@
 set syntax=muttrc
 
-au VimEnter,BufEnter <buffer> syn match CommentHeading '^##.*$'
+au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
 
 set foldmethod=expr
 set foldexpr=GetMuttFolds(v:lnum)
