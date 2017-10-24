@@ -518,8 +518,8 @@ nnoremap <leader>cp :python $HOME/bin/cite/cite.py
 " stop hogging all of my effing mappings
 map  <F13> <Plug>ToggleDiffCharAllLines
 map  <F14> <Plug>ToggleDiffCharCurrentLine
-nmap <F15> <Plug>JumpDiffCharPrevStart
-nmap <F16> <Plug>JumpDiffCharNextStart
+nmap [d    <Plug>JumpDiffCharPrevStart
+nmap ]d    <Plug>JumpDiffCharNextStart
 nmap <F17> <Plug>JumpDiffCharPrevEnd
 nmap <F18> <Plug>JumpDiffCharNextEnd
 nmap <F19> <Plug>GetDiffCharPair
