@@ -25,6 +25,7 @@ hi Pmenu                ctermfg=0       ctermbg=12      cterm=reverse
 hi PmenuSel             ctermfg=12      ctermbg=8       cterm=reverse
 
 hi LineNr               ctermfg=10      ctermbg=8       cterm=none
+hi CursorLineNr         ctermfg=12
 hi SignColumn                           ctermbg=8       cterm=none
 hi FoldColumn           ctermfg=10      ctermbg=0       cterm=none
 hi Folded               ctermfg=11      ctermbg=0       cterm=none
