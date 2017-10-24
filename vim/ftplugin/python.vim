@@ -1,2 +1,2 @@
 
-au VimEnter,BufEnter <buffer> syn match CommentHeading '^##.*$'
+au VimEnter,BufEnter <buffer> syn match Title '^##.*$'

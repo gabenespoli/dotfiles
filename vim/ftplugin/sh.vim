@@ -1,4 +1,4 @@
-au VimEnter,BufEnter <buffer> syn match CommentHeading '^##.*$'
+au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
 
 set foldmethod=expr
 set foldexpr=FoldExprDoubleCharSh(v:lnum)

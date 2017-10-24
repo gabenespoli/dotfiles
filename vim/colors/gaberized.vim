@@ -4,7 +4,7 @@ so ~/.vim/colors/solarized.vim
 let g:colors_name='gaberized'
 
 "" Solarized customizations
-hi Title                ctermfg=8       ctermbg=10      cterm=none
+hi Title                ctermfg=15      ctermbg=10      cterm=none
 "hi Operator             ctermfg=7       ctermbg=none    cterm=none
 hi WarningMsg           ctermfg=9       ctermbg=8       cterm=reverse
 hi ErrorMsg             ctermfg=1       ctermbg=7       cterm=reverse
@@ -45,7 +45,6 @@ hi DiffText             ctermfg=9       ctermbg=0
 "" Custom
 hi StatusMod            ctermfg=3       ctermbg=0       cterm=none
 hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
-hi link CommentHeading  Title
 hi link FoldHeading     Title
 
 "" Syntax-specific
@@ -72,6 +71,7 @@ hi pandocReferenceURL   ctermfg=6                       cterm=none
 
 """ MATLAB
 hi link matlabCellComment CommentHeading
+hi link matlabFunction Title
 
 "" Plugin color customizations
 
