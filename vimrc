@@ -88,6 +88,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set wildmenu                    " visual autocomplete for command menu
 set wildmode=longest,list,full
 set backspace=indent,eol,start  " enable backspacing text that was inserted previously
+set whichwrap+=h,l              " let h and l move across lines
 
 set laststatus=2                " 0 = no status bar, 2 = show status bar
 set showtabline=1               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
