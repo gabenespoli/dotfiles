@@ -38,7 +38,6 @@ hi IncSearch            ctermfg=15      ctermbg=1       cterm=none
 hi Visual               ctermfg=12      ctermbg=8       cterm=reverse
 
 hi DiffAdd              ctermfg=2       ctermbg=0
-hi DiffChange           ctermfg=12      ctermbg=0
 hi DiffDelete           ctermfg=1       ctermbg=0
 hi DiffText             ctermfg=9       ctermbg=0
 
