@@ -117,7 +117,8 @@ hi GitGutterDelete      ctermfg=1       ctermbg=8       cterm=none
 hi GitGutterChangeDelete ctermfg=9      ctermbg=8       cterm=none
 
 """ DiffChar
-hi _DiffDelPos          ctermfg=1       ctermbg=0       cterm=underline
+hi _DiffAddPos          ctermfg=3       ctermbg=0       cterm=underline
+hi _DiffPair            ctermfg=3       ctermbg=0       cterm=underline
 
 """ CenWin
 hi CenWinOutlineHeader1 ctermfg=4       ctermbg=8       cterm=reverse 
