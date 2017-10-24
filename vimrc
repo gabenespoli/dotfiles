@@ -38,6 +38,7 @@ Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'rickhowe/diffchar.vim'
 " Plug 'vim-pandoc/vim-criticmarkup'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
@@ -441,6 +442,7 @@ if exists('$TMUX')
 endif
 
 """" Nvim-R
+let R_assign = 0
 let R_show_args = 1
 let R_objbr_showdf = 0
 let rout_follow_colorscheme = 1
@@ -518,6 +520,16 @@ nnoremap <leader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
 nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
+
+"""" DiffChar
+map  <localleader>D <Plug>ToggleDiffCharAllLines
+map  <localleader>d <Plug>ToggleDiffCharCurrentLine
+nmap [d             <Plug>JumpDiffCharPrevStart
+nmap ]d             <Plug>JumpDiffCharNextStart
+nmap <F13>          <Plug>JumpDiffCharPrevEnd
+nmap <F14>          <Plug>JumpDiffCharNextEnd
+nmap dO             <Plug>GetDiffCharPair
+nmap dP             <Plug>PutDiffCharPair
 
 """" mutt-aliases integrate with nvim-completion-manager
 " ncm's filtering is based on word, so it's better to convert results of
