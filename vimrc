@@ -282,9 +282,15 @@ let g:ctrlp_prompt_mappings = {
 let g:ranger_map_keys = 0
 
 """" nvim-completion-manager
-let g:cm_complete_start_delay = 750
-inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
+" let g:cm_complete_start_delay = 750
+let g:cm_auto_popup = 0
+nmap <Tab> <Plug>(cm_force_refresh)
 inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
+" use enter to also insert a newline
+" inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
+" use tab to select the pop-up menu
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 """ Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 """" vim-sidebar {{{3
