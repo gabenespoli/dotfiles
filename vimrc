@@ -515,15 +515,14 @@ nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
 
 """" DiffChar
-" stop hogging all of my effing mappings
-map  <F13> <Plug>ToggleDiffCharAllLines
-map  <F14> <Plug>ToggleDiffCharCurrentLine
-nmap [d    <Plug>JumpDiffCharPrevStart
-nmap ]d    <Plug>JumpDiffCharNextStart
-nmap <F17> <Plug>JumpDiffCharPrevEnd
-nmap <F18> <Plug>JumpDiffCharNextEnd
-nmap <F19> <Plug>GetDiffCharPair
-nmap <F20> <Plug>PutDiffCharPair
+map  <localleader>D <Plug>ToggleDiffCharAllLines
+map  <localleader>d <Plug>ToggleDiffCharCurrentLine
+nmap [d             <Plug>JumpDiffCharPrevStart
+nmap ]d             <Plug>JumpDiffCharNextStart
+nmap <F13>          <Plug>JumpDiffCharPrevEnd
+nmap <F14>          <Plug>JumpDiffCharNextEnd
+nmap dO             <Plug>GetDiffCharPair
+nmap dP             <Plug>PutDiffCharPair
 
 """" mutt-aliases integrate with nvim-completion-manager
 " ncm's filtering is based on word, so it's better to convert results of
