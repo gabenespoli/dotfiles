@@ -513,6 +513,17 @@ nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
 nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
 
+"""" DiffChar
+" stop hogging all of my effing mappings
+map  <F13> <Plug>ToggleDiffCharAllLines
+map  <F14> <Plug>ToggleDiffCharCurrentLine
+nmap <F15> <Plug>JumpDiffCharPrevStart
+nmap <F16> <Plug>JumpDiffCharNextStart
+nmap <F17> <Plug>JumpDiffCharPrevEnd
+nmap <F18> <Plug>JumpDiffCharNextEnd
+nmap <F19> <Plug>GetDiffCharPair
+nmap <F20> <Plug>PutDiffCharPair
+
 """" mutt-aliases integrate with nvim-completion-manager
 " ncm's filtering is based on word, so it's better to convert results of
 " muttaliases#CompleteMuttAliases into snippet expension
