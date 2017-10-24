@@ -53,6 +53,12 @@ function! GetMarkdownFoldText()
 endfunction
 
 "" highlights {{{1
+" highlight current sentence
+nnoremap ]j )(v)h
+nnoremap [j )(v)h
+vnoremap ]j <Esc>)v)h
+vnoremap [j <Esc>((v)h
+
 " note: colors are based on the solarized 16 color palette
 hi htmlString ctermfg=11
 hi htmlTagName ctermfg=11
