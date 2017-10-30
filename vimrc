@@ -258,6 +258,7 @@ nnoremap cofd :set foldmethod=diff<CR>
 " syntax
 nnoremap coYm :set syntax=markdown<CR>
 nnoremap coYp :set syntax=pandoc<CR>
+nnoremap coYy :set syntax=yaml<CR>
 
 """" tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
