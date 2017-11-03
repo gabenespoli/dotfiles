@@ -159,7 +159,7 @@ alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 ## network {{{1
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias smarts="open vnc://gmac@smartmacpro.arts.ryerson.ca"
-alias efgh="ssh efgh@192.168.1.12"
+alias efgh="ssh efgh@192.168.86.12"
 function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
-function eg () { mount -t smbfs //efgh@192.168.1.12/egdata ~/eg ; }
+function eg () { mount -t smbfs //efgh@192.168.86.12/egdata ~/eg ; }
 
