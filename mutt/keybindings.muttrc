@@ -41,7 +41,7 @@ bind    pager           <Return> exit               # default for <Return> in th
 
 bind    index,pager     \ef     forward-message     # default for F is flag-message; default for foward-message is f
 bind    index,pager     F       flag-message        # default for * is last-entry (index only); default for flag-message is F
-macro   pager           f       "<pipe-message>urlscan<enter>" "Call urlscan to open links." # this is like vimium
+macro   pager           O       "<pipe-message>urlscan<enter>" "Call urlscan to open links."
 # macro   pager           u       "<pipe-message>urlscan --compact<enter>"                    "Call urlscan --compact to open links."
 
 bind    index           <Tab>   next-new            # C-i is tab
