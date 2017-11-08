@@ -52,6 +52,8 @@ bind    index           \Cv     collapse-all        # default is <Esc>V
 bind    index,pager     \er     reply
 bind    index,pager     \eR     group-reply         # default (g) is used for go to top
 bind    index,pager     a       group-reply         # default (g) is used for go to top; default for a is adding an alias
+bind    index,pager     S       save-message        # default (s) is used for flag/star; default for S (pager) is skip-quoted
+bind    index,pager     s       flag-message        # default for s is save-message
 bind    index,pager     p       recall-message      # default (R) is used for offlineimap; default for p is to print
 bind    compose         p       postpone-message
 macro   index,pager     P       "<shell-escape>tmux split-window 'vim -c 'set syntax=mail' ~/.mail/Drafts/new/*'<enter>" "Open drafts in new tmux pane"
