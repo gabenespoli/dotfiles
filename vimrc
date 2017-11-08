@@ -262,6 +262,7 @@ nnoremap coYy :set syntax=yaml<CR>
 
 """" tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
+autocmd FileType cfg setlocal commentstring=#\ %s
 
 """" gcmt/taboo.vim {{{3
 let g:taboo_tabline = 0
