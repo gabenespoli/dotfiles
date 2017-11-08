@@ -48,13 +48,6 @@ bind    index           <Tab>   next-new            # C-i is tab
 bind    index           \ei     previous-new        # Esc is close to caps-as-ctrl
 bind    index           \Cv     collapse-all        # default is <Esc>V
 
-## sidebar {{{1
-macro   index           &       '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro   pager           &       '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
-macro   index,pager     )       '<sidebar-next>'
-macro   index,pager     (       '<sidebar-prev>'
-macro   index,pager     *       '<sidebar-open>'
-
 ## Actions {{{1
 bind    index,pager     \er     reply
 bind    index,pager     \eR     group-reply         # default (g) is used for go to top
@@ -64,6 +57,13 @@ bind    compose         p       postpone-message
 macro   index,pager     P       "<shell-escape>tmux split-window 'vim -c 'set syntax=mail' ~/.mail/Drafts/new/*'<enter>" "Open drafts in new tmux pane"
 macro   compose         F       "\ef\CuGabe Nespoli <gabenespoli@gmail.com>\n" "Set from to default email <gabenespoli@gmail.com>"
 macro   compose         f       "\ef\CuGabe Nespoli <gabe@psych.ryerson.ca>\n" "Set from to alternate email <gabe@psych.ryerson.ca>"
+
+## sidebar {{{1
+macro   index           &       '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro   pager           &       '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro   index,pager     )       '<sidebar-next>'
+macro   index,pager     (       '<sidebar-prev>'
+macro   index,pager     *       '<sidebar-open>'
 
 ## Misc {{{1
 bind    index               <Esc>n  toggle-new # // default is N
