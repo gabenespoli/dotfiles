@@ -332,6 +332,19 @@ let g:NERDTreeMapPreviewVSplit = 'gv'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 
+" Highlight currently open buffer in NERDTree
+" modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
+function! SyncTree()
+    if &modifiable && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1) && strlen(expand('%')) > 0 && !&diff
+        " echo "yep"
+        execute "NERDTreeFind"
+        execute "wincmd p"
+    " else
+        " echo "nope"
+    endif
+endfunction
+" autocmd BufEnter * call SyncTree()
+
 """" buffergator {{{3
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_suppress_keymaps = 1
