@@ -97,6 +97,7 @@ overrides = {
     Token.PromptEmacs: violet,
     Token.PromptWhoKnows: red,
     Token.PromptPath: blue,
+    Token.PromptPrompt: base2,
     Token.Prompt: base01,
     Token.PromptNum: blue,
     Token.OutPrompt: base01,
