@@ -41,7 +41,7 @@ else
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
-    alias ranger="/usr/local/bin/ranger"
+    alias ranger="python $HOME/local/ranger/ranger.py"
     alias trash="gvfs-trash"
     export MATLAB="/usr/local/MATLAB/R2017a"
     export MATLAB2="/usr/local/MATLAB/R2016a"
