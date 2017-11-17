@@ -15,6 +15,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
+    alias t="todo.sh -a"
     function findershowhidden() {
         case $1 in
             on|true ) command="TRUE" ;;
@@ -41,8 +42,9 @@ else
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
-    alias ranger="/usr/local/bin/ranger"
-    alias trash="gvfs-trash"
+    alias ranger="python $HOME/local/ranger/ranger.py"
+    alias trash="gio trash"
+    alias t="todo-txt -a"
     export MATLAB="/usr/local/MATLAB/R2017a"
     export MATLAB2="/usr/local/MATLAB/R2016a"
     #eval `dircolors $HOME/.dir_colors/dircolors`
@@ -95,8 +97,6 @@ alias gr="git reset"
 alias glog="git log --graph --decorate --oneline"
 
 ### todo, notes, and calendar {{{2
-alias t="todo.sh -a"
-alias in="todo.sh -a add +in"
 alias todo="$EDITOR -S $HOME/todo/open.vim"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias ts="trello show-cards -b scrum -l sprint"
