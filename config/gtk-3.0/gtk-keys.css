@@ -67,6 +67,15 @@
 
   bind "<ctrl>h" { "delete-from-cursor" (chars, -1) };
   bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) };
+
+  /*
+   * Some Mac keybindings
+   */
+  bind "<alt>x" { "cut-clipboard" () };
+  bind "<alt>c" { "copy-clipboard" () };
+  bind "<alt>v" { "paste-clipboard" () };
+  bind "<alt>a" { "move-cursor" (buffer-ends, -1, 0)
+                  "move-cursor" (buffer-ends,  1, 1) };
 }
 
 /*
