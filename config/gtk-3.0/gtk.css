@@ -30,7 +30,7 @@
 /*
  * Bindings for GtkTextView and GtkEntry
  */
-@binding-set gtk-emacs-text-entry
+@binding-set gtk-emacs-text-entry-plus-mac
 {
   bind "<ctrl>b" { "move-cursor" (logical-positions, -1, 0) };
   bind "<shift><ctrl>b" { "move-cursor" (logical-positions, -1, 1) };
@@ -67,6 +67,8 @@
 
   bind "<ctrl>h" { "delete-from-cursor" (chars, -1) };
   bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) };
+  bind "<ctrl>j" { "line-feed" () };
+  bind "<ctrl>m" { "carriage-return" () };
 
   /*
    * Some Mac keybindings
@@ -114,11 +116,11 @@
 }
 
 entry {
-  -gtk-key-bindings: gtk-emacs-text-entry;
+  -gtk-key-bindings: gtk-emacs-text-entry-plus-mac;
 }
 
 textview {
-  -gtk-key-bindings: gtk-emacs-text-entry, gtk-emacs-text-view;
+  -gtk-key-bindings: gtk-emacs-text-entry-plus-mac, gtk-emacs-text-view;
 }
 
 treeview {
