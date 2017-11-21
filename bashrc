@@ -51,9 +51,6 @@ else
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
     setxkbmap -option shift:both_capslock
-    ln -s /media/eg $HOME/eg
-    ln -s /media/media $HOME/media
-    ln -s /media/nas $HOME/nas
 fi
 
 ## Environment vars {{{1
