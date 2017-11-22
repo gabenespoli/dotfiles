@@ -12,6 +12,15 @@ nnoremap <buffer> <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>:w<CR>
 nnoremap <buffer> <localleader>b :s/^([A-Z])\s//ge<CR>I(B) <Esc>:w<CR>
 nnoremap <buffer> <localleader>c :s/^([A-Z])\s//ge<CR>I(C) <Esc>:w<CR>
 nnoremap <buffer> <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>:w<CR>
+
+nnoremap <buffer> <localleader>m :s/^([A-Z])\s//ge<CR>I(M) <Esc>:w<CR>
+nnoremap <buffer> <localleader>t :s/^([A-Z])\s//ge<CR>I(T) <Esc>:w<CR>
+nnoremap <buffer> <localleader>w :s/^([A-Z])\s//ge<CR>I(W) <Esc>:w<CR>
+nnoremap <buffer> <localleader>r :s/^([A-Z])\s//ge<CR>I(R) <Esc>:w<CR>
+nnoremap <buffer> <localleader>f :s/^([A-Z])\s//ge<CR>I(F) <Esc>:w<CR>
+nnoremap <buffer> <localleader>s :s/^([A-Z])\s//ge<CR>I(S) <Esc>:w<CR>
+nnoremap <buffer> <localleader>u :s/^([A-Z])\s//ge<CR>I(U) <Esc>:w<CR>
+
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp'':w<CR>
 
@@ -31,7 +40,7 @@ nnoremap <buffer> <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>:w<CR>
 nnoremap <buffer> <localleader>0 :s/\ pts:\d*//ge<CR>:w<CR>
 
 """ misc
-nnoremap <buffer> <localleader>ss :sort<CR>
+nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 
