@@ -123,7 +123,9 @@ set foldlevel=1
 set foldmethod=marker
 set foldtext=GetFoldText()
 function! GetFoldText()
-    if &foldmethod == 'marker'
+    if &foldmethod == 'manual'
+        set foldtext=getline(v:foldstart)
+    elseif &foldmethod == 'marker'
         set foldtext=FoldTextMarker()
     endif
 endfunction
@@ -317,7 +319,7 @@ nnoremap <leader>L :Lcycle<CR>
 
 """" NERDTree {{{3
 let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeShowLineNumbers = 1

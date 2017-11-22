@@ -1,1 +1,0 @@
-/Users/gmac/dotfiles/vimrc
