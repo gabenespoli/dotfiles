@@ -337,16 +337,19 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 
 " Highlight currently open buffer in NERDTree
 " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
+" added: make sure current buffer isn't a NERDTree buffer
 function! SyncTree()
-    if &modifiable && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1) && strlen(expand('%')) > 0 && !&diff
-        " echo "yep"
+    if &modifiable 
+                \ && exists("t:NERDTreeBufName") 
+                \ && (bufwinnr(t:NERDTreeBufName) != -1)
+                \ && strlen(expand('%')) > 0
+                \ && !&diff
+                \ && expand('%') !~ "NERD_tree_"
         execute "NERDTreeFind"
         execute "wincmd p"
-    " else
-        " echo "nope"
     endif
 endfunction
-" autocmd BufEnter * call SyncTree()
+autocmd BufEnter * call SyncTree()
 
 """" buffergator {{{3
 let g:buffergator_viewport_split_policy = "B"
