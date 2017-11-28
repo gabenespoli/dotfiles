@@ -53,7 +53,7 @@ else
     setxkbmap -option shift:both_capslock
 fi
 
-## Environment vars {{{1
+## Environment {{{1
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
 export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='nvim'
