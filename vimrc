@@ -248,6 +248,7 @@ nnoremap <leader>rh :call ResizeSideHeight()<CR>
 """" tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
+nnoremap cop :call ToggleColorColumn()<CR>
 
 " folding
 nnoremap cofl :set foldmethod=manual<CR>
@@ -633,7 +634,16 @@ function! SearchHighlightToggle()
     elseif bgcolor == 8
         execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
     endif
-endfunction!
+endfunction
+
+""" Toggle Color Column
+function! ToggleColorColumn()
+    if &colorcolumn == 80
+        execute "set colorcolumn=\"\""
+    else
+        execute "set colorcolumn=80"
+    endif
+endfunction
 
 """ Toggle csv tsv {{{2
 function! ToggleCsvTsv()
