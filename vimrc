@@ -123,10 +123,10 @@ set foldlevel=1
 set foldmethod=marker
 set foldtext=GetFoldText()
 function! GetFoldText()
-    if &foldmethod == 'manual'
-        set foldtext=getline(v:foldstart)
-    elseif &foldmethod == 'marker'
+    if &foldmethod == 'marker'
         set foldtext=FoldTextMarker()
+    else
+        set foldtext=getline(v:foldstart)
     endif
 endfunction
 
