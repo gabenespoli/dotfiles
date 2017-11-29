@@ -248,6 +248,7 @@ nnoremap <leader>rh :call ResizeSideHeight()<CR>
 """" tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
+nnoremap cop :call ToggleColorColumn()<CR>
 
 " folding
 nnoremap cofl :set foldmethod=manual<CR>
@@ -286,6 +287,7 @@ let g:ctrlp_prompt_mappings = {
 
 """" ranger {{{3
 let g:ranger_map_keys = 0
+nnoremap <leader>f :Ranger<CR>
 
 """" nvim-completion-manager
 " let g:cm_complete_start_delay = 750
@@ -336,16 +338,19 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 
 " Highlight currently open buffer in NERDTree
 " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
+" added: make sure current buffer isn't a NERDTree buffer
 function! SyncTree()
-    if &modifiable && exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1) && strlen(expand('%')) > 0 && !&diff
-        " echo "yep"
+    if &modifiable 
+                \ && exists("t:NERDTreeBufName") 
+                \ && (bufwinnr(t:NERDTreeBufName) != -1)
+                \ && strlen(expand('%')) > 0
+                \ && !&diff
+                \ && expand('%') !~ "NERD_tree_"
         execute "NERDTreeFind"
         execute "wincmd p"
-    " else
-        " echo "nope"
     endif
 endfunction
-" autocmd BufEnter * call SyncTree()
+autocmd BufEnter * call SyncTree()
 
 """" buffergator {{{3
 let g:buffergator_viewport_split_policy = "B"
@@ -629,7 +634,16 @@ function! SearchHighlightToggle()
     elseif bgcolor == 8
         execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
     endif
-endfunction!
+endfunction
+
+""" Toggle Color Column
+function! ToggleColorColumn()
+    if &colorcolumn == 80
+        execute "set colorcolumn=\"\""
+    else
+        execute "set colorcolumn=80"
+    endif
+endfunction
 
 """ Toggle csv tsv {{{2
 function! ToggleCsvTsv()
