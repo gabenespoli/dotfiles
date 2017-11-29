@@ -36,8 +36,8 @@
                                     {
                                         "key_code": "delete_or_backspace",
                                         "modifiers": [
-                                                "option"
-                                            ]
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
