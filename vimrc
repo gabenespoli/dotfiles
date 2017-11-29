@@ -222,6 +222,8 @@ nnoremap du :diffupdate<CR>
 inoremap <C-d> <Del>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 
 " Spell checking
 nnoremap <localleader>s 1z=
