@@ -162,9 +162,10 @@ alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network {{{1
+alias egserver="ssh egserver@192.168.86.12"
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias smarts="open vnc://gmac@smartmacpro.arts.ryerson.ca"
-alias egserver="ssh egserver@192.168.86.12"
-function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
 function eg () { mount -t smbfs //egserver@192.168.86.12/eg ~/eg ; }
+function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
+function smaug() { mount -t smbfs //gabe@141.117.107.83/Lab ~/smaug ; }
 
