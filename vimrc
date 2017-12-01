@@ -9,10 +9,10 @@ Plug 'gcmt/taboo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 if has('nvim')
-    Plug 'Shougo/neco-vim'
-    Plug 'roxma/nvim-completion-manager'
+  Plug 'Shougo/neco-vim'
+  Plug 'roxma/nvim-completion-manager'
 " else
-    " Plug 'roxma/vim-hug-neovim-rpc'
+  " Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 """ sidebar-type plugins {{{2
@@ -52,10 +52,10 @@ call plug#end()
 "" General {{{1
 """ Colorscheme {{{2
 if has("gui_running")
-    colorscheme solarizedSumach
-    set guicursor=n-v-c-i:blinkon0
+  colorscheme solarizedSumach
+  set guicursor=n-v-c-i:blinkon0
 else
-    colorscheme gaberized
+  colorscheme gaberized
 endif
 syntax enable
 set background=dark
@@ -68,16 +68,16 @@ set undodir=~/.vim/tmp/undo
 set backupdir=~/.vim/tmp/backup/
 set directory=~/.vim/tmp/swap/
 if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+  call mkdir(expand(&undodir), "p")
 endif
 if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+  call mkdir(expand(&undodir), "p")
 endif
 if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
+  call mkdir(expand(&backupdir), "p")
 endif
 if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
+  call mkdir(expand(&directory), "p")
 endif
 
 """ UI {{{2
@@ -124,29 +124,29 @@ set foldlevel=1
 set foldmethod=marker
 set foldtext=GetFoldText()
 function! GetFoldText()
-    if &foldmethod == 'marker'
-        set foldtext=FoldTextMarker()
-    else
-        set foldtext=getline(v:foldstart)
-    endif
+  if &foldmethod == 'marker'
+    set foldtext=FoldTextMarker()
+  else
+    set foldtext=getline(v:foldstart)
+  endif
 endfunction
 
 function! FoldTextMarker()
-    let line = getline(v:foldstart)
-    let l:foldlevel = split(line, '{'.'{{')
-    let l:foldlevel = l:foldlevel[-1]
-    let line = substitute(line, '{'.'{{\d\=', '', 'g')
-    let cstr = substitute(&commentstring, '%s', '', 'g')
-    let line = substitute(line, '^\s*'.cstr.'\+\s*', '', 'g')
-    let lines = v:foldend-v:foldstart + 1
-    let linesdigits = 4
-    if strlen(lines) < linesdigits + 1
-        let lines = repeat(' ', linesdigits-strlen(lines)) . lines
-    endif
-    let prefix = repeat(' ', l:foldlevel-1) . ' + '
-    let offset = 24
-    let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
-    return prefix . line . midfix . ' ('. lines .' lines)'
+  let line = getline(v:foldstart)
+  let l:foldlevel = split(line, '{'.'{{')
+  let l:foldlevel = l:foldlevel[-1]
+  let line = substitute(line, '{'.'{{\d\=', '', 'g')
+  let cstr = substitute(&commentstring, '%s', '', 'g')
+  let line = substitute(line, '^\s*'.cstr.'\+\s*', '', 'g')
+  let lines = v:foldend-v:foldstart + 1
+  let linesdigits = 4
+  if strlen(lines) < linesdigits + 1
+    let lines = repeat(' ', linesdigits-strlen(lines)) . lines
+  endif
+  let prefix = repeat(' ', l:foldlevel-1) . ' + '
+  let offset = 24
+  let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
+  return prefix . line . midfix . ' ('. lines .' lines)'
 endfunction
 
 """ Status Line {{{2
@@ -185,7 +185,7 @@ nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>T :tabnew<CR>:e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>s :w<CR>
 if has('mac')
-    nnoremap gO :!open <cfile><CR>
+  nnoremap gO :!open <cfile><CR>
 endif
 
 """ tab switching {{{2
@@ -234,13 +234,13 @@ nnoremap <localleader>s 1z=
 " so, we have to use autocmds for width and height
 let g:centerwidth = 100
 function! ResizeCenterWidth()
-    execute 'vertical resize '.100
+  execute 'vertical resize '.100
 endfunction
 function! ResizeSideWidth()
-    execute 'vertical resize '.&columns/4
+  execute 'vertical resize '.&columns/4
 endfunction
 function! ResizeSideHeight()
-    execute 'resize '.&lines/4
+  execute 'resize '.&lines/4
 endfunction
 nnoremap <leader>rc :call ResizeCenterWidth()<CR>
 nnoremap <leader>rw :call ResizeSideWidth()<CR>
@@ -278,15 +278,15 @@ let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window = 'bottom'
 let g:ctrlp_prompt_mappings = { 
-            \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-            \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-            \ 'PrtHistory(-1)':         [],
-            \ 'PrtHistory(1)':          [],
-            \ 'AcceptSelection("t")':   ['<C-t>'],
-            \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-            \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-            \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-            \ }
+  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+  \ 'PrtHistory(-1)':         [],
+  \ 'PrtHistory(1)':          [],
+  \ 'AcceptSelection("t")':   ['<C-t>'],
+  \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+  \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+  \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+  \ }
 
 """" ranger {{{3
 let g:ranger_map_keys = 0
@@ -311,12 +311,12 @@ let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarEmptyPrefix = '<leader>e'
 let g:SidebarEmptyStickyKey = 'e'
 let g:SidebarToggleKeys = [
-    \ ['capitalL',      'l'],
-    \ ['nerdtree',      'n'],
-    \ ['buffergator',   'b'],
-    \ ['tagbar',        't'],
-    \ ['gundo',         'u'],
-    \ ]
+  \ ['capitalL',      'l'],
+  \ ['nerdtree',      'n'],
+  \ ['buffergator',   'b'],
+  \ ['tagbar',        't'],
+  \ ['gundo',         'u'],
+  \ ]
 
 """" capitalL {{{3
 let g:Lposition = 'right'
@@ -343,15 +343,15 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
 " added: make sure current buffer isn't a NERDTree buffer
 function! SyncTree()
-    if &modifiable 
-                \ && exists("t:NERDTreeBufName") 
-                \ && (bufwinnr(t:NERDTreeBufName) != -1)
-                \ && strlen(expand('%')) > 0
-                \ && !&diff
-                \ && expand('%') !~ "NERD_tree_"
-        execute "NERDTreeFind"
-        execute "wincmd p"
-    endif
+  if &modifiable 
+    \ && exists("t:NERDTreeBufName") 
+    \ && (bufwinnr(t:NERDTreeBufName) != -1)
+    \ && strlen(expand('%')) > 0
+    \ && !&diff
+    \ && expand('%') !~ "NERD_tree_"
+    execute "NERDTreeFind"
+    execute "wincmd p"
+  endif
 endfunction
 autocmd BufEnter * call SyncTree()
 
@@ -379,18 +379,18 @@ let g:tagbar_map_zoomwin = 'A'
 
 """" markdown2ctags {{{3
 let g:tagbar_type_pandoc = {
-    \ 'ctagstype': 'pandoc',
-    \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
-    \ 'ctagsargs' : '-f - --sort=yes',
-    \ 'kinds' : [
-        \ 's:sections',
-        \ 'i:images'
-    \ ],
-    \ 'sro' : '|',
-    \ 'kind2scope' : {
-        \ 's' : 'section',
-    \ },
-    \ 'sort': 0,
+  \ 'ctagstype': 'pandoc',
+  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
+  \ 'ctagsargs' : '-f - --sort=yes',
+  \ 'kinds' : [
+    \ 's:sections',
+    \ 'i:images'
+  \ ],
+  \ 'sro' : '|',
+  \ 'kind2scope' : {
+    \ 's' : 'section',
+  \ },
+  \ 'sort': 0,
 \ }
 
 """" gundo {{{3
@@ -418,46 +418,45 @@ let g:gitgutter_override_sign_column_highlight = 0
 """" vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
-    if substitute(system('hostname'), '\n', '', '') == 'gmac'
-        execute "set <M-h>=\eh"
-        execute "set <M-j>=\ej"
-        execute "set <M-k>=\ek"
-        execute "set <M-l>=\el"
+  if substitute(system('hostname'), '\n', '', '') == 'gmac'
+    execute "set <M-h>=\eh"
+    execute "set <M-j>=\ej"
+    execute "set <M-k>=\ek"
+    execute "set <M-l>=\el"
+  else
+    execute "set <M-h>=h"
+    execute "set <M-j>=j"
+    execute "set <M-k>=k"
+    execute "set <M-l>=l"
+  endif
 
-    else
-        execute "set <M-h>=h"
-        execute "set <M-j>=j"
-        execute "set <M-k>=k"
-        execute "set <M-l>=l"
-    endif
-
-    nmap <silent> <M-h> :TmuxNavigateLeft<CR>
-    nmap <silent> <M-j> :TmuxNavigateDown<CR>
-    nmap <silent> <M-k> :TmuxNavigateUp<CR>
-    nmap <silent> <M-l> :TmuxNavigateRight<CR>
-    imap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-    imap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-    imap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-    imap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-    vmap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-    vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-    vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-    vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+  nmap <silent> <M-h> :TmuxNavigateLeft<CR>
+  nmap <silent> <M-j> :TmuxNavigateDown<CR>
+  nmap <silent> <M-k> :TmuxNavigateUp<CR>
+  nmap <silent> <M-l> :TmuxNavigateRight<CR>
+  imap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+  imap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+  imap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+  imap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+  vmap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+  vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+  vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+  vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 
 else
-    autocmd BufWinEnter,WinEnter term://* startinsert
-    tnoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
-    tnoremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<CR>
-    tnoremap <silent> <A-k> <C-\><C-N>:TmuxNavigateUp<CR>
-    tnoremap <silent> <A-l> <C-\><C-N>:TmuxNavigateRight<CR>
-    inoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
-    inoremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<CR>
-    inoremap <silent> <A-k> <C-\><C-N>:TmuxNavigateUp<CR>
-    inoremap <silent> <A-l> <C-\><C-N>:TmuxNavigateRight<CR>
-    nnoremap <silent> <A-h> <Esc>:TmuxNavigateLeft<CR>
-    nnoremap <silent> <A-j> <Esc>:TmuxNavigateDown<CR>
-    nnoremap <silent> <A-k> <Esc>:TmuxNavigateUp<CR>
-    nnoremap <silent> <A-l> <esc>:TmuxNavigateRight<CR>
+  autocmd BufWinEnter,WinEnter term://* startinsert
+  tnoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
+  tnoremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<CR>
+  tnoremap <silent> <A-k> <C-\><C-N>:TmuxNavigateUp<CR>
+  tnoremap <silent> <A-l> <C-\><C-N>:TmuxNavigateRight<CR>
+  inoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
+  inoremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<CR>
+  inoremap <silent> <A-k> <C-\><C-N>:TmuxNavigateUp<CR>
+  inoremap <silent> <A-l> <C-\><C-N>:TmuxNavigateRight<CR>
+  nnoremap <silent> <A-h> <Esc>:TmuxNavigateLeft<CR>
+  nnoremap <silent> <A-j> <Esc>:TmuxNavigateDown<CR>
+  nnoremap <silent> <A-k> <Esc>:TmuxNavigateUp<CR>
+  nnoremap <silent> <A-l> <esc>:TmuxNavigateRight<CR>
 endif
 
 """" vim-slime {{{3
@@ -465,7 +464,7 @@ let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
 if exists('$TMUX')
-    let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+  let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
 
 """" Nvim-R
@@ -490,16 +489,16 @@ let g:ale_linter_aliases = {'octave': 'matlab',}
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
 function! LinterStatus(type) abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    if a:type == 'Errors'
-        return l:all_errors == 0 ? '' : printf('%dE', all_errors)
-    elseif a:type == 'Warnings'
-        return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
-    else
-        return ''
-    endif
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  if a:type == 'Errors'
+    return l:all_errors == 0 ? '' : printf('%dE', all_errors)
+  elseif a:type == 'Warnings'
+    return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
+  else
+    return ''
+  endif
 endfunction
 
 """" pandoc {{{3
@@ -562,24 +561,24 @@ nmap dP             <Plug>PutDiffCharPair
 " ncm's filtering is based on word, so it's better to convert results of
 " muttaliases#CompleteMuttAliases into snippet expension
 func! g:MuttOmniWrap(findstart, base)
-     let ret = muttaliases#CompleteMuttAliases(a:findstart, a:base)
-     if type(ret) == type([])
-         let i=0
-         while i<len(ret)
-             let ret[i]['snippet'] = ret[i]['word']
-             let ret[i]['word'] = ret[i]['abbr']
-             let i+=1
-         endwhile
-     endif
-     return ret
+   let ret = muttaliases#CompleteMuttAliases(a:findstart, a:base)
+   if type(ret) == type([])
+     let i=0
+     while i<len(ret)
+       let ret[i]['snippet'] = ret[i]['word']
+       let ret[i]['word'] = ret[i]['abbr']
+       let i+=1
+     endwhile
+   endif
+   return ret
 endfunc
 
 au User CmSetup call cm#register_source({'name' : 'mutt',
-            \ 'priority': 9, 
-            \ 'cm_refresh_length': -1,
-            \ 'cm_refresh_patterns': ['^\w+:\s+'],
-            \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
-            \ })
+          \ 'priority': 9, 
+          \ 'cm_refresh_length': -1,
+          \ 'cm_refresh_patterns': ['^\w+:\s+'],
+          \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
+          \ })
 """ Lilypond {{{2
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
@@ -589,156 +588,156 @@ filetype on
 "" Functions {{{1
 """ Toggle Tabline {{{2
 function! ToggleTabline()
-    " 0 = never, 1 = if > 1 tab, 2 = always
-    if &showtabline==0
-       set showtabline=2
-    elseif &showtabline==1
-        set showtabline=0
-    elseif &showtabline==2
-        set showtabline=1
-    endif
-    echo 'set showtabline='.&showtabline
+  " 0 = never, 1 = if > 1 tab, 2 = always
+  if &showtabline==0
+    set showtabline=2
+  elseif &showtabline==1
+    set showtabline=0
+  elseif &showtabline==2
+    set showtabline=1
+  endif
+  echo 'set showtabline='.&showtabline
 endfunction
 
 """ Toggle Status Bar {{{2
 function! ToggleStatusBar()
-    if &laststatus == 2
-        set laststatus=0
-    elseif &laststatus == 0
-        set laststatus=2
-    endif
+  if &laststatus == 2
+    set laststatus=0
+  elseif &laststatus == 0
+    set laststatus=2
+  endif
 endfunction
 
 """ Get Syntax Under Cursor {{{2
 function! GetSyntaxUnderCursor() 
-    let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
-    return g:SyntaxUnderCursor
+  let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
+  return g:SyntaxUnderCursor
 endfunction
 """ Word Count {{{2
 function! WordCount()
 " http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-    let lnum = 1
-    let n = 0
-    while lnum <= line('$')
-        let n = n + len(split(getline(lnum)))
-        let lnum = lnum + 1
-    endwhile
-    return n
+  let lnum = 1
+  let n = 0
+  while lnum <= line('$')
+    let n = n + len(split(getline(lnum)))
+    let lnum = lnum + 1
+  endwhile
+  return n
 endfunction
 
 """ Toggle Search Highlight Colour {{{2
 function! SearchHighlightToggle()
-    let bgcolor=synIDattr(hlID('Search'), 'bg#')
-    if bgcolor == 1
-        execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
-    elseif bgcolor == 12
-        execute "hi Search ctermbg=0 ctermfg=none cterm=none"
-    elseif bgcolor == 0
-        execute "hi Search ctermbg=8 ctermfg=none cterm=none"
-    elseif bgcolor == 8
-        execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
-    endif
+  let bgcolor=synIDattr(hlID('Search'), 'bg#')
+  if bgcolor == 1
+    execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
+  elseif bgcolor == 12
+    execute "hi Search ctermbg=0 ctermfg=none cterm=none"
+  elseif bgcolor == 0
+    execute "hi Search ctermbg=8 ctermfg=none cterm=none"
+  elseif bgcolor == 8
+    execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
+  endif
 endfunction
 
 """ Toggle Color Column
 function! ToggleColorColumn()
-    if &colorcolumn == 80
-        execute "set colorcolumn=\"\""
-    else
-        execute "set colorcolumn=80"
-    endif
+  if &colorcolumn == 80
+    execute "set colorcolumn=\"\""
+  else
+    execute "set colorcolumn=80"
+  endif
 endfunction
 
 """ Toggle csv tsv {{{2
 function! ToggleCsvTsv()
-    if exists("b:delimiter")
-        if b:delimiter==","
-            exe "%s/,/\t/g"
-            let b:delimiter="\t"
-        elseif b:delimiter=="\t"
-            exe "%s/\t/,/g"
-            let b:delimiter=","
-        endif
-    else
-        echo "b:delimiter is not defined."
+  if exists("b:delimiter")
+    if b:delimiter==","
+      exe "%s/,/\t/g"
+      let b:delimiter="\t"
+    elseif b:delimiter=="\t"
+      exe "%s/\t/,/g"
+      let b:delimiter=","
     endif
+  else
+    echo "b:delimiter is not defined."
+  endif
 endfunction
 
 """ Line Return {{{2
 " from Steve Losh's (sjl) vimrc
 augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
+  au!
+  au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \     execute 'normal! g`"zvzz' |
+    \ endif
 augroup END
 
 """ Tab names {{{2
 " Rename tabs to show tab# and # of viewports
 " http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
 if exists("+showtabline")
-    let s:currentShowtabline = &showtabline
-    function! MyTabLine()
-        let s = ''
-        let wn = ''
-        let t = tabpagenr()
-        let i = 1
-        while i <= tabpagenr('$')
-            let buflist = tabpagebuflist(i)
-            let winnr = tabpagewinnr(i)
+  let s:currentShowtabline = &showtabline
+  function! MyTabLine()
+    let s = ''
+    let wn = ''
+    let t = tabpagenr()
+    let i = 1
+    while i <= tabpagenr('$')
+      let buflist = tabpagebuflist(i)
+      let winnr = tabpagewinnr(i)
 
-            let s .= '%#TabLineFill#'
-            let s .= '%' . i . 'T'
-            let s .= (i == t ? '%1*' : '%2*')
-            let s .= ''
-            let wn = tabpagewinnr(i,'$')
+      let s .= '%#TabLineFill#'
+      let s .= '%' . i . 'T'
+      let s .= (i == t ? '%1*' : '%2*')
+      let s .= ''
+      let wn = tabpagewinnr(i,'$')
 
-            "tab/window number
-            let s .= (i == t ? '%#TabNumSel#' : '%#TabNum#')
-            let s .= '['
-            let s .= i
-            if tabpagewinnr(i,'$') > 1
-                let s .= '|'
-                let s .= (i == t ? '%#TabWinNumSel#' : '%#TabWinNum#')
-                let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
-            end
-            let s .= ']%*'
+      "tab/window number
+      let s .= (i == t ? '%#TabNumSel#' : '%#TabNum#')
+      let s .= '['
+      let s .= i
+      if tabpagewinnr(i,'$') > 1
+        let s .= '|'
+        let s .= (i == t ? '%#TabWinNumSel#' : '%#TabWinNum#')
+        let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
+      end
+      let s .= ']%*'
 
-            "modified flag
-            let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
-            let s .= ' %*'
+      "modified flag
+      let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
+      let s .= ' %*'
 
-            "filename
-            let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-            if !exists("TabooTabName(i)") || TabooTabName(i) == ''
-                let bufnr = buflist[winnr - 1]
-                let file = bufname(bufnr)
-                let buftype = getbufvar(bufnr, 'buftype')
-                if buftype == 'nofile'
-                    if file =~ '\/.'
-                        let file = substitute(file, '.*\/\ze.', '', '')
-                    endif
-                else
-                    let file = fnamemodify(file, ':p:t')
-                endif
-                if file == ''
-                    let file = '[No Name]'
-                endif
-            else
-                let file = TabooTabName(i)
-            endif
-            let s .= file
-            let s .= ' '
-            let s .= '%#TablineFill# %*'
-            let i = i + 1
-        endwhile
-        let s .= '%T%#TabLineFill#%='
-        return s
-    endfunction
-    set stal=2
-    set tabline=%!MyTabLine()
-    execute 'set showtabline='.s:currentShowtabline
+      "filename
+      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+      if !exists("TabooTabName(i)") || TabooTabName(i) == ''
+        let bufnr = buflist[winnr - 1]
+        let file = bufname(bufnr)
+        let buftype = getbufvar(bufnr, 'buftype')
+        if buftype == 'nofile'
+          if file =~ '\/.'
+            let file = substitute(file, '.*\/\ze.', '', '')
+          endif
+        else
+          let file = fnamemodify(file, ':p:t')
+        endif
+        if file == ''
+          let file = '[No Name]'
+        endif
+      else
+        let file = TabooTabName(i)
+      endif
+      let s .= file
+      let s .= ' '
+      let s .= '%#TablineFill# %*'
+      let i = i + 1
+    endwhile
+    let s .= '%T%#TabLineFill#%='
+    return s
+  endfunction
+  set stal=2
+  set tabline=%!MyTabLine()
+  execute 'set showtabline='.s:currentShowtabline
 endif
 
 """ tmux make cursor line when in insert mode {{{2
@@ -756,21 +755,21 @@ endif
 """ Mutt Mail Mode {{{2
 " settings for proper formatting of emails function! ToggleMailMode()
 function! MuttMailMode()
-    "exe ':call CenWinToggle(80)'
-    setlocal textwidth=0 wrapmargin=0 wrap linebreak 
-    setlocal statusline=%*%#StatusFlag#%m%r%*
-    set norelativenumber nonumber
-    set spell
-    set laststatus=2 showtabline=0
-    inoremap <buffer> <Tab> <C-x><C-o>
-    noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-    noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-    noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
-    noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
-    nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
-    nnoremap <buffer> q :wq<CR>
-    "setlocal nocp 
-    "exe "/^$"
-    "exe "normal! gg}O\<Esc>o"
-    exe "normal! gg"
+  "exe ':call CenWinToggle(80)'
+  setlocal textwidth=0 wrapmargin=0 wrap linebreak 
+  setlocal statusline=%*%#StatusFlag#%m%r%*
+  set norelativenumber nonumber
+  set spell
+  set laststatus=2 showtabline=0
+  inoremap <buffer> <Tab> <C-x><C-o>
+  noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+  noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+  noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
+  noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
+  nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
+  nnoremap <buffer> q :wq<CR>
+  "setlocal nocp 
+  "exe "/^$"
+  "exe "normal! gg}O\<Esc>o"
+  exe "normal! gg"
 endfunction
