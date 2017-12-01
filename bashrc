@@ -63,7 +63,7 @@ export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-k
 source ~/private/github
 
 # autocomplete
-bind 'TAB:menu-complete'
+# bind 'TAB:menu-complete'
 bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
 
