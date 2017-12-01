@@ -445,6 +445,7 @@ if !has('nvim')
     vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 
 else
+    autocmd BufWinEnter,WinEnter term://* startinsert
     tnoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
     tnoremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<CR>
     tnoremap <silent> <A-k> <C-\><C-N>:TmuxNavigateUp<CR>
