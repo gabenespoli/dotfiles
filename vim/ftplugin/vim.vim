@@ -1,9 +1,5 @@
 autocmd VimEnter,BufEnter <buffer> syntax match Title /^\s*"".*$/
 
-set tabstop=2                   " number of visual spaces per TAB
-set softtabstop=2               " number of spaces in tab when editing
-set shiftwidth=2
-
 setlocal foldmethod=marker
 setlocal foldexpr=FoldExprDoubleCharVim(v:lnum)
 setlocal foldtext=GetFoldTextVim()

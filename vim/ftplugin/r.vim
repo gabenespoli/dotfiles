@@ -1,10 +1,6 @@
 " nvim-r plugin bindings
 " nnoremap <localleader>r
 
-set tabstop=2                   " number of visual spaces per TAB
-set softtabstop=2               " number of spaces in tab when editing
-set shiftwidth=2
-
 set equalalways
 if has('nvim')
   tnoremap _ <Space><-<Space>

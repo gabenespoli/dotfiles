@@ -101,9 +101,9 @@ set equalalways
 """ Spacing {{{2
 set linebreak                   " stop soft wrapping in the middle of words  
 set breakindent                 " auto indent soft wrap line breaks
-set tabstop=4                   " number of visual spaces per TAB
-set softtabstop=4               " number of spaces in tab when editing
-set shiftwidth=4
+set tabstop=2                   " number of visual spaces per TAB
+set softtabstop=2               " number of spaces in tab when editing
+set shiftwidth=2
 set expandtab                   " tabs are spaces
 
 """ Searching {{{2
