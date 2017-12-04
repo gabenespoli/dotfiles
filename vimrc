@@ -329,7 +329,6 @@ let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeWinPos = 'left'
-let g:NERDTreeBookmarksFile = '$HOME/bin/vim/NERDTreeBookmarks'
 let g:NERDTreeMapToggleHidden = 'zh'
 let g:NERDTreeMapPreview = 'i'
 let g:NERDTreeMapOpenSplit = 's'
