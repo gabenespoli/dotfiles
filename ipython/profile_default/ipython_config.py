@@ -7,9 +7,9 @@ c = get_config()
 #    'myextension'
 #]
 c.InteractiveShellApp.exec_lines = [
-    'import numpy as np',
-    'import pandas as pd',
-    'import matplotlib.pyplot as plt'
+    # 'import numpy as np',
+    # 'import pandas as pd',
+    # 'import matplotlib.pyplot as plt'
 #    'import scipy as sp'
 ]
 #c.InteractiveShellApp.exec_files = [
