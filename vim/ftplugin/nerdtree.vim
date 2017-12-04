@@ -1,6 +1,19 @@
 nnoremap <silent> <buffer> <C-j> <CR>
 nnoremap <silent> <buffer> q :q<CR>
 
+" bookmark mappings
+nnoremap gh :OpenBookmark home<CR>
+nnoremap gb :OpenBookmark bin<CR>
+nnoremap g. :OpenBookmark dotfiles<CR>
+nnoremap gl :OpenBookmark local<CR>
+nnoremap gv :OpenBookmark private<CR>
+nnoremap gr :OpenBookmark projects<CR>
+nnoremap gp :OpenBookmark projects<CR>
+nnoremap gn :OpenBookmark notes<CR>
+nnoremap gx :OpenBookmark dropbox<CR>
+nnoremap gk :OpenBookmark desktop<CR>
+nnoremap gw :OpenBookmark downloads<CR>
+
 " nnoremap <silent> <buffer> l :call NERDTree_l()<CR>
 " nnoremap <silent> <buffer> h :call NERDTree_h()<CR>
 " nnoremap <silent> <buffer> o :call NERDTree_o()<CR>

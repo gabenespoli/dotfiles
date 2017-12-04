@@ -10,7 +10,7 @@ c.InteractiveShellApp.exec_lines = [
     # 'import numpy as np',
     # 'import pandas as pd',
     # 'import matplotlib.pyplot as plt'
-#    'import scipy as sp'
+    # 'import scipy as sp'
 ]
 #c.InteractiveShellApp.exec_files = [
     #'mycode.py',
@@ -72,7 +72,7 @@ class MyPrompt(Prompts):
                 (Token.Prompt, '['),
                 (Token.PromptNum, str(self.shell.execution_count)),
                 (Token.Prompt, ']'),
-                (Token.PromptPrompt, ' >>> '),
+                (Token.PromptPrompt, '>>> '),
                 ]
 
     #def continuation_prompt_tokens(self, cli=None width=None):
@@ -92,7 +92,7 @@ class MyPrompt(Prompts):
                 (Token.OutPrompt, '['),
                 (Token.OutPromptNum, str(self.shell.execution_count)),
                 (Token.OutPrompt, ']'),
-                (Token.PromptPrompt, ' ==> '),
+                (Token.PromptPrompt, '==> '),
                 ]
     
 c.TerminalInteractiveShell.prompts_class = MyPrompt

@@ -1,93 +1,25 @@
 {
-  "title": "Numeric Keypad",
+  "title": "Vi Style Arrows",
   "rules": [
     {
-      "description": "Press Tab + Space/M/,/./J/K/L/U/I/O to numeric keys. Pressing Tab alone sends Tab key",
+      "description": "Change Control + h/j/k/l to Arrows",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "tab"
-          },
-          "to": [
-            {
-              "key_code": "fn",
-              "modifiers": [
-                "left_option"
-              ]
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "tab"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "spacebar",
+            "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_0"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "m",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_1"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "comma",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_2"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "period",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_3"
+              "key_code": "left_arrow"
             }
           ]
         },
@@ -97,14 +29,16 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_4"
+              "key_code": "down_arrow"
             }
           ]
         },
@@ -114,14 +48,16 @@
             "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_5"
+              "key_code": "up_arrow"
             }
           ]
         },
@@ -131,233 +67,259 @@
             "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "control"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_6"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "u",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_7"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "i",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_8"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "o",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_9"
+              "key_code": "right_arrow"
             }
           ]
         }
       ]
     },
     {
-      "description": "Press Tab + 7/8/9/0/p/;/slash to backspace/=/slash/*/-/+/enter.",
+      "description": "Change Option + h/j/k/l to Arrows",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "slash",
+            "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "option"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_enter"
+              "key_code": "left_arrow"
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "semicolon",
+            "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "option"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_plus"
+              "key_code": "down_arrow"
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "p",
+            "key_code": "k",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "option"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_hyphen"
+              "key_code": "up_arrow"
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "0",
+            "key_code": "l",
             "modifiers": {
               "mandatory": [
-                "option",
-                "fn"
+                "option"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_asterisk"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "9",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_slash"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "8",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_equal_sign"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "7",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "fn"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_or_backspace"
+              "key_code": "right_arrow"
             }
           ]
         }
       ]
     },
     {
-      "description": "Press Tab + right_option to keypad_period",
+      "description": "Change Fn + h/j/k/l to Arrows",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "right_option",
+            "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "fn"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_period"
+              "key_code": "left_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
             }
           ]
         }
       ]
     },
     {
-      "description": "Press Tab + right_control to keypad_period",
+      "description": "Change command + h/j/k/l to Arrows",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "right_control",
+            "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "left_option",
-                "fn"
+                "command"
+              ],
+              "optional": [
+                "caps_lock"
               ]
             }
           },
           "to": [
             {
-              "key_code": "keypad_period"
+              "key_code": "left_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
             }
           ]
         }

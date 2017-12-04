@@ -53,14 +53,19 @@ else
     setxkbmap -option shift:both_capslock
 fi
 
-## Environment vars {{{1
+## Environment {{{1
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
 export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
-export EDITOR='nvim'
+export EDITOR='vim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
 export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-kill-word,ctrl-n:down,ctrl-p:up'
 source ~/private/github
+
+# autocomplete
+# bind 'TAB:menu-complete'
+bind 'set show-all-if-ambiguous on'
+bind 'set completion-display-width 0'
 
 # setup ruby env (requires rbenv to be installed)
 eval "$(rbenv init -)"
@@ -157,9 +162,10 @@ alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ## network {{{1
+alias egserver="ssh egserver@192.168.86.12"
 alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
 alias smarts="open vnc://gmac@smartmacpro.arts.ryerson.ca"
-alias efgh="ssh efgh@192.168.86.12"
+function eg () { mount -t smbfs //egserver@192.168.86.12/eg ~/eg ; }
 function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
-function eg () { mount -t smbfs //efgh@192.168.86.12/egdata ~/eg ; }
+function smaug() { mount -t smbfs //gabe@141.117.107.83/Lab ~/smaug/Lab ; }
 
