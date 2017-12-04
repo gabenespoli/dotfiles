@@ -67,7 +67,7 @@
 
   bind "<ctrl>h" { "delete-from-cursor" (chars, -1) };
   bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) };
-  bind "<ctrl>j" { "line-feed" () };
+  bind "<ctrl>j" { "delete-from-cursor" (chars, -1) };
   bind "<ctrl>m" { "carriage-return" () };
 
   /*
