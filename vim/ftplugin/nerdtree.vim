@@ -10,6 +10,7 @@ nnoremap gv :OpenBookmark private<CR>
 nnoremap gr :OpenBookmark projects<CR>
 nnoremap gp :OpenBookmark projects<CR>
 nnoremap gn :OpenBookmark notes<CR>
+nnoremap gx :OpenBookmark dropbox<CR>
 nnoremap gk :OpenBookmark desktop<CR>
 nnoremap gw :OpenBookmark downloads<CR>
 
