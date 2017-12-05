@@ -348,6 +348,7 @@ function! SyncTree()
     \ && strlen(expand('%')) > 0
     \ && !&diff
     \ && expand('%') !~ "NERD_tree_"
+    \ && expand('%') !~ "buffergator"
     execute "NERDTreeFind"
     execute "wincmd p"
   endif
