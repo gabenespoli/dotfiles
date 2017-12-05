@@ -25,6 +25,7 @@ Plug 'sjl/gundo.vim'
 """ git {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 """ tmux & external programs {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -325,8 +326,8 @@ nnoremap <leader>L :Lcycle<CR>
 """" NERDTree {{{3
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeQuitOnOpen = 0
-let g:NERDTreeDirArrowExpandable='+'
-let g:NERDTreeDirArrowCollapsible='-'
+" let g:NERDTreeDirArrowExpandable='+'
+" let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeWinPos = 'left'
 let g:NERDTreeMapToggleHidden = 'zh'
@@ -413,6 +414,20 @@ nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
+
+"""" nerdtree-git-plugin {{{3
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "M",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "R",
+    \ "Unmerged"  : "U",
+    \ "Deleted"   : "D",
+    \ "Dirty"     : "*",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : "!",
+    \ "Unknown"   : "X"
+    \ }
 
 """ tmux {{{2
 """" vim-tmux-navigator {{{3
