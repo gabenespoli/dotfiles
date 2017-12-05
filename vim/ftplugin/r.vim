@@ -25,3 +25,7 @@ function! GetRFolds(lnum)
     return '='
   endif
 endfunction
+
+" capitalL plugin settings
+let b:Lpatterns = ['%\+\s*TODO', '^.*<-\s*function']
+let b:Lreformat = ['[^|]*|[^|]*|\s%\+\s*\(TODO.*\)$/\1', '[^|]*|[^|]*|\s/']
