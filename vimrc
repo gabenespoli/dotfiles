@@ -8,6 +8,7 @@ Plug 'tpope/vim-surround'
 Plug 'gcmt/taboo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'vim-scripts/matchit.zip'
 
 " sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
@@ -27,6 +28,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
 Plug 'jalvesaq/Nvim-R'
+Plug 'vim-scripts/MatlabFilesEdition'
 
 " syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
