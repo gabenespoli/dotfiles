@@ -8,12 +8,6 @@ Plug 'tpope/vim-surround'
 Plug 'gcmt/taboo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
-if has('nvim')
-  Plug 'Shougo/neco-vim'
-  Plug 'roxma/nvim-completion-manager'
-" else
-  " Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 " sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
@@ -27,7 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" tmux & external programs {{{2
+" external programs {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
@@ -44,6 +38,18 @@ Plug 'rickhowe/diffchar.vim'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
 Plug 'guanqun/vim-mutt-aliases-plugin'
+
+" nvim-only plugins {{{2
+if has('nvim')
+  function! DoRemote(arg)
+    UpdateRemotePlugins
+  endfunction
+  Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
+  Plug 'Shougo/neco-vim'
+  Plug 'roxma/nvim-completion-manager'
+" else
+  " Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " my plugins {{{2
 Plug '~/bin/vim/vim-capitalL'
@@ -429,7 +435,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "X"
     \ }
 
-" tmux {{{2
+" external programs {{{2
 " vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
@@ -494,6 +500,9 @@ let R_objbr_place = "console,bottom"
 autocmd Filetype r execute "let R_objbr_h = ".&lines/3
 autocmd Filetype r execute "let R_objbr_w = ".&columns/3
 autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
+
+" vim-matlab {{{3
+let g:matlab_auto_mappings = 0 "automatic mappings disabled
 
 " syntax {{{2
 " w0rp/ale {{{3
