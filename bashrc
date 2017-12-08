@@ -31,7 +31,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else 
     ### Linux options
-    export PATH="$HOME/local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
+    export PATH="$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
@@ -52,6 +52,7 @@ else
 fi
 
 ## Environment {{{1
+export PATH="$HOME/local/bin:$PATH"
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
 export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='vim'
