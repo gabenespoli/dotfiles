@@ -1,5 +1,5 @@
 " nvim-r plugin bindings
-" nnoremap <localleader>r
+nnoremap <localleader>tt :call StartR("R")<CR>
 
 set equalalways
 if has('nvim')
