@@ -1,5 +1,7 @@
 " nvim-r plugin bindings
 nnoremap <localleader>tt :call StartR("R")<CR>
+nnoremap <C-l> :call SendLineToR("down")<CR>
+nnoremap <C-k> :call SendParagraphToR("echo", "down")<CR>
 
 set equalalways
 if has('nvim')
