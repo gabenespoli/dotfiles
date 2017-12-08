@@ -486,7 +486,9 @@ endif
 " vim-slime {{{3
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
-nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
+let g:slime_no_mappings = 1
+nmap <C-l> <Plug>SlimeLineSend
+nmap <C-k> <Plug>SlimeParagraphSend
 if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
