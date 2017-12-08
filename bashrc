@@ -11,7 +11,6 @@ if [ "$(uname)" == "Darwin" ]; then
     alias agu="brew update && brew upgrade && brew cleanup"
     alias ql='qlmanage -p &>/dev/null'
     alias matlab="rlwrap -c -a dummy_arg /Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
-    alias matlab="rlwrap -c -a dummy_arg /Applications/MATLAB_R2016a.app/bin/matlab -nosplash -nodesktop"
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
