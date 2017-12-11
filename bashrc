@@ -10,8 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias agi="brew install"
     alias agu="brew update && brew upgrade && brew cleanup"
     alias ql='qlmanage -p &>/dev/null'
-    export MATLAB="/Applications/MATLAB_R2017a.app"
-    export MATLAB2="/Applications/MATLAB_R2016a.app"
+    alias matlab="rlwrap -c -a dummy_arg /Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
     alias openx="open -a Microsoft\ Excel.app"
     alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     alias wifi="sudo networksetup -setairportnetwork en0"
@@ -45,8 +44,7 @@ else
     alias ranger="python $HOME/local/ranger/ranger.py"
     alias trash="gio trash"
     alias t="todo-txt -a"
-    export MATLAB="/usr/local/MATLAB/R2017a"
-    export MATLAB2="/usr/local/MATLAB/R2016a"
+    alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
     #eval `dircolors $HOME/.dir_colors/dircolors`
     LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     setxkbmap -option ctrl:nocaps
@@ -54,6 +52,7 @@ else
 fi
 
 ## Environment {{{1
+export PATH="$HOME/local/bin:$PATH"
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
 export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='vim'
@@ -84,8 +83,6 @@ alias lsl='printf "\033c" && ls'
 alias gf="python $HOME/bin/utils/gf.py"
 alias edit=$EDITOR
 alias pylab="ipython --pylab"
-alias matlab="rlwrap -c -a dummy_arg $MATLAB/bin/matlab -nosplash -nodesktop"
-alias matlab2="rlwrap -c -a dummy_arg $MATLAB2/bin/matlab -nosplash -nodesktop"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 function cdl { cd $1; ls;}
 function cdd() { cd "$(gf "$@")" ; }

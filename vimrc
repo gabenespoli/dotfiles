@@ -8,12 +8,7 @@ Plug 'tpope/vim-surround'
 Plug 'gcmt/taboo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
-if has('nvim')
-  Plug 'Shougo/neco-vim'
-  Plug 'roxma/nvim-completion-manager'
-" else
-  " Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'vim-scripts/matchit.zip'
 
 " sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
@@ -27,12 +22,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" tmux & external programs {{{2
+" external programs {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
 Plug 'jalvesaq/Nvim-R'
+Plug 'vim-scripts/MatlabFilesEdition'
 
 " syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
@@ -44,6 +40,18 @@ Plug 'rickhowe/diffchar.vim'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
 Plug 'guanqun/vim-mutt-aliases-plugin'
+
+" nvim-only plugins {{{2
+if has('nvim')
+  function! DoRemote(arg)
+    UpdateRemotePlugins
+  endfunction
+  Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
+  Plug 'Shougo/neco-vim'
+  Plug 'roxma/nvim-completion-manager'
+" else
+  " Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " my plugins {{{2
 Plug '~/bin/vim/vim-capitalL'
@@ -431,7 +439,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "X"
     \ }
 
-" tmux {{{2
+" external programs {{{2
 " vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
@@ -480,7 +488,9 @@ endif
 " vim-slime {{{3
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
-nnoremap <C-c><C-d> :SlimeSendCurrentLine<CR>
+let g:slime_no_mappings = 1
+nmap <C-l> <Plug>SlimeLineSend
+nmap <C-k> <Plug>SlimeParagraphSend
 if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
@@ -496,6 +506,9 @@ let R_objbr_place = "console,bottom"
 autocmd Filetype r execute "let R_objbr_h = ".&lines/3
 autocmd Filetype r execute "let R_objbr_w = ".&columns/3
 autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
+
+" vim-matlab {{{3
+let g:matlab_auto_mappings = 0 "automatic mappings disabled
 
 " syntax {{{2
 " w0rp/ale {{{3
