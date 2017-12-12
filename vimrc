@@ -263,12 +263,13 @@ nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap cop :call ToggleColorColumn()<CR>
 
 " folding
-nnoremap cofl :set foldmethod=manual<CR>
-nnoremap cofi :set foldmethod=indent<CR>
-nnoremap cofe :set foldmethod=expr<CR>
-nnoremap cofm :set foldmethod=marker<CR>
-nnoremap cofs :set foldmethod=syntax<CR>
-nnoremap cofd :set foldmethod=diff<CR>
+nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=1<CR>'
+nnoremap coFl :set foldmethod=manual<CR>
+nnoremap coFi :set foldmethod=indent<CR>
+nnoremap coFe :set foldmethod=expr<CR>
+nnoremap coFm :set foldmethod=marker<CR>
+nnoremap coFs :set foldmethod=syntax<CR>
+nnoremap coFd :set foldmethod=diff<CR>
 
 " syntax
 nnoremap coYm :set syntax=markdown<CR>
@@ -496,7 +497,7 @@ if exists('$TMUX')
 endif
 
 " Nvim-R {{{3
-let R_assign = 0
+let R_assign = 2
 let R_show_args = 1
 let R_objbr_showdf = 0
 let rout_follow_colorscheme = 1

@@ -27,7 +27,9 @@ function! AddRstudioHeadings(level)
     let l:headingCharacter = "="
   elseif a:level == 3
     let l:headingCharacter = "#"
-  elseif a:level != 0
+  elseif a:level == 0
+    return
+  else
     echo "Heading level must be 0, 1, 2, or 3"
   endif
   " add new heading characters
@@ -55,5 +57,5 @@ function! GetRFolds(lnum)
 endfunction
 
 " capitalL plugin settings
-let b:Lpatterns = ['%\+\s*TODO', '^.*<-\s*function']
-let b:Lreformat = ['[^|]*|[^|]*|\s%\+\s*\(TODO.*\)$/\1', '[^|]*|[^|]*|\s/']
+let b:Lpatterns = ['#\+\s*TODO', '^.*<-\s*function']
+let b:Lreformat = ['[^|]*|[^|]*|\s#\+\s*\(TODO.*\)$/\1', '[^|]*|[^|]*|\s/']
