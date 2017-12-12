@@ -496,7 +496,7 @@ if exists('$TMUX')
 endif
 
 " Nvim-R {{{3
-let R_assign = 0
+let R_assign = 2
 let R_show_args = 1
 let R_objbr_showdf = 0
 let rout_follow_colorscheme = 1
