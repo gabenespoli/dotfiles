@@ -4,9 +4,6 @@ nnoremap <C-l> :call SendLineToR("down")<CR>
 nnoremap <C-k> :call SendParagraphToR("echo", "down")<CR>
 
 set equalalways
-if has('nvim')
-  tnoremap _ <Space><-<Space>
-endif
 
 " comment headings and folding (like Rstudio) {{{1
 " highlight
