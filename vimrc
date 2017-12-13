@@ -472,6 +472,8 @@ if !has('nvim')
 else
   autocmd BufWinEnter,WinEnter term://* startinsert
   autocmd BufLeave term://* stopinsert
+  tnoremap <silent> [b <C-\><C-N>:bprevious<CR>
+  tnoremap <silent> ]b <C-\><C-N>:bnext<CR>
   tnoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
   tnoremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<CR>
   tnoremap <silent> <A-k> <C-\><C-N>:TmuxNavigateUp<CR>
