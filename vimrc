@@ -128,7 +128,7 @@ set suffixesadd+=.m,.r,.R,.py
 " autocmd BufReadPost * :syntax match FoldHeading '^.*{'.'{{.*$'
 set fillchars="vert:' ',fold:-"
 set foldminlines=0              " 0 means we can close a 1-line fold
-set foldcolumn=1
+set foldcolumn=0
 set foldlevel=1
 set foldmethod=marker
 set foldtext=GetFoldText()
