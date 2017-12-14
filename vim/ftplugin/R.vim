@@ -1,7 +1,8 @@
 " nvim-r plugin bindings {{{1
-nnoremap <localleader>tt :call StartR("R")<CR>
-nnoremap <C-l> :call SendLineToR("down")<CR>
-nnoremap <C-k> :call SendParagraphToR("echo", "down")<CR>
+nmap <expr> <C-l>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSend"<CR>'        : ':call SendLineToR("stay")<CR>'
+nmap <expr> <M-C-l> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSendj"<CR>'       : ':call SendLineToR("down")<CR>'
+nmap <expr> <C-k>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend"<CR>'   : ':call SendParagraphToR("echo", "stay")<CR>'
+nmap <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend}j"<CR>' : ':call SendParagraphToR("echo", "down")<CR>'
 
 set equalalways
 
