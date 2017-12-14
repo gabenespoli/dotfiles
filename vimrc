@@ -492,8 +492,10 @@ endif
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 1
-nmap <C-l> <Plug>SlimeLineSend
-nmap <C-k> <Plug>SlimeParagraphSend
+nmap <C-l>   :execute "normal \<Plug>SlimeLineSend"<CR>
+nmap <M-C-l> :execute "normal \<Plug>SlimeLineSendj"<CR>
+nmap <C-k>   :execute "normal \<Plug>SlimeParagraphSend"<CR>
+nmap <M-C-k> :execute "normal \<Plug>SlimeParagraphSend}j"<CR>
 if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
