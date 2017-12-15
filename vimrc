@@ -388,6 +388,14 @@ let g:tagbar_map_togglefold = 'za'
 let g:tagbar_map_toggleautoclose = 'C'
 let g:tagbar_map_togglecaseinsensitive = 'I'
 let g:tagbar_map_zoomwin = 'A'
+let g:tagbar_type_r = {
+    \ 'ctagstype' : 'r',
+    \ 'kinds'     : [
+        \ 'f:Functions',
+        \ 'g:GlobalVariables',
+        \ 'v:FunctionVariables',
+    \ ]
+\ }
 
 " markdown2ctags {{{3
 let g:tagbar_type_pandoc = {
