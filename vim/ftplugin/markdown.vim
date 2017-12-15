@@ -93,5 +93,5 @@ function! PandocForceHighlighting()
 endfunction
 
 "" capitalL location list settings {{{1
-let b:Lpatterns = ['{>>\|{==\|{++\|{--', '^\s*TODO']
-let b:Lreformat = ['[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2', '[^|]*|[^|]*|\s*\(TODO.*\)$/\1']
+let b:Lpatterns = ['/{>>\|{==\|{++\|{--/gj %', '/^\s*TODO/gj %']
+let b:Lreformat = ['/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge', '/[^|]*|[^|]*|\s*\(TODO.*\)$/\1/ge']
