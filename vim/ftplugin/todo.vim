@@ -46,7 +46,22 @@ nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 
 "" functions
 
-"" from todo-txt.vim
+" folding {{{1
+set foldmethod=expr
+set foldexpr=GetTodoFolds(v:lnum)
+set foldtext=GetFoldText()
+
+function! GetTodoFolds(lnum)
+    if getline(a:lnum) =~ '^#'
+        return '>1'
+    else
+        return '='
+    endif
+endfunction
+
+" functions {{{1
+
+" from todo-txt.vim
 " these functions are taken from https://github.com/freitass/todo.txt-vim
 function! todo#RemoveCompleted()
     " Check if we can write to done.txt before proceeding.
