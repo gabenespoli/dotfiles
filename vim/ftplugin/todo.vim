@@ -1,11 +1,11 @@
 " vim plugin for todo.txt files
 " some ideas are take from the todo-txt.vim plugin
 
-"" keybindings
-""" save all the time
+" keybindings {{{1
+" save all the time {{{2
 inoremap <buffer> jk <Esc>:w<CR>
 
-""" priority
+" priority {{{2
 " [d]oing, [t]oday, [w]eek, [r]emove, [x] is mark as done and move to bottom
 " first try to remove priority, then add
 nnoremap <buffer> <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>:w<CR>
@@ -30,7 +30,7 @@ nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-
 " nnoremap <buffer> K :move -2<CR>:w<CR>
 " nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
 
-""" task points (1 2 3 5 8)
+" task points (1 2 3 5 8) {{{2
 nnoremap <buffer> <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>:w<CR>
 nnoremap <buffer> <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>:w<CR>
 nnoremap <buffer> <localleader>3 :s/\ pts:\d*//ge<CR>A pts:3<Esc>:w<CR>
@@ -39,7 +39,7 @@ nnoremap <buffer> <localleader>8 :s/\ pts:\d*//ge<CR>A pts:8<Esc>:w<CR>
 nnoremap <buffer> <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>:w<CR>
 nnoremap <buffer> <localleader>0 :s/\ pts:\d*//ge<CR>:w<CR>
 
-""" misc
+" misc {{{2
 nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
