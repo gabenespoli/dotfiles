@@ -1,19 +1,19 @@
-"" general {{{1
+" general {{{1
 setlocal spell       " enable live spell checking
 
-"" keybindings {{{1
-""" general {{{2
+" keybindings {{{1
+" general {{{2
 nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
-""" move up and down by visual line {{{2
+" move up and down by visual line {{{2
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
 noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
 
-""" headings {{{2
+" headings {{{2
 nnoremap <buffer> <localleader>0 :s/^#*\ *//ge<CR>
 nnoremap <buffer> <localleader>1 :s/^#*\ */#\ /ge<CR>
 nnoremap <buffer> <localleader>2 :s/^#*\ */##\ /ge<CR>
@@ -22,7 +22,7 @@ nnoremap <buffer> <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
-""" folding {{{2
+" folding {{{1
 set foldmethod=expr
 set foldexpr=GetMarkdownFolds(v:lnum)
 set foldtext=GetMarkdownFoldText()
@@ -52,7 +52,7 @@ function! GetMarkdownFoldText()
     endif
 endfunction
 
-"" highlights {{{1
+" highlights {{{1
 " highlight current sentence
 nnoremap ]k :echo search('\.', 'c')<CR>v(
 nnoremap [k :echo search('\.', 'bc')<CR>v(
@@ -71,7 +71,7 @@ hi htmlTagName ctermfg=11
 " because critic markdown never sticks
 autocmd BufEnter * call criticmarkup#InjectHighlighting()
 
-"" Pandoc Plugin settings {{{1
+" Pandoc Plugin settings {{{1
 au VimEnter * :set syntax=pandoc
 au VimEnter,BufEnter * :call PandocForceHighlighting()
 nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
@@ -92,6 +92,6 @@ function! PandocForceHighlighting()
     hi link mdTodo Todo
 endfunction
 
-"" capitalL location list settings {{{1
+" capitalL location list settings {{{1
 let b:Lpatterns = ['/{>>\|{==\|{++\|{--/gj %', '/^\s*TODO/gj %']
 let b:Lreformat = ['/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge', '/[^|]*|[^|]*|\s*\(TODO.*\)$/\1/ge']

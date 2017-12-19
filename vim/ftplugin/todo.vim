@@ -1,11 +1,11 @@
 " vim plugin for todo.txt files
 " some ideas are take from the todo-txt.vim plugin
 
-"" keybindings
-""" save all the time
+" keybindings {{{1
+" save all the time {{{2
 inoremap <buffer> jk <Esc>:w<CR>
 
-""" priority
+" priority {{{2
 " [d]oing, [t]oday, [w]eek, [r]emove, [x] is mark as done and move to bottom
 " first try to remove priority, then add
 nnoremap <buffer> <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>:w<CR>
@@ -24,13 +24,13 @@ nnoremap <buffer> <localleader>u :s/^([A-Z])\s//ge<CR>I(U) <Esc>:w<CR>
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp'':w<CR>
 
-""" moving lines
-nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
-nnoremap <buffer> J :move +1<CR>:w<CR>
-nnoremap <buffer> K :move -2<CR>:w<CR>
-nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
+" moving lines {{{2
+" nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
+" nnoremap <buffer> J :move +1<CR>:w<CR>
+" nnoremap <buffer> K :move -2<CR>:w<CR>
+" nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
 
-""" task points (1 2 3 5 8)
+" task points (1 2 3 5 8) {{{2
 nnoremap <buffer> <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>:w<CR>
 nnoremap <buffer> <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>:w<CR>
 nnoremap <buffer> <localleader>3 :s/\ pts:\d*//ge<CR>A pts:3<Esc>:w<CR>
@@ -39,14 +39,29 @@ nnoremap <buffer> <localleader>8 :s/\ pts:\d*//ge<CR>A pts:8<Esc>:w<CR>
 nnoremap <buffer> <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>:w<CR>
 nnoremap <buffer> <localleader>0 :s/\ pts:\d*//ge<CR>:w<CR>
 
-""" misc
+" misc {{{2
 nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 
 "" functions
 
-"" from todo-txt.vim
+" folding {{{1
+set foldmethod=expr
+set foldexpr=GetTodoFolds(v:lnum)
+set foldtext=GetFoldText()
+
+function! GetTodoFolds(lnum)
+    if getline(a:lnum) =~ '^#'
+        return '>1'
+    else
+        return '='
+    endif
+endfunction
+
+" functions {{{1
+
+" from todo-txt.vim
 " these functions are taken from https://github.com/freitass/todo.txt-vim
 function! todo#RemoveCompleted()
     " Check if we can write to done.txt before proceeding.
@@ -82,4 +97,8 @@ function! s:AppendToFile(file, lines)
     " Write to file.
     call writefile(l:lines, a:file)
 endfunction
+
+" capitalL plugin settings
+let b:Lpatterns = ['/!next/gj %', '/!waiting/gj %']
+let b:Lreformat = ['/[^|]*|[^|]*|\s/', '/[^|]*|[^|]*|\s/']
 
