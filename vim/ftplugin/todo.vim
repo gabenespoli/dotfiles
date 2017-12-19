@@ -24,11 +24,11 @@ nnoremap <buffer> <localleader>u :s/^([A-Z])\s//ge<CR>I(U) <Esc>:w<CR>
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp'':w<CR>
 
-""" moving lines
-nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
-nnoremap <buffer> J :move +1<CR>:w<CR>
-nnoremap <buffer> K :move -2<CR>:w<CR>
-nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
+" moving lines {{{2
+" nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
+" nnoremap <buffer> J :move +1<CR>:w<CR>
+" nnoremap <buffer> K :move -2<CR>:w<CR>
+" nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
 
 """ task points (1 2 3 5 8)
 nnoremap <buffer> <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>:w<CR>
