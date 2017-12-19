@@ -1,4 +1,4 @@
-nnoremap <silent> <buffer> <C-j> <CR>
+nmap <silent> <buffer> <C-j> o
 nnoremap <silent> <buffer> q :q<CR>
 
 " bookmark mappings
