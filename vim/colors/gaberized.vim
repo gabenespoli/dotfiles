@@ -132,6 +132,7 @@ hi Todo                 ctermfg=13                      cterm=reverse
 hi TodoPriorityA        ctermfg=3
 hi TodoPriorityB        ctermfg=9
 hi TodoPriorityC        ctermfg=2
+hi TodoAction           ctermfg=3
 hi TodoProject          ctermfg=4
 hi TodoContext          ctermfg=13
 hi TodoDone             ctermfg=10
