@@ -368,7 +368,8 @@ endfunction
 autocmd BufEnter * call SyncNERDTree()
 
 " buffergator {{{3
-let g:buffergator_viewport_split_policy = "B"
+let g:buffergator_viewport_split_policy = "L"
+let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_suppress_keymaps = 1
 
 " Highlight currently open buffer in Buffergator
