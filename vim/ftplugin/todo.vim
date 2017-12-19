@@ -101,5 +101,4 @@ endfunction
 " capitalL plugin settings
 let b:Lpatterns = ['/!next/gj %', '/!waiting/gj %']
 let b:Lreformat = ['/[^|]*|[^|]*|\s/', '/[^|]*|[^|]*|\s/']
-" let b:Lreformat = ['[^|]*|[^|]*|\s#\+\s*\(TODO.*\)$/\1', '[^|]*|[^|]*|\s/']
 
