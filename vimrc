@@ -9,6 +9,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-scripts/matchit.zip'
+Plug 'yssl/QFEnter'
 
 " sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
