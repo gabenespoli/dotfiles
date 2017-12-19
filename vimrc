@@ -10,6 +10,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'yssl/QFEnter'
+Plug 'MarcWeber/vim-addon-qf-layout'
 
 " sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
@@ -302,6 +303,16 @@ let g:ctrlp_prompt_mappings = {
 " ranger {{{3
 let g:ranger_map_keys = 0
 nnoremap <leader>f :Ranger<CR>
+
+" vim-addon-qf-layout {{{3
+let g:vim_addon_qf_layout = {}
+let g:vim_addon_qf_layout.quickfix_formatters = [
+  \ 'vim_addon_qf_layout#DefaultFormatter',
+  \ 'vim_addon_qf_layout#FormatterNoFilename',
+  \ 'vim_addon_qf_layout#Reset',
+  \ 'NOP',
+  \ ]
+let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
 
 " nvim-completion-manager {{{3
 " let g:cm_complete_start_delay = 750
