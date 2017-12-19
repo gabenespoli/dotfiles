@@ -28,7 +28,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
 Plug 'jalvesaq/Nvim-R'
-Plug 'vim-scripts/MatlabFilesEdition'
+" Plug 'vim-scripts/MatlabFilesEdition'
 
 " syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
@@ -46,7 +46,7 @@ if has('nvim')
   function! DoRemote(arg)
     UpdateRemotePlugins
   endfunction
-  Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
+  " Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
   Plug 'Shougo/neco-vim'
   Plug 'roxma/nvim-completion-manager'
 " else
