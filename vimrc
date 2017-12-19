@@ -351,26 +351,45 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 " Highlight currently open buffer in NERDTree
 " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
 " added: make sure current buffer isn't a NERDTree buffer
-function! SyncTree()
+function! SyncNERDTree()
   if &modifiable 
     \ && exists("t:NERDTreeBufName") 
     \ && (bufwinnr(t:NERDTreeBufName) != -1)
     \ && strlen(expand('%')) > 0
     \ && !&diff
     \ && expand('%') !~ "NERD_tree_"
-    \ && expand('%') !~ "[[buffergator]]"
+    \ && expand('%') !~ "[[buffergator]"
     \ && expand('%') !~ "[Sidebar Left]"
     \ && expand('%') !~ "[Sidebar Right]"
     execute "NERDTreeFind"
     execute "wincmd p"
   endif
 endfunction
-autocmd BufEnter * call SyncTree()
+autocmd BufEnter * call SyncNERDTree()
 
 " buffergator {{{3
 let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_suppress_keymaps = 1
-" nnoremap <leader>B :let g:buffergator_viewport_split_policy="N"<CR>:BuffergatorOpen<CR>:let g:buffergator_viewport_split_policy="T"<CR>
+
+" Highlight currently open buffer in Buffergator
+function! SyncBuffergator()
+  let g:bufbufwinnum = bufwinnr("[[buffergator-buffers]]")
+  if &modifiable 
+    \ && g:bufbufwinnum != -1
+    \ && strlen(expand('%')) > 0
+    \ && !&diff
+    \ && expand('%') !~ "NERD_tree_"
+    \ && expand('%') !~ "[buffergator]"
+    " \ && expand('%') !~ "[Sidebar Left]"
+    " \ && expand('%') !~ "[Sidebar Right]"
+    let g:bufnum = bufnr('%')
+    execute g:bufbufwinnum . "wincmd w"
+    execute "normal r"
+    execute "search('^\\[\\s*" . g:bufnum . ")"
+    execute "wincmd p"
+  endif
+endfunction
+autocmd BufEnter * call SyncBuffergator()
 
 " tagbar{{{3
 let g:tagbar_left = 1
