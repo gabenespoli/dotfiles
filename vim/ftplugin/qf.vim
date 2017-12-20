@@ -1,1 +1,1 @@
-nnoremap <buffer> <C-j> <CR>
+nmap <buffer> <C-j> <CR>
