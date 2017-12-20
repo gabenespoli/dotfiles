@@ -44,8 +44,6 @@ nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 
-"" functions
-
 " folding {{{1
 set foldmethod=expr
 set foldexpr=GetTodoFolds(v:lnum)
