@@ -310,7 +310,6 @@ let g:ctrlp_prompt_mappings = {
 
 " ranger {{{3
 let g:ranger_map_keys = 0
-nnoremap <leader>f :Ranger<CR>
 
 " nvim-completion-manager {{{3
 " let g:cm_complete_start_delay = 750
