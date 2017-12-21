@@ -283,7 +283,6 @@ nnoremap coYp :set syntax=python<CR>
 nnoremap coYq :set syntax=qf<CR>
 nnoremap coYr :set syntax=r<CR>
 nnoremap coYs :set syntax=sh<CR>
-nnoremap coYt :set syntax=greptodo<CR>
 nnoremap coYv :set syntax=vim<CR>
 nnoremap coYy :set syntax=yaml<CR>
 
