@@ -190,7 +190,7 @@ cnoremap <C-d> <Del>
 
 " opening and saving {{{2
 "<leader>o opens ctrlp plugin
-nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
+" nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>T :tabnew<CR>:e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>s :w<CR>
 if has('mac')
@@ -358,6 +358,7 @@ let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+nnoremap <leader>N :NERDTreeCWD<CR>
 
 " Highlight currently open buffer in NERDTree
 " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
