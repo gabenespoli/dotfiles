@@ -187,7 +187,6 @@ cnoremap <C-b> <Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>b <S-Left>
 cnoremap <C-d> <Del>
-cnoremap <C-i> <C-d>
 
 " opening and saving {{{2
 "<leader>o opens ctrlp plugin
