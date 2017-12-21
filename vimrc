@@ -218,6 +218,9 @@ nnoremap <leader>W :echo WordCount()<CR>
 nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 
 " misc {{{2
+" change pwd to git root if in repo (vim-fugitive), else current file's dir
+nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>' : ':cd %:p:h<CR>'
+
 " copy/paste
 nnoremap Y y$
 " for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
