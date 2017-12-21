@@ -73,7 +73,6 @@ hi pandocReferenceURL   ctermfg=6                       cterm=none
 
 """ MATLAB
 hi link matlabCellComment CommentHeading
-hi link matlabFunction Title
 
 "" Plugin color customizations
 

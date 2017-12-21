@@ -97,6 +97,8 @@ function! s:AppendToFile(file, lines)
 endfunction
 
 " capitalL plugin settings
+let g:Lposition = 'left'
+let b:Lsyntax = 'todo'
 let b:Lpatterns = ['/!next/gj %', '/!waiting/gj %']
 let b:Lreformat = ['/[^|]*|[^|]*|\s/', '/[^|]*|[^|]*|\s/']
 

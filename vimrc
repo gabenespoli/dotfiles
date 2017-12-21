@@ -33,7 +33,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
 Plug 'jalvesaq/Nvim-R'
-Plug 'vim-scripts/MatlabFilesEdition'
+" Plug 'vim-scripts/MatlabFilesEdition'
 
 " syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
@@ -51,7 +51,7 @@ if has('nvim')
   function! DoRemote(arg)
     UpdateRemotePlugins
   endfunction
-  Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
+  " Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
   Plug 'Shougo/neco-vim'
   Plug 'roxma/nvim-completion-manager'
 " else
@@ -316,16 +316,26 @@ let g:ctrlp_prompt_mappings = {
 " ranger {{{3
 let g:ranger_map_keys = 0
 
+" vim-addon-qf-layout {{{3
+let g:vim_addon_qf_layout = {}
+let g:vim_addon_qf_layout.quickfix_formatters = [
+  \ 'vim_addon_qf_layout#DefaultFormatter',
+  \ 'vim_addon_qf_layout#FormatterNoFilename',
+  \ 'vim_addon_qf_layout#Reset',
+  \ 'NOP',
+  \ ]
+let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
+
 " nvim-completion-manager {{{3
 " let g:cm_complete_start_delay = 750
 let g:cm_auto_popup = 0
-nmap <Tab> <Plug>(cm_force_refresh)
-inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
+" nmap <Tab> <Plug>(cm_force_refresh)
+" inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
 " use enter to also insert a newline
 " inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
 " use tab to select the pop-up menu
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
 " vim-sidebar {{{3
@@ -366,26 +376,46 @@ nnoremap <leader>N :NERDTreeCWD<CR>
 " Highlight currently open buffer in NERDTree
 " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
 " added: make sure current buffer isn't a NERDTree buffer
-function! SyncTree()
+function! SyncNERDTree()
   if &modifiable 
     \ && exists("t:NERDTreeBufName") 
     \ && (bufwinnr(t:NERDTreeBufName) != -1)
     \ && strlen(expand('%')) > 0
     \ && !&diff
     \ && expand('%') !~ "NERD_tree_"
-    \ && expand('%') !~ "[[buffergator]]"
+    \ && expand('%') !~ "[[buffergator]"
     \ && expand('%') !~ "[Sidebar Left]"
     \ && expand('%') !~ "[Sidebar Right]"
     execute "NERDTreeFind"
     execute "wincmd p"
   endif
 endfunction
-autocmd BufEnter * call SyncTree()
+autocmd BufEnter * call SyncNERDTree()
 
 " buffergator {{{3
-let g:buffergator_viewport_split_policy = "B"
+let g:buffergator_viewport_split_policy = "L"
+let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_suppress_keymaps = 1
-" nnoremap <leader>B :let g:buffergator_viewport_split_policy="N"<CR>:BuffergatorOpen<CR>:let g:buffergator_viewport_split_policy="T"<CR>
+
+" Highlight currently open buffer in Buffergator
+function! SyncBuffergator()
+  let g:bufbufwinnum = bufwinnr("[[buffergator-buffers]]")
+  if &modifiable 
+    \ && g:bufbufwinnum != -1
+    \ && strlen(expand('%')) > 0
+    \ && !&diff
+    \ && expand('%') !~ "NERD_tree_"
+    \ && expand('%') !~ "[buffergator]"
+    " \ && expand('%') !~ "[Sidebar Left]"
+    " \ && expand('%') !~ "[Sidebar Right]"
+    let g:bufnum = bufnr('%')
+    execute g:bufbufwinnum . "wincmd w"
+    execute "normal r"
+    execute "search('^\\[\\s*" . g:bufnum . ")"
+    execute "wincmd p"
+  endif
+endfunction
+autocmd BufEnter * call SyncBuffergator()
 
 " tagbar{{{3
 let g:tagbar_left = 1
