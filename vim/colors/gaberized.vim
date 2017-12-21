@@ -76,6 +76,9 @@ hi link matlabFunction Title
 
 "" Plugin color customizations
 
+""" nvim-r
+hi link routError ErrorMsg
+
 """ critic markdown
 hi criticAdd            ctermfg=8       ctermbg=2       cterm=none
 hi criticDel            ctermfg=8       ctermbg=1       cterm=none
