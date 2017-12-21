@@ -633,7 +633,8 @@ au User CmSetup call cm#register_source({'name' : 'mutt',
           \ 'cm_refresh_patterns': ['^\w+:\s+'],
           \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
           \ })
-" Lilypond {{{2
+
+" Lilypond {{{3
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
