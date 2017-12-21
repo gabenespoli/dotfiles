@@ -17,6 +17,11 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'sjl/gundo.vim'
+Plug 'MarcWeber/vim-addon-qf-layout'
+Plug 'yssl/QFEnter'
+Plug 'tommcdo/vim-lister'
+Plug 'inside/vim-grep-operator'
+" Plug 'stefandtw/quickfix-reflector.vim'
 
 " git {{{2
 Plug 'tpope/vim-fugitive'
@@ -55,7 +60,6 @@ if has('nvim')
 endif
 
 " my plugins {{{2
-Plug '~/bin/vim/vim-capitalL'
 Plug '~/bin/vim/vim-sidebar'
 Plug '~/bin/vim/vim-capitalL'
 Plug '~/bin/vim/vim-greptodo'
@@ -428,6 +432,24 @@ let g:tagbar_type_pandoc = {
 " gundo {{{3
 let g:gundo_right = 0
 let g:gundo_preview_bottom = 1
+
+" vim-addon-qf-layout {{{3
+let g:vim_addon_qf_layout = {}
+let g:vim_addon_qf_layout.quickfix_formatters = [ 
+      \ 'vim_addon_qf_layout#DefaultFormatter',
+      \ 'vim_addon_qf_layout#FormatterNoFilename',
+      \ 'vim_addon_qf_layout#Reset',
+      \ 'NOP'
+      \ ]
+
+" vim-grep-operator {{{3
+nmap <leader>f <Plug>GrepOperatorOnCurrentDirectory
+vmap <leader>f <Plug>GrepOperatorOnCurrentDirectory
+nmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
+vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
+
+" quickfix-reflector.vim {{{3
+" let g:qf_showtextonly = 1
 
 " git {{{2
 " fugitive {{{3
