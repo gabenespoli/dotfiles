@@ -34,7 +34,8 @@ hi MatchParen           ctermfg=8       ctermbg=10      cterm=none
 hi NonText              ctermfg=0       ctermbg=8       cterm=none
 hi SpecialKey           ctermfg=10      ctermbg=0       cterm=none
 
-hi Search               ctermfg=15      ctermbg=1       cterm=none
+" hi Search               ctermfg=15      ctermbg=1       cterm=none
+hi Search                               ctermbg=0       cterm=none
 hi IncSearch            ctermfg=15      ctermbg=1       cterm=none
 hi Visual               ctermfg=12      ctermbg=8       cterm=reverse
 
