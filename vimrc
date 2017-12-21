@@ -74,9 +74,9 @@ set background=dark
 set updatetime=750
 set undofile
 set swapfile
-set undodir=~/.vim/tmp/undo
-set backupdir=~/.vim/tmp/backup/
-set directory=~/.vim/tmp/swap/
+set undodir=~/bin/vim/tmp/undo/
+set backupdir=~/bin/vim/tmp/backup/
+set directory=~/bin/vim/tmp/swap/
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
 endif
