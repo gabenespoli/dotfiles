@@ -278,8 +278,10 @@ nnoremap coYk :set syntax=markdown<CR>
 nnoremap coYm :set syntax=matlab<CR>
 nnoremap coYo :set syntax=octave<CR>
 nnoremap coYp :set syntax=python<CR>
+nnoremap coYq :set syntax=qf<CR>
 nnoremap coYr :set syntax=r<CR>
 nnoremap coYs :set syntax=sh<CR>
+nnoremap coYt :set syntax=greptodo<CR>
 nnoremap coYv :set syntax=vim<CR>
 nnoremap coYy :set syntax=yaml<CR>
 
