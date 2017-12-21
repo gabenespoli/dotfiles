@@ -273,8 +273,14 @@ nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
 
 " syntax
-nnoremap coYm :set syntax=markdown<CR>
-nnoremap coYp :set syntax=pandoc<CR>
+nnoremap coYd :set syntax=pandoc<CR>
+nnoremap coYk :set syntax=markdown<CR>
+nnoremap coYm :set syntax=matlab<CR>
+nnoremap coYo :set syntax=octave<CR>
+nnoremap coYp :set syntax=python<CR>
+nnoremap coYr :set syntax=r<CR>
+nnoremap coYs :set syntax=sh<CR>
+nnoremap coYv :set syntax=vim<CR>
 nnoremap coYy :set syntax=yaml<CR>
 
 " tpope/vim-commentary {{{3
