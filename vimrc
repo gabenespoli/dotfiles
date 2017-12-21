@@ -57,6 +57,8 @@ endif
 " my plugins {{{2
 Plug '~/bin/vim/vim-capitalL'
 Plug '~/bin/vim/vim-sidebar'
+Plug '~/bin/vim/vim-capitalL'
+Plug '~/bin/vim/vim-greptodo'
 call plug#end()
 
 " General {{{1
@@ -639,6 +641,28 @@ filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
+
+" GrepTodo {{{2
+nnoremap <leader>z :call GrepTodo_start()<CR>
+let g:GrepTodo_qfFormat = ''
+" can add multiple patterns per project, space-separated
+let g:GrepTodo_folders = {
+      \ 'en':         expand("$HOME/projects/en"),
+      \ 'phzlab':     expand("$HOME/bin/matlab/phzlab"),
+      \ 'resampling': expand("$HOME/projects/practicum/resampling"),
+      \ 'ec':         expand("$HOME/projects/ec"),
+      \ 'gv':         expand("$HOME/projects/gv"),
+      \ 'greptodo':   expand("$HOME/bin/vim/vim-greptodo"),
+      \ }
+let g:GrepTodo_files = {
+      \ 'en':         'en_todo.txt',
+      \ 'phzlab':     'phzlab_todo.txt',
+      \ 'resampling': 'rs_todo.txt',
+      \ 'ec':         'ec_todo.txt',
+      \ 'gv':         'gv_todo.txt',
+      \ }
+let g:GrepTodo_todoPatterns = {
+      \ }
 
 " Functions {{{1
 " Toggle Tabline {{{2
