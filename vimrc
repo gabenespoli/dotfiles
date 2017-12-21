@@ -96,7 +96,7 @@ set visualbell                  " no sound
 set nolist                      " invisibles
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set wildmenu                    " visual autocomplete for command menu
-set wildmode=longest,list,full
+set wildmode=list:longest
 set backspace=indent,eol,start  " enable backspacing text that was inserted previously
 set whichwrap+=h,l              " let h and l move across lines
 
