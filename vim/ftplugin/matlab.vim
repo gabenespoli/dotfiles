@@ -23,6 +23,8 @@ endfunction
 nnoremap <buffer> <localleader>b :call MatlabSetBreakpoint()<CR>
 nnoremap <buffer> <localleader>c :call MatlabClearBreakpoint()<CR>
 
+nnoremap <buffer> <localleader>o :execute 'SlimeSend1 dbstep'<CR>
+nnoremap <buffer> <localleader>i :execute 'SlimeSend1 dbstep in'<CR>
 
 " for vim-matlab plugin {{{1
 " nnoremap <buffer> <localleader>tt :MatlabLaunchServer<CR>
