@@ -128,6 +128,10 @@ set incsearch                   " highlight search results as you type
 set nohlsearch                  " don't highlight search results by default
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
+if executable("ag")
+    " set grepprg=ag\ --nonumbers\ --nofilename
+    " set grepformat^=%f:%l:%c:%m
+endif
 
 " Folding {{{2
 " TODO make this foldheading highlighting work
@@ -695,7 +699,6 @@ filetype on
 
 " GrepTodo {{{2
 nnoremap <leader>z :call GrepTodo_start()<CR>
-let g:GrepTodo_qfFormat = ''
 " can add multiple patterns per project, space-separated
 let g:GrepTodo_folders = {
       \ 'en':         expand("$HOME/projects/en"),
@@ -706,13 +709,12 @@ let g:GrepTodo_folders = {
       \ 'greptodo':   expand("$HOME/bin/vim/vim-greptodo"),
       \ }
 let g:GrepTodo_files = {
-      \ 'en':         'en_todo.txt',
-      \ 'phzlab':     'phzlab_todo.txt',
-      \ 'resampling': 'rs_todo.txt',
-      \ 'ec':         'ec_todo.txt',
-      \ 'gv':         'gv_todo.txt',
-      \ }
-let g:GrepTodo_todoPatterns = {
+      \ 'en':         expand("$HOME/projects/en/todo.txt"),
+      \ 'phzlab':     expand("$HOME/bin/matlab/phzlab/todo.txt"),
+      \ 'resampling': expand("$HOME/projects/practicum/resampling/todo.txt"),
+      \ 'ec':         expand("$HOME/projects/ec/todo.txt"),
+      \ 'gv':         expand("$HOME/projects/gv/todo.txt"),
+      \ 'greptodo':   "",
       \ }
 
 " Functions {{{1
