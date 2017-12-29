@@ -99,7 +99,7 @@ alias gr="git reset"
 alias glog="git log --graph --decorate --oneline"
 
 ### todo, notes, and calendar {{{2
-alias todo="$EDITOR -S $HOME/todo/open.vim"
+alias todo="$EDITOR -c 'call GrepTodo_start()'"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias ts="trello show-cards -b scrum -l sprint"
 alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
