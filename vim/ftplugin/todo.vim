@@ -43,6 +43,8 @@ nnoremap <buffer> <localleader>0 :s/\ pts:\d*//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
+nmap } :NERDTreeFind<CR>jo
+nmap { :NERDTreeFind<CR>ko
 
 " folding {{{1
 set foldmethod=expr
