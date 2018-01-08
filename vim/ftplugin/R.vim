@@ -6,6 +6,9 @@ nmap <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':exec
 
 set equalalways
 
+" keybindings {{{1
+inoremap {<CR> {<CR>}<Esc>O
+
 " comment headings and folding (like Rstudio) {{{1
 " highlight
 au VimEnter,BufEnter <buffer> syn match Title '^#.*-\{4,\}$'
