@@ -7,14 +7,14 @@
 execute 'sign define MatlabBreakpoint text=$ linehl= texthl=ErrorMsg'
 
 function! MatlabSetBreakpoint()
-  let l:fname = expand("%:p")
+  let l:fname = expand("%:t")
   let l:line = line(".")
   execute 'sign place ' . l:line . ' line='.l:line . ' name=MatlabBreakpoint ' . ' file='.l:fname
   execute 'SlimeSend1 dbstop in ' . l:fname . ' at ' . l:line
 endfunction
 
 function! MatlabClearBreakpoint()
-  let l:fname = expand("%:p")
+  let l:fname = expand("%:t")
   let l:line = line(".")
   execute 'sign unplace ' . l:line . ' file='.l:fname
   execute 'SlimeSend1 dbclear in ' . l:fname . ' at ' . l:line
