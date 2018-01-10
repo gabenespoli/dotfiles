@@ -9,6 +9,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-scripts/matchit.zip'
+Plug 'mhinz/vim-startify'
 
 " sidebar-type plugins {{{2
 Plug 'scrooloose/NERDTree'
@@ -319,6 +320,16 @@ let g:ctrlp_prompt_mappings = {
 
 " ranger {{{3
 let g:ranger_map_keys = 0
+
+" startify {{{3
+let g:startify_session_dir = '~/bin/vim/session'
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_padding_left = &columns/3
+autocmd User Startified nmap <buffer> o <plug>(startify-open-buffers)
+autocmd User Startified nmap <buffer> <C-j> <plug>(startify-open-buffers)
+let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
+let g:startify_custom_header = ['']
 
 " vim-addon-qf-layout {{{3
 let g:vim_addon_qf_layout = {}
