@@ -493,13 +493,13 @@ vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
 " fugitive {{{3
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gA :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gwc :Gwrite<CR>:Gcommit<CR>
 
 " gitgutter {{{3
+nmap <leader>ga <Plug>GitGutterStageHunk
+nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nmap <leader>ghd <Plug>GitGutterPreviewHunk
-nmap <leader>gha <Plug>GitGutterStageHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
 nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
