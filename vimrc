@@ -61,7 +61,6 @@ endif
 
 " my plugins {{{2
 Plug '~/bin/vim/vim-sidebar'
-Plug '~/bin/vim/vim-capitalL'
 Plug '~/bin/vim/vim-greptodo'
 call plug#end()
 
@@ -360,16 +359,11 @@ let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarEmptyPrefix = '<leader>e'
 let g:SidebarEmptyStickyKey = 'e'
 let g:SidebarToggleKeys = [
-  \ ['capitalL',      'l'],
   \ ['nerdtree',      'n'],
   \ ['buffergator',   'b'],
   \ ['tagbar',        't'],
   \ ['gundo',         'u'],
   \ ]
-
-" capitalL {{{3
-let g:Lposition = 'right'
-nnoremap <leader>L :Lcycle<CR>
 
 " NERDTree {{{3
 let g:NERDTreeHijackNetrw = 1
@@ -703,6 +697,38 @@ let g:GrepTodo_files = {
       \ }
 
 " Functions {{{1
+" toggle qf and loclist {{{2
+" http://vim.wikia.com/wiki/Toggle_to_open_or_close_the_quickfix_window
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nnoremap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
 " Toggle Tabline {{{2
 function! ToggleTabline()
   " 0 = never, 1 = if > 1 tab, 2 = always
