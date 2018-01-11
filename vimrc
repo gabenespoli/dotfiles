@@ -605,9 +605,6 @@ let g:matlab_auto_mappings = 0 "automatic mappings disabled
 " w0rp/ale {{{3
 nnoremap coy :ALEToggle<CR>
 let g:ale_sign_column_always = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_linter_aliases = {'octave': 'matlab',}
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
 function! LinterStatus(type) abort
