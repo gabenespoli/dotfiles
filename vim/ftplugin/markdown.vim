@@ -22,6 +22,35 @@ nnoremap <buffer> <localleader>4 :s/^#*\ */####\ /ge<CR>
 nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
+" criticmarkup and cite.py {{{2
+" insert tags (comments and highlights)
+nnoremap <buffer> <localleader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
+nnoremap <buffer> <localleader>ct i{>>__TODO__: <<}<Esc>hhi
+nnoremap <buffer> <localleader>chi i{==<Esc>
+nnoremap <buffer> <localleader>cha a==}<Esc>
+nnoremap <buffer> <localleader>chh I{==<Esc>A==}<Esc>
+nnoremap <buffer> <localleader>chs )i==}<Esc>((i{==<Esc>
+nnoremap <buffer> <localleader>chw ea==}<Esc>bbi{==<Esc>
+" nnoremap <buffer> <localleader>cdh :call search('{==','cb',line('.'))<CR>d3l:call search('==}','c',line('.'))<CR>d3l
+
+" remove tags (highlights, whole tags, accept/reject)
+nnoremap <buffer> <localleader>chd F{xxxf}XXx
+nnoremap <buffer> <localleader>cd F{df}
+nnoremap <buffer> <localleader>ca :Critic accept<CR>
+nnoremap <buffer> <localleader>cr :Critic reject<CR>
+
+" search and highlight
+nnoremap <buffer> <localleader>cf /{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <buffer> <localleader>cF ?{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <buffer> <localleader>cH :call criticmarkup#InjectHighlighting()<CR>
+
+" cite.py (include here because of similar keybindings)
+nnoremap <buffer> <localleader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
+nnoremap <buffer> <localleader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
+nnoremap <buffer> <localleader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
+nnoremap <buffer> <localleader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
+nnoremap <buffer> <localleader>cp :python $HOME/bin/cite/cite.py 
+
 " folding {{{1
 set foldmethod=expr
 set foldexpr=GetMarkdownFolds(v:lnum)

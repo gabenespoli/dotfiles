@@ -641,34 +641,6 @@ let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 " CriticMarkup Plugin {{{3
 let g:criticmarkup#disable#highlighting = 1
 
-" insert tags (comments and highlights)
-nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
-nnoremap <leader>ct i{>>__TODO__: <<}<Esc>hhi
-nnoremap <leader>chi i{==<Esc>
-nnoremap <leader>cha a==}<Esc>
-nnoremap <leader>chh I{==<Esc>A==}<Esc>
-nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
-nnoremap <leader>chw ea==}<Esc>bbi{==<Esc>
-" nnoremap <leader>cdh :call search('{==','cb',line('.'))<CR>d3l:call search('==}','c',line('.'))<CR>d3l
-
-" remove tags (highlights, whole tags, accept/reject)
-nnoremap <leader>chd F{xxxf}XXx
-nnoremap <leader>cd F{df}
-nnoremap <leader>ca :Critic accept<CR>
-nnoremap <leader>cr :Critic reject<CR>
-
-" search and highlight
-nnoremap <leader>cf /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cF ?{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
-
-" cite.py (include here because of similar keybindings)
-nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
-nnoremap <leader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
-nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
-nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
-nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
-
 " DiffChar {{{3
 map  <localleader>D <Plug>ToggleDiffCharAllLines
 map  <localleader>d <Plug>ToggleDiffCharCurrentLine
