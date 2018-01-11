@@ -617,6 +617,8 @@ function! LinterStatus(type) abort
     return ''
   endif
 endfunction
+nmap [v <Plug>(ale_previous_wrap)
+nmap ]v <Plug>(ale_next_wrap)
 
 " pandoc {{{3
 " vim-pandoc
