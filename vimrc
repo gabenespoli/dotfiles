@@ -604,6 +604,7 @@ let g:matlab_auto_mappings = 0 "automatic mappings disabled
 " syntax {{{2
 " w0rp/ale {{{3
 nnoremap coy :ALEToggle<CR>
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
