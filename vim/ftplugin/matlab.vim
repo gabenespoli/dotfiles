@@ -7,17 +7,20 @@
 execute 'sign define MatlabBreakpoint text=$> linehl= texthl=ErrorMsg'
 
 function! MatlabSetBreakpoint()
+  let l:bufnr = bufnr("%")
   let l:fname = expand("%:t")
   let l:line = line(".")
-  execute 'sign place ' . l:line . ' line='.l:line . ' name=MatlabBreakpoint ' . ' file='.l:fname
+  execute 'sign place ' . l:line . ' line='.l:line . ' name=MatlabBreakpoint ' . ' buffer=' . l:bufnr
   execute 'SlimeSend1 dbstop in ' . l:fname . ' at ' . l:line
 endfunction
 
 function! MatlabClearBreakpoint()
+  " clear all breakpoints in file
+  " this is easier than dealing with line numbers changing during editing
+  let l:bufnr = bufnr("%")
   let l:fname = expand("%:t")
-  let l:line = line(".")
-  execute 'sign unplace'
-  execute 'SlimeSend1 dbclear in ' . l:fname . ' at ' . l:line
+  execute 'sign unplace * buffer=' . l:bufnr
+  execute 'SlimeSend1 dbclear in ' . l:fname
 endfunction
 
 nnoremap <buffer> <localleader>b :call MatlabSetBreakpoint()<CR>
