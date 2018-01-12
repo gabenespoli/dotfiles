@@ -500,7 +500,6 @@ nmap <leader>ga <Plug>GitGutterStageHunk
 nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nmap <leader>ghd <Plug>GitGutterPreviewHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
-nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
