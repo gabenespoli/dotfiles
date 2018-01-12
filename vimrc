@@ -622,10 +622,11 @@ nmap ]v <Plug>(ale_next_wrap)
 " pandoc {{{3
 " vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
-let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
+" let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
+let g:pandoc#modules#enabled = ["command", "completion", "keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
 let g:pandoc#biblio#sources = "g"
-let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
+" let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 
@@ -677,7 +678,7 @@ set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
 
 " GrepTodo {{{2
-nnoremap <leader>z :call GrepTodo_start()<CR>
+" nnoremap <leader>z :call GrepTodo_start()<CR>
 " can add multiple patterns per project, space-separated
 let g:GrepTodo_folders = {
       \ 'en':         expand("$HOME/projects/en"),
@@ -695,6 +696,9 @@ let g:GrepTodo_files = {
       \ 'gv':         expand("$HOME/projects/gv/todo.txt"),
       \ 'greptodo':   "",
       \ }
+
+nnoremap <leader>z :silent grep! -R !next ~/todo/*<CR>:copen<CR>:wincmd o<CR>:NERDTree ~/todo<CR>:wincmd p<CR>
+autocmd FileType qf nnoremap <buffer> <C-j> <enter>:wincmd o<CR>:NERDTreeFind<CR>:wincmd p<CR>
 
 " Functions {{{1
 " toggle qf and loclist {{{2
