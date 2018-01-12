@@ -6,3 +6,4 @@ local({
   options(repos = r)
 })
 library(colorout)
+library(lintr)

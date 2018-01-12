@@ -61,7 +61,6 @@ endif
 
 " my plugins {{{2
 Plug '~/bin/vim/vim-sidebar'
-Plug '~/bin/vim/vim-capitalL'
 Plug '~/bin/vim/vim-greptodo'
 call plug#end()
 
@@ -360,16 +359,11 @@ let g:SidebarMovePrefix = '<leader>m'
 let g:SidebarEmptyPrefix = '<leader>e'
 let g:SidebarEmptyStickyKey = 'e'
 let g:SidebarToggleKeys = [
-  \ ['capitalL',      'l'],
   \ ['nerdtree',      'n'],
   \ ['buffergator',   'b'],
   \ ['tagbar',        't'],
   \ ['gundo',         'u'],
   \ ]
-
-" capitalL {{{3
-let g:Lposition = 'right'
-nnoremap <leader>L :Lcycle<CR>
 
 " NERDTree {{{3
 let g:NERDTreeHijackNetrw = 1
@@ -409,7 +403,6 @@ autocmd BufEnter * call SyncNERDTree()
 
 " buffergator {{{3
 let g:buffergator_viewport_split_policy = "L"
-let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_suppress_keymaps = 1
 
 " Highlight currently open buffer in Buffergator
@@ -499,13 +492,13 @@ vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
 " fugitive {{{3
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gA :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gwc :Gwrite<CR>:Gcommit<CR>
 
 " gitgutter {{{3
+nmap <leader>ga <Plug>GitGutterStageHunk
+nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nmap <leader>ghd <Plug>GitGutterPreviewHunk
-nmap <leader>gha <Plug>GitGutterStageHunk
 nmap <leader>ghu <Plug>GitGutterUndoHunk
 nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nnoremap cog :GitGutterSignsToggle<CR>
@@ -604,12 +597,14 @@ let g:matlab_auto_mappings = 0 "automatic mappings disabled
 " syntax {{{2
 " w0rp/ale {{{3
 nnoremap coy :ALEToggle<CR>
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
 let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_linter_aliases = {'octave': 'matlab',}
+let g:ale_set_quickfix = 0
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
+let g:ale_linter_aliases = {'octave': 'matlab'}
+let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
 function! LinterStatus(type) abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -622,6 +617,8 @@ function! LinterStatus(type) abort
     return ''
   endif
 endfunction
+nmap [v <Plug>(ale_previous_wrap)
+nmap ]v <Plug>(ale_next_wrap)
 
 " pandoc {{{3
 " vim-pandoc
@@ -641,34 +638,6 @@ let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
 " CriticMarkup Plugin {{{3
 let g:criticmarkup#disable#highlighting = 1
-
-" insert tags (comments and highlights)
-nnoremap <leader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
-nnoremap <leader>ct i{>>__TODO__: <<}<Esc>hhi
-nnoremap <leader>chi i{==<Esc>
-nnoremap <leader>cha a==}<Esc>
-nnoremap <leader>chh I{==<Esc>A==}<Esc>
-nnoremap <leader>chs )i==}<Esc>((i{==<Esc>
-nnoremap <leader>chw ea==}<Esc>bbi{==<Esc>
-" nnoremap <leader>cdh :call search('{==','cb',line('.'))<CR>d3l:call search('==}','c',line('.'))<CR>d3l
-
-" remove tags (highlights, whole tags, accept/reject)
-nnoremap <leader>chd F{xxxf}XXx
-nnoremap <leader>cd F{df}
-nnoremap <leader>ca :Critic accept<CR>
-nnoremap <leader>cr :Critic reject<CR>
-
-" search and highlight
-nnoremap <leader>cf /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cF ?{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <leader>cH :call criticmarkup#InjectHighlighting()<CR>
-
-" cite.py (include here because of similar keybindings)
-nnoremap <leader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
-nnoremap <leader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
-nnoremap <leader>cn :vs ~/papernotes/<C-r><C-w>.md<CR>
-nnoremap <leader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
-nnoremap <leader>cp :python $HOME/bin/cite/cite.py 
 
 " DiffChar {{{3
 map  <localleader>D <Plug>ToggleDiffCharAllLines
@@ -733,6 +702,38 @@ nnoremap <leader>z :silent grep! -R !next ~/todo/*<CR>:copen<CR>:wincmd o<CR>:NE
 autocmd FileType qf nnoremap <buffer> <C-j> <enter>:wincmd o<CR>:NERDTreeFind<CR>:wincmd p<CR>
 
 " Functions {{{1
+" toggle qf and loclist {{{2
+" http://vim.wikia.com/wiki/Toggle_to_open_or_close_the_quickfix_window
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nnoremap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
 " Toggle Tabline {{{2
 function! ToggleTabline()
   " 0 = never, 1 = if > 1 tab, 2 = always
