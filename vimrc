@@ -788,10 +788,15 @@ endfunction
 
 " Toggle Color Column {{{2
 function! ToggleColorColumn()
-  if &colorcolumn == 80
+  if &filetype == "matlab" || &filetype == "octave"
+    let l:col = 75
+  else
+    let l:col = 80
+  endif
+  if &colorcolumn == l:col
     execute "set colorcolumn=\"\""
   else
-    execute "set colorcolumn=80"
+    execute "set colorcolumn=".l:col
   endif
 endfunction
 
