@@ -16,7 +16,7 @@ endfunction
 function! MatlabClearBreakpoint()
   let l:fname = expand("%:t")
   let l:line = line(".")
-  execute 'sign unplace ' . l:line . ' file='.l:fname
+  execute 'sign unplace'
   execute 'SlimeSend1 dbclear in ' . l:fname . ' at ' . l:line
 endfunction
 
