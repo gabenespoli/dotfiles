@@ -4,7 +4,7 @@
 " - have variable to define the program to send the command to the repl
 
 " define the breakpoint sign
-execute 'sign define MatlabBreakpoint text=$ linehl= texthl=ErrorMsg'
+execute 'sign define MatlabBreakpoint text=$> linehl= texthl=ErrorMsg'
 
 function! MatlabSetBreakpoint()
   let l:fname = expand("%:t")
