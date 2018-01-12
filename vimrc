@@ -626,10 +626,11 @@ endfunction
 " pandoc {{{3
 " vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
-let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
+" let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
+let g:pandoc#modules#enabled = ["command", "completion", "keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections"]
 let g:pandoc#biblio#sources = "g"
-let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
+" let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 
