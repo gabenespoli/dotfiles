@@ -49,8 +49,11 @@ hi StatusMod            ctermfg=3       ctermbg=0       cterm=none
 hi StatusFlag           ctermfg=1       ctermbg=0       cterm=none
 hi link FoldHeading     Title
 
-"" Syntax-specific
-""" Mail compose colors
+" Syntax-specific {{{1
+" netrw {{{2
+hi netrwExe             ctermfg=5
+
+" Mail compose colors {{{2
 hi mailHeader           ctermfg=10
 hi mailHeaderKey        ctermfg=4
 hi mailHeaderEmail      ctermfg=6
