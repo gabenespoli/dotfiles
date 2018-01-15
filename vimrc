@@ -155,8 +155,13 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
-cnoremap <Esc>f <S-Right>
-cnoremap <Esc>b <S-Left>
+if has('nvim')
+  cnoremap <M-f> <S-Right>
+  cnoremap <M-b> <S-Left>
+else
+  cnoremap <Esc>f <S-Right>
+  cnoremap <Esc>b <S-Left>
+endif
 cnoremap <C-d> <Del>
 
 " opening and saving {{{2
