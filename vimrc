@@ -1,40 +1,34 @@
 " .vimrc file for gabenespoli@gmail.com
-" vim-plug plugin manager {{{1
+" Plugin Manager (vim-plug) {{{1
 call plug#begin('~/.vim/plugged')
+
 " vim {{{2
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'gcmt/taboo.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'vim-scripts/matchit.zip'
-Plug 'mhinz/vim-startify'
-
-" sidebar-type plugins {{{2
-Plug 'scrooloose/NERDTree'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'majutsushi/tagbar'
-Plug 'jszakmeister/markdown2ctags'
-Plug 'sjl/gundo.vim'
-Plug 'MarcWeber/vim-addon-qf-layout'
-Plug 'yssl/QFEnter'
-Plug 'tommcdo/vim-lister'
-Plug 'inside/vim-grep-operator'
-" Plug 'stefandtw/quickfix-reflector.vim'
-
-" git {{{2
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-scripts/matchit.zip'
+
+" file plugins {{{2
+Plug 'jeetsukumaran/vim-buffergator'
+" Plug 'mhinz/vim-startify'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'scrooloose/NERDTree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" sidebar-type plugins {{{2
+Plug 'majutsushi/tagbar'
+Plug 'jszakmeister/markdown2ctags'
+Plug 'MarcWeber/vim-addon-qf-layout'
 
 " external programs {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Plug 'ivanov/vim-ipython'
-Plug 'jalvesaq/Nvim-R'
-" Plug 'vim-scripts/MatlabFilesEdition'
+" Plug 'jalvesaq/Nvim-R'
 
 " syntax checker & syntaxes {{{2
 Plug 'w0rp/ale'
@@ -48,23 +42,19 @@ Plug 'jvirtanen/vim-octave'
 Plug 'guanqun/vim-mutt-aliases-plugin'
 
 " nvim-only plugins {{{2
-if has('nvim')
-  function! DoRemote(arg)
-    UpdateRemotePlugins
-  endfunction
-  " Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
-  Plug 'Shougo/neco-vim'
-  Plug 'roxma/nvim-completion-manager'
-" else
-  " Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" if has('nvim')
+"   function! DoRemote(arg)
+"     UpdateRemotePlugins
+"   endfunction
+"   Plug 'roxma/nvim-completion-manager'
+" endif
 
 " my plugins {{{2
 Plug '~/bin/vim/vim-sidebar'
-Plug '~/bin/vim/vim-greptodo'
+" Plug '~/bin/vim/vim-greptodo'
 call plug#end()
 
-" General {{{1
+" General Settings {{{1
 " Colorscheme {{{2
 if has("gui_running")
   colorscheme solarizedSumach
@@ -95,23 +85,16 @@ if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
 endif
 
-" UI {{{2
+" Editing {{{2
 set number relativenumber
-set visualbell                  " no sound
-set nolist                      " invisibles
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set wildmenu                    " visual autocomplete for command menu
-set wildmode=list:longest
-set backspace=indent,eol,start  " enable backspacing text that was inserted previously
-set whichwrap+=h,l              " let h and l move across lines
-
+set equalalways splitright splitbelow
 set laststatus=2                " 0 = no status bar, 2 = show status bar
 set showtabline=1               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
-set tabpagemax=8
-set showcmd                     " show command in bottom bar
+set nolist listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set backspace=indent,eol,start
+set whichwrap+=h,l              " let h and l move across lines
+set visualbell
 set hidden
-set splitright splitbelow
-set equalalways
 
 " Spacing {{{2
 set linebreak                   " stop soft wrapping in the middle of words  
@@ -122,20 +105,14 @@ set shiftwidth=2
 set expandtab                   " tabs are spaces
 
 " Searching {{{2
+set wildmenu wildignorecase wildmode=list:longest
 set ignorecase smartcase
+set incsearch nohlsearch
 set showmatch                   " hi matching [{()}]
-set incsearch                   " highlight search results as you type
-set nohlsearch                  " don't highlight search results by default
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
-if executable("ag")
-    " set grepprg=ag\ --nonumbers\ --nofilename
-    " set grepformat^=%f:%l:%c:%m
-endif
 
 " Folding {{{2
-" TODO make this foldheading highlighting work
-" autocmd BufReadPost * :syntax match FoldHeading '^.*{'.'{{.*$'
 set fillchars="vert:' ',fold:-"
 set foldminlines=0              " 0 means we can close a 1-line fold
 set foldcolumn=0
@@ -149,7 +126,6 @@ function! GetFoldText()
     set foldtext=getline(v:foldstart)
   endif
 endfunction
-
 function! FoldTextMarker()
   let line = getline(v:foldstart)
   let l:foldlevel = split(line, '{'.'{{')
@@ -188,7 +164,12 @@ set notimeout
 set ttimeout
 inoremap jk <Esc>
 
-" emacs-style command line (cmap) {{{2
+" emacs-style movement {{{2
+inoremap <C-d> <Del>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
@@ -199,8 +180,6 @@ cnoremap <C-d> <Del>
 
 " opening and saving {{{2
 "<leader>o opens ctrlp plugin
-" nnoremap <leader>N :e <C-r>=expand('%:p:h')<CR><CR>
-nnoremap <leader>T :tabnew<CR>:e <C-r>=expand('%:p:h')<CR><CR>
 nnoremap <leader>s :w<CR>
 if has('mac')
   nnoremap gO :!open <cfile><CR>
@@ -240,50 +219,14 @@ nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 "vimdiff
 nnoremap du :diffupdate<CR>
 
-" emacs movement
-inoremap <C-d> <Del>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-
 " Spell checking
 nnoremap <localleader>s 1z=
 
-" resizing windows based on terminal size {{{2
-" for some reason nvim doesn't know the correct &columns until after startup
-" so, we have to use autocmds for width and height
-let g:centerwidth = 100
-function! ResizeCenterWidth()
-  execute 'vertical resize '.100
-endfunction
-function! ResizeSideWidth()
-  execute 'vertical resize '.&columns/4
-endfunction
-function! ResizeSideHeight()
-  execute 'resize '.&lines/4
-endfunction
-nnoremap <leader>rc :call ResizeCenterWidth()<CR>
-nnoremap <leader>rw :call ResizeSideWidth()<CR>
-nnoremap <leader>rh :call ResizeSideHeight()<CR>
-
-" Plugin settings {{{1
-" Vim General {{{2
+" Plugin Settings {{{1
 " tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap cop :call ToggleColorColumn()<CR>
-
-" folding
-nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=1<CR>'
-nnoremap coFl :set foldmethod=manual<CR>
-nnoremap coFi :set foldmethod=indent<CR>
-nnoremap coFe :set foldmethod=expr<CR>
-nnoremap coFm :set foldmethod=marker<CR>
-nnoremap coFs :set foldmethod=syntax<CR>
-nnoremap coFd :set foldmethod=diff<CR>
-
-" syntax
 nnoremap coYd :set syntax=pandoc<CR>
 nnoremap coYk :set syntax=markdown<CR>
 nnoremap coYm :set syntax=matlab<CR>
@@ -294,138 +237,113 @@ nnoremap coYr :set syntax=r<CR>
 nnoremap coYs :set syntax=sh<CR>
 nnoremap coYv :set syntax=vim<CR>
 nnoremap coYy :set syntax=yaml<CR>
+nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=1<CR>'
+nnoremap coFl :set foldmethod=manual<CR>
+nnoremap coFi :set foldmethod=indent<CR>
+nnoremap coFe :set foldmethod=expr<CR>
+nnoremap coFm :set foldmethod=marker<CR>
+nnoremap coFs :set foldmethod=syntax<CR>
+nnoremap coFd :set foldmethod=diff<CR>
 
 " tpope/vim-commentary {{{3
 autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg setlocal commentstring=#\ %s
 
-" gcmt/taboo.vim {{{3
-let g:taboo_tabline = 0
+" tpope/vim-fugitive {{{3
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gA :Gwrite<CR>
+nnoremap <leader>gc :Gcommit<CR>
 
-" ctrlp {{{3
-let g:ctrlp_map = '<leader>o'
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window = 'bottom'
-let g:ctrlp_prompt_mappings = { 
-  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-  \ 'PrtHistory(-1)':         [],
-  \ 'PrtHistory(1)':          [],
-  \ 'AcceptSelection("t")':   ['<C-t>'],
-  \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-  \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-  \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-  \ }
+" airblade/gitgutter {{{3
+nmap <leader>ga <Plug>GitGutterStageHunk
+nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
+nmap <leader>ghd <Plug>GitGutterPreviewHunk
+nmap <leader>ghu <Plug>GitGutterUndoHunk
+nnoremap cog :GitGutterSignsToggle<CR>
+let g:gitgutter_eager = 0
+let g:gitgutter_override_sign_column_highlight = 0
 
-" ranger {{{3
-let g:ranger_map_keys = 0
-
-" startify {{{3
-let g:startify_session_dir = '~/bin/vim/session'
-let g:startify_change_to_dir = 1
-let g:startify_change_to_vcs_root = 1
-let g:startify_padding_left = &columns/3
-autocmd User Startified nmap <buffer> o <plug>(startify-open-buffers)
-autocmd User Startified nmap <buffer> <C-j> <plug>(startify-open-buffers)
-let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
-let g:startify_custom_header = ['']
-
-" vim-addon-qf-layout {{{3
-let g:vim_addon_qf_layout = {}
-let g:vim_addon_qf_layout.quickfix_formatters = [
-  \ 'vim_addon_qf_layout#DefaultFormatter',
-  \ 'vim_addon_qf_layout#FormatterNoFilename',
-  \ 'vim_addon_qf_layout#Reset',
-  \ 'NOP',
-  \ ]
-let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
-
-" nvim-completion-manager {{{3
-" let g:cm_complete_start_delay = 750
-let g:cm_auto_popup = 0
-" nmap <Tab> <Plug>(cm_force_refresh)
-" inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
-" use enter to also insert a newline
-" inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
-" use tab to select the pop-up menu
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Sidebar Plugins (files, buffers, tags, undo, lists) {{{2
-" vim-sidebar {{{3
-let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
-let g:SidebarTogglePrefix = '<leader>'
-let g:SidebarMovePrefix = '<leader>m'
-let g:SidebarEmptyPrefix = '<leader>e'
-let g:SidebarEmptyStickyKey = 'e'
-let g:SidebarToggleKeys = [
-  \ ['nerdtree',      'n'],
-  \ ['buffergator',   'b'],
-  \ ['tagbar',        't'],
-  \ ['gundo',         'u'],
-  \ ]
-
-" NERDTree {{{3
-let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeQuitOnOpen = 1
-" let g:NERDTreeDirArrowExpandable='+'
-" let g:NERDTreeDirArrowCollapsible='-'
-let g:NERDTreeShowLineNumbers = 1
-let g:NERDTreeWinPos = 'left'
-let g:NERDTreeMapToggleHidden = 'zh'
-let g:NERDTreeMapOpenSplit = 's'
-let g:NERDTreeMapOpenVSplit = 'v'
-let g:NERDTreeMapPreview = 'i'
-let g:NERDTreeMapPreviewSplit = 'S'
-let g:NERDTreeMapPreviewVSplit = 'V'
-let g:NERDTreeMapJumpNextSibling = '<C-n>'
-let g:NERDTreeMapJumpPrevSibling = '<C-p>'
-nnoremap <leader>N :NERDTreeCWD<CR>
-
-" Highlight currently open buffer in NERDTree
-" modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
-" added: make sure current buffer isn't a NERDTree buffer
-function! SyncNERDTree()
-  if &modifiable 
-    \ && exists("t:NERDTreeBufName") 
-    \ && (bufwinnr(t:NERDTreeBufName) != -1)
-    \ && strlen(expand('%')) > 0
-    \ && !&diff
-    \ && expand('%') !~ "NERD_tree_"
-    \ && expand('%') !~ "[[buffergator]"
-    \ && expand('%') !~ "[Sidebar Left]"
-    \ && expand('%') !~ "[Sidebar Right]"
-    execute "NERDTreeFind"
-    execute "wincmd p"
-  endif
-endfunction
-autocmd BufEnter * call SyncNERDTree()
-
-" buffergator {{{3
+" jeetsukumaran/vim-buffergator {{{3
 let g:buffergator_viewport_split_policy = "L"
 let g:buffergator_suppress_keymaps = 1
 
-" Highlight currently open buffer in Buffergator
-function! SyncBuffergator()
-  let g:bufbufwinnum = bufwinnr("[[buffergator-buffers]]")
-  if &modifiable 
-    \ && g:bufbufwinnum != -1
-    \ && strlen(expand('%')) > 0
-    \ && !&diff
-    \ && expand('%') !~ "NERD_tree_"
-    \ && expand('%') !~ "[buffergator]"
-    " \ && expand('%') !~ "[Sidebar Left]"
-    " \ && expand('%') !~ "[Sidebar Right]"
-    let g:bufnum = bufnr('%')
-    execute g:bufbufwinnum . "wincmd w"
-    execute "normal r"
-    execute "search('^\\[\\s*" . g:bufnum . ")"
-    execute "wincmd p"
-  endif
-endfunction
-autocmd BufEnter * call SyncBuffergator()
+" mhinz/vim-startify {{{3
+" let g:startify_session_dir = '~/bin/vim/session'
+" let g:startify_change_to_dir = 1
+" let g:startify_change_to_vcs_root = 1
+" let g:startify_padding_left = &columns/3
+" autocmd User Startified nmap <buffer> o <plug>(startify-open-buffers)
+" autocmd User Startified nmap <buffer> <C-j> <plug>(startify-open-buffers)
+" let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
+" let g:startify_custom_header = ['']
 
-" tagbar{{{3
+" ctrlpvim/ctrlp.vim {{{3
+" let g:ctrlp_map = '<leader>o'
+" let g:ctrlp_cmd = 'CtrlPMRU'
+" let g:ctrlp_match_window = 'bottom'
+" let g:ctrlp_prompt_mappings = { 
+"   \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+"   \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+"   \ 'PrtHistory(-1)':         [],
+"   \ 'PrtHistory(1)':          [],
+"   \ 'AcceptSelection("t")':   ['<C-t>'],
+"   \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+"   \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+"   \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+"   \ }
+
+" scrooloose/NERDTree {{{3
+" let g:NERDTreeHijackNetrw = 1
+" let g:NERDTreeQuitOnOpen = 1
+" " let g:NERDTreeDirArrowExpandable='+'
+" " let g:NERDTreeDirArrowCollapsible='-'
+" let g:NERDTreeShowLineNumbers = 1
+" let g:NERDTreeWinPos = 'left'
+" let g:NERDTreeMapToggleHidden = 'zh'
+" let g:NERDTreeMapOpenSplit = 's'
+" let g:NERDTreeMapOpenVSplit = 'v'
+" let g:NERDTreeMapPreview = 'i'
+" let g:NERDTreeMapPreviewSplit = 'S'
+" let g:NERDTreeMapPreviewVSplit = 'V'
+" let g:NERDTreeMapJumpNextSibling = '<C-n>'
+" let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+" nnoremap <leader>N :NERDTreeCWD<CR>
+
+" " Highlight currently open buffer in NERDTree
+" " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
+" " added: make sure current buffer isn't a NERDTree buffer
+" function! SyncNERDTree()
+"   if &modifiable 
+"     \ && exists("t:NERDTreeBufName") 
+"     \ && (bufwinnr(t:NERDTreeBufName) != -1)
+"     \ && strlen(expand('%')) > 0
+"     \ && !&diff
+"     \ && expand('%') !~ "NERD_tree_"
+"     \ && expand('%') !~ "[[buffergator]"
+"     \ && expand('%') !~ "[Sidebar Left]"
+"     \ && expand('%') !~ "[Sidebar Right]"
+"     execute "NERDTreeFind"
+"     execute "wincmd p"
+"   endif
+" endfunction
+" autocmd BufEnter * call SyncNERDTree()
+
+" Xuyuanp/nerdtree-git-plugin {{{3
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "M",
+"     \ "Staged"    : "+",
+"     \ "Untracked" : "?",
+"     \ "Renamed"   : "R",
+"     \ "Unmerged"  : "U",
+"     \ "Deleted"   : "D",
+"     \ "Dirty"     : "*",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : "!",
+"     \ "Unknown"   : "X"
+"     \ }
+
+" majutsushi/tagbar{{{3
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
@@ -450,7 +368,7 @@ let g:tagbar_type_r = {
     \ ]
 \ }
 
-" markdown2ctags {{{3
+" jszakmeister/markdown2ctags {{{3
 let g:tagbar_type_pandoc = {
   \ 'ctagstype': 'pandoc',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
@@ -466,60 +384,64 @@ let g:tagbar_type_pandoc = {
   \ 'sort': 0,
 \ }
 
-" gundo {{{3
-let g:gundo_right = 0
-let g:gundo_preview_bottom = 1
-
-" vim-addon-qf-layout {{{3
+" MarcWeber/vim-addon-qf-layout {{{3
 let g:vim_addon_qf_layout = {}
-let g:vim_addon_qf_layout.quickfix_formatters = [ 
-      \ 'vim_addon_qf_layout#DefaultFormatter',
-      \ 'vim_addon_qf_layout#FormatterNoFilename',
-      \ 'vim_addon_qf_layout#Reset',
-      \ 'NOP'
-      \ ]
+let g:vim_addon_qf_layout.quickfix_formatters = [
+  \ 'vim_addon_qf_layout#DefaultFormatter',
+  \ 'vim_addon_qf_layout#FormatterNoFilename',
+  \ 'vim_addon_qf_layout#Reset',
+  \ 'NOP',
+  \ ]
+let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
 
-" vim-grep-operator {{{3
-nmap <leader>f <Plug>GrepOperatorOnCurrentDirectory
-vmap <leader>f <Plug>GrepOperatorOnCurrentDirectory
-nmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
-vmap <leader><leader>f <Plug>GrepOperatorWithFilenamePrompt
+" nvim-completion-manager {{{3
+" let g:cm_complete_start_delay = 750
+" let g:cm_auto_popup = 0
+" nmap <Tab> <Plug>(cm_force_refresh)
+" inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
+" use enter to also insert a newline
+" inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
+" use tab to select the pop-up menu
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" quickfix-reflector.vim {{{3
-" let g:qf_showtextonly = 1
+" mutt-aliases integrate with nvim-completion-manager
+" ncm's filtering is based on word, so it's better to convert results of
+" muttaliases#CompleteMuttAliases into snippet expension
+" func! g:MuttOmniWrap(findstart, base)
+"    let ret = muttaliases#CompleteMuttAliases(a:findstart, a:base)
+"    if type(ret) == type([])
+"      let i=0
+"      while i<len(ret)
+"        let ret[i]['snippet'] = ret[i]['word']
+"        let ret[i]['word'] = ret[i]['abbr']
+"        let i+=1
+"      endwhile
+"    endif
+"    return ret
+" endfunc
 
-" git {{{2
-" fugitive {{{3
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gA :Gwrite<CR>
-nnoremap <leader>gc :Gcommit<CR>
+" au User CmSetup call cm#register_source({'name' : 'mutt',
+"           \ 'priority': 9, 
+"           \ 'cm_refresh_length': -1,
+"           \ 'cm_refresh_patterns': ['^\w+:\s+'],
+"           \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
+"           \ })
 
-" gitgutter {{{3
-nmap <leader>ga <Plug>GitGutterStageHunk
-nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
-nmap <leader>ghd <Plug>GitGutterPreviewHunk
-nmap <leader>ghu <Plug>GitGutterUndoHunk
-nnoremap cog :GitGutterSignsToggle<CR>
-let g:gitgutter_eager = 0
-let g:gitgutter_override_sign_column_highlight = 0
+" vim-sidebar {{{3
+let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
+" let g:SidebarTogglePrefix = '<leader>'
+" let g:SidebarMovePrefix = '<leader>m'
+let g:SidebarEmptyPrefix = '<leader>e'
+let g:SidebarEmptyStickyKey = 'e'
+" let g:SidebarToggleKeys = [
+"   \ ['nerdtree',      'n'],
+"   \ ['buffergator',   'b'],
+"   \ ['tagbar',        't'],
+"   \ ['gundo',         'u'],
+"   \ ]
 
-" nerdtree-git-plugin {{{3
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "M",
-    \ "Staged"    : "+",
-    \ "Untracked" : "?",
-    \ "Renamed"   : "R",
-    \ "Unmerged"  : "U",
-    \ "Deleted"   : "D",
-    \ "Dirty"     : "*",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : "!",
-    \ "Unknown"   : "X"
-    \ }
-
-" external programs {{{2
-" vim-tmux-navigator {{{3
+" christoomey/vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if substitute(system('hostname'), '\n', '', '') == 'gmac'
@@ -566,7 +488,7 @@ else
   nnoremap <silent> <A-l> <esc>:TmuxNavigateRight<CR>
 endif
 
-" vim-slime {{{3
+" jpalardy/vim-slime {{{3
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 1
@@ -578,22 +500,18 @@ if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
 
-" Nvim-R {{{3
-let R_assign = 2
-let R_show_args = 1
-let R_objbr_showdf = 0
-let rout_follow_colorscheme = 1
-let Rout_more_colors = 1
-let R_sttline_fmt = "%#Function#%fun%#Delimiter#(%#Normal#%args%#Delimiter#)"
-let R_objbr_place = "console,bottom"
-autocmd Filetype r execute "let R_objbr_h = ".&lines/3
-autocmd Filetype r execute "let R_objbr_w = ".&columns/3
-autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
+" jalvesaq/Nvim-R {{{3
+" let R_assign = 2
+" let R_show_args = 1
+" let R_objbr_showdf = 0
+" let rout_follow_colorscheme = 1
+" let Rout_more_colors = 1
+" let R_sttline_fmt = "%#Function#%fun%#Delimiter#(%#Normal#%args%#Delimiter#)"
+" let R_objbr_place = "console,bottom"
+" autocmd Filetype r execute "let R_objbr_h = ".&lines/3
+" autocmd Filetype r execute "let R_objbr_w = ".&columns/3
+" autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
 
-" vim-matlab {{{3
-let g:matlab_auto_mappings = 0 "automatic mappings disabled
-
-" syntax {{{2
 " w0rp/ale {{{3
 nnoremap coy :ALEToggle<CR>
 let g:ale_lint_on_text_changed = 'never'
@@ -619,7 +537,7 @@ endfunction
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 
-" pandoc {{{3
+" vim-pandoc/pandoc {{{3
 " vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
 " let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
@@ -630,15 +548,15 @@ let g:pandoc#biblio#sources = "g"
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 
-" vim-pandoc-syntax
+" vim-pandoc/vim-pandoc-syntax {{{3
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave"]
 let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
-" CriticMarkup Plugin {{{3
+" gabenespoli/vim-criticmarkup {{{3
 let g:criticmarkup#disable#highlighting = 1
 
-" DiffChar {{{3
+" rickhowe/diffchar {{{3
 map  <localleader>D <Plug>ToggleDiffCharAllLines
 map  <localleader>d <Plug>ToggleDiffCharCurrentLine
 nmap [d             <Plug>JumpDiffCharPrevStart
@@ -648,60 +566,37 @@ nmap <F14>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
 nmap dP             <Plug>PutDiffCharPair
 
-" mutt-aliases integrate with nvim-completion-manager {{{3
-" ncm's filtering is based on word, so it's better to convert results of
-" muttaliases#CompleteMuttAliases into snippet expension
-func! g:MuttOmniWrap(findstart, base)
-   let ret = muttaliases#CompleteMuttAliases(a:findstart, a:base)
-   if type(ret) == type([])
-     let i=0
-     while i<len(ret)
-       let ret[i]['snippet'] = ret[i]['word']
-       let ret[i]['word'] = ret[i]['abbr']
-       let i+=1
-     endwhile
-   endif
-   return ret
-endfunc
-
-au User CmSetup call cm#register_source({'name' : 'mutt',
-          \ 'priority': 9, 
-          \ 'cm_refresh_length': -1,
-          \ 'cm_refresh_patterns': ['^\w+:\s+'],
-          \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
-          \ })
-
 " Lilypond {{{3
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
 
-" GrepTodo {{{2
+" GrepTodo {{{3
 " nnoremap <leader>z :call GrepTodo_start()<CR>
 " can add multiple patterns per project, space-separated
-let g:GrepTodo_folders = {
-      \ 'en':         expand("$HOME/projects/en"),
-      \ 'phzlab':     expand("$HOME/bin/matlab/phzlab"),
-      \ 'resampling': expand("$HOME/projects/practicum/resampling"),
-      \ 'ec':         expand("$HOME/projects/ec"),
-      \ 'gv':         expand("$HOME/projects/gv"),
-      \ 'greptodo':   expand("$HOME/bin/vim/vim-greptodo"),
-      \ }
-let g:GrepTodo_files = {
-      \ 'en':         expand("$HOME/projects/en/todo.txt"),
-      \ 'phzlab':     expand("$HOME/bin/matlab/phzlab/todo.txt"),
-      \ 'resampling': expand("$HOME/projects/practicum/resampling/todo.txt"),
-      \ 'ec':         expand("$HOME/projects/ec/todo.txt"),
-      \ 'gv':         expand("$HOME/projects/gv/todo.txt"),
-      \ 'greptodo':   "",
-      \ }
+" let g:GrepTodo_folders = {
+"       \ 'en':         expand("$HOME/projects/en"),
+"       \ 'phzlab':     expand("$HOME/bin/matlab/phzlab"),
+"       \ 'resampling': expand("$HOME/projects/practicum/resampling"),
+"       \ 'ec':         expand("$HOME/projects/ec"),
+"       \ 'gv':         expand("$HOME/projects/gv"),
+"       \ 'greptodo':   expand("$HOME/bin/vim/vim-greptodo"),
+"       \ }
+" let g:GrepTodo_files = {
+"       \ 'en':         expand("$HOME/projects/en/todo.txt"),
+"       \ 'phzlab':     expand("$HOME/bin/matlab/phzlab/todo.txt"),
+"       \ 'resampling': expand("$HOME/projects/practicum/resampling/todo.txt"),
+"       \ 'ec':         expand("$HOME/projects/ec/todo.txt"),
+"       \ 'gv':         expand("$HOME/projects/gv/todo.txt"),
+"       \ 'greptodo':   "",
+"       \ }
 
-nnoremap <leader>z :silent grep! -R !next ~/todo/*<CR>:copen<CR>:wincmd o<CR>:NERDTree ~/todo<CR>:wincmd p<CR>
-autocmd FileType qf nnoremap <buffer> <C-j> <enter>:wincmd o<CR>:NERDTreeFind<CR>:wincmd p<CR>
+" nnoremap <leader>z :silent grep! -R !next ~/todo/*<CR>:copen<CR>:wincmd o<CR>:NERDTree ~/todo<CR>:wincmd p<CR>
+" autocmd FileType qf nnoremap <buffer> <C-j> <enter>:wincmd o<CR>:NERDTreeFind<CR>:wincmd p<CR>
 
 " Functions {{{1
-" toggle qf and loclist {{{2
+" Toggle qf and loclist {{{2
 " http://vim.wikia.com/wiki/Toggle_to_open_or_close_the_quickfix_window
 function! GetBufferList()
   redir =>buflist
@@ -755,23 +650,6 @@ function! ToggleStatusBar()
   endif
 endfunction
 
-" Get Syntax Under Cursor {{{2
-function! GetSyntaxUnderCursor() 
-  let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
-  return g:SyntaxUnderCursor
-endfunction
-" Word Count {{{2
-function! WordCount()
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-  let lnum = 1
-  let n = 0
-  while lnum <= line('$')
-    let n = n + len(split(getline(lnum)))
-    let lnum = lnum + 1
-  endwhile
-  return n
-endfunction
-
 " Toggle Search Highlight Colour {{{2
 function! SearchHighlightToggle()
   let bgcolor=synIDattr(hlID('Search'), 'bg#')
@@ -814,6 +692,41 @@ function! ToggleCsvTsv()
     echo "b:delimiter is not defined."
   endif
 endfunction
+
+" Get Syntax Under Cursor {{{2
+function! GetSyntaxUnderCursor() 
+  let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
+  return g:SyntaxUnderCursor
+endfunction
+
+" Word Count {{{2
+function! WordCount()
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+  let lnum = 1
+  let n = 0
+  while lnum <= line('$')
+    let n = n + len(split(getline(lnum)))
+    let lnum = lnum + 1
+  endwhile
+  return n
+endfunction
+
+" Resize windows based on terminal size {{{2
+" for some reason nvim doesn't know the correct &columns until after startup
+" so, we have to use autocmds for width and height
+let g:centerwidth = 100
+function! ResizeCenterWidth()
+  execute 'vertical resize '.100
+endfunction
+function! ResizeSideWidth()
+  execute 'vertical resize '.&columns/4
+endfunction
+function! ResizeSideHeight()
+  execute 'resize '.&lines/4
+endfunction
+nnoremap <leader>rc :call ResizeCenterWidth()<CR>
+nnoremap <leader>rw :call ResizeSideWidth()<CR>
+nnoremap <leader>rh :call ResizeSideHeight()<CR>
 
 " Line Return {{{2
 " from Steve Losh's (sjl) vimrc
