@@ -2,7 +2,7 @@
 " Plugin Manager (vim-plug) {{{1
 call plug#begin('~/.vim/plugged')
 
-" vim {{{2
+" editing {{{2
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -11,47 +11,28 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'
 
-" file plugins {{{2
+" sidebars {{{2
+Plug '~/bin/vim/vim-sidebar'
 Plug 'jeetsukumaran/vim-buffergator'
-" Plug 'mhinz/vim-startify'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'scrooloose/NERDTree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" sidebar-type plugins {{{2
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
-" external programs {{{2
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
-" Plug 'ivanov/vim-ipython'
-" Plug 'jalvesaq/Nvim-R'
-
-" syntax checker & syntaxes {{{2
+" syntax {{{2
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'rickhowe/diffchar.vim'
-" Plug 'vim-pandoc/vim-criticmarkup'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
 Plug 'guanqun/vim-mutt-aliases-plugin'
 
-" nvim-only plugins {{{2
-" if has('nvim')
-"   function! DoRemote(arg)
-"     UpdateRemotePlugins
-"   endfunction
-"   Plug 'roxma/nvim-completion-manager'
-" endif
+" external {{{2
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
 
-" my plugins {{{2
-Plug '~/bin/vim/vim-sidebar'
-" Plug '~/bin/vim/vim-greptodo'
 call plug#end()
 
 " General Settings {{{1
@@ -180,6 +161,7 @@ cnoremap <C-d> <Del>
 
 " opening and saving {{{2
 "<leader>o opens ctrlp plugin
+nnoremap <leader>o :e **/*
 nnoremap <leader>s :w<CR>
 if has('mac')
   nnoremap gO :!open <cfile><CR>
@@ -264,85 +246,15 @@ nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
+" vim-sidebar {{{3
+let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
+let g:SidebarEmptyPrefix = '<leader>e'
+let g:SidebarEmptyStickyKey = 'e'
+
 " jeetsukumaran/vim-buffergator {{{3
 let g:buffergator_viewport_split_policy = "L"
 let g:buffergator_suppress_keymaps = 1
 nnoremap <leader>b :BuffergatorToggle<CR>
-
-" mhinz/vim-startify {{{3
-" let g:startify_session_dir = '~/bin/vim/session'
-" let g:startify_change_to_dir = 1
-" let g:startify_change_to_vcs_root = 1
-" let g:startify_padding_left = &columns/3
-" autocmd User Startified nmap <buffer> o <plug>(startify-open-buffers)
-" autocmd User Startified nmap <buffer> <C-j> <plug>(startify-open-buffers)
-" let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
-" let g:startify_custom_header = ['']
-
-" ctrlpvim/ctrlp.vim {{{3
-" let g:ctrlp_map = '<leader>o'
-" let g:ctrlp_cmd = 'CtrlPMRU'
-" let g:ctrlp_match_window = 'bottom'
-" let g:ctrlp_prompt_mappings = { 
-"   \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-"   \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-"   \ 'PrtHistory(-1)':         [],
-"   \ 'PrtHistory(1)':          [],
-"   \ 'AcceptSelection("t")':   ['<C-t>'],
-"   \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-"   \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-"   \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-"   \ }
-
-" scrooloose/NERDTree {{{3
-" let g:NERDTreeHijackNetrw = 1
-" let g:NERDTreeQuitOnOpen = 1
-" " let g:NERDTreeDirArrowExpandable='+'
-" " let g:NERDTreeDirArrowCollapsible='-'
-" let g:NERDTreeShowLineNumbers = 1
-" let g:NERDTreeWinPos = 'left'
-" let g:NERDTreeMapToggleHidden = 'zh'
-" let g:NERDTreeMapOpenSplit = 's'
-" let g:NERDTreeMapOpenVSplit = 'v'
-" let g:NERDTreeMapPreview = 'i'
-" let g:NERDTreeMapPreviewSplit = 'S'
-" let g:NERDTreeMapPreviewVSplit = 'V'
-" let g:NERDTreeMapJumpNextSibling = '<C-n>'
-" let g:NERDTreeMapJumpPrevSibling = '<C-p>'
-" nnoremap <leader>N :NERDTreeCWD<CR>
-
-" " Highlight currently open buffer in NERDTree
-" " modified from https://gist.github.com/ashwin/3c6a40b2d1245f1c5b96
-" " added: make sure current buffer isn't a NERDTree buffer
-" function! SyncNERDTree()
-"   if &modifiable 
-"     \ && exists("t:NERDTreeBufName") 
-"     \ && (bufwinnr(t:NERDTreeBufName) != -1)
-"     \ && strlen(expand('%')) > 0
-"     \ && !&diff
-"     \ && expand('%') !~ "NERD_tree_"
-"     \ && expand('%') !~ "[[buffergator]"
-"     \ && expand('%') !~ "[Sidebar Left]"
-"     \ && expand('%') !~ "[Sidebar Right]"
-"     execute "NERDTreeFind"
-"     execute "wincmd p"
-"   endif
-" endfunction
-" autocmd BufEnter * call SyncNERDTree()
-
-" Xuyuanp/nerdtree-git-plugin {{{3
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "M",
-"     \ "Staged"    : "+",
-"     \ "Untracked" : "?",
-"     \ "Renamed"   : "R",
-"     \ "Unmerged"  : "U",
-"     \ "Deleted"   : "D",
-"     \ "Dirty"     : "*",
-"     \ "Clean"     : "✔︎",
-"     \ 'Ignored'   : "!",
-"     \ "Unknown"   : "X"
-"     \ }
 
 " majutsushi/tagbar{{{3
 let g:tagbar_left = 1
@@ -394,53 +306,6 @@ let g:vim_addon_qf_layout.quickfix_formatters = [
   \ 'NOP',
   \ ]
 let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
-
-" nvim-completion-manager {{{3
-" let g:cm_complete_start_delay = 750
-" let g:cm_auto_popup = 0
-" nmap <Tab> <Plug>(cm_force_refresh)
-" inoremap <expr> <Esc> (pumvisible() ? "\<CR>" : "\<Esc>")
-" use enter to also insert a newline
-" inoremap <expr> <CR> (pumvisible() ? "\<C-y>\<CR>" : "\<CR>")
-" use tab to select the pop-up menu
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" mutt-aliases integrate with nvim-completion-manager
-" ncm's filtering is based on word, so it's better to convert results of
-" muttaliases#CompleteMuttAliases into snippet expension
-" func! g:MuttOmniWrap(findstart, base)
-"    let ret = muttaliases#CompleteMuttAliases(a:findstart, a:base)
-"    if type(ret) == type([])
-"      let i=0
-"      while i<len(ret)
-"        let ret[i]['snippet'] = ret[i]['word']
-"        let ret[i]['word'] = ret[i]['abbr']
-"        let i+=1
-"      endwhile
-"    endif
-"    return ret
-" endfunc
-
-" au User CmSetup call cm#register_source({'name' : 'mutt',
-"           \ 'priority': 9, 
-"           \ 'cm_refresh_length': -1,
-"           \ 'cm_refresh_patterns': ['^\w+:\s+'],
-"           \ 'cm_refresh': {'omnifunc': 'g:MuttOmniWrap'},
-"           \ })
-
-" vim-sidebar {{{3
-let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
-" let g:SidebarTogglePrefix = '<leader>'
-" let g:SidebarMovePrefix = '<leader>m'
-let g:SidebarEmptyPrefix = '<leader>e'
-let g:SidebarEmptyStickyKey = 'e'
-" let g:SidebarToggleKeys = [
-"   \ ['nerdtree',      'n'],
-"   \ ['buffergator',   'b'],
-"   \ ['tagbar',        't'],
-"   \ ['gundo',         'u'],
-"   \ ]
 
 " christoomey/vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
@@ -501,18 +366,6 @@ if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
 
-" jalvesaq/Nvim-R {{{3
-" let R_assign = 2
-" let R_show_args = 1
-" let R_objbr_showdf = 0
-" let rout_follow_colorscheme = 1
-" let Rout_more_colors = 1
-" let R_sttline_fmt = "%#Function#%fun%#Delimiter#(%#Normal#%args%#Delimiter#)"
-" let R_objbr_place = "console,bottom"
-" autocmd Filetype r execute "let R_objbr_h = ".&lines/3
-" autocmd Filetype r execute "let R_objbr_w = ".&columns/3
-" autocmd Filetype r execute "let R_rconsole_width = ".&columns/2
-
 " w0rp/ale {{{3
 nnoremap coy :ALEToggle<CR>
 let g:ale_lint_on_text_changed = 'never'
@@ -572,29 +425,6 @@ filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
-
-" GrepTodo {{{3
-" nnoremap <leader>z :call GrepTodo_start()<CR>
-" can add multiple patterns per project, space-separated
-" let g:GrepTodo_folders = {
-"       \ 'en':         expand("$HOME/projects/en"),
-"       \ 'phzlab':     expand("$HOME/bin/matlab/phzlab"),
-"       \ 'resampling': expand("$HOME/projects/practicum/resampling"),
-"       \ 'ec':         expand("$HOME/projects/ec"),
-"       \ 'gv':         expand("$HOME/projects/gv"),
-"       \ 'greptodo':   expand("$HOME/bin/vim/vim-greptodo"),
-"       \ }
-" let g:GrepTodo_files = {
-"       \ 'en':         expand("$HOME/projects/en/todo.txt"),
-"       \ 'phzlab':     expand("$HOME/bin/matlab/phzlab/todo.txt"),
-"       \ 'resampling': expand("$HOME/projects/practicum/resampling/todo.txt"),
-"       \ 'ec':         expand("$HOME/projects/ec/todo.txt"),
-"       \ 'gv':         expand("$HOME/projects/gv/todo.txt"),
-"       \ 'greptodo':   "",
-"       \ }
-
-" nnoremap <leader>z :silent grep! -R !next ~/todo/*<CR>:copen<CR>:wincmd o<CR>:NERDTree ~/todo<CR>:wincmd p<CR>
-" autocmd FileType qf nnoremap <buffer> <C-j> <enter>:wincmd o<CR>:NERDTreeFind<CR>:wincmd p<CR>
 
 " Functions {{{1
 " Toggle qf and loclist {{{2
