@@ -52,6 +52,7 @@ hi link FoldHeading     Title
 " Syntax-specific {{{1
 " netrw {{{2
 hi netrwExe             ctermfg=5
+hi netrwSymLink         ctermfg=6
 
 " Mail compose colors {{{2
 hi mailHeader           ctermfg=10
