@@ -267,6 +267,7 @@ let g:gitgutter_override_sign_column_highlight = 0
 " jeetsukumaran/vim-buffergator {{{3
 let g:buffergator_viewport_split_policy = "L"
 let g:buffergator_suppress_keymaps = 1
+nnoremap <leader>b :BuffergatorToggle<CR>
 
 " mhinz/vim-startify {{{3
 " let g:startify_session_dir = '~/bin/vim/session'
