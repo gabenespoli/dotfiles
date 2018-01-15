@@ -13,7 +13,6 @@ Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
 Plug '~/bin/vim/vim-sidebar'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
@@ -209,6 +208,7 @@ nnoremap du :diffupdate<CR>
 " Spell checking
 nnoremap <localleader>s 1z=
 
+nnoremap gb :ls<CR>:buffer<Space>
 " Plugin Settings {{{1
 " tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
@@ -255,11 +255,6 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
 let g:SidebarEmptyPrefix = '<leader>e'
 let g:SidebarEmptyStickyKey = 'e'
-
-" jeetsukumaran/vim-buffergator {{{3
-let g:buffergator_viewport_split_policy = "L"
-let g:buffergator_suppress_keymaps = 1
-nnoremap <leader>b :BuffergatorToggle<CR>
 
 " majutsushi/tagbar{{{3
 let g:tagbar_left = 1
