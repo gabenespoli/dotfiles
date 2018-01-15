@@ -13,6 +13,10 @@ Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
 Plug '~/bin/vim/vim-sidebar'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/NERDTree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
@@ -149,9 +153,7 @@ nnoremap Y y$
 set clipboard=unnamed
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
-nnoremap <leader>o :e **/*
 nnoremap <leader>s :w<CR>
-nnoremap gb :ls<CR>:buffer<Space>
 if has('mac')
   nnoremap gO :!open <cfile><CR>
 endif
@@ -166,6 +168,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
+" cnoremap <C-d> <Del>
 if has('nvim')
   cnoremap <M-f> <S-Right>
   cnoremap <M-b> <S-Left>
@@ -173,7 +176,6 @@ else
   cnoremap <Esc>f <S-Right>
   cnoremap <Esc>b <S-Left>
 endif
-cnoremap <C-d> <Del>
 
 " misc {{{2
 " status/info toggles
@@ -192,7 +194,7 @@ nnoremap du :diffupdate<CR>
 nnoremap <localleader>s 1z=
 
 " Plugin Settings {{{1
-" tpope/vim-unimpaired {{{3
+" tpope/vim-unimpaired {{{2
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap cop :call ToggleColorColumn()<CR>
@@ -214,17 +216,17 @@ nnoremap coFm :set foldmethod=marker<CR>
 nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
 
-" tpope/vim-commentary {{{3
+" tpope/vim-commentary {{{2
 autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg setlocal commentstring=#\ %s
 
-" tpope/vim-fugitive {{{3
+" tpope/vim-fugitive {{{2
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gA :Gwrite<CR>
 nnoremap <leader>gc :Gcommit<CR>
 
-" airblade/gitgutter {{{3
+" airblade/gitgutter {{{2
 nmap <leader>ga <Plug>GitGutterStageHunk
 nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
 nmap <leader>ghd <Plug>GitGutterPreviewHunk
@@ -233,12 +235,64 @@ nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
-" vim-sidebar {{{3
+" gabenespoli/vim-sidebar {{{2
 let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
-let g:SidebarEmptyPrefix = '<leader>e'
-let g:SidebarEmptyStickyKey = 'e'
+let g:SidebarEmptyPrefix = '<leader>'
+let g:SidebarEmptyStickyKey = 'E'
 
-" majutsushi/tagbar{{{3
+" jeetsukumaran/vim-buffergator {{{2
+let g:buffergator_viewport_split_policy = "N"
+let g:buffergator_suppress_keymaps = 1
+nnoremap <leader>b :BuffergatorOpen<CR>
+
+" ctrlpvim/ctrlp.vim {{{2
+let g:ctrlp_map = '<leader>o'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_match_window = 'bottom'
+let g:ctrlp_prompt_mappings = { 
+  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+  \ 'PrtHistory(-1)':         [],
+  \ 'PrtHistory(1)':          [],
+  \ 'AcceptSelection("t")':   ['<C-t>'],
+  \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+  \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+  \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+  \ }
+
+" scrooloose/NERDTree {{{2
+let g:NERDTreeHijackNetrw = 1
+let g:NERDTreeQuitOnOpen = 1
+" let g:NERDTreeDirArrowExpandable='+'
+" let g:NERDTreeDirArrowCollapsible='-'
+let g:NERDTreeShowLineNumbers = 1
+let g:NERDTreeWinPos = 'left'
+let g:NERDTreeMapToggleHidden = 'zh'
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenVSplit = 'v'
+let g:NERDTreeMapPreview = 'i'
+let g:NERDTreeMapPreviewSplit = 'S'
+let g:NERDTreeMapPreviewVSplit = 'V'
+let g:NERDTreeMapJumpNextSibling = '<C-n>'
+let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>e :e .<CR>
+
+" Xuyuanp/nerdtree-git-plugin {{{2
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "M",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "R",
+    \ "Unmerged"  : "U",
+    \ "Deleted"   : "D",
+    \ "Dirty"     : "*",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : "!",
+    \ "Unknown"   : "X"
+    \ }
+
+" majutsushi/tagbar{{{2
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
@@ -263,7 +317,7 @@ let g:tagbar_type_r = {
     \ ]
 \ }
 
-" jszakmeister/markdown2ctags {{{3
+" jszakmeister/markdown2ctags {{{2
 let g:tagbar_type_pandoc = {
   \ 'ctagstype': 'pandoc',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
@@ -279,7 +333,7 @@ let g:tagbar_type_pandoc = {
   \ 'sort': 0,
 \ }
 
-" MarcWeber/vim-addon-qf-layout {{{3
+" MarcWeber/vim-addon-qf-layout {{{2
 let g:vim_addon_qf_layout = {}
 let g:vim_addon_qf_layout.quickfix_formatters = [
   \ 'vim_addon_qf_layout#DefaultFormatter',
@@ -289,7 +343,7 @@ let g:vim_addon_qf_layout.quickfix_formatters = [
   \ ]
 let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
 
-" christoomey/vim-tmux-navigator {{{3
+" christoomey/vim-tmux-navigator {{{2
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if substitute(system('hostname'), '\n', '', '') == 'gmac'
@@ -336,7 +390,7 @@ else
   nnoremap <silent> <A-l> <esc>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime {{{3
+" jpalardy/vim-slime {{{2
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 1
@@ -348,7 +402,7 @@ if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
 
-" w0rp/ale {{{3
+" w0rp/ale {{{2
 nnoremap coy :ALEToggle<CR>
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
@@ -373,7 +427,7 @@ endfunction
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 
-" vim-pandoc/pandoc {{{3
+" vim-pandoc/pandoc {{{2
 " vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
 " let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
@@ -384,15 +438,15 @@ let g:pandoc#biblio#sources = "g"
 let g:pandoc#command#autoexec_on_writes = 0
 let g:pandoc#command#autoexec_command = "Pandoc docx --reference-docx=~/dotfiles/pandoc/apa.docx"
 
-" vim-pandoc/vim-pandoc-syntax {{{3
+" vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave"]
 let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
-" gabenespoli/vim-criticmarkup {{{3
+" gabenespoli/vim-criticmarkup {{{2
 let g:criticmarkup#disable#highlighting = 1
 
-" rickhowe/diffchar {{{3
+" rickhowe/diffchar {{{2
 map  <localleader>D <Plug>ToggleDiffCharAllLines
 map  <localleader>d <Plug>ToggleDiffCharCurrentLine
 nmap [d             <Plug>JumpDiffCharPrevStart
@@ -402,7 +456,7 @@ nmap <F14>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
 nmap dP             <Plug>PutDiffCharPair
 
-" Lilypond {{{3
+" Lilypond {{{2
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
