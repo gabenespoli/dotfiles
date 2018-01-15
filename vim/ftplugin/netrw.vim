@@ -13,4 +13,4 @@ nmap <buffer> u -
 nmap <buffer> zh gh
 
 " if only netrw, quit, else switch back
-nnoremap <expr> q len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))==1 ? ':quit<CR>' : '<C-^>'
+nnoremap <buffer> <expr> q len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))==1 ? ':quit<CR>' : '<C-^>'
