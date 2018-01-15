@@ -138,11 +138,23 @@ set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)                           
 
 " Keybindings {{{1
-" General {{{2
+" settings {{{2
 let mapleader = "\<Space>"
 set notimeout
 set ttimeout
 inoremap jk <Esc>
+
+" general {{{2
+nnoremap Y y$
+set clipboard=unnamed
+nnoremap q :q<CR>
+nnoremap Q :qa<CR>
+nnoremap <leader>o :e **/*
+nnoremap <leader>s :w<CR>
+nnoremap gb :ls<CR>:buffer<Space>
+if has('mac')
+  nnoremap gO :!open <cfile><CR>
+endif
 
 " emacs-style movement {{{2
 inoremap <C-d> <Del>
@@ -163,52 +175,22 @@ else
 endif
 cnoremap <C-d> <Del>
 
-" opening and saving {{{2
-"<leader>o opens ctrlp plugin
-nnoremap <leader>o :e **/*
-nnoremap <leader>s :w<CR>
-if has('mac')
-  nnoremap gO :!open <cfile><CR>
-endif
-
-" tab switching {{{2
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>[ gT
-nnoremap <leader>] gt
-
-" swap q/Q for <leader>q/Q, so q/Q can be used for quitting {{{2
-nnoremap q :q<CR>
-nnoremap Q :qa<CR>
-
-" status/info toggles {{{2
+" misc {{{2
+" status/info toggles
 nnoremap <silent> <leader>F :call ToggleTabline()<CR>
 nnoremap <silent> <leader>S :call ToggleStatusBar()<CR>
 nnoremap <leader>W :echo WordCount()<CR>
 nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
-
-" misc {{{2
 " change pwd to git root if in repo (vim-fugitive), else current file's dir
 nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>' : ':cd %:p:h<CR>'
-
-" copy/paste
-nnoremap Y y$
-" for tmux https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
-set clipboard=unnamed
-
+" insert dates
 nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>p
 nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-
 "vimdiff
 nnoremap du :diffupdate<CR>
-
 " Spell checking
 nnoremap <localleader>s 1z=
 
-nnoremap gb :ls<CR>:buffer<Space>
 " Plugin Settings {{{1
 " tpope/vim-unimpaired {{{3
 nnoremap coN :set relativenumber!<CR>:set number!<CR>
