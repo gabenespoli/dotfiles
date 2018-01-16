@@ -274,9 +274,8 @@ let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
-
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>e :e .<CR>
+nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeToggle<CR>' : ':NERDTreeFind<CR>'
+nnoremap <leader>e :execute "e " . expand("%:h")<CR>
 
 " Xuyuanp/nerdtree-git-plugin {{{2
 let g:NERDTreeIndicatorMapCustom = {
