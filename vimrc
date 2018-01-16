@@ -4,8 +4,8 @@ call plug#begin('~/.vim/plugged')
 
 " editing {{{2
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'
@@ -223,9 +223,10 @@ autocmd FileType cfg setlocal commentstring=#\ %s
 
 " tpope/vim-fugitive {{{2
 nnoremap gs :Gstatus<CR>
-nnoremap gd :Gdiff<CR>
+nnoremap gd :Gvdiff<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap gc :Gcommit<CR>
+nnoremap gC :Gcommit<CR>
+nnoremap gl :Glog<CR><CR>:copen<CR>
 
 " airblade/gitgutter {{{2
 nmap ga <Plug>GitGutterStageHunk
