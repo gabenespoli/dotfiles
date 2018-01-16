@@ -34,6 +34,7 @@ Plug 'guanqun/vim-mutt-aliases-plugin'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
+Plug 'inside/vim-grep-operator'
 
 call plug#end()
 
@@ -94,6 +95,7 @@ set incsearch nohlsearch
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
+set grepprg=git\ grep\ -n\ --no-color\ $*
 
 " Folding {{{2
 set fillchars="vert:' ',fold:-"
@@ -454,6 +456,12 @@ nmap <F13>          <Plug>JumpDiffCharPrevEnd
 nmap <F14>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
 nmap dP             <Plug>PutDiffCharPair
+
+" inside/vim-grep-operator {{{2
+nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
+nmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
+vmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
 
 " Lilypond {{{2
 filetype off
