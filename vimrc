@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'
@@ -261,6 +260,7 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " scrooloose/NERDTree {{{2
+let NERDTreeMinimalUI = 1
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeQuitOnOpen = 1
 " let g:NERDTreeDirArrowExpandable='+'
@@ -275,6 +275,8 @@ let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
+let g:NERDTreeMapCWD = 'cD'
+
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>e :e .<CR>
 
