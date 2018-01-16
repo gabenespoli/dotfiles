@@ -167,7 +167,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
-" cnoremap <C-d> <Del>
+cnoremap <C-d> <Del>
 if has('nvim')
   cnoremap <M-f> <S-Right>
   cnoremap <M-b> <S-Left>
