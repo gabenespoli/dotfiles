@@ -220,16 +220,16 @@ autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg setlocal commentstring=#\ %s
 
 " tpope/vim-fugitive {{{2
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gA :Gwrite<CR>
-nnoremap <leader>gc :Gcommit<CR>
+nnoremap gs :Gstatus<CR>
+nnoremap gd :Gdiff<CR>
+nnoremap gA :Gwrite<CR>
+nnoremap gc :Gcommit<CR>
 
 " airblade/gitgutter {{{2
-nmap <leader>ga <Plug>GitGutterStageHunk
-nnoremap <leader>ghc :GitGutterStageHunk<CR>:Gcommit<CR>
-nmap <leader>ghd <Plug>GitGutterPreviewHunk
-nmap <leader>ghu <Plug>GitGutterUndoHunk
+nmap ga <Plug>GitGutterStageHunk
+nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>
+nmap ghd <Plug>GitGutterPreviewHunk
+nmap ghu <Plug>GitGutterUndoHunk
 nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
