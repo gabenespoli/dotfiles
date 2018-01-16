@@ -225,7 +225,7 @@ autocmd FileType cfg setlocal commentstring=#\ %s
 nnoremap gs :Gstatus<CR>
 nnoremap gd :Gvdiff<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap gC :Gcommit<CR>
+nnoremap gC :Gcommit<CR>i
 nnoremap gl :Glog<CR><CR>:copen<CR>
 
 " airblade/gitgutter {{{2
