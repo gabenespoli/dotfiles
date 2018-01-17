@@ -4,6 +4,7 @@
 " nmap <expr> <C-k>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend"<CR>'   : ':call SendParagraphToR("echo", "stay")<CR>'
 " nmap <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend}j"<CR>' : ':call SendParagraphToR("echo", "down")<CR>'
 
+
 set equalalways
 
 " keybindings {{{1
@@ -40,10 +41,10 @@ function! AddRstudioHeadings(level)
   execute "normal! $" . l:numberToInsert . "a" . l:headingCharacter
 endfunction
 
-nnoremap <localleader>0 :call AddRstudioHeadings(0)<CR>
-nnoremap <localleader>1 :call AddRstudioHeadings(1)<CR>
-nnoremap <localleader>2 :call AddRstudioHeadings(2)<CR>
-nnoremap <localleader>3 :call AddRstudioHeadings(3)<CR>
+nnoremap <buffer> <localleader>0 :call AddRstudioHeadings(0)<CR>
+nnoremap <buffer> <localleader>1 :call AddRstudioHeadings(1)<CR>
+nnoremap <buffer> <localleader>2 :call AddRstudioHeadings(2)<CR>
+nnoremap <buffer> <localleader>3 :call AddRstudioHeadings(3)<CR>
 
 " folding
 set foldmethod=expr
