@@ -219,7 +219,7 @@ nnoremap coFd :set foldmethod=diff<CR>
 
 " tpope/vim-commentary {{{2
 autocmd FileType octave setlocal commentstring=%\ %s
-autocmd FileType cfg setlocal commentstring=#\ %s
+autocmd FileType cfg,remind setlocal commentstring=#\ %s
 
 " tpope/vim-fugitive {{{2
 nnoremap gs :Gstatus<CR>
