@@ -218,6 +218,14 @@ nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
 
 " tpope/vim-commentary {{{2
+xmap <leader>c  <Plug>Commentary
+nmap <leader>c  <Plug>Commentary
+omap <leader>c  <Plug>Commentary
+nmap <leader>cc <Plug>CommentaryLine
+if maparg('c','n') ==# ''
+  nmap c<leader>c <Plug>ChangeCommentary
+endif
+nmap <leader>cu <Plug>Commentary<Plug>Commentary
 autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg,remind setlocal commentstring=#\ %s
 
