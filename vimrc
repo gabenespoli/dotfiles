@@ -79,6 +79,7 @@ set backspace=indent,eol,start
 set whichwrap+=h,l              " let h and l move across lines
 set visualbell
 set hidden
+set clipboard=unnamed
 
 " Spacing {{{2
 set linebreak                   " stop soft wrapping in the middle of words  
@@ -151,13 +152,9 @@ inoremap jk <Esc>
 
 " general {{{2
 nnoremap Y y$
-set clipboard=unnamed
 nnoremap q :q<CR>
 nnoremap Q :qa<CR>
 nnoremap <leader>s :w<CR>
-if has('mac')
-  nnoremap gO :!open <cfile><CR>
-endif
 
 " emacs-style movement {{{2
 inoremap <C-d> <Del>
@@ -193,6 +190,10 @@ nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 nnoremap du :diffupdate<CR>
 " Spell checking
 nnoremap <localleader>s 1z=
+" open with system on mac
+if has('mac')
+  nnoremap gO :!open <cfile><CR>
+endif
 
 " Plugin Settings {{{1
 " tpope/vim-unimpaired {{{2
