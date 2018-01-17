@@ -279,8 +279,27 @@ let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
-nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeToggle<CR>' : ':NERDTreeFind<CR>'
-nnoremap <leader>e :execute "e " . expand("%:h")<CR>
+
+nnoremap <leader>e :call ToggleNERDTreeLikeNetrw()<CR>
+function! ToggleNERDTreeLikeNetrw()
+  " TODO make this work even if called from buffergator
+  let l:fname = expand("%:t")
+  if exists('t:NERDTreeBufName')
+    " switch to existing nerdtree buffer
+    " this doesn't really work for some reason though
+      execute "buffer" . bufnr(t:NERDTreeBufName)
+  else
+    " open dir of current file
+    " should have g:NERDTreeHijackNetrw = 1
+    execute "e " . expand("%:h")
+  endif
+  " go to line of current file
+  execute "call search('".l:fname."', 'cW')"
+  " after opening split, switch nerdtree back to the buffer it was called from
+  nnoremap <buffer> v :call nerdtree#ui_glue#invokeKeyMap("v")<CR><C-w>p:bprevious<CR><C-w>p
+  nnoremap <buffer> s :call nerdtree#ui_glue#invokeKeyMap("s")<CR><C-w>p:bprevious<CR><C-w>p
+  nnoremap <buffer> <leader>e :bprevious<CR>
+endfunction
 
 " Xuyuanp/nerdtree-git-plugin {{{2
 let g:NERDTreeIndicatorMapCustom = {
