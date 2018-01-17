@@ -12,8 +12,8 @@ Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
 Plug '~/bin/vim/vim-sidebar'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'scrooloose/NERDTree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
@@ -242,12 +242,6 @@ let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
 let g:SidebarEmptyPrefix = '<leader>'
 let g:SidebarEmptyStickyKey = 'E'
 
-" jeetsukumaran/vim-buffergator {{{2
-let g:buffergator_viewport_split_policy = "N"
-let g:buffergator_suppress_keymaps = 1
-nnoremap <leader>b :BuffergatorOpen<CR>
-autocmd Filetype buffergator noremap <buffer> <silent> <leader>b :BuffergatorClose<CR>
-
 " ctrlpvim/ctrlp.vim {{{2
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -262,6 +256,12 @@ let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
   \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
   \ }
+
+" jeetsukumaran/vim-buffergator {{{2
+let g:buffergator_viewport_split_policy = "N"
+let g:buffergator_suppress_keymaps = 1
+nnoremap <leader>b :BuffergatorOpen<CR>
+autocmd Filetype buffergator noremap <buffer> <silent> <leader>b :BuffergatorClose<CR>
 
 " scrooloose/NERDTree {{{2
 let NERDTreeMinimalUI = 1
