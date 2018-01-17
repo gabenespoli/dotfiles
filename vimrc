@@ -246,6 +246,7 @@ let g:SidebarEmptyStickyKey = 'E'
 let g:buffergator_viewport_split_policy = "N"
 let g:buffergator_suppress_keymaps = 1
 nnoremap <leader>b :BuffergatorOpen<CR>
+autocmd Filetype buffergator noremap <buffer> <silent> <leader>b :BuffergatorClose<CR>
 
 " ctrlpvim/ctrlp.vim {{{2
 let g:ctrlp_map = '<leader>o'
