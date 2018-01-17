@@ -227,6 +227,7 @@ nnoremap gd :Gvdiff<CR>
 nnoremap gA :Gwrite<CR>
 nnoremap gC :Gcommit<CR>i
 nnoremap gl :Glog<CR><CR>:copen<CR>
+autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
 
 " airblade/gitgutter {{{2
 nmap ga <Plug>GitGutterStageHunk
