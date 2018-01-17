@@ -230,7 +230,7 @@ nnoremap gl :Glog<CR><CR>:copen<CR>
 
 " airblade/gitgutter {{{2
 nmap ga <Plug>GitGutterStageHunk
-nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>
+nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 nmap ghd <Plug>GitGutterPreviewHunk
 nmap ghu <Plug>GitGutterUndoHunk
 nnoremap cog :GitGutterSignsToggle<CR>
