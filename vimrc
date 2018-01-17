@@ -233,9 +233,9 @@ autocmd FileType cfg,remind setlocal commentstring=#\ %s
 nnoremap gs :Gstatus<CR>
 nnoremap gd :Gvdiff<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap gC :Gcommit<CR>i
+nnoremap gc :Gcommit<CR>i
 nnoremap gl :Glog<CR><CR>:copen<CR>
-autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
+autocmd FileType gitcommit nnoremap <buffer> gc :silent wq<CR>
 
 " airblade/gitgutter {{{2
 nmap ga <Plug>GitGutterStageHunk
