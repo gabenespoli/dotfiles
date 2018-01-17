@@ -265,7 +265,7 @@ nnoremap <leader>b :BuffergatorOpen<CR>
 autocmd Filetype buffergator noremap <buffer> <silent> <leader>b :BuffergatorClose<CR>
 
 " scrooloose/NERDTree {{{2
-let NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = 1
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowLineNumbers = 0
