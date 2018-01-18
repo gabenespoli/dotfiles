@@ -157,20 +157,24 @@ nnoremap Q :qa<CR>
 nnoremap <leader>s :w<CR>
 
 " emacs-style movement {{{2
-inoremap <C-d> <Del>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+inoremap <C-d> <Del>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 if has('nvim')
+  inoremap <M-f> <S-Right>
+  inoremap <M-b> <S-Left>
   cnoremap <M-f> <S-Right>
   cnoremap <M-b> <S-Left>
 else
+  inoremap <Esc>f <S-Right>
+  inoremap <Esc>b <S-Left>
   cnoremap <Esc>f <S-Right>
   cnoremap <Esc>b <S-Left>
 endif
