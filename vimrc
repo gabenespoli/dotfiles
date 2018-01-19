@@ -284,25 +284,42 @@ let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
 
-nnoremap <leader>e :call ToggleNERDTreeLikeNetrw()<CR>
-function! ToggleNERDTreeLikeNetrw()
-  " TODO make this work even if called from buffergator
-  let l:fname = expand("%:t")
-  if exists('t:NERDTreeBufName')
-    " switch to existing nerdtree buffer
-    " this doesn't really work for some reason though
-      execute "buffer" . bufnr(t:NERDTreeBufName)
-  else
-    " open dir of current file
-    " should have g:NERDTreeHijackNetrw = 1
-    execute "e " . expand("%:h")
+nnoremap <leader>e :call ToggleNERDTreeInCurrentWindow()<CR>
+function! ToggleNERDTreeInCurrentWindow()
+  " should have the following NERDTree settings
+  " let g:NERDTreeHijackNetrw = 1
+  " let g:NERDTreeQuitOnOpen = 1
+
+  if bufname('%') == '[[buffergator-buffers]]'
+    execute "BuffergatorClose"
   endif
-  " go to line of current file
-  execute "call search('".l:fname."', 'cW')"
-  " after opening split, switch nerdtree back to the buffer it was called from
-  nnoremap <buffer> v :call nerdtree#ui_glue#invokeKeyMap("v")<CR><C-w>p:bprevious<CR><C-w>p
-  nnoremap <buffer> s :call nerdtree#ui_glue#invokeKeyMap("s")<CR><C-w>p:bprevious<CR><C-w>p
-  nnoremap <buffer> <leader>e :bprevious<CR>
+
+  let l:callerbufnr = bufnr('%')
+
+  if expand('%') != ''
+    execute "e " . expand('%:h')
+    execute "call search('".expand('%:t')."', 'cW')"
+    let l:dokeymaps = 1
+  else
+    execute "e ."
+    let l:dokeymaps = 0
+  endif
+  
+  if l:dokeymaps
+    " after opening split, switch nerdtree back to the buffer it was called from
+    execute "nnoremap <buffer> v :call nerdtree#ui_glue#invokeKeyMap('v')<CR><C-w>p:b".l:callerbufnr."<CR><C-w>p"
+    execute "nnoremap <buffer> s :call nerdtree#ui_glue#invokeKeyMap('s')<CR><C-w>p:b".l:callerbufnr."<CR><C-w>p"
+    execute "nnoremap <buffer> q :b".l:callerbufnr."<CR>"
+    execute "nnoremap <buffer> <leader>e :b".l:callerbufnr."<CR>"
+    execute "nnoremap <buffer> <leader>b :b".l:callerbufnr."<CR>:BuffergatorOpen<CR>"
+  endif
+  
+  " fix '.' buffers from hanging around
+  if bufnr("^.$") != -1
+    execute "bwipe" . bufnr("^.$")
+  endif
+
+  set nobuflisted
 endfunction
 
 " Xuyuanp/nerdtree-git-plugin {{{2
