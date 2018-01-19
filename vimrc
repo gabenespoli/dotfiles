@@ -245,8 +245,7 @@ let g:gitgutter_override_sign_column_highlight = 0
 
 " gabenespoli/vim-sidebar {{{2
 let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
-let g:SidebarEmptyPrefix = '<leader>'
-let g:SidebarEmptyStickyKey = 'E'
+let g:SidebarEmptyStickyKey = '<leader>E'
 
 " ctrlpvim/ctrlp.vim {{{2
 let g:ctrlp_map = '<leader>o'
