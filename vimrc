@@ -11,7 +11,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
-Plug '~/bin/vim/vim-sidebar'
+Plug '~/bin/vim/vim-mutton'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'scrooloose/NERDTree'
@@ -243,9 +243,8 @@ nnoremap cog :GitGutterSignsToggle<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
-" gabenespoli/vim-sidebar {{{2
-let g:SidebarEmptyStatusLine = '%#StatusLineFill#%=%*'
-let g:SidebarEmptyStickyKey = '<leader>m'
+" gabenespoli/vim-mutton {{{2
+nnoremap <leader>m :MuttonToggle<CR>
 
 " ctrlpvim/ctrlp.vim {{{2
 let g:ctrlp_map = '<leader>o'
