@@ -40,11 +40,10 @@ call plug#end()
 
 " General Settings {{{1
 " Colorscheme {{{2
+colorscheme sumach
 if has("gui_running")
-  colorscheme solarizedSumach
   set guicursor=n-v-c-i:blinkon0
 else
-  colorscheme gaberized
 endif
 syntax enable
 set background=dark

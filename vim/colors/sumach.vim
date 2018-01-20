@@ -1,7 +1,7 @@
-"" Gaberized Colorschme for Vim
-" source solorized and force colorscheme name to be gaberized
+"" Sumach Colorschme for Vim
+" first source regular solarized
 so ~/.vim/colors/solarized.vim
-let g:colors_name='gaberized'
+let g:colors_name='sumach'
 
 " Solarized customizations {{{1
 hi Title                ctermfg=15      ctermbg=10      cterm=none
