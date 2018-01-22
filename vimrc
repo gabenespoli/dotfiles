@@ -12,7 +12,8 @@ Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
 Plug '~/bin/vim/vim-mutton'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'scrooloose/NERDTree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -226,7 +227,6 @@ autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg,remind setlocal commentstring=#\ %s
 
 " tpope/vim-fugitive {{{2
-nnoremap gs :Gstatus<CR>
 nnoremap gd :Gvdiff<CR>
 nnoremap gA :Gwrite<CR>
 nnoremap gC :Gcommit<CR>i
@@ -245,20 +245,27 @@ let g:gitgutter_override_sign_column_highlight = 0
 " gabenespoli/vim-mutton {{{2
 nnoremap <leader>m :MuttonToggle<CR>
 
-" ctrlpvim/ctrlp.vim {{{2
-let g:ctrlp_map = '<leader>o'
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window = 'bottom'
-let g:ctrlp_prompt_mappings = { 
-  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-  \ 'PrtHistory(-1)':         [],
-  \ 'PrtHistory(1)':          [],
-  \ 'AcceptSelection("t")':   ['<C-t>'],
-  \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-  \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-  \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-  \ }
+" junegunn/fzf {{{2
+nnoremap <leader>o :Files ~<CR>
+nnoremap <leader>O :GFiles<CR>
+nnoremap gs :GFiles?<CR>
+nnoremap gl :Commits!<CR>
+let g:fzf_action = { 'ctrl-s': 'split' }
+let g:fzf_history_dir = '~/lib/fzf/history'
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Search'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Error'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " jeetsukumaran/vim-buffergator {{{2
 let g:buffergator_viewport_split_policy = "N"
