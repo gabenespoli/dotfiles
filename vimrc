@@ -365,6 +365,7 @@ let g:tagbar_type_r = {
         \ 'v:FunctionVariables',
     \ ]
 \ }
+nnoremap <leader>t :TagbarToggle<CR>
 
 " jszakmeister/markdown2ctags {{{2
 let g:tagbar_type_pandoc = {
