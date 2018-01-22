@@ -1,5 +1,7 @@
 au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
 
+inoremap {<CR> {<CR>}<Esc>O
+
 set foldmethod=expr
 set foldexpr=FoldExprDoubleCharSh(v:lnum)
 set foldtext=GetFoldTextSh()
