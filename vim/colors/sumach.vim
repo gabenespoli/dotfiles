@@ -8,6 +8,7 @@ hi Title                ctermfg=15      ctermbg=10      cterm=none
 "hi Operator             ctermfg=7       ctermbg=none    cterm=none
 hi WarningMsg           ctermfg=9       ctermbg=8       cterm=reverse
 hi ErrorMsg             ctermfg=1       ctermbg=7       cterm=reverse
+hi Error                ctermfg=1       ctermbg=8       cterm=none
 
 hi StatusLine           ctermfg=0       ctermbg=14      cterm=reverse
 hi StatusLineNC         ctermfg=0       ctermbg=10      cterm=reverse
