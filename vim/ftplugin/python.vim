@@ -1,6 +1,10 @@
-
-set tabstop=4                   " number of visual spaces per TAB
-set softtabstop=4               " number of spaces in tab when editing
-set shiftwidth=4
-
-au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
+set tabstop=4 softtabstop=4 shiftwidth=4
+set foldmethod=expr
+foldexpr=GetPythonFolds(v:lnum)
+function! GetPythonFolds(lnum)
+    if getline(a:lnum) =~ '^\s*\(class\|def\|#!\)'
+        return '>1'
+    else
+        return '='
+    endif
+endfunction
