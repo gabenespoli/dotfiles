@@ -24,6 +24,17 @@ nnoremap <buffer> <localleader>u :s/^([A-Z])\s//ge<CR>I(U) <Esc>:w<CR>
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp'':w<CR>
 
+nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
+function! TodoToggleNext()
+  execute 'normal! 0'
+  if search('!next', 'cn') == line('.') 
+    execute 's/ !next//ge'
+  else
+    execute 's/$/ !next/ge'
+  endif
+  execute 'write'
+endfunction
+
 " moving lines {{{2
 " nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
 " nnoremap <buffer> J :move +1<CR>:w<CR>
