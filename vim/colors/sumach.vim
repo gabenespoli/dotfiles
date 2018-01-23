@@ -64,7 +64,7 @@ hi mailSubject          ctermfg=3
 " Markdown {{{2
 hi markdownItalic       ctermfg=7       ctermbg=8       cterm=none
 hi markdownBold         ctermfg=15      ctermbg=8       cterm=bold
-hi markdownHeadingDelimiter ctermfg=7   ctermbg=0       cterm=none
+hi link markdownHeadingDelimiter Title
 hi link markdownH1      Title
 hi link markdownH2      Title
 hi link markdownH3      Title
