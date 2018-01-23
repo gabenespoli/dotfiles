@@ -246,6 +246,7 @@ let g:gitgutter_override_sign_column_highlight = 0
 
 " gabenespoli/vim-mutton {{{2
 nnoremap <leader>m :MuttonToggle<CR>
+nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " junegunn/fzf {{{2
 nnoremap <leader>o :Files ~<CR>
@@ -367,7 +368,6 @@ let g:tagbar_type_r = {
         \ 'v:FunctionVariables',
     \ ]
 \ }
-nnoremap <leader>t :TagbarToggle<CR>
 
 " jszakmeister/markdown2ctags {{{2
 let g:tagbar_type_pandoc = {
