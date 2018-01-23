@@ -73,21 +73,17 @@ eval "$(rbenv init -)"
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
-alias mc="mc -b"
 alias wa="tmux attach"
 alias wd="tmux detach"
 alias fold="fold -s"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias lsl='printf "\033c" && ls'
-alias gf="python $HOME/bin/utils/gf.py"
 alias edit=$EDITOR
 alias rd='printf "\033c" && remind -cc+3 -w120 "$HOME"/.reminders'
 alias pylab="ipython --pylab"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 function cdl { cd $1; ls;}
-function cdd() { cd "$(gf "$@")" ; }
-function lss() { ls "$(gf "$@")" ; }
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
 
