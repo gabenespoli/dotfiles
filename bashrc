@@ -82,6 +82,7 @@ alias cls='printf "\033c"'
 alias lsl='printf "\033c" && ls'
 alias gf="python $HOME/bin/utils/gf.py"
 alias edit=$EDITOR
+alias rd='printf "\033c" && remind -cc+3 -w120 "$HOME"/.reminders'
 alias pylab="ipython --pylab"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 function cdl { cd $1; ls;}
