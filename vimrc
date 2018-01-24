@@ -96,7 +96,9 @@ set incsearch nohlsearch
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
-set grepprg=git\ grep\ -n\ --no-color\ $*
+if executable('rg')
+  set grepprg=rg\ --line-number\ $*
+endif
 
 " Folding {{{2
 set fillchars="vert:' ',fold:-"
