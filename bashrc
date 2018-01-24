@@ -149,7 +149,7 @@ alias hangups="hangups \
     --col-msg-self-fg 'dark blue' \
     --col-msg-self-bg default"
 
-function openmd() { "$EDITOR" +SidebarStickyToggle -c "SidebarToggle tagbar" -c "SidebarToggle CapitalL" "$1" ; }
+function openmd() { "$EDITOR" -c "MuttonToggle" "$1" ; }
 alias ecpaper="openmd ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md"
 alias gvpaper="openmd ~/r/gv/paper/Nespoli2017.md"
 alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
