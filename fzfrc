@@ -1,20 +1,7 @@
 #!/bin/bash
 
 export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-kill-word,ctrl-n:down,ctrl-p:up'
-
-export FZF_DEFAULT_COMMAND='fd --type f \
-  --exclude Applications \
-  --exclude Downloads \
-  --exclude Google\ Drive \
-  --exclude Library \
-  --exclude Movies \
-  --exclude Music \
-  --exclude Pictures \
-  --exclude Public \
-  --exclude eg \
-  --exclude nas \
-  --exclude ltm \
-  --exclude smaug'
+export FZF_DEFAULT_COMMAND='fd --type f' 
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
