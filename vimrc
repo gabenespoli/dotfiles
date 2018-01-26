@@ -127,7 +127,7 @@ function! FoldTextMarker()
   if strlen(lines) < linesdigits + 1
     let lines = repeat(' ', linesdigits-strlen(lines)) . lines
   endif
-  let prefix = repeat(' ', l:foldlevel-1) . ' + '
+  let prefix = repeat(' ', l:foldlevel-1) . ' ▸ '
   let offset = 24
   let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
   return prefix . line . midfix . ' ('. lines .' lines)'
