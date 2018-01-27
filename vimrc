@@ -229,7 +229,7 @@ autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg,remind setlocal commentstring=#\ %s
 
 " tpope/vim-fugitive {{{2
-nnoremap gd :Gvdiff<CR>
+nnoremap gd :Gdiff<CR>
 nnoremap gA :Gwrite<CR>
 nnoremap gC :Gcommit<CR>i
 nnoremap gcC :Gcommit<CR>i
