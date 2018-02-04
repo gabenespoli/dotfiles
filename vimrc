@@ -12,6 +12,7 @@ Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
 Plug '~/bin/vim/vim-mutton'
+Plug '~/bin/vim/vim-cider-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -275,8 +276,6 @@ let g:fzf_colors =
 " jeetsukumaran/vim-buffergator {{{2
 let g:buffergator_viewport_split_policy = "N"
 let g:buffergator_suppress_keymaps = 1
-nnoremap <leader>b :BuffergatorOpen<CR>
-autocmd Filetype buffergator noremap <buffer> <silent> <leader>b :BuffergatorClose<CR>
 
 " scrooloose/NERDTree {{{2
 let g:NERDTreeMinimalUI = 1
@@ -294,43 +293,9 @@ let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
 
-nnoremap <leader>e :call ToggleNERDTreeInCurrentWindow()<CR>
-function! ToggleNERDTreeInCurrentWindow()
-  " should have the following NERDTree settings
-  " let g:NERDTreeHijackNetrw = 1
-  " let g:NERDTreeQuitOnOpen = 1
-
-  if bufname('%') == '[[buffergator-buffers]]'
-    execute "BuffergatorClose"
-  endif
-
-  let l:callerbufnr = bufnr('%')
-
-  if expand('%') != ''
-    execute "e " . expand('%:h')
-    execute "call search('".expand('%:t')."', 'cW')"
-    let l:dokeymaps = 1
-  else
-    execute "e ."
-    let l:dokeymaps = 0
-  endif
-  
-  if l:dokeymaps
-    " after opening split, switch nerdtree back to the buffer it was called from
-    execute "nnoremap <buffer> v :call nerdtree#ui_glue#invokeKeyMap('v')<CR><C-w>p:b".l:callerbufnr."<CR><C-w>p"
-    execute "nnoremap <buffer> s :call nerdtree#ui_glue#invokeKeyMap('s')<CR><C-w>p:b".l:callerbufnr."<CR><C-w>p"
-    execute "nnoremap <buffer> q :b".l:callerbufnr."<CR>"
-    execute "nnoremap <buffer> <leader>e :b".l:callerbufnr."<CR>"
-    execute "nnoremap <buffer> <leader>b :b".l:callerbufnr."<CR>:BuffergatorOpen<CR>"
-  endif
-  
-  " fix '.' buffers from hanging around
-  if bufnr("^.$") != -1
-    execute "bwipe" . bufnr("^.$")
-  endif
-
-  set nobuflisted
-endfunction
+" gabenespoli/vim-cider-vinegar {{{2
+let g:CiderVinegarToggle = '<leader>e'
+let g:CiderVinegarToggleBuffers = '<leader>b'
 
 " Xuyuanp/nerdtree-git-plugin {{{2
 let g:NERDTreeIndicatorMapCustom = {
