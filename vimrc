@@ -99,6 +99,7 @@ let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
 if executable('rg')
   set grepprg=rg\ --line-number\ $*
+  " set grepprg=git\ grep\ --line-number\ --no-color\ $*
 endif
 
 " Folding {{{2
@@ -127,7 +128,7 @@ function! FoldTextMarker()
   if strlen(lines) < linesdigits + 1
     let lines = repeat(' ', linesdigits-strlen(lines)) . lines
   endif
-  let prefix = repeat(' ', l:foldlevel-1) . ' + '
+  let prefix = repeat(' ', l:foldlevel-1) . ' ▸ '
   let offset = 24
   let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
   return prefix . line . midfix . ' ('. lines .' lines)'
