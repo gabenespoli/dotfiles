@@ -66,7 +66,7 @@ color.blocking=color2
 
 # Due
 color.due=color8 on color2
-color.due.today=color8 on color9
+color.due.today=color6 on color8
 color.overdue=color8 on color1
 
 # Command: calendar
