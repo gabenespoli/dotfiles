@@ -58,8 +58,6 @@ export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
 export EDITOR='nvim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
-source "$HOME/dotfiles/fzfrc"
-source ~/private/github
 
 # autocomplete
 # bind 'TAB:menu-complete'
@@ -155,13 +153,10 @@ alias gvpaper="openmd ~/r/gv/paper/Nespoli2017.md"
 alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
-## network {{{1
-alias egserver="ssh egserver@192.168.86.12"
-alias smart="ssh gmac@smartmacpro.arts.ryerson.ca"
-alias smarts="open vnc://gmac@smartmacpro.arts.ryerson.ca"
-function eg () { mount -t smbfs //egserver@192.168.86.12/eg ~/eg ; }
-function ltm() { mount -t smbfs //gnespoli@ltm.arts.ryerson.ca/smart ~/ltm ; }
-function smaug() { mount -t smbfs //gabe@141.117.107.83/Lab ~/smaug/Lab ; }
+### source other files {{{2
+source "$HOME/dotfiles/fzfrc"
+source "$HOME/private/github"
+source "$HOME/bin/network_aliases"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
