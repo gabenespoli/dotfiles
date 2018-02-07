@@ -11,7 +11,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 ## Some defaults
-data.location=~/bin/private/task
+data.location=~/todo/task
 include ~/dotfiles/task/colors.theme
 default.command=t
 
