@@ -52,3 +52,4 @@ urgency.waiting.coefficient                 = -3.0
 urgency.user.project.<project>.coefficient  = 5.0
 urgency.user.tag.<tag>.coefficient          = 5.0
 urgency.uda.<name>.coefficient              = 5.0
+context.home=-lab
