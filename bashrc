@@ -54,7 +54,7 @@ fi
 ## Environment {{{1
 export PATH="$HOME/local/bin:$PATH"
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
-export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \$\[\e[m\] '
+export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \[\e[0;37m\]\$\[\e[m\] '
 export EDITOR='nvim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
