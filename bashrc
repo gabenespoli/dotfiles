@@ -87,6 +87,7 @@ function settitle() { printf "\033k$1\033\\" ; }
 
 ### git {{{2
 alias gs="git status -sb"
+alias ts="tig status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
