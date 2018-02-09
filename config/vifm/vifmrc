@@ -378,6 +378,9 @@ nnoremap <f8> :delete<cr>
 
 " these are my custom settings
 
+nnoremap <C-j> <CR>
+cnoremap <C-j> <CR>
+
 nnoremap q :q<cr>
 " open files (or go forward) with o
 nnoremap o l
