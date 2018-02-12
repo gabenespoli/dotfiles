@@ -5,8 +5,9 @@ if [ "$(uname)" == "Darwin" ]; then
     ### Mac options
     export PATH="$HOME/bin:/usr/local/texbin:$HOME/Library/Haskell/bin:/usr/local/lib:/usr/local/bin:$PATH"
     alias ls="ls -hl"
-    alias la="ls -hla"
     alias lsa="ls -hla"
+    alias lsg="ls -hl | grep"
+    alias lsag="ls -hla | grep"
     alias agi="brew install"
     alias agu="brew update && brew upgrade && brew cleanup"
     alias ql='qlmanage -p &>/dev/null'
@@ -36,8 +37,9 @@ else
         . ~/.bash_aliases
     fi
     alias ls="ls -hl --color"
-    alias la="ls -hla --color"
     alias lsa="ls -hla --color"
+    alias lsg="ls -hl --color | grep"
+    alias lsag="ls -hla --color | grep"
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
