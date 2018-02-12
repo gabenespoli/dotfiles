@@ -67,7 +67,7 @@ bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
 
 # setup ruby env (requires rbenv to be installed)
-eval "$(rbenv init -)"
+if hash rbenv 2> /dev/null; then eval "$(rbenv init -)" ; fi
 
 ## Aliases & Functions {{{1
 alias grep="grep --color"
@@ -156,9 +156,8 @@ alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
 ### source other files {{{2
-source "$HOME/dotfiles/fzfrc"
-source "$HOME/private/github"
-source "$HOME/bin/network_aliases"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
+function sourcex() { [ -f "$1" ] && source "$1" ; }
+sourcex "$HOME/private/github"
+sourcex "$HOME/bin/network_aliases"
+sourcex "$HOME/dotfiles/fzfrc"
+sourcex "$HOME/.fzf.bash"
