@@ -157,7 +157,7 @@ inoremap jk <Esc>
 " general {{{2
 nnoremap Y y$
 nnoremap q :q<CR>
-nnoremap Q :qa<CR>
+nnoremap Q q
 nnoremap <leader>s :w<CR>
 
 " emacs-style movement {{{2
