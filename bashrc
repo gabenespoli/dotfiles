@@ -3,7 +3,12 @@
 ## OS-specific options {{{1
 if [ "$(uname)" == "Darwin" ]; then
     ### Mac options
-    export PATH="$HOME/bin:/usr/local/texbin:$HOME/Library/Haskell/bin:/usr/local/lib:/usr/local/bin:$PATH"
+    export PATH="/usr/local/bin:$PATH"
+    export PATH="/usr/local/lib:$PATH"
+    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+    export PATH="/usr/local/texbin:$PATH"
+    export PATH="$HOME/Library/Haskell/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
     alias ls="ls -hl"
     alias lsa="ls -hla"
     alias lsg="ls -hl | grep"
