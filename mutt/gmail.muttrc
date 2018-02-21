@@ -5,7 +5,7 @@
 source ~/dotfiles/muttrc
 
 # then source private gmail stuff
-source ~/bin/private/mutt/gmail_private.muttrc
+source ~/private/mutt/gmail_private.muttrc
 
 # then make adjustments to overwrite certain things
 
