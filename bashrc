@@ -132,7 +132,7 @@ alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDel
 alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias cite="python $HOME/bin/cite/cite.py"
 alias octave="octave --no-gui"
-alias rate="python $HOME/bin/utils/rate.py"
+alias rate="python $HOME/bin/python/rate.py"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 alias hangups="hangups \
