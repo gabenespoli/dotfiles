@@ -101,7 +101,7 @@ alias gd="git diff"
 alias gc="git commit"
 alias gca="git commit --amend"
 alias glog="git log --graph --decorate --oneline"
-alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(bold blue)%s%C(reset) %C(bold green)- %an%C(reset)%C(yellow)%d%C(reset)' --all"
 alias ts="tig status"
 
 ### todo, notes, and calendar {{{2
