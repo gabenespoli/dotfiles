@@ -88,6 +88,7 @@ alias edit=$EDITOR
 alias rd='printf "\033c" && remind -cc+3 -w120 "$HOME"/.reminders'
 alias pylab="ipython --pylab"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias mne="source $HOME/local/mne/bin/activate && ipython"
 function cdl { cd $1; ls;}
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
@@ -100,7 +101,7 @@ alias gd="git diff"
 alias gc="git commit"
 alias gca="git commit --amend"
 alias glog="git log --graph --decorate --oneline"
-alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(bold blue)%s%C(reset) %C(bold green)- %an%C(reset)%C(yellow)%d%C(reset)' --all"
 alias ts="tig status"
 
 ### todo, notes, and calendar {{{2
