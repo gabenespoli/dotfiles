@@ -48,7 +48,7 @@ else
     alias agi="sudo apt-get -y install"
     alias agu="sudo apt-get update"
     alias sambastart="sudo /etc/init.d/samba start"
-    alias ranger="python $HOME/local/ranger/ranger.py"
+    alias ranger='python $HOME/local/ranger/ranger.py --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
     alias trash="gio trash"
     alias t="todo-txt -a"
     alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
@@ -89,6 +89,7 @@ alias rd='printf "\033c" && remind -cc+3 -w120 "$HOME"/.reminders'
 alias pylab="ipython --pylab"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias mne="source $HOME/local/mne/bin/activate && ipython"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
 function cdl { cd $1; ls;}
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
