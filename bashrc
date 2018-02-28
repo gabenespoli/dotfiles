@@ -112,7 +112,7 @@ alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/p
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 
 # apps
-alias ranger='ranger --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
+function ranger() { /usr/local/bin/ranger --choosedir=$HOME/.rangerdir $@; cd "`cat $HOME/.rangerdir`" ; }
 alias mail="mutt -F $HOME/dotfiles/muttrc"
 alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder>=Archive<enter>'"
 alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
