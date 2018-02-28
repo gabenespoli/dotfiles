@@ -95,12 +95,14 @@ function settitle() { printf "\033k$1\033\\" ; }
 
 ### git {{{2
 alias gs="git status -sb"
-alias ts="tig status"
-alias gd="git diff"
 alias ga="git add"
-alias gc="git commit"
 alias gr="git reset"
+alias gd="git diff"
+alias gc="git commit"
+alias gca="git commit --amend"
 alias glog="git log --graph --decorate --oneline"
+alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias ts="tig status"
 
 ### todo, notes, and calendar {{{2
 alias todo="$EDITOR -c 'call GrepTodo_start()'"
@@ -133,7 +135,7 @@ alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDel
 alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias cite="python $HOME/bin/cite/cite.py"
 alias octave="octave --no-gui"
-alias rate="python $HOME/bin/utils/rate.py"
+alias rate="python $HOME/bin/python/rate.py"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 alias hangups="hangups \
