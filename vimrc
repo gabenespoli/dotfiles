@@ -299,18 +299,18 @@ let g:CiderVinegarToggle = '<leader>e'
 let g:CiderVinegarToggleBuffers = '<leader>b'
 
 " Xuyuanp/nerdtree-git-plugin {{{2
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "M",
-    \ "Staged"    : "+",
-    \ "Untracked" : "?",
-    \ "Renamed"   : "R",
-    \ "Unmerged"  : "U",
-    \ "Deleted"   : "D",
-    \ "Dirty"     : "*",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : "!",
-    \ "Unknown"   : "X"
-    \ }
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "M",
+"     \ "Staged"    : "+",
+"     \ "Untracked" : "?",
+"     \ "Renamed"   : "R",
+"     \ "Unmerged"  : "U",
+"     \ "Deleted"   : "D",
+"     \ "Dirty"     : "*",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : "!",
+"     \ "Unknown"   : "X"
+"     \ }
 
 " majutsushi/tagbar{{{2
 let g:tagbar_left = 1
