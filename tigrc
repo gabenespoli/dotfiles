@@ -1,3 +1,7 @@
+# keybindings
+bind generic  <C-j> enter
+
+# colors
 color cursor			  black green bold
 color title-blur		cyan black bold
 color title-focus		cyan black bold
