@@ -75,6 +75,7 @@ bind 'set completion-display-width 0'
 if hash rbenv 2> /dev/null; then eval "$(rbenv init -)" ; fi
 
 ## Aliases & Functions {{{1
+alias edit=$EDITOR
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
@@ -84,12 +85,7 @@ alias fold="fold -s"
 alias exe="chmod u+x"
 alias cls='printf "\033c"'
 alias lsl='printf "\033c" && ls'
-alias edit=$EDITOR
 alias rd='printf "\033c" && remind -cc+3 -w120 "$HOME"/.reminders'
-alias pylab="ipython --pylab"
-alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
-alias mne="source $HOME/local/mne/bin/activate && ipython"
-alias ranger='ranger --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
 function cdl { cd $1; ls;}
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
@@ -104,6 +100,44 @@ alias gca="git commit --amend"
 alias glog="git log --graph --decorate --oneline"
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(bold blue)%s%C(reset) %C(bold green)- %an%C(reset)%C(yellow)%d%C(reset)' --all"
 alias ts="tig status"
+
+### others {{{2
+
+# coding languages
+alias pylab="ipython --pylab"
+alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias mne="source $HOME/local/mne/bin/activate && ipython"
+alias octave="octave --no-gui"
+alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
+alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
+
+# apps
+alias ranger='ranger --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
+alias mail="mutt -F $HOME/dotfiles/muttrc"
+alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder>=Archive<enter>'"
+alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
+alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
+alias pdoc="$HOME/dotfiles/pandoc/pdoc"
+alias cite="python $HOME/bin/cite/cite.py"
+alias rate="python $HOME/bin/python/rate.py"
+alias hangups="hangups \
+    --date-format '< %Y-%m-%d >' \
+    --disable-notifications \
+    --key-close-tab 'ctrl x' \
+    --col-tab-background-fg yellow \
+    --col-tab-background-bg 'dark gray' \
+    --col-active-tab-fg 'light gray' \
+    --col-active-tab-bg black \
+    --col-inactive-tab-fg yellow \
+    --col-inactive-tab-bg black \
+    --col-status-line-fg yellow \
+    --col-status-line-bg 'dark gray' \
+    --col-msg-date-fg 'light green' \
+    --col-msg-date-bg black \
+    --col-msg-sender-fg 'light magenta' \
+    --col-msg-sender-bg default \
+    --col-msg-self-fg 'dark blue' \
+    --col-msg-self-bg default"
 
 ### todo, notes, and calendar {{{2
 alias todo="$EDITOR -c 'call GrepTodo_start()'"
@@ -128,36 +162,7 @@ function caplog() {
     fi
 }
 
-### others {{{2
-alias mail="mutt -F $HOME/dotfiles/muttrc"
-alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder>=Archive<enter>'"
-alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
-alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
-alias pdoc="$HOME/dotfiles/pandoc/pdoc"
-alias cite="python $HOME/bin/cite/cite.py"
-alias octave="octave --no-gui"
-alias rate="python $HOME/bin/python/rate.py"
-alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
-alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
-alias hangups="hangups \
-    --date-format '< %Y-%m-%d >' \
-    --disable-notifications \
-    --key-close-tab 'ctrl x' \
-    --col-tab-background-fg yellow \
-    --col-tab-background-bg 'dark gray' \
-    --col-active-tab-fg 'light gray' \
-    --col-active-tab-bg black \
-    --col-inactive-tab-fg yellow \
-    --col-inactive-tab-bg black \
-    --col-status-line-fg yellow \
-    --col-status-line-bg 'dark gray' \
-    --col-msg-date-fg 'light green' \
-    --col-msg-date-bg black \
-    --col-msg-sender-fg 'light magenta' \
-    --col-msg-sender-bg default \
-    --col-msg-self-fg 'dark blue' \
-    --col-msg-self-bg default"
-
+### custom files {{{2
 function openmd() { "$EDITOR" -c "MuttonToggle" "$1" ; }
 alias ecpaper="openmd ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md"
 alias gvpaper="openmd ~/r/gv/paper/Nespoli2017.md"
