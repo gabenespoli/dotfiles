@@ -9,6 +9,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'
+Plug 'henrik/vim-indexed-search'
 
 " sidebars {{{2
 Plug '~/bin/vim/vim-mutton'
