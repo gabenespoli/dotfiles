@@ -77,7 +77,9 @@ hi pandocReferenceLabel ctermfg=13                      cterm=none
 hi pandocReferenceURL   ctermfg=6                       cterm=none
 
 " MATLAB {{{2
-hi link matlabCellComment CommentHeading
+hi link matlabCellComment Title
+hi link matlabCellCommentIndented Title
+hi matlabCellCommentPrefix ctermfg=8    ctermbg=8
 
 " Plugin color customizations {{{1
 
