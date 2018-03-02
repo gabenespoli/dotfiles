@@ -92,11 +92,16 @@ function settitle() { printf "\033k$1\033\\" ; }
 
 ### git {{{2
 alias gs="git status -sb"
+alias gb="git branch"
+alias gg="git checkout"
 alias ga="git add"
 alias gr="git reset"
 alias gd="git diff"
 alias gc="git commit"
 alias gca="git commit --amend"
+alias gss="git stash push"
+alias gsp="git stash pop"
+alias gsl="git stash list"
 alias glog="git log --graph --decorate --oneline"
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(bold blue)%s%C(reset) %C(bold green)- %an%C(reset)%C(yellow)%d%C(reset)' --all"
 alias ts="tig status"
