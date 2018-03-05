@@ -105,6 +105,7 @@ alias gsl="git stash list"
 alias glog="git log --graph --decorate --oneline"
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(bold blue)%s%C(reset) %C(bold green)- %an%C(reset)%C(yellow)%d%C(reset)' --all"
 alias ts="tig status"
+alias tl="tig"
 
 ### others {{{2
 
