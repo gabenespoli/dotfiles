@@ -5,7 +5,6 @@ if [ "$(uname)" == "Darwin" ]; then
     ### Mac options
     export PATH="/usr/local/bin:$PATH"
     export PATH="/usr/local/lib:$PATH"
-    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
     export PATH="/usr/local/texbin:$PATH"
     export PATH="$HOME/Library/Haskell/bin:$PATH"
     export PATH="$HOME/bin:$PATH"
