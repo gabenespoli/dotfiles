@@ -254,7 +254,8 @@ nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " junegunn/fzf {{{2
-nnoremap <leader>o :Files ~<CR>
+command! FZFCustom call fzf#run({'source': 'find ~/local ~/dotfiles ~/Dropbox -type f', 'sink':  'edit'})
+nnoremap <leader>o :FZFCustom<CR>
 nnoremap <leader>O :GFiles<CR>
 nnoremap gs :GFiles?<CR>
 nnoremap gl :Commits!<CR>
