@@ -10,6 +10,8 @@ if [ "$(uname)" == "Darwin" ]; then
     export PATH="$HOME/bin:$PATH"
     alias ls="ls -hl"
     alias lsa="ls -hla"
+    alias gls="gls -hl --color --group-directories-first"
+    alias glsa="gls -hla --color --group-directories-first"
     alias lsg="ls -hl | grep"
     alias lsag="ls -hla | grep"
     alias agi="brew install"
@@ -32,6 +34,7 @@ if [ "$(uname)" == "Darwin" ]; then
    #                1 2 3 4 5 6 7 8 9 1011
    #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
     export LSCOLORS=exgxcxdxfxegedabagacad
+    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
     export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
 else 
