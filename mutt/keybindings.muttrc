@@ -88,7 +88,7 @@ macro   index,pager     gx      "<change-folder>=Trash<enter>"      "Go to Trash
 
 macro   index           gr      "<limit>all<enter>"                 "Show all messages (reset limiting)."
 macro   index           h       "<limit>all<enter>"                 "Show all messages (reset limiting)." # default for h is display toggle weed
-macro   index           gf      "<limit>~F|~N<enter>"               "Show new and flagged messages."
+macro   index           gf      "<limit>(~F|~N) !(~f ResearchGate | ~f greenp | ~f PRESTO | ~f Starbucks | ~f smoothpay | ~f 'Katherine Maher')<enter>"               "Show new and flagged messages."
 macro   index           gs      "<limit>~F<enter>"                  "Show flagged messages."
 macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
 macro   index           gt      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages."
