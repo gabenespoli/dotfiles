@@ -147,7 +147,7 @@
                         ]
                     },
                     {
-                        "description": "Emacs key bindings [control+bfnp -> arrow keys] (rev 2)",
+                        "description": "Emacs key bindings [control+np -> arrow keys] (rev 2)",
                         "manipulators": [
                             {
                                 "conditions": [
