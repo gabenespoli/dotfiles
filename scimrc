@@ -1,0 +1,7 @@
+# Looks really nice with Solarized color scheme
+color "type=HEADINGS fg=DEFAULT_COLOR bg=BLACK bold=0"
+color "type=CELL_SELECTION fg=WHITE bg=GREEN bold=1"
+
+nnoremap "q" ":q<CR>"
+
+set autocalc
