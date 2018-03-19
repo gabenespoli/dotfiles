@@ -75,23 +75,23 @@ bind    index               =       limit # // default is l; this is the filter 
 
 ## External {{{1
 bind    editor          <Tab>   complete-query # goobook auto-completion
-macro   index,pager     M       '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
-macro   index,pager     \em     '<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>' "Run offlineimap to sync all mail; empty inbox."
 macro   index,pager     R       "<sync-mailbox><shell-escape>offlineimap_in_tmux_split<enter>" "Run offlineimap to sync all mail; empty inbox."
-# macro   index,pager     \eR     "<sync-mailbox><shell-escape>offlineimap<enter>" "Run offlineimap to sync all mail; empty inbox."
+# macro   index,pager     \eR     "<sync-mailbox><shell-escape>offlineimap<enter>" "Run offlineimap to sync all mail."
 
 ## Jumping and Limiting {{{1
 macro   index,pager     gi      "<change-folder>=INBOX<enter>"      "Go to Inbox folder."
-macro   index,pager     ga      "<change-folder>=Archive<enter>"    "Go to Archive folder."
+macro   index,pager     ga      "<change-folder>=Archive<enter>"    "Go to Archive (Gmail All Mail) folder."
 macro   index,pager     gd      "<change-folder>=Drafts<enter>"     "Go to Drafts folder."
 macro   index,pager     gx      "<change-folder>=Trash<enter>"      "Go to Trash folder."
+macro   index,pager     gr      "<change-folder>=Reading<enter>"    "Go to Reading folder."
+macro   index,pager     gw      "<change-folder>=Waiting<enter>"    "Go to Waiting folder."
 
-macro   index           gr      "<limit>all<enter>"                 "Show all messages (reset limiting)."
-macro   index           h       "<limit>all<enter>"                 "Show all messages (reset limiting)." # default for h is display toggle weed
-macro   index           gf      "<limit>(~F|~N) !(~f ResearchGate | ~f greenp | ~f PRESTO | ~f Starbucks | ~f smoothpay | ~f 'Katherine Maher')<enter>"               "Show new and flagged messages."
-macro   index           gs      "<limit>~F<enter>"                  "Show flagged messages."
-macro   index           gn      "<limit>~N<enter>"                  "Show new messages."
 macro   index           gt      "<limit>~f gabenespoli@gmail.com | ~f gabe@psych.ryerson.ca | ~f gnespoli@ryerson.ca<enter>" "Show sent messages."
+# macro   index           ga      "<limit>all<enter>"                 "Reset limiting (show all messages)"
+macro   index           h       "<limit>all<enter>"                 "Reset limiting (show all messages)" # default for h is display toggle weed
+macro   index           gf      "<limit>(~F|~N) !(~f ResearchGate | ~f greenp | ~f PRESTO | ~f Starbucks | ~f smoothpay | ~f 'Katherine Maher')<enter>" "Show new and flagged messages (ignore not important)."
+macro   index           gs      "<limit>~F<enter>"                  "Show flagged (Gmail Starred) messages."
+macro   index           gn      "<limit>~N<enter>"                  "Show new (unread) messages."
 
 
 # some keybindings to play nice with gmail
