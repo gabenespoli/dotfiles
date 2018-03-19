@@ -150,7 +150,7 @@ set statusline+=%l/%L\,%c\ (%P)
 
 " Keybindings {{{1
 " settings {{{2
-let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 set notimeout
 set ttimeout
 inoremap jk <Esc>
@@ -159,7 +159,7 @@ inoremap jk <Esc>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
-nnoremap <leader>s :w<CR>
+nnoremap <localleader>s :echoerr "Don't save that way!"<CR>
 
 " emacs-style movement {{{2
 inoremap <C-f> <Right>
@@ -198,7 +198,7 @@ nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 "vimdiff
 nnoremap du :diffupdate<CR>
 " Spell checking
-nnoremap <localleader>s 1z=
+nnoremap <leader>s 1z=
 " open with system on mac
 if has('mac')
   nnoremap gO :!open <cfile><CR>
@@ -469,8 +469,8 @@ let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 let g:criticmarkup#disable#highlighting = 1
 
 " rickhowe/diffchar {{{2
-map  <localleader>D <Plug>ToggleDiffCharAllLines
-map  <localleader>d <Plug>ToggleDiffCharCurrentLine
+map  <leader>C      <Plug>ToggleDiffCharAllLines
+map  <leader>c      <Plug>ToggleDiffCharCurrentLine
 nmap [d             <Plug>JumpDiffCharPrevStart
 nmap ]d             <Plug>JumpDiffCharNextStart
 nmap <F13>          <Plug>JumpDiffCharPrevEnd
