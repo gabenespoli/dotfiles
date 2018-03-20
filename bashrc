@@ -126,7 +126,7 @@ alias Mail="offlineimap && mutt -F $HOME/dotfiles/muttrc -e 'push <change-folder
 alias gmail="mutt -F $HOME/dotfiles/mutt/gmail.muttrc"
 alias vimdiff="vimdiff -c 'windo set wrap' -c 'windo set number' -c 'hi _DiffDelPos cterm=underline ctermfg=1 ctermbg=0'"
 alias pdoc="$HOME/dotfiles/pandoc/pdoc"
-alias cite="python $HOME/bin/cite/cite.py"
+alias cite="python $HOME/bin/python/cite/cite.py"
 alias rate="python $HOME/bin/python/rate.py"
 alias hangups="hangups \
     --date-format '< %Y-%m-%d >' \
