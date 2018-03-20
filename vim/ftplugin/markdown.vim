@@ -4,7 +4,7 @@ setlocal spell       " enable live spell checking
 " keybindings {{{1
 " general {{{2
 nnoremap <buffer> <localleader>S :set spell!<CR>
-nnoremap <buffer> <localleader>s 1z=
+" nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
 " move up and down by visual line {{{2
@@ -32,6 +32,7 @@ nnoremap <buffer> <localleader>chh I{==<Esc>A==}<Esc>
 nnoremap <buffer> <localleader>chs )i==}<Esc>((i{==<Esc>
 nnoremap <buffer> <localleader>chw ea==}<Esc>bbi{==<Esc>
 " nnoremap <buffer> <localleader>cdh :call search('{==','cb',line('.'))<CR>d3l:call search('==}','c',line('.'))<CR>d3l
+nnoremap <buffer> <localleader>er f}a{>>TODO: reference<<}<Esc>
 
 " remove tags (highlights, whole tags, accept/reject)
 nnoremap <buffer> <localleader>chd F{xxxf}XXx
@@ -73,9 +74,9 @@ endfunction
 function! GetMarkdownFoldText()
     let line = getline(v:foldstart)
     if line == '---'
-        return '+-- YAML '
+        return ' ▸ YAML '
     else
-        let temp = substitute(line, '^#', '', 'g')
+        let temp = substitute(line, '#\s', ' ▸ ', 'g')
         let sub = substitute(temp, '#', '  ', 'g')
         return sub
     endif
