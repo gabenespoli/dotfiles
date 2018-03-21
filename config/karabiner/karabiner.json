@@ -767,22 +767,6 @@
                         },
                         {
                             "from": {
-                                "key_code": "f3"
-                            },
-                            "to": {
-                                "key_code": "f3"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "f4"
-                            },
-                            "to": {
-                                "key_code": "f4"
-                            }
-                        },
-                        {
-                            "from": {
                                 "key_code": "f5"
                             },
                             "to": {
