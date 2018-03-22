@@ -30,6 +30,7 @@ nnoremap <buffer> <localleader>o :execute 'SlimeSend1 dbstep'<CR>
 nnoremap <buffer> <localleader>i :execute 'SlimeSend1 dbstep in'<CR>
 nnoremap <buffer> <localleader>x :execute 'SlimeSend1 dbstep out'<CR>
 nnoremap <buffer> <localleader>q :execute 'SlimeSend1 dbquit'<CR>
+nnoremap <buffer> <localleader>g :execute 'SlimeSend1 dbcont'<CR>
 
 " for vim-matlab plugin {{{1
 " nnoremap <buffer> <localleader>tt :MatlabLaunchServer<CR>
