@@ -159,7 +159,6 @@ inoremap jk <Esc>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
-nnoremap <localleader>s :echoerr "Don't save that way!"<CR>
 
 " emacs-style movement {{{2
 inoremap <C-f> <Right>
