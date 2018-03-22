@@ -160,6 +160,7 @@ inoremap jk <Esc>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
+nnoremap <leader>w :w<CR>
 
 " emacs-style movement {{{2
 inoremap <C-f> <Right>
