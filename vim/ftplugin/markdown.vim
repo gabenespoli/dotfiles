@@ -23,16 +23,21 @@ nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 " criticmarkup and cite.py {{{2
-" insert tags (comments and highlights)
+" insert tags with tpope/vim-surround plugin
+let b:surround_43 = "{++\r++}"
+let b:surround_45 = "{--\r--}"
+let b:surround_61 = "{==\r==}"
+let b:surround_60 = "{>>\r<<}"
+let b:surround_62 = "{>>\r<<}"
+
+" remove tags with surround (sort of)
+nmap <buffer> <localleader>sd+ ds{ds+ds+
+nmap <buffer> <localleader>sd= ds{ds=ds=
+nmap <buffer> <localleader>sd- ds{ds-ds-
+
+" insert comments
 nnoremap <buffer> <localleader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
-nnoremap <buffer> <localleader>ct i{>>__TODO__: <<}<Esc>hhi
-nnoremap <buffer> <localleader>chi i{==<Esc>
-nnoremap <buffer> <localleader>cha a==}<Esc>
-nnoremap <buffer> <localleader>chh I{==<Esc>A==}<Esc>
-nnoremap <buffer> <localleader>chs )i==}<Esc>((i{==<Esc>
-nnoremap <buffer> <localleader>chw ea==}<Esc>bbi{==<Esc>
-" nnoremap <buffer> <localleader>cdh :call search('{==','cb',line('.'))<CR>d3l:call search('==}','c',line('.'))<CR>d3l
-nnoremap <buffer> <localleader>er f}a{>>TODO: reference<<}<Esc>
+nnoremap <buffer> <localleader>ct i{>>TODO: <<}<Esc>hhi
 
 " remove tags (highlights, whole tags, accept/reject)
 nnoremap <buffer> <localleader>chd F{xxxf}XXx
