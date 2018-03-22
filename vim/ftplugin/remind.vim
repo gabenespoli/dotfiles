@@ -1,6 +1,5 @@
 " keybindings
 nnoremap <buffer> <localleader>r :SlimeSend1 printf "\033c" && rem -cc+3 -w120<CR>
-nnoremap <buffer> <leader>s :w<CR>:SlimeSend1 printf "\033c" && rem -cc+3 -w120<CR>
 
 " highlighting
 au VimEnter,BufEnter <buffer> syn match Title '^#.*-\{4,\}$'
