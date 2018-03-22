@@ -7,7 +7,6 @@ set shiftwidth=4
 " keybindings {{{1
 " general {{{2
 nnoremap <buffer> <localleader>S :set spell!<CR>
-" nnoremap <buffer> <localleader>s 1z=
 nnoremap <buffer> <localleader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
 " move up and down by visual line {{{2
