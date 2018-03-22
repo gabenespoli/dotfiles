@@ -31,9 +31,9 @@ let b:surround_60 = "{>>\r<<}"
 let b:surround_62 = "{>>\r<<}"
 
 " remove tags with surround (sort of)
-nmap <buffer> <localleader>sd+ ds{ds+ds+
-nmap <buffer> <localleader>sd= ds{ds=ds=
-nmap <buffer> <localleader>sd- ds{ds-ds-
+nmap <buffer> <localleader>ds+ ds{ds+ds+
+nmap <buffer> <localleader>ds= ds{ds=ds=
+nmap <buffer> <localleader>ds- ds{ds-ds-
 
 " insert comments
 nnoremap <buffer> <localleader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
