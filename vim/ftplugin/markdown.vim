@@ -8,7 +8,7 @@ set shiftwidth=4
 " general {{{2
 nnoremap <buffer> <localleader>S :set spell!<CR>
 " nnoremap <buffer> <localleader>s 1z=
-nnoremap <buffer> <leader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
+nnoremap <buffer> <localleader>gd :Gdiff<CR>:windo set wrap<CR>:call PandocForceHighlighting()<CR>
 
 " move up and down by visual line {{{2
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
