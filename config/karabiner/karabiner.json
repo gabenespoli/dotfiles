@@ -1324,18 +1324,10 @@
                         },
                         {
                             "from": {
-                                "key_code": "right_command"
+                                "key_code": "pause"
                             },
                             "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": {
-                                "key_code": "right_command"
+                                "consumer_key_code": "fastforward"
                             }
                         },
                         {
@@ -1348,18 +1340,26 @@
                         },
                         {
                             "from": {
-                                "key_code": "scroll_lock"
+                                "key_code": "right_command"
                             },
                             "to": {
-                                "consumer_key_code": "rewind"
+                                "key_code": "right_option"
                             }
                         },
                         {
                             "from": {
-                                "key_code": "pause"
+                                "key_code": "right_option"
                             },
                             "to": {
-                                "consumer_key_code": "fastforward"
+                                "key_code": "right_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "scroll_lock"
+                            },
+                            "to": {
+                                "consumer_key_code": "rewind"
                             }
                         }
                     ]
