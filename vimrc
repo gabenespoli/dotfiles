@@ -160,6 +160,7 @@ inoremap jk <Esc>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
+nnoremap <leader>w :w<CR>
 
 " emacs-style movement {{{2
 inoremap <C-f> <Right>
@@ -234,7 +235,7 @@ autocmd FileType cfg,remind setlocal commentstring=#\ %s
 " tpope/vim-fugitive {{{2
 nnoremap gd :Gdiff<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap gC :Gcommit<CR>i
+nnoremap gC :let @" = expand("%")<CR>:Gcommit<CR>""pa:<Space>
 nnoremap gcC :Gcommit<CR>i
 nnoremap gl :Glog<CR><CR>:copen<CR>
 autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
