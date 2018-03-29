@@ -241,6 +241,22 @@ nnoremap gl :Glog<CR><CR>:copen<CR>
 autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
 autocmd FileType gitcommit nnoremap <buffer> gcC :silent wq<CR>
 
+" henrik/vim-indexed-search {{{2
+let g:indexed_search_mappings = 0
+" below are the default mappings from the plugin except gd and gD
+noremap  <Plug>(indexed-search-index)  :ShowSearchIndex<CR>
+noremap  <Plug>(indexed-search-n)  n
+noremap  <Plug>(indexed-search-N)  N
+noremap  <Plug>(indexed-search-restview)  :call <SID>restview()<CR>
+inoremap <Plug>(indexed-search-restview)  <nop>
+cmap <expr> <CR> <SID>wrap("\<CR>")
+map  <expr> *    <SID>wrap(<SID>star('*'))
+map  <expr> #    <SID>wrap(<SID>star('#'))
+map  <expr> g*   <SID>wrap(<SID>star('g*'))
+map  <expr> g#   <SID>wrap(<SID>star('g#'))
+map  <expr> n    <SID>wrap(<SID>n('n'))
+map  <expr> N    <SID>wrap(<SID>n('N'))
+
 " airblade/gitgutter {{{2
 nmap ga <Plug>GitGutterStageHunk
 nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
