@@ -8,6 +8,7 @@ config/ranger/commands_full.py
 config/ranger/history
 config/ranger/bookmarks
 config/vifm/vifminfo
+config/karabiner/assets/complex_modifications/*
 pandoc/library.bib
 mutt/cache/*
 ipython/profile_default/startup/README
