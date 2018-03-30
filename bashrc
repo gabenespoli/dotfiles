@@ -148,7 +148,7 @@ alias hangups="hangups \
     --col-msg-self-bg default"
 
 ### todo, notes, and calendar {{{2
-alias todo="$EDITOR -c 'call GrepTodo_start()'"
+alias todo="$EDITOR $HOME/todo/todo.txt"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
 alias gcal="$HOME/bin/gcalcli_wrapper.sh"
