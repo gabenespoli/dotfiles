@@ -93,15 +93,15 @@ endfunction
 
 " highlights {{{1
 " highlight current sentence
-nnoremap ]k :echo search('\.', 'c')<CR>v(
-nnoremap [k :echo search('\.', 'bc')<CR>v(
-nmap <localleader>k ]k
+nnoremap <buffer> ]k :echo search('\.', 'c')<CR>v(
+nnoremap <buffer> [k :echo search('\.', 'bc')<CR>v(
+nmap <buffer> <localleader>k ]k
 
-vnoremap ]k <Esc>):echo search('\.')<CR>v(
-vnoremap [k <Esc>:echo search('\.', 'b')<CR>v(
-vmap n ]k
-vmap p [k
-vnoremap <localleader>k <Esc>
+vnoremap <buffer> ]k <Esc>):echo search('\.')<CR>v(
+vnoremap <buffer> [k <Esc>:echo search('\.', 'b')<CR>v(
+vmap <buffer> n ]k
+vmap <buffer> p [k
+vnoremap <buffer> <localleader>k <Esc>
 
 " note: colors are based on the solarized 16 color palette
 hi htmlString ctermfg=11
