@@ -483,8 +483,6 @@ nmap dP             <Plug>PutDiffCharPair
 " inside/vim-grep-operator {{{2
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
-nmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
-vmap <leader><leader>g <Plug>GrepOperatorWithFilenamePrompt
 
 " Lilypond {{{2
 filetype off
