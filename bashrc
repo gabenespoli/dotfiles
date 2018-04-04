@@ -148,6 +148,8 @@ alias hangups="hangups \
     --col-msg-self-bg default"
 
 ### todo, notes, and calendar {{{2
+alias tt="grep -r TODO *"
+alias ttt="vim -c 'silent vimgrep TODO *' -c 'CiderVinegarQF'"
 alias todo="$EDITOR $HOME/todo/todo.txt"
 alias trello="$HOME/bin/trello-cli/bin/trello"
 alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
