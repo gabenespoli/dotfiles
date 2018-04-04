@@ -256,7 +256,7 @@ nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " junegunn/fzf {{{2
 command! FZFCustom call fzf#run({'source': 'find ~/local ~/dotfiles ~/Dropbox -type f', 'sink':  'edit'})
-nnoremap <leader>p :FZFCustom<CR>
+nnoremap <leader><leader> :FZFCustom<CR>
 nnoremap gs :GFiles?<CR>
 nnoremap gl :Commits!<CR>
 let g:fzf_action = { 'ctrl-s': 'split' }
