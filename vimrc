@@ -209,8 +209,8 @@ nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 " change pwd to git root if in repo (vim-fugitive), else current file's dir
 nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>' : ':cd %:p:h<CR>'
 " insert dates
-nnoremap <leader>d "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>D "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
+nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 "vimdiff
 nnoremap du :diffupdate<CR>
 " Spell checking
@@ -486,8 +486,8 @@ let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 let g:criticmarkup#disable#highlighting = 1
 
 " rickhowe/diffchar {{{2
-map  <leader>C      <Plug>ToggleDiffCharAllLines
-map  <leader>c      <Plug>ToggleDiffCharCurrentLine
+map  <leader>D      <Plug>ToggleDiffCharAllLines
+map  <leader>d      <Plug>ToggleDiffCharCurrentLine
 nmap [d             <Plug>JumpDiffCharPrevStart
 nmap ]d             <Plug>JumpDiffCharNextStart
 nmap <F13>          <Plug>JumpDiffCharPrevEnd
