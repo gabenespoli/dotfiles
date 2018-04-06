@@ -90,12 +90,12 @@ set foldtext=GetMarkdownFoldText()
 let g:tagbar_foldlevel = 2
 
 function! GetMarkdownFolds(lnum)
-    let current = getline(a:lnum) 
-    " if current =~ '^###'
+    let line = getline(a:lnum) 
+    " if line =~ '^###'
         " return '>3'
-    " elseif current =~ '^##'
+    " elseif line =~ '^##'
         " return '>2'
-    if (current =~ '^#') || (a:lnum == 1 && current =~ '^---$')
+    if (line =~ '^#') || (a:lnum == 1 && line =~ '^---$')
         return '>1'
     else
         return '='
