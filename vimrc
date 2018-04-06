@@ -46,8 +46,9 @@ call plug#end()
 " Colorscheme {{{2
 colorscheme sumach
 if has("gui_running")
-  set guicursor=n-v-c-i:blinkon0
+  set background=light
 else
+  set background=dark
 endif
 syntax enable
 set background=dark
