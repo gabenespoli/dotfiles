@@ -48,8 +48,10 @@ call plug#end()
 syntax enable
 if has("gui_running")
   set background=light
+  set nonumber norelativenumber
 else
   set background=dark
+  set number relativenumber
 endif
 
 let g:solarized_bold = 0
