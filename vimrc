@@ -13,8 +13,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/matchit.zip'
 
 " sidebars {{{2
-Plug '~/bin/vim/vim-mutton'
-Plug '~/bin/vim/vim-cider-vinegar'
+Plug 'gabenespoli/vim-mutton'
+Plug 'gabenespoli/vim-cider-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jeetsukumaran/vim-buffergator'
