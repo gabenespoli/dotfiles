@@ -143,7 +143,7 @@ set statusline=
 set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
 set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
 " set statusline+=%{mode()}
-set statusline+=\ %#StatusMod#%m%*%#StatusFlag#%r%*\"%t\"\ %y
+set statusline+=\ %#DiffChange#%m%*%#DiffDelete#%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
 " set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%=
