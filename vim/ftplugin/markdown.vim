@@ -8,8 +8,8 @@ set shiftwidth=4
 " general {{{2
 nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> gd :Gdiff<CR>:windo set wrap<CR>
-inoremap <buffer> <space><CR> <CR>-<space>
-inoremap <buffer> <space><C-j> <CR>-<space>
+inoremap <buffer> <S-CR> <CR>-<space>
+inoremap <buffer> <S-C-j> <CR>-<space>
 
 " move up and down by visual line
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
