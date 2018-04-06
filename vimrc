@@ -3,33 +3,33 @@
 call plug#begin('~/.vim/plugged')
 
 " editing {{{2
+Plug 'vim-scripts/matchit.zip'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'godlygeek/tabular'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/matchit.zip'
+Plug 'rickhowe/diffchar.vim'
+Plug 'godlygeek/tabular'
 
 " sidebars {{{2
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-cider-vinegar'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'scrooloose/NERDTree'
 Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
-" syntax {{{2
+" syntax, highlighting, linting {{{2
 Plug 'gabenespoli/vim-colors-solarized'
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'rickhowe/diffchar.vim'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
 Plug 'guanqun/vim-mutt-aliases-plugin'
