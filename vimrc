@@ -48,10 +48,8 @@ call plug#end()
 syntax enable
 if has("gui_running")
   set background=light
-  set nonumber norelativenumber
 else
   set background=dark
-  set number relativenumber
 endif
 
 let g:solarized_bold = 0
@@ -161,6 +159,10 @@ set statusline+=%l/%L\,%c\ (%P)
 set guioptions=
 set guicursor=n-v-c-i:blinkon0
 set guifont=Fira\ Code:h13
+if has("gui_running")
+  set nonumber norelativenumber
+  set laststatus=0
+endif
 
 " Keybindings {{{1
 " settings {{{2
@@ -310,7 +312,7 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
 
 " gabenespoli/vim-cider-vinegar {{{2
-let g:CiderVinegarToggle = '-'
+let g:CiderVinegarToggle = '<leader>o'
 let g:CiderVinegarToggleBuffers = '<leader>b'
 let g:CiderVinegarToggleQF = '<leader>q'
 let g:CiderVinegarToggleLL = '<leader>l'
