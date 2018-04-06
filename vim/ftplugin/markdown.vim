@@ -126,34 +126,10 @@ vmap <buffer> n ]k
 vmap <buffer> p [k
 vnoremap <buffer> <localleader>k <Esc>
 
-" note: colors are based on the solarized 16 color palette
-hi htmlString ctermfg=11
-hi htmlTagName ctermfg=11
+" vim-pandoc plugin {{{1
+" because vim-pandoc-syntax is loaded after the colorscheme
+au VimEnter,BufEnter * :execute "colorscheme ".g:colors_name
 
-" because critic markdown never sticks
-autocmd BufEnter * call criticmarkup#InjectHighlighting()
-
-" Pandoc Plugin settings {{{1
-au VimEnter * :set syntax=pandoc
-au VimEnter,BufEnter * :call PandocForceHighlighting()
-nnoremap <buffer> <localleader>i :call PandocForceHighlighting()<CR>
-
-" function to force custom pandoc highlighting
-function! PandocForceHighlighting()
-    hi pandocEmphasis cterm=none ctermfg=7
-    hi pandocStrongEmphasis cterm=none ctermfg=15
-    hi pandocEmphasisInStrong cterm=none ctermfg=7
-    hi pandocStrongInEmphasis cterm=none ctermfg=7
-    " hi pandocAtxStart ctermfg=7 ctermbg=0
-    " hi pandocAtxHeader cterm=bold ctermfg=15 ctermbg=0
-    hi! link pandocAtxStart Title
-    hi! link pandocAtxHeader Title
-    hi pandocOperator ctermfg=darkgrey
-    hi pandocStrong cterm=bold ctermfg=15
-    syn match mdTodo /^\s*TODO.*/
-    hi link mdTodo Todo
-endfunction
-
-" capitalL location list settings {{{1
+" gabenespoli/capitalL plugin {{{1
 let b:Lpatterns = ['/{>>\|{==\|{++\|{--/gj %', '/^\s*TODO/gj %']
 let b:Lreformat = ['/[^{]*\({>>\|{==\|{++\|{--\)\([^}]*}\).*$/\1\2/ge', '/[^|]*|[^|]*|\s*\(TODO.*\)$/\1/ge']
