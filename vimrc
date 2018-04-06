@@ -44,13 +44,19 @@ call plug#end()
 
 " General Settings {{{1
 " Colorscheme {{{2
+function! SetColorpalette(palette)
+  let g:solarized_palette = a:palette
+  colorscheme solarized
+endfunction
+command! -nargs=1 Colorpalette :call SetColorpalette(<f-args>)
+cnoreabbrev colorpalette Colorpalette
 syntax enable
 if has("gui_running")
   set background=light
-  let g:solarized_palette = 'prescott'
+  execute "Colorpalette prescott"
 else
   set background=dark
-  let g:solarized_palette = 'gruvbox'
+  execute "Colorpalette gruvbox"
 endif
 let g:solarized_bold = 0
 let g:solarized_italic = 0
@@ -280,6 +286,9 @@ nnoremap coFe :set foldmethod=expr<CR>
 nnoremap coFm :set foldmethod=marker<CR>
 nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
+nnoremap coBs :Colorpalette solarized<CR>
+nnoremap coBg :Colorpalette gruvbox<CR>
+nnoremap coBp :Colorpalette prescott<CR>
 
 " tpope/vim-commentary {{{2
 autocmd FileType octave setlocal commentstring=%\ %s
