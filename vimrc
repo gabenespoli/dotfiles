@@ -149,6 +149,11 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)                           
 
+" GUI Settings {{{2
+set guioptions=
+set guicursor=n-v-c-i:blinkon0
+set guifont=Fira\ Code:h13
+
 " Keybindings {{{1
 " settings {{{2
 let maplocalleader = "\<Space>"
