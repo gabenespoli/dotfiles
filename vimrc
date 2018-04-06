@@ -48,14 +48,14 @@ call plug#end()
 syntax enable
 if has("gui_running")
   set background=light
+  let g:solarized_palette = 'prescott'
 else
   set background=dark
+  let g:solarized_palette = 'gruvbox'
 endif
-
 let g:solarized_bold = 0
 let g:solarized_italic = 0
 let g:solarized_visibility = 'low'
-let g:solarized_palette = 'prescott'
 colorscheme solarized
 
 " File stuff {{{2
