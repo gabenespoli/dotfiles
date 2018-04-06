@@ -19,7 +19,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'scrooloose/NERDTree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
@@ -316,20 +315,6 @@ let g:CiderVinegarToggle = '<leader>o'
 let g:CiderVinegarToggleBuffers = '<leader>b'
 let g:CiderVinegarToggleQF = '<leader>q'
 let g:CiderVinegarToggleLL = '<leader>l'
-
-" Xuyuanp/nerdtree-git-plugin {{{2
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "M",
-"     \ "Staged"    : "+",
-"     \ "Untracked" : "?",
-"     \ "Renamed"   : "R",
-"     \ "Unmerged"  : "U",
-"     \ "Deleted"   : "D",
-"     \ "Dirty"     : "*",
-"     \ "Clean"     : "✔︎",
-"     \ 'Ignored'   : "!",
-"     \ "Unknown"   : "X"
-"     \ }
 
 " majutsushi/tagbar{{{2
 let g:tagbar_left = 1
