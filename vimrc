@@ -114,7 +114,7 @@ set foldminlines=0              " 0 means we can close a 1-line fold
 set foldcolumn=0
 set foldlevel=99
 set foldmethod=marker
-set foldtext=GetFoldText()
+set foldtext=MyFoldText()
 function! GetFoldText()
   if &foldmethod == 'marker'
     set foldtext=FoldTextMarker()
@@ -122,6 +122,37 @@ function! GetFoldText()
     set foldtext=getline(v:foldstart)
   endif
 endfunction
+
+function! MyFoldText()
+  let size = v:foldend - v:foldstart
+  let sizewidth = len(line('$'))
+  let blanks = repeat(' ', sizewidth - len(size))
+  let sizestr = ' (' . blanks . size . ' lines) '
+
+  let line = getline(v:foldstart)
+  if line == '---'
+    let line = 'YAML'
+  endif
+  let prefix = repeat(' ', v:foldlevel) . ' ▸ '
+  let linestr = prefix . line . ' '
+
+  " shorten linestr if too long
+  if !exists("b:foldtextwidth")
+    let totalwidth = 80
+  elseif b:foldtextwidth == 0
+    let totalwidth = winwidth(0) - 8
+  else
+    let totalwidth = b:foldtextwidth
+  endif
+  let maxpos = totalwidth - len(sizestr)
+  if len(linestr) > maxpos
+    let linestr = linestr[0:maxpos - 3] . '...'
+  endif
+
+  let fillstr = repeat('-', totalwidth - len(linestr) - len(sizestr) + 1)
+  return linestr . fillstr . sizestr
+endfunction
+
 function! FoldTextMarker()
   let line = getline(v:foldstart)
   let l:foldlevel = split(line, '{'.'{{')
