@@ -110,7 +110,6 @@ if executable('rg')
 endif
 
 " Folding {{{2
-set fillchars="vert:' ',fold:-"
 set foldminlines=0              " 0 means we can close a 1-line fold
 set foldcolumn=0
 set foldlevel=99
