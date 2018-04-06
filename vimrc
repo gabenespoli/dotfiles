@@ -191,6 +191,7 @@ set guifont=Fira\ Code:h13
 if has("gui_running")
   set nonumber norelativenumber
   set laststatus=0
+  set macligatures
 endif
 
 " Keybindings {{{1
