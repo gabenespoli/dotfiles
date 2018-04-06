@@ -88,7 +88,7 @@ set foldmethod=expr
 set foldexpr=GetMarkdownFolds(v:lnum)
 " set foldtext=GetMarkdownSimpleFoldText()
 let g:tagbar_foldlevel = 2
-let b:foldtextwidth = 0
+let b:foldtextwidth = -4
 
 function! GetMarkdownFolds(lnum)
     let line = getline(a:lnum) 

@@ -146,8 +146,8 @@ function! MyFoldText()
   " shorten linestr if too long
   if !exists("b:foldtextwidth")
     let totalwidth = 80
-  elseif b:foldtextwidth == 0
-    let totalwidth = winwidth(0) - 8
+  elseif b:foldtextwidth <= 0
+    let totalwidth = winwidth(0) + b:foldtextwidth
   else
     let totalwidth = b:foldtextwidth
   endif
