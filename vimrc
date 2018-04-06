@@ -186,8 +186,11 @@ set statusline+=%l/%L\,%c\ (%P)
 
 " GUI Settings {{{2
 set guioptions=
-set guicursor=n-v-c-i:blinkon0
-set guifont=Fira\ Code:h13
+set guicursor=n-v-ve:block-blinkon0
+  \,sm:block-blinkon800
+  \,i-ci-c:ver25-blinkon800-blinkoff800
+  \,r-cr-o:hor20-blinkon800-blinkoff800
+set guifont=Fira\ Code\ Regular:h14
 if has("gui_running")
   set nonumber norelativenumber
   set laststatus=0
