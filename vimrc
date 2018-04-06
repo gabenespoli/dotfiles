@@ -88,6 +88,7 @@ set whichwrap+=h,l              " let h and l move across lines
 set visualbell
 set hidden
 set clipboard=unnamed
+set fillchars=fold:\ ,vert:\|
 
 " Spacing {{{2
 set linebreak                   " stop soft wrapping in the middle of words  
