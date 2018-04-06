@@ -250,7 +250,7 @@ autocmd FileType cfg,remind setlocal commentstring=#\ %s
 nnoremap gd :Gdiff<CR>
 nnoremap gA :Gwrite<CR>
 nnoremap gC :let @" = expand("%")<CR>:Gcommit<CR>""pa:<Space>
-nnoremap gcC :Gcommit<CR>i
+nmap gcC gC
 nnoremap gl :Glog<CR><CR>:copen<CR>
 autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
 autocmd FileType gitcommit nnoremap <buffer> gcC :silent wq<CR>
