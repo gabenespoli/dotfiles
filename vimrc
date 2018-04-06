@@ -25,6 +25,7 @@ Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
 " syntax {{{2
+Plug 'gabenespoli/vim-colors-solarized'
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
@@ -44,14 +45,18 @@ call plug#end()
 
 " General Settings {{{1
 " Colorscheme {{{2
-colorscheme sumach
+syntax enable
 if has("gui_running")
   set background=light
 else
   set background=dark
 endif
-syntax enable
-set background=dark
+
+let g:solarized_bold = 0
+let g:solarized_italic = 0
+let g:solarized_visibility = 'low'
+let g:solarized_palette = 'prescott'
+colorscheme solarized
 
 " File stuff {{{2
 set updatetime=750
