@@ -60,14 +60,19 @@ nnoremap <buffer> <localleader>cN :execute "!python $HOME/bin/cite/cite.py -n <C
 nnoremap <buffer> <localleader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <buffer> <localleader>cp :python $HOME/bin/cite/cite.py 
 
-nnoremap <buffer> gn :call GoToNotes('<C-r><C-w>')<CR>
+nnoremap <buffer> gn :call GoToNotes('<C-r><C-w>', 1)<CR>
+nnoremap <buffer> gN :call GoToNotes('<C-r><C-w>', 0)<CR>
 
 if !exists("g:GoToNotesLoaded") || g:GoToNotesLoaded == 0
   " need to surround this function with an is-loaded wrapper because
   "   otherwise it throws a 'function already exists' error
   let g:GoToNotesLoaded = 1
 
-  function! GoToNotes(citekey)
+  function! GoToNotes(citekey, ...)
+    let l:do_split = 1
+    if a:0 > 0 && a:1 == 0
+      let l:do_split = 0
+    endif
     let l:folder = "$HOME/lib/papernotes/"
     if exists('g:MuttonEnabled') && g:MuttonEnabled == 1
       execute "MuttonToggle"
@@ -75,10 +80,16 @@ if !exists("g:GoToNotesLoaded") || g:GoToNotesLoaded == 0
     else
       let l:mutton = 0
     endif
-    execute "vs " l:folder . a:citekey . ".md"
-    if l:mutton == 1
-      nnoremap <buffer> q :q<CR>:MuttonToggle<CR>
-    end
+    if l:do_split
+      execute "vs " . l:folder . a:citekey . ".md"
+      if l:mutton == 1
+        nnoremap <buffer> q :q<CR>:MuttonToggle<CR>
+      end
+    else
+      let l:bufnr = bufnr("%")
+      execute "e " . l:folder . a:citekey . ".md"
+      execute "nnoremap <buffer> q :buffer " . l:bufnr . "<CR>"
+    endif
   endfunction
 
 endif
