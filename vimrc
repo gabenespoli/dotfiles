@@ -202,6 +202,7 @@ if has("gui_running")
   set nonumber norelativenumber
   set laststatus=0
   set macligatures
+  let g:gitgutter_signs = 0
 endif
 
 " Keybindings {{{1
