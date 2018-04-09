@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export FZF_DEFAULT_OPTS='--bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-kill-word,ctrl-n:down,ctrl-p:up'
+export FZF_DEFAULT_OPTS='--color=16 --no-bold --bind=ctrl-j:accept,ctrl-k:kill-line,ctrl-w:backward-kill-word,ctrl-n:down,ctrl-p:up'
 export FZF_DEFAULT_COMMAND='fd --type f' 
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
