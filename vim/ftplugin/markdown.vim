@@ -60,36 +60,62 @@ nnoremap <buffer> <localleader>cN :execute "!python $HOME/bin/cite/cite.py -n <C
 nnoremap <buffer> <localleader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <buffer> <localleader>cp :python $HOME/bin/cite/cite.py 
 
-nnoremap <buffer> gn :call GoToNotes('<C-r><C-w>', 1)<CR>
-nnoremap <buffer> gN :call GoToNotes('<C-r><C-w>', 0)<CR>
+nnoremap <buffer> gn :call GoNote('<C-r><C-a>', 1)<CR>
+nnoremap <buffer> gN :call GoNote('<C-r><C-a>', 0)<CR>
 
-if !exists("g:GoToNotesLoaded") || g:GoToNotesLoaded == 0
+let g:GoNoteQuitKeymap = "q"
+
+if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
   " need to surround this function with an is-loaded wrapper because
   "   otherwise it throws a 'function already exists' error
-  let g:GoToNotesLoaded = 1
+  let g:GoNoteLoaded = 1
 
-  function! GoToNotes(citekey, ...)
-    let l:do_split = 1
+  function! GoNote(citekey, ...)
+
+    " parse WORD object to get just the citekey
+    let l:citekey = a:citekey
+    let l:citekey = substitute(l:citekey, "[", "", "")
+    let l:citekey = substitute(l:citekey, "]", "", "")
+    let l:citekey = substitute(l:citekey, "@", "", "")
+    if l:citekey[0] == "-"
+      let l:citekey = l:citekey[1:]
+    endif
+
+    let l:filename = "$HOME/lib/papernotes/" . l:citekey . ".md"
+
     if a:0 > 0 && a:1 == 0
       let l:do_split = 0
-    endif
-    let l:folder = "$HOME/lib/papernotes/"
-    if exists('g:MuttonEnabled') && g:MuttonEnabled == 1
-      execute "MuttonToggle"
-      let l:mutton = 1
     else
-      let l:mutton = 0
+      let l:do_split = 1
     endif
+
     if l:do_split
-      execute "vs " . l:folder . a:citekey . ".md"
-      if l:mutton == 1
-        nnoremap <buffer> q :q<CR>:MuttonToggle<CR>
-      end
+      if exists('g:MuttonEnabled') && g:MuttonEnabled == 1
+        execute "MuttonToggle"
+        let l:MuttonEnabled = 1
+      else
+        let l:MuttonEnabled = 0
+      endif
+
+      execute "vs " . l:filename
+
+      if exists("g:GoNoteQuitKeymap")
+        if l:MuttonEnabled == 1
+          execute "nnoremap <buffer> ".g:GoNoteQuitKeymap." :q<CR>:MuttonToggle<CR>"
+        else
+          execute "nnoremap <buffer> ".g:GoNoteQuitKeymap." :q<CR>"
+        endif
+      endif
+
     else
+      " TODO save the cursor position so we can move it back there on quit
       let l:bufnr = bufnr("%")
-      execute "e " . l:folder . a:citekey . ".md"
-      execute "nnoremap <buffer> q :buffer " . l:bufnr . "<CR>"
+      execute "e " . l:filename
+      if exists("g:GoNoteQuitKeymap")
+        execute "nnoremap <buffer> ".g:GoNoteQuitKeymap." :buffer " . l:bufnr . "<CR>"
+      endif
     endif
+
   endfunction
 
 endif
