@@ -25,7 +25,8 @@ Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
 " syntax, highlighting, linting {{{2
-Plug 'gabenespoli/vim-colors-solarized'
+" Plug 'gabenespoli/vim-colors-solarized'
+Plug '~/bin/vim/vim-colors-solarized'
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
@@ -50,18 +51,22 @@ function! SetColorpalette(palette)
 endfunction
 command! -nargs=1 Colorpalette :call SetColorpalette(<f-args>)
 cnoreabbrev colorpalette Colorpalette
+
 syntax enable
+let g:solarized_underline = 1
+let g:solarized_visibility = 'low'
+let g:solarized_diffmode = 'low'
 if has("gui_running")
   set background=light
+  let g:solarized_bold = 1
+  let g:solarized_italic = 1
   execute "Colorpalette prescott"
 else
   set background=dark
+  let g:solarized_bold = 0
+  let g:solarized_italic = 0
   execute "Colorpalette gruvbox"
 endif
-let g:solarized_bold = 0
-let g:solarized_italic = 0
-let g:solarized_visibility = 'low'
-colorscheme solarized
 
 " File stuff {{{2
 set updatetime=750
