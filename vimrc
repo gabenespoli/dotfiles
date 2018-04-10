@@ -54,8 +54,6 @@ cnoreabbrev colorpalette Colorpalette
 
 syntax enable
 let g:solarized_underline = 1
-let g:solarized_visibility = 'low'
-let g:solarized_diffmode = 'low'
 if has("gui_running")
   set background=light
   let g:solarized_bold = 1
