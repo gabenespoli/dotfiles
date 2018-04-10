@@ -142,9 +142,19 @@ function! MyFoldText()
   let sizestr = ' (' . blanks . size . ' lines) '
 
   let line = getline(v:foldstart)
-  if line == '---'
+
+  " filetype-specific adjustments
+  if &filetype == "json"
+    if substitute(line, '^\s*{\s*$', '{', '') == '{'
+      let line = getline(v:foldstart + 1)
+    endif
+  elseif (&filetype == "pandoc" || &filetype == "markdown") && line == '---'
+    " pandoc yaml front matter
     let line = 'YAML'
   endif
+
+  " strip surrounding whitespace, add fold indent & icon
+  let line = substitute(line, '^\s*\(.\{-}\)\s*$', '\1', '')
   let prefix = repeat(' ', v:foldlevel) . ' ▸ '
   let linestr = prefix . line . ' '
 
