@@ -431,33 +431,7 @@ let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
 
 " christoomey/vim-tmux-navigator {{{2
 let g:tmux_navigator_no_mappings = 1
-if !has('nvim')
-  if substitute(system('hostname'), '\n', '', '') == 'gmac'
-    execute "set <M-h>=\eh"
-    execute "set <M-j>=\ej"
-    execute "set <M-k>=\ek"
-    execute "set <M-l>=\el"
-  else
-    execute "set <M-h>=h"
-    execute "set <M-j>=j"
-    execute "set <M-k>=k"
-    execute "set <M-l>=l"
-  endif
-
-  nmap <silent> <M-h> :TmuxNavigateLeft<CR>
-  nmap <silent> <M-j> :TmuxNavigateDown<CR>
-  nmap <silent> <M-k> :TmuxNavigateUp<CR>
-  nmap <silent> <M-l> :TmuxNavigateRight<CR>
-  imap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-  imap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-  imap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-  imap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-  vmap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-  vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-  vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-  vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-
-else
+if has('nvim')
   autocmd BufWinEnter,WinEnter term://* startinsert
   autocmd BufLeave term://* stopinsert
   tnoremap <silent> [b <C-\><C-N>:bprevious<CR>
@@ -474,6 +448,46 @@ else
   nnoremap <silent> <A-j> <Esc>:TmuxNavigateDown<CR>
   nnoremap <silent> <A-k> <Esc>:TmuxNavigateUp<CR>
   nnoremap <silent> <A-l> <esc>:TmuxNavigateRight<CR>
+
+elseif has('gui_running') && has('gui_macvim')
+  " TODO need to unmap D-h and D-l before this will work
+  nmap <silent> <D-h> <C-w>h<CR>
+  nmap <silent> <D-j> <C-w>j<CR>
+  nmap <silent> <D-k> <C-w>k<CR>
+  nmap <silent> <D-l> <C-w>l<CR>
+  imap <silent> <D-h> <Esc><C-w>h<CR>
+  imap <silent> <D-j> <Esc><C-w>j<CR>
+  imap <silent> <D-k> <Esc><C-w>k<CR>
+  imap <silent> <D-l> <Esc><C-w>l<CR>
+  vmap <silent> <D-h> <Esc><C-w>h<CR>
+  vmap <silent> <D-j> <Esc><C-w>j<CR>
+  vmap <silent> <D-k> <Esc><C-w>k<CR>
+  vmap <silent> <D-l> <Esc><C-w>l<CR>
+
+else
+  if substitute(system('hostname'), '\n', '', '') == 'gmac'
+    execute "set <M-h>=\eh"
+    execute "set <M-j>=\ej"
+    execute "set <M-k>=\ek"
+    execute "set <M-l>=\el"
+  else
+    execute "set <M-h>=h"
+    execute "set <M-j>=j"
+    execute "set <M-k>=k"
+    execute "set <M-l>=l"
+  endif
+  nmap <silent> <M-h> :TmuxNavigateLeft<CR>
+  nmap <silent> <M-j> :TmuxNavigateDown<CR>
+  nmap <silent> <M-k> :TmuxNavigateUp<CR>
+  nmap <silent> <M-l> :TmuxNavigateRight<CR>
+  imap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+  imap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+  imap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+  imap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+  vmap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+  vmap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+  vmap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+  vmap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
 endif
 
 " jpalardy/vim-slime {{{2
