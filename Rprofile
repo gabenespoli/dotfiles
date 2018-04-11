@@ -5,5 +5,6 @@ local({
   r["CRAN"] <- "http://cran.utstat.utoronto.ca/"
   options(repos = r)
 })
+.libPaths("/Users/gmac/local/R")
 library(colorout)
 library(lintr)
