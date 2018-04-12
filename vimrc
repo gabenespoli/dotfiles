@@ -152,7 +152,7 @@ function! MyFoldText()
 
   " strip surrounding whitespace, add fold indent & icon
   let line = substitute(line, '^\s*\(.\{-}\)\s*$', '\1', '')
-  let prefix = repeat(' ', v:foldlevel) . ' ▸ '
+  let prefix = repeat(' ', v:foldlevel - 1) . '▸ '
   let linestr = prefix . line . ' '
 
   " shorten linestr if too long
