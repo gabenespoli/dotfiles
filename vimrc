@@ -292,7 +292,7 @@ nnoremap coYr :set syntax=r<CR>
 nnoremap coYs :set syntax=sh<CR>
 nnoremap coYv :set syntax=vim<CR>
 nnoremap coYy :set syntax=yaml<CR>
-nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=1<CR>'
+nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
 nnoremap coFl :set foldmethod=manual<CR>
 nnoremap coFi :set foldmethod=indent<CR>
 nnoremap coFe :set foldmethod=expr<CR>
@@ -321,7 +321,7 @@ nmap ga <Plug>GitGutterStageHunk
 nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 nmap ghd <Plug>GitGutterPreviewHunk
 nmap ghu <Plug>GitGutterUndoHunk
-nnoremap cog :GitGutterSignsToggle<CR>
+nnoremap cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
@@ -502,11 +502,8 @@ if exists('$TMUX')
 endif
 
 " w0rp/ale {{{2
-nnoremap coy :ALEToggle<CR>
+nnoremap coy :ALEToggle<CR>:echo g:ale_enabled<CR>
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_column_always = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 0
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
 let g:ale_linter_aliases = {'octave': 'matlab'}
