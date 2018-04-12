@@ -281,7 +281,7 @@ endif
 
 " Plugin Settings {{{1
 " tpope/vim-unimpaired {{{2
-nnoremap coN :set relativenumber!<CR>:set number!<CR>
+nnoremap com :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap cop :call ToggleColorColumn()<CR>
 nnoremap coYd :set syntax=pandoc<CR>
