@@ -310,6 +310,7 @@ autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg,remind setlocal commentstring=#\ %s
 
 " tpope/vim-fugitive {{{2
+nnoremap gs :execute "Gstatus"<CR>:execute "resize ".&lines/2<CR>
 nnoremap gd :Gdiff<CR>
 nnoremap gA :Gwrite<CR>
 nnoremap gC :let @" = expand("%")<CR>:Gcommit<CR>""pa:<Space>
