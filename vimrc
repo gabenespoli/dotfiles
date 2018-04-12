@@ -39,7 +39,6 @@ Plug 'guanqun/vim-mutt-aliases-plugin'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
-Plug 'inside/vim-grep-operator'
 
 call plug#end()
 
@@ -559,10 +558,6 @@ nmap <F13>          <Plug>JumpDiffCharPrevEnd
 nmap <F14>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
 nmap dP             <Plug>PutDiffCharPair
-
-" inside/vim-grep-operator {{{2
-nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
-vmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
 
 " Lilypond {{{2
 filetype off
