@@ -230,8 +230,10 @@ nnoremap q :q<CR>
 nnoremap Q q
 if has('nvim')
   nnoremap <M-s> :w<CR>
+  inoremap <M-s> <Esc>:w<CR>a
 else
   nnoremap <Esc>s :w<CR>
+  inoremap <Esc>s <Esc>:w<CR>a
 endif
 
 " emacs-style movement {{{2
