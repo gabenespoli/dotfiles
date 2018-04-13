@@ -334,8 +334,8 @@ nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " junegunn/fzf {{{2
 command! FZFCustom call fzf#run({'source': 'find ~/local ~/dotfiles ~/Dropbox -type f', 'sink':  'edit'})
-nnoremap <leader><leader> :FZFCustom<CR>
-nnoremap gs :GFiles?<CR>
+nnoremap <leader>E :FZFCustom<CR>
+nnoremap <expr> <leader>e system("git rev-parse --show-toplevel 2>/dev/null") == 0 ? ':Files<CR>' : ':GFiles<CR>'
 nnoremap gl :Commits!<CR>
 let g:fzf_action = { 'ctrl-s': 'split' }
 let g:fzf_history_dir = '~/lib/fzf/history'
@@ -375,7 +375,7 @@ let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
 
 " gabenespoli/vim-cider-vinegar {{{2
-let g:CiderVinegarToggle = '<leader>o'
+let g:CiderVinegarToggle = '<leader><leader>'
 let g:CiderVinegarToggleBuffers = '<leader>b'
 let g:CiderVinegarToggleQF = '<leader>q'
 let g:CiderVinegarToggleLL = '<leader>l'
