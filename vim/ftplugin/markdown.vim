@@ -70,18 +70,29 @@ if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
   "   otherwise it throws a 'function already exists' error
   let g:GoNoteLoaded = 1
 
-  function! GoNote(citekey, ...)
+  function! GoNote(word, ...)
+    let l:word = a:word
 
-    " parse WORD object to get just the citekey
-    let l:citekey = a:citekey
-    let l:citekey = substitute(l:citekey, "[", "", "")
-    let l:citekey = substitute(l:citekey, "]", "", "")
-    let l:citekey = substitute(l:citekey, "@", "", "")
-    if l:citekey[0] == "-"
-      let l:citekey = l:citekey[1:]
+    if l:word[0:1] == "[@" || l:word[0:2] == "[-@"
+      let l:do_word = 1
+    else
+      let l:do_word = 0
     endif
 
-    let l:filename = "$HOME/lib/papernotes/" . l:citekey . ".md"
+    if l:do_word
+      " parse WORD object to get just the word
+      let l:word = substitute(l:word, "[", "", "")
+      let l:word = substitute(l:word, "]", "", "")
+      let l:word = substitute(l:word, "@", "", "")
+      if l:word[0] == "-"
+        let l:word = l:word[1:]
+      endif
+      let l:filename = "$HOME/lib/papernotes/" . l:word . ".md"
+
+    else
+      let l:filename = expand("%:r") . "_notes" . "." . expand("%:e")
+
+    endif
 
     if a:0 > 0 && a:1 == 0
       let l:do_split = 0
