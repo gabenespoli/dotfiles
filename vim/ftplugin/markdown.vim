@@ -60,15 +60,15 @@ nnoremap <buffer> <localleader>cN :execute "!python $HOME/bin/cite/cite.py -n <C
 nnoremap <buffer> <localleader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
 nnoremap <buffer> <localleader>cp :python $HOME/bin/cite/cite.py 
 
-nnoremap <buffer> gn :call GoNote('<C-r><C-a>', 1)<CR>
-nnoremap <buffer> gN :call GoNote('<C-r><C-a>', 0)<CR>
+nnoremap <buffer> gn :call GoNotes('<C-r><C-a>', 1)<CR>
+nnoremap <buffer> gN :call GoNotes('<C-r><C-a>', 0)<CR>
 
-let g:GoNoteQuitKeymap = "q"
+let g:GoNotesQuitKeymap = "q"
 
-if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
-  let g:GoNoteLoaded = 1
+if !exists("g:GoNotesLoaded") || g:GoNotesLoaded == 0
+  let g:GoNotesLoaded = 1
 
-  function! GoNote(word, ...)
+  function! GoNotes(word, ...)
     let l:word = a:word
 
     if l:word[0:1] == "[@" || l:word[0:2] == "[-@"
@@ -108,11 +108,11 @@ if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
 
       execute "vsplit " . l:filename
 
-      if exists("g:GoNoteQuitKeymap")
+      if exists("g:GoNotesQuitKeymap")
         if l:MuttonEnabled == 1
-          execute "nnoremap <buffer> " . g:GoNoteQuitKeymap . " :q<CR>:MuttonToggle<CR>"
+          execute "nnoremap <buffer> " . g:GoNotesQuitKeymap . " :q<CR>:MuttonToggle<CR>"
         else
-          execute "nnoremap <buffer> " . g:GoNoteQuitKeymap . " :q<CR>"
+          execute "nnoremap <buffer> " . g:GoNotesQuitKeymap . " :q<CR>"
         endif
       endif
 
@@ -120,8 +120,8 @@ if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
       " TODO save the cursor position so we can move it back there on quit
       let l:bufnr = bufnr("%")
       execute "edit " . l:filename
-      if exists("g:GoNoteQuitKeymap")
-        execute "nnoremap <buffer> " . g:GoNoteQuitKeymap . " :buffer " . l:bufnr . "<CR>"
+      if exists("g:GoNotesQuitKeymap")
+        execute "nnoremap <buffer> " . g:GoNotesQuitKeymap . " :buffer " . l:bufnr . "<CR>"
       endif
     endif
 
