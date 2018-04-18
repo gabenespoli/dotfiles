@@ -66,8 +66,6 @@ nnoremap <buffer> gN :call GoNote('<C-r><C-a>', 0)<CR>
 let g:GoNoteQuitKeymap = "q"
 
 if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
-  " need to surround this function with an is-loaded wrapper because
-  "   otherwise it throws a 'function already exists' error
   let g:GoNoteLoaded = 1
 
   function! GoNote(word, ...)
@@ -108,22 +106,22 @@ if !exists("g:GoNoteLoaded") || g:GoNoteLoaded == 0
         let l:MuttonEnabled = 0
       endif
 
-      execute "vs " . l:filename
+      execute "vsplit " . l:filename
 
       if exists("g:GoNoteQuitKeymap")
         if l:MuttonEnabled == 1
-          execute "nnoremap <buffer> ".g:GoNoteQuitKeymap." :q<CR>:MuttonToggle<CR>"
+          execute "nnoremap <buffer> " . g:GoNoteQuitKeymap . " :q<CR>:MuttonToggle<CR>"
         else
-          execute "nnoremap <buffer> ".g:GoNoteQuitKeymap." :q<CR>"
+          execute "nnoremap <buffer> " . g:GoNoteQuitKeymap . " :q<CR>"
         endif
       endif
 
     else
       " TODO save the cursor position so we can move it back there on quit
       let l:bufnr = bufnr("%")
-      execute "e " . l:filename
+      execute "edit " . l:filename
       if exists("g:GoNoteQuitKeymap")
-        execute "nnoremap <buffer> ".g:GoNoteQuitKeymap." :buffer " . l:bufnr . "<CR>"
+        execute "nnoremap <buffer> " . g:GoNoteQuitKeymap . " :buffer " . l:bufnr . "<CR>"
       endif
     endif
 
