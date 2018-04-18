@@ -677,72 +677,72 @@ augroup line_return
     \ endif
 augroup END
 
-" Tab names {{{2
-" Rename tabs to show tab# and # of viewports
-" http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
-if exists("+showtabline")
-  let s:currentShowtabline = &showtabline
-  function! MyTabLine()
-    let s = ''
-    let wn = ''
-    let t = tabpagenr()
-    let i = 1
-    while i <= tabpagenr('$')
-      let buflist = tabpagebuflist(i)
-      let winnr = tabpagewinnr(i)
+"" Tab names {{{2
+"" Rename tabs to show tab# and # of viewports
+"" http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
+"if exists("+showtabline")
+"  let s:currentShowtabline = &showtabline
+"  function! MyTabLine()
+"    let s = ''
+"    let wn = ''
+"    let t = tabpagenr()
+"    let i = 1
+"    while i <= tabpagenr('$')
+"      let buflist = tabpagebuflist(i)
+"      let winnr = tabpagewinnr(i)
 
-      let s .= '%#TabLineFill#'
-      let s .= '%' . i . 'T'
-      let s .= (i == t ? '%1*' : '%2*')
-      let s .= ''
-      let wn = tabpagewinnr(i,'$')
+"      let s .= '%#TabLineFill#'
+"      let s .= '%' . i . 'T'
+"      let s .= (i == t ? '%1*' : '%2*')
+"      let s .= ''
+"      let wn = tabpagewinnr(i,'$')
 
-      "tab/window number
-      let s .= (i == t ? '%#TabNumSel#' : '%#TabNum#')
-      let s .= '['
-      let s .= i
-      if tabpagewinnr(i,'$') > 1
-        let s .= '|'
-        let s .= (i == t ? '%#TabWinNumSel#' : '%#TabWinNum#')
-        let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
-      end
-      let s .= ']%*'
+"      "tab/window number
+"      let s .= (i == t ? '%#TabNumSel#' : '%#TabNum#')
+"      let s .= '['
+"      let s .= i
+"      if tabpagewinnr(i,'$') > 1
+"        let s .= '|'
+"        let s .= (i == t ? '%#TabWinNumSel#' : '%#TabWinNum#')
+"        let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
+"      end
+"      let s .= ']%*'
 
-      "modified flag
-      let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
-      let s .= ' %*'
+"      "modified flag
+"      let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
+"      let s .= ' %*'
 
-      "filename
-      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-      if !exists("TabooTabName(i)") || TabooTabName(i) == ''
-        let bufnr = buflist[winnr - 1]
-        let file = bufname(bufnr)
-        let buftype = getbufvar(bufnr, 'buftype')
-        if buftype == 'nofile'
-          if file =~ '\/.'
-            let file = substitute(file, '.*\/\ze.', '', '')
-          endif
-        else
-          let file = fnamemodify(file, ':p:t')
-        endif
-        if file == ''
-          let file = '[No Name]'
-        endif
-      else
-        let file = TabooTabName(i)
-      endif
-      let s .= file
-      let s .= ' '
-      let s .= '%#TablineFill# %*'
-      let i = i + 1
-    endwhile
-    let s .= '%T%#TabLineFill#%='
-    return s
-  endfunction
-  set stal=2
-  set tabline=%!MyTabLine()
-  execute 'set showtabline='.s:currentShowtabline
-endif
+"      "filename
+"      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+"      if !exists("TabooTabName(i)") || TabooTabName(i) == ''
+"        let bufnr = buflist[winnr - 1]
+"        let file = bufname(bufnr)
+"        let buftype = getbufvar(bufnr, 'buftype')
+"        if buftype == 'nofile'
+"          if file =~ '\/.'
+"            let file = substitute(file, '.*\/\ze.', '', '')
+"          endif
+"        else
+"          let file = fnamemodify(file, ':p:t')
+"        endif
+"        if file == ''
+"          let file = '[No Name]'
+"        endif
+"      else
+"        let file = TabooTabName(i)
+"      endif
+"      let s .= file
+"      let s .= ' '
+"      let s .= '%#TablineFill# %*'
+"      let i = i + 1
+"    endwhile
+"    let s .= '%T%#TabLineFill#%='
+"    return s
+"  endfunction
+"  set stal=2
+"  set tabline=%!MyTabLine()
+"  execute 'set showtabline='.s:currentShowtabline
+"endif
 
 " tmux make cursor line when in insert mode {{{2
 " Change cursor shape from block (command mode) to line (insert mode)
