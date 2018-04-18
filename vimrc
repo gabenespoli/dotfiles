@@ -66,6 +66,7 @@ else
 endif
 
 " File stuff {{{2
+if has("mac") | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
 set swapfile
