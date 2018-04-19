@@ -465,9 +465,7 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -534,9 +532,7 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
