@@ -314,7 +314,7 @@ autocmd FileType cfg,remind setlocal commentstring=#\ %s
 nnoremap gs :execute "Gstatus"<CR>:execute "resize ".&lines/2<CR>
 nnoremap gd :Gdiff<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap gC :let @" = expand("%")<CR>:Gcommit<CR>""pa:<Space>
+nnoremap gC :let @" = expand("%:t")<CR>:Gcommit<CR>""pa:<Space>
 nmap gcC gC
 nnoremap gl :Glog<CR><CR>:copen<CR>
 autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
