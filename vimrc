@@ -781,3 +781,23 @@ function! MuttMailMode()
   "exe "normal! gg}O\<Esc>o"
   exe "normal! gg"
 endfunction
+
+" Thyme cli {{{2
+function! Thyme()
+  " TODO: make the call to thyme silent
+  if executable('thyme')
+    if !exists("g:ThymeEnabled") || g:ThymeEnabled == 0
+      let g:ThymeEnabled = 1
+      execute "!thyme -d"
+      echo "Thyme started."
+    elseif g:ThymeEnabled == 1
+      let g:ThymeEnabled = 0
+      execute "!thyme -s"
+      echo "Thyme stopped."
+    endif
+  else
+    echoerr 'Thyme is not installed.'
+  endif
+endfunction
+command! Thyme :call Thyme()
+nmap <leader>T :Thyme<CR>
