@@ -2,62 +2,62 @@
 
 ## OS-specific options {{{1
 if [ "$(uname)" == "Darwin" ]; then
-    ### Mac options
-    export PATH="/usr/local/bin:$PATH"
-    export PATH="/usr/local/lib:$PATH"
-    export PATH="/usr/local/texbin:$PATH"
-    export PATH="$HOME/Library/Haskell/bin:$PATH"
-    export PATH="$HOME/bin:$PATH"
-    alias ls="ls -hl"
-    alias lsa="ls -hla"
-    alias gls="gls -hl --color --group-directories-first"
-    alias glsa="gls -hla --color --group-directories-first"
-    alias lsg="ls -hl | grep"
-    alias lsag="ls -hla | grep"
-    alias agi="brew install"
-    alias agu="brew update && brew upgrade && brew cleanup"
-    alias ql='qlmanage -p &>/dev/null'
-    alias matlab="rlwrap -c -a dummy_arg /Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
-    alias openx="open -a Microsoft\ Excel.app"
-    alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-    alias wifi="sudo networksetup -setairportnetwork en0"
-    alias t="todo.sh -a"
-    function findershowhidden() {
-        case $1 in
-            on|true ) command="TRUE" ;;
-            off|false ) command="FALSE" ;;
-        esac
-        defaults write com.apple.finder AppleShowAllFiles "$command"
-        killall Finder
-    }
-   #export LSCOLORS=exfxcxdxbxegedabagacad # macOS default from `man ls`
-   #                1 2 3 4 5 6 7 8 9 1011
-   #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
-    export LSCOLORS=exgxcxdxfxegedabagacad
-    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
-    export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
+  ### Mac options
+  export PATH="/usr/local/bin:$PATH"
+  export PATH="/usr/local/lib:$PATH"
+  export PATH="/usr/local/texbin:$PATH"
+  export PATH="$HOME/Library/Haskell/bin:$PATH"
+  export PATH="$HOME/bin:$PATH"
+  alias ls="ls -hl"
+  alias lsa="ls -hla"
+  alias gls="gls -hl --color --group-directories-first"
+  alias glsa="gls -hla --color --group-directories-first"
+  alias lsg="ls -hl | grep"
+  alias lsag="ls -hla | grep"
+  alias agi="brew install"
+  alias agu="brew update && brew upgrade && brew cleanup"
+  alias ql='qlmanage -p &>/dev/null'
+  alias matlab="rlwrap -c -a dummy_arg /Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
+  alias openx="open -a Microsoft\ Excel.app"
+  alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+  alias wifi="sudo networksetup -setairportnetwork en0"
+  alias t="todo.sh -a"
+  function findershowhidden() {
+    case $1 in
+        on|true ) command="TRUE" ;;
+        off|false ) command="FALSE" ;;
+    esac
+    defaults write com.apple.finder AppleShowAllFiles "$command"
+    killall Finder
+  }
+ #export LSCOLORS=exfxcxdxbxegedabagacad # macOS default from `man ls`
+ #                1 2 3 4 5 6 7 8 9 1011
+ #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
+  export LSCOLORS=exgxcxdxfxegedabagacad
+  LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
+  export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
 else 
-    ### Linux options
-    export PATH="$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
-    if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
-    fi
-    alias ls="ls -hl --color"
-    alias lsa="ls -hla --color"
-    alias lsg="ls -hl --color | grep"
-    alias lsag="ls -hla --color | grep"
-    alias agi="sudo apt-get -y install"
-    alias agu="sudo apt-get update"
-    alias sambastart="sudo /etc/init.d/samba start"
-    alias ranger='python $HOME/local/ranger/ranger.py --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
-    alias trash="gio trash"
-    alias t="todo-txt -a"
-    alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
-    #eval `dircolors $HOME/.dir_colors/dircolors`
-    LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
-    setxkbmap -option ctrl:nocaps
-    setxkbmap -option shift:both_capslock
+  ### Linux options
+  export PATH="$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
+  if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+  fi
+  alias ls="ls -hl --color"
+  alias lsa="ls -hla --color"
+  alias lsg="ls -hl --color | grep"
+  alias lsag="ls -hla --color | grep"
+  alias agi="sudo apt-get -y install"
+  alias agu="sudo apt-get update"
+  alias sambastart="sudo /etc/init.d/samba start"
+  alias ranger='python $HOME/local/ranger/ranger.py --choosedir=$HOME/.rangerdir; cd "`cat $HOME/.rangerdir`"'
+  alias trash="gio trash"
+  alias t="todo-txt -a"
+  alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
+  #eval `dircolors $HOME/.dir_colors/dircolors`
+  LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
+  setxkbmap -option ctrl:nocaps
+  setxkbmap -option shift:both_capslock
 fi
 
 ## Environment {{{1
@@ -129,23 +129,23 @@ alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias cite="python $HOME/bin/python/cite/cite.py"
 alias rate="python $HOME/bin/python/rate.py"
 alias hangups="hangups \
-    --date-format '< %Y-%m-%d >' \
-    --disable-notifications \
-    --key-close-tab 'ctrl x' \
-    --col-tab-background-fg yellow \
-    --col-tab-background-bg 'dark gray' \
-    --col-active-tab-fg 'light gray' \
-    --col-active-tab-bg black \
-    --col-inactive-tab-fg yellow \
-    --col-inactive-tab-bg black \
-    --col-status-line-fg yellow \
-    --col-status-line-bg 'dark gray' \
-    --col-msg-date-fg 'light green' \
-    --col-msg-date-bg black \
-    --col-msg-sender-fg 'light magenta' \
-    --col-msg-sender-bg default \
-    --col-msg-self-fg 'dark blue' \
-    --col-msg-self-bg default"
+  --date-format '< %Y-%m-%d >' \
+  --disable-notifications \
+  --key-close-tab 'ctrl x' \
+  --col-tab-background-fg yellow \
+  --col-tab-background-bg 'dark gray' \
+  --col-active-tab-fg 'light gray' \
+  --col-active-tab-bg black \
+  --col-inactive-tab-fg yellow \
+  --col-inactive-tab-bg black \
+  --col-status-line-fg yellow \
+  --col-status-line-bg 'dark gray' \
+  --col-msg-date-fg 'light green' \
+  --col-msg-date-bg black \
+  --col-msg-sender-fg 'light magenta' \
+  --col-msg-sender-bg default \
+  --col-msg-self-fg 'dark blue' \
+  --col-msg-self-bg default"
 
 ### todo, notes, and calendar {{{2
 alias tt="grep -r TODO *"
@@ -161,19 +161,19 @@ alias gcal="$HOME/bin/gcalcli_wrapper.sh"
 alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
 function notes() { vim "$(gf $@)/notes.md" ; }
 function note() {
-    notesDir="$HOME/notes/"
-    title="$*"
-    filename="$notesDir/$title.md"
-    if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
-    "$EDITOR" "$filename"
+  notesDir="$HOME/notes/"
+  title="$*"
+  filename="$notesDir/$title.md"
+  if [ ! -f "$filename" ]; then touch "$filename" && echo "# $title"$'\n' >> "$filename"; fi
+  "$EDITOR" "$filename"
 }
 function caplog() {
-    if [ "$#" -eq 0 ]; then
-        cat "$HOME/todo/caplog.txt"
-    else
-        today=`date +%Y-%m-%d\ %H:%M:%S`
-        echo "$today > $@" >> "$HOME/todo/caplog.txt"
-    fi
+  if [ "$#" -eq 0 ]; then
+    cat "$HOME/todo/caplog.txt"
+  else
+    today=`date +%Y-%m-%d\ %H:%M:%S`
+    echo "$today > $@" >> "$HOME/todo/caplog.txt"
+  fi
 }
 
 ### custom files {{{2
