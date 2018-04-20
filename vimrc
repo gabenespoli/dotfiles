@@ -328,7 +328,7 @@ nnoremap <leader>t :MuttonTagbarToggle<CR>
 nnoremap <leader><leader> :call fzf#run({'source': 'find -L ~/projects ~/bin ~/lib ~/notes ~/todo ~/local ~/dotfiles -type f -not -path "*/\.*"', 'sink':  'edit'})<CR>
 nnoremap <expr> <leader>f system("git rev-parse --show-toplevel 2>/dev/null") == 0 ? ':Files<CR>' : ':GFiles<CR>'
 nnoremap <leader>g :GFiles<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>B :Buffers<CR>
 nnoremap gl :Commits!<CR>
 let g:fzf_layout = { 'up': '~40%' }
 let g:fzf_action = { 'ctrl-s': 'split' }
@@ -370,7 +370,7 @@ let g:NERDTreeMapCWD = 'cD'
 
 " gabenespoli/vim-cider-vinegar {{{2
 let g:CiderVinegarToggle = '<leader>o'
-let g:CiderVinegarToggleBuffers = '<leader>B'
+let g:CiderVinegarToggleBuffers = '<leader>b'
 let g:CiderVinegarToggleQF = '<leader>q'
 let g:CiderVinegarToggleLL = '<leader>l'
 
