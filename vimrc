@@ -221,6 +221,7 @@ endif
 " Keybindings {{{1
 " settings {{{2
 let maplocalleader = "\<Space>"
+nnoremap <Space><Esc> <nop>
 set notimeout
 set ttimeout
 inoremap jk <Esc>
