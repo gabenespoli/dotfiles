@@ -285,16 +285,6 @@ endif
 nnoremap com :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap cop :call ToggleColorColumn()<CR>
-nnoremap coYd :set syntax=pandoc<CR>
-nnoremap coYk :set syntax=markdown<CR>
-nnoremap coYm :set syntax=matlab<CR>
-nnoremap coYo :set syntax=octave<CR>
-nnoremap coYp :set syntax=python<CR>
-nnoremap coYq :set syntax=qf<CR>
-nnoremap coYr :set syntax=r<CR>
-nnoremap coYs :set syntax=sh<CR>
-nnoremap coYv :set syntax=vim<CR>
-nnoremap coYy :set syntax=yaml<CR>
 nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
 nnoremap coFl :set foldmethod=manual<CR>
 nnoremap coFi :set foldmethod=indent<CR>
