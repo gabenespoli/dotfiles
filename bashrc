@@ -156,7 +156,7 @@ function pomo() {
   if [ -f ~/.thyme-pid ]; then
     thyme -s
   elif [ "$1" == "b" ]; then
-    thyme -db
+    thyme -d -b
   else
     thyme -d
   fi
