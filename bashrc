@@ -151,14 +151,16 @@ alias hangups="hangups \
 alias tt="grep -r TODO *"
 alias ttt="vim -c 'silent vimgrep TODO *' -c 'CiderVinegarQF'"
 alias todo="$EDITOR $HOME/todo/todo.txt"
-alias pom="thyme"
-alias pomd="thyme -d"
-alias poms="thyme -s"
 alias pomfile="$EDITOR $HOME/pomodoro/$(date +%Y-%m-%d).txt"
-alias trello="$HOME/bin/trello-cli/bin/trello"
-alias tsync="python ~/bin/task2todotxt/task2todotxt.py"
-alias gcal="$HOME/bin/gcalcli_wrapper.sh"
-alias wf="python $HOME/bin/Workflows/Workflows.py $HOME/r/notes/"
+function pomo() {
+  if [ -f ~/.thyme-pid ]; then
+    thyme -s
+  elif [ "$1" == "b" ]; then
+    thyme -db
+  else
+    thyme -d
+  fi
+}
 function notes() { vim "$(gf $@)/notes.md" ; }
 function note() {
   notesDir="$HOME/notes/"
