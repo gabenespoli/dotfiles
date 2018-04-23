@@ -791,8 +791,10 @@ function! Thyme()
   endif
 endfunction
 command! Thyme :call Thyme()
-nmap <leader>T :Thyme<CR>
+cnoreabbrev pomo Thyme
+nmap <leader>p :Thyme<CR><CR>
 
 " Open Pomodoro File {{{2
 command! Pomfile :execute "edit $HOME/pomodoro/" . strftime("%Y-%m-%d") . ".txt"
-nnoremap <leader>p :Pomfile<CR>
+cnoreabbrev pomfile Pomfile
+nnoremap <leader>P :Pomfile<CR>
