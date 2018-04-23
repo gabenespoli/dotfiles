@@ -1,4 +1,3 @@
-set :warning, 0
 set :interval, 60
 set :tmux, true
 set :tmux_theme, "#[fg=brightyellow,bg=black][#[fg=%s]%s#[fg=brightyellow,bg=black]]"
