@@ -41,6 +41,7 @@ nmap <buffer> <localleader>ds- ds{ds-ds-
 
 " insert comments
 nnoremap <buffer> <localleader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
+nnoremap <buffer> <localleader>t i{>>TODO: <<}<Esc>hhi
 nnoremap <buffer> <localleader>ct i{>>TODO: <<}<Esc>hhi
 
 " remove tags (highlights, whole tags, accept/reject)
