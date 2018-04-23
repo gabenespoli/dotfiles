@@ -277,9 +277,7 @@ nnoremap du :diffupdate<CR>
 " Spell checking
 nnoremap <leader>s 1z=
 " open with system on mac
-if has('mac')
-  nnoremap gO :!open <cfile><CR>
-endif
+if has("mac") | nnoremap gO :!open <cfile><CR> | endif
 
 " Plugin Settings {{{1
 " tpope/vim-unimpaired {{{2
