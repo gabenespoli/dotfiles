@@ -52,16 +52,14 @@ command! -nargs=1 Colorpalette :call SetColorpalette(<f-args>)
 cnoreabbrev colorpalette Colorpalette
 
 syntax enable
+let g:solarized_bold = 1
+let g:solarized_italic = 1
 let g:solarized_underline = 1
 if has("gui_running")
   set background=light
-  let g:solarized_bold = 1
-  let g:solarized_italic = 1
   execute "Colorpalette prescott"
 else
   set background=dark
-  let g:solarized_bold = 0
-  let g:solarized_italic = 0
   execute "Colorpalette gruvbox"
 endif
 
