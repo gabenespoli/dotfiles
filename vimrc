@@ -235,6 +235,8 @@ else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
 endif
+cnoremap <C-n> <down>
+cnoremap <C-p> <up>
 
 " emacs-style movement {{{2
 inoremap <C-f> <Right>
