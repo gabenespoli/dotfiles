@@ -26,7 +26,6 @@ class Default(ColorScheme):
             else:
                 attr = normal
             if context.empty or context.error:
-                attr |= bold
                 fg = green
             if context.border:
                 fg = default
