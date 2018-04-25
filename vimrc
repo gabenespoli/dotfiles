@@ -323,7 +323,7 @@ nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " junegunn/fzf {{{2
-nnoremap <leader><leader> :call fzf#run({'source': 'find -L ~/projects ~/bin ~/lib ~/notes ~/todo ~/local ~/dotfiles -type f -not -path "*/\.*"', 'sink':  'edit'})<CR>
+nnoremap <leader><leader> :call fzf#run({'source': 'find -L ~/dotfiles ~/projects ~/bin ~/lib ~/notes ~/todo ~/local -type f -not -path "*/\.*"', 'sink':  'edit'})<CR>
 nnoremap <expr> <leader>f system("git rev-parse --show-toplevel 2>/dev/null") == 0 ? ':Files<CR>' : ':GFiles<CR>'
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>B :Buffers<CR>
