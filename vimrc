@@ -290,9 +290,6 @@ nnoremap coFe :set foldmethod=expr<CR>
 nnoremap coFm :set foldmethod=marker<CR>
 nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
-nnoremap coBs :Colorpalette solarized<CR>
-nnoremap coBg :Colorpalette gruvbox<CR>
-nnoremap coBp :Colorpalette prescott<CR>
 
 " tpope/vim-commentary {{{2
 autocmd FileType octave setlocal commentstring=%\ %s
