@@ -771,7 +771,6 @@ endfunction
 
 " Thyme cli {{{2
 function! Thyme()
-  " TODO: make the call to thyme silent
   if executable('thyme')
     if !exists("g:ThymeEnabled") || g:ThymeEnabled == 0
       let g:ThymeEnabled = 1
