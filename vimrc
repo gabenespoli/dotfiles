@@ -279,6 +279,7 @@ if has("mac") | nnoremap gO :!open <cfile><CR> | endif
 
 " Plugin Settings {{{1
 " tpope/vim-unimpaired {{{2
+nmap co =o
 nnoremap com :set relativenumber!<CR>:set number!<CR>
 nnoremap coH :call SearchHighlightToggle()<CR>
 nnoremap cop :call ToggleColorColumn()<CR>
