@@ -235,6 +235,8 @@ else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
 endif
+nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
