@@ -50,8 +50,12 @@ mkdir $HOME/.tmux
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # ranger
-sudo apt-get -y install ranger
 ln -s ~/dotfiles/config/ranger ~/.config/ranger
+cd $HOME/local
+git clone https://github.com/ranger/ranger
+cd ranger
+sudo make install
+cd $HOME
 
 # misc
 sudo apt-get -y install tig
