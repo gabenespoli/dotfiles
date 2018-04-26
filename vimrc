@@ -31,8 +31,7 @@ Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
 " syntax, highlighting, linting {{{2
-" Plug 'gabenespoli/vim-colors-solarized'
-Plug '~/bin/vim/vim-colors-solarized'
+Plug 'gabenespoli/vim-colors-solarized'
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
