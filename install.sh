@@ -18,6 +18,10 @@ ln -s $HOME/dotfiles/inputrc $HOME/.inputrc
 source $HOME/.bashrc
 sudo apt-get -y install curl
 
+# dropbox
+sudo apt-get -y install nautilus-dropbox
+dropbox start -i
+
 # vim
 sudo apt-get -y install vim
 ln -s $HOME/dotfiles/vimrc $HOME/.vimrc
@@ -27,13 +31,14 @@ ln -s $HOME/dotfiles/vim/ftdetect $HOME/.vim/ftdetect
 ln -s $HOME/dotfiles/vim/ftplugin $HOME/.vim/ftplugin
 ln -s $HOME/dotfiles/vim/spell $HOME/.vim/spell
 ln -s $HOME/dotfiles/vim/syntax $HOME/.vim/syntax
+vim -c "PlugInstall" -c "qall"
 
 # neovim
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
-sudo apt-get install neovim
+sudo apt-get -y install neovim
 mkdir -p $HOME/.config/nvim
-ln -s "$dotfiles/vimrc $HOME/.config/nvim/init.vim"
+ln -s "$HOME/vimrc $HOME/.config/nvim/init.vim"
 mkdir -p $HOME/.local/share/nvim
 ln -s "$HOME/.vim $HOME/.local/share/nvim/site"
 
@@ -45,13 +50,10 @@ mkdir $HOME/.tmux
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # ranger
-mkdir $HOME/local
-git clone https://github.com/ranger/ranger "$HOME/local"
+sudo apt-get -y install ranger
+ln -s ~/dotfiles/config/ranger ~/.config/ranger
 
 # misc
 sudo apt-get -y install tig
 ln -s $HOME/dotfiles/tigrc $HOME/.tigrc
-
-# install linuxbrew
-# brew install fzf
 
