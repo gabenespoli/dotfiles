@@ -11,6 +11,9 @@
 tic -x $HOME/dotfiles/xterm-256color-italics.terminfo
 tic -x $HOME/dotfiles/tmux-256color.terminfo
 
+# folders
+mkdir $HOME/local
+
 # bash
 mv $HOME/.bashrc $HOME/.bashrc.bak
 ln -s $HOME/dotfiles/bashrc $HOME/.bashrc
