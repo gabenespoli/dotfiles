@@ -60,7 +60,7 @@ cd ranger
 sudo make install
 cd $HOME
 
-# misc
+# tig
 sudo apt-get -y install tig
 ln -s $HOME/dotfiles/tigrc $HOME/.tigrc
 
