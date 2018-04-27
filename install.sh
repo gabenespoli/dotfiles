@@ -72,3 +72,18 @@ gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 gpg -a --export E084DAB9 | sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y install r-base
+ln -s $HOME/dotfiles/Rprofile $HOME/.Rprofile
+
+## python
+sudo apt-get -y install ipython
+# ln -s $HOME/dotfiles/ipython $HOME/.ipython
+
+## thyme
+sudo apt-get -y install ruby
+# gem install thyme
+ln -s $HOME/dotfiles/thymerc $HOME/.thymerc
+
+## octave
+sudo apt-get -y install octave
+ln -s $HOME/dotfiles/octaverc $HOME/.octaverc
+
