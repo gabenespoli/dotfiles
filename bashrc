@@ -52,6 +52,7 @@ else
   alias sambastart="sudo /etc/init.d/samba start"
   alias trash="gio trash"
   alias t="todo-txt -a"
+  alias d="dropbox"
   alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
   #eval `dircolors $HOME/.dir_colors/dircolors`
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
