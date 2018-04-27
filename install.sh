@@ -4,6 +4,7 @@
 # cd $HOME
 # sudo apt-get -y install git
 # git clone https://github.com/gabenespoli/dotfiles
+ln -s $HOME/dotfiles/gitconfig $HOME/.gitconfig
 
 # xterm with italics
 # https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
