@@ -2,7 +2,6 @@
 
 # get this file on your computer first:
 # cd $HOME
-# sudo apt-get -y install openssh-server
 # sudo apt-get -y install git
 # git clone https://github.com/gabenespoli/dotfiles
 
@@ -13,6 +12,7 @@ tic -x $HOME/dotfiles/tmux-256color.terminfo
 
 # folders
 mkdir $HOME/local
+sudo apt-get -y install openssh-server
 
 # bash
 mv $HOME/.bashrc $HOME/.bashrc.bak
@@ -34,6 +34,7 @@ ln -s $HOME/dotfiles/vim/ftdetect $HOME/.vim/ftdetect
 ln -s $HOME/dotfiles/vim/ftplugin $HOME/.vim/ftplugin
 ln -s $HOME/dotfiles/vim/spell $HOME/.vim/spell
 ln -s $HOME/dotfiles/vim/syntax $HOME/.vim/syntax
+# TODO can't find colorscheme solarized because it hasn't been downloaded yet
 vim -c "PlugInstall" -c "qall"
 
 # neovim
@@ -41,9 +42,9 @@ sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get -y install neovim
 mkdir -p $HOME/.config/nvim
-ln -s "$HOME/vimrc $HOME/.config/nvim/init.vim"
+ln -s $HOME/dotfiles/vimrc $HOME/.config/nvim/init.vim
 mkdir -p $HOME/.local/share/nvim
-ln -s "$HOME/.vim $HOME/.local/share/nvim/site"
+ln -s $HOME/.vim $HOME/.local/share/nvim/site
 
 # tmux
 sudo apt-get -y install tmux
