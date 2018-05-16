@@ -66,25 +66,22 @@ class Base16Style(Style):
     highlight_color = base02
     default_style = base0
 
-    # this needs to be change to the ansi colors so it uses the terminal
-    # values. it keeps throwing an error when I do, so for now I've 
-    # hard coded the Sumach Dark values (2017-05-12 16:12:58)
     styles = {
-        Text: '#808080', # base0 (light blue)
-        Error: '#d70000', # red
-        Comment: '#4e4e4e', # base01 (light green)
-        Keyword: '#00875f', # green
-        Keyword.Constant: '#008787', # cyan
-        Keyword.Namespace: '#0087af', # blue
-        Name.Builtin: '#0087af', # blue
-        Name.Function: '#0087af', # blue
-        Name.Class: '#0087af', # blue
-        Name.Decorator: '#d70000', # blue
-        Name.Exception: '#d70000', # blue
-        Number: '#008787', # cyan
-        Operator.Word: '#00875f', # green
-        Literal: '#008787', # cyan
-        String: '#008787', # cyan
+        Text: '#ansiblue', # base0 (light blue)
+        Error: '#ansired', # red
+        Comment: '#ansigreen', # base01 (light green)
+        Keyword: '#ansidarkgreen', # green
+        Keyword.Constant: '#ansiteal', # cyan
+        Keyword.Namespace: '#ansifuchsia', # purple
+        Name.Builtin: '#ansidarkblue', # blue
+        Name.Function: '#ansidarkblue', # blue
+        Name.Class: '#ansidarkblue', # blue
+        Name.Decorator: '#ansired', # red
+        Name.Exception: '#ansired', # red
+        Number: '#ansiteal', # cyan
+        Operator.Word: '#ansigreen', # green
+        Literal: '#ansiteal', # cyan
+        String: '#ansiteal', # cyan
     }
 
 
