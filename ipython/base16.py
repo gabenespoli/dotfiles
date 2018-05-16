@@ -101,7 +101,7 @@ overrides = {
     Token.Prompt: base01,
     Token.PromptNum: blue,
     Token.OutPrompt: base01,
-    Token.OutPromptNum: magenta,
+    Token.OutPromptNum: cyan,
     Token.Menu.Completions.Completion: 'bg:%s %s' % (base02, base0),
     Token.Menu.Completions.Completion.Current: 'bg:%s %s' % (base0, base02),
     Token.MatchingBracket.Other: 'bg:%s %s' % (base01, base03)
