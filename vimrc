@@ -277,8 +277,10 @@ nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 " change pwd to git root if in repo (vim-fugitive), else current file's dir
 nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>' : ':cd %:p:h<CR>'
 " insert dates
-nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
+nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
+nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 "vimdiff
 nnoremap du :diffupdate<CR>
 " Spell checking
