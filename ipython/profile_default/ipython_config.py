@@ -25,9 +25,9 @@ c.InteractiveShell.editor = 'vim'
 #c.PrefilterManager.multi_line_specials = True
 
 c.AliasManager.user_aliases = [
- ('ls', 'ls -hl'),
- ('la', 'ls -hla'),
- ('lsa', 'ls -hla'),
+    ('ls', 'ls -hl'),
+    ('la', 'ls -hla'),
+    ('lsa', 'ls -hla'),
 ]
 
 c.TerminalInteractiveShell.editing_mode = 'vi'
