@@ -5,6 +5,10 @@
 # example input: pdoc mypaper.md
 # example output: mypaper.md.docx
 # author: gabenespoli@gmail.com
+# requires:
+#   brew install pandoc pandoc-citeproc
+#   pip install pantable pandoc-fignos pandoc-tblnos
+
 
 ## defaults
 args=""
@@ -35,26 +39,31 @@ outputFile=${inputFile}${outputExt}
 ## prepare input
 case "$inputType" in
     md|markdown )
-        tmpFile="${inputFile}.tmp" # don't want to change original .md file
+        # don't want to change original .md file
+        tmpFile="${inputFile}.tmp"
         cp "$inputFile" "$tmpFile"
         inputFile="$tmpFile" # set temp file name to filename
+
+        # replace critic highlights with custom character style with highlights that are in the ref docx
         perl -pi -e 's/(\{\=\=.*?\=\=\})/\<span\ custom\-style\=\"CriticHighlight\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(\{\>\>.*?\<\<\})/\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(\{\-\-.*?\-\-\})/\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(\{\+\+.*?\+\+\})/\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpFile"
-        #TODO delete critic parts marked for deletion? optionally?
+        # TODO delete critic parts marked for deletion? optionally?
+
+        # add args to pandoc call (ref docx, tables and figures)
         args="${args} --reference-docx=${refdocx}" # reference file for styles
-        args="${args} --filter pandoc-fignos --filter pandoc-tablenos" # figure and table numbers
+        args="${args} --filter pantable --filter pandoc-fignos --filter pandoc-tablenos" # figure and table numbers
         ;;
+
     docx )
         args="${args} --wrap=none --atx-headers --extract-media=docxmedia --track-changes=all --reference-location=block"
         ;;
 esac
 
 ## user-defined
-for arg in $@
-do
+for arg in $@; do
     case "$arg" in
         toc )
             args="${args} --toc" ;;
