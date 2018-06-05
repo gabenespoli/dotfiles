@@ -530,15 +530,8 @@ nmap ]v <Plug>(ale_next_wrap)
 " vim-pandoc/pandoc {{{2
 " vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
-" let g:pandoc#modules#enabled = ["command", "bibliographies", "completion", "keyboard"]
-let g:pandoc#modules#enabled = ["command", "completion", "keyboard"]
-let g:pandoc#folding#fold_yaml = 1
-let g:pandoc#folding#fdc = 0
+let g:pandoc#modules#enabled = ["keyboard"]
 let g:pandoc#keyboard#enabled_submodules = ["sections", "styles"]
-let g:pandoc#biblio#sources = "g"
-" let g:pandoc#biblio#bibs = ["/Users/gmac/dotfiles/pandoc/library.bib", "/home/efgh/dotfiles/pandoc/library.bib"]
-let g:pandoc#command#autoexec_on_writes = 0
-let g:pandoc#command#autoexec_command = "Pandoc doc --reference-doc=/Users/gmac/dotfiles/pandoc/apa.docx"
 
 " vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
