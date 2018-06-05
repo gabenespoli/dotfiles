@@ -18,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
 Plug 'godlygeek/tabular'
+Plug 'vim-scripts/ReplaceWithRegister'
 
 " sidebars {{{2
 Plug 'gabenespoli/vim-mutton'
