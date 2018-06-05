@@ -259,11 +259,13 @@ cnoremap <C-d> <Del>
 if has('nvim')
   inoremap <M-f> <S-Right>
   inoremap <M-b> <S-Left>
+  inoremap <M-d> <Esc>ldwi
   cnoremap <M-f> <S-Right>
   cnoremap <M-b> <S-Left>
 else
   inoremap <Esc>f <S-Right>
   inoremap <Esc>b <S-Left>
+  inoremap <Esc>d <Esc>ldwi
   cnoremap <Esc>f <S-Right>
   cnoremap <Esc>b <S-Left>
 endif
