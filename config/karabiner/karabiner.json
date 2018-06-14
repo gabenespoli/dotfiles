@@ -484,7 +484,7 @@
                                 "type": "basic"
                             }
                         ]
-                    }, 
+                    },
                     {
                         "description": "Gmacs key bindings [command+f -> opt+right arrow] (rev 2)",
                         "manipulators": [
@@ -1582,24 +1582,7 @@
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [
-                        {
-                            "from": {
-                                "key_code": "f2"
-                            },
-                            "to": {
-                                "key_code": "f2"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "f3"
-                            },
-                            "to": {
-                                "key_code": "f3"
-                            }
-                        }
-                    ],
+                    "fn_function_keys": [],
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
@@ -1787,6 +1770,7 @@
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
+                "country_code": 0,
                 "keyboard_type": "ansi"
             }
         }
