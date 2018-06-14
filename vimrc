@@ -551,6 +551,8 @@ let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 let g:criticmarkup#disable#highlighting = 1
 
 " rickhowe/diffchar {{{2
+let g:DiffPairVisible = 0
+let g:DiffUpdate = 0
 map  <leader>D      <Plug>ToggleDiffCharAllLines
 map  <leader>d      <Plug>ToggleDiffCharCurrentLine
 nmap [d             <Plug>JumpDiffCharPrevStart
