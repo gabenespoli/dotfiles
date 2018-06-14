@@ -38,7 +38,13 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
-Plug 'guanqun/vim-mutt-aliases-plugin'
+" colorschemes
+Plug '~/bin/vim/vim-colors-palettes'
+if has("gui_running")
+  Plug 'reedes/vim-colors-pencil'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'morhetz/gruvbox'
+endif
 
 " external {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -60,12 +66,13 @@ syntax enable
 let g:solarized_bold = 1
 let g:solarized_italic = 1
 let g:solarized_underline = 1
+let g:palettes_terminal_italics = 1
 if has("gui_running")
   set background=light
-  execute "Colorpalette prescott"
+  colorscheme pencil
 else
   set background=dark
-  execute "Colorpalette gruvbox"
+  colorscheme palettes
 endif
 
 " File stuff {{{2
@@ -201,7 +208,7 @@ set statusline=
 set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
 set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
 " set statusline+=%{mode()}
-set statusline+=\ %#DiffChange#%m%*%#DiffDelete#%r%*\"%t\"\ %y
+set statusline+=\ %#DiffText#%m%*%#DiffDelete#%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
 " set statusline+=%#StatusLineFill#%=%*                      
 set statusline+=%=
