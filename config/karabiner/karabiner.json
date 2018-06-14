@@ -1558,6 +1558,14 @@
                             "to": {
                                 "consumer_key_code": "rewind"
                             }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": {
+                                "key_code": "caps_lock"
+                            }
                         }
                     ]
                 }
