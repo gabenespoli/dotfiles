@@ -538,7 +538,7 @@ nmap ]v <Plug>(ale_next_wrap)
 " vim-pandoc
 " see other settings in .vim/ftplugin/markdown.vim
 let g:pandoc#modules#enabled = ["keyboard"]
-let g:pandoc#keyboard#enabled_submodules = ["sections", "styles"]
+let g:pandoc#keyboard#enabled_submodules = ["styles"]
 
 " vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
