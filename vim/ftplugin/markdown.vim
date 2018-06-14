@@ -4,6 +4,9 @@ setlocal tabstop=4        " number of visual spaces per TAB
 setlocal softtabstop=4    " number of spaces in tab when editing
 setlocal shiftwidth=4
 setlocal nonumber norelativenumber
+if &diff
+  au VimEnter * :execute "windo set wrap"
+endif
 
 " keybindings {{{1
 " general {{{2
@@ -11,6 +14,8 @@ nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> gd :Gdiff<CR>:windo set wrap<CR>
 inoremap <buffer> <S-CR> <CR>-<space>
 inoremap <buffer> <S-C-j> <CR>-<space>
+nnoremap <buffer> <localleader>p :w<CR>:!. preview %<CR>
+nnoremap <buffer> <localleader>P :w<CR>:!. pdoc % open
 
 " move up and down by visual line
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -28,40 +33,39 @@ nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
 nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 " criticmarkup and cite.py {{{2
-" insert tags with tpope/vim-surround plugin
-let b:surround_43 = "{++\r++}"
-let b:surround_45 = "{--\r--}"
-let b:surround_61 = "{==\r==}"
-let b:surround_60 = "{>>\r<<}"
-let b:surround_62 = "{>>\r<<}"
+" custom critic bindings
+nmap <buffer> <localleader>c <localleader>ec
+nmap <buffer> <localleader>h <localleader>eh
+nmap <buffer> <localleader>s <localleader>es
+nmap <buffer> <localleader>a <localleader>ea
+nmap <buffer> <localleader>d <localleader>ed
+vmap <buffer> <localleader>c <localleader>ec
+vmap <buffer> <localleader>h <localleader>eh
+vmap <buffer> <localleader>s <localleader>es
+vmap <buffer> <localleader>a <localleader>ea
+vmap <buffer> <localleader>d <localleader>ed
 
-" remove tags with surround (sort of)
-nmap <buffer> <localleader>ds+ ds{ds+ds+
-nmap <buffer> <localleader>ds= ds{ds=ds=
-nmap <buffer> <localleader>ds- ds{ds-ds-
+" add critic markup tags from insert mode
+inoremap <buffer> <C-r>i {>><<}<C-o>2h
+inoremap <buffer> <C-r>c {>><<}<C-o>2h
+inoremap <buffer> <C-r>h {====}<C-o>3h
+inoremap <buffer> <C-r>s {~~~~}<C-o>3h
+inoremap <buffer> <C-r>a {++++}<C-o>2h
+inoremap <buffer> <C-r>d {----}<C-o>3h
 
-" insert comments
-nnoremap <buffer> <localleader>cc i{>>Gabe Nespoli: <<}<Esc>hhi
-nnoremap <buffer> <localleader>t i{>>TODO: <<}<Esc>hhi
-nnoremap <buffer> <localleader>ct i{>>TODO: <<}<Esc>hhi
+" todo comments
+inoremap <buffer> <C-r>t {>>TODO: <<}<C-o>3h
+nmap <buffer> <localleader>t i<C-r>t
 
-" remove tags (highlights, whole tags, accept/reject)
-nnoremap <buffer> <localleader>chd F{xxxf}XXx
-nnoremap <buffer> <localleader>cd F{df}
-nnoremap <buffer> <localleader>ca :Critic accept<CR>
-nnoremap <buffer> <localleader>cr :Critic reject<CR>
+" delete around or surround critic tags ("undo")
+nmap <buffer> <localleader>u F{3xf}2h3x
 
 " search and highlight
-nnoremap <buffer> <localleader>cf /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <buffer> <localleader>cF ?{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <buffer> <localleader>cH :call criticmarkup#InjectHighlighting()<CR>
+nnoremap <buffer> <localleader>f /{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <buffer> <localleader>F ?{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <buffer> <localleader>H :call criticmarkup#InjectHighlighting()<CR>
 
-" cite.py (include here because of similar keybindings)
-nnoremap <buffer> <localleader>cb :execute "!python $HOME/bin/cite/cite.py -b <C-r><C-w>"<CR>
-nnoremap <buffer> <localleader>cN :execute "!python $HOME/bin/cite/cite.py -n <C-r><C-w>"<CR>
-nnoremap <buffer> <localleader>co :silent execute "!python $HOME/bin/cite/cite.py <C-r><C-w>"<CR><C-l>
-nnoremap <buffer> <localleader>cp :python $HOME/bin/cite/cite.py 
-
+" GoNotes plugin {{{3
 nnoremap <buffer> gn :call GoNotes('<C-r><C-a>', 1)<CR>
 nnoremap <buffer> gN :call GoNotes('<C-r><C-a>', 0)<CR>
 
@@ -134,7 +138,6 @@ endif
 " folding {{{1
 set foldmethod=expr
 set foldexpr=GetMarkdownFolds(v:lnum)
-" set foldtext=GetMarkdownSimpleFoldText()
 let g:tagbar_foldlevel = 2
 let b:foldtextwidth = -4
 
