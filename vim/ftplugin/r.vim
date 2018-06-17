@@ -4,9 +4,6 @@
 " nmap <expr> <C-k>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend"<CR>'   : ':call SendParagraphToR("echo", "stay")<CR>'
 " nmap <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend}j"<CR>' : ':call SendParagraphToR("echo", "down")<CR>'
 
-
-set equalalways
-
 " keybindings {{{1
 inoremap {<CR> {<CR>}<Esc>O
 
