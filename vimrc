@@ -464,7 +464,7 @@ if has('nvim')
   nnoremap <silent> <A-h> <Esc>:TmuxNavigateLeft<CR>
   nnoremap <silent> <A-j> <Esc>:TmuxNavigateDown<CR>
   nnoremap <silent> <A-k> <Esc>:TmuxNavigateUp<CR>
-  nnoremap <silent> <A-l> <esc>:TmuxNavigateRight<CR>
+  nnoremap <silent> <A-l> <Esc>:TmuxNavigateRight<CR>
 
 elseif has('gui_running') && has('gui_macvim')
   " TODO need to unmap D-h and D-l before this will work
