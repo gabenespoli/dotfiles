@@ -30,8 +30,17 @@ Plug 'junegunn/fzf.vim'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
-" syntax, highlighting, linting {{{2
-Plug 'gabenespoli/vim-colors-solarized'
+" completion {{{2
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'lionawurscht/deoplete-biblatex'
+
+" syntax/linting/highlighting {{{2
 Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-pandoc/vim-pandoc'
@@ -511,6 +520,24 @@ nmap <M-C-k> :execute "normal \<Plug>SlimeParagraphSend}j"<CR>
 if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
+
+" Shougo/deoplete.vim {{{2
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('auto_complete', v:false)
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? "\<C-n>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+" lionawurscht/deoplete-biblatex {{{2
+let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
+let g:deoplete#sources#biblatex#startpattern = '\[@'
+let g:deoplete#sources#biblatex#delimiter = ';'
+call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
 " w0rp/ale {{{2
 nnoremap coy :ALEToggle<CR>:echo g:ale_enabled<CR>
