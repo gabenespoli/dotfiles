@@ -59,6 +59,7 @@ endif
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
+Plug 'jalvesaq/Nvim-R'
 
 call plug#end()
 
@@ -518,6 +519,12 @@ nmap <M-C-k> :execute "normal \<Plug>SlimeParagraphSend}j"<CR>
 if exists('$TMUX')
   let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 endif
+
+" jalvesaq/Nvim-R {{{2
+let R_assign = 0
+let R_esc_term = 0
+let R_objbr_place = 'LEFT'
+let g:rout_follow_colorscheme = 1
 
 " Shougo/deoplete.vim {{{2
 let g:deoplete#enable_at_startup = 1
