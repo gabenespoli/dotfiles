@@ -651,21 +651,6 @@ function! ToggleColorColumn()
   endif
 endfunction
 
-" Toggle csv tsv {{{2
-function! ToggleCsvTsv()
-  if exists("b:delimiter")
-    if b:delimiter==","
-      exe "%s/,/\t/g"
-      let b:delimiter="\t"
-    elseif b:delimiter=="\t"
-      exe "%s/\t/,/g"
-      let b:delimiter=","
-    endif
-  else
-    echo "b:delimiter is not defined."
-  endif
-endfunction
-
 " Get Syntax Under Cursor {{{2
 function! GetSyntaxUnderCursor() 
   let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
@@ -684,23 +669,6 @@ function! WordCount()
   return n
 endfunction
 
-" Resize windows based on terminal size {{{2
-" for some reason nvim doesn't know the correct &columns until after startup
-" so, we have to use autocmds for width and height
-let g:centerwidth = 100
-function! ResizeCenterWidth()
-  execute 'vertical resize '.100
-endfunction
-function! ResizeSideWidth()
-  execute 'vertical resize '.&columns/4
-endfunction
-function! ResizeSideHeight()
-  execute 'resize '.&lines/4
-endfunction
-nnoremap <leader>rc :call ResizeCenterWidth()<CR>
-nnoremap <leader>rw :call ResizeSideWidth()<CR>
-nnoremap <leader>rh :call ResizeSideHeight()<CR>
-
 " Line Return {{{2
 " from Steve Losh's (sjl) vimrc
 augroup line_return
@@ -710,73 +678,6 @@ augroup line_return
     \     execute 'normal! g`"zvzz' |
     \ endif
 augroup END
-
-"" Tab names {{{2
-"" Rename tabs to show tab# and # of viewports
-"" http://stackoverflow.com/questions/5927952/whats-the-implementation-of-vims-default-tabline-function
-"if exists("+showtabline")
-"  let s:currentShowtabline = &showtabline
-"  function! MyTabLine()
-"    let s = ''
-"    let wn = ''
-"    let t = tabpagenr()
-"    let i = 1
-"    while i <= tabpagenr('$')
-"      let buflist = tabpagebuflist(i)
-"      let winnr = tabpagewinnr(i)
-
-"      let s .= '%#TabLineFill#'
-"      let s .= '%' . i . 'T'
-"      let s .= (i == t ? '%1*' : '%2*')
-"      let s .= ''
-"      let wn = tabpagewinnr(i,'$')
-
-"      "tab/window number
-"      let s .= (i == t ? '%#TabNumSel#' : '%#TabNum#')
-"      let s .= '['
-"      let s .= i
-"      if tabpagewinnr(i,'$') > 1
-"        let s .= '|'
-"        let s .= (i == t ? '%#TabWinNumSel#' : '%#TabWinNum#')
-"        let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
-"      end
-"      let s .= ']%*'
-
-"      "modified flag
-"      let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
-"      let s .= ' %*'
-
-"      "filename
-"      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-"      if !exists("TabooTabName(i)") || TabooTabName(i) == ''
-"        let bufnr = buflist[winnr - 1]
-"        let file = bufname(bufnr)
-"        let buftype = getbufvar(bufnr, 'buftype')
-"        if buftype == 'nofile'
-"          if file =~ '\/.'
-"            let file = substitute(file, '.*\/\ze.', '', '')
-"          endif
-"        else
-"          let file = fnamemodify(file, ':p:t')
-"        endif
-"        if file == ''
-"          let file = '[No Name]'
-"        endif
-"      else
-"        let file = TabooTabName(i)
-"      endif
-"      let s .= file
-"      let s .= ' '
-"      let s .= '%#TablineFill# %*'
-"      let i = i + 1
-"    endwhile
-"    let s .= '%T%#TabLineFill#%='
-"    return s
-"  endfunction
-"  set stal=2
-"  set tabline=%!MyTabLine()
-"  execute 'set showtabline='.s:currentShowtabline
-"endif
 
 " tmux make cursor line when in insert mode {{{2
 " Change cursor shape from block (command mode) to line (insert mode)
@@ -791,48 +692,6 @@ if !has('nvim') || !has('gui_running')
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
 endif
-
-" Mutt Mail Mode {{{2
-" settings for proper formatting of emails function! ToggleMailMode()
-function! MuttMailMode()
-  "exe ':call CenWinToggle(80)'
-  setlocal textwidth=0 wrapmargin=0 wrap linebreak 
-  setlocal statusline=%*%#StatusFlag#%m%r%*
-  set norelativenumber nonumber
-  set spell
-  set laststatus=2 showtabline=0
-  inoremap <buffer> <Tab> <C-x><C-o>
-  noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-  noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-  noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
-  noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
-  nnoremap <buffer> <leader>x <Esc>o<CR>-- <CR>Gabriel A. Nespoli, B.Sc., M.A.<CR>Ph.D. Candidate<CR>Ryerson University<CR>Toronto, ON, Canada<Esc>
-  nnoremap <buffer> q :wq<CR>
-  "setlocal nocp 
-  "exe "/^$"
-  "exe "normal! gg}O\<Esc>o"
-  exe "normal! gg"
-endfunction
-
-" Thyme cli {{{2
-function! Thyme()
-  if executable('thyme')
-    if !exists("g:ThymeEnabled") || g:ThymeEnabled == 0
-      let g:ThymeEnabled = 1
-      execute "!thyme -d"
-      echo "Thyme started."
-    elseif g:ThymeEnabled == 1
-      let g:ThymeEnabled = 0
-      execute "!thyme -s"
-      echo "Thyme stopped."
-    endif
-  else
-    echoerr 'Thyme is not installed.'
-  endif
-endfunction
-command! Thyme :call Thyme()
-cnoreabbrev pomo Thyme
-nmap <leader>p :Thyme<CR><CR>
 
 " Open Pomodoro File {{{2
 command! Pomfile :execute "edit $HOME/pomodoro/" . strftime("%Y-%m-%d") . ".txt"
