@@ -41,7 +41,8 @@ class Default(ColorScheme):
             elif context.executable and not \
                     any((context.media, context.container,
                          context.fifo, context.socket)):
-                fg = magenta
+                fg = 14
+                # color 14 is pink (base0F) in base16 colorscheme
             if context.socket:
                 fg = magenta
                 attr |= bold
@@ -59,8 +60,9 @@ class Default(ColorScheme):
                 else:
                     fg = red
             if not context.selected and (context.cut or context.copied):
-                fg = black
-                #attr |= bold
+                fg = 8
+                # color 8 is comments (base03) in base16 colorscheme
+                # attr |= bold
             if context.main_column:
                 #if context.selected:
                     #attr |= bold
