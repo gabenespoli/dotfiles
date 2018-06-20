@@ -529,10 +529,10 @@ let g:rout_follow_colorscheme = 1
 " Shougo/deoplete.vim {{{2
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
+inoremap <silent><expr> <Tab>
+  \ pumvisible() ? deoplete#smart_close_popup()."\<Tab>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ deoplete#mappings#manual_complete()
 function! s:check_back_space() abort "{{{
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
