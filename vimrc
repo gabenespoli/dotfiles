@@ -25,8 +25,7 @@ Plug 'gabenespoli/vim-cider-vinegar'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'scrooloose/NERDTree'
 Plug 'majutsushi/tagbar'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jszakmeister/markdown2ctags'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
@@ -348,29 +347,21 @@ let g:gitgutter_override_sign_column_highlight = 0
 nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
-" junegunn/fzf {{{2
-nnoremap <leader><leader> :call fzf#run({'source': 'find -L ~/dotfiles ~/projects ~/bin ~/lib ~/notes ~/todo ~/Dropbox/web ~/local -type f -not -path "*/\.*"', 'sink':  'edit'})<CR>
-nnoremap <expr> <leader>f system("git rev-parse --show-toplevel 2>/dev/null") == 0 ? ':Files<CR>' : ':GFiles<CR>'
-nnoremap <leader>g :GFiles<CR>
-nnoremap <leader>B :Buffers<CR>
-nnoremap gl :Commits!<CR>
-let g:fzf_layout = { 'up': '~40%' }
-let g:fzf_action = { 'ctrl-s': 'split' }
-let g:fzf_history_dir = '~/lib/fzf/history'
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Search'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Error'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+ " ctrlpvim/ctrlp.vim {{{2
+ nmap <leader><localleader> :CtrlP $HOME<CR>
+ let g:ctrlp_map = '<leader><leader>'
+ let g:ctrlp_cmd = 'CtrlPMRU'
+ let g:ctrlp_match_window = 'bottom'
+ let g:ctrlp_prompt_mappings = { 
+   \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+   \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+   \ 'PrtHistory(-1)':         [],
+   \ 'PrtHistory(1)':          [],
+   \ 'AcceptSelection("t")':   ['<C-t>'],
+   \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
+   \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
+   \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
+   \ }
 
 " jeetsukumaran/vim-buffergator {{{2
 let g:buffergator_viewport_split_policy = "N"
