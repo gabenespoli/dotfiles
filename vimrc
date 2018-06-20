@@ -452,8 +452,13 @@ let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
 " christoomey/vim-tmux-navigator {{{2
 let g:tmux_navigator_no_mappings = 1
 if has('nvim')
+  autocmd TermOpen * setlocal nocursorline nonumber norelativenumber
+  autocmd TermOpen * execute "nnoremap <buffer> <CR> i"
   autocmd BufWinEnter,WinEnter term://* startinsert
   autocmd BufLeave term://* stopinsert
+  autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
+  autocmd BufLeave term://* hi! Cursor ctermbg=0
+  tnoremap <silent> <C-v> <C-\><C-N>
   tnoremap <silent> [b <C-\><C-N>:bprevious<CR>
   tnoremap <silent> ]b <C-\><C-N>:bnext<CR>
   tnoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<CR>
