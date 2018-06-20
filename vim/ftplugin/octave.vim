@@ -12,7 +12,7 @@ function! GetOctaveFolds(lnum)
   if getline(a:lnum) =~ '^\s*function'
     return '>1'
   elseif getline(a:lnum) =~  '^\s*%%'
-    return '>2'
+    return '>1'
   else
     return '='
   endif
