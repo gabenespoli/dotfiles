@@ -42,8 +42,6 @@ Plug 'lionawurscht/deoplete-biblatex'
 
 " syntax/linting/highlighting {{{2
 Plug 'w0rp/ale'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jvirtanen/vim-octave'
@@ -570,16 +568,8 @@ endfunction
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 
-" vim-pandoc/pandoc {{{2
-" vim-pandoc
-" see other settings in .vim/ftplugin/markdown.vim
-let g:pandoc#modules#enabled = ["keyboard"]
-let g:pandoc#keyboard#enabled_submodules = ["styles"]
-
 " vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#syntax#conceal#urls = 0
-let g:pandoc#syntax#conceal#blacklist = ["atx", "ellipses"]
 let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave", "R"]
 let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
