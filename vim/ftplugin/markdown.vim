@@ -179,7 +179,8 @@ vnoremap <buffer> <localleader>k <Esc>
 
 " vim-pandoc plugin {{{1
 " because vim-pandoc-syntax is loaded after the colorscheme
-au VimEnter,BufEnter * :execute "colorscheme ".g:colors_name
+au VimEnter,BufEnter *.md :setlocal filetype=pandoc
+au VimEnter,BufEnter *.md :execute "colorscheme ".g:colors_name
 
 " gabenespoli/capitalL plugin {{{1
 let b:Lpatterns = ['/{>>\|{==\|{++\|{--/gj %', '/^\s*TODO/gj %']
