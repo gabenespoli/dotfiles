@@ -397,6 +397,8 @@ let g:CiderVinegarToggle = '<leader>o'
 let g:CiderVinegarToggleBuffers = '<leader>b'
 let g:CiderVinegarToggleQF = '<leader>q'
 let g:CiderVinegarToggleLL = '<leader>l'
+let g:CiderVinegarEnableNERDTree = 1
+let g:CiderVinegarEnableBuffergator = 1
 
 " majutsushi/tagbar{{{2
 let g:tagbar_left = 1
