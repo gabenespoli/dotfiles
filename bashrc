@@ -189,5 +189,3 @@ alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
 sourcex "$HOME/bin/network_aliases"
-sourcex "$HOME/dotfiles/fzfrc"
-sourcex "$HOME/.fzf.bash"
