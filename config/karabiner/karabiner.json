@@ -742,11 +742,11 @@
                         ]
                     },
                     {
-                        "description": "Change right_command+kl;' to arrow keys",
+                        "description": "Change right_command+jkl; to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "k",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
@@ -765,7 +765,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
@@ -784,7 +784,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "semicolon",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
@@ -803,7 +803,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "quote",
+                                    "key_code": "semicolon",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
