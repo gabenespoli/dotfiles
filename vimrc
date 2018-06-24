@@ -260,7 +260,7 @@ cnoremap <C-p> <up>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-a> <Home>
-inoremap <C-e> <End>
+inoremap <expr> <C-e> pumvisible() ? "\<C-e>" : "\<End>"
 inoremap <C-d> <Del>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
