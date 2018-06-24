@@ -86,9 +86,9 @@ if has("mac") | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
 set swapfile
-set undodir=~/bin/vim/tmp/undo/
-set backupdir=~/bin/vim/tmp/backup/
-set directory=~/bin/vim/tmp/swap/
+set undodir=~/tmp/vim/undo/
+set backupdir=~/tmp/vim/backup/
+set directory=~/tmp/vim/swap/
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
 endif
