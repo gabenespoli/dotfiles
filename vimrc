@@ -270,7 +270,7 @@ cnoremap <C-d> <Del>
 if has('nvim')
   inoremap <M-f> <S-Right>
   inoremap <M-b> <S-Left>
-  inoremap <M-d> <Esc>ldwi
+  inoremap <M-d> <C-o>dw
   cnoremap <M-f> <S-Right>
   cnoremap <M-b> <S-Left>
 else
