@@ -2,9 +2,9 @@ au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
 
 inoremap {<CR> {<CR>}<Esc>O
 
-set foldmethod=expr
-set foldexpr=FoldExprDoubleCharSh(v:lnum)
-set foldtext=GetFoldTextSh()
+setlocal foldmethod=expr
+setlocal foldexpr=FoldExprDoubleCharSh(v:lnum)
+setlocal foldtext=GetFoldTextSh()
 
 function! GetFoldTextSh()
     if &foldmethod == 'expr'

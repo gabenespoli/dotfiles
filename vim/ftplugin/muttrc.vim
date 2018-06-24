@@ -2,9 +2,9 @@ set syntax=muttrc
 
 au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
 
-set foldmethod=expr
-set foldexpr=GetMuttFolds(v:lnum)
-set foldtext=GetMuttFoldText()
+setlocal foldmethod=expr
+setlocal foldexpr=GetMuttFolds(v:lnum)
+setlocal foldtext=GetMuttFoldText()
 
 function! GetMuttFolds(lnum)
     if getline(a:lnum) =~ '^\s*##'

@@ -5,8 +5,8 @@ nnoremap <buffer> <localleader>r :SlimeSend1 printf "\033c" && rem -cc+3 -w120<C
 au VimEnter,BufEnter <buffer> syn match Title '^#.*-\{4,\}$'
 
 " folding
-set foldmethod=expr
-set foldexpr=GetRemindFolds(v:lnum)
+setlocal foldmethod=expr
+setlocal foldexpr=GetRemindFolds(v:lnum)
 function! GetRemindFolds(lnum)
   if getline(a:lnum) =~ '^#.*-\{4,\}$'
     return '>1'

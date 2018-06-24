@@ -58,9 +58,9 @@ nmap } :NERDTreeFind<CR>jo
 nmap { :NERDTreeFind<CR>ko
 
 " folding {{{1
-set foldmethod=expr
-set foldexpr=GetTodoFolds(v:lnum)
-set foldtext=GetFoldText()
+setlocal foldmethod=expr
+setlocal foldexpr=GetTodoFolds(v:lnum)
+setlocal foldtext=GetFoldText()
 
 function! GetTodoFolds(lnum)
     if getline(a:lnum) =~ '^#'

@@ -136,8 +136,8 @@ if !exists("g:GoNotesLoaded") || g:GoNotesLoaded == 0
 endif
 
 " folding {{{1
-set foldmethod=expr
-set foldexpr=GetMarkdownFolds(v:lnum)
+setlocal foldmethod=expr
+setlocal foldexpr=GetMarkdownFolds(v:lnum)
 let g:tagbar_foldlevel = 2
 let b:foldtextwidth = -4
 

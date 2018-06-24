@@ -1,9 +1,9 @@
 
 au VimEnter,BufEnter <buffer> syn match Title '^##.*$'
 
-set foldmethod=expr
-set foldexpr=GetTmuxFolds(v:lnum)
-set foldtext=GetTmuxFoldText()
+setlocal foldmethod=expr
+setlocal foldexpr=GetTmuxFolds(v:lnum)
+setlocal foldtext=GetTmuxFoldText()
 
 function! GetTmuxFolds(lnum)
     if getline(a:lnum) =~ '^\s*##'

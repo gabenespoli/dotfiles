@@ -1,6 +1,6 @@
-set tabstop=4 softtabstop=4 shiftwidth=4
-set foldmethod=expr
-set foldexpr=GetPythonFolds(v:lnum)
+setlocal tabstop=4 softtabstop=4 shiftwidth=4
+setlocal foldmethod=expr
+setlocal foldexpr=GetPythonFolds(v:lnum)
 function! GetPythonFolds(lnum)
     if getline(a:lnum) =~ '^\s*\(class\|def\|#!\)'
         return '>1'

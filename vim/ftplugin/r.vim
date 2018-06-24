@@ -44,8 +44,8 @@ nnoremap <buffer> <localleader>2 :call AddRstudioHeadings(2)<CR>
 nnoremap <buffer> <localleader>3 :call AddRstudioHeadings(3)<CR>
 
 " folding
-set foldmethod=expr
-set foldexpr=GetRFolds(v:lnum)
+setlocal foldmethod=expr
+setlocal foldexpr=GetRFolds(v:lnum)
 function! GetRFolds(lnum)
   if     getline(a:lnum) =~ '^#.*-\{4,\}$'
     return '>1'
