@@ -43,7 +43,6 @@ Plug 'lionawurscht/deoplete-biblatex'
 Plug 'w0rp/ale'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
-Plug 'jvirtanen/vim-octave'
 " colorschemes
 Plug '~/bin/vim/vim-colors-palettes'
 if has("gui_running")

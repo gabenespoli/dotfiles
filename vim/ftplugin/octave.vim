@@ -25,6 +25,10 @@ function! GetOctaveFoldText()
   return line . ' '
 endfunction
 
+" syntax completion {{{1
+setlocal omnifunc=syntaxcomplete#Complete
+
+" capitalL plugin {{{1
 let b:Lpatterns = ['/%\+\s*TODO/gj *', '/^\s*function/gj %']
 let b:Lreformat = ['', '/[^|]*|[^|]*|\s//ge']
 " let b:Lreformat = ['/[^|]*|[^|]*|\s%\+\s*\(TODO.*\)$/\1/ge', '/[^|]*|[^|]*|\s//ge']
