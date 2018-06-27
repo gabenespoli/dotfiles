@@ -359,8 +359,8 @@ let g:ctrlp_prompt_mappings = {
  \ }
 
 " jeetsukumaran/vim-buffergator {{{2
-let g:buffergator_viewport_split_policy = "N"
 let g:buffergator_suppress_keymaps = 1
+let g:buffergator_viewport_split_policy = "N"
 
 " scrooloose/NERDTree {{{2
 let g:NERDTreeMinimalUI = 1
