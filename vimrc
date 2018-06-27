@@ -279,7 +279,7 @@ nnoremap <leader>W :echo WordCount()<CR>
 nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 
 " change pwd to git root if in repo (vim-fugitive), else current file's dir
-nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>' : ':cd %:p:h<CR>'
+nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
 " insert dates
 nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
