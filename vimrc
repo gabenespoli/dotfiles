@@ -274,7 +274,7 @@ endif
 " misc {{{2
 " status/info toggles
 nnoremap <silent> <leader>F :call ToggleTabline()<CR>
-nnoremap <silent> <leader>S :call ToggleStatusBar()<CR>
+nnoremap <silent> <M-S> :call ToggleStatusBar()<CR>
 nnoremap <leader>W :echo WordCount()<CR>
 nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 
