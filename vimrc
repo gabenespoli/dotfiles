@@ -211,7 +211,7 @@ set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)                           
 
 " GUI Settings {{{2
-set guioptions=
+set guioptions=g
 set guicursor=n-v-ve:block-blinkon0
   \,sm:block-blinkon750
   \,i-ci-c:ver25-blinkwait750-blinkon750-blinkoff750
