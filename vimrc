@@ -524,9 +524,9 @@ let g:rout_follow_colorscheme = 1
 " Shougo/deoplete.vim {{{2
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
-inoremap <silent><expr> <Tab>
+inoremap <silent> <expr> <Tab>
   \ pumvisible() ? deoplete#smart_close_popup()."\<Tab>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
+  \ <SID>check_back_space() ? "\<Tab>" :
   \ deoplete#mappings#manual_complete()
 function! s:check_back_space() abort "{{{
   let col = col('.') - 1
