@@ -572,12 +572,12 @@ let g:criticmarkup#disable#highlighting = 1
 " rickhowe/diffchar {{{2
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
-map  <leader>D      <Plug>ToggleDiffCharAllLines
-map  <leader>d      <Plug>ToggleDiffCharCurrentLine
+nmap <leader>d      <Plug>ToggleDiffCharAllLines
+nmap <leader>D      <Plug>ToggleDiffCharCurrentLine
 nmap [d             <Plug>JumpDiffCharPrevStart
 nmap ]d             <Plug>JumpDiffCharNextStart
-nmap <F13>          <Plug>JumpDiffCharPrevEnd
-nmap <F14>          <Plug>JumpDiffCharNextEnd
+nmap <nop>          <Plug>JumpDiffCharPrevEnd
+nmap <nop>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
 nmap dP             <Plug>PutDiffCharPair
 
