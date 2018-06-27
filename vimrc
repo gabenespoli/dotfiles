@@ -535,7 +535,7 @@ endfunction"}}}
 
 " lionawurscht/deoplete-biblatex {{{2
 let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
-let g:deoplete#sources#biblatex#startpattern = '\[@'
+let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
 let g:deoplete#sources#biblatex#delimiter = ';'
 call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
