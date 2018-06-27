@@ -336,21 +336,27 @@ let g:gitgutter_override_sign_column_highlight = 0
 nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
- " ctrlpvim/ctrlp.vim {{{2
- nmap <leader><localleader> :CtrlP $HOME<CR>
- let g:ctrlp_map = '<leader><leader>'
- let g:ctrlp_cmd = 'CtrlPMRU'
- let g:ctrlp_match_window = 'bottom'
- let g:ctrlp_prompt_mappings = { 
-   \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
-   \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
-   \ 'PrtHistory(-1)':         [],
-   \ 'PrtHistory(1)':          [],
-   \ 'AcceptSelection("t")':   ['<C-t>'],
-   \ 'AcceptSelection("e")':   ['<C-m>', '<C-j>', '<CR>', '<2-LeftMouse>'],
-   \ 'ToggleType(-1)':         ['<C-b>', '<C-down>'],
-   \ 'ToggleType(1)':          ['<C-f>', '<C-up>'],
-   \ }
+" ctrlpvim/ctrlp.vim {{{2
+let g:ctrlp_cmd = 'CtrlPMRU'
+nnoremap <leader><leader> :CtrlP<CR>
+nnoremap <C-q> :CtrlPQuickfix<CR>
+let g:ctrlp_switch_buffer = 0 
+if executable('fd')
+  let g:ctrlp_use_caching = 1
+  let g:ctrlp_user_command = 'fd --color never "" '
+    \ . ' ~/dotfiles'
+    \ . ' ~/Dropbox/bin'
+    \ . ' ~/Dropbox/projects'
+    \ . ' ~/Dropbox/web'
+    \ . ' ~/Dropbox/lib'
+endif
+let g:ctrlp_prompt_mappings = { 
+ \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+ \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+ \ 'PrtHistory(-1)':         [],
+ \ 'PrtHistory(1)':          [],
+ \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
+ \ }
 
 " jeetsukumaran/vim-buffergator {{{2
 let g:buffergator_viewport_split_policy = "N"
