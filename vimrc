@@ -61,24 +61,13 @@ call plug#end()
 
 " General Settings {{{1
 " Colorscheme {{{2
-function! SetColorpalette(palette)
-  let g:solarized_palette = a:palette
-  colorscheme solarized
-endfunction
-command! -nargs=1 Colorpalette :call SetColorpalette(<f-args>)
-cnoreabbrev colorpalette Colorpalette
-
 syntax enable
-let g:solarized_bold = 1
-let g:solarized_italic = 1
-let g:solarized_underline = 1
-let g:palettes_terminal_italics = 1
+let g:sumach_terminal_italics = 1
+colorscheme sumach
 if has("gui_running")
   set background=light
-  colorscheme pencil
 else
   set background=dark
-  colorscheme palettes
 endif
 
 " File stuff {{{2
