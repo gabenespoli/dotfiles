@@ -93,6 +93,7 @@ endif
 
 " Editing {{{2
 set number relativenumber
+set cursorline
 set equalalways splitright splitbelow
 set laststatus=2                " 0 = no status bar, 2 = show status bar
 set showtabline=1               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
