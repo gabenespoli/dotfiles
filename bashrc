@@ -61,8 +61,12 @@ fi
 
 ## Environment {{{1
 export PATH="$HOME/local/bin:$PATH"
-git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:\1/' ; }
-export PS1='\[\e[0;34m\]\w\[\e[0;37m\]$(git_branch) \[\e[0;37m\]\$\[\e[m\] '
+if [ -f "$HOME/dotfiles/git-prompt.sh" ]; then
+  source "$HOME/dotfiles/git-prompt.sh"
+  export PS1='\[\e[34m\]\w\[\e[37m\]:\[\e[32m\]$(__git_ps1 "%s")\[\e[0m\] $ '
+else
+  export PS1='\[\e[34m\]\w\[\e[37m\] $\[\e[0m\] '
+fi
 export EDITOR='nvim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
