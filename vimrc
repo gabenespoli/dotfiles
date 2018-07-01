@@ -95,8 +95,8 @@ endif
 set number relativenumber
 set cursorline
 set equalalways splitright splitbelow
-set laststatus=2                " 0 = no status bar, 2 = show status bar
-set showtabline=1               " 0 = no tabline, 1 = show if > 1 tab, 2 = always
+set laststatus=2
+set showtabline=1
 set nolist listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set backspace=indent,eol,start
 set whichwrap+=h,l              " let h and l move across lines
@@ -252,9 +252,7 @@ endif
 
 " misc {{{2
 " status/info toggles
-nnoremap <silent> <leader>F :call ToggleTabline()<CR>
-nnoremap <silent> <M-S> :call ToggleStatusBar()<CR>
-nnoremap <leader>W :echo WordCount()<CR>
+nnoremap <expr> <M-S> &laststatus ? ':set laststatus=0<CR>' : ':set laststatus=2<CR>'
 nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
 
 " Esc to exit pop-up menu without insertion
@@ -570,42 +568,6 @@ set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
 
 " Functions {{{1
-" Toggle Tabline {{{2
-function! ToggleTabline()
-  " 0 = never, 1 = if > 1 tab, 2 = always
-  if &showtabline==0
-    set showtabline=2
-  elseif &showtabline==1
-    set showtabline=0
-  elseif &showtabline==2
-    set showtabline=1
-  endif
-  echo 'set showtabline='.&showtabline
-endfunction
-
-" Toggle Status Bar {{{2
-function! ToggleStatusBar()
-  if &laststatus == 2
-    set laststatus=0
-  elseif &laststatus == 0
-    set laststatus=2
-  endif
-endfunction
-
-" Toggle Search Highlight Colour {{{2
-function! SearchHighlightToggle()
-  let bgcolor=synIDattr(hlID('Search'), 'bg#')
-  if bgcolor == 1
-    execute "hi Search ctermbg=0 ctermfg=none cterm=none"
-  elseif bgcolor == 0
-    execute "hi Search ctermbg=12 ctermfg=8 cterm=none"
-  elseif bgcolor == 12
-    execute "hi Search ctermbg=8 ctermfg=none cterm=none"
-  elseif bgcolor == 8
-    execute "hi Search ctermbg=1 ctermfg=15 cterm=none"
-  endif
-endfunction
-
 " Toggle Color Column {{{2
 function! ToggleColorColumn()
   if &filetype == "matlab" || &filetype == "octave"
@@ -624,18 +586,6 @@ endfunction
 function! GetSyntaxUnderCursor() 
   let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
   return g:SyntaxUnderCursor
-endfunction
-
-" Word Count {{{2
-function! WordCount()
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-  let lnum = 1
-  let n = 0
-  while lnum <= line('$')
-    let n = n + len(split(getline(lnum)))
-    let lnum = lnum + 1
-  endwhile
-  return n
 endfunction
 
 " Line Return {{{2
