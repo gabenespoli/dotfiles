@@ -18,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'godlygeek/tabular'
 
 " sidebars {{{2
 Plug 'gabenespoli/vim-mutton'
@@ -43,12 +44,10 @@ Plug 'lionawurscht/deoplete-biblatex'
 Plug 'w0rp/ale'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
-" colorschemes
-Plug '~/bin/vim/vim-colors-palettes'
-if has("gui_running")
-  Plug 'reedes/vim-colors-pencil'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'morhetz/gruvbox'
+if isdirectory(expand('~/bin/vim/vim-colors-sumach'))
+  Plug '~/bin/vim/vim-colors-sumach'
+else
+  Plug 'gabenespoli/vim-colors-sumach'
 endif
 
 " external {{{2
