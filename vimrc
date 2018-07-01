@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " editing {{{2
-Plug 'vim-scripts/matchit.zip'
+Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -243,33 +243,6 @@ else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
 endif
-cnoremap <C-n> <down>
-cnoremap <C-p> <up>
-
-" emacs-style movement {{{2
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-inoremap <C-a> <Home>
-inoremap <expr> <C-e> pumvisible() ? "\<C-e>" : "\<End>"
-inoremap <C-d> <Del>
-cnoremap <C-f> <Right>
-cnoremap <C-b> <Left>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-d> <Del>
-if has('nvim')
-  inoremap <M-f> <S-Right>
-  inoremap <M-b> <S-Left>
-  inoremap <M-d> <C-o>dw
-  cnoremap <M-f> <S-Right>
-  cnoremap <M-b> <S-Left>
-else
-  inoremap <Esc>f <S-Right>
-  inoremap <Esc>b <S-Left>
-  inoremap <Esc>d <Esc>ldwi
-  cnoremap <Esc>f <S-Right>
-  cnoremap <Esc>b <S-Left>
-endif
 
 " misc {{{2
 " status/info toggles
@@ -277,6 +250,9 @@ nnoremap <silent> <leader>F :call ToggleTabline()<CR>
 nnoremap <silent> <M-S> :call ToggleStatusBar()<CR>
 nnoremap <leader>W :echo WordCount()<CR>
 nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
+
+" Esc to exit pop-up menu without insertion
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
 " change pwd to git root if in repo (vim-fugitive), else current file's dir
 nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
