@@ -615,4 +615,3 @@ endif
 " Open Pomodoro File {{{2
 command! Pomfile :execute "edit $HOME/pomodoro/" . strftime("%Y-%m-%d") . ".txt"
 cnoreabbrev pomfile Pomfile
-nnoremap <leader>P :Pomfile<CR>
