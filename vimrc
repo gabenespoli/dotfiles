@@ -98,7 +98,7 @@ set laststatus=2
 set showtabline=1
 set nolist listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set backspace=indent,eol,start
-set whichwrap+=h,l              " let h and l move across lines
+set whichwrap+=h,l
 set visualbell
 set hidden
 set clipboard=unnamed
