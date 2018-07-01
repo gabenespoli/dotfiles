@@ -236,9 +236,15 @@ inoremap jk <Esc>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
+cnoremap <C-n> <down>
+cnoremap <C-p> <up>
 if has('nvim')
   nnoremap <M-s> :w<CR>
   inoremap <M-s> <Esc>:w<CR>a
+  nnoremap <M-{> gT
+  nnoremap <M-}> gt
+  tnoremap <M-{> <C-\><C-N>gT
+  tnoremap <M-}> <C-\><C-N>gt
 else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
