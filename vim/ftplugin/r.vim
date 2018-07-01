@@ -3,6 +3,7 @@ nmap <buffer> <expr> <C-l>   string(g:SendCmdToR)=="function('SendCmdToR_fake')"
 nmap <buffer> <expr> <M-C-l> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSendj"<CR>'       : ':call SendLineToR("down")<CR>'
 nmap <buffer> <expr> <C-k>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend"<CR>'   : ':call SendParagraphToR("silent", "stay")<CR>'
 nmap <buffer> <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend}j"<CR>' : ':call SendParagraphToR("silent", "down")<CR>'
+imap <buffer> <Tab> <C-x><C-o>
 
 " keybindings {{{1
 inoremap {<CR> {<CR>}<Esc>O
