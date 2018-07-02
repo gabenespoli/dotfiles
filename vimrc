@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 
 " editing {{{2
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -246,6 +245,30 @@ else
   inoremap <Esc>s <Esc>:w<CR>a
 endif
 
+" simplified tpope/vim-unimpaired {{{2
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [l :lprevious<CR>
+nnoremap <silent> ]l :lnext<CR>
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
+nnoremap <silent> [t :tabprevious<CR>
+nnoremap <silent> ]t :tabnext<CR>
+nnoremap <silent> con :set relativenumber!<CR>:set number!<CR>
+nnoremap <silent> coN :set number!<CR>
+nnoremap <silent> cor :set relativenumber!<CR>
+nnoremap <silent> coc :set cursorline!<CR>
+nnoremap <silent> cou :set cursorcolumn!<CR>
+nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
+nnoremap <silent> cos :set spell!<CR>
+nnoremap <silent> cow :set wrap!<CR>
+nnoremap <silent> coh :set hlsearch!<CR>
+nnoremap <silent> col :set list!<CR>
+nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
+nnoremap <silent> cod :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
+nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap cop :call ToggleColorColumn()<CR>
+
 " misc {{{2
 " status/info toggles
 nnoremap <expr> <M-S> &laststatus ? ':set laststatus=0<CR>' : ':set laststatus=2<CR>'
@@ -272,19 +295,6 @@ nnoremap <leader>s 1z=
 if has("mac") | nnoremap gO :!open <cfile><CR> | endif
 
 " Plugin Settings {{{1
-" tpope/vim-unimpaired {{{2
-nmap co yo
-nnoremap com :set relativenumber!<CR>:set number!<CR>
-nnoremap coH :call SearchHighlightToggle()<CR>
-nnoremap cop :call ToggleColorColumn()<CR>
-nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
-nnoremap coFl :set foldmethod=manual<CR>
-nnoremap coFi :set foldmethod=indent<CR>
-nnoremap coFe :set foldmethod=expr<CR>
-nnoremap coFm :set foldmethod=marker<CR>
-nnoremap coFs :set foldmethod=syntax<CR>
-nnoremap coFd :set foldmethod=diff<CR>
-
 " tpope/vim-commentary {{{2
 autocmd FileType octave setlocal commentstring=%\ %s
 autocmd FileType cfg,remind setlocal commentstring=#\ %s
