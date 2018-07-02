@@ -7,7 +7,6 @@ if [ "$(uname)" == "Darwin" ]; then
   export PATH="/usr/local/lib:$PATH"
   export PATH="/usr/local/texbin:$PATH"
   export PATH="$HOME/Library/Haskell/bin:$PATH"
-  export PATH="$HOME/bin:$PATH"
   alias ls="ls -hl"
   alias lsa="ls -hla"
   alias gls="gls -hl --color --group-directories-first"
@@ -60,6 +59,8 @@ else
 fi
 
 ## Environment {{{1
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 if [ -f "$HOME/dotfiles/git-prompt.sh" ]; then
   source "$HOME/dotfiles/git-prompt.sh"
@@ -76,7 +77,11 @@ export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
 bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
 
-# setup ruby env (requires rbenv to be installed)
+# setup pyenv and rbenv
+if hash rbenv 2> /dev/null; then 
+  eval "$(pyenv init -)" ; 
+  eval "$(pyenv virtualenv-init -)" ;
+fi
 if hash rbenv 2> /dev/null; then eval "$(rbenv init -)" ; fi
 
 ## Aliases & Functions {{{1
