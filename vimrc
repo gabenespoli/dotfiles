@@ -80,9 +80,6 @@ set directory=~/tmp/vim/swap/
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
 endif
-if !isdirectory(expand(&undodir))
-  call mkdir(expand(&undodir), "p")
-endif
 if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
