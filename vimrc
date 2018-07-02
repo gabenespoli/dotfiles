@@ -58,6 +58,12 @@ Plug 'jalvesaq/Nvim-R'
 call plug#end()
 
 " General Settings {{{1
+" Environment {{{2
+if has('nvim')
+  let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
+  let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
+endif
+
 " Colorscheme {{{2
 syntax enable
 let g:sumach_terminal_italics = 1
