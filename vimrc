@@ -16,7 +16,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
-Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'godlygeek/tabular'
 
 " sidebars {{{2
