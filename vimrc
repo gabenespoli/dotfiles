@@ -225,6 +225,31 @@ if has("gui_running")
   let g:gitgutter_signs = 0
 endif
 
+" misc {{{2
+" Line Return {{{3
+" from Steve Losh's (sjl) vimrc
+augroup line_return
+  au!
+  au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \     execute 'normal! g`"zvzz' |
+    \ endif
+augroup END
+
+" tmux make cursor line when in insert mode {{{3
+" Change cursor shape from block (command mode) to line (insert mode)
+" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
+if !has('nvim') || !has('gui_running')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+endif
+
 " Keybindings {{{1
 " settings {{{2
 let maplocalleader = "\<Space>"
@@ -252,6 +277,7 @@ else
 endif
 
 " simplified tpope/vim-unimpaired {{{2
+" previous/next
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [l :lprevious<CR>
@@ -260,6 +286,8 @@ nnoremap <silent> [q :cprevious<CR>
 nnoremap <silent> ]q :cnext<CR>
 nnoremap <silent> [t :tabprevious<CR>
 nnoremap <silent> ]t :tabnext<CR>
+
+" option toggles
 nnoremap <silent> con :set relativenumber!<CR>:set number!<CR>
 nnoremap <silent> coN :set number!<CR>
 nnoremap <silent> cor :set relativenumber!<CR>
@@ -273,13 +301,24 @@ nnoremap <silent> col :set list!<CR>
 nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
 nnoremap <silent> cod :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap coY :echo synIDattr(synID(line("."),col("."),1),"name")
+nnoremap <expr> <M-S> &laststatus ? ':set laststatus=0<CR>' : ':set laststatus=2<CR>'
+
 nnoremap cop :call ToggleColorColumn()<CR>
+function! ToggleColorColumn()
+  if &filetype == "matlab" || &filetype == "octave"
+    let l:col = 75
+  else
+    let l:col = 80
+  endif
+  if &colorcolumn == l:col
+    execute "set colorcolumn=\"\""
+  else
+    execute "set colorcolumn=".l:col
+  endif
+endfunction
 
 " misc {{{2
-" status/info toggles
-nnoremap <expr> <M-S> &laststatus ? ':set laststatus=0<CR>' : ':set laststatus=2<CR>'
-nnoremap <leader>Y :echo GetSyntaxUnderCursor()<CR>
-
 " Esc to exit pop-up menu without insertion
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
@@ -579,52 +618,3 @@ filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
-
-" Functions {{{1
-" Toggle Color Column {{{2
-function! ToggleColorColumn()
-  if &filetype == "matlab" || &filetype == "octave"
-    let l:col = 75
-  else
-    let l:col = 80
-  endif
-  if &colorcolumn == l:col
-    execute "set colorcolumn=\"\""
-  else
-    execute "set colorcolumn=".l:col
-  endif
-endfunction
-
-" Get Syntax Under Cursor {{{2
-function! GetSyntaxUnderCursor() 
-  let g:SyntaxUnderCursor = synIDattr(synID(line("."),col("."),1),"name")
-  return g:SyntaxUnderCursor
-endfunction
-
-" Line Return {{{2
-" from Steve Losh's (sjl) vimrc
-augroup line_return
-  au!
-  au BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \     execute 'normal! g`"zvzz' |
-    \ endif
-augroup END
-
-" tmux make cursor line when in insert mode {{{2
-" Change cursor shape from block (command mode) to line (insert mode)
-" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
-" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
-if !has('nvim') || !has('gui_running')
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-endif
-
-" Open Pomodoro File {{{2
-command! Pomfile :execute "edit $HOME/pomodoro/" . strftime("%Y-%m-%d") . ".txt"
-cnoreabbrev pomfile Pomfile
