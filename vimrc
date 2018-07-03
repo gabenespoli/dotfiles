@@ -20,13 +20,13 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'godlygeek/tabular'
 
 " sidebars {{{2
-Plug 'gabenespoli/vim-mutton'
-Plug 'gabenespoli/vim-cider-vinegar'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'scrooloose/NERDTree'
-Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'gabenespoli/vim-mutton'
+Plug 'majutsushi/tagbar'
 Plug 'jszakmeister/markdown2ctags'
+Plug 'gabenespoli/vim-cider-vinegar'
+Plug 'scrooloose/NERDTree'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'MarcWeber/vim-addon-qf-layout'
 
 " completion {{{2
@@ -43,11 +43,7 @@ Plug 'lionawurscht/deoplete-biblatex'
 Plug 'w0rp/ale'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
-if isdirectory(expand('~/bin/vim/vim-colors-sumach'))
-  Plug '~/bin/vim/vim-colors-sumach'
-else
-  Plug 'gabenespoli/vim-colors-sumach'
-endif
+Plug 'gabenespoli/vim-colors-sumach'
 
 " external {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -97,8 +93,7 @@ set number relativenumber
 set cursorline
 set equalalways splitright splitbelow
 set laststatus=2
-set showtabline=1
-set nolist listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set backspace=indent,eol,start
 set whichwrap+=h,l
 set visualbell
@@ -108,12 +103,12 @@ set fillchars=fold:\ ,vert:\|
 set mouse=a
 
 " Spacing {{{2
-set linebreak                   " stop soft wrapping in the middle of words  
-set breakindent                 " auto indent soft wrap line breaks
-set tabstop=2                   " number of visual spaces per TAB
-set softtabstop=2               " number of spaces in tab when editing
+set linebreak
+set breakindent
+set expandtab
+set tabstop=2
+set softtabstop=2
 set shiftwidth=2
-set expandtab                   " tabs are spaces
 
 " Searching {{{2
 set wildmenu wildignorecase wildmode=list:longest
@@ -345,6 +340,7 @@ nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 "vimdiff
 nnoremap du :diffupdate<CR>
+
 " Spell checking
 nnoremap <leader>s 1z=
 
