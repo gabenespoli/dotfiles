@@ -334,6 +334,7 @@ nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " ctrlpvim/ctrlp.vim {{{2
+nnoremap <C-q> :CtrlPQuickfix<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
 if executable('fd')
