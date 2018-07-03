@@ -1,6 +1,6 @@
 " .vimrc file for gabenespoli@gmail.com
 " Plugin Manager (vim-plug) {{{1
-" make sure vim-plug is installed
+" make sure vim-plug is installed {{{2
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
