@@ -377,17 +377,9 @@ nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " ctrlpvim/ctrlp.vim {{{2
 let g:ctrlp_cmd = 'CtrlPMRU'
-nnoremap <leader><leader> :CtrlP<CR>
-nnoremap <C-q> :CtrlPQuickfix<CR>
 let g:ctrlp_switch_buffer = 0 
 if executable('fd')
-  let g:ctrlp_use_caching = 1
-  let g:ctrlp_user_command = 'fd --color never "" '
-    \ . ' ~/dotfiles'
-    \ . ' ~/Dropbox/bin'
-    \ . ' ~/Dropbox/projects'
-    \ . ' ~/Dropbox/web'
-    \ . ' ~/Dropbox/lib'
+  let g:ctrlp_user_command = 'fd --color never "" %s'
 endif
 let g:ctrlp_prompt_mappings = { 
  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
