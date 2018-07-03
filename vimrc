@@ -17,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
 Plug 'godlygeek/tabular'
+Plug '~/bin/vim/vim-impaired'
 
 " sidebars {{{2
 Plug 'ctrlpvim/ctrlp.vim'
@@ -281,48 +282,6 @@ else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
 endif
-
-" simplified tpope/vim-unimpaired {{{2
-" previous/next
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [l :lprevious<CR>
-nnoremap <silent> ]l :lnext<CR>
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
-nnoremap <silent> [t :tabprevious<CR>
-nnoremap <silent> ]t :tabnext<CR>
-
-" option toggles
-nnoremap <silent> con :set relativenumber!<CR>:set number!<CR>
-nnoremap <silent> coN :set number!<CR>
-nnoremap <silent> cor :set relativenumber!<CR>
-nnoremap <silent> coc :set cursorline!<CR>
-nnoremap <silent> cou :set cursorcolumn!<CR>
-nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
-nnoremap <silent> cos :set spell!<CR>
-nnoremap <silent> cow :set wrap!<CR>
-nnoremap <silent> coh :set hlsearch!<CR>
-nnoremap <silent> col :set list!<CR>
-nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
-nnoremap <silent> cod :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
-nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap coY :echo synIDattr(synID(line("."),col("."),1),"name")
-nnoremap <expr> <M-S> &laststatus ? ':set laststatus=0<CR>' : ':set laststatus=2<CR>'
-
-nnoremap cop :call ToggleColorColumn()<CR>
-function! ToggleColorColumn()
-  if &filetype == "matlab" || &filetype == "octave"
-    let l:col = 75
-  else
-    let l:col = 80
-  endif
-  if &colorcolumn == l:col
-    execute "set colorcolumn=\"\""
-  else
-    execute "set colorcolumn=".l:col
-  endif
-endfunction
 
 " misc {{{2
 " Esc to exit pop-up menu without insertion
