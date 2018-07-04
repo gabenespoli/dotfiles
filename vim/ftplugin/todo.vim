@@ -24,23 +24,6 @@ nnoremap <buffer> <localleader>u :s/^([A-Z])\s//ge<CR>I(U) <Esc>:w<CR>
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp'':w<CR>
 
-nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
-function! TodoToggleNext()
-  execute 'normal! 0'
-  if search('!next', 'cn') == line('.') 
-    execute 's/ !next//ge'
-  else
-    execute 's/$/ !next/ge'
-  endif
-  execute 'write'
-endfunction
-
-" moving lines {{{2
-" nnoremap <buffer> H dd:w<CR><C-w>hP:w<CR>
-" nnoremap <buffer> J :move +1<CR>:w<CR>
-" nnoremap <buffer> K :move -2<CR>:w<CR>
-" nnoremap <buffer> L dd:w<CR><C-w>lP:w<CR>
-
 " task points (1 2 3 5 8) {{{2
 nnoremap <buffer> <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>:w<CR>
 nnoremap <buffer> <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>:w<CR>
@@ -54,8 +37,8 @@ nnoremap <buffer> <localleader>0 :s/\ pts:\d*//ge<CR>:w<CR>
 nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
-nmap } :NERDTreeFind<CR>jo
-nmap { :NERDTreeFind<CR>ko
+nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
+nnoremap <buffer> x :call TodoToggleX()<CR>
 
 " folding {{{1
 setlocal foldmethod=expr
@@ -63,11 +46,13 @@ setlocal foldexpr=GetTodoFolds(v:lnum)
 setlocal foldtext=GetFoldText()
 
 function! GetTodoFolds(lnum)
-    if getline(a:lnum) =~ '^#'
-        return '>1'
-    else
-        return '='
-    endif
+  if getline(a:lnum) =~ '^#'
+    return '>1'
+  elseif getline(a:lnum) =~ '^\/\/'
+    return '>1'
+  else
+    return '='
+  endif
 endfunction
 
 " functions {{{1
@@ -109,7 +94,32 @@ function! s:AppendToFile(file, lines)
     call writefile(l:lines, a:file)
 endfunction
 
-" capitalL plugin settings
+function! TodoToggleX()
+  let l:beforeChar = getline('.')[col('.')-2]
+  let l:currentChar = getline('.')[col('.')-1]
+  let l:afterChar = getline('.')[col('.')]
+  if l:beforeChar == '[' && l:afterChar == ']'
+    if l:currentChar == 'x'
+      normal! r 
+    elseif l:currentChar == ' '
+      normal! rx
+    endif
+  else
+    normal! x
+  endif
+endfunction
+
+function! TodoToggleNext()
+  execute 'normal! 0'
+  if search('!next', 'cn') == line('.') 
+    execute 's/ !next//ge'
+  else
+    execute 's/$/ !next/ge'
+  endif
+  execute 'write'
+endfunction
+
+" capitalL plugin settings {{{1
 let g:Lposition = 'left'
 let b:Lsyntax = 'todo'
 let b:Lpatterns = ['/!next/gj %', '/!waiting/gj %']
