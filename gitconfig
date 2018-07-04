@@ -3,8 +3,6 @@
 	email = gabenespoli@gmail.com
 [push]
 	default = current
-[core]
-    pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [color]
     ui = always
 [color "diff-highlight"]
