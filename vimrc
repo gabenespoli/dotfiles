@@ -285,6 +285,8 @@ else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
 endif
+nnoremap = <C-w>>
+nnoremap + <C-w>+
 
 " misc {{{2
 " Esc to exit pop-up menu without insertion
