@@ -13,21 +13,23 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'godlygeek/tabular'
+" Plug 'gabenespoli/vim-impaired'
+Plug '~/bin/vim/vim-impaired'
+
+" git / diff
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
-Plug 'godlygeek/tabular'
-Plug '~/bin/vim/vim-impaired'
 
-" sidebars {{{2
+" sidebars & sidebar control {{{2
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'gabenespoli/vim-mutton'
-Plug 'majutsushi/tagbar'
-Plug 'jszakmeister/markdown2ctags'
-Plug 'gabenespoli/vim-cider-vinegar'
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'majutsushi/tagbar'
 Plug 'MarcWeber/vim-addon-qf-layout'
+Plug 'gabenespoli/vim-cider-vinegar'
+Plug 'gabenespoli/vim-mutton'
 
 " completion {{{2
 if has('nvim')
@@ -43,6 +45,7 @@ Plug 'lionawurscht/deoplete-biblatex'
 Plug 'w0rp/ale'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
+Plug 'jszakmeister/markdown2ctags'
 Plug 'gabenespoli/vim-colors-sumach'
 
 " external {{{2
@@ -329,9 +332,17 @@ nnoremap cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
-" gabenespoli/vim-mutton {{{2
-nnoremap <leader>m :MuttonToggle<CR>
-nnoremap <leader>t :MuttonTagbarToggle<CR>
+" rickhowe/diffchar {{{2
+let g:DiffPairVisible = 0
+let g:DiffUpdate = 0
+nmap <leader>d      <Plug>ToggleDiffCharAllLines
+nmap <leader>D      <Plug>ToggleDiffCharCurrentLine
+nmap [d             <Plug>JumpDiffCharPrevStart
+nmap ]d             <Plug>JumpDiffCharNextStart
+nmap <nop>          <Plug>JumpDiffCharPrevEnd
+nmap <nop>          <Plug>JumpDiffCharNextEnd
+nmap dO             <Plug>GetDiffCharPair
+nmap dP             <Plug>PutDiffCharPair
 
 " ctrlpvim/ctrlp.vim {{{2
 nnoremap <C-q> :CtrlPQuickfix<CR>
@@ -347,10 +358,6 @@ let g:ctrlp_prompt_mappings = {
  \ 'PrtHistory(1)':          [],
  \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
  \ }
-
-" jeetsukumaran/vim-buffergator {{{2
-let g:buffergator_suppress_keymaps = 1
-let g:buffergator_viewport_split_policy = "N"
 
 " scrooloose/NERDTree {{{2
 let g:NERDTreeMinimalUI = 1
@@ -368,13 +375,9 @@ let g:NERDTreeMapJumpNextSibling = '<C-n>'
 let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
 
-" gabenespoli/vim-cider-vinegar {{{2
-let g:CiderVinegarToggle = '-'
-let g:CiderVinegarToggleBuffers = '<leader>b'
-let g:CiderVinegarToggleQF = '<leader>q'
-let g:CiderVinegarToggleLL = '<leader>l'
-let g:CiderVinegarEnableNERDTree = 1
-let g:CiderVinegarEnableBuffergator = 1
+" jeetsukumaran/vim-buffergator {{{2
+let g:buffergator_suppress_keymaps = 1
+let g:buffergator_viewport_split_policy = "N"
 
 " majutsushi/tagbar{{{2
 let g:tagbar_left = 1
@@ -401,6 +404,77 @@ let g:tagbar_type_r = {
     \ ]
 \ }
 
+" MarcWeber/vim-addon-qf-layout {{{2
+let g:vim_addon_qf_layout = {}
+let g:vim_addon_qf_layout.quickfix_formatters = [
+  \ 'vim_addon_qf_layout#DefaultFormatter',
+  \ 'vim_addon_qf_layout#FormatterNoFilename',
+  \ 'vim_addon_qf_layout#Reset',
+  \ 'NOP',
+  \ ]
+let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
+
+" gabenespoli/vim-cider-vinegar {{{2
+let g:CiderVinegarToggle = '-'
+let g:CiderVinegarToggleBuffers = '<leader>b'
+let g:CiderVinegarToggleQF = '<leader>q'
+let g:CiderVinegarToggleLL = '<leader>l'
+let g:CiderVinegarEnableNERDTree = 1
+let g:CiderVinegarEnableBuffergator = 1
+
+" gabenespoli/vim-mutton {{{2
+nnoremap <leader>m :MuttonToggle<CR>
+nnoremap <leader>t :MuttonTagbarToggle<CR>
+
+" Shougo/deoplete.vim {{{2
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('auto_complete', v:false)
+inoremap <silent> <expr> <Tab>
+  \ pumvisible() ? deoplete#smart_close_popup()."\<Tab>" :
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+" lionawurscht/deoplete-biblatex {{{2
+let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
+let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
+let g:deoplete#sources#biblatex#delimiter = ';'
+call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
+
+" w0rp/ale {{{2
+nnoremap coy :ALEToggle<CR>:echo g:ale_enabled<CR>
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_sign_error = '!!'
+let g:ale_sign_warning = '??'
+let g:ale_linter_aliases = {'octave': 'matlab'}
+let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
+function! LinterStatus(type) abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  if a:type == 'Errors'
+    return l:all_errors == 0 ? '' : printf('%dE', all_errors)
+  elseif a:type == 'Warnings'
+    return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
+  else
+    return ''
+  endif
+endfunction
+nmap [v <Plug>(ale_previous_wrap)
+nmap ]v <Plug>(ale_next_wrap)
+
+" vim-pandoc/vim-pandoc-syntax {{{2
+let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave", "R"]
+let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
+
+" gabenespoli/vim-criticmarkup {{{2
+let g:criticmarkup#disable#highlighting = 1
+
+
 " jszakmeister/markdown2ctags {{{2
 let g:tagbar_type_pandoc = {
   \ 'ctagstype': 'pandoc',
@@ -417,15 +491,11 @@ let g:tagbar_type_pandoc = {
   \ 'sort': 0,
 \ }
 
-" MarcWeber/vim-addon-qf-layout {{{2
-let g:vim_addon_qf_layout = {}
-let g:vim_addon_qf_layout.quickfix_formatters = [
-  \ 'vim_addon_qf_layout#DefaultFormatter',
-  \ 'vim_addon_qf_layout#FormatterNoFilename',
-  \ 'vim_addon_qf_layout#Reset',
-  \ 'NOP',
-  \ ]
-let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
+" Lilypond {{{2
+filetype off
+set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
+"set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
+filetype on
 
 " christoomey/vim-tmux-navigator {{{2
 let g:tmux_navigator_no_mappings = 1
