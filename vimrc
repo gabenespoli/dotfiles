@@ -13,9 +13,8 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'gabenespoli/vim-impaired'
 Plug 'godlygeek/tabular'
-" Plug 'gabenespoli/vim-impaired'
-Plug '~/bin/vim/vim-impaired'
 
 " git / diff
 Plug 'tpope/vim-fugitive'
@@ -330,7 +329,6 @@ nmap ga <Plug>GitGutterStageHunk
 nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 nmap ghd <Plug>GitGutterPreviewHunk
 nmap ghu <Plug>GitGutterUndoHunk
-nnoremap cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
@@ -447,7 +445,6 @@ let g:deoplete#sources#biblatex#delimiter = ';'
 call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
 " w0rp/ale {{{2
-nnoremap coy :ALEToggle<CR>:echo g:ale_enabled<CR>
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '??'
