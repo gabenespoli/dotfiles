@@ -98,6 +98,7 @@ set laststatus=2
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set backspace=indent,eol,start
 set whichwrap+=h,l
+set completeopt=noinsert,menuone,noselect
 set visualbell
 set hidden
 set clipboard=unnamed
