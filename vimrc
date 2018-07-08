@@ -260,14 +260,14 @@ if !has('nvim') || !has('gui_running')
 endif
 
 " Keybindings {{{1
-" settings {{{2
+" settings
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 set notimeout
 set ttimeout
 inoremap jk <Esc>
 
-" general {{{2
+" general
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
@@ -284,6 +284,8 @@ else
   nnoremap <Esc>s :w<CR>
   inoremap <Esc>s <Esc>:w<CR>a
 endif
+
+" resizing windows
 nnoremap = <C-w>>
 nnoremap + <C-w>+
 
@@ -297,17 +299,17 @@ inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 " change pwd to git root if in repo (vim-fugitive), else current file's dir
 nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
-" insert dates
-nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
-nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-
 "vimdiff
 nnoremap du :diffupdate<CR>
 
 " Spell checking
 nnoremap <leader>s 1z=
+
+" insert dates
+nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
+nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " open with system on mac
 if has("mac") | nnoremap gO :!open <cfile><CR> | endif
