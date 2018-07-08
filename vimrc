@@ -96,13 +96,13 @@ set cursorline
 set equalalways splitright splitbelow
 set laststatus=2
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set fillchars=fold:\ ,vert:\|
 set backspace=indent,eol,start
 set whichwrap+=h,l
 set completeopt=noinsert,menuone,noselect
 set visualbell
 set hidden
 set clipboard=unnamed
-set fillchars=fold:\ ,vert:\|
 set mouse=a
 
 " Spacing {{{2
