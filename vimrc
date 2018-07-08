@@ -287,7 +287,10 @@ endif
 nnoremap = <C-w>>
 nnoremap + <C-w>+
 
-" misc {{{2
+" swap single quote (mark bol) and back tick (mark)
+nnoremap ' `
+nnoremap ` '
+
 " Esc to exit pop-up menu without insertion
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
