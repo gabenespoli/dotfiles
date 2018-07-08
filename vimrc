@@ -30,7 +30,15 @@ Plug 'MarcWeber/vim-addon-qf-layout'
 Plug 'gabenespoli/vim-cider-vinegar'
 Plug 'gabenespoli/vim-mutton'
 
-" completion {{{2
+" syntax/linting/highlighting {{{2
+Plug 'w0rp/ale'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'gabenespoli/vim-criticmarkup'
+Plug 'jszakmeister/markdown2ctags'
+" Plug 'gabenespoli/vim-colors-sumach'
+Plug '~/bin/vim/vim-colors-sumach'
+
+" completion (deoplete) and sources {{{2
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -38,14 +46,10 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neco-vim'
 Plug 'lionawurscht/deoplete-biblatex'
-
-" syntax/linting/highlighting {{{2
-Plug 'w0rp/ale'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'gabenespoli/vim-criticmarkup'
-Plug 'jszakmeister/markdown2ctags'
-Plug 'gabenespoli/vim-colors-sumach'
+Plug 'wellle/tmux-complete.vim'
 
 " external {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -501,6 +505,38 @@ let g:tagbar_type_pandoc = {
   \ },
   \ 'sort': 0,
 \ }
+
+" Shougo/deoplete.vim {{{2
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('auto_complete', v:false)
+call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
+imap <expr> <Tab> MyCompletion()
+function! MyCompletion()
+  let col = col('.') - 1
+  if pumvisible()
+    return "\<C-e>"
+  elseif !col || getline('.')[col - 1]  =~ '\s'
+    " if cursor is at bol or in front of whitespace
+    return "\<Tab>"
+  else
+    return deoplete#mappings#manual_complete()
+  endif
+endfunction
+
+" Shougo/neco-syntax (completion from syntax files)
+let g:necosyntax#max_syntax_lines = 1000
+
+" Shougo/neco-vim (vimscript completion)
+if !exists('g:necovim#complete_functions')
+  let g:necovim#complete_functions = {}
+endif
+let g:necovim#complete_functions.Ref = 'ref#complete'
+
+" lionawurscht/deoplete-biblatex
+let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
+let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
+let g:deoplete#sources#biblatex#delimiter = ';'
+call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
 " Lilypond {{{2
 filetype off
