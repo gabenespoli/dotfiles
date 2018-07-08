@@ -435,14 +435,20 @@ nnoremap <leader>t :MuttonTagbarToggle<CR>
 " Shougo/deoplete.vim {{{2
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
-inoremap <silent> <expr> <Tab>
-  \ pumvisible() ? deoplete#smart_close_popup()."\<Tab>" :
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
+" https://vi.stackexchange.com/questions/13475/return-plug-in-a-expr-map
+imap <expr> <Tab> MyCompletion()
+function MyCompletion()
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+  if pumvisible()
+    return "\<C-e>"
+  elseif !col || getline('.')[col - 1]  =~ '\s'
+    " if cursor is at bol or in front of whitespace
+    return "\<Tab>"
+  else
+    " return "\<Plug>(ncm2_manual_trigger)"
+    return deoplete#mappings#manual_complete()
+  endif
+endfunction
 
 " lionawurscht/deoplete-biblatex {{{2
 let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
