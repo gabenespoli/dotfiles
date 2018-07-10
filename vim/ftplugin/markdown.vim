@@ -154,17 +154,6 @@ function! GetMarkdownFolds(lnum)
     endif
 endfunction
 
-function! GetMarkdownFoldText()
-    let line = getline(v:foldstart)
-    if line == '---'
-        return ' ▸ YAML '
-    else
-        let temp = substitute(line, '#\s', ' ▸ ', 'g')
-        let sub = substitute(temp, '#', '  ', 'g')
-        return sub . ' '
-    endif
-endfunction
-
 " highlights {{{1
 " highlight current sentence
 nnoremap <buffer> ]k :echo search('\.', 'c')<CR>v(
