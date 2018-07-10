@@ -6,7 +6,6 @@ setlocal shiftwidth=4
 " folding {{{1
 setlocal foldmethod=expr
 setlocal foldexpr=GetOctaveFolds(v:lnum)
-setlocal foldtext=GetOctaveFoldText()
 
 function! GetOctaveFolds(lnum)
   if getline(a:lnum) =~ '^\s*function'
@@ -16,13 +15,6 @@ function! GetOctaveFolds(lnum)
   else
     return '='
   endif
-endfunction
-
-function! GetOctaveFoldText()
-  let line = getline(v:foldstart)
-  let line = substitute(line, '^\s*%%', ' ▸ %%', 'g')
-  let line = substitute(line, '^function', '▸ function', 'g')
-  return line . ' '
 endfunction
 
 " syntax completion {{{1

@@ -130,76 +130,9 @@ if executable('rg')
 endif
 
 " Folding {{{2
-set foldminlines=0              " 0 means we can close a 1-line fold
-set foldcolumn=0
-set foldlevel=99
+set foldminlines=0
+set foldlevel=5
 set foldmethod=marker
-set foldtext=MyFoldText()
-function! GetFoldText()
-  if &foldmethod == 'marker'
-    set foldtext=FoldTextMarker()
-  else
-    set foldtext=getline(v:foldstart)
-  endif
-endfunction
-
-function! MyFoldText()
-  let size = v:foldend - v:foldstart
-  let sizewidth = len(line('$'))
-  let blanks = repeat(' ', sizewidth - len(size))
-  let sizestr = ' (' . blanks . size . ' lines) '
-
-  let line = getline(v:foldstart)
-
-  " filetype-specific adjustments
-  if &filetype == "json"
-    if substitute(line, '^\s*{\s*$', '{', '') == '{'
-      let line = getline(v:foldstart + 1)
-    endif
-  elseif (&filetype == "pandoc" || &filetype == "markdown") && line == '---'
-    " pandoc yaml front matter
-    let line = 'YAML'
-  endif
-
-  " strip surrounding whitespace, add fold indent & icon
-  let line = substitute(line, '^\s*\(.\{-}\)\s*$', '\1', '')
-  let prefix = repeat(' ', v:foldlevel - 1) . '▸ '
-  let linestr = prefix . line . ' '
-
-  " shorten linestr if too long
-  if !exists("b:foldtextwidth")
-    let totalwidth = 80
-  elseif b:foldtextwidth <= 0
-    let totalwidth = winwidth(0) + b:foldtextwidth
-  else
-    let totalwidth = b:foldtextwidth
-  endif
-  let maxpos = totalwidth - len(sizestr)
-  if len(linestr) > maxpos
-    let linestr = linestr[0:maxpos - 3] . '...'
-  endif
-
-  let fillstr = repeat('-', totalwidth - len(linestr) - len(sizestr) + 1)
-  return linestr . fillstr . sizestr
-endfunction
-
-function! FoldTextMarker()
-  let line = getline(v:foldstart)
-  let l:foldlevel = split(line, '{'.'{{')
-  let l:foldlevel = l:foldlevel[-1]
-  let line = substitute(line, '{'.'{{\d\=', '', 'g')
-  let cstr = substitute(&commentstring, '%s', '', 'g')
-  let line = substitute(line, '^\s*'.cstr.'\+\s*', '', 'g')
-  let lines = v:foldend-v:foldstart + 1
-  let linesdigits = 4
-  if strlen(lines) < linesdigits + 1
-    let lines = repeat(' ', linesdigits-strlen(lines)) . lines
-  endif
-  let prefix = repeat(' ', l:foldlevel-1) . ' ▸ '
-  let offset = 24
-  let midfix = repeat(' ', winwidth(0)-strlen(prefix . line)-offset)
-  return prefix . line . midfix . ' ('. lines .' lines)'
-endfunction
 
 " Status Line {{{2
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
