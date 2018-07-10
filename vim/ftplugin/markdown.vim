@@ -34,28 +34,17 @@ nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 " criticmarkup and cite.py {{{2
 " custom critic bindings
-nmap <buffer> <localleader>c <localleader>ec
-nmap <buffer> <localleader>h <localleader>eh
-nmap <buffer> <localleader>s <localleader>es
-nmap <buffer> <localleader>a <localleader>ea
-nmap <buffer> <localleader>d <localleader>ed
-vmap <buffer> <localleader>c <localleader>ec
-vmap <buffer> <localleader>h <localleader>eh
-vmap <buffer> <localleader>s <localleader>es
-vmap <buffer> <localleader>a <localleader>ea
-vmap <buffer> <localleader>d <localleader>ed
-
-" add critic markup tags from insert mode
-inoremap <buffer> <C-r>i {>><<}<C-o>2h
-inoremap <buffer> <C-r>c {>><<}<C-o>2h
-inoremap <buffer> <C-r>h {====}<C-o>3h
-inoremap <buffer> <C-r>s {~~~~}<C-o>3h
-inoremap <buffer> <C-r>a {++++}<C-o>2h
-inoremap <buffer> <C-r>d {----}<C-o>3h
-
-" todo comments
-inoremap <buffer> <C-r>t {>>TODO: <<}<C-o>3h
-nmap <buffer> <localleader>t i<C-r>t
+let b:surround_43  = "{++\r++}"
+let b:surround_45  = "{--\r--}"
+let b:surround_61  = "{==\r==}"
+let b:surround_60  = "{>>\r<<}"
+let b:surround_62  = "{>>\r<<}"
+let b:surround_99  = "{>>\r<<}"
+let b:surround_104 = "{==\r==}"
+let b:surround_116 = "{>>TODO: \r<<}"
+let b:surround_103 = "{>>TODO (TG): \r<<}"
+nnoremap <buffer> <localleader>hiw ysiw=lysiw=lysiW}
+nmap <buffer> <localleader>t i{>>TODO: <<}<C-o>3h
 
 " delete around or surround critic tags ("undo")
 nmap <buffer> <localleader>u F{3xf}2h3x
