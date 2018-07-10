@@ -35,8 +35,7 @@ Plug 'w0rp/ale'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jszakmeister/markdown2ctags'
-" Plug 'gabenespoli/vim-colors-sumach'
-Plug '~/bin/vim/vim-colors-sumach'
+Plug 'gabenespoli/vim-colors-sumach'
 
 " completion (deoplete) and sources {{{2
 if has('nvim')
