@@ -70,14 +70,14 @@ endif
 syntax enable
 let g:sumach_terminal_italics = 1
 colorscheme sumach
-if has("gui_running")
+if has('gui_running')
   set background=light
 else
   set background=dark
 endif
 
 " File stuff {{{2
-if has("mac") | set fileformats=unix,dos | endif
+if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
 set swapfile
@@ -85,13 +85,13 @@ set undodir=~/tmp/vim/undo/
 set backupdir=~/tmp/vim/backup/
 set directory=~/tmp/vim/swap/
 if !isdirectory(expand(&undodir))
-  call mkdir(expand(&undodir), "p")
+  call mkdir(expand(&undodir), 'p')
 endif
 if !isdirectory(expand(&backupdir))
-  call mkdir(expand(&backupdir), "p")
+  call mkdir(expand(&backupdir), 'p')
 endif
 if !isdirectory(expand(&directory))
-  call mkdir(expand(&directory), "p")
+  call mkdir(expand(&directory), 'p')
 endif
 
 " Editing {{{2
@@ -154,7 +154,7 @@ set guicursor=n-v-ve:block-blinkon0
   \,i-ci-c:ver25-blinkwait750-blinkon750-blinkoff750
   \,r-cr-o:hor20-blinkwait750-blinkon750-blinkoff750
 set guifont=Fira\ Code\ Regular:h14
-if has("gui_running")
+if has('gui_running')
   set nonumber norelativenumber
   set laststatus=0
   set macligatures
@@ -250,7 +250,7 @@ nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
 nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " open with system on mac
-if has("mac") | nnoremap gO :!open <cfile><CR> | endif
+if has('mac') | nnoremap gO :!open <cfile><CR> | endif
 
 " Plugin Settings {{{1
 " tpope/vim-commentary {{{2
@@ -379,9 +379,9 @@ function! LinterStatus(type) abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  if a:type == 'Errors'
+  if a:type ==# 'Errors'
     return l:all_errors == 0 ? '' : printf('%dE', all_errors)
-  elseif a:type == 'Warnings'
+  elseif a:type ==# 'Warnings'
     return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
   else
     return ''
@@ -392,7 +392,7 @@ nmap ]v <Plug>(ale_next_wrap)
 
 " vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#syntax#codeblocks#embeds#langs = ["vim", "bash=sh", "python", "matlab", "octave", "R"]
+let g:pandoc#syntax#codeblocks#embeds#langs = ['vim', 'bash=sh', 'python', 'matlab', 'octave', 'R']
 let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
 " gabenespoli/vim-criticmarkup {{{2
@@ -423,7 +423,7 @@ function! MyCompletion()
   let col = col('.') - 1
   if pumvisible()
     return "\<C-e>"
-  elseif !col || getline('.')[col - 1]  =~ '\s'
+  elseif !col || getline('.')[col - 1]  =~# '\s'
     " if cursor is at bol or in front of whitespace
     return "\<Tab>"
   else
@@ -510,7 +510,7 @@ else
 endif
 
 " jpalardy/vim-slime {{{2
-let g:slime_target = "tmux"
+let g:slime_target = 'tmux'
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 1
 nmap <C-l>   <Plug>SlimeLineSend
@@ -518,7 +518,7 @@ nmap <M-C-l> :execute "normal \<Plug>SlimeLineSendj"<CR>
 nmap <C-k>   <Plug>SlimeParagraphSend
 nmap <M-C-k> :execute "normal \<Plug>SlimeParagraphSend}j"<CR>
 if exists('$TMUX')
-  let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+  let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.1'}
 endif
 
 " jalvesaq/Nvim-R {{{2
