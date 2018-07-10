@@ -369,30 +369,6 @@ let g:CiderVinegarEnableBuffergator = 1
 nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
-" Shougo/deoplete.vim {{{2
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('auto_complete', v:false)
-" https://vi.stackexchange.com/questions/13475/return-plug-in-a-expr-map
-imap <expr> <Tab> MyCompletion()
-function MyCompletion()
-  let col = col('.') - 1
-  if pumvisible()
-    return "\<C-e>"
-  elseif !col || getline('.')[col - 1]  =~ '\s'
-    " if cursor is at bol or in front of whitespace
-    return "\<Tab>"
-  else
-    " return "\<Plug>(ncm2_manual_trigger)"
-    return deoplete#mappings#manual_complete()
-  endif
-endfunction
-
-" lionawurscht/deoplete-biblatex {{{2
-let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
-let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
-let g:deoplete#sources#biblatex#delimiter = ';'
-call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
-
 " w0rp/ale {{{2
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '!!'
@@ -421,7 +397,6 @@ let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
 " gabenespoli/vim-criticmarkup {{{2
 let g:criticmarkup#disable#highlighting = 1
-
 
 " jszakmeister/markdown2ctags {{{2
 let g:tagbar_type_pandoc = {
