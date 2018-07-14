@@ -275,10 +275,10 @@ let g:gitgutter_override_sign_column_highlight = 0
 " rickhowe/diffchar {{{2
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
-nmap <leader>d      <Plug>ToggleDiffCharAllLines
-nmap <leader>D      <Plug>ToggleDiffCharCurrentLine
-nmap [d             <Plug>JumpDiffCharPrevStart
-nmap ]d             <Plug>JumpDiffCharNextStart
+nmap <nop>          <Plug>ToggleDiffCharAllLines
+nmap <nop>          <Plug>ToggleDiffCharCurrentLine
+nmap <nop>          <Plug>JumpDiffCharPrevStart
+nmap <nop>          <Plug>JumpDiffCharNextStart
 nmap <nop>          <Plug>JumpDiffCharPrevEnd
 nmap <nop>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
