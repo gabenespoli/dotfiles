@@ -131,7 +131,6 @@ endif
 " Folding {{{2
 set foldminlines=0
 set foldlevel=5
-set foldmethod=marker
 
 " Status Line {{{2
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
