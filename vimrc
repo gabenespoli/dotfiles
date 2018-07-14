@@ -521,4 +521,5 @@ let R_assign = 0
 let R_esc_term = 0
 let R_show_args = 0
 let R_objbr_place = 'LEFT'
-let g:rout_follow_colorscheme = 1
+let rout_follow_colorscheme = 1
+let Rout_more_colors = 1
