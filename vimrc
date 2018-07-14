@@ -102,7 +102,6 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set fillchars=fold:\ ,vert:\|
 set backspace=indent,eol,start
 set whichwrap+=h,l
-set completeopt=noinsert,menuone,noselect
 set visualbell
 set hidden
 set clipboard=unnamed
@@ -123,6 +122,7 @@ set incsearch nohlsearch
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
+set completeopt=menuone,preview
 if executable('rg')
   set grepprg=rg\ --line-number\ $*
   " set grepprg=git\ grep\ --line-number\ --no-color\ $*
