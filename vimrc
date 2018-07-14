@@ -46,15 +46,15 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neco-vim'
-Plug 'lionawurscht/deoplete-biblatex'
+Plug 'Shougo/neco-vim', {'for': 'vim'}
+Plug 'lionawurscht/deoplete-biblatex', {'for': ['markdown', 'pandoc']}
 Plug 'wellle/tmux-complete.vim'
 
 " external {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
-Plug 'jalvesaq/Nvim-R'
+Plug 'jalvesaq/Nvim-R', {'for': 'r'}
 
 call plug#end()
 
