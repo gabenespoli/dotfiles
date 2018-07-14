@@ -5,12 +5,14 @@ setlocal softtabstop=4    " number of spaces in tab when editing
 setlocal shiftwidth=4
 setlocal nonumber norelativenumber
 if &diff
-  au VimEnter * :execute "windo set wrap"
+  augroup markdown_diff
+    au!
+    au VimEnter * :execute "windo set wrap"
+  augroup END
 endif
 
 " keybindings {{{1
 " general {{{2
-nnoremap <buffer> <localleader>S :set spell!<CR>
 nnoremap <buffer> gd :Gdiff<CR>:windo set wrap<CR>
 inoremap <buffer> <S-CR> <CR>-<space>
 inoremap <buffer> <S-C-j> <CR>-<space>
@@ -58,15 +60,15 @@ nnoremap <buffer> <localleader>H :call criticmarkup#InjectHighlighting()<CR>
 nnoremap <buffer> gn :call GoNotes('<C-r><C-a>', 1)<CR>
 nnoremap <buffer> gN :call GoNotes('<C-r><C-a>', 0)<CR>
 
-let g:GoNotesQuitKeymap = "q"
+let g:GoNotesQuitKeymap = 'q'
 
-if !exists("g:GoNotesLoaded") || g:GoNotesLoaded == 0
+if !exists('g:GoNotesLoaded') || g:GoNotesLoaded == 0
   let g:GoNotesLoaded = 1
 
   function! GoNotes(word, ...)
     let l:word = a:word
 
-    if l:word[0:1] == "[@" || l:word[0:2] == "[-@"
+    if l:word[0:1] ==# '[@' || l:word[0:2] ==# '[-@'
       let l:do_word = 1
     else
       let l:do_word = 0
@@ -74,16 +76,16 @@ if !exists("g:GoNotesLoaded") || g:GoNotesLoaded == 0
 
     if l:do_word
       " parse WORD object to get just the word
-      let l:word = substitute(l:word, "[", "", "")
-      let l:word = substitute(l:word, "]", "", "")
-      let l:word = substitute(l:word, "@", "", "")
-      if l:word[0] == "-"
+      let l:word = substitute(l:word, '[', '', '')
+      let l:word = substitute(l:word, ']', '', '')
+      let l:word = substitute(l:word, '@', '', '')
+      if l:word[0] ==# '-'
         let l:word = l:word[1:]
       endif
-      let l:filename = "$HOME/lib/papernotes/" . l:word . ".md"
+      let l:filename = '$HOME/lib/papernotes/' . l:word . '.md'
 
     else
-      let l:filename = expand("%:r") . "_notes" . "." . expand("%:e")
+      let l:filename = expand('%:r') . '_notes' . '.' . expand('%:e')
 
     endif
 
@@ -95,28 +97,28 @@ if !exists("g:GoNotesLoaded") || g:GoNotesLoaded == 0
 
     if l:do_split
       if exists('g:MuttonEnabled') && g:MuttonEnabled == 1
-        execute "MuttonToggle"
+        execute 'MuttonToggle'
         let l:MuttonEnabled = 1
       else
         let l:MuttonEnabled = 0
       endif
 
-      execute "vsplit " . l:filename
+      execute 'vsplit ' . l:filename
 
-      if exists("g:GoNotesQuitKeymap")
+      if exists('g:GoNotesQuitKeymap')
         if l:MuttonEnabled == 1
-          execute "nnoremap <buffer> " . g:GoNotesQuitKeymap . " :q<CR>:MuttonToggle<CR>"
+          execute 'nnoremap <buffer> ' . g:GoNotesQuitKeymap . ' :q<CR>:MuttonToggle<CR>'
         else
-          execute "nnoremap <buffer> " . g:GoNotesQuitKeymap . " :q<CR>"
+          execute 'nnoremap <buffer> ' . g:GoNotesQuitKeymap . ' :q<CR>'
         endif
       endif
 
     else
       " TODO save the cursor position so we can move it back there on quit
-      let l:bufnr = bufnr("%")
-      execute "edit " . l:filename
-      if exists("g:GoNotesQuitKeymap")
-        execute "nnoremap <buffer> " . g:GoNotesQuitKeymap . " :buffer " . l:bufnr . "<CR>"
+      let l:bufnr = bufnr('%')
+      execute 'edit ' . l:filename
+      if exists('g:GoNotesQuitKeymap')
+        execute 'nnoremap <buffer> ' . g:GoNotesQuitKeymap . ' :buffer ' . l:bufnr . '<CR>'
       endif
     endif
 
@@ -136,15 +138,14 @@ function! GetMarkdownFolds(lnum)
         " return '>3'
     " elseif line =~ '^##'
         " return '>2'
-    if (line =~ '^#') || (a:lnum == 1 && line =~ '^---$')
+    if (line =~# '^#') || (a:lnum == 1 && line =~# '^---$')
         return '>1'
     else
         return '='
     endif
 endfunction
 
-" highlights {{{1
-" highlight current sentence
+" sentence highlights {{{1
 nnoremap <buffer> ]k :echo search('\.', 'c')<CR>v(
 nnoremap <buffer> [k :echo search('\.', 'bc')<CR>v(
 nmap <buffer> <localleader>k ]k
@@ -155,5 +156,8 @@ vnoremap <buffer> <localleader>k <Esc>
 
 " vim-pandoc plugin {{{1
 " because vim-pandoc-syntax is loaded after the colorscheme
-au VimEnter,BufEnter *.md :setlocal filetype=pandoc
-au VimEnter,BufEnter *.md :execute "colorscheme ".g:colors_name
+augroup pandoc_highlighting
+  au!
+  au VimEnter,BufEnter *.md :setlocal filetype=pandoc
+  au VimEnter,BufEnter *.md :execute 'colorscheme '.g:colors_name
+augroup END
