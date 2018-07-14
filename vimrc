@@ -286,6 +286,7 @@ nmap dP             <Plug>PutDiffCharPair
 
 " ctrlpvim/ctrlp.vim {{{2
 nnoremap <C-q> :CtrlPQuickfix<CR>
+nnoremap <C-n> :CtrlP<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
 if executable('fd')
