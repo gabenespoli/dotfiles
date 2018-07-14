@@ -332,8 +332,6 @@ let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapPreview = 'i'
 let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
-let g:NERDTreeMapJumpNextSibling = '<C-n>'
-let g:NERDTreeMapJumpPrevSibling = '<C-p>'
 let g:NERDTreeMapCWD = 'cD'
 
 " jeetsukumaran/vim-buffergator {{{2
