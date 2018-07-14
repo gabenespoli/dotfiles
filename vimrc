@@ -4,7 +4,10 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup vim_plug
+    au!
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup END
 endif
 call plug#begin('~/.vim/plugged')
 
@@ -163,10 +166,15 @@ endif
 if has('nvim')
   autocmd TermOpen * setlocal nocursorline nonumber norelativenumber
   autocmd TermOpen * execute "nnoremap <buffer> <CR> i"
-  autocmd BufWinEnter,WinEnter term://* startinsert
-  autocmd BufLeave term://* stopinsert
-  autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
-  autocmd BufLeave term://* hi! Cursor ctermbg=0
+  augroup my_nvim_term
+    au!
+    " pretend term buffer doesn't have a normal mode
+    autocmd BufWinEnter,WinEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+    " 'hide' cursor when term doesn't have focus
+    autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
+    autocmd BufLeave term://* hi! Cursor ctermbg=0
+  augroup END
   tnoremap <silent> <C-v> <C-\><C-N>
 endif
 
@@ -251,8 +259,11 @@ if has('mac') | nnoremap gO :!open <cfile><CR> | endif
 
 " Plugin Settings {{{1
 " tpope/vim-commentary {{{2
-autocmd FileType octave setlocal commentstring=%\ %s
-autocmd FileType cfg,remind setlocal commentstring=#\ %s
+augroup commentstrings
+  au!
+  autocmd FileType octave setlocal commentstring=%%s
+  autocmd FileType cfg,remind setlocal commentstring=#%s
+augroup END
 
 " tpope/vim-fugitive {{{2
 nnoremap gs :execute "Gstatus"<CR>:execute "resize ".&lines/2<CR>
@@ -261,8 +272,11 @@ nnoremap gA :Gwrite<CR>
 nnoremap gC :Gcommit<CR>
 nmap gcC gC
 nnoremap gl :Glog<CR><CR>:copen<CR>
-autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
-autocmd FileType gitcommit nnoremap <buffer> gcC :silent wq<CR>
+augroup git_commands
+  au!
+  autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
+  autocmd FileType gitcommit nnoremap <buffer> gcC :silent wq<CR>
+augroup END
 
 " airblade/gitgutter {{{2
 nmap ga <Plug>GitGutterStageHunk
@@ -301,6 +315,12 @@ let g:ctrlp_prompt_mappings = {
  \ }
 
 " scrooloose/NERDTree {{{2
+augroup nerdtree
+  au!
+  autocmd filetype nerdtree setlocal bufhidden=wipe
+  autocmd filetype nerdtree nmap <buffer> <C-j> o
+  autocmd filetype nerdtree nnoremap <buffer> q :q<CR>
+augroup END
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeQuitOnOpen = 1
