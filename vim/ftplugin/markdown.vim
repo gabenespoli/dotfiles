@@ -151,8 +151,6 @@ nmap <buffer> <localleader>k ]k
 
 vnoremap <buffer> ]k <Esc>):echo search('\.')<CR>v(
 vnoremap <buffer> [k <Esc>:echo search('\.', 'b')<CR>v(
-vmap <buffer> n ]k
-vmap <buffer> p [k
 vnoremap <buffer> <localleader>k <Esc>
 
 " vim-pandoc plugin {{{1
