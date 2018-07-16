@@ -379,12 +379,15 @@ let g:vim_addon_qf_layout.quickfix_formatters = [
 let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
 
 " gabenespoli/vim-cider-vinegar {{{2
-let g:CiderVinegarToggle = '-'
-let g:CiderVinegarToggleBuffers = '<leader>b'
-let g:CiderVinegarToggleQF = '<leader>q'
-let g:CiderVinegarToggleLL = '<leader>l'
-let g:CiderVinegarEnableNERDTree = 1
-let g:CiderVinegarEnableBuffergator = 1
+let g:CiderEnableNERDTree = 1
+let g:CiderEnableBuffergator = 1
+let g:CiderToggleNERDTree = '-'
+let g:CiderToggleBuffergator = '='
+let g:CiderQuitMap = 'q'
+nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
+      \ ':cclose<CR>' : ':botright copen<CR>'
+nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
+      \ ':lclose<CR>' : ':botright lopen<CR>'
 
 " gabenespoli/vim-mutton {{{2
 nnoremap <leader>m :MuttonToggle<CR>
