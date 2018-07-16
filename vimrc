@@ -390,7 +390,6 @@ nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
       \ ':lclose<CR>' : ':botright lopen<CR>'
 
 " gabenespoli/vim-mutton {{{2
-nnoremap <leader>m :MuttonToggle<CR>
 nnoremap <leader>t :MuttonTagbarToggle<CR>
 
 " w0rp/ale {{{2
