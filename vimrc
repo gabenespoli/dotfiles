@@ -282,6 +282,7 @@ augroup END
 nmap ga <Plug>GitGutterStageHunk
 nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 nmap ghd <Plug>GitGutterPreviewHunk
+nnoremap ghq <C-w>z
 nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
