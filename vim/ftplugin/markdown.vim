@@ -1,4 +1,5 @@
 " general {{{1
+setlocal wrap
 setlocal spell       " enable live spell checking
 setlocal tabstop=4        " number of visual spaces per TAB
 setlocal softtabstop=4    " number of spaces in tab when editing

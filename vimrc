@@ -104,6 +104,7 @@ set laststatus=2
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set fillchars=fold:\ ,vert:\|
 set backspace=indent,eol,start
+set nowrap
 set whichwrap+=h,l
 set visualbell
 set hidden
