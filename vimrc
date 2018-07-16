@@ -101,7 +101,7 @@ set number relativenumber
 set cursorline
 set equalalways splitright splitbelow
 set laststatus=2
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
 set fillchars=fold:\ ,vert:\|
 set backspace=indent,eol,start
 set nowrap
