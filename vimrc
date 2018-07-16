@@ -229,8 +229,12 @@ else
 endif
 
 " resizing windows
-nnoremap = <C-w>>
-nnoremap + <C-w>+
+nnoremap _        <C-w>>:echo winwidth('.')<CR>
+nnoremap <Right>  <C-w>>:echo winwidth('.')<CR>
+nnoremap <Left>   <C-w><:echo winwidth('.')<CR>
+nnoremap +        <C-w>+:echo winheight('.')<CR>
+nnoremap <Up>     <C-w>+:echo winheight('.')<CR>
+nnoremap <Down>   <C-w>-:echo winheight('.')<CR>
 
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
