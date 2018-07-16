@@ -245,9 +245,8 @@ nnoremap ` '
 
 " Esc to exit pop-up menu without insertion
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-
-" change pwd to git root if in repo (vim-fugitive), else current file's dir
-nnoremap <expr> cd exists(":Gcd")==2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-y>" : "\<CR>"
 
 "vimdiff
 nnoremap du :diffupdate<CR>
