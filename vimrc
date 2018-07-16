@@ -228,7 +228,10 @@ else
   inoremap <Esc>s <Esc>:w<CR>a
 endif
 
-" resizing windows
+" windows
+nnoremap <C-w>t :tabnew %<CR>
+nnoremap <C-w><C-t> :tabnew %<CR>
+
 nnoremap _        <C-w>>:echo winwidth('.')<CR>
 nnoremap <Right>  <C-w>>:echo winwidth('.')<CR>
 nnoremap <Left>   <C-w><:echo winwidth('.')<CR>
