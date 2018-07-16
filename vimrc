@@ -340,7 +340,8 @@ let g:NERDTreeMapCWD = 'cD'
 
 " jeetsukumaran/vim-buffergator {{{2
 let g:buffergator_suppress_keymaps = 1
-let g:buffergator_viewport_split_policy = "N"
+let g:buffergator_viewport_split_policy = 'N'
+let g:buffergator_keep_old_mru_switching_keymaps = 1
 
 " majutsushi/tagbar{{{2
 let g:tagbar_left = 1
