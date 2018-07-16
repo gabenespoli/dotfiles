@@ -271,6 +271,9 @@ augroup commentstrings
   autocmd FileType cfg,remind setlocal commentstring=#%s
 augroup END
 
+" gabenespoli/vim-impaired {{{2
+let g:impaired_buffergator_maps = 1
+
 " tpope/vim-fugitive {{{2
 nnoremap gs :execute "Gstatus"<CR>:execute "resize ".&lines/2<CR>
 nnoremap gd :Gdiff<CR>
