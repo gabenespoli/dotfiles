@@ -160,7 +160,6 @@ if has('gui_running')
   set nonumber norelativenumber
   set laststatus=0
   set macligatures
-  let g:gitgutter_signs = 0
 endif
 
 " nvim Terminal Settings {{{2
@@ -286,6 +285,9 @@ nmap ghd <Plug>GitGutterPreviewHunk
 nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
+if has('gui_running')
+  let g:gitgutter_signs = 0
+endif
 
 " rickhowe/diffchar {{{2
 let g:DiffPairVisible = 0
