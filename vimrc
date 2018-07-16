@@ -293,7 +293,7 @@ endif
 " rickhowe/diffchar {{{2
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
-nmap <nop>          <Plug>ToggleDiffCharAllLines
+nmap dC             <Plug>ToggleDiffCharAllLines
 nmap <nop>          <Plug>ToggleDiffCharCurrentLine
 nmap <nop>          <Plug>JumpDiffCharPrevStart
 nmap <nop>          <Plug>JumpDiffCharNextStart
