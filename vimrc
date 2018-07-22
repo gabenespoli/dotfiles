@@ -227,9 +227,47 @@ else
   inoremap <Esc>s <Esc>:w<CR>a
 endif
 
-" windows
-nnoremap <C-w>t :tabnew %<CR>
-nnoremap <C-w><C-t> :tabnew %<CR>
+" next/previous {{{2
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [e :<C-U>execute 'move -1-'. v:count1<CR>
+nnoremap <silent> ]e :<C-U>execute 'move +'. v:count1<CR>
+nnoremap <silent> [l :lprevious<CR>
+nnoremap <silent> ]l :lnext<CR>
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
+nnoremap <silent> [t :tabprevious<CR>
+nnoremap <silent> ]t :tabnext<CR>
+
+" option toggles (incl. some plugins) {{{2
+nnoremap <silent> cob :SumachContrastToggle<CR>
+nnoremap <silent> coB :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
+nnoremap <silent> coc :set cursorline!<CR>
+nnoremap <silent> cod <Plug>ToggleDiffCharAllLines
+nnoremap <silent> coD :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
+nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap <silent> <expr> cog
+      \ exists(':GitGutterLineHighlightsToggle') ? ':GitGutterLineHighlightsToggle<CR>' :
+      \ exists(':SignifyToggleHighlight') ? ':SignifyToggleHighlight<CR>' :
+      \ ':echo "Neither GitGutter nor Signify are loaded."<CR>'
+nnoremap <silent> <expr>  coG
+      \ exists(':GitGutterToggle') ? ':GitGutterToggle<CR>' :
+      \ exists(':SignifyToggle') ? ':SignifyToggle<CR>' :
+      \ ':echo "Neither GitGutter nor Signify are loaded."<CR>'
+nnoremap <silent> coh :set hlsearch!<CR>
+nnoremap <silent> col :set list!<CR>
+nnoremap <silent> coL :ALEToggle<CR>:echo g:ale_enabled<CR>
+nnoremap <silent> com :set number!<CR>:set relativenumber!<CR>
+nnoremap <silent> con :set number!<CR>
+nnoremap <silent> cop :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+nnoremap <silent> cor :set relativenumber!<CR>
+nnoremap <silent> cou :set cursorcolumn!<CR>
+nnoremap <silent> cos :set spell!<CR>
+nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nnoremap <silent> cow :set wrap!<CR>
+nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
+nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
+
 
 nnoremap _        <C-w>>:echo winwidth('.')<CR>
 nnoremap <Right>  <C-w>>:echo winwidth('.')<CR>
