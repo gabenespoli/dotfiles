@@ -109,6 +109,9 @@ set whichwrap+=h,l
 set visualbell
 set hidden
 set clipboard=unnamed
+set foldminlines=0
+set foldlevel=5
+set diffopt+=context:0
 set mouse=a
 
 " Spacing {{{2
@@ -131,10 +134,6 @@ if executable('rg')
   set grepprg=rg\ --line-number\ $*
   " set grepprg=git\ grep\ --line-number\ --no-color\ $*
 endif
-
-" Folding {{{2
-set foldminlines=0
-set foldlevel=5
 
 " Status Line {{{2
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
