@@ -174,7 +174,7 @@ if has('nvim')
     autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
     autocmd BufLeave term://* hi! Cursor ctermbg=0
   augroup END
-  tnoremap <silent> <C-v> <C-\><C-N>
+  tnoremap <silent> <C-Space> <C-\><C-N>
 endif
 
 " misc {{{2
