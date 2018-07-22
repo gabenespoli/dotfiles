@@ -216,15 +216,15 @@ nnoremap Q q
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 if has('nvim')
-  nnoremap <M-s> :w<CR>
-  inoremap <M-s> <Esc>:w<CR>a
+  nnoremap <silent> <M-s> :silent write<CR>
+  inoremap <silent> <M-s> <Esc>:silent write<CR>a
   nnoremap <M-{> gT
   nnoremap <M-}> gt
   tnoremap <M-{> <C-\><C-N>gT
   tnoremap <M-}> <C-\><C-N>gt
 else
-  nnoremap <Esc>s :w<CR>
-  inoremap <Esc>s <Esc>:w<CR>a
+  nnoremap <silent> <Esc>s :silent write<CR>
+  inoremap <silent> <Esc>s <Esc>:silent write<CR>a
 endif
 
 " next/previous {{{2
