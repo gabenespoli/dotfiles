@@ -174,7 +174,6 @@ if has('nvim')
     autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
     autocmd BufLeave term://* hi! Cursor ctermbg=0
   augroup END
-  tnoremap <silent> <C-Space> <C-\><C-N>
 endif
 
 " misc {{{2
@@ -218,10 +217,11 @@ cnoremap <C-p> <up>
 if has('nvim')
   nnoremap <silent> <M-s> :silent write<CR>
   inoremap <silent> <M-s> <Esc>:silent write<CR>a
-  nnoremap <M-{> gT
-  nnoremap <M-}> gt
-  tnoremap <M-{> <C-\><C-N>gT
-  tnoremap <M-}> <C-\><C-N>gt
+  nnoremap <M-{> :tabprevious<CR>
+  nnoremap <M-}> :tabnext<CR>
+  tnoremap <silent> <C-Space> <C-\><C-N>
+  tnoremap <silent> <M-{> <C-\><C-N>:tabprevious<CR>
+  tnoremap <silent> <M-}> <C-\><C-N>:tabnext<CR>
 else
   nnoremap <silent> <Esc>s :silent write<CR>
   inoremap <silent> <Esc>s <Esc>:silent write<CR>a
