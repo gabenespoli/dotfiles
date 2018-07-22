@@ -139,8 +139,8 @@ endif
 " ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
-set statusline+=%#ErrorMsg#%{LinterStatus('Errors')}%*
-set statusline+=%#WarningMsg#%{LinterStatus('Warnings')}%*
+set statusline+=%#ErrorMsg#%{ALEStatus('Errors')}%*
+set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 " set statusline+=%{mode()}
 set statusline+=\ %#DiffText#%m%*%#DiffDelete#%r%*\"%t\"\ %y
 set statusline+=%{fugitive#statusline()}
@@ -442,23 +442,21 @@ nnoremap <leader>t :MuttonTagbarToggle<CR>
 " w0rp/ale {{{2
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '!!'
-let g:ale_sign_warning = '??'
+let g:ale_sign_warning = '>'
 let g:ale_linter_aliases = {'octave': 'matlab'}
 let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
-function! LinterStatus(type) abort
+function! ALEStatus(type) abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
   if a:type ==# 'Errors'
-    return l:all_errors == 0 ? '' : printf('%dE', all_errors)
+    return l:all_errors == 0 ? '' : printf('[%dE]', all_errors)
   elseif a:type ==# 'Warnings'
-    return l:all_non_errors == 0 ? '' : printf('%dW', all_non_errors)
+    return l:all_non_errors == 0 ? '' : printf('[%dW]', all_non_errors)
   else
     return ''
   endif
 endfunction
-nmap [v <Plug>(ale_previous_wrap)
-nmap ]v <Plug>(ale_next_wrap)
 
 " vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
