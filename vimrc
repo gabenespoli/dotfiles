@@ -276,6 +276,7 @@ nnoremap +        <C-w>+:echo winheight('.')<CR>
 nnoremap <Up>     <C-w>+:echo winheight('.')<CR>
 nnoremap <Down>   <C-w>-:echo winheight('.')<CR>
 
+" misc {{{2
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
 nnoremap ` '
