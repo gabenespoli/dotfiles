@@ -480,6 +480,8 @@ let g:CiderEnableBuffergator = 1
 let g:CiderToggleNERDTree = '-'
 let g:CiderToggleBuffergator = '='
 let g:CiderQuitMap = 'q'
+let g:CiderToggleQF = '<leader>Q'
+let g:CiderToggleLL = '<leader>L'
 nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
       \ ':cclose<CR>' : ':botright copen<CR>'
 nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
