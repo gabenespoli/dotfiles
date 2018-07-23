@@ -109,10 +109,59 @@ set whichwrap+=h,l
 set visualbell
 set hidden
 set clipboard=unnamed
-set foldminlines=0
-set foldlevel=5
 set diffopt+=context:0
 set mouse=a
+
+" Folding {{{2
+set foldminlines=0
+set foldlevel=5
+set foldtext=FoldSMS_Text()
+function! FoldSMS_Text() "{{{
+  if &textwidth > 0
+    let l:width = &textwidth
+  else
+    let l:width = 80
+  endif
+
+  let prefix = repeat('-', v:foldlevel) . ' '
+  let lines = v:foldend - v:foldstart + 1 . ' lines'
+  let line = getline(v:foldstart)
+  " remove leading comment character(s) and whitespace
+  let commentchar = substitute(&commentstring, '%s', '', '')
+  let line = substitute(line, '^\s*'.commentchar.'\+\s*', '', '')
+
+  " remove trailing fold characters
+  if &foldmethod ==? 'marker'
+    let line = substitute(line, '\s*{{{\d\=$', '', 'g') "}}}
+  elseif &filetype ==? 'r'
+    let line = substitute(line, '[-=#]\{4,\}$', '', 'g')
+  elseif &filetype ==? 'markdown' || &filetype ==? 'pandoc'
+    if line ==# '---'
+      let line = 'YAML'
+    else
+      let line = substitute(line, '^#\{1,6}\ ', '', 'g')
+    endif
+    " TODO: if g:FoldSMS_MarkdownFlat == 1, we need to set prefix without
+    " using foldlevel
+  endif
+
+  " shorten line based on window width; subtract 6 for gutter
+  if l:width > winwidth(0) - 6
+    let l:width = winwidth(0) - 6
+  endif
+
+  " get fill, shorten line if needed
+  let lenstuff = len(prefix) + len(lines)
+  if len(line) > l:width - lenstuff
+    let fill = '... '
+    let lastind = l:width - lenstuff - len(fill)
+    let line = line[0:lastind-1]
+  else
+    let fill = repeat(' ', l:width - lenstuff - len(line))
+  endif
+
+  return prefix . line . fill . lines
+endfunction "}}}
 
 " Spacing {{{2
 set linebreak

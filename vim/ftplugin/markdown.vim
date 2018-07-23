@@ -130,21 +130,14 @@ endif
 " folding {{{1
 setlocal foldmethod=expr
 setlocal foldexpr=GetMarkdownFolds(v:lnum)
-let g:tagbar_foldlevel = 2
-let b:foldtextwidth = -4
-
-function! GetMarkdownFolds(lnum)
-    let line = getline(a:lnum) 
-    " if line =~ '^###'
-        " return '>3'
-    " elseif line =~ '^##'
-        " return '>2'
-    if (line =~# '^#') || (a:lnum == 1 && line =~# '^---$')
+function! GetMarkdownFolds(lnum) "{{{
+    let l:line = getline(a:lnum) 
+    if (l:line =~# '^#') || (a:lnum == 1 && l:line =~# '^---$')
         return '>1'
     else
         return '='
     endif
-endfunction
+endfunction "}}}
 
 " sentence highlights {{{1
 nnoremap <buffer> ]k :echo search('\.', 'c')<CR>v(

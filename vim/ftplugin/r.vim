@@ -44,22 +44,17 @@ nnoremap <buffer> <localleader>1 :call AddRstudioHeadings(1)<CR>
 nnoremap <buffer> <localleader>2 :call AddRstudioHeadings(2)<CR>
 nnoremap <buffer> <localleader>3 :call AddRstudioHeadings(3)<CR>
 
-" folding
+" folding {{{1
 setlocal foldmethod=expr
 setlocal foldexpr=GetRFolds(v:lnum)
-function! GetRFolds(lnum)
-  if     getline(a:lnum) =~ '^#.*-\{4,\}$'
+function! GetRFolds(lnum) "{{{
+  if     getline(a:lnum) =~# '^#.*-\{4,\}$'
     return '>1'
-  elseif getline(a:lnum) =~ '^#.*=\{4,\}$'
+  elseif getline(a:lnum) =~# '^#.*=\{4,\}$'
     return '>2'
-  elseif getline(a:lnum) =~ '^#.*#\{4,\}$'
+  elseif getline(a:lnum) =~# '^#.*#\{4,\}$'
     return '>3'
   else
     return '='
   endif
-endfunction
-
-" capitalL plugin settings
-let b:Lpatterns = ['/#.*TODO/gj *.R', '/^.*<-\s*function/gj %']
-let b:Lreformat = ['', '/[^|]*|[^|]*|\s/']
-" let b:Lreformat = ['[^|]*|[^|]*|\s#\+\s*\(TODO.*\)$/\1', '[^|]*|[^|]*|\s/']
+endfunction "}}}
