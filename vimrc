@@ -283,8 +283,7 @@ if has('nvim')
   augroup END
 endif
 
-" misc {{{2
-" Line Return {{{3
+" Line Return {{{2
 " from Steve Losh's (sjl) vimrc
 augroup line_return
   au!
@@ -294,7 +293,7 @@ augroup line_return
     \ endif
 augroup END
 
-" cursor shape {{{3
+" cursor shape {{{2
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 elseif empty($TMUX)
@@ -308,14 +307,14 @@ else
 endif
 
 " Keybindings {{{1
-" settings
+" settings {{{2
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 set notimeout
 set ttimeout
 inoremap jk <Esc>
 
-" general
+" general {{{2
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
