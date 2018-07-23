@@ -496,7 +496,7 @@ let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '>'
 let g:ale_linter_aliases = {'octave': 'matlab'}
 let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
-function! ALEStatus(type) abort
+function! ALEStatus(type) abort "{{{
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
@@ -507,7 +507,7 @@ function! ALEStatus(type) abort
   else
     return ''
   endif
-endfunction
+endfunction "}}}
 
 " vim-pandoc/vim-pandoc-syntax {{{2
 let g:pandoc#syntax#conceal#use = 0
@@ -538,7 +538,7 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
 call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
 imap <expr> <Tab> MyCompletion()
-function! MyCompletion()
+function! MyCompletion() "{{{
   let col = col('.') - 1
   if pumvisible()
     return "\<C-e>"
@@ -548,7 +548,7 @@ function! MyCompletion()
   else
     return deoplete#mappings#manual_complete()
   endif
-endfunction
+endfunction "}}}
 
 " Shougo/neco-syntax (completion from syntax files)
 let g:necosyntax#max_syntax_lines = 1000
