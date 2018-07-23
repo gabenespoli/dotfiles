@@ -283,8 +283,7 @@ if has('nvim')
   augroup END
 endif
 
-" misc {{{2
-" Line Return {{{3
+" Line Return {{{2
 " from Steve Losh's (sjl) vimrc
 augroup line_return
   au!
@@ -294,7 +293,7 @@ augroup line_return
     \ endif
 augroup END
 
-" cursor shape {{{3
+" cursor shape {{{2
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 elseif empty($TMUX)
@@ -308,14 +307,14 @@ else
 endif
 
 " Keybindings {{{1
-" settings
+" settings {{{2
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 set notimeout
 set ttimeout
 inoremap jk <Esc>
 
-" general
+" general {{{2
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
@@ -464,7 +463,7 @@ let g:ctrlp_switch_buffer = 0
 if executable('fd')
   let g:ctrlp_user_command = 'fd --color never "" %s'
 endif
-let g:ctrlp_prompt_mappings = { 
+let g:ctrlp_prompt_mappings = {
  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
  \ 'PrtHistory(-1)':         [],
