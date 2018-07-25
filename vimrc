@@ -395,6 +395,9 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-y>" : "\<CR>"
 
 "vimdiff
 nnoremap du :diffupdate<CR>
+vnoremap do :diffget<CR>
+vnoremap dp :diffput<CR>
+vnoremap dd d
 
 " Spell checking
 nnoremap <leader>s 1z=
