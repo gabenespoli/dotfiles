@@ -374,7 +374,8 @@ nnoremap <silent> cow :set wrap!<CR>
 nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
 nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
-
+" windows {{{2
+nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 nnoremap _        <C-w>>:echo winwidth('.')<CR>
 nnoremap <Right>  <C-w>>:echo winwidth('.')<CR>
 nnoremap <Left>   <C-w><:echo winwidth('.')<CR>
