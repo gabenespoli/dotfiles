@@ -1,6 +1,6 @@
 " .vimrc file for gabenespoli@gmail.com
-" Plugin Manager (vim-plug) {{{1
-" make sure vim-plug is installed {{{2
+" Plugin Manager {{{1
+" make sure vim-plug is installed {{{2 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -13,34 +13,42 @@ call plug#begin('~/.vim/plugged')
 
 " editing {{{2
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'gabenespoli/vim-impaired'
 Plug 'godlygeek/tabular'
+Plug 'andymass/vim-tradewinds'
 
-" git / diff
+" git/diff {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" Plug 'mhinz/vim-signify'
 Plug 'rickhowe/diffchar.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " sidebars & sidebar control {{{2
+" Plug 'gabenespoli/vim-cider-vinegar'
+Plug '~/bin/vim/vim-cider-vinegar'
+" Plug 'gabenespoli/vim-mutton'
+Plug '~/bin/vim/vim-mutton'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
-Plug 'MarcWeber/vim-addon-qf-layout'
-Plug 'gabenespoli/vim-cider-vinegar'
-Plug 'gabenespoli/vim-mutton'
+" Plug 'MarcWeber/vim-addon-qf-layout'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'tacahiroy/ctrlp-funky'
 
 " syntax/linting/highlighting {{{2
 Plug 'w0rp/ale'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jszakmeister/markdown2ctags'
-Plug 'gabenespoli/vim-colors-sumach'
+" Plug 'gabenespoli/vim-colors-sumach'
+Plug '~/bin/vim/vim-colors-sumach'
+" Plug 'vim-python/python-syntax'
 
-" completion (deoplete) and sources {{{2
+" auto-completion {{{2
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -52,6 +60,8 @@ Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim', {'for': 'vim'}
 Plug 'lionawurscht/deoplete-biblatex', {'for': ['markdown', 'pandoc']}
 Plug 'wellle/tmux-complete.vim'
+" Plug 'davidhalter/jedi'
+" Plug 'zchee/deoplete-jedi'
 
 " external {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -114,7 +124,7 @@ set mouse=a
 
 " Folding {{{2
 set foldminlines=0
-set foldlevel=5
+set foldlevel=2
 set foldtext=FoldSMS_Text()
 function! FoldSMS_Text() "{{{
   if &textwidth > 0
@@ -193,7 +203,7 @@ function! MyTabLine() "{{{
     let s .= ']%*'
 
     "modified flag
-    let s .= (i == t ? '%#TabModSel#%m%r' : '%#TabMod#')
+    let s .= (i == t ? '%#TabModSel#%m' : '%#TabMod#')
     let s .= ' %*'
 
     "filename
@@ -243,17 +253,21 @@ if executable('rg')
 endif
 
 " Status Line {{{2
-" ale [+][RO] 'filename' [type][fugitive] ... line/lines,col (pct)
+" ale [+][RO] 'filename' [type] [fugitive] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
 set statusline+=%#ErrorMsg#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 " set statusline+=%{mode()}
-set statusline+=\ %#DiffText#%m%*%#DiffDelete#%r%*\"%t\"\ %y
-set statusline+=%{fugitive#statusline()}
-" set statusline+=%#StatusLineFill#%=%*                      
+set statusline+=%#Modified#%m%*%#ReadOnly#%r%*\ %t\ %y
+set statusline+=\ %{fugitive#statusline()}
+" set statusline+=%#StatusLineFill#%=%*
 set statusline+=%=
-set statusline+=%l/%L\,%c\ (%P)                           
+set statusline+=%l/%L\,%c\ (%P)
+" TODO: function to dynamically create statusbar highlights
+" - get statusbar background color
+" - get desired fg color from another hl group
+" - put them together
 
 " GUI Settings {{{2
 set guioptions=g
@@ -271,12 +285,12 @@ endif
 " nvim Terminal Settings {{{2
 if has('nvim')
   autocmd TermOpen * setlocal nocursorline nonumber norelativenumber
-  autocmd TermOpen * execute "nnoremap <buffer> <CR> i"
+  " autocmd TermOpen * execute "nnoremap <buffer> <CR> i"
   augroup my_nvim_term
     au!
     " pretend term buffer doesn't have a normal mode
-    autocmd BufWinEnter,WinEnter term://* startinsert
-    autocmd BufLeave term://* stopinsert
+    " autocmd BufWinEnter,WinEnter term://* startinsert
+    " autocmd BufLeave term://* stopinsert
     " 'hide' cursor when term doesn't have focus
     autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
     autocmd BufLeave term://* hi! Cursor ctermbg=0
@@ -315,6 +329,7 @@ set ttimeout
 inoremap jk <Esc>
 
 " general {{{2
+nnoremap <C-j> <CR>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
@@ -345,24 +360,19 @@ nnoremap <silent> ]q :cnext<CR>
 nnoremap <silent> [t :tabprevious<CR>
 nnoremap <silent> ]t :tabnext<CR>
 
-" option toggles (incl. some plugins) {{{2
-nnoremap <silent> cob :SumachContrastToggle<CR>
-nnoremap <silent> coB :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
+" option toggles (not incl. plugins) {{{2
+nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
 nnoremap <silent> coc :set cursorline!<CR>
-nnoremap <silent> cod <Plug>ToggleDiffCharAllLines
-nnoremap <silent> coD :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
-nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap <silent> <expr> cog
-      \ exists(':GitGutterLineHighlightsToggle') ? ':GitGutterLineHighlightsToggle<CR>' :
-      \ exists(':SignifyToggleHighlight') ? ':SignifyToggleHighlight<CR>' :
-      \ ':echo "Neither GitGutter nor Signify are loaded."<CR>'
-nnoremap <silent> <expr>  coG
-      \ exists(':GitGutterToggle') ? ':GitGutterToggle<CR>' :
-      \ exists(':SignifyToggle') ? ':SignifyToggle<CR>' :
-      \ ':echo "Neither GitGutter nor Signify are loaded."<CR>'
+nnoremap <silent> cod :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
+nnoremap <silent> coff :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap <silent> cofm :set foldmethod=manual<CR>
+nnoremap <silent> cofi :set foldmethod=indent<CR>
+nnoremap <silent> cofe :set foldmethod=expr<CR>
+nnoremap <silent> cofk :set foldmethod=marker<CR>
+nnoremap <silent> cofs :set foldmethod=syntax<CR>
+nnoremap <silent> cofd :set foldmethod=diff<CR>
 nnoremap <silent> coh :set hlsearch!<CR>
 nnoremap <silent> col :set list!<CR>
-nnoremap <silent> coL :ALEToggle<CR>:echo g:ale_enabled<CR>
 nnoremap <silent> com :set number!<CR>:set relativenumber!<CR>
 nnoremap <silent> con :set number!<CR>
 nnoremap <silent> cop :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
@@ -374,8 +384,7 @@ nnoremap <silent> cow :set wrap!<CR>
 nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
 nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
-" windows {{{2
-nnoremap <C-w><C-t> mx:tabnew %<CR>`x
+" window resizing {{{2
 nnoremap _        <C-w>>:echo winwidth('.')<CR>
 nnoremap <Right>  <C-w>>:echo winwidth('.')<CR>
 nnoremap <Left>   <C-w><:echo winwidth('.')<CR>
@@ -395,9 +404,9 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-y>" : "\<CR>"
 
 "vimdiff
 nnoremap du :diffupdate<CR>
-vnoremap do :diffget<CR>
-vnoremap dp :diffput<CR>
-vnoremap dd d
+" vnoremap do :diffget<CR>
+" vnoremap dp :diffput<CR>
+" vnoremap dd d
 
 " Spell checking
 nnoremap <leader>s 1z=
@@ -411,46 +420,44 @@ nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 " open with system on mac
 if has('mac') | nnoremap gO :!open <cfile><CR> | endif
 
+" open current file in new tab
+nnoremap <C-w><C-t> mx:tabnew %<CR>`x
+
+" prompt to open note
+nnoremap <leader>n :edit ~/notes/<C-d> 
+
 " Plugin Settings {{{1
-" tpope/vim-commentary {{{2
-augroup commentstrings
-  au!
-  autocmd FileType octave setlocal commentstring=%%s
-  autocmd FileType cfg,remind setlocal commentstring=#%s
-augroup END
+" editing {{{2
+" godlygeek/tabular
+nnoremap <leader>\| :Tabularize /\|<CR>
 
-" gabenespoli/vim-impaired {{{2
-let g:impaired_buffergator_maps = 1
-
-" tpope/vim-fugitive {{{2
-nnoremap gs :execute "Gstatus"<CR>:execute "resize ".&lines/2<CR>
-nnoremap gd :Gdiff<CR>
-nnoremap gA :Gwrite<CR>
+" git/diff {{{2
+" tpope/vim-fugitive
+nnoremap gs :Gstatus<CR>
 nnoremap gC :Gcommit<CR>
-nmap gcC gC
+nnoremap gd mx:tabnew %<CR>`x:Gdiff<CR>
+nnoremap gA :Gwrite<CR>:write<CR>
 nnoremap gl :Glog<CR><CR>:copen<CR>
-augroup git_commands
+nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
+augroup gitcommit
   au!
-  autocmd FileType gitcommit nnoremap <buffer> gC :silent wq<CR>
-  autocmd FileType gitcommit nnoremap <buffer> gcC :silent wq<CR>
+  autocmd FileType gitcommit nnoremap <CR> :wq<CR><CR>
 augroup END
 
-" airblade/gitgutter {{{2
+" airblade/gitgutter
+nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
+nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 nmap ga <Plug>GitGutterStageHunk
-nnoremap ghc :GitGutterStageHunk<CR>:Gcommit<CR>i
 nmap ghd <Plug>GitGutterPreviewHunk
-nnoremap ghq <C-w>z
 nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
-if has('gui_running')
-  let g:gitgutter_signs = 0
-endif
 
-" rickhowe/diffchar {{{2
+" rickhowe/diffchar
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
-nmap dC             <Plug>ToggleDiffCharAllLines
+let g:DiffModeSync = 0
+nmap coD            <Plug>ToggleDiffCharAllLines
 nmap <nop>          <Plug>ToggleDiffCharCurrentLine
 nmap <nop>          <Plug>JumpDiffCharPrevStart
 nmap <nop>          <Plug>JumpDiffCharNextStart
@@ -459,7 +466,28 @@ nmap <nop>          <Plug>JumpDiffCharNextEnd
 nmap dO             <Plug>GetDiffCharPair
 nmap dP             <Plug>PutDiffCharPair
 
-" ctrlpvim/ctrlp.vim {{{2
+" sidebars {{{2
+" gabenespoli/vim-cider-vinegar {{{3
+let g:CiderEnableNERDTree = 1
+let g:CiderEnableBuffergator = 1
+let g:CiderToggleNERDTree = '-'
+let g:CiderToggleBuffergator = '='
+" let g:CiderQuitMap = 'q'
+let g:CiderToggleQF = '<leader>Q'
+let g:CiderToggleLL = '<leader>L'
+nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
+      \ ':cclose<CR>' : ':botright copen<CR>'
+nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
+      \ ':lclose<CR>' : ':botright lopen<CR>'
+
+" gabenespoli/vim-mutton {{{3
+nnoremap <leader>t :MuttonToggle('tagbar')<CR>
+nnoremap <leader>- :MuttonToggle('nerdtree')<CR>
+nnoremap <leader>= :MuttonToggle('buffergator')<CR>
+let g:mutton_min_center_width = 88
+let g:mutton_min_side_width = 25
+
+" ctrlpvim/ctrlp.vim {{{3
 nnoremap <C-q> :CtrlPQuickfix<CR>
 nnoremap <C-n> :CtrlP<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -475,7 +503,7 @@ let g:ctrlp_prompt_mappings = {
  \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
  \ }
 
-" scrooloose/NERDTree {{{2
+" scrooloose/NERDTree {{{3
 augroup nerdtree
   au!
   autocmd filetype nerdtree setlocal bufhidden=wipe
@@ -484,7 +512,7 @@ augroup nerdtree
 augroup END
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowLineNumbers = 0
 let g:NERDTreeWinPos = 'left'
 let g:NERDTreeMapToggleHidden = 'zh'
@@ -495,12 +523,14 @@ let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapCWD = 'cD'
 
-" jeetsukumaran/vim-buffergator {{{2
+" jeetsukumaran/vim-buffergator {{{3
 let g:buffergator_suppress_keymaps = 1
-let g:buffergator_viewport_split_policy = 'N'
-let g:buffergator_keep_old_mru_switching_keymaps = 1
+let g:buffergator_autodismiss_on_select = 0
+let g:buffergator_autoupdate = 1
+nnoremap gb :BuffergatorMruCyclePrev<CR>
+nnoremap gB :BuffergatorMruCycleNext<CR>
 
-" majutsushi/tagbar{{{2
+" majutsushi/tagbar{{{3
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
@@ -525,36 +555,26 @@ let g:tagbar_type_r = {
     \ ]
 \ }
 
-" MarcWeber/vim-addon-qf-layout {{{2
-let g:vim_addon_qf_layout = {}
-let g:vim_addon_qf_layout.quickfix_formatters = [
-  \ 'vim_addon_qf_layout#DefaultFormatter',
-  \ 'vim_addon_qf_layout#FormatterNoFilename',
-  \ 'vim_addon_qf_layout#Reset',
-  \ 'NOP',
-  \ ]
-let g:vim_addon_qf_layout.lhs_cycle = '<buffer> \v'
+" MattesGroeger/vim-bookmarks {{{3
+let g:bookmark_sign = '*>'
+let g:bookmark_annotation_sign = '=>'
+let g:bookmark_center = 1
+let g:bookmark_location_list = 1
+nmap [m <Plug>BookmarkPrev
+nmap ]m <Plug>BookmarkNext
 
-" gabenespoli/vim-cider-vinegar {{{2
-let g:CiderEnableNERDTree = 1
-let g:CiderEnableBuffergator = 1
-let g:CiderToggleNERDTree = '-'
-let g:CiderToggleBuffergator = '='
-let g:CiderQuitMap = 'q'
-let g:CiderToggleQF = '<leader>Q'
-let g:CiderToggleLL = '<leader>L'
-nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
-      \ ':cclose<CR>' : ':botright copen<CR>'
-nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
-      \ ':lclose<CR>' : ':botright lopen<CR>'
+" tacahiroy/ctrlp-funky {{{3
+nnoremap <leader>f :CtrlPFunky<CR>
 
-" gabenespoli/vim-mutton {{{2
-nnoremap <leader>t :MuttonTagbarToggle<CR>
-
-" w0rp/ale {{{2
+" syntax/linting/highlighting {{{2
+" w0rp/ale
+nnoremap <silent> coY :ALEToggle<CR>:echo g:ale_enabled<CR>
+nmap [y <Plug>(ale_previous_wrap)
+nmap ]y <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '!!'
-let g:ale_sign_warning = '>'
+let g:ale_sign_warning = '>>'
+let g:ale_set_loclist = 0
 let g:ale_linter_aliases = {'octave': 'matlab'}
 let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
 function! ALEStatus(type) abort "{{{
@@ -570,15 +590,18 @@ function! ALEStatus(type) abort "{{{
   endif
 endfunction "}}}
 
-" vim-pandoc/vim-pandoc-syntax {{{2
+" gabenespoli/vim-colors-sumach
+nnoremap <silent> coB :SumachContrastToggle<CR>
+
+" gabenespoli/vim-criticmarkup
+let g:criticmarkup#disable#highlighting = 1
+
+" vim-pandoc/vim-pandoc-syntax
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#syntax#codeblocks#embeds#langs = ['vim', 'bash=sh', 'python', 'matlab', 'octave', 'R']
 let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
-" gabenespoli/vim-criticmarkup {{{2
-let g:criticmarkup#disable#highlighting = 1
-
-" jszakmeister/markdown2ctags {{{2
+" jszakmeister/markdown2ctags {{{3
 let g:tagbar_type_pandoc = {
   \ 'ctagstype': 'pandoc',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
@@ -594,15 +617,31 @@ let g:tagbar_type_pandoc = {
   \ 'sort': 0,
 \ }
 
-" Shougo/deoplete.vim {{{2
+let g:tagbar_type_markdown = {
+  \ 'ctagstype': 'markdown',
+  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
+  \ 'ctagsargs' : '-f - --sort=yes',
+  \ 'kinds' : [
+    \ 's:sections',
+    \ 'i:images'
+  \ ],
+  \ 'sro' : '|',
+  \ 'kind2scope' : {
+    \ 's' : 'section',
+  \ },
+  \ 'sort': 0,
+\ }
+
+" auto-completion {{{2
+" Shougo/deoplete.vim
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
-call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
+call deoplete#custom#option('ignore_sources', {'_': ['around']})
 imap <expr> <Tab> MyCompletion()
 function! MyCompletion() "{{{
   let col = col('.') - 1
   if pumvisible()
-    return "\<C-e>"
+    return "\<C-e>\<Space>\<Tab>"
   elseif !col || getline('.')[col - 1]  =~# '\s'
     " if cursor is at bol or in front of whitespace
     return "\<Tab>"
@@ -626,13 +665,8 @@ let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
 let g:deoplete#sources#biblatex#delimiter = ';'
 call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
-" Lilypond {{{2
-filetype off
-set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
-"set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
-filetype on
-
-" christoomey/vim-tmux-navigator {{{2
+" external {{{2
+" christoomey/vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if has('mac')
@@ -666,7 +700,7 @@ if has('nvim')
   tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime {{{2
+" jpalardy/vim-slime {{{3
 let g:slime_target = 'tmux'
 let g:slime_dont_ask_default = 1
 let g:slime_no_mappings = 1
@@ -678,10 +712,16 @@ if exists('$TMUX')
   let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.1'}
 endif
 
-" jalvesaq/Nvim-R {{{2
+" jalvesaq/Nvim-R {{{3
 let R_assign = 0
 let R_esc_term = 0
 let R_show_args = 0
 let R_objbr_place = 'LEFT'
 let rout_follow_colorscheme = 1
 let Rout_more_colors = 1
+
+" Lilypond {{{3
+filetype off
+set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
+"set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
+filetype on
