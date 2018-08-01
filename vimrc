@@ -334,18 +334,13 @@ nnoremap q :q<CR>
 nnoremap Q q
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
-if has('nvim')
-  nnoremap <silent> <M-s> :silent write<CR>
-  inoremap <silent> <M-s> <Esc>:silent write<CR>a
-  nnoremap <M-{> :tabprevious<CR>
-  nnoremap <M-}> :tabnext<CR>
-  tnoremap <silent> <C-Space> <C-\><C-N>
-  tnoremap <silent> <M-{> <C-\><C-N>:tabprevious<CR>
-  tnoremap <silent> <M-}> <C-\><C-N>:tabnext<CR>
-else
-  nnoremap <silent> <Esc>s :silent write<CR>
-  inoremap <silent> <Esc>s <Esc>:silent write<CR>a
-endif
+nnoremap <silent> <M-s> :silent write<CR>
+inoremap <silent> <M-s> <Esc>:silent write<CR>a
+nnoremap <M-{> :tabprevious<CR>
+nnoremap <M-}> :tabnext<CR>
+tnoremap <silent> <C-Space> <C-\><C-N>
+tnoremap <silent> <M-{> <C-\><C-N>:tabprevious<CR>
+tnoremap <silent> <M-}> <C-\><C-N>:tabnext<CR>
 
 " next/previous {{{2
 nnoremap <silent> [b :bprevious<CR>
