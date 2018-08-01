@@ -41,7 +41,6 @@ Plug 'tacahiroy/ctrlp-funky'
 
 " syntax/linting/highlighting {{{2
 Plug 'w0rp/ale'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jszakmeister/markdown2ctags'
 " Plug 'gabenespoli/vim-colors-sumach'
@@ -595,11 +594,6 @@ nnoremap <silent> coB :SumachContrastToggle<CR>
 
 " gabenespoli/vim-criticmarkup
 let g:criticmarkup#disable#highlighting = 1
-
-" vim-pandoc/vim-pandoc-syntax
-let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#syntax#codeblocks#embeds#langs = ['vim', 'bash=sh', 'python', 'matlab', 'octave', 'R']
-let g:markdown_fenced_languages = g:pandoc#syntax#codeblocks#embeds#langs
 
 " jszakmeister/markdown2ctags {{{3
 let g:tagbar_type_pandoc = {

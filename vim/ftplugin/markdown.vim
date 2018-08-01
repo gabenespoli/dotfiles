@@ -147,11 +147,3 @@ nmap <buffer> <localleader>k ]k
 vnoremap <buffer> ]k <Esc>):echo search('\.')<CR>v(
 vnoremap <buffer> [k <Esc>:echo search('\.', 'b')<CR>v(
 vnoremap <buffer> <localleader>k <Esc>
-
-" vim-pandoc plugin {{{1
-" because vim-pandoc-syntax is loaded after the colorscheme
-augroup pandoc_highlighting
-  au!
-  au VimEnter,BufEnter *.md :setlocal filetype=pandoc
-  au VimEnter,BufEnter *.md :execute 'colorscheme '.g:colors_name
-augroup END
