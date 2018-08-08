@@ -1,10 +1,6 @@
 " general {{{1
-setlocal wrap
-setlocal spell       " enable live spell checking
-setlocal tabstop=4        " number of visual spaces per TAB
-setlocal softtabstop=4    " number of spaces in tab when editing
-setlocal shiftwidth=4
-setlocal nonumber norelativenumber
+setlocal textwidth=0
+setlocal wrap spell nonumber norelativenumber
 if &diff
   augroup markdown_diff
     au!
@@ -14,9 +10,6 @@ endif
 
 " keybindings {{{1
 " general {{{2
-nnoremap <buffer> gd :Gdiff<CR>:windo set wrap<CR>
-inoremap <buffer> <S-CR> <CR>-<space>
-inoremap <buffer> <S-C-j> <CR>-<space>
 nnoremap <buffer> <localleader>p :w<CR>:!. preview %<CR>
 nnoremap <buffer> <localleader>P :w<CR>:!. pdoc % open
 
@@ -25,15 +18,6 @@ noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
 noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
-
-" headings {{{2
-nnoremap <buffer> <localleader>0 :s/^#*\ *//ge<CR>
-nnoremap <buffer> <localleader>1 :s/^#*\ */#\ /ge<CR>
-nnoremap <buffer> <localleader>2 :s/^#*\ */##\ /ge<CR>
-nnoremap <buffer> <localleader>3 :s/^#*\ */###\ /ge<CR>
-nnoremap <buffer> <localleader>4 :s/^#*\ */####\ /ge<CR>
-nnoremap <buffer> <localleader>5 :s/^#*\ */#####\ /ge<CR>
-nnoremap <buffer> <localleader>6 :s/^#*\ */######\ /ge<CR>
 
 " criticmarkup and cite.py {{{2
 " custom critic bindings
@@ -57,7 +41,7 @@ nnoremap <buffer> <localleader>f /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <buffer> <localleader>F ?{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <buffer> <localleader>H :call criticmarkup#InjectHighlighting()<CR>
 
-" GoNotes plugin {{{3
+" GoNotes plugin {{{1
 nnoremap <buffer> gn :call GoNotes('<C-r><C-a>', 1)<CR>
 nnoremap <buffer> gN :call GoNotes('<C-r><C-a>', 0)<CR>
 

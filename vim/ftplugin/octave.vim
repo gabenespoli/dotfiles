@@ -2,6 +2,8 @@
 setlocal tabstop=4                   " number of visual spaces per TAB
 setlocal softtabstop=4               " number of spaces in tab when editing
 setlocal shiftwidth=4
+setlocal textwidth=75
+setlocal commentstring=%%s
 
 " folding {{{1
 setlocal foldmethod=expr
