@@ -159,7 +159,7 @@ alias hangups="hangups \
 
 # todo, notes, and calendar {{{2
 alias tt="grep -r TODO *"
-alias ttt="vim -c 'silent vimgrep TODO *' -c 'CiderVinegarQF'"
+alias ttt="nvim -c 'silent vimgrep TODO *' -c 'copen'"
 alias todo="$EDITOR $HOME/todo/todo.txt"
 alias pomfile="$EDITOR $HOME/pomodoro/$(date +%Y-%m-%d).txt"
 function pomo() {
