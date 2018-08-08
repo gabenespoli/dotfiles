@@ -78,7 +78,7 @@ bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
 
 # setup pyenv and rbenv
-if hash rbenv 2> /dev/null; then 
+if hash pyenv 2> /dev/null; then 
   eval "$(pyenv init -)" ; 
   eval "$(pyenv virtualenv-init -)" ;
 fi
