@@ -1,8 +1,8 @@
 #!/bin/bash
 
-## OS-specific options {{{1
+# OS-specific options {{{1
+# Mac options {{{2
 if [ "$(uname)" == "Darwin" ]; then
-  ### Mac options
   export PATH="/usr/local/bin:$PATH"
   export PATH="/usr/local/lib:$PATH"
   export PATH="/usr/local/texbin:$PATH"
@@ -37,7 +37,7 @@ if [ "$(uname)" == "Darwin" ]; then
   export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
 else 
-  ### Linux options
+# Linux options {{{2
   export PATH="$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
   if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -58,7 +58,7 @@ else
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
 fi
 
-## Environment {{{1
+# Environment {{{1
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
@@ -84,7 +84,7 @@ if hash rbenv 2> /dev/null; then
 fi
 if hash rbenv 2> /dev/null; then eval "$(rbenv init -)" ; fi
 
-## Aliases & Functions {{{1
+# Aliases & Functions {{{1
 alias edit=$EDITOR
 alias grep="grep --color"
 alias df="df -h"
@@ -100,7 +100,7 @@ function cdl { cd $1; ls;}
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 function settitle() { printf "\033k$1\033\\" ; }
 
-### git {{{2
+# git {{{2
 alias gs="git status -sb"
 alias gb="git branch"
 alias gg="git checkout"
@@ -117,7 +117,7 @@ alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=fo
 alias ts="tig status"
 alias tl="tig"
 
-### others {{{2
+# others {{{2
 
 # coding languages
 alias pylab="ipython --pylab"
@@ -156,7 +156,7 @@ alias hangups="hangups \
   --col-msg-self-fg 'dark blue' \
   --col-msg-self-bg default"
 
-### todo, notes, and calendar {{{2
+# todo, notes, and calendar {{{2
 alias tt="grep -r TODO *"
 alias ttt="vim -c 'silent vimgrep TODO *' -c 'CiderVinegarQF'"
 alias todo="$EDITOR $HOME/todo/todo.txt"
@@ -187,14 +187,14 @@ function caplog() {
   fi
 }
 
-### custom files {{{2
+# custom files {{{2
 function openmd() { "$EDITOR" -c "MuttonToggle" "$1" ; }
 alias ecpaper="openmd ~/Dropbox/research/archive/2014/ec/paper/NespoliGoySinghRusso2017.md"
 alias gvpaper="openmd ~/r/gv/paper/Nespoli2017.md"
 alias dis="openmd ~/r/phd/proposal/Nespoli_PhD_Proposal.md"
 alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 
-### source other files {{{2
+# source other files {{{2
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
 sourcex "$HOME/bin/network_aliases"
