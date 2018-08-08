@@ -71,6 +71,7 @@ fi
 export EDITOR='nvim'
 export CLICOLOR=1
 export MPLCONFIGDIR="$HOME/dotfiles/matplotlib"
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 # autocomplete
 # bind 'TAB:menu-complete'
