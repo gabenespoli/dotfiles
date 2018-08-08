@@ -38,7 +38,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else 
   ### Linux options
-  export PATH="$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export PATH="/usr/local/lib:/usr/local/bin:$PATH"
   if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
   fi
