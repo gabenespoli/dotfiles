@@ -127,6 +127,33 @@ if !exists('g:GoNotesLoaded') || g:GoNotesLoaded == 0
 
 endif
 
+" bib info {{{2
+" nnoremap <localleader>b :vnew \| read !bib <C-r><C-w> -w 0 -h 0<CR>:set nomodified<CR>:set syntax=bibtex<CR>gg
+nnoremap <localleader>b :call BibShowAbstract("<C-r><C-w>")<CR>:set filetype=bib<CR>
+
+function! BibShowAbstract(citekey)
+  if exists('g:MuttonEnabled') && g:MuttonEnabled == 1
+    let l:mutton = 1
+    MuttonToggle
+  else
+    let l:mutton = 0
+  endif
+
+  vnew
+  execute 'read !bib -w 0 -h 0 '.a:citekey
+  set nomodified
+  set syntax=bibtex
+  normal! gg
+
+  if l:mutton == 1
+    nnoremap <buffer> q :quit<CR>:MuttonToggle<CR>
+  else
+    nnoremap <buffer> q :quit<CR>
+  endif
+  nmap <buffer> <localleader>b q
+
+endfunction
+
 " folding {{{1
 setlocal foldmethod=expr
 setlocal foldexpr=GetMarkdownFolds(v:lnum)
