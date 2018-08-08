@@ -44,7 +44,7 @@ syntax match TodoPriorityC      /^(C)\ .*$/ contains=TodoContext,TodoTag,TodoPri
 " day of the week priorities
 " TODO: add char to day of week priorities
 " link highlight to B/C priority based on current day of week
-let day = strftime("%u")
+let day = strftime('%u')
 if day == 1
   syn match TodoPriorityB /^(M).*$/ contains=TodoContext,TodoTag
   syn match TodoPriorityC /^(T).*$/ contains=TodoContext,TodoTag
