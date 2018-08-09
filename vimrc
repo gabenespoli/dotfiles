@@ -27,10 +27,8 @@ Plug 'rickhowe/diffchar.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " sidebars & sidebar control {{{2
-" Plug 'gabenespoli/vim-cider-vinegar'
-Plug '~/bin/vim/vim-cider-vinegar'
-" Plug 'gabenespoli/vim-mutton'
-Plug '~/bin/vim/vim-mutton'
+Plug 'gabenespoli/vim-cider-vinegar'
+Plug 'gabenespoli/vim-mutton'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -43,8 +41,7 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'w0rp/ale'
 Plug 'gabenespoli/vim-criticmarkup'
 Plug 'jszakmeister/markdown2ctags'
-" Plug 'gabenespoli/vim-colors-sumach'
-Plug '~/bin/vim/vim-colors-sumach'
+Plug 'gabenespoli/vim-colors-sumach'
 " Plug 'vim-python/python-syntax'
 
 " auto-completion {{{2
