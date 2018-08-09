@@ -38,7 +38,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else 
 # Linux options {{{2
-  export PATH="$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/lib:/usr/local/bin:$PATH"
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export PATH="/usr/local/lib:/usr/local/bin:$PATH"
   if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
   fi
@@ -79,7 +80,7 @@ bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
 
 # setup pyenv and rbenv
-if hash rbenv 2> /dev/null; then 
+if hash pyenv 2> /dev/null; then 
   eval "$(pyenv init -)" ; 
   eval "$(pyenv virtualenv-init -)" ;
 fi
