@@ -64,9 +64,9 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 if [ -f "$HOME/dotfiles/git-prompt.sh" ]; then
   source "$HOME/dotfiles/git-prompt.sh"
-  export PS1='\[\e[34m\]\w\[\e[0m\]$(__git_ps1 ":\[\e[32m\]%s")\[\e[1;37m\] $ \[\e[0m\]'
+  export PS1='\[\e[34m\]\w\[\e[0m\]$(__git_ps1 ":\[\e[32m\]%s")\[\e[0m\] $ '
 else
-  export PS1='\[\e[34m\]\w\[\e[37m\] $\[\e[0m\] '
+  export PS1='\[\e[34m\]\w\[\e[0m\] $ '
 fi
 export EDITOR='nvim'
 export CLICOLOR=1
