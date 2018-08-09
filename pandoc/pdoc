@@ -49,7 +49,7 @@ case "$inputType" in
         perl -pi -e 's/(\{\>\>.*?\<\<\})/\<span\ custom\-style\=\"CriticComment\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(\{\-\-.*?\-\-\})/\<span\ custom\-style\=\"CriticDeletion\"\>\1\<\/span\>/g' "$inputFile"
         perl -pi -e 's/(\{\+\+.*?\+\+\})/\<span\ custom\-style\=\"CriticInsertion\"\>\1\<\/span\>/g' "$inputFile"
-        perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$tmpFile"
+        perl -pi -e 's/(^TODO.*)\n/\<span\ custom\-style\=\"TODO\"\>\1\<\/span\>\n/g' "$inputFile"
         # TODO delete critic parts marked for deletion? optionally?
 
         # add args to pandoc call (ref docx, tables and figures)
