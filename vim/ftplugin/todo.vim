@@ -48,14 +48,13 @@ nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
 " folding {{{1
 setlocal foldmethod=expr
 setlocal foldexpr=GetTodoFolds(v:lnum)
-setlocal foldtext=GetFoldText()
 
 function! GetTodoFolds(lnum)
-  if getline(a:lnum) =~ '^#'
+  if getline(a:lnum) =~# '^#'
     return '>1'
-  elseif getline(a:lnum) =~ '^\/\/'
+  elseif getline(a:lnum) =~# '^\/\/'
     return '>1'
-  elseif getline(a:lnum) =~ '^.*:$'
+  elseif getline(a:lnum) =~# '^.*:$'
     return '>1'
   else
     return '='
@@ -69,13 +68,13 @@ endfunction
 function! todo#RemoveCompleted()
     " Check if we can write to done.txt before proceeding.
     let l:target_dir = expand('%:p:h')
-    if exists("g:TodoTxtForceDoneName")
+    if exists('g:TodoTxtForceDoneName')
         let l:done=g:TodoTxtForceDoneName
     else
         let l:done=substitute(substitute(expand('%:t'),'todo','done',''),'Todo','Done','')
     endif
     let l:done_file = l:target_dir.'/'.l:done
-    echo "Writing to ".l:done_file
+    echo 'Writing to '.l:done_file
     if !filewritable(l:done_file) && !filewritable(l:target_dir)
         echoerr "Can't write to file '".l:done_file."'"
         return
@@ -105,10 +104,10 @@ function! TodoToggleX()
   let l:beforeChar = getline('.')[col('.')-2]
   let l:currentChar = getline('.')[col('.')-1]
   let l:afterChar = getline('.')[col('.')]
-  if l:beforeChar == '[' && l:afterChar == ']'
-    if l:currentChar == 'x'
+  if l:beforeChar ==# '[' && l:afterChar ==# ']'
+    if l:currentChar ==? 'x'
       normal! r 
-    elseif l:currentChar == ' '
+    elseif l:currentChar ==# ' '
       normal! rx
     endif
   else

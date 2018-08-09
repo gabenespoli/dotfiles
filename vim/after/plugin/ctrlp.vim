@@ -24,10 +24,10 @@ let g:ctrlp_status_func = {
 "            a:1    a:2      a:3       a:4  a:5   a:6  a:7
 fu! CtrlP_Statusline_1(...)
 	let focus = '%#StatusLine# '.a:1.' %*'
-	let byfname = '%#DiffAdd# '.a:2.' %*'
+	let byfname = '%#CtrlPMode1# '.a:2.' %*'
 	let regex = a:3 ? '%#StatusLine# regex %*' : ''
 	let prv = ' -<'.a:4.'>-'
-	let item = '[%#DiffAdd# '.a:5.' %*]'
+	let item = '[%#CtrlPMode1# '.a:5.' %*]'
 	let nxt = '-<'.a:6.'>-'
 	let marked = ' '.a:7.' '
 	let dir = ' %=%<%#StatusLine# '.getcwd().' %*'

@@ -6,11 +6,21 @@ nunmap <buffer> qf
 nunmap <buffer> qb
 nunmap <buffer> q
 
-" custom mappings
-nmap <buffer> <C-j> <CR>
-nmap <buffer> o <CR>
-nmap <buffer> u -
-nmap <buffer> zh gh
+" delete netrw buffer after closing
+setlocal bufhidden=wipe
 
-" if only netrw, quit, else switch back
-nnoremap <buffer> <expr> q len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))==1 ? ':quit<CR>' : '<C-^>'
+" u for up a dir
+" nnoremap <buffer> u -
+
+" - for toggle on/off
+" doesn't really work because entering a new dir opens a new buffer
+nnoremap <buffer> - <C-^>
+
+" s/v/o for split/vertsplit/open, revert caller window to alt file
+nmap <buffer> s o<C-w>p<C-^><C-w>p
+nmap <buffer> v v<C-w>p<C-^><C-w>p
+nmap <buffer> V v<C-w>p<C-^>
+nmap <buffer> o <CR>
+
+" ranger-like zh for hidden files
+nmap <buffer> zh gh

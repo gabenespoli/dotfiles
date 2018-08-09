@@ -1,8 +1,5 @@
-nmap <silent> <buffer> <C-j> o
-nnoremap <silent> <buffer> q :q<CR>
-
 " bookmark mappings
-nnoremap <buffer> gh :OpenBookmark home<CR>
+nnoremap <buffer> g~ :OpenBookmark home<CR>
 nnoremap <buffer> gb :OpenBookmark bin<CR>
 nnoremap <buffer> g. :OpenBookmark dotfiles<CR>
 nnoremap <buffer> gl :OpenBookmark local<CR>

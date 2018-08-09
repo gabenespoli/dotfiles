@@ -1,3 +1,5 @@
+setlocal commentstring=#%s
+
 " keybindings
 nnoremap <buffer> <localleader>r :SlimeSend1 printf "\033c" && rem -cc+3 -w120<CR>
 

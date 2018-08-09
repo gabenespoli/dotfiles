@@ -1,3 +1,4 @@
+set textwidth=79
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 setlocal foldmethod=expr
 setlocal foldexpr=GetPythonFolds(v:lnum)
