@@ -433,7 +433,9 @@ nnoremap gl :Glog<CR><CR>:copen<CR>
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 augroup gitcommit
   au!
-  autocmd FileType gitcommit nnoremap <CR> :wq<CR><CR>
+  " TODO: make height of window bigger
+  autocmd FileType gitcommit nnoremap <buffer> <CR> :wq<CR><CR>
+  autocmd FileType gitcommit nnoremap <buffer> <M-s> :wq<CR><CR>:Gstatus<CR>
 augroup END
 
 " airblade/gitgutter
