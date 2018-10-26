@@ -33,13 +33,15 @@ from pygments.token import (Keyword, Name, Comment, String, Error, Text,
 #   teal                    turquoise
 #   lightgray               white
 
-base03 = '#ansidarkgray'
-base02 = '#ansiblack'
-base01 = '#ansigreen'
-base00 = '#ansiyellow'
-base0 = '#ansiblue'
-base1 = '#ansiturquoise'
-base2 = '#ansilightgray'
+
+# base16 terminal colors (with solarized labels)
+base03 = '#ansiblack'
+base02 = '#ansigreen'
+base01 = '#ansidarkgray'
+base00 = '#ansiblue'
+base0 = '#ansilightgray'
+base1 = '#ansifuchsia'
+base2 = '#ansiwhite'
 base3 = '#ansiwhite'
 red = '#ansidarkred'
 orange = '#ansired'
@@ -47,8 +49,26 @@ yellow = '#ansibrown'
 green = '#ansidarkgreen'
 cyan = '#ansiteal'
 blue = '#ansidarkblue'
-magenta = '#ansipurple'
-violet = '#ansifuchsia'
+magenta = '#ansiturquoise'
+violet = '#ansipurple'
+
+# solarized terminal colors
+# base03 = '#ansidarkgray'
+# base02 = '#ansiblack'
+# base01 = '#ansigreen'
+# base00 = '#ansiyellow'
+# base0 = '#ansiblue'
+# base1 = '#ansiturquoise'
+# base2 = '#ansilightgray'
+# base3 = '#ansiwhite'
+# red = '#ansidarkred'
+# orange = '#ansired'
+# yellow = '#ansibrown'
+# green = '#ansidarkgreen'
+# cyan = '#ansiteal'
+# blue = '#ansidarkblue'
+# magenta = '#ansipurple'
+# violet = '#ansifuchsia'
 
 # See https://github.com/jonathanslenders/python-prompt-toolkit/issues/355
 #colors = (globals()['base0' + d] for d in '08BADEC5379F1246')
