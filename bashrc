@@ -35,6 +35,22 @@ if [ "$(uname)" == "Darwin" ]; then
   export LSCOLORS=exgxcxdxbxegedabagacad
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
   export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
+  # added by Anaconda3 5.3.0 installer
+  # >>> conda init >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/gmac/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      \eval "$__conda_setup"
+  else
+      if [ -f "/Users/gmac/anaconda3/etc/profile.d/conda.sh" ]; then
+          . "/Users/gmac/anaconda3/etc/profile.d/conda.sh"
+          CONDA_CHANGEPS1=false conda activate base
+      else
+          \export PATH="/Users/gmac/anaconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda init <<<
 
 else 
 # Linux options {{{2
