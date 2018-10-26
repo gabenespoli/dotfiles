@@ -70,6 +70,7 @@ call plug#end()
 " General Settings {{{1
 " Environment {{{2
 if has('nvim')
+  " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
   let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
   let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
 endif
