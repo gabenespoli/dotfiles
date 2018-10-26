@@ -8,7 +8,7 @@ if [ "$(uname)" == "Darwin" ]; then
   export PATH="/usr/local/texbin:$PATH"
   export PATH="$HOME/Library/Haskell/bin:$PATH"
   alias ls="ls -hl"
-  alias lsa="ls -hla"
+  alias lsa="ls -hla" 
   alias gls="gls -hl --color --group-directories-first"
   alias glsa="gls -hla --color --group-directories-first"
   alias lsg="ls -hl | grep"
