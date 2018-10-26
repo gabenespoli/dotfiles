@@ -416,7 +416,7 @@ if has('mac') | nnoremap gO :!open <cfile><CR> | endif
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
 " prompt to open note
-nnoremap <leader>n :edit ~/notes/<C-d> 
+nnoremap <leader>N :edit ~/notes/<C-d> 
 
 " Plugin Settings {{{1
 " editing {{{2
@@ -474,8 +474,8 @@ nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
 
 " gabenespoli/vim-mutton {{{3
 nnoremap <leader>t :MuttonToggle('tagbar')<CR>
-nnoremap <leader>- :MuttonToggle('nerdtree')<CR>
-nnoremap <leader>= :MuttonToggle('buffergator')<CR>
+nnoremap <leader>n :MuttonToggle('nerdtree')<CR>
+nnoremap <leader>b :MuttonToggle('buffergator')<CR>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
