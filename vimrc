@@ -305,9 +305,7 @@ augroup line_return
 augroup END
 
 " cursor shape {{{2
-if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
-elseif empty($TMUX)
+if empty($TMUX)
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
