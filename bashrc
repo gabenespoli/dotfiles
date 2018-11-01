@@ -35,22 +35,6 @@ if [ "$(uname)" == "Darwin" ]; then
   export LSCOLORS=exgxcxdxbxegedabagacad
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
   export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
-  # added by Anaconda3 5.3.0 installer
-  # >>> conda init >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/gmac/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      \eval "$__conda_setup"
-  else
-      if [ -f "/Users/gmac/anaconda3/etc/profile.d/conda.sh" ]; then
-          . "/Users/gmac/anaconda3/etc/profile.d/conda.sh"
-          CONDA_CHANGEPS1=false conda activate base
-      else
-          \export PATH="/Users/gmac/anaconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-  # <<< conda init <<<
 
 else 
 # Linux options {{{2
@@ -73,25 +57,12 @@ else
   alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
   #eval `dircolors $HOME/.dir_colors/dircolors`
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
-  # >>> conda init >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$(CONDA_REPORT_ERRORS=false '/home/egserver/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      \eval "$__conda_setup"
-  else
-      if [ -f "/home/egserver/anaconda3/etc/profile.d/conda.sh" ]; then
-          . "/home/egserver/anaconda3/etc/profile.d/conda.sh"
-          CONDA_CHANGEPS1=false conda activate base
-      else
-          \export PATH="/home/egserver/anaconda3/bin:$PATH"
-      fi
-  fi
-  unset __conda_setup
-  # <<< conda init <<<
+
 fi
 
 # Environment {{{1
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 if [ -f "$HOME/dotfiles/git-prompt.sh" ]; then
@@ -109,13 +80,6 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 # bind 'TAB:menu-complete'
 bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
-
-# setup pyenv and rbenv
-if hash pyenv 2> /dev/null; then 
-  eval "$(pyenv init -)" ; 
-  eval "$(pyenv virtualenv-init -)" ;
-fi
-if hash rbenv 2> /dev/null; then eval "$(rbenv init -)" ; fi
 
 # Aliases & Functions {{{1
 alias edit=$EDITOR
@@ -231,3 +195,11 @@ alias cv="$EDITOR ~/r/archive/2017/OGS/cv/NespoliGA_cv.md"
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
 sourcex "$HOME/bin/network_aliases"
+
+# stuff that should be at the end
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+if hash rbenv 2> /dev/null; then
+  eval "$(rbenv init -)" ;
+fi
