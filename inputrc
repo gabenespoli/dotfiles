@@ -30,6 +30,8 @@ $if mode=vi
     "\C-l": clear-screen
     "\C-n": history-search-forward
     "\C-p": history-search-backward
+    "\C-u": unix-line-discard
+    "\C-x": re-read-init-file
 
     "\eb": backward-word
     "\ed": kill-word
