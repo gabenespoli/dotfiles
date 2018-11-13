@@ -31,9 +31,14 @@ $if mode=vi
         "\C-p": history-search-backward
         "\C-x": re-read-init-file
 
-        "\eb": backward-word
-        "\ed": kill-word
-        "\ef": forward-word
+    "\eb": backward-word
+    "\ed": kill-word
+    "\ef": forward-word
+
+$else
+    "\C-n": history-search-forward
+    "\C-p": history-search-backward
+
 $endif
 
 ## Other
