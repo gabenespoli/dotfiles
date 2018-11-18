@@ -34,7 +34,6 @@ Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 " Plug 'MarcWeber/vim-addon-qf-layout'
-Plug 'MattesGroeger/vim-bookmarks'
 Plug 'tacahiroy/ctrlp-funky'
 
 " syntax/linting/highlighting {{{2
@@ -547,14 +546,6 @@ let g:tagbar_type_r = {
         \ 'v:FunctionVariables',
     \ ]
 \ }
-
-" MattesGroeger/vim-bookmarks {{{3
-let g:bookmark_sign = '*>'
-let g:bookmark_annotation_sign = '=>'
-let g:bookmark_center = 1
-let g:bookmark_location_list = 1
-nmap [m <Plug>BookmarkPrev
-nmap ]m <Plug>BookmarkNext
 
 " tacahiroy/ctrlp-funky {{{3
 nnoremap <leader>f :CtrlPFunky<CR>
