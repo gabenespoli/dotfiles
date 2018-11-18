@@ -64,6 +64,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 Plug 'jalvesaq/Nvim-R', {'for': 'r'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
 call plug#end()
 
@@ -706,6 +707,16 @@ let R_show_args = 0
 let R_objbr_place = 'LEFT'
 let rout_follow_colorscheme = 1
 let Rout_more_colors = 1
+
+" davidhalter/jedi-vim {{{3
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = '' " just use <C-x><C-o>
+let g:jedi#goto_command = '<localleader>d'
+let g:jedi#goto_assignments_command = '<localleader>g'
+let g:jedi#rename_command = '<localleader>r'
+let g:jedi#usages_command = '<localleader>n'
 
 " Lilypond {{{3
 filetype off
