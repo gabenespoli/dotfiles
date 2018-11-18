@@ -372,7 +372,7 @@ nnoremap <silent> cos :set spell!<CR>
 nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> cow :set wrap!<CR>
 nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
-nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
+nnoremap <silent> coY :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " window resizing {{{2
 nnoremap _        <C-w>>:echo winwidth('.')<CR>
@@ -552,7 +552,7 @@ nnoremap <leader>f :CtrlPFunky<CR>
 
 " syntax/linting/highlighting {{{2
 " w0rp/ale
-nnoremap <silent> coY :ALEToggle<CR>:echo g:ale_enabled<CR>
+nnoremap <silent> coy :ALEToggle<CR>:echo g:ale_enabled<CR>
 nmap [y <Plug>(ale_previous_wrap)
 nmap ]y <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
