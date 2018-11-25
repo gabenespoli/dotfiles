@@ -573,7 +573,7 @@ function! ALEStatus(type) abort "{{{
 endfunction "}}}
 
 " gabenespoli/vim-colors-sumach
-nnoremap <silent> coB :SumachContrastToggle<CR>
+nnoremap <silent> coC :SumachContrastToggle<CR>
 
 " gabenespoli/vim-criticmarkup
 let g:criticmarkup#disable#highlighting = 1
