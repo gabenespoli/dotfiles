@@ -45,18 +45,17 @@ Plug 'gabenespoli/vim-colors-sumach'
 
 " auto-completion {{{2
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim', {'for': 'vim'}
 Plug 'lionawurscht/deoplete-biblatex', {'for': ['markdown', 'pandoc']}
-Plug 'wellle/tmux-complete.vim'
-" Plug 'davidhalter/jedi'
-" Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi', {'for': 'python'}
 
 " external {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -614,7 +613,7 @@ let g:tagbar_type_markdown = {
 " Shougo/deoplete.vim
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
-call deoplete#custom#option('ignore_sources', {'_': ['around']})
+call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer', 'file']})
 imap <expr> <Tab> MyCompletion()
 function! MyCompletion() "{{{
   let col = col('.') - 1
@@ -624,7 +623,7 @@ function! MyCompletion() "{{{
     " if cursor is at bol or in front of whitespace
     return "\<Tab>"
   else
-    return deoplete#mappings#manual_complete()
+    return deoplete#manual_complete()
   endif
 endfunction "}}}
 
@@ -638,10 +637,12 @@ endif
 let g:necovim#complete_functions.Ref = 'ref#complete'
 
 " lionawurscht/deoplete-biblatex
-let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
-let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
-let g:deoplete#sources#biblatex#delimiter = ';'
-call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
+if exists('g:deoplete#_initialized')
+  let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
+  let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
+  let g:deoplete#sources#biblatex#delimiter = ';'
+  call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
+endif
 
 " external {{{2
 " christoomey/vim-tmux-navigator {{{3
