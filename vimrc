@@ -563,8 +563,6 @@ nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_error = '!!'
-let g:ale_sign_warning = '>>'
 let g:ale_set_loclist = 0
 let g:ale_linter_aliases = {'octave': 'matlab'}
 let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
