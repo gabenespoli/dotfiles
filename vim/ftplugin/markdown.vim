@@ -10,8 +10,7 @@ endif
 
 " keybindings {{{1
 " general {{{2
-nnoremap <buffer> <localleader>p :w<CR>:!. preview %<CR>
-nnoremap <buffer> <localleader>P :w<CR>:!. pdoc % open
+nnoremap <buffer> <localleader>p :!pandoc % -o %.pdf && open %.pdf<CR><CR>
 
 " move up and down by visual line
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
