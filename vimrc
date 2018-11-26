@@ -328,6 +328,7 @@ nnoremap <C-j> <CR>
 nnoremap Y y$
 nnoremap q :q<CR>
 nnoremap Q q
+nnoremap <BS> <C-^>
 inoremap <C-n> <down>
 inoremap <C-p> <up>
 cnoremap <C-n> <down>
