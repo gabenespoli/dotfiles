@@ -242,7 +242,7 @@ set incsearch nohlsearch
 set showmatch                   " hi matching [{()}]
 let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
-set completeopt=menuone,preview
+set completeopt=menuone,preview,noinsert,noselect
 if executable('rg')
   set grepprg=rg\ --line-number\ $*
   " set grepprg=git\ grep\ --line-number\ --no-color\ $*
