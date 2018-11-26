@@ -709,8 +709,7 @@ let Rout_more_colors = 1
 " davidhalter/jedi-vim {{{3
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = '' " just use <C-x><C-o>
+let g:jedi#completions_enabled = 0
 let g:jedi#goto_command = '<localleader>d'
 let g:jedi#goto_assignments_command = '<localleader>g'
 let g:jedi#rename_command = '<localleader>r'
