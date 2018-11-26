@@ -2,7 +2,6 @@
 syntax match TodoTitle          /^\/\/.*$/
 syntax match TodoTitle          /^##.*$/
 syntax match TodoTitle          /^#.*$/
-syntax match TodoTitle          /^.*:$/
 
 " bullets {{{1
 syntax match TodoTodoChar       /^\s*-\ /
@@ -27,6 +26,7 @@ syntax match TodoTickBoxComment /^\s*-\ \[>\]\ /
 syntax match TodoTag            /+\S*/
 syntax match TodoKey            /\S*:\S*/
 syntax match TodoPoints         /pts:\d*/
+syntax match TodoTitle          /^.*:$/
 
 syntax match TodoContext        /@\S*/
 syntax match TodoWaiting        /@waiting/
