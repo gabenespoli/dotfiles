@@ -77,6 +77,7 @@ endif
 " Colorscheme {{{2
 syntax enable
 let g:sumach_terminal_italics = 1
+let g:sumach_color_cursor = 1
 colorscheme sumach
 if has('gui_running')
   set background=light
