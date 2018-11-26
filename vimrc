@@ -1,4 +1,8 @@
-" .vimrc file for gabenespoli@gmail.com
+" Author: Gabe Nespoli
+" Email: gabenespoli@gmail.com
+" File: vimrc/init.vim for vim/nvim
+scriptencoding utf-8
+
 " Plugin Manager {{{1
 call plug#begin('~/.vim/plugged')
 
