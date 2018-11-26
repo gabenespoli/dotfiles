@@ -1,6 +1,9 @@
 " general {{{1
 setlocal textwidth=0
 setlocal wrap spell nonumber norelativenumber
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
 if &diff
   augroup markdown_diff
     au!
