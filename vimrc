@@ -560,6 +560,7 @@ let g:ale_sign_warning = '>>'
 let g:ale_set_loclist = 0
 let g:ale_linter_aliases = {'octave': 'matlab'}
 let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
+let g:ale_python_flake8_options = '--extend-ignore=E221,E266,E261,E3,E402,E501'
 function! ALEStatus(type) abort "{{{
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
