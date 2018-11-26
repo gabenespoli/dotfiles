@@ -337,6 +337,8 @@ nnoremap <silent> <M-s> :silent write<CR>
 inoremap <silent> <M-s> <Esc>:silent write<CR>a
 nnoremap <M-{> :tabprevious<CR>
 nnoremap <M-}> :tabnext<CR>
+inoremap <M-{> <Esc>:tabprevious<CR>
+inoremap <M-}> <Esc>:tabnext<CR>
 tnoremap <silent> <C-Space> <C-\><C-N>
 tnoremap <silent> <M-{> <C-\><C-N>:tabprevious<CR>
 tnoremap <silent> <M-}> <C-\><C-N>:tabnext<CR>
