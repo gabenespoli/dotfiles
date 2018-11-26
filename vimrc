@@ -342,6 +342,7 @@ inoremap <M-}> <Esc>:tabnext<CR>
 tnoremap <silent> <C-Space> <C-\><C-N>
 tnoremap <silent> <M-{> <C-\><C-N>:tabprevious<CR>
 tnoremap <silent> <M-}> <C-\><C-N>:tabnext<CR>
+nnoremap <C-w><C-f> <C-w>vgf
 
 " next/previous {{{2
 nnoremap <silent> [b :bprevious<CR>
