@@ -373,6 +373,8 @@ nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> cow :set wrap!<CR>
 nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
 nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
+nnoremap <silent> coFm :set filetype=markdown<CR>
+nnoremap <silent> coFt :set filetype=text<CR>
 
 " window resizing {{{2
 nnoremap _        <C-w>>:echo winwidth('.')<CR>
