@@ -647,12 +647,10 @@ endif
 let g:necovim#complete_functions.Ref = 'ref#complete'
 
 " lionawurscht/deoplete-biblatex
-if exists('g:deoplete#_initialized')
-  let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
-  let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
-  let g:deoplete#sources#biblatex#delimiter = ';'
-  call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
-endif
+let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
+let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
+let g:deoplete#sources#biblatex#delimiter = ';'
+call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
 " external {{{2
 " christoomey/vim-tmux-navigator {{{3
