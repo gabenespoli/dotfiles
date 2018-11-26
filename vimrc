@@ -117,7 +117,6 @@ set visualbell
 set hidden
 set clipboard=unnamed
 set diffopt+=context:0
-set mouse=a
 
 " Folding {{{2
 set foldminlines=0
