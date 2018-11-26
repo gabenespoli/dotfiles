@@ -1,49 +1,24 @@
 " .vimrc file for gabenespoli@gmail.com
 " Plugin Manager {{{1
-" make sure vim-plug is installed {{{2 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  augroup vim_plug
-    au!
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  augroup END
-endif
 call plug#begin('~/.vim/plugged')
 
-" editing {{{2
+" general {{{2
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'godlygeek/tabular'
-Plug 'andymass/vim-tradewinds'
-
-" git/diff {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'mhinz/vim-signify'
-Plug 'rickhowe/diffchar.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'w0rp/ale'
 
-" sidebars & sidebar control {{{2
-Plug 'gabenespoli/vim-cider-vinegar'
-Plug 'gabenespoli/vim-mutton'
-Plug 'ctrlpvim/ctrlp.vim'
+" sidebars {{{2
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
-" Plug 'MarcWeber/vim-addon-qf-layout'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 
-" syntax/linting/highlighting {{{2
-Plug 'w0rp/ale'
-Plug 'gabenespoli/vim-criticmarkup'
-Plug 'jszakmeister/markdown2ctags'
-Plug 'gabenespoli/vim-colors-sumach'
-" Plug 'vim-python/python-syntax'
-
-" auto-completion {{{2
+" autocomplete {{{2
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 else
@@ -55,14 +30,30 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim', {'for': 'vim'}
 Plug 'lionawurscht/deoplete-biblatex', {'for': ['markdown', 'pandoc']}
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
+Plug 'zchee/deoplete-jedi',            {'for': 'python'}
 
-" external {{{2
+" tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
-Plug 'jalvesaq/Nvim-R', {'for': 'r'}
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
+
+" python & R {{{2
+Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
+Plug 'davidhalter/jedi-vim',           {'for': 'python'}
+Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
+Plug 'jeetsukumaran/vim-pythonsense',  {'for': 'python'}
+Plug 'szymonmaszke/vimpyter'
+
+" markdown {{{2
+Plug 'godlygeek/tabular',              {'for': ['markdown', 'pandoc']}
+Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
+Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
+Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
+
+" local {{{2
+Plug '~/bin/vim/vim-colors-sumach'
+Plug '~/bin/vim/vim-cider-vinegar'
+Plug '~/bin/vim/vim-mutton'
 
 call plug#end()
 
@@ -425,11 +416,7 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 nnoremap <leader>N :edit ~/notes/<C-d> 
 
 " Plugin Settings {{{1
-" editing {{{2
-" godlygeek/tabular
-nnoremap <leader>\| :Tabularize /\|<CR>
-
-" git/diff {{{2
+" general {{{2
 " tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>
 nnoremap gC :Gcommit<CR>
@@ -453,57 +440,30 @@ nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
-" rickhowe/diffchar
-let g:DiffPairVisible = 0
-let g:DiffUpdate = 0
-let g:DiffModeSync = 0
-nmap coD            <Plug>ToggleDiffCharAllLines
-nmap <nop>          <Plug>ToggleDiffCharCurrentLine
-nmap <nop>          <Plug>JumpDiffCharPrevStart
-nmap <nop>          <Plug>JumpDiffCharNextStart
-nmap <nop>          <Plug>JumpDiffCharPrevEnd
-nmap <nop>          <Plug>JumpDiffCharNextEnd
-nmap dO             <Plug>GetDiffCharPair
-nmap dP             <Plug>PutDiffCharPair
+" w0rp/ale
+nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
+nmap [v <Plug>(ale_previous_wrap)
+nmap ]v <Plug>(ale_next_wrap)
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_set_loclist = 0
+let g:ale_linter_aliases = {'octave': 'matlab'}
+let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
+let g:ale_python_flake8_options = '--extend-ignore=E221,E266,E261,E3,E402,E501'
+function! ALEStatus(type) abort "{{{
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  if a:type ==# 'Errors'
+    return l:all_errors == 0 ? '' : printf('[%dE]', all_errors)
+  elseif a:type ==# 'Warnings'
+    return l:all_non_errors == 0 ? '' : printf('[%dW]', all_non_errors)
+  else
+    return ''
+  endif
+endfunction "}}}
 
 " sidebars {{{2
-" gabenespoli/vim-cider-vinegar {{{3
-let g:CiderEnableNERDTree = 1
-let g:CiderEnableBuffergator = 1
-let g:CiderToggleNERDTree = '-'
-let g:CiderToggleBuffergator = '='
-" let g:CiderQuitMap = 'q'
-let g:CiderToggleQF = '<leader>Q'
-let g:CiderToggleLL = '<leader>L'
-nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
-      \ ':cclose<CR>' : ':botright copen<CR>'
-nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
-      \ ':lclose<CR>' : ':botright lopen<CR>'
-
-" gabenespoli/vim-mutton {{{3
-nnoremap <leader>t :MuttonToggle('tagbar')<CR>
-nnoremap <leader>n :MuttonToggle('nerdtree')<CR>
-nnoremap <leader>b :MuttonToggle('buffergator')<CR>
-let g:mutton_min_center_width = 88
-let g:mutton_min_side_width = 25
-
-" ctrlpvim/ctrlp.vim {{{3
-nnoremap <C-q> :CtrlPQuickfix<CR>
-nnoremap <C-n> :CtrlP<CR>
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_switch_buffer = 0 
-if executable('fd')
-  let g:ctrlp_user_command = 'fd --color never "" %s'
-endif
-let g:ctrlp_prompt_mappings = {
- \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
- \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
- \ 'PrtHistory(-1)':         [],
- \ 'PrtHistory(1)':          [],
- \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
- \ }
-
-" scrooloose/NERDTree {{{3
+" scrooloose/NERDTree
 augroup nerdtree
   au!
   autocmd filetype nerdtree setlocal bufhidden=wipe
@@ -523,14 +483,14 @@ let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapCWD = 'cD'
 
-" jeetsukumaran/vim-buffergator {{{3
+" jeetsukumaran/vim-buffergator
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_autoupdate = 1
 nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
 
-" majutsushi/tagbar{{{3
+" majutsushi/tagbar
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = -1
@@ -554,70 +514,26 @@ let g:tagbar_type_r = {
     \ ]
 \ }
 
-" tacahiroy/ctrlp-funky {{{3
+" ctrlpvim/ctrlp.vim
+nnoremap <C-q> :CtrlPQuickfix<CR>
+nnoremap <C-n> :CtrlP<CR>
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_switch_buffer = 0 
+if executable('fd')
+  let g:ctrlp_user_command = 'fd --color never "" %s'
+endif
+let g:ctrlp_prompt_mappings = {
+ \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
+ \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
+ \ 'PrtHistory(-1)':         [],
+ \ 'PrtHistory(1)':          [],
+ \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
+ \ }
+
+" tacahiroy/ctrlp-funky
 nnoremap <leader>f :CtrlPFunky<CR>
 
-" syntax/linting/highlighting {{{2
-" w0rp/ale
-nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
-nmap [v <Plug>(ale_previous_wrap)
-nmap ]v <Plug>(ale_next_wrap)
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_set_loclist = 0
-let g:ale_linter_aliases = {'octave': 'matlab'}
-let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
-let g:ale_python_flake8_options = '--extend-ignore=E221,E266,E261,E3,E402,E501'
-function! ALEStatus(type) abort "{{{
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  if a:type ==# 'Errors'
-    return l:all_errors == 0 ? '' : printf('[%dE]', all_errors)
-  elseif a:type ==# 'Warnings'
-    return l:all_non_errors == 0 ? '' : printf('[%dW]', all_non_errors)
-  else
-    return ''
-  endif
-endfunction "}}}
-
-" gabenespoli/vim-colors-sumach
-nnoremap <silent> coC :SumachContrastToggle<CR>
-
-" gabenespoli/vim-criticmarkup
-let g:criticmarkup#disable#highlighting = 1
-
-" jszakmeister/markdown2ctags {{{3
-let g:tagbar_type_pandoc = {
-  \ 'ctagstype': 'pandoc',
-  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
-  \ 'ctagsargs' : '-f - --sort=yes',
-  \ 'kinds' : [
-    \ 's:sections',
-    \ 'i:images'
-  \ ],
-  \ 'sro' : '|',
-  \ 'kind2scope' : {
-    \ 's' : 'section',
-  \ },
-  \ 'sort': 0,
-\ }
-
-let g:tagbar_type_markdown = {
-  \ 'ctagstype': 'markdown',
-  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
-  \ 'ctagsargs' : '-f - --sort=yes',
-  \ 'kinds' : [
-    \ 's:sections',
-    \ 'i:images'
-  \ ],
-  \ 'sro' : '|',
-  \ 'kind2scope' : {
-    \ 's' : 'section',
-  \ },
-  \ 'sort': 0,
-\ }
-
-" auto-completion {{{2
+" autocomplete {{{2
 " Shougo/deoplete.vim
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
@@ -650,8 +566,8 @@ let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
 let g:deoplete#sources#biblatex#delimiter = ';'
 call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
-" external {{{2
-" christoomey/vim-tmux-navigator {{{3
+" tmux {{{2
+" christoomey/vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if has('mac')
@@ -685,7 +601,7 @@ if has('nvim')
   tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime {{{3
+" jpalardy/vim-slime
 let g:slime_no_mappings = 1
 xmap <C-c>      <Plug>SlimeRegionSend
 nmap <C-c>      <Plug>SlimeMotionSend
@@ -696,7 +612,8 @@ if exists('$TMUX')
   let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.1'}
 endif
 
-" jalvesaq/Nvim-R {{{3
+" python & R {{{2
+" jalvesaq/Nvim-R
 let R_assign = 0
 let R_esc_term = 0
 let R_show_args = 0
@@ -704,7 +621,7 @@ let R_objbr_place = 'LEFT'
 let rout_follow_colorscheme = 1
 let Rout_more_colors = 1
 
-" davidhalter/jedi-vim {{{3
+" davidhalter/jedi-vim
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#completions_enabled = 0
@@ -713,7 +630,82 @@ let g:jedi#goto_assignments_command = '<localleader>g'
 let g:jedi#rename_command = '<localleader>r'
 let g:jedi#usages_command = '<localleader>n'
 
-" Lilypond {{{3
+" markdown {{{2
+" godlygeek/tabular
+nnoremap <leader>\| :Tabularize /\|<CR>
+
+" rickhowe/diffchar
+let g:DiffPairVisible = 0
+let g:DiffUpdate = 0
+let g:DiffModeSync = 0
+nmap coD   <Plug>ToggleDiffCharAllLines
+nmap <nop> <Plug>ToggleDiffCharCurrentLine
+nmap <nop> <Plug>JumpDiffCharPrevStart
+nmap <nop> <Plug>JumpDiffCharNextStart
+nmap <nop> <Plug>JumpDiffCharPrevEnd
+nmap <nop> <Plug>JumpDiffCharNextEnd
+nmap dO    <Plug>GetDiffCharPair
+nmap dP    <Plug>PutDiffCharPair
+
+" gabenespoli/vim-criticmarkup
+let g:criticmarkup#disable#highlighting = 1
+
+" jszakmeister/markdown2ctags
+let g:tagbar_type_pandoc = {
+  \ 'ctagstype': 'pandoc',
+  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
+  \ 'ctagsargs' : '-f - --sort=yes',
+  \ 'kinds' : [
+    \ 's:sections',
+    \ 'i:images'
+  \ ],
+  \ 'sro' : '|',
+  \ 'kind2scope' : {
+    \ 's' : 'section',
+  \ },
+  \ 'sort': 0,
+\ }
+
+let g:tagbar_type_markdown = {
+  \ 'ctagstype': 'markdown',
+  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
+  \ 'ctagsargs' : '-f - --sort=yes',
+  \ 'kinds' : [
+    \ 's:sections',
+    \ 'i:images'
+  \ ],
+  \ 'sro' : '|',
+  \ 'kind2scope' : {
+    \ 's' : 'section',
+  \ },
+  \ 'sort': 0,
+\ }
+
+" local {{{2
+" gabenespoli/vim-colors-sumach
+nnoremap <silent> coC :SumachContrastToggle<CR>
+
+" gabenespoli/vim-cider-vinegar
+let g:CiderEnableNERDTree = 1
+let g:CiderEnableBuffergator = 1
+let g:CiderToggleNERDTree = '-'
+let g:CiderToggleBuffergator = '='
+" let g:CiderQuitMap = 'q'
+let g:CiderToggleQF = '<leader>Q'
+let g:CiderToggleLL = '<leader>L'
+nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
+      \ ':cclose<CR>' : ':botright copen<CR>'
+nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
+      \ ':lclose<CR>' : ':botright lopen<CR>'
+
+" gabenespoli/vim-mutton
+nnoremap <leader>t :MuttonToggle('tagbar')<CR>
+nnoremap <leader>n :MuttonToggle('nerdtree')<CR>
+nnoremap <leader>b :MuttonToggle('buffergator')<CR>
+let g:mutton_min_center_width = 88
+let g:mutton_min_side_width = 25
+
+" Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 "set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
