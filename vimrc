@@ -688,13 +688,12 @@ if has('nvim')
 endif
 
 " jpalardy/vim-slime {{{3
+let g:slime_no_mappings = 1
+xmap <C-c>      <Plug>SlimeRegionSend
+nmap <C-c>      <Plug>SlimeMotionSend
+nmap <C-c><C-c> <Plug>SlimeLineSend
 let g:slime_target = 'tmux'
 let g:slime_dont_ask_default = 1
-let g:slime_no_mappings = 1
-nmap <C-l>   <Plug>SlimeLineSend
-nmap <M-C-l> :execute "normal \<Plug>SlimeLineSendj"<CR>
-nmap <C-k>   <Plug>SlimeParagraphSend
-nmap <M-C-k> :execute "normal \<Plug>SlimeParagraphSend}j"<CR>
 if exists('$TMUX')
   let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.1'}
 endif
