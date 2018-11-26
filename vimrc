@@ -551,9 +551,9 @@ nnoremap <leader>f :CtrlPFunky<CR>
 
 " syntax/linting/highlighting {{{2
 " w0rp/ale
-nnoremap <silent> coy :ALEToggle<CR>:echo g:ale_enabled<CR>
-nmap [y <Plug>(ale_previous_wrap)
-nmap ]y <Plug>(ale_next_wrap)
+nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
+nmap [v <Plug>(ale_previous_wrap)
+nmap ]v <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '>>'
