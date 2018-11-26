@@ -18,6 +18,8 @@ noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
 noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
+inoremap <buffer> <silent> <expr> <C-n> (v:count == 0 ? '<C-o>gj' : '<C-n>')
+inoremap <buffer> <silent> <expr> <C-p> (v:count == 0 ? '<C-o>gk' : '<C-p>')
 
 " criticmarkup and cite.py {{{2
 " custom critic bindings
