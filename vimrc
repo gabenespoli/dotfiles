@@ -248,7 +248,7 @@ endif
 " ale [+][RO] 'filename' [type] [fugitive] ... line/lines,col (pct)
 " use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
-set statusline+=%#ErrorMsg#%{ALEStatus('Errors')}%*
+set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 " set statusline+=%{mode()}
 set statusline+=%#Modified#%m%*%#ReadOnly#%r%*\ %t\ %y
