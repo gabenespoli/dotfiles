@@ -252,7 +252,7 @@ set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 " set statusline+=%{mode()}
 set statusline+=%#Modified#%m%*%#ReadOnly#%r%*\ %t\ %y
-set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ %{FugitiveStatusline()}
 " set statusline+=%#StatusLineFill#%=%*
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
