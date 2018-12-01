@@ -324,6 +324,7 @@ nnoremap <leader>N :edit ~/notes/<C-d>
 " general {{{2
 " tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>
+nnoremap gS :Gstatus<CR><C-w>H@=&columns/4<CR><C-w>\|
 nnoremap gC :Gcommit<CR>
 nnoremap gd mx:tabnew %<CR>`x:Gdiff<CR>
 nnoremap gA :Gwrite<CR>:write<CR>
@@ -333,7 +334,7 @@ augroup gitcommit
   au!
   " TODO: make height of window bigger
   autocmd FileType gitcommit nnoremap <buffer> <CR> :wq<CR><CR>
-  autocmd FileType gitcommit nnoremap <buffer> <M-s> :wq<CR><CR>:Gstatus<CR>
+  autocmd FileType gitcommit nnoremap <buffer> <M-s> :wq<CR><CR>:Gstatus<CR><C-w>H@=&columns/4<CR><C-w>\|
 augroup END
 augroup fugitive
   au!
