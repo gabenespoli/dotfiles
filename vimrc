@@ -335,6 +335,10 @@ augroup gitcommit
   autocmd FileType gitcommit nnoremap <buffer> <CR> :wq<CR><CR>
   autocmd FileType gitcommit nnoremap <buffer> <M-s> :wq<CR><CR>:Gstatus<CR>
 augroup END
+augroup fugitive
+  au!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END
 
 " airblade/gitgutter
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
