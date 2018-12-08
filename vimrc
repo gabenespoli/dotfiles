@@ -296,13 +296,13 @@ inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-y>" : "\<CR>"
 
-"vimdiff
+" vimdiff
 nnoremap du :diffupdate<CR>
 " vnoremap do :diffget<CR>
 " vnoremap dp :diffput<CR>
 " vnoremap dd d
 
-" Spell checking
+" spell checking
 nnoremap <leader>s 1z=
 
 " insert dates
