@@ -324,7 +324,6 @@ nnoremap <leader>N :edit ~/notes/<C-d>
 " general {{{2
 " tpope/vim-fugitive
 nnoremap gs :Gstatus<CR>
-nnoremap gS :Gstatus<CR><C-w>H@=&columns/4<CR><C-w>\|
 nnoremap gC :Gcommit<CR>
 nnoremap gd mx:tabnew %<CR>`x:Gdiff<CR>
 nnoremap gA :Gwrite<CR>:write<CR>
@@ -612,6 +611,7 @@ nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
 nnoremap <leader>t :MuttonToggle('tagbar')<CR>
 nnoremap <leader>n :MuttonToggle('nerdtree')<CR>
 nnoremap <leader>b :MuttonToggle('buffergator')<CR>
+nnoremap gS :MuttonToggle('gitcommit')<CR>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
