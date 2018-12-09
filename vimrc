@@ -136,25 +136,18 @@ set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
 if executable('rg')
   set grepprg=rg\ --line-number\ $*
-  " set grepprg=git\ grep\ --line-number\ --no-color\ $*
 endif
 
 " Status Line {{{2
 " ale [+][RO] 'filename' [type] [fugitive] ... line/lines,col (pct)
-" use this to add [tab#|win#] ... [%{tabpagenr()}\|%{winnr()}]
 set statusline=
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 " set statusline+=%{mode()}
 set statusline+=%#Modified#%m%*%#ReadOnly#%r%*\ %t\ %y
 set statusline+=\ %{FugitiveStatusline()}
-" set statusline+=%#StatusLineFill#%=%*
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
-" TODO: function to dynamically create statusbar highlights
-" - get statusbar background color
-" - get desired fg color from another hl group
-" - put them together
 
 " GUI Settings {{{2
 set guioptions=g
