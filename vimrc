@@ -88,15 +88,9 @@ set swapfile
 set undodir=~/tmp/vim/undo/
 set backupdir=~/tmp/vim/backup/
 set directory=~/tmp/vim/swap/
-if !isdirectory(expand(&undodir))
-  call mkdir(expand(&undodir), 'p')
-endif
-if !isdirectory(expand(&backupdir))
-  call mkdir(expand(&backupdir), 'p')
-endif
-if !isdirectory(expand(&directory))
-  call mkdir(expand(&directory), 'p')
-endif
+if !isdirectory(expand(&undodir)) | call mkdir(expand(&undodir), 'p') | endif
+if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
+if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 
 " Editing {{{2
 set number relativenumber
@@ -134,9 +128,7 @@ let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
-if executable('rg')
-  set grepprg=rg\ --line-number\ $*
-endif
+if executable('rg') | set grepprg=rg\ --line-number\ $* | endif
 
 " Status Line {{{2
 " ale [+][RO] 'filename' [type] [fugitive] ... line/lines,col (pct)
@@ -421,9 +413,7 @@ nnoremap <C-q> :CtrlPQuickfix<CR>
 nnoremap <C-n> :CtrlP<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
-if executable('fd')
-  let g:ctrlp_user_command = 'fd --color never "" %s'
-endif
+if executable('fd') | let g:ctrlp_user_command = 'fd --color never "" %s' | endif
 let g:ctrlp_prompt_mappings = {
  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
