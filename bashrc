@@ -20,7 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
   alias openx="open -a Microsoft\ Excel.app"
   alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
   alias wifi="sudo networksetup -setairportnetwork en0"
-  alias t="todo.sh -a"
   function findershowhidden() {
     case $1 in
         on|true ) command="TRUE" ;;
@@ -51,7 +50,6 @@ else
   alias agu="sudo apt-get update"
   alias sambastart="sudo /etc/init.d/samba start"
   alias trash="gio trash"
-  alias t="todo-txt -a"
   alias d="dropbox"
   alias ds="dropbox status"
   alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
