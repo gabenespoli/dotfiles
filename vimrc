@@ -299,6 +299,19 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 " prompt to open note
 nnoremap <leader>N :edit ~/notes/<C-d> 
 
+" function for grep
+nnoremap <leader>g :MyGrep 
+nnoremap <leader>T :MyGrep TODO<CR>
+command! -nargs=+ MyGrep call MyGrep(<q-args>)
+function! MyGrep(expr)
+  if exists(':Ggrep')
+    execute 'Ggrep ' . a:expr
+  else
+    execute 'grep ' . a:expr . ' *'
+  endif
+  copen
+endfunction
+
 " Plugin Settings {{{1
 " general {{{2
 " tpope/vim-fugitive
