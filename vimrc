@@ -263,14 +263,6 @@ nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 nnoremap <silent> coFm :set filetype=markdown<CR>
 nnoremap <silent> coFt :set filetype=text<CR>
 
-" window resizing {{{2
-nnoremap _        <C-w>>:echo winwidth('.')<CR>
-nnoremap <Right>  <C-w>>:echo winwidth('.')<CR>
-nnoremap <Left>   <C-w><:echo winwidth('.')<CR>
-nnoremap +        <C-w>+:echo winheight('.')<CR>
-nnoremap <Up>     <C-w>+:echo winheight('.')<CR>
-nnoremap <Down>   <C-w>-:echo winheight('.')<CR>
-
 " misc {{{2
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
