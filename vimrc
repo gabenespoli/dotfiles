@@ -44,8 +44,9 @@ Plug 'jpalardy/vim-slime'
 " python & R {{{2
 Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
 Plug 'davidhalter/jedi-vim',           {'for': 'python'}
-Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': 'python'}
+Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
+Plug 'tmhedberg/SimpylFold',           {'for': 'python'}
 Plug 'szymonmaszke/vimpyter'
 
 " markdown {{{2
