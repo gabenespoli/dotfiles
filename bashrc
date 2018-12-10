@@ -151,9 +151,9 @@ alias hangups="hangups \
   --col-msg-self-bg default"
 
 # todo, notes, and calendar {{{2
-alias tt="grep -r TODO *"
-alias ttt="nvim -c 'silent vimgrep TODO *' -c 'copen'"
-alias todo="$EDITOR $HOME/todo/todo.txt"
+alias t="todoist"
+alias tt="todoist list --filter today"
+alias todo="grep -r TODO *"
 alias pomfile="$EDITOR $HOME/pomodoro/$(date +%Y-%m-%d).txt"
 function pomo() {
   if [ -f ~/.thyme-pid ]; then
