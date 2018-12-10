@@ -386,11 +386,14 @@ let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapCWD = 'cD'
 
 " jeetsukumaran/vim-buffergator
+let g:buffergator_autoupdate = 0
+let g:buffergator_autodismiss_on_select = 1
+let g:buffergator_viewport_split_policy = 'B'
+let g:buffergator_hsplit_size = 10
 let g:buffergator_suppress_keymaps = 1
-let g:buffergator_autodismiss_on_select = 0
-let g:buffergator_autoupdate = 1
 nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
+nnoremap <leader>b :BuffergatorToggle<CR>
 
 " majutsushi/tagbar
 let g:tagbar_autofocus = 1
@@ -591,9 +594,7 @@ nnoremap <silent> coC :SumachContrastToggle<CR>
 
 " gabenespoli/vim-cider-vinegar
 let g:CiderEnableNERDTree = 1
-let g:CiderEnableBuffergator = 1
 let g:CiderToggleNERDTree = '-'
-let g:CiderToggleBuffergator = '='
 " let g:CiderQuitMap = 'q'
 let g:CiderToggleQF = '<leader>Q'
 let g:CiderToggleLL = '<leader>L'
@@ -605,7 +606,6 @@ nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
 " gabenespoli/vim-mutton
 nnoremap <leader>t :MuttonToggle('tagbar')<CR>
 nnoremap <leader>n :MuttonToggle('nerdtree')<CR>
-nnoremap <leader>b :MuttonToggle('buffergator')<CR>
 nnoremap gS :MuttonToggle('gitcommit')<CR>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
