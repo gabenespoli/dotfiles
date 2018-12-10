@@ -312,6 +312,12 @@ function! MyGrep(expr)
   copen
 endfunction
 
+" auto-close qf window after selection
+augroup QFClose
+  au!
+  autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
+augroup END
+
 " Plugin Settings {{{1
 " general {{{2
 " tpope/vim-fugitive
