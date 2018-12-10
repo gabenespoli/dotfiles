@@ -39,6 +39,11 @@ outputFile=${inputFile}${outputExt}
 ## prepare input
 case "$inputType" in
     md|markdown )
+
+        # TODO move user-defined above here so that we can input multiple md files and concatenate them
+        # I think there was a good reason it was below this, but I don't remember what it was
+        # maybe just save all that info to other vars and then do the stuff later
+
         # don't want to change original .md file
         tmpFile="${inputFile}.tmp"
         cp "$inputFile" "$tmpFile"
@@ -73,6 +78,8 @@ for arg in $@; do
             open_after_convert=true ;;
         noadj )
             output_adjustments=false ;;
+        # * )
+            # args="${args} ${arg}" ;;
     esac
 done
 
