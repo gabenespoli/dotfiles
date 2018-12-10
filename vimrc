@@ -325,6 +325,7 @@ nmap ghd <Plug>GitGutterPreviewHunk
 nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_max_signs = 1000
 
 " w0rp/ale
 nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
