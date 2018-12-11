@@ -14,8 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
-
-" sidebars {{{2
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
@@ -24,7 +22,7 @@ Plug 'tacahiroy/ctrlp-funky'
 
 " autocomplete {{{2
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+  Plug 'Shougo/deoplete.nvim',         {'do': ':UpdateRemotePlugins'}
 else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
@@ -32,7 +30,7 @@ else
 endif
 Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neco-vim', {'for': 'vim'}
+Plug 'Shougo/neco-vim',                {'for': 'vim'}
 Plug 'lionawurscht/deoplete-biblatex', {'for': ['markdown', 'pandoc']}
 Plug 'zchee/deoplete-jedi',            {'for': 'python'}
 
@@ -370,7 +368,6 @@ function! ALEStatus(type) abort "{{{
   endif
 endfunction "}}}
 
-" sidebars {{{2
 " scrooloose/NERDTree
 augroup nerdtree
   au!
