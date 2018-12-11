@@ -310,10 +310,13 @@ function! MyGrep(expr)
   botright copen
 endfunction
 
-" auto-close qf window after selection
-augroup QFClose
+" some quickfix window bindings
+augroup quickfix
   au!
-  autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
+  " close qf window after selection
+  autocmd FileType qf nnoremap <buffer> o <CR>:cclose<CR>
+  " focus last window after closing
+  autocmd FileType qf nnoremap <buffer> q <C-w>p:cclose<CR>
 augroup END
 
 " Plugin Settings {{{1
