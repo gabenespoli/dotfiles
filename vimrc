@@ -131,13 +131,13 @@ set shortmess+=c
 if executable('rg') | set grepprg=rg\ --line-number\ $* | endif
 
 " Status Line {{{2
-" ale [+][RO] 'filename' [type] [fugitive] ... line/lines,col (pct)
 set statusline=
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
-" set statusline+=%{mode()}
-set statusline+=%#Modified#%m%*%#ReadOnly#%r%*\ %t\ %y
-set statusline+=\ %{FugitiveStatusline()}
+set statusline+=\ %<%.99f
+set statusline+=\ %w%#Modified#%m%*%#ReadOnly#%r%*
+set statusline+=%y
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
 
