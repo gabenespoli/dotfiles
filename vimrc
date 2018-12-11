@@ -158,7 +158,7 @@ endif
 if has('nvim')
   autocmd TermOpen * setlocal nocursorline nonumber norelativenumber
   " autocmd TermOpen * execute "nnoremap <buffer> <CR> i"
-  augroup my_nvim_term
+  augroup nvim_terminal
     au!
     " pretend term buffer doesn't have a normal mode
     " autocmd BufWinEnter,WinEnter term://* startinsert
