@@ -307,7 +307,7 @@ function! MyGrep(expr)
   else
     execute 'grep ' . a:expr . ' *'
   endif
-  copen
+  botright copen
 endfunction
 
 " auto-close qf window after selection
