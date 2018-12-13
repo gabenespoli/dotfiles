@@ -241,13 +241,7 @@ nnoremap <silent> ]t :tabnext<CR>
 nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
 nnoremap <silent> coc :set cursorline!<CR>
 nnoremap <silent> cod :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
-nnoremap <silent> coff :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap <silent> cofm :set foldmethod=manual<CR>
-nnoremap <silent> cofi :set foldmethod=indent<CR>
-nnoremap <silent> cofe :set foldmethod=expr<CR>
-nnoremap <silent> cofk :set foldmethod=marker<CR>
-nnoremap <silent> cofs :set foldmethod=syntax<CR>
-nnoremap <silent> cofd :set foldmethod=diff<CR>
+nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap <silent> coh :set hlsearch!<CR>
 nnoremap <silent> col :set list!<CR>
 nnoremap <silent> com :set number!<CR>:set relativenumber!<CR>
