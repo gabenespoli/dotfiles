@@ -31,7 +31,6 @@ endif
 Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim',                {'for': 'vim'}
-Plug 'lionawurscht/deoplete-biblatex', {'for': ['markdown', 'pandoc']}
 Plug 'zchee/deoplete-jedi',            {'for': 'python'}
 
 " tmux {{{2
@@ -463,12 +462,6 @@ if !exists('g:necovim#complete_functions')
   let g:necovim#complete_functions = {}
 endif
 let g:necovim#complete_functions.Ref = 'ref#complete'
-
-" lionawurscht/deoplete-biblatex
-let g:deoplete#sources#biblatex#bibfile = '~/dotfiles/pandoc/library.bib'
-let g:deoplete#sources#biblatex#startpattern = '\[@|\[-@'
-let g:deoplete#sources#biblatex#delimiter = ';'
-call deoplete#custom#source('biblatex', 'filetypes', ['markdown', 'pandoc'])
 
 " tmux {{{2
 " christoomey/vim-tmux-navigator
