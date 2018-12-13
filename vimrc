@@ -201,6 +201,7 @@ inoremap jk <Esc>
 " general {{{2
 nnoremap <C-j> <CR>
 nnoremap Y y$
+nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
 nnoremap <BS> <C-^>
