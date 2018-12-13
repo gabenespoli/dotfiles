@@ -253,9 +253,9 @@ nnoremap <silent> cos :set spell!<CR>
 nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> cow :set wrap!<CR>
 nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
-nnoremap <silent> coy :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 nnoremap <silent> coFm :set filetype=markdown<CR>
 nnoremap <silent> coFt :set filetype=text<CR>
+nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " misc {{{2
 " swap single quote (mark bol) and back tick (mark)
