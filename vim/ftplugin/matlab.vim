@@ -28,6 +28,6 @@ nnoremap <buffer> <localleader>c :call MatlabClearBreakpoint()<CR>
 
 nnoremap <buffer> <localleader>o :execute 'SlimeSend1 dbstep'<CR>
 nnoremap <buffer> <localleader>i :execute 'SlimeSend1 dbstep in'<CR>
-nnoremap <buffer> <localleader>x :execute 'SlimeSend1 dbstep out'<CR>
+nnoremap <buffer> <localleader>t :execute 'SlimeSend1 dbstep out'<CR>
 nnoremap <buffer> <localleader>q :execute 'SlimeSend1 dbquit'<CR>
 nnoremap <buffer> <localleader>g :execute 'SlimeSend1 dbcont'<CR>
