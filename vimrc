@@ -295,9 +295,9 @@ endfunction
 augroup quickfix
   au!
   " close qf window after selection
-  autocmd FileType qf nnoremap <buffer> o <CR>:cclose<CR>
+  autocmd FileType qf nnoremap <buffer> o <CR>:cclose<CR>:lclose<CR>
   " focus last window after closing
-  autocmd FileType qf nnoremap <buffer> q <C-w>p:cclose<CR>
+  autocmd FileType qf nnoremap <buffer> q <C-w>p:cclose<CR>:lclose<CR>
 augroup END
 
 " Plugin Settings {{{1
