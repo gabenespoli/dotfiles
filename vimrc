@@ -210,13 +210,7 @@ cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 nnoremap <silent> <M-s> :silent write<CR>
 inoremap <silent> <M-s> <Esc>:silent write<CR>a
-nnoremap <M-{> :tabprevious<CR>
-nnoremap <M-}> :tabnext<CR>
-inoremap <M-{> <Esc>:tabprevious<CR>
-inoremap <M-}> <Esc>:tabnext<CR>
 tnoremap <silent> <C-Space> <C-\><C-N>
-tnoremap <silent> <M-{> <C-\><C-N>:tabprevious<CR>
-tnoremap <silent> <M-}> <C-\><C-N>:tabnext<CR>
 nnoremap <C-w><C-f> <C-w>vgf
 
 " next/previous {{{2
@@ -234,8 +228,6 @@ nnoremap <silent> [q :cprevious<CR>
 nnoremap <silent> ]q :cnext<CR>
 nnoremap <silent> [Q :cfirst<CR>
 nnoremap <silent> ]Q :clast<CR>
-nnoremap <silent> [t :tabprevious<CR>
-nnoremap <silent> ]t :tabnext<CR>
 
 " option toggles (not incl. plugins) {{{2
 nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
