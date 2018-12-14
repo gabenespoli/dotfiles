@@ -13,14 +13,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'w0rp/ale'
 Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
-
-" autocomplete {{{2
+Plug 'w0rp/ale'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim',         {'do': ':UpdateRemotePlugins'}
 else
@@ -92,25 +90,21 @@ if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endi
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 
 " Editing {{{2
+set hidden
+set visualbell
 set number relativenumber
-set cursorline
 set equalalways splitright splitbelow
 set laststatus=2
-set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
-set fillchars=fold:\ ,vert:\|
-set backspace=indent,eol,start
 set nowrap
 set whichwrap+=h,l
-set visualbell
-set hidden
+set backspace=indent,eol,start
 set clipboard=unnamed
-set diffopt+=context:0
-
-" Folding {{{2
+set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
+set fillchars=fold:\ ,vert:\|
+set diffopt+=context:3
+set cursorline
 set foldminlines=0
 set foldlevel=2
-
-" Spacing {{{2
 set linebreak
 set breakindent
 set expandtab
@@ -195,14 +189,14 @@ let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 set notimeout
 set ttimeout
-inoremap jk <Esc>
 
 " general {{{2
+inoremap jk <Esc>
 nnoremap <C-j> <CR>
-nnoremap Y y$
 nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
+nnoremap Y y$
 nnoremap <BS> <C-^>
 inoremap <C-n> <down>
 inoremap <C-p> <up>
