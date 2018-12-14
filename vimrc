@@ -278,6 +278,7 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 nnoremap <leader>N :edit ~/notes/<C-d> 
 
 " function for grep
+nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
 nnoremap <leader>g :MyGrep 
 nnoremap <leader>T :MyGrep TODO<CR>
 command! -nargs=+ MyGrep call MyGrep(<q-args>)
