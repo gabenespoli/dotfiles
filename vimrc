@@ -273,7 +273,7 @@ augroup END
 
 " Plugin Settings {{{1
 " general {{{2
-" tpope/vim-fugitive
+" tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gd mx:tabnew %<CR>`x:Gdiff<CR>
@@ -291,7 +291,7 @@ augroup fugitive
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
-" airblade/gitgutter
+" airblade/gitgutter {{{3
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 nmap ga <Plug>GitGutterStageHunk
@@ -301,29 +301,7 @@ let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_max_signs = 1000
 
-" w0rp/ale
-nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
-nmap [v <Plug>(ale_previous_wrap)
-nmap ]v <Plug>(ale_next_wrap)
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_set_loclist = 0
-let g:ale_linter_aliases = {'octave': 'matlab'}
-let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
-let g:ale_python_flake8_options = '--extend-ignore=E221,E266,E261,E3,E402,E501'
-function! ALEStatus(type) abort "{{{
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  if a:type ==# 'Errors'
-    return l:all_errors == 0 ? '' : printf('[%dE]', all_errors)
-  elseif a:type ==# 'Warnings'
-    return l:all_non_errors == 0 ? '' : printf('[%dW]', all_non_errors)
-  else
-    return ''
-  endif
-endfunction "}}}
-
-" scrooloose/NERDTree
+" scrooloose/NERDTree {{{3
 augroup nerdtree
   au!
   autocmd filetype nerdtree setlocal bufhidden=wipe
@@ -343,7 +321,7 @@ let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
 let g:NERDTreeMapCWD = 'cD'
 
-" jeetsukumaran/vim-buffergator
+" jeetsukumaran/vim-buffergator {{{3
 let g:buffergator_autoupdate = 0
 let g:buffergator_autodismiss_on_select = 1
 let g:buffergator_viewport_split_policy = 'B'
@@ -353,7 +331,7 @@ nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
 
-" majutsushi/tagbar
+" majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = -1
@@ -377,9 +355,10 @@ let g:tagbar_type_r = {
     \ ]
 \ }
 
-" ctrlpvim/ctrlp.vim
+" ctrlpvim/ctrlp.vim & tacahiroy/ctrlp-funky {{{3
 nnoremap <C-q> :CtrlPQuickfix<CR>
 nnoremap <C-n> :CtrlP<CR>
+nnoremap <leader>f :CtrlPFunky<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
 if executable('fd') | let g:ctrlp_user_command = 'fd --color never "" %s' | endif
@@ -391,11 +370,29 @@ let g:ctrlp_prompt_mappings = {
  \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
  \ }
 
-" tacahiroy/ctrlp-funky
-nnoremap <leader>f :CtrlPFunky<CR>
+" w0rp/ale {{{3
+nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
+nmap [v <Plug>(ale_previous_wrap)
+nmap ]v <Plug>(ale_next_wrap)
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_set_loclist = 0
+let g:ale_linter_aliases = {'octave': 'matlab'}
+let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
+let g:ale_python_flake8_options = '--extend-ignore=E221,E266,E261,E3,E402,E501'
+function! ALEStatus(type) abort "{{{
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  if a:type ==# 'Errors'
+    return l:all_errors == 0 ? '' : printf('[%dE]', all_errors)
+  elseif a:type ==# 'Warnings'
+    return l:all_non_errors == 0 ? '' : printf('[%dW]', all_non_errors)
+  else
+    return ''
+  endif
+endfunction "}}}
 
-" autocomplete {{{2
-" Shougo/deoplete.vim
+" Shuogo/deoplete & completion sources {{{3
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('auto_complete', v:false)
 call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer', 'file']})
@@ -422,7 +419,7 @@ endif
 let g:necovim#complete_functions.Ref = 'ref#complete'
 
 " tmux {{{2
-" christoomey/vim-tmux-navigator
+" christoomey/vim-tmux-navigator {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if has('mac')
@@ -456,7 +453,7 @@ if has('nvim')
   tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime
+" jpalardy/vim-slime {{{3
 let g:slime_no_mappings = 1
 xmap <C-c>      <Plug>SlimeRegionSend
 nmap <C-c>      <Plug>SlimeMotionSend
@@ -490,10 +487,10 @@ let g:semshi#error_sign	= v:false
 let g:semshi#excluded_hl_groups	= ['local', 'unresolved']
 
 " markdown {{{2
-" godlygeek/tabular
+" godlygeek/tabular {{{3
 nnoremap <leader>\| :Tabularize /\|<CR>
 
-" rickhowe/diffchar
+" rickhowe/diffchar {{{3
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
 let g:DiffModeSync = 0
@@ -506,10 +503,10 @@ nmap <nop> <Plug>JumpDiffCharNextEnd
 nmap dO    <Plug>GetDiffCharPair
 nmap dP    <Plug>PutDiffCharPair
 
-" gabenespoli/vim-criticmarkup
+" gabenespoli/vim-criticmarkup {{{3
 let g:criticmarkup#disable#highlighting = 1
 
-" jszakmeister/markdown2ctags
+" jszakmeister/markdown2ctags {{{3
 let g:tagbar_type_pandoc = {
   \ 'ctagstype': 'pandoc',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
