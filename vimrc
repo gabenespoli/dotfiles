@@ -59,7 +59,17 @@ Plug '~/bin/vim/vim-mutton'
 call plug#end()
 
 " General Settings {{{1
-" Environment {{{2
+" System {{{2
+if has('mac') | set fileformats=unix,dos | endif
+set updatetime=750
+set undofile
+set swapfile
+set undodir=~/tmp/vim/undo/
+set backupdir=~/tmp/vim/backup/
+set directory=~/tmp/vim/swap/
+if !isdirectory(expand(&undodir)) | call mkdir(expand(&undodir), 'p') | endif
+if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
+if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 if has('nvim')
   " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
   let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
@@ -76,18 +86,6 @@ if has('gui_running')
 else
   set background=dark
 endif
-
-" File stuff {{{2
-if has('mac') | set fileformats=unix,dos | endif
-set updatetime=750
-set undofile
-set swapfile
-set undodir=~/tmp/vim/undo/
-set backupdir=~/tmp/vim/backup/
-set directory=~/tmp/vim/swap/
-if !isdirectory(expand(&undodir)) | call mkdir(expand(&undodir), 'p') | endif
-if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
-if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 
 " Editing {{{2
 set hidden
@@ -111,8 +109,6 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-
-" Searching {{{2
 set wildmenu wildignorecase wildmode=list:longest
 set ignorecase smartcase
 set incsearch nohlsearch
@@ -122,6 +118,15 @@ set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
 if executable('rg') | set grepprg=rg\ --line-number\ $* | endif
+set guioptions=g
+set guicursor=n-v-ve:block-blinkon0
+  \,sm:block-blinkon750
+  \,i-ci-c:ver25-blinkwait750-blinkon750-blinkoff750
+  \,r-cr-o:hor20-blinkwait750-blinkon750-blinkoff750
+if has('gui_running')
+  set nonumber norelativenumber
+  set laststatus=0
+endif
 
 " Status Line {{{2
 set statusline=
@@ -133,34 +138,6 @@ set statusline+=%y
 set statusline+=%{FugitiveStatusline()}
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
-
-" GUI Settings {{{2
-set guioptions=g
-set guicursor=n-v-ve:block-blinkon0
-  \,sm:block-blinkon750
-  \,i-ci-c:ver25-blinkwait750-blinkon750-blinkoff750
-  \,r-cr-o:hor20-blinkwait750-blinkon750-blinkoff750
-set guifont=Fira\ Code\ Regular:h14
-if has('gui_running')
-  set nonumber norelativenumber
-  set laststatus=0
-  set macligatures
-endif
-
-" nvim Terminal Settings {{{2
-if has('nvim')
-  autocmd TermOpen * setlocal nocursorline nonumber norelativenumber
-  " autocmd TermOpen * execute "nnoremap <buffer> <CR> i"
-  augroup nvim_terminal
-    au!
-    " pretend term buffer doesn't have a normal mode
-    " autocmd BufWinEnter,WinEnter term://* startinsert
-    " autocmd BufLeave term://* stopinsert
-    " 'hide' cursor when term doesn't have focus
-    autocmd BufWinEnter,WinEnter term://* hi! Cursor ctermbg=7
-    autocmd BufLeave term://* hi! Cursor ctermbg=0
-  augroup END
-endif
 
 " Line Return {{{2
 " from Steve Losh's (sjl) vimrc
