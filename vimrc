@@ -276,7 +276,7 @@ augroup END
 nnoremap gs :Gstatus<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gd mx:tabnew %<CR>`x:Gdiff<CR>
-nnoremap gA :Gwrite<CR>:write<CR>
+nnoremap gA :Gwrite<CR>
 nnoremap gl :Glog<CR><CR>:copen<CR>
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 augroup gitcommit
