@@ -221,7 +221,6 @@ nnoremap ` '
 " Esc to exit pop-up menu without insertion
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <C-j> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " vimdiff
 nnoremap du :diffupdate<CR>
@@ -313,7 +312,6 @@ let g:NERDTreeMapPreviewVSplit = 'V'
 augroup nerdtree
   au!
   autocmd filetype nerdtree setlocal bufhidden=wipe
-  autocmd filetype nerdtree nmap <buffer> <C-j> o
   autocmd filetype nerdtree nnoremap <buffer> q :q<CR>
 augroup END
 
@@ -354,7 +352,7 @@ let g:ctrlp_prompt_mappings = {
  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
  \ 'PrtHistory(-1)':         [],
  \ 'PrtHistory(1)':          [],
- \ 'AcceptSelection("e")':   ['<C-j>', '<CR>', '<2-LeftMouse>'],
+ \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
  \ }
 
 " w0rp/ale {{{3
