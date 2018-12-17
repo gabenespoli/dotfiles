@@ -244,6 +244,9 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 " prompt to open note
 nnoremap <leader>N :edit ~/notes/<C-d> 
 
+" change pwd to that of current file or git repo
+nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
+
 " function for grep
 nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
 nnoremap <leader>G :MyGrep 
@@ -275,7 +278,6 @@ nnoremap gd :Gdiff<CR>
 nnoremap gl :Glog<CR><CR>:botright copen<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 augroup gitcommit
   au!
   " TODO: make height of window bigger
