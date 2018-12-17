@@ -101,8 +101,7 @@ set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
 set fillchars=fold:\ ,vert:\|
 set diffopt+=context:3
 set cursorline
-set foldminlines=0
-set foldlevel=2
+set foldlevel=99
 set linebreak
 set breakindent
 set expandtab
