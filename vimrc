@@ -87,7 +87,7 @@ else
   set background=dark
 endif
 
-" Editing {{{2
+" Options {{{2
 set hidden
 set visualbell
 set number relativenumber
@@ -105,9 +105,7 @@ set foldlevel=99
 set linebreak
 set breakindent
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=2 softtabstop=2 shiftwidth=2
 set wildmenu wildignorecase wildmode=list:longest
 set ignorecase smartcase
 set incsearch nohlsearch
