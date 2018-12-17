@@ -271,10 +271,10 @@ augroup END
 " general {{{2
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
+nnoremap gd :Gdiff<CR>
+nnoremap gl :Glog<CR><CR>:botright copen<CR>
 nnoremap gC :Gcommit<CR>
-nnoremap gd mx:tabnew %<CR>`x:Gdiff<CR>
 nnoremap gA :Gwrite<CR>
-nnoremap gl :Glog<CR><CR>:copen<CR>
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 augroup gitcommit
   au!
