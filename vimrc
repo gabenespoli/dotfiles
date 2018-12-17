@@ -329,6 +329,7 @@ let g:buffergator_suppress_keymaps = 1
 nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
 nnoremap <leader>b :BuffergatorToggle<CR>
+nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
