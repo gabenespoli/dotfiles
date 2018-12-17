@@ -301,12 +301,6 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_max_signs = 1000
 
 " scrooloose/NERDTree {{{3
-augroup nerdtree
-  au!
-  autocmd filetype nerdtree setlocal bufhidden=wipe
-  autocmd filetype nerdtree nmap <buffer> <C-j> o
-  autocmd filetype nerdtree nnoremap <buffer> q :q<CR>
-augroup END
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeQuitOnOpen = 0
@@ -316,6 +310,12 @@ let g:NERDTreeMapOpenSplit = 's'
 let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
+augroup nerdtree
+  au!
+  autocmd filetype nerdtree setlocal bufhidden=wipe
+  autocmd filetype nerdtree nmap <buffer> <C-j> o
+  autocmd filetype nerdtree nnoremap <buffer> q :q<CR>
+augroup END
 
 " jeetsukumaran/vim-buffergator {{{3
 let g:buffergator_autoupdate = 0
