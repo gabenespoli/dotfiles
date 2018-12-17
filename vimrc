@@ -479,14 +479,14 @@ nnoremap <leader>\| :Tabularize /\|<CR>
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
 let g:DiffModeSync = 0
-nmap coD   <Plug>ToggleDiffCharAllLines
-nmap <nop> <Plug>ToggleDiffCharCurrentLine
-nmap <nop> <Plug>JumpDiffCharPrevStart
-nmap <nop> <Plug>JumpDiffCharNextStart
-nmap <nop> <Plug>JumpDiffCharPrevEnd
-nmap <nop> <Plug>JumpDiffCharNextEnd
-nmap dO    <Plug>GetDiffCharPair
-nmap dP    <Plug>PutDiffCharPair
+nmap coD    <Plug>ToggleDiffCharAllLines
+nmap <Plug> <Plug>ToggleDiffCharCurrentLine
+nmap <Plug> <Plug>JumpDiffCharPrevStart
+nmap <Plug> <Plug>JumpDiffCharNextStart
+nmap <Plug> <Plug>JumpDiffCharPrevEnd
+nmap <Plug> <Plug>JumpDiffCharNextEnd
+nmap dO     <Plug>GetDiffCharPair
+nmap dP     <Plug>PutDiffCharPair
 
 " gabenespoli/vim-criticmarkup {{{3
 let g:criticmarkup#disable#highlighting = 1
