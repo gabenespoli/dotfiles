@@ -15,7 +15,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Emacs key bindings [control+j -> return] (rev 2)",
+                        "description": "Gmacs key bindings [control+j -> return]",
                         "manipulators": [
                             {
                                 "from": {
@@ -41,7 +41,7 @@
                         ]
                     },
                     {
-                        "description": "Emacs key bindings [control+m -> return] (rev 2)",
+                        "description": "Gmacs key bindings [control+m -> return]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -76,7 +76,7 @@
                         ]
                     },
                     {
-                        "description": "Emacs key bindings [control+bfnp -> arrow keys] (rev 2)",
+                        "description": "Gmacs key bindings [control+bfnp -> arrow keys]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -203,7 +203,7 @@
                         ]
                     },
                     {
-                        "description": "Emacs key bindings [control+h -> delete] (rev 2)",
+                        "description": "Gmacs key bindings [control+h -> delete]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -237,7 +237,7 @@
                         ]
                     },
                     {
-                        "description": "Emacs key bindings [control+d -> forward delete] (rev 2)",
+                        "description": "Gmacs key bindings [control+d -> forward delete]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -273,7 +273,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs key bindings [control+w -> opt+backspace] (rev 2)",
+                        "description": "Gmacs key bindings [control+w -> opt+backspace]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -312,7 +312,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs key bindings [control+u -> cmd+backspace] (rev 2)",
+                        "description": "Gmacs key bindings [control+u -> cmd+backspace]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -351,7 +351,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs key bindings [command+d -> opt+forward delete] (rev 2)",
+                        "description": "Gmacs key bindings [command+d -> opt+forward delete]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -388,7 +388,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs key bindings [command+f -> opt+right arrow] (rev 2)",
+                        "description": "Gmacs key bindings [command+f -> opt+right arrow]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -424,7 +424,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs key bindings [command+b -> opt+left arrow] (rev 2)",
+                        "description": "Gmacs key bindings [command+b -> opt+left arrow]",
                         "manipulators": [
                             {
                                 "conditions": [
