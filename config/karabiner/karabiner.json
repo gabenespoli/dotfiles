@@ -934,7 +934,7 @@
                         ]
                     },
                     {
-                        "description": "Mu-G Mode [; + hjkl/oi -> arrows/pgup&pgdn]",
+                        "description": "Mu-G Mode [; + hjkl/uo -> arrows/pgup&pgdn]",
                         "manipulators": [
                             {
                                 "from": {
@@ -1093,7 +1093,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "u",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -1116,7 +1116,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "o",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
