@@ -1952,7 +1952,7 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Esc [shift+esc -> tilde",
+                        "description": "Pok3r Esc [shift+esc -> tilde]",
                         "manipulators": [
                             {
                                 "from": {
