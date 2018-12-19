@@ -1327,6 +1327,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "option"
+                                        ],
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
