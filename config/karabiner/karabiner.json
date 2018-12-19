@@ -1587,7 +1587,7 @@
                         ]
                     },
                     {
-                        "description": "Terminal swap cmd/opt + Pok3r Esc: noremap [left_cmd+esc -> backtick]",
+                        "description": "Terminal swap cmd/opt + Pok3r Esc: noremap [left_cmd+shift+esc -> backtick]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1603,7 +1603,8 @@
                                     "key_code": "escape",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_option"
+                                            "left_option",
+                                            "shift"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -1620,14 +1621,15 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Esc [left_cmd+esc -> backtick]",
+                        "description": "Pok3r Esc [left_cmd+shift+esc -> backtick]",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_command"
+                                            "left_command",
+                                            "shift"
                                         ],
                                         "optional": [
                                             "caps_lock"
