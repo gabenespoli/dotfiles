@@ -1927,14 +1927,14 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Esc [left_cmd+shift+esc -> backtick]",
+                        "description": "Pok3r Esc [command+shift+esc -> backtick]",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_command",
+                                            "command",
                                             "shift"
                                         ],
                                         "optional": [
