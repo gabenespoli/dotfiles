@@ -800,7 +800,7 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "any"
                                         ]
                                     }
                                 },
@@ -831,7 +831,7 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "any"
                                         ]
                                     }
                                 },
@@ -862,7 +862,7 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "any"
                                         ]
                                     }
                                 },
@@ -893,7 +893,7 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "any"
                                         ]
                                     }
                                 },
