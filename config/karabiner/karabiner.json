@@ -2359,7 +2359,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "speed_multiplier": 2.0
+                                            "speed_multiplier": 0.5
                                         }
                                     }
                                 ],
@@ -2411,7 +2411,7 @@
                                     },
                                     {
                                         "mouse_key": {
-                                            "speed_multiplier": 2.0
+                                            "speed_multiplier": 0.5
                                         }
                                     }
                                 ],
@@ -2436,7 +2436,7 @@
                                 "to": [
                                     {
                                         "mouse_key": {
-                                            "speed_multiplier": 0.5
+                                            "speed_multiplier": 2.0
                                         }
                                     }
                                 ],
@@ -2488,7 +2488,7 @@
                                     },
                                     {
                                         "mouse_key": {
-                                            "speed_multiplier": 0.5
+                                            "speed_multiplier": 2.0
                                         }
                                     }
                                 ],
