@@ -278,12 +278,6 @@ nnoremap gd :Gdiff<CR>
 nnoremap gl :Glog<CR><CR>:botright copen<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
-augroup gitcommit
-  au!
-  " TODO: make height of window bigger
-  autocmd FileType gitcommit nnoremap <buffer> <CR> :wq<CR><CR>
-  autocmd FileType gitcommit nnoremap <buffer> <M-s> :wq<CR><CR>:Gstatus<CR><C-w>H@=&columns/4<CR><C-w>\|
-augroup END
 augroup fugitive
   au!
   autocmd BufReadPost fugitive://* set bufhidden=delete
