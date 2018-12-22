@@ -220,12 +220,6 @@ nnoremap ` '
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
-" vimdiff
-nnoremap du :diffupdate<CR>
-" vnoremap do :diffget<CR>
-" vnoremap dp :diffput<CR>
-" vnoremap dd d
-
 " spell checking
 nnoremap <leader>s 1z=
 
@@ -271,6 +265,9 @@ nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 augroup fugitive
   au!
+  autocmd BufRead fugitive://* nnoremap du :diffupdate<CR>
+  autocmd BufRead fugitive://* xnoremap <buffer> dp :diffput<CR>
+  autocmd BufRead fugitive://* xnoremap <buffer> do :diffget<CR>
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
