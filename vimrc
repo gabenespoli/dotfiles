@@ -269,7 +269,7 @@ endfunction
 " general {{{2
 " tpope/vim-fugitive {{{3
 nnoremap <expr> gs PreviewWindowIsOpen() ? ':pclose<CR>' : ':Gstatus<CR>'
-nnoremap gd :Gdiff<CR>
+nnoremap gY :Gdiff<CR>
 nnoremap gl :Glog<CR><CR>:botright copen<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
@@ -285,7 +285,7 @@ augroup END
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 nmap ga <Plug>GitGutterStageHunk
-nnoremap <expr> ghd PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
+nnoremap <expr> gy PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
 nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
