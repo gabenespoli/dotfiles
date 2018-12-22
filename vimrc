@@ -261,15 +261,6 @@ function! MyGrep(expr)
   botright copen
 endfunction
 
-" some quickfix window bindings
-augroup quickfix
-  au!
-  " close qf window after selection
-  autocmd FileType qf nnoremap <buffer> o <CR>:cclose<CR>:lclose<CR>
-  " focus last window after closing
-  autocmd FileType qf nnoremap <buffer> q <C-w>p:cclose<CR>:lclose<CR>
-augroup END
-
 " Plugin Settings {{{1
 " general {{{2
 " tpope/vim-fugitive {{{3
