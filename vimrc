@@ -176,8 +176,6 @@ inoremap <C-n> <down>
 inoremap <C-p> <up>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
-nnoremap <silent> <M-s> :silent write<CR>
-inoremap <silent> <M-s> <Esc>:silent write<CR>a
 tnoremap <silent> <C-Space> <C-\><C-N>
 nnoremap <C-w><C-f> <C-w>vgf
 
