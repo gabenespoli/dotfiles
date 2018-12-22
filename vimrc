@@ -171,10 +171,6 @@ nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
 nnoremap Y y$
-inoremap <C-n> <down>
-inoremap <C-p> <up>
-cnoremap <C-n> <down>
-cnoremap <C-p> <up>
 nnoremap <C-w><C-f> <C-w>vgf
 
 " next/previous {{{2
@@ -263,6 +259,12 @@ endfunction
 
 " Plugin Settings {{{1
 " general {{{2
+" tpope/vim-rsi {{{3
+inoremap <C-n> <down>
+inoremap <C-p> <up>
+cnoremap <C-n> <down>
+cnoremap <C-p> <up>
+
 " tpope/vim-fugitive {{{3
 nnoremap <expr> gs PreviewWindowIsOpen() ? ':pclose<CR>' : ':Gstatus<CR>'
 nnoremap gY :Gdiff<CR>
