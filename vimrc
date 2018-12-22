@@ -255,10 +255,20 @@ function! MyGrep(expr)
   botright copen
 endfunction
 
+" function to check if preview window is open
+function! PreviewWindowIsOpen()
+  for nr in range(1, winnr('$'))
+    if getwinvar(nr, '&previewwindow') == 1
+        return 1
+    endif
+  endfor
+  return 0
+endfunction
+
 " Plugin Settings {{{1
 " general {{{2
 " tpope/vim-fugitive {{{3
-nnoremap gs :Gstatus<CR>
+nnoremap <expr> gs PreviewWindowIsOpen() ? ':pclose<CR>' : ':Gstatus<CR>'
 nnoremap gd :Gdiff<CR>
 nnoremap gl :Glog<CR><CR>:botright copen<CR>
 nnoremap gC :Gcommit<CR>
@@ -275,7 +285,7 @@ augroup END
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 nmap ga <Plug>GitGutterStageHunk
-nmap ghd <Plug>GitGutterPreviewHunk
+nnoremap <expr> ghd PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
 nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
