@@ -171,7 +171,6 @@ nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
 nnoremap Y y$
-nnoremap <BS> <C-^>
 inoremap <C-n> <down>
 inoremap <C-p> <up>
 cnoremap <C-n> <down>
