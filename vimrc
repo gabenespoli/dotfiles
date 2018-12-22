@@ -175,7 +175,6 @@ inoremap <C-n> <down>
 inoremap <C-p> <up>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
-tnoremap <silent> <C-Space> <C-\><C-N>
 nnoremap <C-w><C-f> <C-w>vgf
 
 " next/previous {{{2
