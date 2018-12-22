@@ -281,11 +281,11 @@ augroup fugitive
 augroup END
 
 " airblade/gitgutter {{{3
+nmap ga <Plug>GitGutterStageHunk
+nmap ghu <Plug>GitGutterUndoHunk
+nnoremap <expr> gy PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
-nmap ga <Plug>GitGutterStageHunk
-nnoremap <expr> gy PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
-nmap ghu <Plug>GitGutterUndoHunk
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_max_signs = 1000
