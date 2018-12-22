@@ -171,7 +171,6 @@ nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
 nnoremap Y y$
-nnoremap <C-w><C-f> <C-w>vgf
 
 " next/previous {{{2
 nnoremap <silent> [b :bprevious<CR>
