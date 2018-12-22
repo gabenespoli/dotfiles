@@ -270,7 +270,6 @@ endfunction
 " tpope/vim-fugitive {{{3
 nnoremap <expr> gs PreviewWindowIsOpen() ? ':pclose<CR>' : ':Gstatus<CR>'
 nnoremap gY :Gdiff<CR>
-nnoremap gl :Glog<CR><CR>:botright copen<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 augroup fugitive
