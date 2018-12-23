@@ -318,7 +318,6 @@ nnoremap <leader>B :BuffergatorTabsToggle<CR>
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
-let g:tagbar_show_linenumbers = -1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_type_r = {
     \ 'ctagstype' : 'r',
