@@ -201,12 +201,14 @@ nnoremap <silent> cow :set wrap!<CR>
 nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
 nnoremap <silent> coFm :set filetype=markdown<CR>
 nnoremap <silent> coFt :set filetype=text<CR>
-nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " misc {{{2
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
 nnoremap ` '
+
+" echo syntax under cursor
+nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " Esc to exit pop-up menu without insertion
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
