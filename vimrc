@@ -55,6 +55,7 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-colors-sumach'
 Plug '~/bin/vim/vim-cider-vinegar'
 Plug '~/bin/vim/vim-mutton'
+Plug '~/bin/vim/vim-tabsms'
 
 call plug#end()
 
