@@ -329,7 +329,6 @@ let g:tagbar_type_r = {
 \ }
 
 " ctrlpvim/ctrlp.vim & tacahiroy/ctrlp-funky {{{3
-nnoremap <C-q> :CtrlPQuickfix<CR>
 nnoremap <C-n> :CtrlP<CR>
 nnoremap <leader>f :CtrlPFunky<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
