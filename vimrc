@@ -501,7 +501,6 @@ nnoremap <silent> coC :SumachContrastToggle<CR>
 " gabenespoli/vim-cider-vinegar
 let g:CiderEnableNERDTree = 1
 let g:CiderToggleNERDTree = '-'
-" let g:CiderQuitMap = 'q'
 let g:CiderToggleQF = '<leader>Q'
 let g:CiderToggleLL = '<leader>L'
 nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
