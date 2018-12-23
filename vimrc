@@ -159,13 +159,10 @@ else
 endif
 
 " Keybindings {{{1
-" settings {{{2
+" general {{{2
+set notimeout ttimeout
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
-set notimeout
-set ttimeout
-
-" general {{{2
 inoremap jk <Esc>
 nnoremap <C-j> <CR>
 nnoremap ! :!
