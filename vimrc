@@ -284,7 +284,6 @@ nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_max_signs = 1000
 
 " scrooloose/NERDTree {{{3
 let g:NERDTreeMinimalUI = 1
