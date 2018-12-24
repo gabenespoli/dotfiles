@@ -17,7 +17,6 @@ Plug 'scrooloose/NERDTree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
 Plug 'w0rp/ale'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim',         {'do': ':UpdateRemotePlugins'}
@@ -323,9 +322,8 @@ let g:tagbar_type_r = {
     \ 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]
 \ }
 
-" ctrlpvim/ctrlp.vim & tacahiroy/ctrlp-funky {{{3
+" ctrlpvim/ctrlp.vim {{{3
 nnoremap <C-n> :CtrlP
-nnoremap <leader>f :CtrlPFunky<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
 if executable('fd') | let g:ctrlp_user_command = 'fd --color never "" %s' | endif
