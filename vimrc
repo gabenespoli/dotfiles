@@ -282,7 +282,6 @@ nmap ghu <Plug>GitGutterUndoHunk
 nnoremap <expr> gy PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
-let g:gitgutter_eager = 0
 let g:gitgutter_override_sign_column_highlight = 0
 
 " scrooloose/NERDTree {{{3
