@@ -41,7 +41,6 @@ Plug 'davidhalter/jedi-vim',           {'for': 'python'}
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': 'python'}
 Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
 Plug 'tmhedberg/SimpylFold',           {'for': 'python'}
-Plug 'numirias/semshi',                {'for': 'python', 'do': ':UpdateRemotePlugins'}
 Plug 'szymonmaszke/vimpyter'
 
 " markdown {{{2
@@ -444,10 +443,6 @@ let g:jedi#goto_command = '<localleader>d'
 let g:jedi#goto_assignments_command = '<localleader>g'
 let g:jedi#rename_command = '<localleader>r'
 let g:jedi#usages_command = '<localleader>n'
-
-" numirias/semshi (Python semantic highlighting)
-let g:semshi#error_sign	= v:false
-let g:semshi#excluded_hl_groups	= ['local', 'unresolved']
 
 " markdown {{{2
 " godlygeek/tabular {{{3
