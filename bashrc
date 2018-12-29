@@ -22,8 +22,8 @@ if [ "$(uname)" == "Darwin" ]; then
   alias wifi="sudo networksetup -setairportnetwork en0"
   function findershowhidden() {
     case $1 in
-        on|true ) command="TRUE" ;;
-        off|false ) command="FALSE" ;;
+      on|true ) command="TRUE" ;;
+      off|false ) command="FALSE" ;;
     esac
     defaults write com.apple.finder AppleShowAllFiles "$command"
     killall Finder
