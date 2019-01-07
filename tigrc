@@ -5,6 +5,6 @@ bind generic  <C-b> move-page-up
 
 # colors
 # https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
-color cursor			  8 11
-color title-blur		6 0 bold
-color title-focus		6 0 bold
+color cursor			  8 10
+color title-blur		15 10
+color title-focus		15 10
