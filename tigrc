@@ -8,3 +8,6 @@ bind generic  <C-b> move-page-up
 color cursor			  8 10
 color title-blur		15 10
 color title-focus		15 10
+color stat-staged     2 0
+color stat-unstaged   1 0
+color stat-untracked  1 0
