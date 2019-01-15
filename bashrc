@@ -153,7 +153,7 @@ alias hangups="hangups \
 # todo, notes, and calendar {{{2
 alias t="todoist"
 alias tt="todoist list --filter today"
-alias todo="grep -r TODO *"
+alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt"
 alias pomfile="$EDITOR $HOME/pomodoro/$(date +%Y-%m-%d).txt"
 function pomo() {
   if [ -f ~/.thyme-pid ]; then
