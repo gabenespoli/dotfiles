@@ -232,7 +232,7 @@ nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd
 " function for grep
 nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
 nnoremap <leader>G :MyGrep 
-nnoremap <leader>T :MyGrep TODO<CR>
+nnoremap <leader>T :MyGrep TODO<CR><CR>
 command! -nargs=+ MyGrep call MyGrep(<q-args>)
 function! MyGrep(expr)
   if exists(':Ggrep')
