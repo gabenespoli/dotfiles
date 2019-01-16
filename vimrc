@@ -61,11 +61,7 @@ call plug#end()
 " General Settings {{{1
 " System {{{2
 syntax enable
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
+set background=dark
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
