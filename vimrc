@@ -51,6 +51,7 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
 " local {{{2
 Plug '~/bin/vim/vim-colors-sumach'
+Plug '~/bin/vim/vim-colors-snooker'
 Plug '~/bin/vim/vim-cider-vinegar'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
@@ -252,7 +253,9 @@ endfunction
 " Colorscheme {{{2
 let g:sumach_terminal_italics = 1
 let g:sumach_color_cursor = 1
-colorscheme sumach
+let g:snooker_terminal_italics = 1
+let g:snooker_color_cursor = 1
+colorscheme snooker
 
 " general {{{2
 " tpope/vim-rsi {{{3
