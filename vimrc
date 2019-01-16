@@ -115,10 +115,9 @@ set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
 if executable('rg') | set grepprg=rg\ --line-number\ $* | endif
 set guioptions=g
-set guicursor=n-v-ve:block-blinkon0
-  \,sm:block-blinkon750
-  \,i-ci-c:ver25-blinkwait750-blinkon750-blinkoff750
-  \,r-cr-o:hor20-blinkwait750-blinkon750-blinkoff750
+set guicursor=n-v-sm:block-blinkon0
+  \,i-ci-c:ver25-blinkon0
+  \,r-cr-o:hor20-blinkon0
 if has('gui_running')
   set nonumber norelativenumber
   set laststatus=0
