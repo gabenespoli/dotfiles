@@ -61,7 +61,6 @@ call plug#end()
 " General Settings {{{1
 " System {{{2
 syntax enable
-set background=dark
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
@@ -248,10 +247,16 @@ endfunction
 " Plugin Settings {{{1
 " Colorscheme {{{2
 let g:sumach_terminal_italics = 1
-let g:sumach_color_cursor = 1
+let g:sumach_color_cursor = 0
 let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 1
-colorscheme snooker
+if has('gui_running')
+  set background=light
+  colorscheme sumach
+else
+  set background=dark
+  colorscheme snooker
+endif
 
 " general {{{2
 " tpope/vim-rsi {{{3
