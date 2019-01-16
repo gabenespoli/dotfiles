@@ -322,7 +322,7 @@ let g:tagbar_type_r = {
 \ }
 
 " ctrlpvim/ctrlp.vim {{{3
-nnoremap <C-n> :CtrlP
+nnoremap <C-n> :CtrlP 
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
 if executable('fd') | let g:ctrlp_user_command = 'fd --color never "" %s' | endif
