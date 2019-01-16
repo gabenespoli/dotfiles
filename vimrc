@@ -59,6 +59,12 @@ call plug#end()
 
 " General Settings {{{1
 " System {{{2
+syntax enable
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
@@ -73,17 +79,6 @@ if has('nvim')
   " https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
   let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
   let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
-endif
-
-" Colorscheme {{{2
-syntax enable
-let g:sumach_terminal_italics = 1
-let g:sumach_color_cursor = 1
-colorscheme sumach
-if has('gui_running')
-  set background=light
-else
-  set background=dark
 endif
 
 " Options {{{2
@@ -254,6 +249,11 @@ function! PreviewWindowIsOpen()
 endfunction
 
 " Plugin Settings {{{1
+" Colorscheme {{{2
+let g:sumach_terminal_italics = 1
+let g:sumach_color_cursor = 1
+colorscheme sumach
+
 " general {{{2
 " tpope/vim-rsi {{{3
 inoremap <C-n> <down>
