@@ -78,7 +78,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -115,6 +116,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim",
                                             "^com\\.google\\.Chrome$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -147,6 +149,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim",
                                             "^com\\.google\\.Chrome$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -178,7 +181,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -209,7 +213,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -245,7 +250,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -281,6 +287,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.apple\\.ScreenSharing$"
                                         ],
@@ -318,6 +325,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim",
                                             "^com\\.apple\\.ScreenSharing$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -358,6 +366,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim",
                                             "^com\\.google\\.Chrome$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -397,7 +406,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -435,7 +445,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -472,7 +483,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
