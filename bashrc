@@ -151,8 +151,7 @@ alias hangups="hangups \
   --col-msg-self-bg default"
 
 # todo, notes, and calendar {{{2
-alias t="todoist"
-alias tt="todoist list --filter today"
+alias t="todo.sh"
 alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt"
 alias pomfile="$EDITOR $HOME/pomodoro/$(date +%Y-%m-%d).txt"
 function pomo() {
