@@ -131,24 +131,6 @@ alias pdoc="$HOME/dotfiles/pandoc/pdoc"
 alias cite="python $HOME/bin/python/cite/cite.py"
 alias rate="python $HOME/bin/python/rate.py"
 alias weather="curl http://wttr.in/Toronto"
-alias hangups="hangups \
-  --date-format '< %Y-%m-%d >' \
-  --disable-notifications \
-  --key-close-tab 'ctrl x' \
-  --col-tab-background-fg yellow \
-  --col-tab-background-bg 'dark gray' \
-  --col-active-tab-fg 'light gray' \
-  --col-active-tab-bg black \
-  --col-inactive-tab-fg yellow \
-  --col-inactive-tab-bg black \
-  --col-status-line-fg yellow \
-  --col-status-line-bg 'dark gray' \
-  --col-msg-date-fg 'light green' \
-  --col-msg-date-bg black \
-  --col-msg-sender-fg 'light magenta' \
-  --col-msg-sender-bg default \
-  --col-msg-self-fg 'dark blue' \
-  --col-msg-self-bg default"
 
 # todo, notes, and calendar {{{2
 alias t="todo.sh"
