@@ -5,6 +5,7 @@ c.InteractiveShell.autoindent = False
 c.InteractiveShell.confirm_exit = False
 c.InteractiveShell.editor = 'nvim'
 c.TerminalInteractiveShell.editing_mode = 'emacs'
+c.TerminalInteractiveShell.highlight_matching_brackets = False
 
 # Colours
 c.InteractiveShell.colors = 'nocolor'
