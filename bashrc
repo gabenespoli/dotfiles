@@ -38,6 +38,7 @@ else
   alias d="dropbox"
   alias ds="dropbox status"
   alias matlab="matlab -nosplash -nodesktop"
+  LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
 fi
 
 # Environment {{{1
