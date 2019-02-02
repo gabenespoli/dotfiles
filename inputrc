@@ -1,6 +1,6 @@
 ## Editing mode options
-set editing-mode vi
-set show-mode-in-prompt on
+set editing-mode emacs
+set show-mode-in-prompt off
 
 # change cursor shape based on editing mode (only works for mac)
 # https://stackoverflow.com/questions/7888387/the-way-to-distinguish-command-mode-and-insert-mode-in-bashs-vi-command-line-ed
