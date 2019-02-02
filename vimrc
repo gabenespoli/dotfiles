@@ -420,9 +420,9 @@ endif
 
 " jpalardy/vim-slime {{{3
 let g:slime_no_mappings = 1
-xmap <C-c>      <Plug>SlimeRegionSend
-nmap <C-c>      <Plug>SlimeMotionSend
-nmap <C-c><C-c> <Plug>SlimeLineSend
+xmap <C-l>      <Plug>SlimeRegionSend
+nmap <C-l>      <Plug>SlimeMotionSend
+nmap <C-l><C-l> <Plug>SlimeLineSend
 let g:slime_target = 'tmux'
 let g:slime_dont_ask_default = 1
 if exists('$TMUX')
