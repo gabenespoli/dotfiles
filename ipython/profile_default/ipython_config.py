@@ -32,7 +32,7 @@ from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, Text, \
      Number, Operator, Generic, Whitespace, Punctuation, Other, Literal
 
-class base16_sumach(Style):
+class base16_snooker(Style):
 
     default_style = ''
 
@@ -46,11 +46,11 @@ class base16_sumach(Style):
         Comment:                   fg_com,      # class: 'c'
         Error:                     red,
 
-        Keyword:                   blue,
+        Keyword:                   green,
         Keyword.Type:              yellow,
         Keyword.Namespace:         purple,
 
-        Operator:                  fg,        # class: 'o'
+        Operator:                  red,        # class: 'o'
 
         # Punctuation:               fg,          # class: 'p'
 
@@ -58,12 +58,12 @@ class base16_sumach(Style):
         Name.Attribute:            blue,        # class: 'na' - to be revised
         # Name.Builtin:              "",          # class: 'nb'
         # Name.Builtin.Pseudo:       "",          # class: 'bp'
-        Name.Class:                yellow,      # class: 'nc' - to be revised
+        Name.Class:                red,      # class: 'nc' - to be revised
         # Name.Constant:             cyan,         # class: 'no' - to be revised
         # Name.Decorator:            cyan,        # class: 'nd' - to be revised
         # Name.Entity:               "",          # class: 'ni'
         # Name.Exception:            red,         # class: 'ne'
-        Name.Function:             green,        # class: 'nf'
+        Name.Function:             blue,        # class: 'nf'
         # Name.Property:             "",          # class: 'py'
         # Name.Label:                "",          # class: 'nl'
         # Name.Namespace:            yellow,      # class: 'nn' - to be revised
@@ -84,7 +84,7 @@ class base16_sumach(Style):
         # String.Char:               fg,  # class: 'sc'
         # String.Doc:                fg_com,     # class: 'sd' - like a comment
         # String.Double:             "",          # class: 's2'
-        String.Escape:             orange,      # class: 'se'
+        String.Escape:             yellow,      # class: 'se'
         # String.Heredoc:            "",          # class: 'sh'
         # String.Interpol:           orange,      # class: 'si'
         # String.Other:              "",          # class: 'sx'
@@ -107,14 +107,14 @@ class base16_sumach(Style):
 
     }
 
-c.TerminalInteractiveShell.highlighting_style = base16_sumach
+c.TerminalInteractiveShell.highlighting_style = base16_snooker
 
 from pygments.token import Token
 c.TerminalInteractiveShell.highlighting_style_overrides = {
-    Token.Prompt: blue,
-    Token.PromptNum: blue,
-    Token.OutPrompt: pink,
-    Token.OutPromptNum: pink,
+    Token.Prompt: green,
+    Token.PromptNum: green,
+    Token.OutPrompt: blue,
+    Token.OutPromptNum: blue,
 }
 
 # remove vi mode from prompt
