@@ -104,7 +104,6 @@ let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
-if executable('rg') | set grepprg=rg\ --line-number\ $* | endif
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0
   \,i-ci-c:ver25-blinkon0
