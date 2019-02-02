@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
   alias agi="brew install"
   alias agu="brew update && brew upgrade && brew cleanup"
   alias ql='qlmanage -p &>/dev/null'
-  alias matlab="rlwrap -c -a dummy_arg /Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
+  alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
   alias openx="open -a Microsoft\ Excel.app"
   alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
   alias wifi="sudo networksetup -setairportnetwork en0"
@@ -52,7 +52,7 @@ else
   alias trash="gio trash"
   alias d="dropbox"
   alias ds="dropbox status"
-  alias matlab="rlwrap -a -c matlab -nosplash -nodesktop"
+  alias matlab="matlab -nosplash -nodesktop"
   #eval `dircolors $HOME/.dir_colors/dircolors`
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
 
