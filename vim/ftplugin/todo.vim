@@ -5,11 +5,11 @@
 " keybindings {{{1
 " change char type {{{2
 nnoremap <buffer> <localleader>- 0r-
-nnoremap <buffer> <localleader>x 0rx
+" nnoremap <buffer> <localleader>x 0rx
 nnoremap <buffer> <localleader>* 0r*
 nnoremap <buffer> <localleader>! 0r!
 nnoremap <buffer> <localleader>> 0r>
-" nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp''
+nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp''
 
 " priority {{{2
 " [d]oing, [t]oday, [w]eek, [r]emove, [x] is mark as done and move to bottom
