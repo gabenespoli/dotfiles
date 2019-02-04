@@ -9,9 +9,6 @@ set vi-cmd-mode-string \1\e[2 q\2
 set emacs-mode-string \1\e[4 q\2
 
 # keybindings
-"\C-n": history-search-forward
-"\C-p": history-search-backward
-
 $if mode=vi                
   set keymap vi-command
     "\C-l": clear-screen
@@ -28,9 +25,15 @@ $if mode=vi
     "\C-l": clear-screen
     "\C-u": unix-line-discard
     "\C-x": re-read-init-file
+    "\C-n": history-search-forward
+    "\C-p": history-search-backward
     "\eb": backward-word
     "\ed": kill-word
     "\ef": forward-word
+
+$else
+    "\C-n": history-search-forward
+    "\C-p": history-search-backward
 $endif
 
 set completion-ignore-case on
