@@ -19,9 +19,6 @@ Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/tmux-complete.vim'
-Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neco-vim',                {'for': 'vim'}
-Plug 'zchee/deoplete-jedi',            {'for': 'python'}
 
 " tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
