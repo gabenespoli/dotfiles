@@ -409,8 +409,8 @@ let Rout_more_colors = 1
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#completions_enabled = 0
-let g:jedi#goto_command = '<localleader>d'
-let g:jedi#goto_assignments_command = '<localleader>g'
+let g:jedi#goto_command = '<localleader>d' " also gD in ftplugin/python.vim
+let g:jedi#goto_assignments_command = '<localleader>g' " also gd
 let g:jedi#rename_command = '<localleader>r'
 let g:jedi#usages_command = '<localleader>n'
 
