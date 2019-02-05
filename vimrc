@@ -18,13 +18,6 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim',         {'do': ':UpdateRemotePlugins'}
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim',                {'for': 'vim'}
@@ -356,32 +349,6 @@ function! ALEStatus(type) abort "{{{
     return ''
   endif
 endfunction "}}}
-
-" Shuogo/deoplete & completion sources {{{3
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('auto_complete', v:false)
-call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer', 'file']})
-imap <expr> <Tab> MyCompletion()
-function! MyCompletion() "{{{
-  let col = col('.') - 1
-  if pumvisible()
-    return "\<C-e>\<Space>\<Tab>"
-  elseif !col || getline('.')[col - 1]  =~# '\s'
-    " if cursor is at bol or in front of whitespace
-    return "\<Tab>"
-  else
-    return deoplete#manual_complete()
-  endif
-endfunction "}}}
-
-" Shougo/neco-syntax (completion from syntax files)
-let g:necosyntax#max_syntax_lines = 1000
-
-" Shougo/neco-vim (vimscript completion)
-if !exists('g:necovim#complete_functions')
-  let g:necovim#complete_functions = {}
-endif
-let g:necovim#complete_functions.Ref = 'ref#complete'
 
 " tmux {{{2
 " christoomey/vim-tmux-navigator {{{3
