@@ -263,9 +263,6 @@ nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 augroup fugitive
   au!
-  autocmd BufRead fugitive://* nnoremap du :diffupdate<CR>
-  autocmd BufRead fugitive://* xnoremap <buffer> dp :diffput<CR>
-  autocmd BufRead fugitive://* xnoremap <buffer> do :diffget<CR>
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
