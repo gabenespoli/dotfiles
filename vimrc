@@ -203,6 +203,9 @@ if has('mac') | nnoremap gO :!open <cfile><CR> | endif
 " open current file in new tab
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
+" close preview window (alternative to builtin <C-w>z)
+nnoremap <silent> <leader>z :pclose<CR>
+
 " prompt to open note
 nnoremap <leader>N :edit ~/notes/<C-d> 
 
@@ -221,16 +224,6 @@ function! MyGrep(expr)
     execute 'grep ' . a:expr . ' *'
   endif
   botright copen
-endfunction
-
-" function to check if preview window is open
-function! PreviewWindowIsOpen()
-  for nr in range(1, winnr('$'))
-    if getwinvar(nr, '&previewwindow') == 1
-        return 1
-    endif
-  endfor
-  return 0
 endfunction
 
 " Plugin Settings {{{1
@@ -257,7 +250,7 @@ cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
 " tpope/vim-fugitive {{{3
-nnoremap <expr> gs PreviewWindowIsOpen() ? ':pclose<CR>' : ':Gstatus<CR>'
+nnoremap gs :Gstatus<CR>
 nnoremap gY :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
@@ -269,7 +262,7 @@ augroup END
 " airblade/gitgutter {{{3
 nmap ga <Plug>GitGutterStageHunk
 nmap ghu <Plug>GitGutterUndoHunk
-nnoremap <expr> gy PreviewWindowIsOpen() ? ':pclose<CR>' : ':call gitgutter#hunk#preview()<CR>'
+nnoremap gy :call gitgutter#hunk#preview()<CR>
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
