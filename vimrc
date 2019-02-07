@@ -206,9 +206,6 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
 
-" prompt to open note
-nnoremap <leader>N :edit ~/notes/<C-d> 
-
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
