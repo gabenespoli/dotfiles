@@ -14,7 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/NERDTree'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
@@ -279,17 +278,6 @@ augroup nerdtree
   autocmd filetype nerdtree setlocal bufhidden=wipe
   autocmd filetype nerdtree nnoremap <buffer> q :q<CR>
 augroup END
-
-" jeetsukumaran/vim-buffergator {{{3
-let g:buffergator_autoupdate = 0
-let g:buffergator_autodismiss_on_select = 1
-let g:buffergator_viewport_split_policy = 'B'
-let g:buffergator_hsplit_size = 10
-let g:buffergator_suppress_keymaps = 1
-nnoremap gb :BuffergatorMruCyclePrev<CR>
-nnoremap gB :BuffergatorMruCycleNext<CR>
-nnoremap <leader>b :BuffergatorToggle<CR>
-nnoremap <leader>B :BuffergatorTabsToggle<CR>
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
