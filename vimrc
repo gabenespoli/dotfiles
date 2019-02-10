@@ -183,10 +183,6 @@ nnoremap ` '
 " echo syntax under cursor
 nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
-" Esc to exit pop-up menu without insertion
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-
 " spell checking
 nnoremap <leader>s 1z=
 
