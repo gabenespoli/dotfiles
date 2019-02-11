@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
@@ -239,6 +240,10 @@ inoremap <C-x><C-n> <C-n>
 inoremap <C-x><C-p> <C-p>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
+
+" justinmk/vim-dirvish {{{3
+let g:loaded_netrwPlugin = 1
+let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
