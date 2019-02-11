@@ -11,6 +11,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
@@ -146,35 +147,6 @@ nnoremap q :q<CR>
 nnoremap Q q
 nnoremap Y y$
 
-" next/previous {{{2
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [e :<C-U>execute 'move -1-'. v:count1<CR>
-nnoremap <silent> ]e :<C-U>execute 'move +'. v:count1<CR>
-nnoremap <silent> [l :lprevious<CR>
-nnoremap <silent> ]l :lnext<CR>
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
-
-" option toggles (not incl. plugins) {{{2
-nnoremap <silent> cob :set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
-nnoremap <silent> coc :set cursorline!<CR>
-nnoremap <silent> cod :<C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
-nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap <silent> coh :set hlsearch!<CR>
-nnoremap <silent> col :set list!<CR>
-nnoremap <silent> com :set number!<CR>:set relativenumber!<CR>
-nnoremap <silent> con :set number!<CR>
-nnoremap <silent> cop :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
-nnoremap <silent> cor :set relativenumber!<CR>
-nnoremap <silent> cou :set cursorcolumn!<CR>
-nnoremap <silent> cos :set spell!<CR>
-nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-nnoremap <silent> cow :set wrap!<CR>
-nnoremap <silent> cox :set cursorline!<CR>:set cursorcolumn!<CR>
-nnoremap <silent> coFm :set filetype=markdown<CR>
-nnoremap <silent> coFt :set filetype=text<CR>
-
 " misc {{{2
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
@@ -241,6 +213,15 @@ inoremap <C-x><C-p> <C-p>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
+" tpope/vim-unimpaired {{{3
+nmap co yo
+nnoremap <silent> yof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap <silent> yom :set number!<CR>:set relativenumber!<CR>
+nnoremap <silent> yop :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nnoremap <silent> yoFm :set filetype=markdown<CR>
+nnoremap <silent> yoFt :set filetype=text<CR>
+
 " justinmk/vim-dirvish {{{3
 let g:loaded_netrwPlugin = 1
 let g:dirvish_mode = ':sort ,^.*[\/],'
@@ -259,8 +240,8 @@ augroup END
 nmap ga <Plug>GitGutterStageHunk
 nmap ghu <Plug>GitGutterUndoHunk
 nnoremap gy :call gitgutter#hunk#preview()<CR>
-nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
-nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
+nnoremap <silent> yog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
+nnoremap <silent> yoG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
 
 " majutsushi/tagbar {{{3
@@ -287,7 +268,7 @@ let g:ctrlp_prompt_mappings = {
  \ }
 
 " w0rp/ale {{{3
-nnoremap <silent> cov :ALEToggle<CR>:echo g:ale_enabled<CR>
+nnoremap <silent> yov :ALEToggle<CR>:echo g:ale_enabled<CR>
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
@@ -380,7 +361,7 @@ nnoremap <leader>\| :Tabularize /\|<CR>
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
 let g:DiffModeSync = 0
-nmap coD    <Plug>ToggleDiffCharAllLines
+nmap yoD    <Plug>ToggleDiffCharAllLines
 nmap <Plug> <Plug>ToggleDiffCharCurrentLine
 nmap <Plug> <Plug>JumpDiffCharPrevStart
 nmap <Plug> <Plug>JumpDiffCharNextStart
@@ -415,7 +396,7 @@ let g:tagbar_type_markdown = {
 
 " local {{{2
 " gabenespoli/vim-colors-sumach
-nnoremap <silent> coC :SumachContrastToggle<CR>
+nnoremap <silent> yoC :SumachContrastToggle<CR>
 
 " gabenespoli/vim-cider-vinegar
 let g:CiderToggleQF = '<leader>Q'
