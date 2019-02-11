@@ -1,26 +1,12 @@
-" remove conflicting defaults
-nunmap <buffer> c
-nunmap <buffer> qL
-nunmap <buffer> qF
-nunmap <buffer> qf
-nunmap <buffer> qb
-nunmap <buffer> q
-
-" delete netrw buffer after closing
-setlocal bufhidden=wipe
-
-" u for up a dir
-" nnoremap <buffer> u -
-
-" - for toggle on/off
-" doesn't really work because entering a new dir opens a new buffer
-nnoremap <buffer> - <C-^>
-
-" s/v/o for split/vertsplit/open, revert caller window to alt file
-nmap <buffer> s o<C-w>p<C-^><C-w>p
-nmap <buffer> v v<C-w>p<C-^><C-w>p
-nmap <buffer> V v<C-w>p<C-^>
-nmap <buffer> o <CR>
+" less-frustrating exit from netrw
+silent! nunmap <buffer> qL
+silent! nunmap <buffer> qF
+silent! nunmap <buffer> qf
+silent! nunmap <buffer> qb
+silent! nunmap <buffer> q
+nnoremap <buffer> q :Rexplore<CR>
+nnoremap <buffer> <C-^> :Rexplore<CR>
+nnoremap <buffer> Q :q<CR>
 
 " ranger-like zh for hidden files
 nmap <buffer> zh gh
