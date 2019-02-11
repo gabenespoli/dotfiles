@@ -13,7 +13,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/NERDTree'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
@@ -259,17 +258,6 @@ nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
 
-" scrooloose/NERDTree {{{3
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeQuitOnOpen = 0
-let g:NERDTreeShowLineNumbers = 0
-let g:NERDTreeWinPos = 'left'
-let g:NERDTreeMapOpenSplit = 's'
-let g:NERDTreeMapOpenVSplit = 'v'
-let g:NERDTreeMapPreviewSplit = 'S'
-let g:NERDTreeMapPreviewVSplit = 'V'
-
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
@@ -425,8 +413,6 @@ let g:tagbar_type_markdown = {
 nnoremap <silent> coC :SumachContrastToggle<CR>
 
 " gabenespoli/vim-cider-vinegar
-let g:CiderEnableNERDTree = 1
-let g:CiderToggleNERDTree = '-'
 let g:CiderToggleQF = '<leader>Q'
 let g:CiderToggleLL = '<leader>L'
 nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
@@ -436,7 +422,6 @@ nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
 
 " gabenespoli/vim-mutton
 nnoremap <leader>t :MuttonToggle('tagbar')<CR>
-nnoremap <leader>n :MuttonToggle('nerdtree')<CR>
 nnoremap gS :MuttonToggle('gitcommit')<CR>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
