@@ -269,11 +269,6 @@ let g:NERDTreeMapOpenSplit = 's'
 let g:NERDTreeMapOpenVSplit = 'v'
 let g:NERDTreeMapPreviewSplit = 'S'
 let g:NERDTreeMapPreviewVSplit = 'V'
-augroup nerdtree
-  au!
-  autocmd filetype nerdtree setlocal bufhidden=wipe
-  autocmd filetype nerdtree nnoremap <buffer> q :q<CR>
-augroup END
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1

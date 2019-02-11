@@ -1,3 +1,6 @@
+setlocal bufhidden=wipe
+nnoremap <buffer> q :q<CR>
+
 " bookmark mappings
 nnoremap <buffer> g~ :OpenBookmark home<CR>
 nnoremap <buffer> gb :OpenBookmark bin<CR>
