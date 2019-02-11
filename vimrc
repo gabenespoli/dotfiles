@@ -136,7 +136,6 @@ else
 endif
 
 " Keybindings {{{1
-" general {{{2
 set notimeout ttimeout
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
@@ -147,7 +146,6 @@ nnoremap q :q<CR>
 nnoremap Q q
 nnoremap Y y$
 
-" misc {{{2
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
 nnoremap ` '
@@ -167,7 +165,7 @@ nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 " open with system on mac
 if has('mac') | nnoremap gO :!open <cfile><CR> | endif
 
-" open current file in new tab
+" open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
 " close preview window (alternative to builtin <C-w>z)
