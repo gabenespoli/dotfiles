@@ -25,16 +25,6 @@ inoremap <buffer> <silent> <expr> <C-n> (v:count == 0 ? '<C-o>gj' : '<C-n>')
 inoremap <buffer> <silent> <expr> <C-p> (v:count == 0 ? '<C-o>gk' : '<C-p>')
 
 " criticmarkup and cite.py {{{2
-" custom critic bindings
-let b:surround_43  = "{++\r++}"
-let b:surround_45  = "{--\r--}"
-let b:surround_61  = "{==\r==}"
-let b:surround_60  = "{>>\r<<}"
-let b:surround_62  = "{>>\r<<}"
-let b:surround_99  = "{>>\r<<}"
-let b:surround_104 = "{==\r==}"
-let b:surround_116 = "{>>TODO: \r<<}"
-let b:surround_103 = "{>>TODO (TG): \r<<}"
 nnoremap <buffer> <localleader>hiw ysiw=lysiw=lysiW}
 nmap <buffer> <localleader>t i{>>TODO: <<}<C-o>3h
 
