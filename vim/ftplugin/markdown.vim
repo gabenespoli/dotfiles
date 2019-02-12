@@ -38,6 +38,9 @@ let b:surround_103 = "{>>TODO (TG): \r<<}"
 nnoremap <buffer> <localleader>hiw ysiw=lysiw=lysiW}
 nmap <buffer> <localleader>t i{>>TODO: <<}<C-o>3h
 
+" highlight visual selection, insert comment after it
+xmap <buffer> <localleader>c <localleader>ehf}a<Space><Esc>v<localleader>ecxi
+
 " delete around or surround critic tags ("undo")
 nmap <buffer> <localleader>u F{3xf}2h3x
 
