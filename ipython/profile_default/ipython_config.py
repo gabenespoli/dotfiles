@@ -116,8 +116,3 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Token.OutPrompt: blue,
     Token.OutPromptNum: blue,
 }
-
-# remove vi mode from prompt
-# had to manually edit ipython package per this commit:
-# https://github.com/ipython/ipython/pull/11492/commits/77a6963866763e1cca0b1091b1b4d50d1e11e524
-c.TerminalInteractiveShell.prompt_includes_vi_mode = False
