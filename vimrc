@@ -27,6 +27,7 @@ Plug 'jpalardy/vim-slime'
 
 " python & R {{{2
 Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
+Plug 'vim-python/python-syntax',       {'for': 'python'}
 Plug 'davidhalter/jedi-vim',           {'for': 'python'}
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': 'python'}
 Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
@@ -341,6 +342,9 @@ let R_show_args = 0
 let R_objbr_place = 'LEFT'
 let rout_follow_colorscheme = 1
 let Rout_more_colors = 1
+
+" vim-python/python-syntax
+let g:python_highlight_all = 1
 
 " davidhalter/jedi-vim
 let g:jedi#auto_vim_configuration = 0
