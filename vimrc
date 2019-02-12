@@ -18,11 +18,11 @@ Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-Plug 'wellle/tmux-complete.vim'
 
 " tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'wellle/tmux-complete.vim'
 Plug 'jpalardy/vim-slime'
 
 " python & R {{{2
