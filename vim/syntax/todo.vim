@@ -102,7 +102,7 @@ hi def link TodoProject         Statement
 hi def link TodoDue             Identifier
 " hi def link TodoURL             TodoDone
 
-hi def link TodoContext         Type
+hi def link TodoContext         PreProc
 hi def link TodoWaiting         TodoContext
 hi def link TodoNext            TodoContext
 
@@ -110,7 +110,7 @@ hi def link TodoDate            Normal
 hi def link TodoDateToday       ErrorMsg
 
 hi def link TodoPriorityAChar   Error
-hi def link TodoPriorityBChar   Special
+hi def link TodoPriorityBChar   Type
 hi def link TodoPriorityCChar   Constant
 hi def link TodoPriorityDChar   Function
 hi def link TodoPriorityA       TodoPriorityAChar
