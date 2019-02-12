@@ -35,8 +35,8 @@ xmap <buffer> <localleader>c <localleader>ehf}a<Space><Esc>v<localleader>ecxi
 nmap <buffer> <localleader>u F{3xf}2h3x
 
 " search and highlight
-nnoremap <buffer> <localleader>f /{==\\|{>>\\|{++\\|{--<CR>
-nnoremap <buffer> <localleader>F ?{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <buffer> <localleader>/ /{==\\|{>>\\|{++\\|{--<CR>
+nnoremap <buffer> <localleader>? ?{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <buffer> <localleader>H :call criticmarkup#InjectHighlighting()<CR>
 
 " GoNotes plugin {{{1
