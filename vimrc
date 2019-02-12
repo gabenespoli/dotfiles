@@ -205,7 +205,7 @@ cnoremap <C-p> <up>
 nmap co yo
 nnoremap <silent> yof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap <silent> yom :set number!<CR>:set relativenumber!<CR>
-nnoremap <silent> yop :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> yoFm :set filetype=markdown<CR>
 nnoremap <silent> yoFt :set filetype=text<CR>
