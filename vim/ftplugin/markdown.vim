@@ -1,22 +1,21 @@
 " general {{{1
 setlocal textwidth=0
 setlocal wrap spell nonumber norelativenumber
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=4
-if &diff
-  augroup markdown_diff
-    au!
-    au VimEnter * :execute "windo set wrap"
-  augroup END
-endif
+setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
-" keybindings {{{1
-" general {{{2
-nnoremap <buffer> <localleader>p :!pandoc -o %.pdf % && open %.pdf<CR><CR>
-nnoremap <buffer> <localleader>P :!pandoc -o %.html % && open %.html<CR><CR>
+" folding {{{1
+setlocal foldmethod=expr
+setlocal foldexpr=GetMarkdownFolds(v:lnum)
+function! GetMarkdownFolds(lnum) "{{{
+    let l:line = getline(a:lnum) 
+    if (l:line =~# '^#') || (a:lnum == 1 && l:line =~# '^---$')
+        return '>1'
+    else
+        return '='
+    endif
+endfunction "}}}
 
-" move up and down by visual line
+" move up and down by visual line {{{1
 noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
@@ -24,8 +23,12 @@ noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
 inoremap <buffer> <silent> <expr> <C-n> (v:count == 0 ? '<C-o>gj' : '<C-n>')
 inoremap <buffer> <silent> <expr> <C-p> (v:count == 0 ? '<C-o>gk' : '<C-p>')
 
-" criticmarkup and cite.py {{{2
-nnoremap <buffer> <localleader>hiw ysiw=lysiw=lysiW}
+" pandoc preview {{{1
+nnoremap <buffer> <localleader>p :!pandoc -o %.pdf % && open %.pdf<CR><CR>
+nnoremap <buffer> <localleader>P :!pandoc -o %.html % && open %.html<CR><CR>
+
+" criticmarkup {{{1
+" insert a todo item as a comment
 nmap <buffer> <localleader>t i{>>TODO: <<}<C-o>3h
 
 " highlight visual selection, insert comment after it
@@ -34,10 +37,21 @@ xmap <buffer> <localleader>c <localleader>ehf}a<Space><Esc>v<localleader>ecxi
 " delete around or surround critic tags ("undo")
 nmap <buffer> <localleader>u F{3xf}2h3x
 
-" search and highlight
+" search for critic tags
 nnoremap <buffer> <localleader>/ /{==\\|{>>\\|{++\\|{--<CR>
 nnoremap <buffer> <localleader>? ?{==\\|{>>\\|{++\\|{--<CR>
+
+" force reset highlighting
 nnoremap <buffer> <localleader>H :call criticmarkup#InjectHighlighting()<CR>
+
+" sentence highlights {{{1
+nnoremap <buffer> ]k :echo search('\.', 'c')<CR>v(
+nnoremap <buffer> [k :echo search('\.', 'bc')<CR>v(
+nmap <buffer> <localleader>k ]k
+
+vnoremap <buffer> ]k <Esc>):echo search('\.')<CR>v(
+vnoremap <buffer> [k <Esc>:echo search('\.', 'b')<CR>v(
+vnoremap <buffer> <localleader>k <Esc>
 
 " GoNotes plugin {{{1
 nnoremap <buffer> gn :call GoNotes('<C-r><C-a>', 1)<CR>
@@ -136,23 +150,3 @@ function! BibShowAbstract(citekey)
 
 endfunction
 
-" folding {{{1
-setlocal foldmethod=expr
-setlocal foldexpr=GetMarkdownFolds(v:lnum)
-function! GetMarkdownFolds(lnum) "{{{
-    let l:line = getline(a:lnum) 
-    if (l:line =~# '^#') || (a:lnum == 1 && l:line =~# '^---$')
-        return '>1'
-    else
-        return '='
-    endif
-endfunction "}}}
-
-" sentence highlights {{{1
-nnoremap <buffer> ]k :echo search('\.', 'c')<CR>v(
-nnoremap <buffer> [k :echo search('\.', 'bc')<CR>v(
-nmap <buffer> <localleader>k ]k
-
-vnoremap <buffer> ]k <Esc>):echo search('\.')<CR>v(
-vnoremap <buffer> [k <Esc>:echo search('\.', 'b')<CR>v(
-vnoremap <buffer> <localleader>k <Esc>
