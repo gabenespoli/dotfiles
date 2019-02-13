@@ -160,7 +160,7 @@ nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
 
 " grep [git] folder for todos
 nnoremap <expr> <leader>T exists(':Ggrep') == 2 ?
-      \ ':Ggrep! "TODO\|FIXME\|XXX"<CR><CR>:botright copen<CR>' : 
+      \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
 " Plugin Settings {{{1
