@@ -55,7 +55,6 @@ syntax enable
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
-set swapfile
 set undodir=~/tmp/vim/undo/
 set backupdir=~/tmp/vim/backup/
 set directory=~/tmp/vim/swap/
