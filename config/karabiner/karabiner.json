@@ -576,7 +576,7 @@
                         ]
                     },
                     {
-                        "description": "Mu-G Mode [; + hjkl/uo -> arrows/pgup&pgdn]",
+                        "description": "Mu-G Mode [; + hjkl/in/o -> arrows/pgup&pgdn/cmd+o (open)]",
                         "manipulators": [
                             {
                                 "from": {
@@ -735,7 +735,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "i",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -758,7 +758,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "n",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -768,6 +768,32 @@
                                 "to": [
                                     {
                                         "key_code": "page_down"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
