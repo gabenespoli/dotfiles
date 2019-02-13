@@ -165,7 +165,7 @@ nnoremap <expr> <leader>T exists(':Ggrep') == 2 ?
 let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 1
 colorscheme snooker
-nnoremap <silent> yoC :SnookerContrastToggle<CR>
+nnoremap <silent> yoC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
 
 " general {{{2
 " tpope/vim-rsi {{{3
