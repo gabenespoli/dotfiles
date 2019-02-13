@@ -71,7 +71,7 @@ set visualbell
 set number relativenumber
 set equalalways splitright splitbelow
 set laststatus=2
-set nowrap
+set nowrap linebreak breakindent
 set whichwrap+=h,l
 set backspace=indent,eol,start
 set clipboard=unnamed
@@ -80,8 +80,6 @@ set fillchars=fold:\ ,vert:\|
 set diffopt+=context:3
 set cursorline
 set foldlevel=99
-set linebreak
-set breakindent
 set expandtab
 set tabstop=2 softtabstop=2 shiftwidth=2
 set wildmenu wildignorecase wildmode=list:longest
