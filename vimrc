@@ -41,7 +41,6 @@ Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
 " local {{{2
-Plug '~/bin/vim/vim-colors-sumach'
 Plug '~/bin/vim/vim-colors-snooker'
 Plug '~/bin/vim/vim-cider-vinegar'
 Plug '~/bin/vim/vim-mutton'
@@ -173,17 +172,10 @@ nnoremap <expr> <leader>T exists(':Ggrep') == 2 ?
 
 " Plugin Settings {{{1
 " Colorscheme {{{2
-let g:sumach_terminal_italics = 1
-let g:sumach_color_cursor = 0
 let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 1
-if has('gui_running')
-  set background=light
-  colorscheme sumach
-else
-  set background=dark
-  colorscheme snooker
-endif
+colorscheme snooker
+nnoremap <silent> yoC :SnookerContrastToggle<CR>
 
 " general {{{2
 " tpope/vim-rsi {{{3
@@ -379,9 +371,6 @@ let g:tagbar_type_markdown = {
 \ }
 
 " local {{{2
-" gabenespoli/vim-colors-sumach
-nnoremap <silent> yoC :SumachContrastToggle<CR>
-
 " gabenespoli/vim-cider-vinegar
 let g:CiderToggleQF = '<leader>Q'
 let g:CiderToggleLL = '<leader>L'
