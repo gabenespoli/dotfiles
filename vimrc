@@ -42,7 +42,6 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
 " local {{{2
 Plug '~/bin/vim/vim-colors-snooker'
-Plug '~/bin/vim/vim-cider-vinegar'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
 
@@ -365,14 +364,6 @@ let g:tagbar_type_markdown = {
 \ }
 
 " local {{{2
-" gabenespoli/vim-cider-vinegar
-let g:CiderToggleQF = '<leader>Q'
-let g:CiderToggleLL = '<leader>L'
-nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
-      \ ':cclose<CR>' : ':botright copen<CR>'
-nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
-      \ ':lclose<CR>' : ':botright lopen<CR>'
-
 " gabenespoli/vim-mutton
 nnoremap <leader>t :MuttonToggle('tagbar')<CR>
 nnoremap gS :MuttonToggle('gitcommit')<CR>
