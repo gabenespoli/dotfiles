@@ -57,7 +57,7 @@ set undofile
 set undodir=~/tmp/vim/undo/
 set backupdir=~/tmp/vim/backup/
 set directory=~/tmp/vim/swap/
-if !isdirectory(expand(&undodir)) | call mkdir(expand(&undodir), 'p') | endif
+if !isdirectory(expand(&undodir))   | call mkdir(expand(&undodir),   'p') | endif
 if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 if has('nvim')
@@ -94,13 +94,7 @@ set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
 set guioptions=g
-set guicursor=n-v-sm:block-blinkon0
-  \,i-ci-c:ver25-blinkon0
-  \,r-cr-o:hor20-blinkon0
-if has('gui_running')
-  set nonumber norelativenumber
-  set laststatus=0
-endif
+set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 
 " Status Line {{{2
 set statusline=
@@ -114,7 +108,7 @@ set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
 
 " Line Return {{{2
-" from Steve Losh's (sjl) vimrc
+" from Steve Losh's (sjl) vimrc https://bitbucket.org/sjl/dotfiles/
 augroup line_return
   au!
   au BufReadPost *
@@ -195,10 +189,6 @@ nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> yoFm :set filetype=markdown<CR>
 nnoremap <silent> yoFt :set filetype=text<CR>
 
-" justinmk/vim-dirvish {{{3
-let g:loaded_netrwPlugin = 1
-let g:dirvish_mode = ':sort ,^.*[\/],'
-
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
 nnoremap gY :Gdiff<CR>
@@ -216,6 +206,10 @@ nnoremap gy :call gitgutter#hunk#preview()<CR>
 nnoremap <silent> yog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> yoG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+
+" justinmk/vim-dirvish {{{3
+let g:loaded_netrwPlugin = 1
+let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
