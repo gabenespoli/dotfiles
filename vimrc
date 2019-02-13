@@ -88,7 +88,6 @@ set wildmenu wildignorecase wildmode=list:longest
 set ignorecase smartcase
 set incsearch nohlsearch
 set showmatch                   " hi matching [{()}]
-let loaded_matchparen = 1       " don't match parentheses, use % instead
 set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
