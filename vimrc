@@ -186,6 +186,12 @@ nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><C
 nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> yoFm :set filetype=markdown<CR>
 nnoremap <silent> yoFt :set filetype=text<CR>
+nnoremap <silent> <expr> <leader>q
+      \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
+      \ ':botright copen<CR>' : ':cclose<CR>'
+nnoremap <silent> <expr> <leader>l
+      \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
+      \ ':botright lopen<CR>' : ':lclose<CR>'
 
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
