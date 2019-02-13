@@ -1,22 +1,18 @@
 # This file is part of ranger, the console file manager.
 # License: GNU GPL version 3, see the file "AUTHORS" for details.
-# Author: Joseph Tannhuber <sepp.tannhuber@yahoo.de>, 2013
-# Solarized like colorscheme, similar to solarized-dircolors
-# from https://github.com/seebi/dircolors-solarized.
-# This is a modification of Roman Zimbelmann's default colorscheme.
 
 from __future__ import (absolute_import, division, print_function)
 
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import (
-    cyan, magenta, red, white, default,
+    black, blue, cyan, green, magenta, red, white, yellow, default,
     normal, bold, reverse,
     default_colors,
 )
 
 
-class Solarized(ColorScheme):
-    progress_bar_color = 33
+class Default(ColorScheme):
+    progress_bar_color = blue
 
     def use(self, context):  # pylint: disable=too-many-branches,too-many-statements
         fg, bg, attr = default_colors
@@ -25,47 +21,38 @@ class Solarized(ColorScheme):
             return default_colors
 
         elif context.in_browser:
-            fg = 244
             if context.selected:
                 attr = reverse
             else:
                 attr = normal
             if context.empty or context.error:
-                fg = 235
-                bg = 160
+                fg = green
             if context.border:
                 fg = default
             if context.media:
                 if context.image:
-                    fg = 136
+                    fg = default
                 else:
-                    fg = 166
+                    fg = magenta
             if context.container:
-                fg = 61
+                fg = red
             if context.directory:
-                fg = 33
+                fg = blue
             elif context.executable and not \
                     any((context.media, context.container,
                          context.fifo, context.socket)):
-                fg = 64
-                attr |= bold
+                fg = 1
+                # color 14 is pink (base0F) in base16 colorscheme
             if context.socket:
-                fg = 136
-                bg = 230
+                fg = magenta
                 attr |= bold
             if context.fifo:
-                fg = 136
-                bg = 230
-                attr |= bold
+                fg = yellow
             if context.device:
-                fg = 244
-                bg = 230
+                fg = red
                 attr |= bold
             if context.link:
-                fg = 37 if context.good else 160
-                attr |= bold
-                if context.bad:
-                    bg = 235
+                fg = cyan if context.good else magenta
             if context.tag_marker and not context.selected:
                 attr |= bold
                 if fg in (red, magenta):
@@ -73,14 +60,14 @@ class Solarized(ColorScheme):
                 else:
                     fg = red
             if not context.selected and (context.cut or context.copied):
-                fg = 234
-                attr |= bold
+                fg = 8
+                # color 8 is comments (base03) in base16 colorscheme
+                # attr |= bold
             if context.main_column:
-                if context.selected:
-                    attr |= bold
+                # if context.selected:
+                    # attr |= bold
                 if context.marked:
-                    attr |= bold
-                    bg = 237
+                    fg = yellow
             if context.badinfo:
                 if attr & reverse:
                     bg = magenta
@@ -88,40 +75,43 @@ class Solarized(ColorScheme):
                     fg = magenta
 
             if context.inactive_pane:
-                fg = 241
+                fg = cyan
 
         elif context.in_titlebar:
-            attr |= bold
             if context.hostname:
-                fg = 16 if context.bad else 255
-                if context.bad:
-                    bg = 166
+                fg = red if context.bad else green
             elif context.directory:
-                fg = 33
+                fg = blue
             elif context.tab:
-                fg = 47 if context.good else 33
-                bg = 239
+                if context.good:
+                    bg = green
+                    fg = black
             elif context.link:
                 fg = cyan
 
         elif context.in_statusbar:
             if context.permissions:
                 if context.good:
-                    fg = 93
+                    fg = cyan
                 elif context.bad:
-                    fg = 160
-                    bg = 235
+                    fg = magenta
             if context.marked:
-                attr |= bold | reverse
-                fg = 237
-                bg = 47
+                attr |= reverse
+                fg = yellow
             if context.message:
                 if context.bad:
-                    attr |= bold
-                    fg = 160
-                    bg = 235
+                    fg = red
             if context.loaded:
                 bg = self.progress_bar_color
+            if context.vcsinfo:
+                fg = blue
+                attr &= ~bold
+            if context.vcscommit:
+                fg = yellow
+                attr &= ~bold
+            if context.vcsdate:
+                fg = cyan
+                attr &= ~bold
 
         if context.text:
             if context.highlight:
@@ -129,7 +119,7 @@ class Solarized(ColorScheme):
 
         if context.in_taskview:
             if context.title:
-                fg = 93
+                fg = blue
 
             if context.selected:
                 attr |= reverse
@@ -139,5 +129,33 @@ class Solarized(ColorScheme):
                     fg = self.progress_bar_color
                 else:
                     bg = self.progress_bar_color
+
+        if context.vcsfile and not context.selected:
+            attr &= ~bold
+            if context.vcsconflict:
+                fg = magenta
+            elif context.vcschanged:
+                fg = red
+            elif context.vcsunknown:
+                fg = red
+            elif context.vcsstaged:
+                fg = green
+            elif context.vcssync:
+                fg = green
+            elif context.vcsignored:
+                fg = default
+
+        elif context.vcsremote and not context.selected:
+            attr &= ~bold
+            if context.vcssync or context.vcsnone:
+                fg = green
+            elif context.vcsbehind:
+                fg = red
+            elif context.vcsahead:
+                fg = blue
+            elif context.vcsdiverged:
+                fg = magenta
+            elif context.vcsunknown:
+                fg = red
 
         return fg, bg, attr
