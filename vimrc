@@ -45,11 +45,15 @@ Plug '~/bin/vim/vim-colors-snooker'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
 
+" same defaults in vim as in neovim {{{2
+if !has('nvim')
+  Plug 'noahfrederick/vim-neovim-defaults'
+endif
+
 call plug#end()
 
 " General Settings {{{1
 " System {{{2
-syntax enable
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
@@ -70,21 +74,19 @@ set hidden
 set visualbell
 set number relativenumber
 set equalalways splitright splitbelow
-set laststatus=2
 set nowrap linebreak breakindent
 set whichwrap+=h,l
-set backspace=indent,eol,start
 set clipboard=unnamed
-set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
+set listchars+=extends:>,precedes:<
 set fillchars=fold:\ ,vert:\|
 set diffopt+=context:3
 set cursorline
 set foldlevel=99
 set expandtab
 set tabstop=2 softtabstop=2 shiftwidth=2
-set wildmenu wildignorecase wildmode=list:longest
+set wildignorecase wildmode=list:longest
 set ignorecase smartcase
-set incsearch nohlsearch
+set nohlsearch
 set showmatch                   " hi matching [{()}]
 set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
