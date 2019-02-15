@@ -143,9 +143,6 @@ nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
 nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
 nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
-" open with system on mac
-if has('mac') | nnoremap gO :!open <cfile><CR> | endif
-
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
@@ -212,8 +209,11 @@ nnoremap <silent> yoG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highli
 let g:gitgutter_override_sign_column_highlight = 0
 
 " justinmk/vim-dirvish {{{3
-let g:loaded_netrwPlugin = 1
 let g:dirvish_mode = ':sort ,^.*[\/],'
+if has('mac')
+  let g:loaded_netrwPlugin = 1
+  nnoremap gx :!open <cfile><CR><CR>
+endif
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
