@@ -78,8 +78,6 @@ set nowrap linebreak breakindent
 set whichwrap+=h,l
 set clipboard=unnamed
 set listchars+=extends:>,precedes:<
-set fillchars=fold:\ ,vert:\|
-set diffopt+=context:3
 set cursorline
 set foldlevel=99
 set expandtab
