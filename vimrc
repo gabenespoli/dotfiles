@@ -96,6 +96,7 @@ set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 
 " Status Line {{{2
 set statusline=
+set statusline+=[%n]
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 set statusline+=\ %<%.99f
