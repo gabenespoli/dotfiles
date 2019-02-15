@@ -74,21 +74,19 @@ set hidden
 set visualbell
 set number relativenumber
 set equalalways splitright splitbelow
-set nowrap linebreak breakindent
-set whichwrap+=h,l
-set clipboard=unnamed
+set nowrap linebreak breakindent whichwrap+=h,l
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 set listchars+=extends:>,precedes:<
 set cursorline
+set showmatch
+set ignorecase smartcase nohlsearch
 set foldlevel=99
-set expandtab
-set tabstop=2 softtabstop=2 shiftwidth=2
 set wildignorecase wildmode=list:longest
-set ignorecase smartcase
-set nohlsearch
-set showmatch                   " hi matching [{()}]
-set suffixesadd+=.m,.r,.R,.py
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
+set diffopt+=context:3
+set suffixesadd+=.m,.r,.R,.py
+set clipboard=unnamed
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 
