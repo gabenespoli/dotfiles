@@ -234,7 +234,7 @@ let g:ctrlp_prompt_mappings = {
  \ }
 
 " w0rp/ale {{{3
-nnoremap <silent> yov :ALEToggle<CR>:echo g:ale_enabled<CR>
+nnoremap <silent> yoV :ALEToggle<CR>:echo g:ale_enabled<CR>
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
