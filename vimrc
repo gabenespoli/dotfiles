@@ -102,8 +102,7 @@ set statusline+=%{FugitiveStatusline()}
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
 
-" Line Return {{{2
-" from Steve Losh's (sjl) vimrc https://bitbucket.org/sjl/dotfiles/
+" Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
 augroup line_return
   au!
   au BufReadPost *
