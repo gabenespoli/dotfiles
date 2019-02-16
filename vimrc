@@ -126,23 +126,17 @@ nnoremap Y y$
 nnoremap ' `
 nnoremap ` '
 
-" echo syntax under cursor
-nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
-
-" spell checking
-nnoremap <leader>s 1z=
-
-" insert dates
-nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
-nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
+
+" spell checking
+nnoremap <leader>s 1z=
+
+" echo syntax under cursor
+nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
@@ -154,6 +148,12 @@ nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
 nnoremap <expr> <leader>T exists(':Ggrep') == 2 ?
       \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
+
+" insert dates
+nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
+nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " Plugin Settings {{{1
 " Colorscheme {{{2
