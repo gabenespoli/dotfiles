@@ -146,10 +146,10 @@ inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
 " add last search to location list
-nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
+nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
 
 " grep [git] folder for todos
-nnoremap <expr> <leader>T exists(':Ggrep') == 2 ?
+nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
