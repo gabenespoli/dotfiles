@@ -154,10 +154,10 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
 " insert dates
-nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
-nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
+nnoremap <leader>di "=strftime("%Y-%m-%d")<CR>P
+nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+nnoremap <leader>da "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>Da "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " Plugin Settings {{{1
 " Colorscheme {{{2
