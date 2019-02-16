@@ -176,6 +176,7 @@ cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
 " tpope/vim-unimpaired {{{3
+nmap co yo
 nnoremap <silent> yof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap <silent> yom :set number!<CR>:set relativenumber!<CR>
 nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
