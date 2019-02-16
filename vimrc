@@ -138,6 +138,10 @@ nnoremap <leader>s 1z=
 " echo syntax under cursor
 nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
+" esc to exit pmenu
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
