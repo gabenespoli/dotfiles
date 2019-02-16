@@ -201,9 +201,9 @@ augroup fugitive
 augroup END
 
 " airblade/gitgutter {{{3
-nmap ga <Plug>GitGutterStageHunk
+nmap ga  <Plug>GitGutterStageHunk
 nmap ghu <Plug>GitGutterUndoHunk
-nnoremap gy :call gitgutter#hunk#preview()<CR>
+nmap gy  <Plug>GitGutterPreviewHunk
 nnoremap <silent> yog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> yoG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
