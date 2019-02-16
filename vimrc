@@ -116,7 +116,7 @@ set notimeout ttimeout
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 inoremap jk <Esc>
-nnoremap <C-j> <CR>
+nmap <C-j> <CR>
 nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
