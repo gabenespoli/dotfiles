@@ -130,6 +130,10 @@ nnoremap <C-q> @q
 nnoremap ' `
 nnoremap ` '
 
+" keep visual selection when indenting
+xnoremap < <gv
+xnoremap > >gv
+
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
