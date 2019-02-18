@@ -340,6 +340,9 @@ let g:jedi#rename_command = '<localleader>r'
 let g:jedi#usages_command = '<localleader>n'
 
 " markdown {{{2
+" tpope/vim-markdown (built-in) {{{3
+let g:markdown_fenced_languaged = ['bash=sh', 'matlab', 'python', 'vim']
+
 " godlygeek/tabular {{{3
 nnoremap <leader>\| :Tabularize /\|<CR>
 
