@@ -121,7 +121,10 @@ nmap <C-j> <CR>
 nnoremap Y y$
 nnoremap ! :!
 nnoremap q :q<CR>
+
+" Qq to record, C-q to replay
 nnoremap Q q
+nnoremap <C-q> @q
 
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
