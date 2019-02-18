@@ -139,7 +139,7 @@ nnoremap <leader>s 1z=
 " echo syntax under cursor
 nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
-" esc to exit pmenu
+" esc to exit pmenu, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 
@@ -156,8 +156,8 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
 
 " insert dates
 nnoremap <leader>di "=strftime("%Y-%m-%d")<CR>P
-nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
 nnoremap <leader>da "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
 nnoremap <leader>Da "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " Plugin Settings {{{1
