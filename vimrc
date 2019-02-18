@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
@@ -205,6 +206,11 @@ augroup fugitive
   au!
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
+
+" junegunn/gv.vim {{{3
+nnoremap gL :GV!<CR>
+nnoremap gl :GV<CR>
+xnoremap gl :GV<CR>
 
 " airblade/gitgutter {{{3
 nmap ga  <Plug>GitGutterStageHunk
