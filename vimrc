@@ -118,10 +118,10 @@ let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 inoremap jk <Esc>
 nmap <C-j> <CR>
+nnoremap Y y$
 nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
-nnoremap Y y$
 
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
