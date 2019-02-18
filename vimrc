@@ -165,6 +165,12 @@ let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 1
 colorscheme snooker
 nnoremap <silent> yoC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
+augroup highlight_fold_markers_as_titles
+  au!
+  autocmd BufEnter,BufWritePost * 
+        \ syntax match FoldMarkerLines /^\s*".*{{{\d\{0,1\}$/ 
+        \ | hi! link FoldMarkerLines Title
+augroup END
 
 " general {{{2
 " tpope/vim-rsi {{{3
