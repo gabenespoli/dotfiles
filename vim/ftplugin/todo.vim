@@ -1,65 +1,21 @@
-" vim plugin for my own version of todos
-" based heavily on todo.txt
-" some ideas are taken directly from the todo-txt.vim plugin
-
 " keybindings {{{1
-" change char type {{{2
-nnoremap <buffer> <localleader>- 0r-
-" nnoremap <buffer> <localleader>x 0rx
-nnoremap <buffer> <localleader>* 0r*
-nnoremap <buffer> <localleader>! 0r!
-nnoremap <buffer> <localleader>> 0r>
+" mark as done
 nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp''
 
-" priority {{{2
-" [d]oing, [t]oday, [w]eek, [r]emove, [x] is mark as done and move to bottom
+" priority
 " first try to remove priority, then add
 nnoremap <buffer> <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>
 nnoremap <buffer> <localleader>b :s/^([A-Z])\s//ge<CR>I(B) <Esc>
 nnoremap <buffer> <localleader>c :s/^([A-Z])\s//ge<CR>I(C) <Esc>
 nnoremap <buffer> <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>
-
-nnoremap <buffer> <localleader>m :s/^([A-Z])\s//ge<CR>I(M) <Esc>
-nnoremap <buffer> <localleader>t :s/^([A-Z])\s//ge<CR>I(T) <Esc>
-nnoremap <buffer> <localleader>w :s/^([A-Z])\s//ge<CR>I(W) <Esc>
-nnoremap <buffer> <localleader>r :s/^([A-Z])\s//ge<CR>I(R) <Esc>
-nnoremap <buffer> <localleader>f :s/^([A-Z])\s//ge<CR>I(F) <Esc>
-nnoremap <buffer> <localleader>s :s/^([A-Z])\s//ge<CR>I(S) <Esc>
-nnoremap <buffer> <localleader>u :s/^([A-Z])\s//ge<CR>I(U) <Esc>
-
+" remove priority
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>
 
-" points (1 2 3 5 8) {{{2
-nnoremap <buffer> <localleader>1 :s/\ pts:\d*//ge<CR>A pts:1<Esc>
-nnoremap <buffer> <localleader>2 :s/\ pts:\d*//ge<CR>A pts:2<Esc>
-nnoremap <buffer> <localleader>3 :s/\ pts:\d*//ge<CR>A pts:3<Esc>
-nnoremap <buffer> <localleader>5 :s/\ pts:\d*//ge<CR>A pts:5<Esc>
-nnoremap <buffer> <localleader>8 :s/\ pts:\d*//ge<CR>A pts:8<Esc>
-nnoremap <buffer> <localleader>9 :s/\ pts:\d*//ge<CR>A pts:13<Esc>
-nnoremap <buffer> <localleader>0 :s/\ pts:\d*//ge<CR>
-
-" misc {{{2
+" misc
 nnoremap <buffer> <localleader>S :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
-" nnoremap <buffer> x :call TodoToggleX()<CR>
-
-" folding {{{1
-setlocal foldmethod=expr
-setlocal foldexpr=GetTodoFolds(v:lnum)
-
-function! GetTodoFolds(lnum)
-  if getline(a:lnum) =~# '^#'
-    return '>1'
-  elseif getline(a:lnum) =~# '^\/\/'
-    return '>1'
-  elseif getline(a:lnum) =~# '^.*:$'
-    return '>1'
-  else
-    return '='
-  endif
-endfunction
 
 " functions {{{1
 
@@ -124,10 +80,3 @@ function! TodoToggleNext()
   endif
   execute 'write'
 endfunction
-
-" capitalL plugin settings {{{1
-let g:Lposition = 'left'
-let b:Lsyntax = 'todo'
-let b:Lpatterns = ['/!next/gj %', '/!waiting/gj %']
-let b:Lreformat = ['/[^|]*|[^|]*|\s/', '/[^|]*|[^|]*|\s/']
-
