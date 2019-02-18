@@ -576,7 +576,7 @@
                         ]
                     },
                     {
-                        "description": "Mu-G Mode [; + hjkl/uo -> arrows/pgup&pgdn]",
+                        "description": "Mu-G Mode [; + hjkl/in/m/o -> arrows/pgup&pgdn/enter/cmd+o (open)]",
                         "manipulators": [
                             {
                                 "from": {
@@ -735,7 +735,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "i",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -758,7 +758,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "n",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -768,6 +768,55 @@
                                 "to": [
                                     {
                                         "key_code": "page_down"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1701,6 +1750,71 @@
                                         "key_code": "grave_accent_and_tilde",
                                         "modifiers": [
                                             "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Slack switch convos like messages.android.com [control+,. -> opt+up/dn]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.tinyspeck\\.slackmacgap$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.tinyspeck\\.slackmacgap$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "option"
                                         ]
                                     }
                                 ],

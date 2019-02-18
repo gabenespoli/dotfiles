@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
@@ -41,25 +42,26 @@ Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
 " local {{{2
-Plug '~/bin/vim/vim-colors-sumach'
 Plug '~/bin/vim/vim-colors-snooker'
-Plug '~/bin/vim/vim-cider-vinegar'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
+
+" same defaults in vim as in neovim {{{2
+if !has('nvim')
+  Plug 'noahfrederick/vim-neovim-defaults'
+endif
 
 call plug#end()
 
 " General Settings {{{1
 " System {{{2
-syntax enable
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
-set swapfile
 set undodir=~/tmp/vim/undo/
 set backupdir=~/tmp/vim/backup/
 set directory=~/tmp/vim/swap/
-if !isdirectory(expand(&undodir)) | call mkdir(expand(&undodir), 'p') | endif
+if !isdirectory(expand(&undodir))   | call mkdir(expand(&undodir),   'p') | endif
 if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 if has('nvim')
@@ -73,39 +75,25 @@ set hidden
 set visualbell
 set number relativenumber
 set equalalways splitright splitbelow
-set laststatus=2
-set nowrap
-set whichwrap+=h,l
-set backspace=indent,eol,start
-set clipboard=unnamed
-set listchars=eol:\ ,tab:>-,trail:~,extends:>,precedes:<
-set fillchars=fold:\ ,vert:\|
-set diffopt+=context:3
+set nowrap linebreak breakindent whichwrap+=h,l
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+set listchars+=extends:>,precedes:<
 set cursorline
+set showmatch
+set ignorecase smartcase nohlsearch
 set foldlevel=99
-set linebreak
-set breakindent
-set expandtab
-set tabstop=2 softtabstop=2 shiftwidth=2
-set wildmenu wildignorecase wildmode=list:longest
-set ignorecase smartcase
-set incsearch nohlsearch
-set showmatch                   " hi matching [{()}]
-let loaded_matchparen = 1       " don't match parentheses, use % instead
-set suffixesadd+=.m,.r,.R,.py
+set wildignorecase wildmode=list:longest
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
+set diffopt+=context:3
+set suffixesadd+=.m,.r,.R,.py
+set clipboard=unnamed
 set guioptions=g
-set guicursor=n-v-sm:block-blinkon0
-  \,i-ci-c:ver25-blinkon0
-  \,r-cr-o:hor20-blinkon0
-if has('gui_running')
-  set nonumber norelativenumber
-  set laststatus=0
-endif
+set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 
 " Status Line {{{2
 set statusline=
+set statusline+=[%n]
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 set statusline+=\ %<%.99f
@@ -115,8 +103,7 @@ set statusline+=%{FugitiveStatusline()}
 set statusline+=%=
 set statusline+=%l/%L\,%c\ (%P)
 
-" Line Return {{{2
-" from Steve Losh's (sjl) vimrc
+" Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
 augroup line_return
   au!
   au BufReadPost *
@@ -130,7 +117,7 @@ set notimeout ttimeout
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 inoremap jk <Esc>
-nnoremap <C-j> <CR>
+nmap <C-j> <CR>
 nnoremap ! :!
 nnoremap q :q<CR>
 nnoremap Q q
@@ -140,57 +127,51 @@ nnoremap Y y$
 nnoremap ' `
 nnoremap ` '
 
-" echo syntax under cursor
-nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
-
-" spell checking
-nnoremap <leader>s 1z=
-
-" insert dates
-nnoremap <leader>id "=strftime("%Y-%m-%d")<CR>P
-nnoremap <leader>iD "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-nnoremap <leader>ad "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>aD "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-
-" open with system on mac
-if has('mac') | nnoremap gO :!open <cfile><CR> | endif
-
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
 
+" spell checking
+nnoremap <leader>s 1z=
+
+" echo syntax under cursor
+nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
+
+" esc to exit pmenu, enter to select
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
-" function for grep
-nnoremap <leader>/ :lvimgrep // %<CR>:botright lopen<CR>
-nnoremap <leader>G :MyGrep 
-nnoremap <leader>T :MyGrep TODO<CR><CR>
-command! -nargs=+ MyGrep call MyGrep(<q-args>)
-function! MyGrep(expr)
-  if exists(':Ggrep')
-    execute 'Ggrep ' . a:expr
-  else
-    execute 'grep ' . a:expr . ' *'
-  endif
-  botright copen
-endfunction
+" add last search to location list
+nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
+
+" grep [git] folder for todos
+nnoremap <expr> zT exists(':Ggrep') == 2 ?
+      \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
+      \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
+
+" insert dates
+nnoremap <leader>di "=strftime("%Y-%m-%d")<CR>P
+nnoremap <leader>da "=strftime("%Y-%m-%d")<CR>p
+nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+nnoremap <leader>Da "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " Plugin Settings {{{1
 " Colorscheme {{{2
-let g:sumach_terminal_italics = 1
-let g:sumach_color_cursor = 0
 let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 1
-if has('gui_running')
-  set background=light
-  colorscheme sumach
-else
-  set background=dark
-  colorscheme snooker
-endif
+colorscheme snooker
+nnoremap <silent> yoC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
+augroup highlight_fold_markers_as_titles
+  au!
+  autocmd BufEnter,BufWritePost * 
+        \ syntax match FoldMarkerLines /^\s*".*{{{\d\{0,1\}$/ 
+        \ | hi! link FoldMarkerLines Title
+augroup END
 
 " general {{{2
 " tpope/vim-rsi {{{3
@@ -209,10 +190,12 @@ nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><C
 nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> yoFm :set filetype=markdown<CR>
 nnoremap <silent> yoFt :set filetype=text<CR>
-
-" justinmk/vim-dirvish {{{3
-let g:loaded_netrwPlugin = 1
-let g:dirvish_mode = ':sort ,^.*[\/],'
+nnoremap <silent> <expr> <leader>q
+      \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
+      \ ':botright copen<CR>' : ':cclose<CR>'
+nnoremap <silent> <expr> <leader>l
+      \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
+      \ ':botright lopen<CR>' : ':lclose<CR>'
 
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
@@ -224,19 +207,31 @@ augroup fugitive
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
+" junegunn/gv.vim {{{3
+nnoremap gL :GV!<CR>
+nnoremap gl :GV<CR>
+xnoremap gl :GV<CR>
+
 " airblade/gitgutter {{{3
-nmap ga <Plug>GitGutterStageHunk
+nmap ga  <Plug>GitGutterStageHunk
 nmap ghu <Plug>GitGutterUndoHunk
-nnoremap gy :call gitgutter#hunk#preview()<CR>
+nmap gy  <Plug>GitGutterPreviewHunk
 nnoremap <silent> yog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> yoG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+
+" justinmk/vim-dirvish {{{3
+let g:dirvish_mode = ':sort ,^.*[\/],'
+if has('mac')
+  let g:loaded_netrwPlugin = 1
+  nnoremap gx :!open <cfile><CR><CR>
+endif
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
-let g:tagbar_iconchars = ['▸', '▾']
+let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_type_r = {
     \ 'ctagstype': 'r',
     \ 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]
@@ -256,7 +251,7 @@ let g:ctrlp_prompt_mappings = {
  \ }
 
 " w0rp/ale {{{3
-nnoremap <silent> yov :ALEToggle<CR>:echo g:ale_enabled<CR>
+nnoremap <silent> yoV :ALEToggle<CR>:echo g:ale_enabled<CR>
 nmap [v <Plug>(ale_previous_wrap)
 nmap ]v <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'never'
@@ -345,6 +340,9 @@ let g:jedi#rename_command = '<localleader>r'
 let g:jedi#usages_command = '<localleader>n'
 
 " markdown {{{2
+" tpope/vim-markdown (built-in) {{{3
+let g:markdown_fenced_languaged = ['bash=sh', 'matlab', 'python', 'vim']
+
 " godlygeek/tabular {{{3
 nnoremap <leader>\| :Tabularize /\|<CR>
 
@@ -386,25 +384,12 @@ let g:tagbar_type_markdown = {
 \ }
 
 " local {{{2
-" gabenespoli/vim-colors-sumach
-nnoremap <silent> yoC :SumachContrastToggle<CR>
-
-" gabenespoli/vim-cider-vinegar
-let g:CiderToggleQF = '<leader>Q'
-let g:CiderToggleLL = '<leader>L'
-nnoremap <silent> <expr> <leader>q CiderVinegarListIsOpen('c') ? 
-      \ ':cclose<CR>' : ':botright copen<CR>'
-nnoremap <silent> <expr> <leader>l CiderVinegarListIsOpen('l') ?
-      \ ':lclose<CR>' : ':botright lopen<CR>'
-
 " gabenespoli/vim-mutton
 nnoremap <leader>t :MuttonToggle('tagbar')<CR>
-nnoremap gS :MuttonToggle('gitcommit')<CR>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
 " Lilypond
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
-"set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 filetype on
