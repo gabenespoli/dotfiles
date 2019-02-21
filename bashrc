@@ -7,6 +7,14 @@ if [ "$(uname)" == "Darwin" ]; then
   export PATH="/usr/local/lib:$PATH"
   export PATH="/usr/local/texbin:$PATH"
   export PATH="$HOME/Library/Haskell/bin:$PATH"
+  if hash gls 2> /dev/null; then
+    alias ls="gls --color --group-directories-first"
+    alias lsl="gls -Flh --color --group-directories-first"
+    alias lsa="gls -Flha --color --group-directories-first"
+  else
+    alias lsl="ls -Flh"
+    alias lsa="ls -Flha"
+  fi
   alias agi="brew install"
   alias agu="brew update && brew upgrade && brew cleanup"
   alias ql='qlmanage -p &>/dev/null'
@@ -31,7 +39,9 @@ if [ "$(uname)" == "Darwin" ]; then
 else 
 # Linux options {{{2
   export PATH="/usr/local/lib:/usr/local/bin:$PATH"
-  alias ls="ls --color"
+  alias ls="ls --color --group-directories-first"
+  alias lsl="ls -Flh --color --group-directories-first"
+  alias lsa="ls -Flha --color --group-directories-first"
   alias agi="sudo apt-get -y install"
   alias agu="sudo apt-get update"
   alias sambastart="sudo /etc/init.d/samba start"
@@ -68,7 +78,6 @@ alias wa="tmux attach"
 alias wd="tmux detach"
 alias fold="fold -s"
 alias exe="chmod u+x"
-alias lsl='printf "\033c" && ls'
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 alias t="todo.sh"
 alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt"
