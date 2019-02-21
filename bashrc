@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# OS-specific options {{{1
-# Mac options {{{2
+# Mac options {{{1
 if [ "$(uname)" == "Darwin" ]; then
   export PATH="/usr/local/bin:$PATH"
   export PATH="/usr/local/lib:$PATH"
@@ -36,8 +35,8 @@ if [ "$(uname)" == "Darwin" ]; then
   LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
   export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
+# Linux options {{{1
 else 
-# Linux options {{{2
   export PATH="/usr/local/lib:/usr/local/bin:$PATH"
   alias ls="ls --color --group-directories-first"
   alias lsl="ls -Flh --color --group-directories-first"
