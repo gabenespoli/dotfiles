@@ -78,7 +78,7 @@ alias wd="tmux detach"
 alias fold="fold -s"
 alias exe="chmod u+x"
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
-alias t="todo.sh"
+alias t="cat ~/todo/todo.txt"
 alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias octave="octave --no-gui"
