@@ -41,8 +41,7 @@ class Default(ColorScheme):
             elif context.executable and not \
                     any((context.media, context.container,
                          context.fifo, context.socket)):
-                fg = 1
-                # color 14 is pink (base0F) in base16 colorscheme
+                fg = 5
             if context.socket:
                 fg = magenta
                 attr |= bold
