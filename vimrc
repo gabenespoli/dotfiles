@@ -82,6 +82,7 @@ set cursorline
 set showmatch
 set ignorecase smartcase nohlsearch
 set foldlevel=99
+set foldmethod=marker
 set wildignorecase wildmode=list:longest
 set completeopt=menuone,preview,noinsert,noselect
 set shortmess+=c
