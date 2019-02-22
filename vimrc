@@ -72,7 +72,6 @@ endif
 
 " Options {{{2
 set hidden
-set visualbell
 set number relativenumber
 set equalalways splitright splitbelow
 set nowrap linebreak breakindent whichwrap+=h,l
