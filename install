@@ -33,6 +33,11 @@ if [ "$(uname -s)" = 'Darwin' ]; then
 
   # TODO: setup terminfo with italics (should this be moved out of mac-only?
 
+  # Spectacle.app
+  [ -e ~/Library/Application\ Support/Spectacle/Shortcuts.json] && \
+    mv -v ~/Library/Application\ Support/Spectacle/Shortcuts.json bak/spectacle.json
+  cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
+
 else
   # Ubuntu apt-get
   sudo apt-get install \
