@@ -24,9 +24,9 @@ inoremap <buffer> <silent> <expr> <C-n> (v:count == 0 ? '<C-o>gj' : '<C-n>')
 inoremap <buffer> <silent> <expr> <C-p> (v:count == 0 ? '<C-o>gk' : '<C-p>')
 
 " pandoc preview (uses macOS open command) {{{1
-nnoremap <buffer> <localleader>pp :!pandoc -o %.pdf % && open %.pdf<CR><CR>
-nnoremap <buffer> <localleader>ph :!pandoc -o %.html % && open %.html<CR><CR>
-nnoremap <buffer> <localleader>pd :!pandoc -o %.docx % && open %.docx<CR><CR>
+nnoremap <buffer> <localleader>pp :!pandoc % -o %.pdf<CR>:!open %.pdf<CR><CR>
+nnoremap <buffer> <localleader>ph :!pandoc % -o %.html<CR>:!open %.html<CR><CR>
+nnoremap <buffer> <localleader>pd :!pandoc % -o %.docx<CR>:!open %.docx<CR><CR>
 
 " criticmarkup {{{1
 " insert a todo item as a comment
