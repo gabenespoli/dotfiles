@@ -11,3 +11,8 @@ color title-focus		  15 0
 color stat-staged     2 0
 color stat-unstaged   1 0
 color stat-untracked  1 0
+color "Author: "		    cyan	default
+color "AuthorDate: "		cyan	default
+color "Commit: "		    cyan	default
+color "CommitDate: "		cyan	default
+color directory         blue  default
