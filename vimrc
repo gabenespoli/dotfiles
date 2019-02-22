@@ -209,10 +209,6 @@ nnoremap gs :Gstatus<CR>
 nnoremap gY :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
-augroup fugitive
-  au!
-  autocmd BufReadPost fugitive://* set bufhidden=delete
-augroup END
 
 " junegunn/gv.vim {{{3
 nnoremap gL :GV!<CR>
