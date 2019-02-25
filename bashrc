@@ -2,10 +2,16 @@
 
 # Mac options {{{1
 if [ "$(uname)" == "Darwin" ]; then
-  export PATH="/usr/local/bin:$PATH"
-  export PATH="/usr/local/lib:$PATH"
-  export PATH="/usr/local/texbin:$PATH"
+  # overwrite builtins with gnu ones
+  for gnu in coreutils findutils grep gnu-sed gawk; do
+    export PATH="/usr/local/opt/$gnu/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/$gnu/libexec/gnuman:$MANPATH"
+  done
+  # custom path
   export PATH="$HOME/Library/Haskell/bin:$PATH"
+  export PATH="/usr/local/texbin:$PATH"
+  export PATH="/usr/local/lib:$PATH"
+  export PATH="/usr/local/bin:$PATH"
   if hash gls 2> /dev/null; then
     alias ls="gls --color --group-directories-first"
     alias lsl="gls -Flh --color --group-directories-first"
