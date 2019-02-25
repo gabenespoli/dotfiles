@@ -1,7 +1,3 @@
-" unmap C-n/p for CtrlP
-silent! unmap <buffer> <C-p>
-silent! unmap <buffer> <C-n>
-
 " use - as a toggle; use u to go up a dir when in dirvish
 nmap <silent> <buffer> - q
 nmap <silent> <buffer> u <Plug>(dirvish_up)
