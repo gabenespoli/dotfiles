@@ -188,8 +188,17 @@ colorscheme snooker
 nnoremap <silent> yoC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
 augroup highlight_fold_markers_as_titles
   au!
+  " TODO: use &commentstring so this works for all filetypes
+  "   currently it's hardcoded for ", #, or %
+  " autocmd BufEnter,BufWritePost * 
+  "       \ execute 'syntax match FoldMarkerLines /\V^\s\*' . 
+  "       \ escape(substitute(&commentstring,"%s","",""), '/') . 
+  "       \ '\.\*{{{\d\{0,1\}\$/'
+  "       \ | hi! link FoldMarkerLines Title
   autocmd BufEnter,BufWritePost * 
-        \ syntax match FoldMarkerLines /^\s*".*{{{\d\{0,1\}$/ 
+        \ execute 'syntax match FoldMarkerLines /^\s*' . 
+        \ '["#%]' . 
+        \ '.*{{{\d\{0,1\}$/'
         \ | hi! link FoldMarkerLines Title
 augroup END
 
