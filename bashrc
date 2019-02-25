@@ -9,7 +9,6 @@ if [ "$(uname)" == "Darwin" ]; then
   done
   # custom path
   export PATH="$HOME/Library/Haskell/bin:$PATH"
-  export PATH="/usr/local/texbin:$PATH"
   export PATH="/usr/local/lib:$PATH"
   export PATH="/usr/local/bin:$PATH"
   if hash gls 2> /dev/null; then
