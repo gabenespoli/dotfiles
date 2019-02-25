@@ -512,7 +512,7 @@
                         ]
                     },
                     {
-                        "description": "Mu-G Mode [; + hjkl/in/m/o -> arrows/pgup&pgdn/enter/cmd+o (open)]",
+                        "description": "Mu-G Mode [; + hjkl/in/m/ou/7890/dfb -> Arrows/PgUpDn/Enter/CmdUpDn(FinderUpDnDir)/CtrlCmdOptShiftArrows(Spectacle)/Cmd+dfb(reverseGmacs)]",
                         "manipulators": [
                             {
                                 "from": {
@@ -795,18 +795,18 @@
                                     "key_code": "7",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
+                                        "key_code": "down_arrow",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control",
-                                            "shift"
+                                            "control"
                                         ]
                                     }
                                 ],
@@ -824,18 +824,18 @@
                                     "key_code": "8",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
+                                        "key_code": "up_arrow",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control",
-                                            "shift"
+                                            "control"
                                         ]
                                     }
                                 ],
@@ -853,18 +853,18 @@
                                     "key_code": "9",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control",
-                                            "shift"
+                                            "control"
                                         ]
                                     }
                                 ],
@@ -882,7 +882,8 @@
                                     "key_code": "0",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -892,8 +893,7 @@
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control",
-                                            "shift"
+                                            "control"
                                         ]
                                     }
                                 ],
