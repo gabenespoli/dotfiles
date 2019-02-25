@@ -180,6 +180,9 @@ nnoremap <leader>da "=strftime("%Y-%m-%d")<CR>p
 nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
 nnoremap <leader>Da "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
+" open todo.txt file in preview window
+nnoremap <leader>T :pedit ~/todo/todo.txt<CR>
+
 " Plugin Settings {{{1
 " Colorscheme {{{2
 let g:snooker_terminal_italics = 1
