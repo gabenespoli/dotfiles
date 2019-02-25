@@ -2,6 +2,7 @@
 *.pyo
 .*~
 .DS_Store
+.bak
 config/karabiner/assets/complex_modifications/*
 config/ranger/bookmarks
 config/ranger/commands.py

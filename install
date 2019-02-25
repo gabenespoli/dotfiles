@@ -1,69 +1,87 @@
 #!/bin/bash
 
 # Gabe Nespoli (gabenespoli@gmail.com)
-# mostly adapted from junegunn/dotfiles/install
+# this script is intended to be run via curl
+# i.e. don't need to have git to first clone the dotfiles repo
 
-# set dotfiles and backup dirs {{{1
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-BASE=$(pwd)
-mkdir -pv bak
+# Prepare {{{1
+# Only run this script if we're on a mac
+if [ "$(uname -s)" != 'Darwin' ]; then echo "Not a mac" && exit 1; fi
 
-# link rc files {{{1
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `osxprep.sh` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# macOS Prep {{{1
+echo "-- Updating OSX. If this requires a restart, run the script again..."
+sudo softwareupdate -ia --verbose
+echo "-- Installing Xcode Command Line Tools..."
+xcode-select --install
+
+# Homebrew {{{1
+echo "-- Installing Homebrew packages..."
+[ -z "$(which brew)" ] &&
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update && brew upgrade --all
+
+brew install bash
+echo "Adding the new bash shell to the list of allowed shells"
+sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells' # Prompts for password
+chsh -s /usr/local/bin/bash # Change to the new shell, prompts for password
+
+brew install readline coreutils findutils grep gnu-sed gawk wget openssh
+
+brew install ruby-build rbenv
+eval "$(rbenv init -)"
+
+brew install pyenv pyenv-virtualenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+brew install git tmux neovim ranger
+brew install reattach-to-user-namespace karabiner-elements
+brew install tig ctags cloc
+brew install pandoc pandoc-citeproc pandoc-crossref
+brew install hugo
+
+brew cask install --appdir="~/Applications" iterm2
+brew cask install --appdir="~/Applications" xquartz
+
+brew cask install --appdir="/Applications" spectacle
+brew cask install --appdir="/Applications" google-chrome
+brew cask install --appdir="/Applications" skype
+brew cask install --appdir="/Applications" slack
+brew cask install --appdir="/Applications" dropbox
+brew cask install --appdir="/Applications" gimp
+brew cask install --appdir="/Applications" mactex
+
+brew cleanup
+
+# get dotfiles (now that we have git) {{{1
+echo "Cloning dotfiles and creating symlinks..."
+DOTFILES="$HOME"/dotfiles
+BAKDIR="$DOTFILES"/.bak
+[ -e "$DOTFILES" ] && mv "$DOTFILES" "$DOTFILES".bak
+git clone https://github.com/gabenespoli/dotfiles "$DOTFILES"
+mkdir -pv "$BAKDIR"
+
 for rc in *rc *profile tmux.conf; do
-  [ -e ~/."$rc" ] && mv -v ~/."$rc" bak/."$rc"
-  ln -sfv "$BASE/$rc" ~/."$rc"
+  [ -e "$HOME/.$rc" ] && mv -v "$HOME/.$rc" "$BAKDIR/$rc"
+  ln -sfv "$DOTFILES/$rc" "$HOME/.$rc"
 done
 
-# install apps (homebrew/apt-get) {{{1
-if [ "$(uname -s)" = 'Darwin' ]; then
-  # Mac Homebrew
-  [ -z "$(which brew)" ] &&
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-  echo "Updating homebrew"
-  brew cask install iterm2 spectacle
-
-  brew install \
-    bash readline tmux neovim ranger git tig ctags \
-    reattach-to-user-namespace wget hugo \
-    pyenv pyenv-virtualenv \
-    pandoc pandoc-citeproc pandoc-crossref
-
-  # TODO: set .macos defaults
-
-  # TODO: setup terminfo with italics (should this be moved out of mac-only?
-
-  # Spectacle.app
-  [ -e ~/Library/Application\ Support/Spectacle/Shortcuts.json] && \
-    mv -v ~/Library/Application\ Support/Spectacle/Shortcuts.json bak/spectacle.json
-  cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
-
-else
-  # Ubuntu apt-get
-  sudo apt-get install \
-    bash readline tmux neovim ranger git tig ctags \
-    pandoc pandoc-citeproc pandoc-crossref
-
-  rm -f ~/.tmux.conf
-  grep -v reattach-to-user-namespace tmux.conf > ~/.tmux.conf
-fi
-
-# git {{{1
 if [ ! -e ~/.git-prompt.sh ]; then
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 fi
+
 git config --global user.email "gabenespoli@gmail.com"
 git config --global user.name "Gabe Nespoli"
 
-# tmux {{{1
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source-file ~/.tmux.conf
-
 # pyenv {{{1
+# TODO: is this needed?
 if hash pyenv >/dev/null; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-
   # install neovim python virtualenvs
   # https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim#using-virtual-environments
   pyenv install 2.7.15
@@ -77,20 +95,21 @@ if hash pyenv >/dev/null; then
   pyenv deactivate
 fi
 
-# n/vim {{{1
-[ -e ~/.vim ] && mv -v ~/.vim bak/vim
-mkdir -pv ~/.vim/autoload
-curl -fLo ~/.vim/autoload/plug.vim \
+# vim {{{1
+echo "Linking vim files and directories..."
+[ -e "$HOME/.vim" ] && mv -v "$HOME/.vim" "$BAKDIR/vim"
+mkdir -pv "$HOME/.vim/autoload"
+curl -fLo "$HOME/.vim/autoload/plug.vim" \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 for folder in ftdetect ftplugin spell syntax; do
-  ln -sfv "$BASE/vim/$folder" ~/.vim/"$folder"
+  ln -sfv "$DOTFILES/vim/$folder" "$HOME/.vim/$folder"
 done
 
 # nvim
-mkdir -pv ~/.config/nvim/autoload
-ln -sf $BASE/vimrc ~/.config/nvim/init.vim
-ln -sf ~/.vim/autoload/plug.vim ~/.config/nvim/autoload/
+mkdir -pv "$HOME/.config/nvim/autoload"
+ln -sf "$DOTFILES/vimrc" "$HOME/.config/nvim/init.vim"
+ln -sf "$HOME/.vim/autoload/plug.vim" "$HOME/.config/nvim/autoload/"
 
 nvim +PlugInstall +qall
 
@@ -100,6 +119,20 @@ pyenv shell miniconda3-4.3.30
 conda install -y scipy numpy pandas matplotlib seaborn bokeh ipython jupyter \
   scikit-learn tensorflow keras
 pyenv shell --unset
-mkdir -pv ~/.ipython/profile_default
-ln -sfv "$BASE"/ipython/profile_default/ipython_config.py \
-  ~/.ipython/profile_default/ipython_config.py
+mkdir -pv "$HOME/.ipython/profile_default"
+ln -sfv "$DOTFILES/ipython/profile_default/ipython_config.py" \
+  "$HOME/.ipython/profile_default/ipython_config.py"
+
+# TODO: set .macos defaults #{{{1
+
+# Spectacle.app
+echo "Setting shortcuts for Spectacle.app..."
+[ -e "$HOME/Library/Application\ Support/Spectacle/Shortcuts.json"] && \
+  mv -v "$HOME/Library/Application\ Support/Spectacle/Shortcuts.json" "$DOTFILES/bak/spectacle.json"
+cp -r "$DOTFILES/init/spectacle.json" "$HOME/Library/Application\ Support/Spectacle/Shortcuts.json" 2>/dev/null
+
+# TODO: setup terminfo with italics (should this be moved out of mac-only? #{{{1
+
+# tmux {{{1
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source-file ~/.tmux.conf
