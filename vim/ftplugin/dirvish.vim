@@ -17,3 +17,8 @@ xmap <silent> <buffer> t :call dirvish#open('tabedit', 0)<CR>
 
 " show/hide dofiles like ranger
 nnoremap <silent> <buffer> zh :silent keeppatterns g@\v/\.[^\/]+/?$@d _<CR>:setl cole=3<CR>
+
+" open with mac system
+if has('mac')
+  nnoremap <silent> <buffer> gx :execute "!open " . shellescape("<C-r><C-l>")<CR><CR>
+endif
