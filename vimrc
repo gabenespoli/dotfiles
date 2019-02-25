@@ -379,6 +379,7 @@ nmap dP     <Plug>PutDiffCharPair
 let g:criticmarkup#disable#highlighting = 1
 
 " jszakmeister/markdown2ctags {{{3
+nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_type_pandoc = {
   \ 'ctagstype': 'pandoc',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
@@ -401,7 +402,6 @@ let g:tagbar_type_markdown = {
 
 " local {{{2
 " gabenespoli/vim-mutton
-nnoremap <leader>t :MuttonToggle('tagbar')<CR>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
