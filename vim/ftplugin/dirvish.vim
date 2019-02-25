@@ -28,4 +28,4 @@ nnoremap <buffer> mv :!mv <C-R><C-L> <C-R><C-L>.bak
 nnoremap <buffer> rm :!rm <C-R><C-L>
 nmap <buffer> dD rm
 nnoremap <buffer> dt :!trash <C-R><C-L>
-nnoremap <buffer> % :!touch %
+nnoremap <buffer> % :!touch %/
