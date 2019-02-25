@@ -1,6 +1,7 @@
 " Author: Gabe Nespoli
 " Email: gabenespoli@gmail.com
 " File: vimrc/init.vim for vim/nvim
+set encoding=utf-8
 scriptencoding utf-8
 
 " Plugin Manager {{{1
@@ -46,14 +47,30 @@ Plug '~/bin/vim/vim-colors-snooker'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
 
-" same defaults in vim as in neovim {{{2
-if !has('nvim')
-  Plug 'noahfrederick/vim-neovim-defaults'
-endif
-
 call plug#end()
 
 " General Settings {{{1
+" nvim defaults for vim (:help nvim-defaults) {{{2
+if !has('nvim')
+  set autoindent
+  set autoread
+  set backspace=indent,eol,start
+  set belloff=all
+  set complete-=i
+  set formatoptions+=j
+  set history=10000
+  set incsearch
+  set laststatus=2
+  set listchars=tab:>\ ,trail:-,nbsp:+
+  set mouse=a
+  set shortmess+=F
+  set showcmd
+  set sidescroll=1
+  set smarttab
+  set ttyfast
+  set wildmenu
+endif
+
 " System {{{2
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
