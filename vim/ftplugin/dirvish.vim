@@ -22,3 +22,14 @@ nnoremap <silent> <buffer> zh :silent keeppatterns g@\v/\.[^\/]+/?$@d _<CR>:setl
 if has('mac')
   nnoremap <silent> <buffer> gx :execute "!open " . shellescape("<C-r><C-l>")<CR><CR>
 endif
+
+" basic shell operations
+" TODO: yy sets a global or buffer var with path to copy from
+" TODO: pp (can't used by dirvish) uses that var to perform the paste in the current directory
+" TODO: make this work for visual selections
+nnoremap <buffer> cp :!cp <C-R><C-L> <C-R><C-L>.bak
+nnoremap <buffer> mv :!mv <C-R><C-L> <C-R><C-L>.bak
+nnoremap <buffer> rm :!rm <C-R><C-L>
+nmap <buffer> dD rm
+nnoremap <buffer> dt :!trash <C-R><C-L>
+nnoremap <buffer> % :!touch %
