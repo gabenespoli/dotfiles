@@ -156,9 +156,6 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
 
-" spell checking
-nnoremap <leader>s 1z=
-
 " echo syntax under cursor
 nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
@@ -231,6 +228,7 @@ nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><C
 nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> yoFM :set filetype=markdown<CR>
 nnoremap <silent> yoFT :set filetype=text<CR>
+nnoremap <leader>s 1z=
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
       \ ':botright copen<CR>' : ':cclose<CR>'
