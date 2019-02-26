@@ -217,6 +217,12 @@ cnoremap <C-p> <up>
 " tpope/vim-unimpaired {{{3
 nmap co yo
 nnoremap <silent> yof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap yoFn :set foldmethod=manual<CR>
+nnoremap yoFi :set foldmethod=indent<CR>
+nnoremap yoFe :set foldmethod=expr<CR>
+nnoremap yoFm :set foldmethod=marker<CR>
+nnoremap yoFs :set foldmethod=syntax<CR>
+nnoremap yoFd :set foldmethod=diff<CR>
 nnoremap <silent> yom :set number!<CR>:set relativenumber!<CR>
 nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
