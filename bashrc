@@ -91,6 +91,7 @@ alias cite="python $HOME/bin/python/cite/cite.py"
 alias rate="python $HOME/bin/python/rate.py"
 alias weather="curl http://wttr.in/Kitchener"
 alias keys='keyboard | grep -v "Control\|Semicolon" && keyboard | grep -v "Command\|Semicolon" && keyboard | grep -v "Command\|Control"'
+alias tr="tree -L 2 --dirsfirst"
 
 # git {{{1
 alias gs="git status -sb"
