@@ -137,6 +137,7 @@ inoremap jk <Esc>
 nmap <C-j> <CR>
 nnoremap Y y$
 nnoremap ! :!
+nnoremap <silent> <M-s> :silent w<CR>
 
 " q to quit, C-q for macros
 nnoremap q :q<CR>
