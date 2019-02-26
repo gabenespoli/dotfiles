@@ -137,11 +137,13 @@ inoremap jk <Esc>
 nmap <C-j> <CR>
 nnoremap Y y$
 nnoremap ! :!
-nnoremap q :q<CR>
 
-" Qq to record, C-q to replay
-nnoremap Q q
-nnoremap <C-q> @q
+" q to quit, C-q for macros
+nnoremap q :q<CR>
+nnoremap <C-q> q
+" quick macro (q): C-q-C-q to record, Q to replay
+nnoremap <C-q><C-q> qq
+nnoremap Q @q
 
 " swap single quote (mark bol) and back tick (mark)
 nnoremap ' `
