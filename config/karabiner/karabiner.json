@@ -540,7 +540,7 @@
                         ]
                     },
                     {
-                        "description": "Mu-G Mode [; + hjkl/in/m/ou/7890/dfb -> Arrows/PgUpDn/Enter/CmdUpDn(FinderUpDnDir)/CtrlCmdOptShiftArrows(Spectacle)/Cmd+dfb(reverseGmacs)]",
+                        "description": "Semicolon Layer [;+hjkl -> arrows]",
                         "manipulators": [
                             {
                                 "from": {
@@ -689,7 +689,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+in -> pgup/pgdn]",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
@@ -735,7 +740,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+m -> return]",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
@@ -758,7 +768,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+ou -> command+dn/up] (mostly for Finder dir down/up)",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
@@ -810,7 +825,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+7890 -> command+option+control[+shift]+up/dn/left/right] (for Spectacle.app)",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
@@ -926,7 +946,12 @@
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+bdf -> command+bdf]",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
