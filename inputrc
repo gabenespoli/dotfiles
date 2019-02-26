@@ -1,6 +1,9 @@
 ## Editing mode options
 set editing-mode emacs
 set show-mode-in-prompt off
+set show-all-if-ambiguous on
+set completion-display-width 0
+set completion-ignore-case on
 
 # change cursor shape based on editing mode (only works for mac)
 # https://stackoverflow.com/questions/7888387/the-way-to-distinguish-command-mode-and-insert-mode-in-bashs-vi-command-line-ed
@@ -35,6 +38,3 @@ $else
     "\C-n": history-search-forward
     "\C-p": history-search-backward
 $endif
-
-set completion-ignore-case on
-set show-all-if-ambiguous on

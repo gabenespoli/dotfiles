@@ -69,11 +69,6 @@ fi
 export EDITOR='nvim'
 export CLICOLOR=1
 
-# autocomplete
-# bind 'TAB:menu-complete'
-bind 'set show-all-if-ambiguous on'
-bind 'set completion-display-width 0'
-
 # Aliases & Functions {{{1
 alias lt="tree -L 2 --dirsfirst"
 alias grep="grep --color"
