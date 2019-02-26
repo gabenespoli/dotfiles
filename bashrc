@@ -75,6 +75,7 @@ bind 'set show-all-if-ambiguous on'
 bind 'set completion-display-width 0'
 
 # Aliases & Functions {{{1
+alias lt="tree -L 2 --dirsfirst"
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
