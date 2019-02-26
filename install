@@ -72,6 +72,11 @@ for rc in *rc *profile tmux.conf; do
   ln -sfv "$DOTFILES/$rc" "$HOME/.$rc"
 done
 
+for cfg in karabiner ranger pudb; do
+  [ -e "$HOME/.config/$cfg" ] && mv -v "$HOME/.config/$cfg" "$BAKDIR/$cfg"
+  ln -sfv "$DOTFILES/config/$cfg" "$HOME/.config"
+done
+
 if [ ! -e ~/.git-prompt.sh ]; then
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 fi
