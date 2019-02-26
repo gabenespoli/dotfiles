@@ -150,22 +150,22 @@ nnoremap Q @q
 nnoremap ' `
 nnoremap ` '
 
+" popup menu: esc to exit, enter to select
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+
+" resize windows
+nnoremap _ <C-w>+
+nnoremap + <C-w>>
+
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
 
-" resize windows
-nnoremap _ <C-w>+
-nnoremap + <C-w>>
-
 " echo syntax under cursor
 nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
-
-" esc to exit pmenu, enter to select
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
@@ -178,14 +178,14 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
+" open todo.txt file in preview window
+nnoremap <leader>T :pedit ~/todo/todo.txt<CR>
+
 " insert dates
 nnoremap <leader>di "=strftime("%Y-%m-%d")<CR>P
 nnoremap <leader>da "=strftime("%Y-%m-%d")<CR>p
 nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
 nnoremap <leader>Da "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
-
-" open todo.txt file in preview window
-nnoremap <leader>T :pedit ~/todo/todo.txt<CR>
 
 " Plugin Settings {{{1
 " Colorscheme {{{2
