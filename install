@@ -42,7 +42,7 @@ eval "$(pyenv virtualenv-init -)"
 
 brew install git tmux neovim ranger
 brew install reattach-to-user-namespace karabiner-elements
-brew install tig ctags cloc
+brew install tig ctags cloc tree
 brew install pandoc pandoc-citeproc pandoc-crossref
 brew install hugo
 
