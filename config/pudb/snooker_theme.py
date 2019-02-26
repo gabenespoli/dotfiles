@@ -21,6 +21,17 @@
 # Note, be sure to test your theme in both curses and raw mode (see the bottom
 # of the preferences window). Curses mode will be used with screen or tmux.
 
+# with solarized:
+    # 0 are comments
+    # default/light blue is fg
+    # 7 is bright
+    # dark gray is bg
+    # light green is cursorline
+    # maybe do a new one where 0 is still bg, 7 becomes comments, default is fg
+    #   comments are more useful for tmux status bars etc. guess it depends if
+    #   you want to dim things or cursorline them. the top right of tmux looks
+    #   better with dimmed
+
 palette.update({
     # "source": ("white", "default"),
     # "comment": ("dark gray", "default")
@@ -30,43 +41,43 @@ palette.update({
     "header": ("black", "light gray", "standout"),
 
     # {{{ variables view
-    "variables": ("black", "dark gray"),
-    "variable separator": ("dark cyan", "light gray"),
+    "variables": ("dark blue", "black"),
+    "variable separator": ("default", "black"),
 
-    "var label": ("light gray", "dark gray"),
-    "var value": ("white", "dark gray"),
-    "focused var label": ("light gray", "light blue"),
-    "focused var value": ("white", "light blue"),
+    "var label": ("dark blue", "black"),
+    "var value": ("default", "black"),
+    "focused var label": ("dark blue", "light green"),
+    "focused var value": ("default", "light green"),
 
-    "highlighted var label": ("light gray", "dark green"),
-    "highlighted var value": ("white", "dark green"),
-    "focused highlighted var label": ("light gray", "light blue"),
-    "focused highlighted var value": ("white", "light blue"),
+    "highlighted var label": ("dark blue", "black"),
+    "highlighted var value": ("default", "black"),
+    "focused highlighted var label": ("dark blue", "light green"),
+    "focused highlighted var value": ("default", "light green"),
 
-    "return label": ("light gray", "dark gray"),
-    "return value": ("light cyan", "dark gray"),
-    "focused return label": ("yellow", "light blue"),
-    "focused return value": ("white", "light blue"),
+    "return label": ("dark blue", "black"),
+    "return value": ("default", "black"),
+    "focused return label": ("dark blue", "light green"),
+    "focused return value": ("default", "light green"),
 
     # }}}
 
     # {{{ stack view
 
-    "stack": ("black", "dark gray"),
+    "stack": ("black", "black"),
 
-    "frame name": ("light gray", "dark gray"),
-    "focused frame name": ("light gray", "light blue"),
-    "frame class": ("dark blue", "dark gray"),
-    "focused frame class": ("dark blue", "light blue"),
-    "frame location": ("white", "dark gray"),
-    "focused frame location": ("white", "light blue"),
+    "frame name": ("default", "black"),
+    "focused frame name": ("default", "light green"),
+    "frame class": ("brown", "black"),
+    "focused frame class": ("brown", "light green"),
+    "frame location": ("dark magenta", "black"),
+    "focused frame location": ("dark magenta", "light green"),
 
-    # "current frame name": (add_setting("white", "bold"), "dark gray"),
-    # "focused current frame name": (add_setting("white", "bold"), "light blue", "bold"),
-    "current frame class": ("dark blue", "dark gray"),
-    "focused current frame class": ("dark blue", "dark green"),
-    "current frame location": ("light cyan", "dark gray"),
-    "focused current frame location": ("light cyan", "light blue"),
+    # "current frame name": (add_setting("white", "bold"), "black"),
+    # "focused current frame name": (add_setting("white", "bold"), "light green", "bold"),
+    "current frame class": ("brown", "black"),
+    "focused current frame class": ("brown", "dark green"),
+    "current frame location": ("dark magenta", "black"),
+    "focused current frame location": ("dark magenta", "light green"),
 
     # }}}
 
@@ -92,7 +103,7 @@ palette.update({
     "button": ("light gray", "dark gray"),
     "focused button": ("white", "light blue"),
 
-    "background": ("black", "light gray"),
+    "background": ("default", "light green"),
     # "hotkey": (add_setting("black", "underline"), "light gray", "underline"),
     "focused sidebar": ("light blue", "light gray", "standout"),
 
@@ -129,18 +140,18 @@ palette.update({
     "current focused source": ("white", "dark cyan"),
     "current highlighted source": ("white", "dark cyan"),
 
-    "line number": ("dark gray", "black"),
-    "keyword": ("yellow", "black"),
+    "line number": ("default", "light green"),
+    "keyword": ("dark blue", "black"),
 
-    "literal": ("dark magenta", "black"),
-    "string": ("dark magenta", "black"),
-    "doublestring": ("dark magenta", "black"),
-    "singlestring": ("dark magenta", "black"),
-    "docstring": ("dark magenta", "black"),
+    "literal": ("dark cyan", "black"),
+    "string": ("dark cyan", "black"),
+    "doublestring": ("dark cyan", "black"),
+    "singlestring": ("dark cyan", "black"),
+    "docstring": ("dark cyan", "black"),
 
     "name": ("light cyan", "black"),
-    "punctuation": ("yellow", "black"),
-    "comment": ("light gray", "black"),
+    "punctuation": ("dark red", "black"),
+    "comment": ("dark green", "black"),
 
     # }}}
 
