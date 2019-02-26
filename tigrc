@@ -2,6 +2,14 @@
 bind generic  <C-j> enter
 bind generic  <C-f> move-page-down
 bind generic  <C-b> move-page-up
+bind generic  o     enter
+bind diff     o     view-close
+bind stage    o     view-close
+bind generic  u     view-next
+bind stage    u     view-next
+bind status   u     view-next
+bind status   -     status-update
+bind stage    -     status-update
 
 # colors
 # https://github.com/jonas/tig/blob/master/doc/tigrc.5.adoc#color-command
