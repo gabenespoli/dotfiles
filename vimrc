@@ -155,8 +155,8 @@ inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 
 " resize windows
-nnoremap _ <C-w>+
-nnoremap + <C-w>>
+nnoremap + <C-w>+
+nnoremap _ <C-w>>
 
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
