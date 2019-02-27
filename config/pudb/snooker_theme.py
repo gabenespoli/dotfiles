@@ -38,7 +38,7 @@ palette.update({
 
     # {{{ dark vim
 
-    "header": ("black", "light gray", "standout"),
+    "header": ("black", "dark gray"),
 
     # {{{ variables view
     "variables": ("dark blue", "black"),
@@ -83,15 +83,14 @@ palette.update({
 
     # {{{ breakpoint view
 
-    "breakpoint": ("light gray", "dark gray"),
-    "disabled breakpoint": ("black", "dark gray"),
-    "focused breakpoint": ("light gray", "light blue"),
-    "focused disabled breakpoint": ("black", "light blue"),
+    "breakpoint": ("light gray", "black"),
+    "disabled breakpoint": ("black", "black"),
+    "focused breakpoint": ("light gray", "black"),
+    "focused disabled breakpoint": ("black", "black"),
     # "current breakpoint": (add_setting("white", "bold"), "dark gray"),
-    "disabled current breakpoint": ("black", "dark gray"),
+    "disabled current breakpoint": ("black", "black"),
     # "focused current breakpoint": (add_setting("white", "bold"), "light blue"),
-    "focused disabled current breakpoint":
-        ("black", "light blue"),
+    "focused disabled current breakpoint": ("black", "light blue"),
 
     # }}}
 
@@ -103,9 +102,9 @@ palette.update({
     "button": ("light gray", "dark gray"),
     "focused button": ("white", "light blue"),
 
-    "background": ("default", "light green"),
+    "background": ("black", "dark gray"),
     # "hotkey": (add_setting("black", "underline"), "light gray", "underline"),
-    "focused sidebar": ("light blue", "light gray", "standout"),
+    "focused sidebar": ("white", "dark gray"),
 
     # "warning": (add_setting("white", "bold"), "dark red", "standout"),
 
@@ -124,8 +123,8 @@ palette.update({
 
     "breakpoint marker": ("dark red", "black"),
 
-    "breakpoint source": ("light gray", "dark red"),
-    "breakpoint focused source": ("black", "dark red"),
+    "breakpoint source": ("black", "dark red"),
+    "breakpoint focused source": ("white", "dark red"),
     "current breakpoint source": ("black", "dark red"),
     "current breakpoint focused source": ("white", "dark red"),
 
@@ -134,14 +133,14 @@ palette.update({
     # {{{ highlighting
 
     "source": ("default", "black"),
-    "focused source": ("white", "light green"),
+    "focused source": ("default", "light green"),
     "highlighted source": ("black", "dark magenta"),
-    "current source": ("black", "light gray"),
-    "current focused source": ("white", "dark cyan"),
+    "current source": ("black", "dark gray"),
+    "current focused source": ("white", "dark gray"),
     "current highlighted source": ("white", "dark cyan"),
 
-    "line number": ("default", "light green"),
-    "keyword": ("dark blue", "black"),
+    "line number": ("black", "dark gray"),
+    "keyword": ("dark green", "black"),
 
     "literal": ("dark cyan", "black"),
     "string": ("dark cyan", "black"),
@@ -149,24 +148,24 @@ palette.update({
     "singlestring": ("dark cyan", "black"),
     "docstring": ("dark cyan", "black"),
 
-    "name": ("light cyan", "black"),
+    "name": ("brown", "black"),
     "punctuation": ("dark red", "black"),
-    "comment": ("dark green", "black"),
+    "comment": ("dark gray", "black"),
 
     # }}}
 
     # {{{ shell
 
-    "command line edit": ("white", "black"),
-    # "command line prompt": (add_setting("yellow", "bold"), "black"),
+    "command line edit": ("light gray", "black"),
+    "command line prompt": ("light gray", "black"),
 
-    # "command line output": (add_setting("yellow", "bold"), "black"),
-    # "command line input": ("white", "black"),
-    # "command line error": (add_setting("light red", "bold"), "black"),
+    "command line output": ("light gray", "black"),
+    "command line input": ("light gray", "black"),
+    "command line error": ("dark red", "black"),
 
-    # "focused command line output": ("black", "light blue"),
-    # "focused command line input": (add_setting("light cyan", "bold"), "light blue"),
-    # "focused command line error": ("black", "light blue"),
+    "focused command line output": ("light gray", "light green"),
+    "focused command line input": ("light gray", "light green"),
+    "focused command line error": ("dark red", "light green"),
 
     # }}}
     })
