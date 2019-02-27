@@ -6,6 +6,8 @@ bind generic  o     enter
 bind diff     o     view-close
 bind diff     i     view-next
 bind stage    i     view-next
+bind main     i     view-next
+bind status   i     view-next
 bind stage    o     view-close
 bind generic  u     view-next
 bind stage    u     view-next
