@@ -46,31 +46,11 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-colors-snooker'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
+Plug '~/bin/vim/vim-neovim-defaults'
 
 call plug#end()
 
 " General Settings {{{1
-" nvim defaults for vim (:help nvim-defaults) {{{2
-if !has('nvim')
-  set autoindent
-  set autoread
-  set backspace=indent,eol,start
-  set belloff=all
-  set complete-=i
-  set formatoptions+=j
-  set history=10000
-  set incsearch
-  set laststatus=2
-  set listchars=tab:>\ ,trail:-,nbsp:+
-  set mouse=a
-  set shortmess+=F
-  set showcmd
-  set sidescroll=1
-  set smarttab
-  set ttyfast
-  set wildmenu
-endif
-
 " System {{{2
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
