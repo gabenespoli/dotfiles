@@ -80,7 +80,7 @@ set ignorecase smartcase nohlsearch
 set foldlevel=99
 set foldmethod=marker
 set wildignorecase wildmode=list:longest
-set completeopt=menuone,preview,noinsert,noselect
+set completeopt=menuone,preview,longest
 set shortmess+=c
 set diffopt+=context:3
 set suffixesadd+=.m,.r,.R,.py
