@@ -115,6 +115,7 @@ let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
 inoremap jk <Esc>
 nmap <C-j> <CR>
+nnoremap <C-w><CR> <C-w>j
 nnoremap Y y$
 nnoremap ! :!
 nnoremap <silent> <M-s> :silent w<CR>
