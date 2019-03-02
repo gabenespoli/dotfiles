@@ -82,6 +82,7 @@ function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # u
 alias t="cat ~/todo/todo.txt"
 alias todo="$EDITOR -O $HOME/todo/todo.txt $HOME/todo/backlog.txt"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pudb="python -m pudb.run"
 alias octave="octave --no-gui"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
