@@ -28,6 +28,9 @@ color "AuthorDate: "		cyan default
 color "Commit: "		    cyan default
 color "CommitDate: "		cyan default
 color directory         cyan default
+color main-tracked      yellow default
+color main-head         cyan default
+color main-tag          magenta default
 
 # dates
 set main-view-date = relative
