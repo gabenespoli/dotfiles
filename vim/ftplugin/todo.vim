@@ -12,7 +12,7 @@ nnoremap <buffer> <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>
 nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>
 
 " misc
-nnoremap <buffer> <localleader>S :sort<CR>
+nnoremap <buffer> <localleader>s :sort<CR>
 nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
