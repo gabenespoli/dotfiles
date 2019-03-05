@@ -33,11 +33,6 @@ if [ "$(uname)" == "Darwin" ]; then
     defaults write com.apple.finder AppleShowAllFiles "$command"
     killall Finder
   }
- #export LSCOLORS=exfxcxdxbxegedabagacad # macOS default from `man ls`
- #                1 2 3 4 5 6 7 8 9 1011
- #                -_|_-_-_|_-_-_-_-_-_-_ # changes I've made to defaults
-  # export LSCOLORS=exgxcxdxbxegedabagacad
-  # LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
   export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
 # Linux options {{{1
@@ -52,10 +47,10 @@ else
   alias d="dropbox"
   alias ds="dropbox status"
   alias matlab="matlab -nosplash -nodesktop"
-  # LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
 fi
 
 # Environment {{{1
+LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
