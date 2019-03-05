@@ -121,7 +121,7 @@ nnoremap ! :!
 nnoremap <silent> <M-s> :silent w<CR>
 
 " q to quit, C-q for macros
-nnoremap q :q<CR>
+nnoremap q <C-w>q
 nnoremap <C-q> q
 " quick macro (q): C-q-C-q to record, Q to replay
 nnoremap <C-q><C-q> qq
