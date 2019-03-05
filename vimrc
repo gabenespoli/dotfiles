@@ -120,11 +120,9 @@ nnoremap Y y$
 nnoremap ! :!
 nnoremap <silent> <M-s> :silent w<CR>
 
-" q to quit, C-q for macros
+" q to quit, C-q for macros, q macro: <C-q>q to record, Q to replay
 nnoremap q <C-w>q
 nnoremap <C-q> q
-" quick macro (q): C-q-C-q to record, Q to replay
-nnoremap <C-q><C-q> qq
 nnoremap Q @q
 
 " swap single quote (mark bol) and back tick (mark)
