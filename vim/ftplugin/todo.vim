@@ -1,15 +1,15 @@
 " keybindings {{{1
 " mark as done
-nnoremap <buffer> <localleader>x :s/^([A-Z])\s//ge<CR>Ix<Esc>"=strftime(" %Y-%m-%d ")<CR>pddGp''
+nnoremap <buffer> <localleader>x :s/\m^\(([A-Z])\s\)\{0,1\}/x\ <C-R>=strftime("%Y-%m-%d")<CR>\ /<CR>
 
 " priority
 " first try to remove priority, then add
-nnoremap <buffer> <localleader>a :s/^([A-Z])\s//ge<CR>I(A) <Esc>
-nnoremap <buffer> <localleader>b :s/^([A-Z])\s//ge<CR>I(B) <Esc>
-nnoremap <buffer> <localleader>c :s/^([A-Z])\s//ge<CR>I(C) <Esc>
-nnoremap <buffer> <localleader>d :s/^([A-Z])\s//ge<CR>I(D) <Esc>
+nnoremap <buffer> <localleader>a :s/\m^\(([A-Z])\s\)\{0,1\}/(A)\ /<CR>
+nnoremap <buffer> <localleader>b :s/\m^\(([A-Z])\s\)\{0,1\}/(B)\ /<CR>
+nnoremap <buffer> <localleader>c :s/\m^\(([A-Z])\s\)\{0,1\}/(C)\ /<CR>
+nnoremap <buffer> <localleader>d :s/\m^\(([A-Z])\s\)\{0,1\}/(D)\ /<CR>
 " remove priority
-nnoremap <buffer> <localleader>z :s/^([A-Z])\s//ge<CR>
+nnoremap <buffer> <localleader>z :s/\m^([A-Z])\s//ge<CR>
 
 " misc
 nnoremap <buffer> <localleader>s :sort<CR>
