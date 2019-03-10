@@ -68,13 +68,13 @@ git clone https://github.com/gabenespoli/dotfiles "$DOTFILES"
 mkdir -pv "$BAKDIR"
 
 for rc in *rc *profile tmux.conf; do
-  [ -e "$HOME/.$rc" ] && mv -v "$HOME/.$rc" "$BAKDIR/$rc"
-  ln -sfv "$DOTFILES/$rc" "$HOME/.$rc"
+  [ -e "$HOME"/."$rc" ] && mv -v "$HOME"/."$rc" "$BAKDIR"/"$rc"
+  ln -sfv "$DOTFILES"/"$rc" "$HOME"/."$rc"
 done
 
 for cfg in karabiner ranger pudb; do
-  [ -e "$HOME/.config/$cfg" ] && mv -v "$HOME/.config/$cfg" "$BAKDIR/$cfg"
-  ln -sfv "$DOTFILES/config/$cfg" "$HOME/.config"
+  [ -e "$HOME"/.config/"$cfg" ] && mv -v "$HOME"/.config/"$cfg" "$BAKDIR"/"$cfg"
+  ln -sfv "$DOTFILES"/config/"$cfg" "$HOME"/.config
 done
 
 if [ ! -e ~/.git-prompt.sh ]; then
@@ -102,19 +102,19 @@ fi
 
 # vim {{{1
 echo "Linking vim files and directories..."
-[ -e "$HOME/.vim" ] && mv -v "$HOME/.vim" "$BAKDIR/vim"
-mkdir -pv "$HOME/.vim/autoload"
-curl -fLo "$HOME/.vim/autoload/plug.vim" \
+[ -e "$HOME"/.vim ] && mv -v "$HOME"/.vim "$BAKDIR"/vim
+mkdir -pv "$HOME"/.vim/autoload
+curl -fLo "$HOME"/.vim/autoload/plug.vim \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 for folder in ftdetect ftplugin spell syntax; do
-  ln -sfv "$DOTFILES/vim/$folder" "$HOME/.vim/$folder"
+  ln -sfv "$DOTFILES"/vim/"$folder" "$HOME"/.vim/"$folder"
 done
 
 # nvim
-mkdir -pv "$HOME/.config/nvim/autoload"
-ln -sf "$DOTFILES/vimrc" "$HOME/.config/nvim/init.vim"
-ln -sf "$HOME/.vim/autoload/plug.vim" "$HOME/.config/nvim/autoload/"
+mkdir -pv "$HOME"/.config/nvim/autoload
+ln -sf "$DOTFILES"/vimrc "$HOME"/.config/nvim/init.vim
+ln -sf "$HOME"/.vim/autoload/plug.vim "$HOME"/.config/nvim/autoload/
 
 nvim +PlugInstall +qall
 
@@ -124,17 +124,17 @@ pyenv shell miniconda3-4.3.30
 conda install -y scipy numpy pandas matplotlib seaborn bokeh ipython jupyter \
   scikit-learn tensorflow keras pudb
 pyenv shell --unset
-mkdir -pv "$HOME/.ipython/profile_default"
-ln -sfv "$DOTFILES/ipython/profile_default/ipython_config.py" \
-  "$HOME/.ipython/profile_default/ipython_config.py"
+mkdir -pv "$HOME"/.ipython/profile_default
+ln -sfv "$DOTFILES"/ipython/profile_default/ipython_config.py \
+  "$HOME"/.ipython/profile_default/ipython_config.py
 
 # TODO: set .macos defaults #{{{1
 
 # Spectacle.app
 echo "Setting shortcuts for Spectacle.app..."
-[ -e "$HOME/Library/Application\ Support/Spectacle/Shortcuts.json"] && \
-  mv -v "$HOME/Library/Application\ Support/Spectacle/Shortcuts.json" "$DOTFILES/bak/spectacle.json"
-cp -r "$DOTFILES/init/spectacle.json" "$HOME/Library/Application\ Support/Spectacle/Shortcuts.json" 2>/dev/null
+[ -e "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json] && \
+  mv -v "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json "$DOTFILES"/bak/spectacle.json
+cp -r "$DOTFILES"/init/spectacle.json "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json 2>/dev/null
 
 # TODO: setup terminfo with italics (should this be moved out of mac-only? #{{{1
 
