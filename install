@@ -33,9 +33,6 @@ chsh -s /usr/local/bin/bash # Change to the new shell, prompts for password
 
 brew install readline coreutils findutils grep gnu-sed gawk wget openssh
 
-brew install ruby-build rbenv
-eval "$(rbenv init -)"
-
 brew install pyenv pyenv-virtualenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
