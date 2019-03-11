@@ -295,11 +295,13 @@ if !has('nvim')
     execute "set <M-j>=\ej"
     execute "set <M-k>=\ek"
     execute "set <M-l>=\el"
+    execute "set <M-s>=\es"
   else
     execute 'set <M-h>=h'
     execute 'set <M-j>=j'
     execute 'set <M-k>=k'
     execute 'set <M-l>=l'
+    execute 'set <M-s>=s'
   endif
 endif
 nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
