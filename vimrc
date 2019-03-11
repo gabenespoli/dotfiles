@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 " general {{{2
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
