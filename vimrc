@@ -115,6 +115,7 @@ nnoremap <C-w><CR> <C-w>j
 nnoremap Y y$
 nnoremap ! :!
 nnoremap <silent> <M-s> :silent w<CR>
+inoremap <silent> <M-s> <C-o>:silent w<CR>
 
 " q to quit, C-q for macros, q macro: <C-q>q to record, Q to replay
 nnoremap q <C-w>q
