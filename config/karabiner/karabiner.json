@@ -1888,7 +1888,6 @@
                                         "bundle_identifiers": [
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.apple\\.Preview$"
-
                                         ],
                                         "type": "frontmost_application_if"
                                     }
