@@ -72,20 +72,20 @@ hi def link TodoTickBoxComment  TodoComment
 hi def link TodoProject         Statement
 " hi def link TodoKey             Identifier
 " hi def link TodoPoints          Identifier
-hi def link TodoDue             Identifier
+hi def link TodoDue             Error
 " hi def link TodoURL             TodoDone
 
-hi def link TodoContext         PreProc
+hi def link TodoContext         Special
 hi def link TodoWaiting         TodoContext
 hi def link TodoNext            TodoContext
 
 hi def link TodoDate            Normal
 hi def link TodoDateToday       ErrorMsg
 
-hi def link TodoPriorityAChar   Error
-hi def link TodoPriorityBChar   Type
-hi def link TodoPriorityCChar   Constant
-hi def link TodoPriorityDChar   Function
+hi def link TodoPriorityAChar   Todo
+hi def link TodoPriorityBChar   Constant
+hi def link TodoPriorityCChar   Identifier
+hi def link TodoPriorityDChar   Type
 hi def link TodoPriorityA       TodoPriorityAChar
 hi def link TodoPriorityB       TodoPriorityBChar
 hi def link TodoPriorityC       TodoPriorityCChar
