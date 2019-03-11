@@ -101,7 +101,7 @@ alias gss="git stash save"
 alias gsp="git stash pop"
 alias gsl="git stash list"
 alias glog="git log --graph --decorate --oneline"
-alias gl="$EDITOR +GV"
+alias gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
 alias ts="tig status"
 alias tl="tig"
 
