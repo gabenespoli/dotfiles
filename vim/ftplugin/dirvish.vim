@@ -8,6 +8,7 @@ nmap <silent> <buffer> u <Plug>(dirvish_up)
 nnoremap U u
 
 " my preferred maps for open, split, vsplit, tab open
+" TODO: make o an expr map to use gx if extention is pdf, docx, etc.
 nmap <silent> <buffer> o :call dirvish#open('edit', 0)<CR>
 nmap <silent> <buffer> O :call dirvish#open('split', 1)<CR>
 nmap <silent> <buffer> s :call dirvish#open('split', 1)<CR>q<C-w>p
