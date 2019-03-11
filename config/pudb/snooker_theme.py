@@ -21,24 +21,78 @@
 # Note, be sure to test your theme in both curses and raw mode (see the bottom
 # of the preferences window). Curses mode will be used with screen or tmux.
 
-# with solarized:
-    # 0 are comments
-    # default/light blue is fg
-    # 7 is bright
-    # dark gray is bg
-    # light green is cursorline
-    # maybe do a new one where 0 is still bg, 7 becomes comments, default is fg
-    #   comments are more useful for tmux status bars etc. guess it depends if
-    #   you want to dim things or cursorline them. the top right of tmux looks
-    #   better with dimmed
-
 palette.update({
-    # "source": ("white", "default"),
-    # "comment": ("dark gray", "default")
 
-    # {{{ dark vim
 
+    # {{{ ui
     "header": ("black", "dark gray"),
+
+    "selectable": ("light gray", "dark gray"),
+    "focused selectable": ("white", "dark gray"),
+
+    "button": ("light gray", "black"),
+    "focused button": ("white", "black"),
+
+
+    "background": ("black", "dark gray"),
+    "focused sidebar": ("white", "dark gray"),
+    "hotkey": (add_setting("light gray", "underline"), "dark gray"),
+
+    "warning": ("white", "dark red"),
+
+    "dialog title": ("white", "dark gray"),
+    "group head": ("white", "dark gray"),
+    "label": ("white", "dark gray"),
+    "value": ("light gray", "black"),
+    "fixed value": ("light gray", "black"),
+
+    "search box": ("white", "dark gray"),
+    "search not found": ("white", "dark red"),
+
+
+    # }}}
+
+    # {{{ shell
+
+    "command line edit": ("light gray", "black"),
+    "command line prompt": ("light gray", "black"),
+
+    "command line output": ("light gray", "black"),
+    "command line input": ("light gray", "black"),
+    "command line error": ("dark red", "black"),
+
+    "focused command line output": ("light gray", "light green"),
+    "focused command line input": ("light gray", "light green"),
+    "focused command line error": ("dark red", "light green"),
+
+    "command line clear button": ("black", "dark gray"),
+    "command line focused button": ("white", "dark gray"),
+
+    # }}}
+
+    # {{{ source view
+
+    "breakpoint marker": ("dark red", "black"),
+
+    "breakpoint source": ("black", "dark red"),
+    "breakpoint focused source": ("white", "dark red"),
+    "current breakpoint source": ("black", "dark red"),
+    "current breakpoint focused source": ("white", "dark red"),
+
+    # }}}
+
+    # {{{ breakpoint view
+
+    "breakpoint": ("light gray", "black"),
+    "disabled breakpoint": ("black", "black"),
+    "focused breakpoint": ("light gray", "black"),
+    "focused disabled breakpoint": ("black", "black"),
+    "current breakpoint": (add_setting("white", "bold"), "dark gray"),
+    "disabled current breakpoint": ("black", "black"),
+    "focused current breakpoint": (add_setting("white", "bold"), "light blue"),
+    "focused disabled current breakpoint": ("black", "light blue"),
+
+    # }}}
 
     # {{{ variables view
     "variables": ("dark blue", "black"),
@@ -81,55 +135,6 @@ palette.update({
 
     # }}}
 
-    # {{{ breakpoint view
-
-    "breakpoint": ("light gray", "black"),
-    "disabled breakpoint": ("black", "black"),
-    "focused breakpoint": ("light gray", "black"),
-    "focused disabled breakpoint": ("black", "black"),
-    # "current breakpoint": (add_setting("white", "bold"), "dark gray"),
-    "disabled current breakpoint": ("black", "black"),
-    # "focused current breakpoint": (add_setting("white", "bold"), "light blue"),
-    "focused disabled current breakpoint": ("black", "light blue"),
-
-    # }}}
-
-    # {{{ ui widgets
-
-    "selectable": ("light gray", "dark gray"),
-    "focused selectable": ("white", "light blue"),
-
-    "button": ("light gray", "dark gray"),
-    "focused button": ("white", "light blue"),
-
-    "background": ("black", "dark gray"),
-    # "hotkey": (add_setting("black", "underline"), "light gray", "underline"),
-    "focused sidebar": ("white", "dark gray"),
-
-    # "warning": (add_setting("white", "bold"), "dark red", "standout"),
-
-    "label": ("black", "light gray"),
-    "value": ("white", "dark gray"),
-    "fixed value": ("light gray", "dark gray"),
-
-    "search box": ("white", "dark gray"),
-    "search not found": ("white", "dark red"),
-
-    # "dialog title": (add_setting("white", "bold"), "dark gray"),
-
-    # }}}
-
-    # {{{ source view
-
-    "breakpoint marker": ("dark red", "black"),
-
-    "breakpoint source": ("black", "dark red"),
-    "breakpoint focused source": ("white", "dark red"),
-    "current breakpoint source": ("black", "dark red"),
-    "current breakpoint focused source": ("white", "dark red"),
-
-    # }}}
-
     # {{{ highlighting
 
     "source": ("default", "black"),
@@ -139,8 +144,9 @@ palette.update({
     "current focused source": ("white", "dark gray"),
     "current highlighted source": ("white", "dark cyan"),
 
-    "line number": ("black", "dark gray"),
+    "line number": ("dark gray", "black"),
     "keyword": ("dark green", "black"),
+    "namespace": ("dark magenta", "black"),
 
     "literal": ("dark cyan", "black"),
     "string": ("dark cyan", "black"),
@@ -154,20 +160,6 @@ palette.update({
 
     # }}}
 
-    # {{{ shell
-
-    "command line edit": ("light gray", "black"),
-    "command line prompt": ("light gray", "black"),
-
-    "command line output": ("light gray", "black"),
-    "command line input": ("light gray", "black"),
-    "command line error": ("dark red", "black"),
-
-    "focused command line output": ("light gray", "light green"),
-    "focused command line input": ("light gray", "light green"),
-    "focused command line error": ("dark red", "light green"),
-
-    # }}}
     })
 
-# }}}
+# vim: foldmethod=marker
