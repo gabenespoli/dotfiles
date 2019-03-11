@@ -132,6 +132,9 @@ nnoremap ` '
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 
+" open alternate buffer in a vertial split
+nnoremap <C-w><C-^> :vsplit #<CR>
+
 " resize windows
 nnoremap + <C-w>+
 nnoremap _ <C-w>>
