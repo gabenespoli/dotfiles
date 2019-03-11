@@ -24,15 +24,6 @@ if [ "$(uname)" == "Darwin" ]; then
   alias ql='qlmanage -p &>/dev/null'
   alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
   alias openx="open -a Microsoft\ Excel.app"
-  alias wifi="sudo networksetup -setairportnetwork en0"
-  function findershowhidden() {
-    case $1 in
-      on|true ) command="TRUE" ;;
-      off|false ) command="FALSE" ;;
-    esac
-    defaults write com.apple.finder AppleShowAllFiles "$command"
-    killall Finder
-  }
   export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
 # Linux options {{{1
