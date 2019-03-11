@@ -48,6 +48,7 @@ Plug '~/bin/vim/vim-colors-snooker'
 Plug '~/bin/vim/vim-mutton'
 Plug '~/bin/vim/vim-tabsms'
 Plug '~/bin/vim/vim-neovim-defaults'
+Plug '~/bin/vim/vim-komono'
 
 call plug#end()
 
@@ -154,15 +155,6 @@ nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
 nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
-
-" open todo.txt file in preview window
-nnoremap <leader>T :pedit ~/todo/todo.txt<CR>
-
-" insert dates
-nnoremap <leader>di "=strftime("%Y-%m-%d")<CR>P
-nnoremap <leader>da "=strftime("%Y-%m-%d")<CR>p
-nnoremap <leader>Di "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-nnoremap <leader>Da "=strftime("%Y-%m-%d %H:%M:%S")<CR>p
 
 " Plugin Settings {{{1
 " Colorscheme {{{2
