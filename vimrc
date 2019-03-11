@@ -82,6 +82,7 @@ set suffixesadd+=.m,.r,.R,.py
 set clipboard=unnamed
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
+set guifont=IBMPlexMono:h12,Fira\ Code:h12,Menlo:h12,Consolas:h12,Courier:h12
 
 " Status Line {{{2
 set statusline=
