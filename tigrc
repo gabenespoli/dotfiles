@@ -29,10 +29,13 @@ color "Commit: "		    cyan default
 color "CommitDate: "		cyan default
 color directory         cyan default
 color main-tracked      yellow default
-color main-head         cyan default
-color main-tag          magenta default
+color main-head         yellow default
+color main-ref          yellow default
+color main-tag          9 default
+color id                blue default
+color date              cyan default
+color author            9 default
 
-# dates
-set main-view-date = relative
-set tree-view-date = relative
-set blame-view-date = relative
+# set main-view = id:yes
+# set main-view	= line-number:no,interval=5 id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+set main-view	= line-number:no,interval=5 date:custom,format="%Y-%m-%d" id:yes author:email-user commit-title:yes,graph,refs,overflow=no
