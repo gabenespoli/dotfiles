@@ -256,7 +256,6 @@ let g:tagbar_type_r = {
 nnoremap <C-n> :CtrlP ~/
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
-if executable('fd') | let g:ctrlp_user_command = 'fd --color never "" %s' | endif
 let g:ctrlp_prompt_mappings = {
  \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
  \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
