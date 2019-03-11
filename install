@@ -4,12 +4,11 @@
 # this script is intended to be run via curl
 # i.e. don't need to have git to first clone the dotfiles repo
 
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-DOTFILES=$(pwd)
-
-# Xcode command line tools {{{1
-echo "-- Installing Xcode Command Line Tools..."
-xcode-select --install
+# Do this first {{{1
+# 1. update with software update
+#    via command line: sudo softwareupdate -ia --verbose
+# 2. make sure xcode command line tools are installed
+#    to install: xcode-select --install
 
 # Homebrew {{{1
 echo "-- Installing Homebrew packages..."
@@ -32,9 +31,10 @@ chsh -s /usr/local/bin/bash # Change to the new shell, prompts for password
 
 # dotfiles (now that we have git) {{{1
 echo "-- Cloning dotfiles and creating symlinks..."
-BAKDIR="$DOTFILES"/.bak
+DOTFILES="$HOME"/dotfiles
 [ -e "$DOTFILES" ] && mv "$DOTFILES" "$DOTFILES".bak
 git clone https://github.com/gabenespoli/dotfiles "$DOTFILES"
+BAKDIR="$DOTFILES"/.bak
 mkdir -pv "$BAKDIR"
 
 for rc in *rc *profile tmux.conf; do
