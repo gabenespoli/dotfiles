@@ -91,7 +91,7 @@ alias gca="git commit --amend"
 alias gss="git stash save"
 alias gsp="git stash pop"
 alias gsl="git stash list"
-alias glog="git log --graph --decorate --oneline"
+alias glog="git log --graph --pretty=format:'%C(blue)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(green)<%an>%Creset' --abbrev-commit"
 alias gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
 alias ts="tig status"
 alias tl="tig"
