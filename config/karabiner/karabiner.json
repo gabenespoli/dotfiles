@@ -769,6 +769,34 @@
                         ]
                     },
                     {
+                        "description": "Semicolon Layer [;+Esc -> backtick]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Semicolon Layer [;+ou -> command+dn/up] (mostly for Finder dir down/up)",
                         "manipulators": [
                             {
