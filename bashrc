@@ -33,7 +33,7 @@ else
   alias lsl="ls -Flh --color --group-directories-first"
   alias lsa="ls -Flha --color --group-directories-first"
   alias agi="sudo apt-get -y install"
-  alias agu="sudo apt-get update"
+  alias agu="sudo apt-get update && sudo apt-get upgrade"
   alias sambastart="sudo /etc/init.d/samba start"
   alias d="dropbox"
   alias ds="dropbox status"
