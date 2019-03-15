@@ -2009,6 +2009,34 @@
                         ]
                     },
                     {
+                        "description": "Pok3r Esc: App window switcher / app switcher backwards [command+option+escape -> command+backtick]",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Slack switch convos like messages.android.com [control+,. -> opt+up/dn]",
                         "manipulators": [
                             {
