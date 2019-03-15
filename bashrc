@@ -7,10 +7,6 @@ if [ "$(uname)" == "Darwin" ]; then
     export PATH="/usr/local/opt/$gnu/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/$gnu/libexec/gnuman:$MANPATH"
   done
-  # custom path
-  export PATH="$HOME/Library/Haskell/bin:$PATH"
-  export PATH="/usr/local/lib:$PATH"
-  export PATH="/usr/local/bin:$PATH"
   if hash gls 2> /dev/null; then
     alias ls="gls --color --group-directories-first"
     alias lsl="gls -Flh --color --group-directories-first"
@@ -19,6 +15,10 @@ if [ "$(uname)" == "Darwin" ]; then
     alias lsl="ls -Flh"
     alias lsa="ls -Flha"
   fi
+  # custom path
+  export PATH="$HOME/Library/Haskell/bin:$PATH"
+  export PATH="/usr/local/lib:$PATH"
+  export PATH="/usr/local/bin:$PATH"
   alias agi="brew install"
   alias agu="brew update && brew upgrade && brew cleanup"
   alias ql='qlmanage -p &>/dev/null'
