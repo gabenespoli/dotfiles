@@ -797,7 +797,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+ou -> command+dn/up] (mostly for Finder dir down/up)",
+                        "description": "Semicolon Layer [;+ou -> command+dn/up] (for Finder.app)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -805,6 +805,12 @@
                                         "name": "mu_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -831,6 +837,12 @@
                                         "name": "mu_mode",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
