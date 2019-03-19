@@ -810,7 +810,8 @@
                                         "bundle_identifiers": [
                                             "^com.apple.finder$",
                                             "^com.apple.mail$",
-                                            "^com.apple.systempreferences$"
+                                            "^com.apple.systempreferences$",
+                                            "^com.microsoft.Word$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -841,7 +842,8 @@
                                         "bundle_identifiers": [
                                             "^com.apple.finder$",
                                             "^com.apple.mail$",
-                                            "^com.apple.systempreferences$"
+                                            "^com.apple.systempreferences$",
+                                            "^com.microsoft.Word$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -864,7 +866,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+ou -> command+dn/up] (for Finder.app)",
+                        "description": "Semicolon Layer [;+ou -> command+dn/up] (for Finder.app, Word)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -875,7 +877,8 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.finder$"
+                                            "^com.apple.finder$",
+                                            "^com.microsoft.Word$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -907,7 +910,8 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.finder$"
+                                            "^com.apple.finder$",
+                                            "^com.microsoft.Word$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
