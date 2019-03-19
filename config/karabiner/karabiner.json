@@ -1122,7 +1122,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+bdf -> command+bdf]",
+                        "description": "Semicolon Layer [;+bdfg -> command+bdfg]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1195,6 +1195,33 @@
                                 "to": [
                                     {
                                         "key_code": "b",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "g",
                                         "modifiers": [
                                             "command"
                                         ]
