@@ -48,9 +48,9 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 if [ -e ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
-  export PS1='\[\e[34m\]\w\[\e[0m\]$(__git_ps1 ":\[\e[32m\]%s")\[\e[0m\] $ '
+  PS1='($(tmux display-message -p "#I")) \[\e[34m\]\w$(__git_ps1 "\[\e[31m\]|\[\e[36m\]%s")\[\e[0m\] $ '
 else
-  export PS1='\[\e[34m\]\w\[\e[0m\] $ '
+  PS1='($(tmux display-message -p "#I")) \[\e[34m\]\w\[\e[0m\] $ '
 fi
 export EDITOR='nvim'
 export CLICOLOR=1
