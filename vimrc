@@ -88,15 +88,15 @@ set guifont=IBMPlexMono:h12,Fira\ Code:h12,Menlo:h12,Consolas:h12,Courier:h12
 
 " Status Line {{{2
 set statusline=
-set statusline+=[%n] 
+set statusline+=(%{TmuxWinnr()})
+set statusline+=\ %n:%<%.99f\ %#Modified#%m%*%w%r%y
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
-set statusline+=%w%#Modified#%m%*%#ReadOnly#%r%*
-set statusline+=\ %<%.99f
-set statusline+=\ %y
-set statusline+=%{FugitiveStatusline()}
-set statusline+=%=
-set statusline+=%l/%L\,%c\ (%P)
+set statusline+=%=%l/%L\,%c\ (%P)
+function! TmuxWinnr() abort
+  return substitute(system("tmux display-message -p '#I'"), "\<NL>", "", "")
+endfunction
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
 augroup line_return
