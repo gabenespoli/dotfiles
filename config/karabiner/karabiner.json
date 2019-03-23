@@ -393,7 +393,7 @@
                                         ],
                                         "optional": [
                                             "caps_lock",
-                                            "shift"
+                                            "right_shift"
                                         ]
                                     }
                                 },
@@ -431,7 +431,7 @@
                                         ],
                                         "optional": [
                                             "caps_lock",
-                                            "shift"
+                                            "right_shift"
                                         ]
                                     }
                                 },
