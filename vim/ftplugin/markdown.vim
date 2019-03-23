@@ -40,7 +40,10 @@ nnoremap <buffer> <localleader>pd :!pandoc % -o %.docx<CR>:!open %.docx<CR><CR>
 
 " criticmarkup {{{1
 " insert a todo item as a comment
-nmap <buffer> <localleader>t i{>>TODO: <<}<C-o>3h
+nnoremap <buffer> <localleader>T i{>>TODO: <<}<C-o>3h
+nnoremap <buffer> <localleader>t a{>>TODO: <<}<C-o>2h
+nnoremap <buffer> <localleader>C i{>><<}<C-o>3h
+nnoremap <buffer> <localleader>c a{>><<}<C-o>2h
 
 " highlight visual selection, insert comment after it
 xmap <buffer> <localleader>c <localleader>ehf}a<Space><Esc>v<localleader>ecxi
