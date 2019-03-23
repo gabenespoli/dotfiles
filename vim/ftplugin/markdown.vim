@@ -49,7 +49,7 @@ nnoremap <buffer> <localleader>c a{>><<}<C-o>2h
 xmap <buffer> <localleader>c <localleader>ehf}a<Space><Esc>v<localleader>ecxi
 
 " delete around or surround critic tags ("undo")
-nmap <buffer> <localleader>u F{3xf}2h3x
+nnoremap <buffer> <localleader>u F{3xf}2h3x
 
 " search for critic tags
 nnoremap <buffer> <localleader>/ /{==\\|{>>\\|{++\\|{--<CR>
