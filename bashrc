@@ -54,6 +54,7 @@ else
 fi
 export EDITOR='nvim'
 export CLICOLOR=1
+export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
 
 # Aliases & Functions {{{1
 alias lt="tree -L 2 --dirsfirst"
