@@ -130,7 +130,7 @@ nnoremap ` '
 
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " open alternate buffer in a vertial split
 nnoremap <C-w><C-^> :vsplit #<CR>
