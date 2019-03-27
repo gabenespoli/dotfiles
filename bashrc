@@ -24,7 +24,6 @@ if [ "$(uname)" == "Darwin" ]; then
   alias ql='qlmanage -p &>/dev/null'
   alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
   alias openx="open -a Microsoft\ Excel.app"
-  export PROMPT_COMMAND="echo -ne '\033]0;${HOSTNAME%%.*}\007'" # tab titles
 
 # Linux options {{{1
 else 
@@ -75,9 +74,6 @@ alias octave="octave --no-gui"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 function ranger() { /usr/local/bin/ranger --choosedir=$HOME/.rangerdir $@; cd "`cat $HOME/.rangerdir`" ; }
-alias pdoc="$HOME/dotfiles/pandoc/pdoc"
-alias cite="python $HOME/bin/python/cite/cite.py"
-alias rate="python $HOME/bin/python/rate.py"
 alias weather="curl http://wttr.in/Kitchener"
 alias keys='keyboard | grep -v "Control\|Semicolon" && keyboard | grep -v "Command\|Semicolon" && keyboard | grep -v "Command\|Control"'
 
