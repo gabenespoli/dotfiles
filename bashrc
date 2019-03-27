@@ -9,11 +9,11 @@ if [ "$(uname)" == "Darwin" ]; then
   done
   if hash gls 2> /dev/null; then
     alias ls="gls --color --group-directories-first"
-    alias lsl="gls -Flh --color --group-directories-first"
-    alias lsa="gls -Flha --color --group-directories-first"
+    alias ll="gls -Flh --color --group-directories-first"
+    alias la="gls -Flha --color --group-directories-first"
   else
-    alias lsl="ls -Flh"
-    alias lsa="ls -Flha"
+    alias ll="ls -Flh"
+    alias la="ls -Flha"
   fi
   # custom path
   export PATH="$HOME/Library/Haskell/bin:$PATH"
@@ -30,8 +30,8 @@ if [ "$(uname)" == "Darwin" ]; then
 else 
   export PATH="/usr/local/lib:/usr/local/bin:$PATH"
   alias ls="ls --color --group-directories-first"
-  alias lsl="ls -Flh --color --group-directories-first"
-  alias lsa="ls -Flha --color --group-directories-first"
+  alias ll="ls -Flh --color --group-directories-first"
+  alias la="ls -Flha --color --group-directories-first"
   alias agi="sudo apt-get -y install"
   alias agu="sudo apt-get update && sudo apt-get upgrade"
   alias sambastart="sudo /etc/init.d/samba start"
