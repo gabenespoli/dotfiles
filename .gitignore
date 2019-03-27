@@ -4,10 +4,12 @@
 .DS_Store
 .bak
 config/karabiner/assets/complex_modifications/*
+config/karabiner/automatic_backups/*
 config/ranger/bookmarks
 config/ranger/commands.py
 config/ranger/commands_full.py
 config/ranger/history
+config/pudb/saved-breakpoints*
 ipython/profile_default/db/*
 ipython/profile_default/log/*
 ipython/profile_default/pid/*
