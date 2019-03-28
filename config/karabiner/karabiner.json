@@ -1912,7 +1912,8 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -1948,7 +1949,8 @@
                                             "command"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
