@@ -822,7 +822,8 @@
                                     "key_code": "o",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -854,7 +855,8 @@
                                     "key_code": "u",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
