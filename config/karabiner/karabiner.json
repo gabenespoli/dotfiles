@@ -810,8 +810,8 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.mail$",
-                                            "^com.apple.systempreferences$"
+                                            "^com\\.apple\\.mail$",
+                                            "^com\\.apple\\.systempreferences$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -841,8 +841,8 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.mail$",
-                                            "^com.apple.systempreferences$"
+                                            "^com\\.apple\\.mail$",
+                                            "^com\\.apple\\.systempreferences$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -877,8 +877,8 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.mail$",
-                                            "^com.apple.systempreferences$"
+                                            "^com\\.apple\\.mail$",
+                                            "^com\\.apple\\.systempreferences$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -907,8 +907,8 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com.apple.mail$",
-                                            "^com.apple.systempreferences$"
+                                            "^com\\.apple\\.mail$",
+                                            "^com\\.apple\\.systempreferences$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
