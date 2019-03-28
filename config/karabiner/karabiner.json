@@ -799,7 +799,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+ou -> home/end]",
+                        "description": "Semicolon Layer [;+uo -> home/end]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -819,7 +819,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "u",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
@@ -852,7 +852,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "o",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
