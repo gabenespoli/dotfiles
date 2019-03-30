@@ -57,7 +57,10 @@ fi
 if [ -n "$TMUX" ]; then
   TMUX_PROMPT="$(tmux display-message -p '(#I) ')"
 fi
-PS1="$TMUX_PROMPT\[\e[34m\]\W$GIT_PROMPT\[\e[0m\] $ "
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SSH_PROMPT="^"
+fi
+PS1="$SSH_PROMPT$TMUX_PROMPT\[\e[34m\]\W$GIT_PROMPT\[\e[0m\] $ "
 
 # Aliases & Functions {{{1
 alias lt="tree -L 2 --dirsfirst"
