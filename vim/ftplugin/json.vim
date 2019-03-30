@@ -1,5 +1,9 @@
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
+" quick loclists of 'level headings' based on indentation
+nnoremap <localleader>1 :lvimgrep /^\W\W"[^"]*":\W{/j %<CR>:lopen<CR>
+nnoremap <localleader>2 :lvimgrep /^\W\{4\}"[^"]*":\W{/j %<CR>:lopen<CR>
+
 if expand('%:t') ==? 'karabiner.json'
   setlocal foldmethod=expr
   setlocal foldexpr=KarabinerFolds(v:lnum)
