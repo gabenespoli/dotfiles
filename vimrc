@@ -202,6 +202,7 @@ nnoremap yoFd :set foldmethod=diff<CR>
 nnoremap <silent> yom :set number!<CR>:set relativenumber!<CR>
 nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nnoremap <silent> yoT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nnoremap <silent> yoFM :set filetype=markdown<CR>
 nnoremap <silent> yoFT :set filetype=text<CR>
 nnoremap <leader>s 1z=
