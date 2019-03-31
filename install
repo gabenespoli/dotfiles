@@ -99,8 +99,16 @@ pip install neovim
 # data science version (anaconda)
 pyenv install miniconda3-4.3.30
 pyenv shell miniconda3-4.3.30
-conda install -y scipy numpy pandas matplotlib seaborn bokeh ipython jupyter \
-  scikit-learn tensorflow keras pudb databricks-cli
+conda install -y scipy numpy pandas \
+  matplotlib seaborn bokeh \
+  scikit-learn tensorflow keras \
+  ipython jupyter pudb
+pyenv shell --unset
+
+# azure databricks
+brew install python3 azure-cli
+pyenv shell miniconda3-4.3.30
+conda install -y pyspark databricks-cli
 pyenv shell --unset
 
 # set macOS defaults {{{1
