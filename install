@@ -9,6 +9,9 @@
 #    via command line: sudo softwareupdate -ia --verbose
 # 2. make sure xcode command line tools are installed
 #    to install: xcode-select --install
+# 3. Install fonts
+#    - https://github.com/IBM/plex
+#    - https://github.com/tonsky/FiraCode
 
 # Homebrew {{{1
 echo "-- Installing Homebrew packages..."
