@@ -448,7 +448,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs in Office [control+aei -> home/end/tab]",
+                        "description": "Gmacs in Office [control+aei90 -> home/end/tab/cmd+dn/cmd+up]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -538,6 +538,111 @@
                                 "to": [
                                     {
                                         "key_code": "tab"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Word$",
+                                            "^com\\.microsoft\\.Excel$",
+                                            "^com\\.microsoft\\.Powerpoint$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Word$",
+                                            "^com\\.microsoft\\.Excel$",
+                                            "^com\\.microsoft\\.Powerpoint$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ribbon in Office [command+shift+f -> command+option+r]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Word$",
+                                            "^com\\.microsoft\\.Excel$",
+                                            "^com\\.microsoft\\.Powerpoint$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "command",
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
