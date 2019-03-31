@@ -112,7 +112,7 @@ conda install -y pyspark databricks-cli
 pyenv shell --unset
 
 # set macOS defaults {{{1
-[ -e "$DOTFILES"/macos ] && . "$DOTFILES"/macos
+# [ -e "$DOTFILES"/macos ] && . "$DOTFILES"/macos
 
 # Spectacle.app
 echo "Setting shortcuts for Spectacle.app..."
