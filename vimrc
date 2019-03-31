@@ -88,14 +88,20 @@ set guifont=IBMPlexMono:h12,Fira\ Code:h12,Menlo:h12,Consolas:h12,Courier:h12
 
 " Status Line {{{2
 set statusline=
-set statusline+=(%{TmuxWinnr()})
-set statusline+=\ %n:%<%.99f\ %#Modified#%m%*%w%r%y
-set statusline+=%{FugitiveStatusline()}
+set statusline+=%{SSHIndicator()}%{TmuxWinnr()}
+set statusline+=%#Modified#%m%*%n:%<%.99f\ %w%r%y
+set statusline+=[%{GetCwdTail()}\|%{FugitiveHead()}]
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
 set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 set statusline+=%=%l/%L\,%c\ (%P)
+function! SSHIndicator() abort
+  if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
+endfunction
 function! TmuxWinnr() abort
-  return substitute(system("tmux display-message -p '#I'"), "\<NL>", "", "")
+  if !empty($TMUX) | return substitute(system("tmux display-message -p '(#I) '"), "\<NL>", "", "") | else | return '' | endif
+endfunction
+function! GetCwdTail() abort
+  return ''.fnamemodify(getcwd(), ':t').''
 endfunction
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
