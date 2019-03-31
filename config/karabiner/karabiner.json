@@ -448,13 +448,15 @@
                         ]
                     },
                     {
-                        "description": "Gmacs in Word [control+aei -> home/end/tab]",
+                        "description": "Gmacs in Office [control+aei -> home/end/tab]",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Word$"
+                                            "^com\\.microsoft\\.Word$",
+                                            "^com\\.microsoft\\.Excel$",
+                                            "^com\\.microsoft\\.Powerpoint$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -483,7 +485,9 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Word$"
+                                            "^com\\.microsoft\\.Word$",
+                                            "^com\\.microsoft\\.Excel$",
+                                            "^com\\.microsoft\\.Powerpoint$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -512,7 +516,9 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Word$"
+                                            "^com\\.microsoft\\.Word$",
+                                            "^com\\.microsoft\\.Excel$",
+                                            "^com\\.microsoft\\.Powerpoint$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
