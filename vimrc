@@ -43,12 +43,12 @@ Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
-" local {{{2
-Plug '~/bin/vim/vim-colors-snooker'
-Plug '~/bin/vim/vim-mutton'
-Plug '~/bin/vim/vim-tabsms'
-Plug '~/bin/vim/vim-neovim-defaults'
-Plug '~/bin/vim/vim-komono'
+" my plugins {{{2
+Plug 'gabenespoli/vim-colors-snooker'
+Plug 'gabenespoli/vim-mutton'
+Plug 'gabenespoli/vim-tabsms'
+Plug 'gabenespoli/vim-neovim-defaults'
+Plug 'gabenespoli/vim-komono'
 
 call plug#end()
 
