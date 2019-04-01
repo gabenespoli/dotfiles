@@ -120,3 +120,12 @@ echo "Setting shortcuts for Spectacle.app..."
 [ -e "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json ] && \
   mv -v "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json "$DOTFILES"/bak/spectacle.json
 cp -r "$DOTFILES"/init/spectacle.json "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json 2>/dev/null
+
+# create some default folders {{{1
+# TODO: link these from a dropbox or onedrive instead of creating them locally
+# mkdir -v "$HOME"/notes
+# mkdir -v "$HOME"/todo
+# mkdir -pv "$HOME"/projects/archive/2019
+
+# TODO: add some files from ~/bin
+# - vpn
