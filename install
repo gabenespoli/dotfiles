@@ -103,6 +103,7 @@ conda install -y scipy numpy pandas \
   matplotlib seaborn bokeh \
   scikit-learn tensorflow keras \
   ipython jupyter pudb
+pip install neovim
 pyenv shell --unset
 
 # azure databricks
