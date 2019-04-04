@@ -14,10 +14,11 @@
 #    - https://github.com/tonsky/FiraCode
 
 # Homebrew {{{1
-echo "-- Installing Homebrew packages..."
+echo "-- Installing Homebrew..."
 [ -z "$(which brew)" ] &&
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo "-- Installing Homebrew packages..."
 brew install bash readline coreutils findutils grep gnu-sed gawk wget \
   tmux vim neovim macvim ranger git tig ctags cloc tree jq \
   reattach-to-user-namespace karabiner-elements openssh \
