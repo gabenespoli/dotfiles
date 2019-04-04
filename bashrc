@@ -48,6 +48,7 @@ export PATH="$HOME/local/bin:$PATH"
 export EDITOR='nvim'
 export CLICOLOR=1
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
+export TERM=xterm-256color-italic
 
 # Prompt {{{1
 if [ -e ~/.git-prompt.sh ]; then
