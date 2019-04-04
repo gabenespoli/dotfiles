@@ -21,10 +21,10 @@ echo "-- Installing Homebrew..."
 echo "-- Installing Homebrew packages..."
 brew install bash readline coreutils findutils grep gnu-sed gawk wget \
   tmux vim neovim macvim ranger git tig ctags cloc tree jq \
-  reattach-to-user-namespace karabiner-elements openssh \
+  reattach-to-user-namespace openssh \
   pandoc pandoc-citeproc pandoc-crossref
 
-brew cask install xquartz iterm2 spectacle google-chrome
+brew cask install xquartz iterm2 spectacle google-chrome karabiner-elements
 
 # bash {{{1
 echo "-- Adding the new bash shell to the list of allowed shells"
