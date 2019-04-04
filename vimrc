@@ -57,9 +57,9 @@ call plug#end()
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=750
 set undofile
-set undodir=~/tmp/vim/undo/
-set backupdir=~/tmp/vim/backup/
-set directory=~/tmp/vim/swap/
+set undodir=~/.config/nvim/undo/
+set backupdir=~/.config/nvim/backup/
+set directory=~/.config/nvim/swap/
 if !isdirectory(expand(&undodir))   | call mkdir(expand(&undodir),   'p') | endif
 if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
