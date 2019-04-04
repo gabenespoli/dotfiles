@@ -456,7 +456,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -487,7 +488,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -518,7 +520,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -548,7 +551,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -581,7 +585,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -691,7 +696,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
