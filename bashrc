@@ -105,6 +105,7 @@ function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
 sourcex "$HOME/bin/network_aliases"
 sourcex "$HOME/.bash_aliases"
+sourcex "$HOME/.bash_local"
 
 # stuff that should be at the end {{{1
 if command -v pyenv 1>/dev/null 2>&1; then
