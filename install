@@ -86,31 +86,37 @@ ln -sf "$HOME"/.vim/autoload/plug.vim "$HOME"/.config/nvim/autoload/
 nvim +PlugInstall +qall
 
 # python {{{1
+echo "-- Preparing to install pyenv..."
+# https://github.com/pyenv/pyenv/wiki
+brew install openssl readline sqlite3 xz zlib
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 echo "-- Setting up python and virtual environments..."
 brew install pyenv pyenv-virtualenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # system version (latest python 3)
-pyenv install 3.7.1
-pyenv global 3.7.1
-pip install --upgrade pip
-pip install neovim jedi
+pyenv install 3.7.3
+pyenv global 3.7.3
+pip install neovim jedi pudb ipython jupyter notedown \
+  scipy numpy pandas matplotlib seaborn bokeh scikit-learn tensorflow keras \
+  pypandoc pyspark databricks-cli
 
 # data science version (anaconda)
 pyenv install miniconda3-4.3.30
 pyenv shell miniconda3-4.3.30
-conda install -y scipy numpy pandas \
+conda install scipy numpy pandas \
   matplotlib seaborn bokeh \
   scikit-learn tensorflow keras \
-  ipython jupyter pudb
-pip install neovim jedi
+  ipython jupyter
+pip install neovim jedi pudb
 pyenv shell --unset
 
 # azure databricks
 brew install python3 azure-cli
 pyenv shell miniconda3-4.3.30
-conda install -y pyspark databricks-cli
+conda install pyspark
+pip install databricks-cli
 pyenv shell --unset
 
 # set macOS defaults {{{1
