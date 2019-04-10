@@ -213,6 +213,7 @@ nnoremap <silent> yoT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nmap <silent> <M-S-t> yoT
 nnoremap <silent> yoFM :set filetype=markdown<CR>
 nnoremap <silent> yoFT :set filetype=text<CR>
+nnoremap <silent> yoFS :set filetype=sh<CR>
 nnoremap <leader>s 1z=
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
