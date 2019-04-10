@@ -25,8 +25,8 @@ yellow = '#ansibrown'      # 3
 green = '#ansidarkgreen'   # 2
 cyan = '#ansiteal'         # 6
 blue = '#ansidarkblue'     # 4
-purple = '#ansipurple'     # 5
-pink = '#ansiturquoise'    # 14
+pink = '#ansipurple'     # 5
+table = '#ansiturquoise'    # 14
 
 from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, Text, \
@@ -48,7 +48,7 @@ class base16_snooker(Style):
 
         Keyword:                   green,
         Keyword.Type:              yellow,
-        Keyword.Namespace:         purple,
+        Keyword.Namespace:         pink,
 
         Operator:                  red,        # class: 'o'
 
