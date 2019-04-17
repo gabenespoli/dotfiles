@@ -88,7 +88,7 @@ set guifont=IBMPlexMono:h12,Fira\ Code:h12,Menlo:h12,Consolas:h12,Courier:h12
 
 " Status Line {{{2
 set statusline=
-set statusline+=%{SSHIndicator()}%{TmuxWinnr()}
+set statusline+=%{SSHIndicator()}
 set statusline+=%#Modified#%m%*%n:%<%.99f\ %w%r%y
 set statusline+=[%{GetCwdTail()}\|%{FugitiveHead()}]
 set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
