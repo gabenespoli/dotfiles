@@ -17,6 +17,20 @@ nnoremap <buffer> <localleader>i :windo call TodoHighlighting(1)<CR>
 nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
 
+" folding {{{1
+setlocal foldmethod=expr
+setlocal foldexpr=NotesFold(v:lnum)
+function! NotesFold(lnum) "{{{
+    let l:line = getline(a:lnum) 
+    if l:line =~# '^##'
+      return '>2'
+    elseif (l:line =~# '^#') || (l:line =~# '^//')
+      return '>1'
+    else
+      return '='
+    endif
+endfunction "}}}
+
 " functions {{{1
 
 " from todo-txt.vim
