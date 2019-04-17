@@ -58,7 +58,7 @@ class base16_snooker(Style):
         Name.Attribute:            blue,        # class: 'na' - to be revised
         # Name.Builtin:              "",          # class: 'nb'
         # Name.Builtin.Pseudo:       "",          # class: 'bp'
-        Name.Class:                red,      # class: 'nc' - to be revised
+        Name.Class:                blue,      # class: 'nc' - to be revised
         # Name.Constant:             cyan,         # class: 'no' - to be revised
         # Name.Decorator:            cyan,        # class: 'nd' - to be revised
         # Name.Entity:               "",          # class: 'ni'
@@ -84,7 +84,7 @@ class base16_snooker(Style):
         # String.Char:               fg,  # class: 'sc'
         # String.Doc:                fg_com,     # class: 'sd' - like a comment
         # String.Double:             "",          # class: 's2'
-        String.Escape:             yellow,      # class: 'se'
+        String.Escape:             orange,      # class: 'se'
         # String.Heredoc:            "",          # class: 'sh'
         # String.Interpol:           orange,      # class: 'si'
         # String.Other:              "",          # class: 'sx'
