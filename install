@@ -19,10 +19,10 @@ echo "-- Installing Homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "-- Installing Homebrew packages..."
-brew install bash readline coreutils findutils grep gnu-sed gawk wget \
-  tmux vim neovim macvim ranger git tig ctags cloc tree jq \
-  reattach-to-user-namespace openssh \
-  pandoc pandoc-citeproc pandoc-crossref
+brew install bash readline coreutils findutils grep gnu-sed gawk wget
+brew install tmux vim neovim ranger git tig ctags cloc tree jq
+brew install reattach-to-user-namespace openssh openssl
+brew install pandoc pandoc-citeproc pandoc-crossref basictex
 
 brew cask install xquartz iterm2 spectacle google-chrome karabiner-elements
 
