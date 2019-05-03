@@ -334,6 +334,7 @@ let g:slime_dont_ask_default = 1
 if exists('$TMUX')
   let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.2'}
 endif
+nnoremap g<C-l> <C-l>
 
 " python & R {{{2
 " jalvesaq/Nvim-R
