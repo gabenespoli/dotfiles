@@ -1,7 +1,7 @@
 " titles {{{1
-syntax match TodoTitle          /^\/\/.*$/ contains=TodoProject
-syntax match TodoTitle          /^##.*$/ contains=TodoProject
-syntax match TodoTitle          /^#.*$/ contains=TodoProject
+syntax match TodoTitle          /^\/\/.*$/ contains=TodoProject,TodoDue
+syntax match TodoTitle          /^##.*$/ contains=TodoProject,TodoDue
+syntax match TodoTitle          /^#.*$/ contains=TodoProject,TodoDue
 
 " bullets {{{1
 syntax match TodoTodoChar       /^\s*-\ /
@@ -9,7 +9,7 @@ syntax match TodoTodo           /^\s*-\ .*$/ contains=TodoTodoChar,TodoProject,T
 syntax match TodoDoneChar       /^\s*x\ /
 syntax match TodoDone           /^\s*x\ .*$/ contains=TodoDoneChar
 syntax match TodoDoingChar      /^\s*\*\ /
-syntax match TodoDoing          /^\s*\*\ .*$/ contains=TodoDoingChar,TodoProject,TodoContext,TodoWaiting,TodoURL
+syntax match TodoDoing          /^\s*\*\ .*$/ contains=TodoDoingChar,TodoProject,TodoContext,TodoWaiting,TodoURL,TodoDue
 syntax match TodoExclaimChar    /^\s*!\ /
 syntax match TodoExclaim        /^\s*!\ .*$/ contains=TodoExclaimChar,TodoProject,TodoContext,TodoWaiting,TodoURL
 syntax match TodoCommentChar    /^\s*>\ /
@@ -77,7 +77,7 @@ hi def link TodoTickBoxComment  TodoComment
 hi def link TodoProject         Identifier
 " hi def link TodoKey             Identifier
 " hi def link TodoPoints          Identifier
-hi def link TodoDue             Error
+hi def link TodoDue             DiffAdd
 hi def link TodoURL             markdownItalic
 
 hi def link TodoContext         Special
