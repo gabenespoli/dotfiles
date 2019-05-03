@@ -1,4 +1,4 @@
-## Editing mode options
+# Editing mode options
 set editing-mode emacs
 set show-mode-in-prompt off
 set show-all-if-ambiguous on
