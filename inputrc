@@ -38,3 +38,6 @@ $else
     "\C-n": history-search-forward
     "\C-p": history-search-backward
 $endif
+
+# full list of options:
+# https://ss64.com/bash/syntax-inputrc.html
