@@ -3,7 +3,6 @@
 .*~
 .DS_Store
 .bak
-config/karabiner/assets/complex_modifications/*
 config/karabiner/automatic_backups/*
 config/ranger/bookmarks
 config/ranger/commands.py
