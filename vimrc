@@ -359,7 +359,7 @@ let g:jedi#usages_command = '<localleader>n'
 
 " markdown {{{2
 " tpope/vim-markdown (built-in) {{{3
-let g:markdown_fenced_languaged = ['bash=sh', 'matlab', 'python', 'vim']
+let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
 let g:markdown_folding = 1
 
 " godlygeek/tabular {{{3
