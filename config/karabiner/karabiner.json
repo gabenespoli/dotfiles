@@ -888,7 +888,8 @@
                                             "left_command",
                                             "right_command",
                                             "left_option",
-                                            "right_option"
+                                            "right_option",
+                                            "control"
                                         ]
                                     }
                                 },
@@ -917,7 +918,8 @@
                                             "left_command",
                                             "right_command",
                                             "left_option",
-                                            "right_option"
+                                            "right_option",
+                                            "control"
                                         ]
                                     }
                                 },
@@ -946,7 +948,8 @@
                                             "left_command",
                                             "right_command",
                                             "left_option",
-                                            "right_option"
+                                            "right_option",
+                                            "control"
                                         ]
                                     }
                                 },
@@ -975,7 +978,8 @@
                                             "left_command",
                                             "right_command",
                                             "left_option",
-                                            "right_option"
+                                            "right_option",
+                                            "control"
                                         ]
                                     }
                                 },
