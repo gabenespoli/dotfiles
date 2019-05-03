@@ -448,7 +448,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs in Office [control+aei90 -> home/end/tab/cmd+dn/cmd+up]",
+                        "description": "Gmacs in Office [control+ae -> home/end]",
                         "manipulators": [
                             {
                                 "conditions": [
