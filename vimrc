@@ -44,6 +44,9 @@ Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
+" json {{{2
+Plug 'elzr/vim-json',                  {'for': 'json'}
+
 " my plugins {{{2
 Plug 'gabenespoli/vim-colors-snooker'
 Plug 'gabenespoli/vim-mutton'
