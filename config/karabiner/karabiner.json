@@ -11,7 +11,8 @@
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
@@ -48,7 +49,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
@@ -81,7 +81,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
@@ -114,7 +113,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim"
@@ -146,7 +144,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim"
@@ -183,7 +180,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim"
@@ -220,7 +216,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
@@ -258,7 +253,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
@@ -299,7 +293,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
@@ -340,7 +333,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$"
                                         ],
@@ -378,7 +370,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$"
                                         ],
@@ -416,7 +407,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$"
                                         ],
