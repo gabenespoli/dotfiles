@@ -25,8 +25,8 @@ yellow = '#ansibrown'      # 3
 green = '#ansidarkgreen'   # 2
 cyan = '#ansiteal'         # 6
 blue = '#ansidarkblue'     # 4
-pink = '#ansipurple'     # 5
-table = '#ansiturquoise'    # 14
+pink = '#ansipurple'       # 5
+table = '#ansiturquoise'   # 14
 
 from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, Text, \
