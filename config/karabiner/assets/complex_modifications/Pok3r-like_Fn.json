@@ -64,27 +64,8 @@
       ]
     },
     {
-      "description": "Pok3r-like Fn Volume [right_option+p[] -> play/bck/fwd]",
+      "description": "Pok3r-like Fn Brightness [right_option+[] -> bright up/dn]",
       "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "p",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "play_or_pause"
-            }
-          ]
-        },
         {
           "type": "basic",
           "from": {
@@ -100,7 +81,7 @@
           },
           "to": [
             {
-              "key_code": "rewind"
+              "key_code": "display_brightness_decrement"
             }
           ]
         },
@@ -111,51 +92,6 @@
             "modifiers": {
               "mandatory": [
                 "right_option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "fastforward"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Pok3r-like Fn Brightness [right_option+shift+-= -> bright up/dn]",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "hyphen",
-            "modifiers": {
-              "mandatory": [
-                "right_option",
-                "shift"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "display_brightness_decrement"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "equal_sign",
-            "modifiers": {
-              "mandatory": [
-                "right_option",
-                "shift"
               ],
               "optional": [
                 "caps_lock"
