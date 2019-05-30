@@ -64,11 +64,11 @@ hi def link TodoDoneChar        Special
 hi def link TodoDone            Comment
 hi def link TodoDoingChar       Statement
 hi def link TodoDoing           Normal
-hi def link TodoExclaimChar     Error
-hi def link TodoExclaim         Normal
+hi def link TodoExclaimChar     Todo
+hi def link TodoExclaim         Todo
 hi def link TodoCommentChar     Type
 hi def link TodoComment         Comment
-hi def link TodoWaitingChar     PreProc
+hi def link TodoWaitingChar     Error
 hi def link TodoWaiting         Normal
 
 hi def link TodoTickBox         TodoTodo
