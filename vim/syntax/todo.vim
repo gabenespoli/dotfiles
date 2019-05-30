@@ -41,14 +41,14 @@ syntax match TodoDate           /\d\d\d\d-\d\d-\d\d/
 syntax match TodoMIDA           /MIDA-\d*/
 
 " priorities (todo.txt) {{{1
-syntax match TodoPriorityAChar  /^(A)\ /
-syntax match TodoPriorityBChar  /^(B)\ /
-syntax match TodoPriorityCChar  /^(C)\ /
-syntax match TodoPriorityDChar  /^(D)\ /
-syntax match TodoPriorityA      /^(A)\ .*$/ contains=TodoPriorityAChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
-syntax match TodoPriorityB      /^(B)\ .*$/ contains=TodoPriorityBChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
-syntax match TodoPriorityC      /^(C)\ .*$/ contains=TodoPriorityCChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
-syntax match TodoPriorityD      /^(D)\ .*$/ contains=TodoPriorityDChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
+syntax match TodoPriorityAChar  /^\s*(A)\ /
+syntax match TodoPriorityBChar  /^\s*(B)\ /
+syntax match TodoPriorityCChar  /^\s*(C)\ /
+syntax match TodoPriorityDChar  /^\s*(D)\ /
+syntax match TodoPriorityA      /^\s*(A)\ .*$/ contains=TodoPriorityAChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
+syntax match TodoPriorityB      /^\s*(B)\ .*$/ contains=TodoPriorityBChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
+syntax match TodoPriorityC      /^\s*(C)\ .*$/ contains=TodoPriorityCChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
+syntax match TodoPriorityD      /^\s*(D)\ .*$/ contains=TodoPriorityDChar,TodoContext,TodoWaiting,TodoProject,TodoKey,TodoPoints,TodoDue,TodoURL
 
 " highlight today's date
 let today = strftime('%Y-%m-%d')
