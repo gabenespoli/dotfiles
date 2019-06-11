@@ -7,6 +7,9 @@ nmap <silent> <buffer> - q
 nmap <silent> <buffer> u <Plug>(dirvish_up)
 nnoremap U u
 
+" use = to first close dirvish, then use = (buffergator toggle)
+nmap <silent> <buffer> = -=
+
 " my preferred maps for open, split, vsplit, tab open
 " TODO: make o an expr map to use gx if extention is pdf, docx, etc.
 nmap <silent> <buffer> o :call dirvish#open('edit', 0)<CR>

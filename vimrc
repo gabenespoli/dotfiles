@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
@@ -221,6 +222,11 @@ nnoremap <silent> <expr> <leader>q
 nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
+augroup unimpaired
+  au!
+  autocmd VimEnter * unmap =p
+  autocmd VimEnter * unmap =P
+augroup END
 
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
@@ -247,6 +253,16 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :!open <cfile><CR><CR>
 endif
+
+" jeetsukumaran/vim-buffergator {{{3
+let g:buffergator_autoupdate = 0
+let g:buffergator_autodismiss_on_select = 1
+let g:buffergator_viewport_split_policy = 'N'
+let g:buffergator_suppress_keymaps = 1
+nnoremap gb :BuffergatorMruCyclePrev<CR>
+nnoremap gB :BuffergatorMruCycleNext<CR>
+nnoremap = :BuffergatorToggle<CR>
+nnoremap <leader>= :BuffergatorTabsToggle<CR>
 
 " majutsushi/tagbar {{{3
 let g:tagbar_autofocus = 1
