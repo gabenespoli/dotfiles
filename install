@@ -102,15 +102,14 @@ pip install neovim jedi pudb ipython jupyter notedown \
   scipy numpy pandas matplotlib seaborn bokeh scikit-learn tensorflow keras \
   pypandoc pyspark databricks-cli
 
-# data science version (anaconda)
+# (ds) data science environment w/conda
 pyenv install miniconda3-4.3.30
-pyenv shell miniconda3-4.3.30
-conda install scipy numpy pandas \
-  matplotlib seaborn bokeh \
-  scikit-learn tensorflow keras \
-  ipython jupyter
-pip install neovim jedi pudb
-pyenv shell --unset
+pyenv virtualenv miniconda3-4.3.30 ds
+pyenv activate miniconda3-4.3.30
+conda activate ds
+conda install -y pandas matplotlib seaborn bokeh scikit-learn ipython jupyter
+conda deactivate
+pyenv deactivate
 
 # azure databricks
 brew install python3 azure-cli
@@ -118,6 +117,30 @@ pyenv shell miniconda3-4.3.30
 conda install pyspark
 pip install databricks-cli
 pyenv shell --unset
+
+# python databricks environments {{{1
+# python version 3.5.2
+# apache spark 2.4.0
+# databricks 5.1
+pyenv install 3.5.2
+
+# (spark-local)
+pyenv virtualenv 3.5.2 spark-local
+pyenv activate spark-local
+pip install --upgrade pip
+pip install pyspark
+pip install ipython
+pyenv deactivate
+
+# spark-azure
+# Note: need to symlink databricks-connect dotfile
+# Note: also need to copy jar files
+pyenv virtualenv 3.5.2 spark-azure
+pyenv activate spark-azure
+pip install --upgrade pip
+pip install --upgrade databricks-connect==5.1.*
+cp "$HOME"/lib/databricks-connect-jars/*.jar "$(databricks-connect get-jar-dir)"
+pyenv deactivate
 
 # set macOS defaults {{{1
 # [ -e "$DOTFILES"/macos ] && . "$DOTFILES"/macos
