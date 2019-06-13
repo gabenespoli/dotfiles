@@ -8,13 +8,17 @@ if [ "$(uname)" == "Darwin" ]; then
     export MANPATH="/usr/local/opt/$gnu/libexec/gnuman:$MANPATH"
   done
   if hash gls 2> /dev/null; then
-    alias ls="gls --color --group-directories-first"
+    alias ls="gls -Flh --color --group-directories-first"
+    alias lS="gls --color --group-directories-first"
     alias ll="gls -Flh --color --group-directories-first"
     alias la="gls -Flha --color --group-directories-first"
   else
+    alias ls="ls -Flh"
+    alias lS="ls"
     alias ll="ls -Flh"
     alias la="ls -Flha"
   fi
+  alias lsa="la"
   # custom path
   export PATH="$HOME/Library/Haskell/bin:$PATH"
   export PATH="/usr/local/lib:$PATH"
