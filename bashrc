@@ -73,6 +73,7 @@ function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # u
 alias t="cat ~/todo/todo.txt"
 alias todo="$EDITOR $HOME/todo/todo.txt"
 alias motes="cd $HOME/notes && mvim $HOME/notes/$(date +%Y-%m-%d).txt"
+alias pylab="pyenv activate miniconda3-4.3.30 && conda activate ds && ipython --pylab"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias pudb="python -m pudb.run"
 alias jn="jupyter notebook"
