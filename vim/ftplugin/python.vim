@@ -7,10 +7,6 @@ if exists('*jedi#goto()')
   nnoremap <buffer> gD :call jedi#goto()<CR>
 endif
 
-" re-enable some python-mode settings disabled in vimrc
-setlocal define=^\s*\\(def\\\\|class\\)
-setlocal complete+=t
-
 " jupytext
 nnoremap <buffer> <localleader>j :!jupytext -o %.ipynb %<CR>
 

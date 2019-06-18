@@ -32,7 +32,6 @@ Plug 'jpalardy/vim-slime'
 
 " python & R {{{2
 Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
-Plug 'python-mode/python-mode',        {'for': 'python', 'branch': 'develop'}
 Plug 'goerz/jupytext.vim'
 " Plug 'davidhalter/jedi-vim',           {'for': 'python'}
 Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
@@ -351,16 +350,6 @@ let Rout_more_colors = 1
 " let g:jedi#goto_assignments_command = '<localleader>g' " also gd
 " let g:jedi#rename_command = '<localleader>r'
 " let g:jedi#usages_command = '<localleader>n'
-
-" python-mode/python-mode
-let g:pymode_python = 'python3'
-let g:pymode_breakpoint_bind = '<localleader>b'
-let g:pymode_run_bind = '<localleader>r'
-let g:pymode_lint = 0
-let g:pymode_options = 0
-let g:pymode_options_colorcolumn = 0
-let g:pymode_indent = 0
-let g:pymode_trim_whitespaces = 0
 
 " goerz/jupytext.vim
 let g:jupytext_fmt = 'py'
