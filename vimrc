@@ -33,7 +33,6 @@ Plug 'jpalardy/vim-slime'
 " python & R {{{2
 Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
 Plug 'goerz/jupytext.vim'
-" Plug 'davidhalter/jedi-vim',           {'for': 'python'}
 Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
 Plug 'tmhedberg/SimpylFold',           {'for': 'python'}
 
@@ -340,16 +339,6 @@ let R_show_args = 0
 let R_objbr_place = 'LEFT'
 let rout_follow_colorscheme = 1
 let Rout_more_colors = 1
-
-" " davidhalter/jedi-vim
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#smart_auto_mappings = 0
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#show_call_signatures = 2
-" let g:jedi#goto_command = '<localleader>d' " also gD in ftplugin/python.vim
-" let g:jedi#goto_assignments_command = '<localleader>g' " also gd
-" let g:jedi#rename_command = '<localleader>r'
-" let g:jedi#usages_command = '<localleader>n'
 
 " goerz/jupytext.vim
 let g:jupytext_fmt = 'py'
