@@ -98,27 +98,32 @@ eval "$(pyenv virtualenv-init -)"
 # system version (latest python 3)
 pyenv install 3.7.3
 pyenv global 3.7.3
-pip install neovim jedi pudb ipython jupyter notedown \
-  scipy numpy pandas matplotlib seaborn bokeh scikit-learn tensorflow keras \
-  pypandoc pyspark databricks-cli
+pip install databricks-cli
+
+# vim versions
+pyenv virtualenv 3.7.3 neovim3
+pyenv activate neovim3
+pip install --upgrade pip
+pip install neovim pynvim python-language-server jedi pylint yapf
+pyenv deactivate
+
+pyenv virtualenv 2.7.16 neovim2
+pyenv activate neovim2
+pip install --upgrade pip
+pip install neovim pynvim python-language-server jedi pylint yapf
+pyenv deactivate
 
 # (ds) data science environment w/conda
 pyenv install miniconda3-4.3.30
 pyenv virtualenv miniconda3-4.3.30 ds
 pyenv activate miniconda3-4.3.30
 conda activate ds
+pip install --upgrade pip
 conda install -y pandas matplotlib seaborn bokeh scikit-learn ipython jupyter
 conda deactivate
 pyenv deactivate
 
-# azure databricks
-brew install python3 azure-cli
-pyenv shell miniconda3-4.3.30
-conda install pyspark
-pip install databricks-cli
-pyenv shell --unset
-
-# python databricks environments {{{1
+# spark databricks environments
 # python version 3.5.2
 # apache spark 2.4.0
 # databricks 5.1
@@ -128,11 +133,10 @@ pyenv install 3.5.2
 pyenv virtualenv 3.5.2 spark-local
 pyenv activate spark-local
 pip install --upgrade pip
-pip install pyspark
-pip install ipython
+pip install pyspark ipython
 pyenv deactivate
 
-# spark-azure
+# (spark-azure)
 # Note: need to symlink databricks-connect dotfile
 # Note: also need to copy jar files
 pyenv virtualenv 3.5.2 spark-azure
