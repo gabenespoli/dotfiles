@@ -23,7 +23,6 @@ Plug 'justinmk/vim-dirvish'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'w0rp/ale'
 
 " tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -97,8 +96,6 @@ set statusline=
 set statusline+=%{SSHIndicator()}
 set statusline+=%#Modified#%m\ %*%n:%<%.99f\ %w%r%y
 set statusline+=%{FugitiveStatusline()}
-set statusline+=%#ErrorStatus#%{ALEStatus('Errors')}%*
-set statusline+=%#TodoStatus#%{ALEStatus('Warnings')}%*
 set statusline+=%=%l/%L\,%c\ (%P)
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
@@ -284,28 +281,6 @@ let g:ctrlp_prompt_mappings = {
  \ 'PrtHistory(1)':          [],
  \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
  \ }
-
-" w0rp/ale {{{3
-nnoremap <silent> yoV :ALEToggle<CR>:echo g:ale_enabled<CR>
-nmap [v <Plug>(ale_previous_wrap)
-nmap ]v <Plug>(ale_next_wrap)
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_set_loclist = 0
-let g:ale_linter_aliases = {'octave': 'matlab'}
-let g:ale_r_lintr_options = 'lintr::with_defaults(object_usage_linter=NULL, spaces_left_parentheses_linter=NULL, snake_case_linter=NULL, camel_case_linter=NULL, multiple_dots_linter=NULL, absolute_paths_linter=NULL, infix_spaces_linter=NULL, line_length_linter(80))'
-let g:ale_python_flake8_options = '--extend-ignore=E221,E266,E261,E3,E402,E501'
-function! ALEStatus(type) abort "{{{
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  if a:type ==# 'Errors'
-    return l:all_errors == 0 ? '' : printf('[%dE]', all_errors)
-  elseif a:type ==# 'Warnings'
-    return l:all_non_errors == 0 ? '' : printf('[%dW]', all_non_errors)
-  else
-    return ''
-  endif
-endfunction "}}}
 
 " tmux {{{2
 " christoomey/vim-tmux-navigator {{{3
