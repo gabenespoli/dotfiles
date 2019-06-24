@@ -77,16 +77,25 @@ function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # u
 alias t="cat ~/todo/todo.txt"
 alias todo="$EDITOR $HOME/todo/todo.txt"
 alias motes="cd $HOME/notes && mvim $HOME/notes/$(date +%Y-%m-%d).txt"
-alias pylab="pyenv activate miniconda3-4.3.30 && conda activate ds && ipython --pylab"
-alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
-alias pudb="python -m pudb.run"
-alias jn="jupyter notebook"
 alias octave="octave --no-gui"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 function ranger() { /usr/local/bin/ranger --choosedir=$HOME/.rangerdir $@; cd "`cat $HOME/.rangerdir`" ; }
 alias weather="curl http://wttr.in/Kitchener"
 alias keys='keyboard | grep -v "Control\|Semicolon" && keyboard | grep -v "Command\|Semicolon" && keyboard | grep -v "Command\|Control"'
+
+# python {{{1
+alias ca="conda deactivate && conda activate"
+alias cx="conda deactivate"
+alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pudb="python -m pudb.run"
+alias jn="jupyter notebook"
+alias pylab="ipython --pylab -i -c '\
+  import pandas as pd; \
+  pd.options.display.width=0; \
+  pd.options.display.max_rows=15; \
+  pd.options.display.max_columns=9 \
+  '"
 
 # git {{{1
 alias gs="git status -sb"
