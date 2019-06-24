@@ -113,6 +113,7 @@ alias glog="git log --graph --pretty=format:'%C(blue)%h%Creset%C(yellow)%d%Crese
 alias gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
 alias ts="tig status"
 alias tl="tig"
+alias rbi="git rebase --interactive"
 
 # source other files {{{1
 function sourcex() { [ -f "$1" ] && source "$1" ; }
