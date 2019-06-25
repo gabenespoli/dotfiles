@@ -42,6 +42,7 @@ Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
+Plug '~/bin/vim/vim-toodo'
 
 " json {{{2
 Plug 'elzr/vim-json',                  {'for': 'json'}
