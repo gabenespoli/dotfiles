@@ -129,6 +129,9 @@ nnoremap q <C-w>q
 nnoremap <C-q> q
 nnoremap Q @q
 
+" select last paste selection
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
