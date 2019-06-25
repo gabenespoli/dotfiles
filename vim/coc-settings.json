@@ -1,0 +1,10 @@
+{
+  "suggest.autoTrigger": "none",
+  "python.linting.pylintArgs": [
+        "--generated-members=pyspark.*",
+        "--extension-pkg-whitelist=pyspark",
+        "--ignored-modules=pyspark.sql.functions",
+        "--variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$",
+        "--argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$"
+    ]
+}
