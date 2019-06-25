@@ -65,6 +65,8 @@ set directory=~/.config/nvim/swap/
 if !isdirectory(expand(&undodir))   | call mkdir(expand(&undodir),   'p') | endif
 if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
+let g:python2_host_prog = expand('~').'/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim3/bin/python'
 
 " Options {{{2
 set hidden
