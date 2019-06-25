@@ -34,11 +34,11 @@ Plug 'jpalardy/vim-slime'
 " python & R {{{2
 Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
 Plug 'goerz/jupytext.vim'
-Plug 'vim-scripts/indentpython.vim',   {'for': 'python'}
-Plug 'tmhedberg/SimpylFold',           {'for': 'python'}
+Plug 'vim-scripts/indentpython.vim'
+Plug 'tmhedberg/SimpylFold'
 
 " markdown {{{2
-Plug 'godlygeek/tabular',              {'for': ['markdown', 'pandoc']}
+Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
