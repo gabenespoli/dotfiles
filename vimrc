@@ -221,7 +221,7 @@ nnoremap <silent> <expr> <leader>l
 
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
-nnoremap gY :Gdiff<CR>
+nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 
@@ -233,7 +233,7 @@ xnoremap gl :GV<CR>
 " airblade/gitgutter {{{3
 nmap ga  <Plug>GitGutterStageHunk
 nmap ghu <Plug>GitGutterUndoHunk
-nmap gy  <Plug>GitGutterPreviewHunk
+nmap gz  <Plug>GitGutterPreviewHunk
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
