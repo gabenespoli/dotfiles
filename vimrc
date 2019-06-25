@@ -129,10 +129,6 @@ nnoremap q <C-w>q
 nnoremap <C-q> q
 nnoremap Q @q
 
-" swap single quote (mark bol) and back tick (mark)
-nnoremap ' `
-nnoremap ` '
-
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
