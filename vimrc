@@ -13,7 +13,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired'
+Plug 'gabenespoli/vim-unimpaired'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'tpope/vim-fugitive'
@@ -167,7 +167,7 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
 let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 1
 colorscheme snooker
-nnoremap <silent> yoC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
+nnoremap <silent> coC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
 augroup highlight_fold_markers_as_titles
   au!
   " TODO: use &commentstring so this works for all filetypes
@@ -194,24 +194,23 @@ cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
 " tpope/vim-unimpaired {{{3
-nmap co yo
-nnoremap <silent> yof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap yoFn :set foldmethod=manual<CR>
-nnoremap yoFi :set foldmethod=indent<CR>
-nnoremap yoFe :set foldmethod=expr<CR>
-nnoremap yoFm :set foldmethod=marker<CR>
-nnoremap yoFs :set foldmethod=syntax<CR>
-nnoremap yoFd :set foldmethod=diff<CR>
-nnoremap <silent> yom :set number!<CR>:set relativenumber!<CR>
-nnoremap <silent> yoW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
-nnoremap <silent> yoS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-nmap <silent> <M-S-s> yoS
-nnoremap <silent> yoT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
-nmap <silent> <M-S-t> yoT
-nnoremap <silent> yoFM :set filetype=markdown<CR>
-nnoremap <silent> yoFT :set filetype=text<CR>
-nnoremap <silent> yoFS :set filetype=sh<CR>
-nnoremap <silent> yoFJ :set filetype=json<CR>
+nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap coFn :set foldmethod=manual<CR>
+nnoremap coFi :set foldmethod=indent<CR>
+nnoremap coFe :set foldmethod=expr<CR>
+nnoremap coFm :set foldmethod=marker<CR>
+nnoremap coFs :set foldmethod=syntax<CR>
+nnoremap coFd :set foldmethod=diff<CR>
+nnoremap <silent> com :set number!<CR>:set relativenumber!<CR>
+nnoremap <silent> coW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nmap <silent> <M-S-s> coS
+nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
+nmap <silent> <M-S-t> coT
+nnoremap <silent> coFM :set filetype=markdown<CR>
+nnoremap <silent> coFT :set filetype=text<CR>
+nnoremap <silent> coFS :set filetype=sh<CR>
+nnoremap <silent> coFJ :set filetype=json<CR>
 nnoremap <leader>s 1z=
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
@@ -219,11 +218,6 @@ nnoremap <silent> <expr> <leader>q
 nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
-augroup unimpaired
-  au!
-  autocmd VimEnter * unmap =p
-  autocmd VimEnter * unmap =P
-augroup END
 
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
@@ -240,8 +234,8 @@ xnoremap gl :GV<CR>
 nmap ga  <Plug>GitGutterStageHunk
 nmap ghu <Plug>GitGutterUndoHunk
 nmap gy  <Plug>GitGutterPreviewHunk
-nnoremap <silent> yog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
-nnoremap <silent> yoG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
+nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
+nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
 
 " justinmk/vim-dirvish {{{3
