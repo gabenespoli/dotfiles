@@ -185,6 +185,11 @@
                                             "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "from": {
