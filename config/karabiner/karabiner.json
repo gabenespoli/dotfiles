@@ -3659,14 +3659,14 @@
                         ]
                     },
                     {
-                        "description": "Pok3r-like Fn Volume [right_option+0-= -> mute/vol-/vol+]",
+                        "description": "Pok3r-like Fn Volume [option+0-= -> mute/vol-/vol+]",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "0",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_option"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3685,7 +3685,7 @@
                                     "key_code": "hyphen",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_option"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3704,7 +3704,7 @@
                                     "key_code": "equal_sign",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_option"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3721,14 +3721,14 @@
                         ]
                     },
                     {
-                        "description": "Pok3r-like Fn Brightness [right_option+[] -> bright up/dn]",
+                        "description": "Pok3r-like Fn Brightness [option+[] -> bright up/dn]",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_option"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3747,7 +3747,7 @@
                                     "key_code": "close_bracket",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_option"
+                                            "option"
                                         ],
                                         "optional": [
                                             "caps_lock"
