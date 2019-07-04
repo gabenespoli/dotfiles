@@ -1106,8 +1106,6 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.mail$",
-                                            "^com\\.apple\\.systempreferences$",
                                             "^com\\.apple\\.finder$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -1138,8 +1136,6 @@
                                     },
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.mail$",
-                                            "^com\\.apple\\.systempreferences$",
                                             "^com\\.apple\\.finder$"
                                         ],
                                         "type": "frontmost_application_unless"
