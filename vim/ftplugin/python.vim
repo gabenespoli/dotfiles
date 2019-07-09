@@ -16,6 +16,7 @@ nnoremap <buffer> <localleader>ds :execute '!databricks workspace import -ol pyt
 nnoremap <buffer> <localleader>o zjo<CR># COMMAND ----------<Esc>2ko<CR>
 nnoremap <buffer> <localleader>O [zO# COMMAND ----------<CR><CR><CR><Esc>ki
 nnoremap <buffer> <localleader>c i# COMMAND ----------<Esc>
+nnoremap <buffer> <localleader>C o# COMMAND ----------<CR><Esc>
 
 if search('^# COMMAND ----------$')
   setlocal foldmethod=expr
