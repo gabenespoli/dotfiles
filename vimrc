@@ -197,6 +197,14 @@ inoremap <C-x><C-p> <C-p>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
+" tpope/vim-surround {{{3
+for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
+  execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
+  execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
+  execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'
+  execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
+endfor
+
 " tpope/vim-unimpaired {{{3
 nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap coFn :set foldmethod=manual<CR>
