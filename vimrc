@@ -268,6 +268,7 @@ nnoremap = :BuffergatorToggle<CR>
 nnoremap <leader>= :BuffergatorTabsToggle<CR>
 
 " majutsushi/tagbar {{{3
+nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
@@ -435,7 +436,6 @@ nmap dP     <Plug>PutDiffCharPair
 let g:criticmarkup#disable#highlighting = 1
 
 " jszakmeister/markdown2ctags {{{3
-nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_type_markdown = {
   \ 'ctagstype': 'markdown',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
