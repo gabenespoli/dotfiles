@@ -61,7 +61,7 @@ call plug#end()
 " General Settings {{{1
 " System {{{2
 if has('mac') | set fileformats=unix,dos | endif
-set updatetime=750
+set updatetime=300
 set undofile
 set undodir=~/.config/nvim/undo/
 set backupdir=~/.config/nvim/backup/
