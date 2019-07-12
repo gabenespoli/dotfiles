@@ -267,7 +267,7 @@ nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
-let g:tagbar_iconchars = ['+', '-']
+let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]}
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
