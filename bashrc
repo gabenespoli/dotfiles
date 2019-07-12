@@ -129,6 +129,3 @@ fi
 if command -v pyenv-virtualenv 1>/dev/null 2>&1; then
   eval "$(pyenv virtualenv-init -)"
 fi
-condash="/Users/53gnespoli/.pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
-[ -e "$condash" ] && . "$condash"
-conda activate base
