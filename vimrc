@@ -23,7 +23,13 @@ Plug 'justinmk/vim-dirvish'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
+<<<<<<< HEAD
 Plug 'neoclide/coc.nvim',              {'do': { -> coc#util#install()}}
+=======
+if has('nvim')
+  Plug 'neoclide/coc.nvim',              {'do': { -> coc#util#install()}}
+endif
+>>>>>>> 90ff9c3... vimrc: use coc.vim for autocompletion
 
 " tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -98,7 +104,7 @@ set statusline=
 set statusline+=%{SSHIndicator()}
 set statusline+=%#Modified#%m\ %*%n:%<%.99f\ %w%r%y
 set statusline+=%{FugitiveStatusline()}
-set statusline+=[%{coc#status()}]
+if has('nvim') | set statusline+=[%{coc#status()}] | endif
 set statusline+=%=%l/%L\,%c\ (%P)
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
@@ -305,6 +311,36 @@ function! s:show_documentation()
   endif
 endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" neoclide/coc.nvim {{{3
+if has('nvim')
+let g:coc_enable_locationlist = 0
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+nnoremap <silent> <expr> coy g:coc_enabled ? ':CocDisable<CR>' : ':CocEnable<CR>'
+nmap <silent> [y <Plug>(coc-diagnostic-prev)
+nmap <silent> ]y <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+autocmd CursorHold * silent call CocActionAsync('highlight')
+endif
 
 " tmux {{{2
 " christoomey/vim-tmux-navigator {{{3
