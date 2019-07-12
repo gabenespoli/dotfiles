@@ -60,7 +60,7 @@ class base16_snooker(Style):
 
     styles = {
         # No corresponding class for the following:
-        # Text:                      fg,
+        Text:                      fg,
 
         Comment:                   fg_com,      # class: 'c'
         Error:                     red,
