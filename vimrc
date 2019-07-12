@@ -71,6 +71,7 @@ let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim3/bin/python'
 
 " Options {{{2
 set hidden
+set nomodeline
 set number relativenumber
 set equalalways splitright splitbelow
 set nowrap linebreak breakindent whichwrap+=h,l
