@@ -189,10 +189,6 @@ augroup END
 
 " general {{{2
 " tpope/vim-rsi {{{3
-inoremap <C-n> <down>
-inoremap <C-p> <up>
-inoremap <C-x><C-n> <C-n>
-inoremap <C-x><C-p> <C-p>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
