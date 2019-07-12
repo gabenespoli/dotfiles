@@ -76,6 +76,7 @@ set equalalways splitright splitbelow
 set nowrap linebreak breakindent whichwrap+=h,l
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 set listchars+=extends:>,precedes:<
+set formatoptions-=t
 set cursorline
 set showmatch
 set ignorecase smartcase nohlsearch
