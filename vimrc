@@ -23,13 +23,9 @@ Plug 'justinmk/vim-dirvish'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
-<<<<<<< HEAD
-Plug 'neoclide/coc.nvim',              {'do': { -> coc#util#install()}}
-=======
 if has('nvim')
   Plug 'neoclide/coc.nvim',              {'do': { -> coc#util#install()}}
 endif
->>>>>>> 90ff9c3... vimrc: use coc.vim for autocompletion
 
 " tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
