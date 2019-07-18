@@ -31,7 +31,6 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'jpalardy/vim-slime'
 
 " python & R {{{2
-Plug 'jalvesaq/Nvim-R',                {'for': 'r'}
 Plug 'goerz/jupytext.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
@@ -367,14 +366,6 @@ endif
 nnoremap g<C-l> <C-l>
 
 " python & R {{{2
-" jalvesaq/Nvim-R
-let R_assign = 0
-let R_esc_term = 0
-let R_show_args = 0
-let R_objbr_place = 'LEFT'
-let rout_follow_colorscheme = 1
-let Rout_more_colors = 1
-
 " goerz/jupytext.vim
 let g:jupytext_fmt = 'py'
 let g:jupytext_filetype_map = {'py': 'python'}
