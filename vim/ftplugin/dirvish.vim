@@ -32,10 +32,10 @@ endif
 " TODO: pp (can't used by dirvish) uses that var to perform the paste in the current directory
 " TODO: make this work for visual selections
 nnoremap <buffer> cd :cd %
-nnoremap <buffer> cp :!cp '<C-R><C-L>' '<C-R><C-L>'
-nnoremap <buffer> mv :!mv '<C-R><C-L>' '<C-R><C-L>'
-nnoremap <buffer> rm :!rm '<C-R><C-L>'
-nnoremap <buffer> dt :!trash '<C-R><C-L>'
+nnoremap <buffer> cp :!cp '<C-r><C-l>' '<C-r><C-l>'
+nnoremap <buffer> mv :!mv '<C-r><C-l>' '<C-r><C-l>'
+nnoremap <buffer> rm :!rm '<C-r><C-l>'
+nmap <buffer> dt :!trash '<C-r><C-l>'<CR><CR>R
 nnoremap <buffer> e :edit %/
 nmap <buffer> <Del> dt
 nmap <buffer> dD rm
