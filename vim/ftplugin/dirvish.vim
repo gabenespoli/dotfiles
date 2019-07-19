@@ -31,9 +31,11 @@ endif
 " TODO: yy sets a global or buffer var with path to copy from
 " TODO: pp (can't used by dirvish) uses that var to perform the paste in the current directory
 " TODO: make this work for visual selections
-nnoremap <buffer> cp :!cp <C-R><C-L> <C-R><C-L>.bak
-nnoremap <buffer> mv :!mv <C-R><C-L> <C-R><C-L>.bak
-nnoremap <buffer> rm :!rm <C-R><C-L>
+nnoremap <buffer> cd :cd %
+nnoremap <buffer> cp :!cp '<C-R><C-L>' '<C-R><C-L>'
+nnoremap <buffer> mv :!mv '<C-R><C-L>' '<C-R><C-L>'
+nnoremap <buffer> rm :!rm '<C-R><C-L>'
+nnoremap <buffer> dt :!trash '<C-R><C-L>'
+nnoremap <buffer> e :edit %/
+nmap <buffer> <Del> dt
 nmap <buffer> dD rm
-nnoremap <buffer> dt :!trash <C-R><C-L>
-nnoremap <buffer> % :!touch %/
