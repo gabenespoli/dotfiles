@@ -95,51 +95,49 @@ brew install pyenv pyenv-virtualenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# system version (latest python 3)
+# install versions of python
+pyenv install 2.7.16
 pyenv install 3.7.3
-pyenv global 3.7.3
-pip install databricks-cli
+pyenv install miniconda-latest
 
-# pyenv spark env
-pyenv virtualenv 3.5.2 spark
-pyenv activate spark
+# envs for neovim
+pyenv virtualenv 2.7.16 neovim2
+pyenv activate neovim2
 pip install --upgrade pip
-pip install pyspark pyspark-stubs pytest pylint ipython
+pip install neovim pynvim python-language-server jedi
 pyenv deactivate
 
-# pyenv spark right in v3.5.2?
-pyenv shell 3.5.2
+pyenv virtualenv 3.7.3 neovim3
+pyenv activate neovim3
 pip install --upgrade pip
-pip install pyspark pyspark-stubs pytest pylint ipython
-pyenv shell --unset
+pip install neovim pynvim python-language-server jedi
+pyenv deactivate
 
-# conda environments
-pyenv install miniconda3-latest
-pyenv global miniconda3-latest
+# envs for data science
+# (azure uses python 3.5.2, apache spark 2.4.0, databricks 5.1)
 pyenv shell miniconda3-latest
+
 pip install --upgrade pip
-pip install databricks-cli
-conda install -y pylint
+conda install pandas matplotlib seaborn bokeh scikit-learn \
+  ipython jupyter jupyterlab \
+  flake8 black pytest
+pip install pyspark-stubs databricks-cli
 
-# ds (data science)
-conda create -y --name ds pandas matplotlib seaborn bokeh scikit-learn ipython jupyter
-
-# spark (azure uses python 3.5.2, apache spark 2.4.0, databricks 5.1)
-conda create -y --name spark python=3.5.2 pyspark ipython cython
+conda create -y --name spark python=3.5
 conda activate spark
 pip install --upgrade pip
+conda install pyspark ipython jupyter pytest flake8
 pip install pyspark-stubs
 conda deactivate
 
-# (azure) non-local version of pyspark
-# Note: need to symlink databricks-connect dotfile
-# Note: also need to copy jar files
-conda create --name spark-databricks python=3.5.2
+conda create -y --name spark-databricks python=3.5
 conda activate spark-databricks
 pip install --upgrade pip
 pip install --upgrade databricks-connect==5.1.*
 cp "$HOME"/lib/databricks-connect-jars/*.jar "$(databricks-connect get-jar-dir)"
 conda deactivate
+
+pyenv shell --unset
 
 # set macOS defaults {{{1
 # [ -e "$DOTFILES"/macos ] && . "$DOTFILES"/macos
