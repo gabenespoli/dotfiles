@@ -27,6 +27,11 @@
 		"typeParameter": "\uf728",
 		"default": "\uf29c"
 	},
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88"
+  ],
+  "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": [
     "--generated-members=pyspark.*",
     "--extension-pkg-whitelist=pyspark",
