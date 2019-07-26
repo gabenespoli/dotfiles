@@ -34,7 +34,7 @@
     "--variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$",
     "--argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$"
   ],
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "python.formatting.yapfArgs": [
     "--style='{based_on_style: facebook}"
   ]
