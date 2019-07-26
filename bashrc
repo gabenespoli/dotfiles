@@ -45,8 +45,6 @@ fi
 
 # Environment {{{1
 LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export EDITOR='nvim'
