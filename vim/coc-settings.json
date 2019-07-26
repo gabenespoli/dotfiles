@@ -27,16 +27,15 @@
 		"typeParameter": "\uf728",
 		"default": "\uf29c"
 	},
-  "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": [
-        "--generated-members=pyspark.*",
-        "--extension-pkg-whitelist=pyspark",
-        "--ignored-modules=pyspark.sql.functions",
-        "--variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$",
-        "--argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$"
-    ],
-    "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": [
-      "--style='{based_on_style: facebook}"
-    ]
+    "--generated-members=pyspark.*",
+    "--extension-pkg-whitelist=pyspark",
+    "--ignored-modules=pyspark.sql.functions",
+    "--variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$",
+    "--argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$"
+  ],
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": [
+    "--style='{based_on_style: facebook}"
+  ]
 }
