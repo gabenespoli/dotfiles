@@ -19,6 +19,7 @@ Plug 'kana/vim-textobj-fold'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
@@ -243,6 +244,13 @@ nmap gz  <Plug>GitGutterPreviewHunk
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+
+" ryanoasis/vim-devicons {{{3
+let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bashrc'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_profile'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_local'] = ''
 
 " justinmk/vim-dirvish {{{3
 let g:dirvish_mode = ':sort ,^.*[\/],'
