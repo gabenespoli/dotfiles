@@ -25,7 +25,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'majutsushi/tagbar'
-if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 
 " tmux {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -34,6 +33,7 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'jpalardy/vim-slime'
 
 " coding {{{2
+if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 Plug 'goerz/jupytext.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
