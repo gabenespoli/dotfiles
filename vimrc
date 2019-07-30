@@ -22,7 +22,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 
@@ -260,16 +259,6 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :!open <cfile><CR><CR>
 endif
-
-" jeetsukumaran/vim-buffergator {{{3
-let g:buffergator_autoupdate = 0
-let g:buffergator_autodismiss_on_select = 1
-let g:buffergator_viewport_split_policy = 'N'
-let g:buffergator_suppress_keymaps = 1
-nnoremap gb :BuffergatorMruCyclePrev<CR>
-nnoremap gB :BuffergatorMruCycleNext<CR>
-nnoremap = :BuffergatorToggle<CR>
-nnoremap <leader>= :BuffergatorTabsToggle<CR>
 
 " kristijanhusak/vim-dirvish-git {{{3
 hi link DirvishGitModified Type
