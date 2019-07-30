@@ -28,14 +28,48 @@ if has('mac')
 endif
 
 " basic shell operations
-" TODO: yy sets a global or buffer var with path to copy from
-" TODO: pp (can't used by dirvish) uses that var to perform the paste in the current directory
-" TODO: make this work for visual selections
 nnoremap <buffer> cd :cd %
 nnoremap <buffer> cp :!cp '<C-r><C-l>' '<C-r><C-l>'
 nnoremap <buffer> mv :!mv '<C-r><C-l>' '<C-r><C-l>'
 nnoremap <buffer> rm :!rm '<C-r><C-l>'
 nmap <buffer> dt :!trash '<C-r><C-l>'<CR><CR>R
-nnoremap <buffer> e :edit %/
+nnoremap <buffer> e :edit %
+nnoremap <buffer> mk :!mkdir '%'<Left>
 nmap <buffer> <Del> dt
 nmap <buffer> dD rm
+
+" copy file path to copy from
+" TODO: make this work for visual selections
+if !exists('g:dirvish_yank') | let g:dirvish_yank = '' | endif
+nmap <buffer> Y :echo "g:dirvish_yank = '" . g:dirvish_yank . "'"<CR>
+nmap <buffer> <silent> yy :let g:dirvish_yank = '<C-r><C-l>'<CR>Y
+
+" paste yanked file into current dir
+" (careful this doesn't check for overwriting files)
+" reclaim p mapping from dirvish, use P instead for preview
+silent! unmap <buffer> p
+nnoremap <nowait> <buffer> <silent> P :<C-U>.call dirvish#open("p", 1)<CR>
+" nmap <buffer><silent> pp :execute("!cp '" . g:dirvish_yank . "' '" . expand('%') . fnamemodify(g:dirvish_yank, ':t') . "'")<CR><CR>R
+nnoremap <buffer> <silent> pp :call DirvishPasteFile(g:dirvish_yank)<CR>
+
+if !exists('g:loaded_dirvish_paste') || g:loaded_dirvish_paste == 0
+  let g:loaded_dirvish_paste = 1
+  function! DirvishPasteFile(fname)
+    if &filetype != 'dirvish'
+      echo 'Not in a dirvish buffer.'
+      return
+    endif
+    if empty(a:fname)
+      echo 'No file copied.'
+      return
+    endif
+    if search(a:fname)
+      echo 'File already exists.'
+      return
+    endif
+    let l:paste_fname = expand('%') . fnamemodify(g:dirvish_yank, ':t')
+    silent execute("!cp '" . g:dirvish_yank . "' '" . l:paste_fname . "'")
+    silent echom 'File pasted from ' . g:dirvish_yank . ' to ' . l:paste_fname
+    execute("Dirvish %")
+  endfunction
+endif
