@@ -21,6 +21,7 @@ Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
+Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
@@ -269,6 +270,14 @@ nnoremap gb :BuffergatorMruCyclePrev<CR>
 nnoremap gB :BuffergatorMruCycleNext<CR>
 nnoremap = :BuffergatorToggle<CR>
 nnoremap <leader>= :BuffergatorTabsToggle<CR>
+
+" kristijanhusak/vim-dirvish-git {{{3
+hi link DirvishGitModified Type
+hi link DirvishGitStaged Statement
+hi link DirvishGitRenamed Identifier
+hi link DirvishGitUnmerged Debug
+hi link DirvishGitIgnored Comment
+hi link DirvishGitUntracked Operator
 
 " majutsushi/tagbar {{{3
 nnoremap <leader>t :TagbarToggle<CR>
