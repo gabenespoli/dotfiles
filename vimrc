@@ -171,7 +171,7 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
 " Plugin Settings {{{1
 " Colorscheme {{{2
 let g:snooker_terminal_italics = 1
-let g:snooker_color_cursor = 1
+let g:snooker_color_cursor = 0
 colorscheme snooker
 nnoremap <silent> coC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
 augroup highlight_fold_markers_as_titles
