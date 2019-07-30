@@ -98,15 +98,20 @@ set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=IBMPlexMono:h12,Source\ Code\ Pro:h12,Menlo:h12,Consolas:h12,Courier:h12
 
 " Status Line {{{2
-set statusline=
-set statusline+=%{SSHIndicator()}
-set statusline+=%#Modified#%m\ %*%n:%<%.99f\ %w%r%y
-set statusline+=%{FugitiveStatusline()}
-if has('nvim') | set statusline+=[%{coc#status()}] | endif
-set statusline+=%=%l/%L\,%c\ (%P)
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
 endfunction
+set statusline=
+set statusline+=%{SSHIndicator()}
+set statusline+=%{WebDevIconsGetFileTypeSymbol()}
+set statusline+=\ [\ %{FugitiveHead(6)}]
+set statusline+=\ %n:
+set statusline+=%<%.99f
+set statusline+=%#Modified#%m%*
+set statusline+=%w%r
+set statusline+=%=
+if has('nvim') | set statusline+=%{coc#status()} | endif
+set statusline+=\ %l/%L\,%c\ (%P)
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
 augroup line_return
