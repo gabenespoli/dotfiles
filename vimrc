@@ -35,6 +35,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'goerz/jupytext.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
+Plug 'kkoomen/vim-doge'
 
 " markdown {{{2
 Plug 'godlygeek/tabular',
@@ -382,6 +383,9 @@ let g:jupytext_filetype_map = {'py': 'python'}
 " tpope/vim-markdown (built-in) {{{3
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
 let g:markdown_folding = 1
+
+" kkoomen/vim-doge {{{3
+let g:doge_doc_standard_python = 'google'
 
 " godlygeek/tabular {{{3
 nnoremap <leader>\| :Tabularize /\|<CR>
