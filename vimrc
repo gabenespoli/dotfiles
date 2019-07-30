@@ -35,7 +35,7 @@ Plug 'jpalardy/vim-slime'
 " coding {{{2
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 Plug 'goerz/jupytext.vim'
-Plug 'vim-scripts/indentpython.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'kkoomen/vim-doge'
 
