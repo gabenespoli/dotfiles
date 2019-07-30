@@ -52,6 +52,12 @@ export CLICOLOR=1
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
 export TERM=xterm-256color-italic
 
+# python / spark
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_VERSION=miniconda3-latest
+export PYSPARK_DRIVER_PYTHON=ipython
+export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/spark/lib/python3.5/site-packages/pyspark"
+
 # Prompt {{{1
 if [ -e ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
