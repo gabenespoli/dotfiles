@@ -38,6 +38,7 @@ if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | en
 Plug 'goerz/jupytext.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
+Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'kkoomen/vim-doge'
 
 " writing & notes {{{2
