@@ -7,7 +7,7 @@ scriptencoding utf-8
 " Plugin Manager {{{1
 call plug#begin('~/.vim/plugged')
 
-" general {{{2
+" editing {{{2
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -16,6 +16,8 @@ Plug 'tpope/vim-commentary'
 Plug 'gabenespoli/vim-unimpaired'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
+
+" general {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
@@ -31,13 +33,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'wellle/tmux-complete.vim'
 Plug 'jpalardy/vim-slime'
 
-" python & R {{{2
+" coding {{{2
 Plug 'goerz/jupytext.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'kkoomen/vim-doge'
 
-" markdown {{{2
+" writing & notes {{{2
 Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
@@ -185,7 +187,7 @@ augroup highlight_fold_markers_as_titles
         \ | hi! link FoldMarkerLines Title
 augroup END
 
-" general {{{2
+" editing {{{2
 " tpope/vim-rsi {{{3
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
@@ -224,6 +226,7 @@ nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
 
+" general {{{2
 " tpope/vim-fugitive {{{3
 nnoremap gs :Gstatus<CR>
 nnoremap gZ :Gdiff<CR>
@@ -369,12 +372,12 @@ if exists('$TMUX')
 endif
 nnoremap g<C-l> <C-l>
 
-" python & R {{{2
+" coding {{{2
 " goerz/jupytext.vim
 let g:jupytext_fmt = 'py'
 let g:jupytext_filetype_map = {'py': 'python'}
 
-" markdown {{{2
+" writing & notes {{{2
 " tpope/vim-markdown (built-in) {{{3
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
 let g:markdown_folding = 1
