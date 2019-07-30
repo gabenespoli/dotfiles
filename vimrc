@@ -40,6 +40,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'kkoomen/vim-doge'
+Plug 'python/black'
 
 " writing & notes {{{2
 Plug 'godlygeek/tabular',
