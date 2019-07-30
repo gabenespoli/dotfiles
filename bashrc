@@ -102,7 +102,8 @@ alias pylab="ipython --pylab -i -c '\
   '"
 
 # git {{{1
-alias gs="git status -sb"
+alias gst="git status -sb"
+alias gs="git st"
 alias gb="git branch"
 alias gg="git checkout"
 alias ga="git add"
