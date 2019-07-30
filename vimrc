@@ -283,6 +283,7 @@ let g:tagbar_map_togglefold = ['za']
 
 " ctrlpvim/ctrlp.vim {{{3
 nnoremap <C-n> :CtrlP ~/
+nnoremap = :CtrlPBuffer<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
 let g:ctrlp_prompt_mappings = {
