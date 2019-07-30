@@ -13,8 +13,7 @@ nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
 
 " neoclide/coc-python
-nnoremap <buffer> <localleader>pd :CocCommand python.setInterpreter<CR>:sleep 200m<CR>11<CR><CR>:echo 'conda activate ds2'<CR>
-nnoremap <buffer> <localleader>ps :CocCommand python.setInterpreter<CR>:sleep 200m<CR>5<CR><CR>:echo 'conda activate spark2'<CR>
+nnoremap <buffer> <localleader>i :CocCommand python.setInterpreter<CR>
 
 " jupytext
 nnoremap <buffer> <localleader>j :!jupytext -o %.ipynb %<CR>
