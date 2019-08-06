@@ -63,6 +63,8 @@ fi
 git config --global user.email "gabenespoli@gmail.com"
 git config --global user.name "Gabe Nespoli"
 
+git clone https://github.com/gabenespoli/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+
 # tmux {{{1
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf

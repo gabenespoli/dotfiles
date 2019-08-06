@@ -127,6 +127,12 @@ sourcex "$HOME/bin/network_aliases"
 sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 
+# https://github.com/gabenespoli/bash-git-prompt
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+  export GIT_PROMPT_THEME=Custom
+  source "$HOME/.bash-git-prompt/gitprompt.sh"
+fi
+
 # stuff that should be at the end {{{1
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
