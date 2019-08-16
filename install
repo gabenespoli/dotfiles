@@ -20,7 +20,7 @@ echo "-- Installing Homebrew..."
 
 echo "-- Installing Homebrew packages..."
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
-brew install tmux vim neovim ranger git tig ctags cloc tree jq
+brew install tmux vim neovim ranger lf git tig ctags cloc tree jq
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 
@@ -46,7 +46,7 @@ for rc in *rc *profile tmux.conf; do
   ln -sfv "$DOTFILES"/"$rc" "$HOME"/."$rc"
 done
 
-for cfg in karabiner ranger pudb; do
+for cfg in karabiner ranger lf pudb; do
   [ -e "$HOME"/.config/"$cfg" ] && mv -v "$HOME"/.config/"$cfg" "$BAKDIR"/"$cfg"
   ln -sfv "$DOTFILES"/config/"$cfg" "$HOME"/.config
 done
