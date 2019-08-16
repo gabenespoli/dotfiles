@@ -103,15 +103,15 @@ function! SSHIndicator() abort
 endfunction
 set statusline=
 set statusline+=%{SSHIndicator()}
-set statusline+=%{WebDevIconsGetFileTypeSymbol()}
-set statusline+=\ [\ %{FugitiveHead(6)}]
-set statusline+=\ %n:
-set statusline+=%<%.99f
+set statusline+=[%n]
+set statusline+=\ (%{FugitiveHead(12)})
+set statusline+=\ %{WebDevIconsGetFileTypeSymbol()}
+set statusline+=\ %<%.99f
 set statusline+=%#Modified#%m%*
 set statusline+=%w%r
 set statusline+=%=
 if has('nvim') | set statusline+=%{coc#status()} | endif
-set statusline+=\ %l/%L\,%c\ (%P)
+set statusline+=\ [%l/%L\,%c\ (%P)]
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
 augroup line_return
