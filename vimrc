@@ -247,9 +247,9 @@ nnoremap gl :GV<CR>
 xnoremap gl :GV<CR>
 
 " airblade/gitgutter {{{3
-nmap ga  <Plug>GitGutterStageHunk
-nmap ghu <Plug>GitGutterUndoHunk
-nmap gz  <Plug>GitGutterPreviewHunk
+nmap ga  <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap gz  <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
