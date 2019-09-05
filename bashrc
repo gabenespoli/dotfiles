@@ -107,18 +107,19 @@ alias gs="git st"
 alias gb="git branch"
 alias gg="git checkout"
 alias ga="git add"
-alias gr="git reset"
 alias gd="git diff"
 alias gc="git commit"
+alias gcm="git commit -m"
 alias gca="git commit --amend"
-alias gss="git stash save"
+alias gss="git stash --all"
 alias gsp="git stash pop"
 alias gsl="git stash list"
-alias gl="git log --graph --pretty=format:'%C(blue)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%cr) %C(green)<%an>%Creset' --abbrev-commit"
-alias glog='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
+alias glog="git log --graph --date=short --abbrev-commit --pretty=format:'%C(cyan)%cd %C(blue)%h%Creset%C(green)%d%Creset %s %C(cyan)(%an)%Creset'"
+alias gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
+alias rb="git rebase"
+alias rbi="git rebase --interactive"
 alias ts="tig status"
 alias tl="tig"
-alias rbi="git rebase --interactive"
 
 # source other files {{{1
 function sourcex() { [ -f "$1" ] && source "$1" ; }
