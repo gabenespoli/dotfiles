@@ -3,7 +3,8 @@ nmap <buffer> <C-p> q<C-p>
 nmap <buffer> <C-n> q<C-n>
 
 " use - as a toggle; use u to go up a dir when in dirvish
-nmap <silent> <buffer> - q
+nmap <silent> <buffer> - gq
+nmap <silent> <buffer> q gq
 nmap <silent> <buffer> u <Plug>(dirvish_up)
 nnoremap U u
 
