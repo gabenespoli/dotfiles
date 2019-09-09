@@ -1166,7 +1166,8 @@
                                     "key_code": "escape",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "option"
                                         ]
                                     }
                                 },
