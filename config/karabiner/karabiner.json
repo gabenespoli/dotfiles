@@ -3693,7 +3693,7 @@
                                     "key_code": "0",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3712,7 +3712,7 @@
                                     "key_code": "hyphen",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3731,7 +3731,7 @@
                                     "key_code": "equal_sign",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3755,7 +3755,7 @@
                                     "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "caps_lock"
@@ -3774,7 +3774,7 @@
                                     "key_code": "close_bracket",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "caps_lock"
