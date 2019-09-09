@@ -1189,6 +1189,34 @@
                         ]
                     },
                     {
+                        "description": "Semicolon Layer [;+y -> delete]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mu_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Semicolon Layer [;+Esc -> backtick]",
                         "manipulators": [
                             {
