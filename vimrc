@@ -209,30 +209,34 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
 endfor
 
 " tpope/vim-unimpaired {{{3
-nnoremap <silent> cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap coFn :set foldmethod=manual<CR>
 nnoremap coFi :set foldmethod=indent<CR>
 nnoremap coFe :set foldmethod=expr<CR>
 nnoremap coFm :set foldmethod=marker<CR>
 nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
-nnoremap <silent> com :set number!<CR>:set relativenumber!<CR>
+nnoremap com :set number!<CR>:set relativenumber!<CR>
+
 nnoremap <silent> coW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nmap <silent> <M-S-s> coS
 nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nmap <silent> <M-S-t> coT
-nnoremap <silent> coFM :set filetype=markdown<CR>
-nnoremap <silent> coFT :set filetype=text<CR>
-nnoremap <silent> coFS :set filetype=sh<CR>
-nnoremap <silent> coFJ :set filetype=json<CR>
-nnoremap <leader>s 1z=
+
+nnoremap coFM :set filetype=markdown<CR>
+nnoremap coFT :set filetype=text<CR>
+nnoremap coFS :set filetype=sh<CR>
+nnoremap coFJ :set filetype=json<CR>
+
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
       \ ':botright copen<CR>' : ':cclose<CR>'
 nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
+
+nnoremap <leader>s 1z=
 
 " general {{{2
 " tpope/vim-fugitive {{{3
