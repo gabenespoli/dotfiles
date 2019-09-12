@@ -236,6 +236,7 @@ nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
 
+nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 nnoremap <leader>s 1z=
 
 " general {{{2
