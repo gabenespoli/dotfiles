@@ -337,8 +337,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim",
-                                            "^com\\.google\\.Chrome$"
+                                            "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
