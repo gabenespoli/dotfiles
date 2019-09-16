@@ -49,7 +49,11 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
 
 " my plugins {{{2
-Plug 'gabenespoli/vim-colors-snooker'
+if isdirectory(expand('~/bin/vim/vim-colors-snooker'))
+  Plug '~/bin/vim/vim-colors-snooker'
+else
+  Plug 'gabenespoli/vim-colors-snooker'
+endif
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-neovim-defaults'
