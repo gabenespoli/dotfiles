@@ -115,9 +115,14 @@ alias gss="git stash --all"
 alias gsp="git stash pop"
 alias gsl="git stash list"
 alias glog="git log --graph --date=short --abbrev-commit --pretty=format:'%C(cyan)%cd %C(blue)%h%Creset%C(green)%d%Creset %s %C(cyan)(%an)%Creset'"
-alias gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
+alias gl="glog -15"
 alias rb="git rebase"
 alias rbi="git rebase --interactive"
+alias gr="git reset"
+
+alias Gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
+alias Gs="$EDITOR -c 'Gstatus | wincmd j | wincmd o' ."
+
 alias ts="tig status"
 alias tl="tig"
 
