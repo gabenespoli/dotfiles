@@ -260,6 +260,10 @@ nmap gz  <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+omap ig <Plug>(GitGutterTextObjectInnerPending)
+omap ag <Plug>(GitGutterTextObjectOuterPending)
+xmap ig <Plug>(GitGutterTextObjectInnerVisual)
+xmap ag <Plug>(GitGutterTextObjectOuterVisual)
 
 " ryanoasis/vim-devicons {{{3
 let g:WebDevIconsOS = 'Darwin'
