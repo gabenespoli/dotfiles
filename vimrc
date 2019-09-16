@@ -88,7 +88,7 @@ set foldlevel=99
 set foldmethod=marker
 set foldtext=getline(v:foldstart)
 set wildignorecase
-set completeopt=menuone,preview,longest
+set completeopt=menuone,preview
 set shortmess+=c
 set diffopt+=context:3
 set suffixesadd+=.m,.r,.R,.py
