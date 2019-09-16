@@ -39,7 +39,6 @@ Plug 'goerz/jupytext.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense'
-Plug 'kkoomen/vim-doge'
 Plug 'python/black'
 
 " writing & notes {{{2
@@ -413,9 +412,6 @@ let g:jupytext_filetype_map = {'py': 'python'}
 " tpope/vim-markdown (built-in) {{{3
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
 let g:markdown_folding = 1
-
-" kkoomen/vim-doge {{{3
-let g:doge_doc_standard_python = 'google'
 
 " godlygeek/tabular {{{3
 nnoremap <leader>\| :Tabularize /\|<CR>
