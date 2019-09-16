@@ -87,7 +87,7 @@ set ignorecase smartcase nohlsearch
 set foldlevel=99
 set foldmethod=marker
 set foldtext=getline(v:foldstart)
-set wildignorecase wildmode=list:longest
+set wildignorecase
 set completeopt=menuone,preview,longest
 set shortmess+=c
 set diffopt+=context:3
