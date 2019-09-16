@@ -245,6 +245,8 @@ nnoremap gs :Gstatus<CR>
 nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
+xnoremap zp :diffput<CR>
+xnoremap zo :diffget<CR>
 
 " junegunn/gv.vim {{{3
 nnoremap gL :GV!<CR>
