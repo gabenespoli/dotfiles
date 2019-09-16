@@ -282,6 +282,15 @@ if has('mac')
 endif
 
 " kristijanhusak/vim-dirvish-git {{{3
+let g:dirvish_git_indicators = {
+      \ 'Modified'  : '+',
+      \ 'Staged'    : '✓',
+      \ 'Untracked' : '?',
+      \ 'Renamed'   : '→',
+      \ 'Unmerged'  : '=',
+      \ 'Ignored'   : '_',
+      \ 'Unknown'   : '!'
+      \ }
 hi link DirvishGitModified Type
 hi link DirvishGitStaged Statement
 hi link DirvishGitRenamed Identifier
