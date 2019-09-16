@@ -88,6 +88,22 @@ function ranger() { /usr/local/bin/ranger --choosedir=$HOME/.rangerdir $@; cd "`
 alias weather="curl http://wttr.in/Kitchener"
 alias keys='keyboard | grep -v "Control\|Semicolon" && keyboard | grep -v "Command\|Semicolon" && keyboard | grep -v "Command\|Control"'
 
+# Change working dir in shell to last dir in lf on exit (adapted from ranger).
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+alias lf="lfcd"
+
 # python {{{1
 alias ca="conda deactivate && conda activate"
 alias cx="conda deactivate"
