@@ -199,6 +199,8 @@ augroup END
 " tpope/vim-rsi {{{3
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
+cnoremap <down> <C-n>
+cnoremap <up> <C-p>
 
 " tpope/vim-surround {{{3
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
