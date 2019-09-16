@@ -257,6 +257,7 @@ xnoremap gl :GV<CR>
 
 " airblade/gitgutter {{{3
 nmap ga  <Plug>(GitGutterStageHunk)
+xmap ga  :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap gz  <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
