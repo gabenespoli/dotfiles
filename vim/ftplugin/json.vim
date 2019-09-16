@@ -11,7 +11,7 @@ if expand('%:t') ==? 'karabiner.json'
   setlocal foldexpr=KarabinerFolds(v:lnum)
   function! KarabinerFolds(lnum)
     " if     getline(a:lnum) =~# '\v^[^"]*"description":'
-    if     getline(a:lnum) =~# '\v^[^"]*"(description|global)":'
+    if     getline(a:lnum) =~# '\v^[^"]*"(description|global|devices)":'
     " if     getline(a:lnum) =~# '\v^[^"]*"(global|profiles)":'
       return '>1'
     elseif getline(a:lnum) =~# '\v^[^"]*"(conditions|from|to|to_after_key_up|to_if_alone)":'
