@@ -4,10 +4,10 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-" Plugin Manager {{{1
+" Plugin Manager: {{{1
 call plug#begin('~/.vim/plugged')
 
-" editing {{{2
+" Editing: {{{2
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -17,7 +17,7 @@ Plug 'gabenespoli/vim-unimpaired'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 
-" general {{{2
+" General: {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
@@ -27,13 +27,13 @@ Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'majutsushi/tagbar'
 
-" tmux {{{2
+" Tmux: {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wellle/tmux-complete.vim'
 Plug 'jpalardy/vim-slime'
 
-" coding {{{2
+" Coding: {{{2
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 Plug 'goerz/jupytext.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -41,14 +41,14 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'python/black'
 
-" writing & notes {{{2
+" Writing & notes: {{{2
 Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
 
-" my plugins {{{2
+" My plugins: {{{2
 if isdirectory(expand('~/bin/vim/vim-colors-snooker'))
   Plug '~/bin/vim/vim-colors-snooker'
 else
@@ -61,8 +61,8 @@ Plug 'gabenespoli/vim-komono'
 
 call plug#end()
 
-" General Settings {{{1
-" System {{{2
+" General Settings: {{{1
+" System: {{{2
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=300
 set undofile
@@ -75,7 +75,7 @@ if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endi
 let g:python_host_prog = expand('~').'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim3/bin/python'
 
-" Options {{{2
+" Options: {{{2
 set hidden
 set nomodeline
 set number relativenumber
@@ -100,7 +100,7 @@ set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=BlexMono\ Nerd\ Font:h12,IBMPlexMono:h12,Source\ Code\ Pro:h12,Menlo:h12,Consolas:h12,Courier:h12
 
-" Status Line {{{2
+" Status Line: {{{2
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
 endfunction
@@ -116,7 +116,7 @@ set statusline+=%=
 if has('nvim') | set statusline+=%{coc#status()} | endif
 set statusline+=\ [%l/%L\,%c\ (%P)]
 
-" Line Return (https://bitbucket.org/sjl/dotfiles/) {{{2
+" Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
 augroup line_return
   au!
   au BufReadPost *
@@ -125,7 +125,7 @@ augroup line_return
     \ endif
 augroup END
 
-" Keybindings {{{1
+" Keybindings: {{{1
 set notimeout ttimeout
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
@@ -176,36 +176,21 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
-" Plugin Settings {{{1
-" Colorscheme {{{2
+" Plugin Settings: {{{1
+" Colorscheme: {{{2
 let g:snooker_terminal_italics = 1
 let g:snooker_color_cursor = 0
 colorscheme snooker
 nnoremap <silent> coC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
-augroup highlight_fold_markers_as_titles
-  au!
-  " TODO: use &commentstring so this works for all filetypes
-  "   currently it's hardcoded for ", #, or %
-  " autocmd BufEnter,BufWritePost * 
-  "       \ execute 'syntax match FoldMarkerLines /\V^\s\*' . 
-  "       \ escape(substitute(&commentstring,"%s","",""), '/') . 
-  "       \ '\.\*{{{\d\{0,1\}\$/'
-  "       \ | hi! link FoldMarkerLines Title
-  autocmd BufEnter,BufWritePost * 
-        \ execute 'syntax match FoldMarkerLines /^\s*' . 
-        \ '["#%]' . 
-        \ '.*{{{\d\{0,1\}$/'
-        \ | hi! link FoldMarkerLines Title
-augroup END
 
-" editing {{{2
-" tpope/vim-rsi {{{3
+" Editing: {{{2
+" tpope/vim-rsi: {{{3
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 cnoremap <down> <C-n>
 cnoremap <up> <C-p>
 
-" tpope/vim-surround {{{3
+" tpope/vim-surround: {{{3
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
   execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
@@ -213,7 +198,7 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
-" tpope/vim-unimpaired {{{3
+" tpope/vim-unimpaired: {{{3
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap coFn :set foldmethod=manual<CR>
 nnoremap coFi :set foldmethod=indent<CR>
@@ -244,8 +229,8 @@ nnoremap <silent> <expr> <leader>l
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 nnoremap <leader>s 1z=
 
-" general {{{2
-" tpope/vim-fugitive {{{3
+" General: {{{2
+" tpope/vim-fugitive: {{{3
 nnoremap gs :Gstatus<CR>
 nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
@@ -253,12 +238,12 @@ nnoremap gA :Gwrite<CR>
 xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
 
-" junegunn/gv.vim {{{3
+" junegunn/gv.vim: {{{3
 nnoremap gL :GV!<CR>
 nnoremap gl :GV<CR>
 xnoremap gl :GV<CR>
 
-" airblade/gitgutter {{{3
+" airblade/gitgutter: {{{3
 nmap ga  <Plug>(GitGutterStageHunk)
 xmap ga  :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
@@ -271,21 +256,21 @@ omap ag <Plug>(GitGutterTextObjectOuterPending)
 xmap ig <Plug>(GitGutterTextObjectInnerVisual)
 xmap ag <Plug>(GitGutterTextObjectOuterVisual)
 
-" ryanoasis/vim-devicons {{{3
+" ryanoasis/vim-devicons: {{{3
 let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bashrc'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_profile'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_local'] = ''
 
-" justinmk/vim-dirvish {{{3
+" justinmk/vim-dirvish: {{{3
 let g:dirvish_mode = ':sort ,^.*[\/],'
 if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :!open <cfile><CR><CR>
 endif
 
-" kristijanhusak/vim-dirvish-git {{{3
+" kristijanhusak/vim-dirvish-git: {{{3
 let g:dirvish_git_indicators = {
       \ 'Modified'  : '+',
       \ 'Staged'    : '✓',
@@ -302,7 +287,7 @@ hi link DirvishGitUnmerged Debug
 hi link DirvishGitIgnored Comment
 hi link DirvishGitUntracked Operator
 
-" majutsushi/tagbar {{{3
+" majutsushi/tagbar: {{{3
 nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
@@ -312,7 +297,7 @@ let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVaria
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
 
-" ctrlpvim/ctrlp.vim {{{3
+" ctrlpvim/ctrlp.vim: {{{3
 nnoremap <C-n> :CtrlP ~/
 nnoremap = :CtrlPBuffer<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -326,7 +311,7 @@ let g:ctrlp_prompt_mappings = {
  \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 
-" neoclide/coc.nvim {{{3
+" neoclide/coc.nvim: {{{3
 if has('nvim')
 let g:coc_enable_locationlist = 0
 inoremap <silent><expr> <Tab>
@@ -356,8 +341,8 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 endif
 
-" tmux {{{2
-" christoomey/vim-tmux-navigator {{{3
+" Tmux: {{{2
+" christoomey/vim-tmux-navigator: {{{3
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if has('mac')
@@ -395,7 +380,7 @@ if has('nvim')
   tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime {{{3
+" jpalardy/vim-slime: {{{3
 let g:slime_no_mappings = 1
 xmap <C-l>      <Plug>SlimeRegionSend
 nmap <C-l>      <Plug>SlimeMotionSend
@@ -407,20 +392,20 @@ if exists('$TMUX')
 endif
 nnoremap g<C-l> <C-l>
 
-" coding {{{2
+" Coding: {{{2
 " goerz/jupytext.vim
 let g:jupytext_fmt = 'py'
 let g:jupytext_filetype_map = {'py': 'python'}
 
-" writing & notes {{{2
-" tpope/vim-markdown (built-in) {{{3
+" Writing & notes: {{{2
+" tpope/vim-markdown (built-in): {{{3
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
 let g:markdown_folding = 1
 
-" godlygeek/tabular {{{3
+" godlygeek/tabular: {{{3
 nnoremap <leader>\| :Tabularize /\|<CR>
 
-" rickhowe/diffchar {{{3
+" rickhowe/diffchar: {{{3
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
 let g:DiffModeSync = 0
@@ -433,10 +418,10 @@ nmap <Plug> <Plug>JumpDiffCharNextEnd
 nmap dO     <Plug>GetDiffCharPair
 nmap dP     <Plug>PutDiffCharPair
 
-" gabenespoli/vim-criticmarkup {{{3
+" gabenespoli/vim-criticmarkup: {{{3
 let g:criticmarkup#disable#highlighting = 1
 
-" jszakmeister/markdown2ctags {{{3
+" jszakmeister/markdown2ctags: {{{3
 let g:tagbar_type_markdown = {
   \ 'ctagstype': 'markdown',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
@@ -447,7 +432,7 @@ let g:tagbar_type_markdown = {
   \ 'sort': 0,
 \ }
 
-" local {{{2
+" Local: {{{2
 " gabenespoli/vim-mutton
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
