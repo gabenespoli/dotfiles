@@ -316,7 +316,6 @@ let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
 
 " ctrlpvim/ctrlp.vim: {{{3
-nnoremap <C-n> :CtrlP ~/
 nnoremap = :CtrlPBuffer<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_switch_buffer = 0 
@@ -357,6 +356,7 @@ function! s:show_documentation()
   endif
 endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
+nnoremap <C-n> :CocList<CR>
 endif
 
 " Tmux: {{{2
