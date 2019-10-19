@@ -285,7 +285,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_local'] = ''
 let g:dirvish_mode = ':sort ,^.*[\/],'
 if has('mac')
   let g:loaded_netrwPlugin = 1
-  nnoremap gx :!open <cfile><CR><CR>
+  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
 
 " kristijanhusak/vim-dirvish-git: {{{3
