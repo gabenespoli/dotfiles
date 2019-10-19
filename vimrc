@@ -229,12 +229,18 @@ nnoremap <leader>s 1z=
 
 " General: {{{2
 " tpope/vim-fugitive: {{{3
-nnoremap gs :Gstatus<CR>
+nmap gs :call MyGstatus()<CR>
 nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
+
+function! MyGstatus()
+  Gedit :
+  nmap <buffer> o <CR>
+  nmap <buffer> q <C-^>
+endfunction
 
 " junegunn/gv.vim: {{{3
 nnoremap gL :GV!<CR>

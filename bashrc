@@ -139,7 +139,7 @@ alias gr="git reset"
 alias grr="git reset HEAD^"
 
 alias Gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
-alias Gs="$EDITOR -c 'Gstatus | wincmd j | wincmd o' ."
+alias Gs="$EDITOR -c 'call MyGstatus()' ."
 
 alias ts="tig status"
 alias tl="tig"
