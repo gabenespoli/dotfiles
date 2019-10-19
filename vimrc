@@ -260,6 +260,20 @@ omap ag <Plug>(GitGutterTextObjectOuterPending)
 xmap ig <Plug>(GitGutterTextObjectInnerVisual)
 xmap ag <Plug>(GitGutterTextObjectOuterVisual)
 
+nnoremap coz :call GitGutterFoldToggle()<CR>
+function! GitGutterFoldToggle()
+  if gitgutter#utility#getbufvar(bufnr(''), 'folded')
+    GitGutterFold
+    let l:buffoldexpr = gitgutter#utility#getbufvar(bufnr(''), 'foldexpr')
+    if l:buffoldexpr != 0
+      let &foldexpr = l:buffoldexpr
+    endif
+  else
+    call gitgutter#utility#setbufvar(bufnr(''), 'foldexpr', &foldexpr)
+    GitGutterFold
+  endif
+endfunction
+
 " ryanoasis/vim-devicons: {{{3
 let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
