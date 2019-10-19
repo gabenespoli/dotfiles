@@ -185,10 +185,8 @@ nnoremap <silent> coC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR
 
 " Editing: {{{2
 " tpope/vim-rsi: {{{3
-cnoremap <C-n> <down>
-cnoremap <C-p> <up>
-cnoremap <down> <C-n>
-cnoremap <up> <C-p>
+cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
+cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"
 
 " tpope/vim-surround: {{{3
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
