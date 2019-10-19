@@ -224,6 +224,15 @@ nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
 
+" map down and up to c/lnext and c/lprevious
+" lnext/lprevious if location list is open, else cnext/cprevious
+nnoremap <silent> <expr> <down>
+      \ empty(filter(getwininfo(), 'v:val.loclist')) ?
+      \ ':cnext<CR>' : ':lnext<CR>'
+nnoremap <silent> <expr> <up>
+      \ empty(filter(getwininfo(), 'v:val.loclist')) ?
+      \ ':cprevious<CR>' : ':lprevious<CR>'
+
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 nnoremap <leader>s 1z=
 
