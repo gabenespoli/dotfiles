@@ -327,7 +327,7 @@ let g:ctrlp_prompt_mappings = {
  \ 'PrtHistory(1)':          [],
  \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
  \ }
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 
 " neoclide/coc.nvim: {{{3
 if has('nvim')
