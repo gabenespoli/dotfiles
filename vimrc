@@ -24,7 +24,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
-Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'majutsushi/tagbar'
 
 " Tmux: {{{2
@@ -296,23 +295,6 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
-
-" kristijanhusak/vim-dirvish-git: {{{3
-let g:dirvish_git_indicators = {
-      \ 'Modified'  : '+',
-      \ 'Staged'    : '✓',
-      \ 'Untracked' : '?',
-      \ 'Renamed'   : '→',
-      \ 'Unmerged'  : '=',
-      \ 'Ignored'   : '_',
-      \ 'Unknown'   : '!'
-      \ }
-hi link DirvishGitModified Type
-hi link DirvishGitStaged Statement
-hi link DirvishGitRenamed Identifier
-hi link DirvishGitUnmerged Debug
-hi link DirvishGitIgnored Comment
-hi link DirvishGitUntracked Operator
 
 " majutsushi/tagbar: {{{3
 nnoremap <leader>t :TagbarToggle<CR>
