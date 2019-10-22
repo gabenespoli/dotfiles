@@ -79,7 +79,7 @@ alias fold="fold -s"
 alias exe="chmod u+x"
 function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 alias t="todo.sh"
-alias todo="$EDITOR $HOME/todo/todo.txt"
+alias T="$EDITOR $HOME/todo/todo.txt"
 alias motes="cd $HOME/notes && mvim $HOME/notes/$(date +%Y-%m-%d).txt"
 alias octave="octave --no-gui"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
