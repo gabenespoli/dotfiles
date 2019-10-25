@@ -46,5 +46,10 @@
   "python.formatting.provider": "black",
   "python.formatting.yapfArgs": [
     "--style='{based_on_style: facebook}"
-  ]
+  ],
+	"list.insertMappings": {
+		"<C-n>": "normal:j",
+		"<C-p>": "normal:k",
+		"<C-t>": "action:tabe"
+	}
 }
