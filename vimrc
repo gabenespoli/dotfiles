@@ -405,6 +405,9 @@ nnoremap g<C-l> <C-l>
 let g:jupytext_fmt = 'py'
 let g:jupytext_filetype_map = {'py': 'python'}
 
+" jeetsukumaran/vim-pythonsense
+let g:is_pythonsense_suppress_object_keymaps = 1
+
 " Writing & notes: {{{2
 " tpope/vim-markdown (built-in): {{{3
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']

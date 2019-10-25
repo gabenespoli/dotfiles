@@ -8,6 +8,26 @@ if exists('*jedi#goto()')
   nnoremap <buffer> gD :call jedi#goto()<CR>
 endif
 
+" jeetsukumaran/vim-pythonsense
+vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
+omap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
+sunmap <buffer> aC
+vmap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
+omap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
+sunmap <buffer> iC
+vmap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
+omap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
+sunmap <buffer> af
+vmap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
+omap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
+sunmap <buffer> if
+omap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
+vmap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
+sunmap <buffer> ad
+omap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
+vmap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
+sunmap <buffer> id
+
 " matplotlib
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
