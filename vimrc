@@ -35,10 +35,10 @@ Plug 'jpalardy/vim-slime'
 " Coding: {{{2
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 Plug 'goerz/jupytext.vim'
-Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
-Plug 'jeetsukumaran/vim-pythonsense'
-Plug 'python/black'
+Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
+Plug 'python/black',                   {'for': ['python']}
 
 " Writing & notes: {{{2
 Plug 'godlygeek/tabular',
