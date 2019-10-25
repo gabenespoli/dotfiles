@@ -152,6 +152,7 @@ sourcex "$HOME/private/github"
 sourcex "$HOME/bin/network_aliases"
 sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
+sourcex "$HOME/.git-completion.bash"
 
 # https://github.com/gabenespoli/bash-git-prompt
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
