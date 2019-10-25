@@ -109,8 +109,8 @@ set statusline+=\ %<%.99f
 set statusline+=%#Modified#%m%*
 set statusline+=%w%r
 set statusline+=%=
-if has('nvim') | set statusline+=%{coc#status()} | endif
-set statusline+=\ [%l/%L\,%c\ (%P)]
+set statusline+=[%{coc#status()}]
+set statusline+=[%l/%L\,%c\ (%P)]
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
 augroup line_return
