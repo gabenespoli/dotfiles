@@ -51,5 +51,6 @@
 		"<C-n>": "normal:j",
 		"<C-p>": "normal:k",
 		"<C-t>": "action:tabe"
-	}
+	},
+  "yank.highlight.enable": false
 }
