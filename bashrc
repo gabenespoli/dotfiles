@@ -136,7 +136,8 @@ alias gl="glog -15"
 alias rb="git rebase"
 alias rbi="git rebase --interactive"
 alias gr="git reset"
-alias grr="git reset HEAD^"
+alias grr="git reset HEAD^ && gs"
+alias gwip="git add -A && git commit -m 'WIP'"
 
 alias Gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
 alias Gs="$EDITOR -c 'call MyGstatus()' ."
