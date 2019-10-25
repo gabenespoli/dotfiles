@@ -332,6 +332,8 @@ nnoremap <silent> <expr> coy g:coc_enabled ? ':CocDisable<CR>' : ':CocEnable<CR>
 nmap <silent> [y <Plug>(coc-diagnostic-prev)
 nmap <silent> ]y <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
+nmap <leader>gd <C-w>vgdzMzv
+nmap <leader>gD <C-w>sgdzMzv
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
