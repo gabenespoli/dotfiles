@@ -41,14 +41,14 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 Plug 'python/black',                   {'for': ['python']}
 
-" Writing & notes: {{{2
+" Writing Notes: {{{2
 Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
 
-" My plugins: {{{2
+" My Plugins: {{{2
 Plug 'gabenespoli/vim-colors-snooker'
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
@@ -405,7 +405,7 @@ let g:jupytext_filetype_map = {'py': 'python'}
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
 
-" Writing & notes: {{{2
+" Writing Notes: {{{2
 " tpope/vim-markdown (built-in): {{{3
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
 let g:markdown_folding = 1
@@ -440,7 +440,7 @@ let g:tagbar_type_markdown = {
   \ 'sort': 0,
 \ }
 
-" Local: {{{2
+" My Plugins: {{{2
 " gabenespoli/vim-mutton
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
