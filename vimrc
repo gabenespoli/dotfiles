@@ -19,6 +19,7 @@ Plug 'kana/vim-textobj-fold'
 
 " General: {{{2
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
