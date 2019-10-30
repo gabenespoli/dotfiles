@@ -110,6 +110,7 @@ alias cx="conda deactivate"
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias pudb="python -m pudb.run"
 alias jn="jupyter notebook"
+alias jl="jupyter lab"
 alias pylab="ipython --pylab -i -c '\
   import pandas as pd; \
   pd.options.display.width=0; \
