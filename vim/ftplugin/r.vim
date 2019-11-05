@@ -26,9 +26,12 @@ autocmd FileType rbrowser nnoremap <buffer> o <CR>
 
 " comment headings and folding (like Rstudio) {{{1
 " highlight
-au VimEnter,BufEnter <buffer> syn match Title '^#.*-\{4,\}$'
-au VimEnter,BufEnter <buffer> syn match Title '^#.*=\{4,\}$'
-au VimEnter,BufEnter <buffer> syn match Title '^#.*#\{4,\}$'
+augroup r_highlight_headings "{{{
+  au!
+  au BufEnter <buffer> syntax match Title '^#.*-\{4,\}$'
+  au BufEnter <buffer> syntax match Title '^#.*=\{4,\}$'
+  au BufEnter <buffer> syntax match Title '^#.*#\{4,\}$'
+augroup END "}}}
 
 " adjusting headings
 function! AddRstudioHeadings(level) "{{{
