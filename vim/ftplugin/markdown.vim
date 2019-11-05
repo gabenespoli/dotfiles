@@ -6,12 +6,12 @@ setlocal tabstop=4 softtabstop=4 shiftwidth=4
 " folding {{{1
 setlocal foldexpr=MarkdownFoldFlat(v:lnum)
 function! MarkdownFoldFlat(lnum) "{{{
-    let l:line = getline(a:lnum) 
-    if (l:line =~# '^#') || (a:lnum == 1 && l:line =~# '^---$')
-        return '>1'
-    else
-        return '='
-    endif
+  let l:line = getline(a:lnum) 
+  if (l:line =~# '^#') || (a:lnum == 1 && l:line =~# '^---$')
+    return '>1'
+  else
+    return '='
+  endif
 endfunction "}}}
 
 " move up and down by visual line {{{1
