@@ -431,7 +431,7 @@ nnoremap <leader>\| :Tabularize /\|<CR>
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
 let g:DiffModeSync = 0
-nmap yoD    <Plug>ToggleDiffCharAllLines
+nmap coD    <Plug>ToggleDiffCharAllLines
 nmap <Plug> <Plug>ToggleDiffCharCurrentLine
 nmap <Plug> <Plug>JumpDiffCharPrevStart
 nmap <Plug> <Plug>JumpDiffCharNextStart
