@@ -51,7 +51,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -89,6 +90,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -121,6 +123,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -152,7 +155,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -183,7 +187,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -219,7 +224,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
@@ -261,6 +267,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.apple\\.ScreenSharing$"
                                         ],
@@ -298,6 +305,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim",
+                                            "^org.\\.rstudio\\.RStudio$",
                                             "^com\\.apple\\.ScreenSharing$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -337,7 +345,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
