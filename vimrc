@@ -35,7 +35,6 @@ Plug 'jpalardy/vim-slime'
 
 " Coding: {{{2
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
-Plug 'goerz/jupytext.vim'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
@@ -54,6 +53,7 @@ Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-neovim-defaults'
 Plug 'gabenespoli/vim-komono'
+Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
 
@@ -401,10 +401,6 @@ endif
 nnoremap g<C-l> <C-l>
 
 " Coding: {{{2
-" goerz/jupytext.vim
-let g:jupytext_fmt = 'py'
-let g:jupytext_filetype_map = {'py': 'python'}
-
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
 
