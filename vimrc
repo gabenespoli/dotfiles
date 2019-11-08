@@ -406,7 +406,7 @@ let g:is_pythonsense_suppress_object_keymaps = 1
 
 " Writing Notes: {{{2
 " tpope/vim-markdown (built-in): {{{3
-let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim']
+let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
 
 " godlygeek/tabular: {{{3
