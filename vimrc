@@ -142,6 +142,9 @@ nnoremap Q @q
 " select last paste selection
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" paste without cutting
+vnoremap p "_dP
+
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
