@@ -36,7 +36,7 @@ nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
 nnoremap <buffer> <localleader>i :CocCommand python.setInterpreter<CR>
 
 " jupytext
-nnoremap <buffer> <localleader>j :!jupytext -o %.ipynb %<CR>
+nnoremap <buffer> <localleader>j :!jupytext --update -o %.ipynb %<CR>
 
 " databricks
 nnoremap <buffer> <localleader>ds :call DatabricksSave()<CR>
