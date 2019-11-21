@@ -106,7 +106,6 @@ lfcd () {
         fi
     fi
 }
-alias lf="lfcd"
 
 # python {{{1
 alias ca="conda deactivate && conda activate"
