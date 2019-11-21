@@ -1,10 +1,10 @@
 set textwidth=79
 
 " nvim-r plugin bindings {{{1
-nmap <buffer> <expr> <C-l>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSend"<CR>'        : ':call SendLineToR("stay")<CR>'
-nmap <buffer> <expr> <M-C-l> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSendj"<CR>'       : ':call SendLineToR("down")<CR>'
-nmap <buffer> <expr> <C-k>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend"<CR>'   : ':call SendParagraphToR("silent", "stay")<CR>'
-nmap <buffer> <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend}j"<CR>' : ':call SendParagraphToR("silent", "down")<CR>'
+" nmap <buffer> <expr> <C-l>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSend"<CR>'        : ':call SendLineToR("stay")<CR>'
+" nmap <buffer> <expr> <M-C-l> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeLineSendj"<CR>'       : ':call SendLineToR("down")<CR>'
+" nmap <buffer> <expr> <C-k>   string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend"<CR>'   : ':call SendParagraphToR("silent", "stay")<CR>'
+" nmap <buffer> <expr> <M-C-k> string(g:SendCmdToR)=="function('SendCmdToR_fake')" ? ':execute "normal \<Plug>SlimeParagraphSend}j"<CR>' : ':call SendParagraphToR("silent", "down")<CR>'
 " imap <buffer> <Tab> <C-x><C-o>
 " imap <expr> <buffer> <Tab> MyRCompletion()
 " function! MyRCompletion() "{{{
