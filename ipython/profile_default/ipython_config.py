@@ -132,6 +132,6 @@ from pygments.token import Token
 c.TerminalInteractiveShell.highlighting_style_overrides = {
     Token.Prompt: green,
     Token.PromptNum: green,
-    Token.OutPrompt: pink,
-    Token.OutPromptNum: pink,
+    Token.OutPrompt: orange,
+    Token.OutPromptNum: orange,
 }
