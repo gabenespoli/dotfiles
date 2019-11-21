@@ -11,22 +11,22 @@ c.TerminalInteractiveShell.highlight_matching_brackets = False
 c.InteractiveShell.colors = 'nocolor'
 
 # # base16 color maps
-# bg = '#ansiblack'          # 0
-# bg_light = '#ansigreen'    # 10
-# bg_sel = '#ansiyellow'     # 11
-# fg_com = '#ansidarkgray'   # 8
-# fg_dark = '#ansiblue'      # 12
-# fg = '#ansilightgray'      # 7
-# fg_light = '#ansifuchsia'  # 13
-# fg_bright = '#ansiwhite'   # 15
-# red = '#ansidarkred'       # 1
-# orange = '#ansired'        # 9
-# yellow = '#ansibrown'      # 3
-# green = '#ansidarkgreen'   # 2
-# cyan = '#ansiteal'         # 6
-# blue = '#ansidarkblue'     # 4
-# pink = '#ansipurple'       # 5
-# table = '#ansiturquoise'   # 14
+# bg = 'ansiblack'          # 0
+# bg_light = 'ansibrightgreen'    # 10
+# bg_sel = 'ansibrightyellow'     # 11
+# fg_com = 'ansibrightblack'   # 8
+# fg_dark = 'ansibrightblue'      # 12
+# fg = 'ansigray'      # 7
+# fg_light = 'ansibrightmagenta'  # 13
+# fg_bright = 'ansiwhite'   # 15
+# red = 'ansired'       # 1
+# orange = 'ansibrightred'        # 9
+# yellow = 'ansiyellow'      # 3
+# green = 'ansigreen'   # 2
+# cyan = 'ansicyan'         # 6
+# blue = 'ansiblue'     # 4
+# pink = 'ansimagenta'       # 5
+# table = 'ansibrightcyan'   # 14
 
 # snooker base16 color maps
 # because the above breaks on new versions of ipython
