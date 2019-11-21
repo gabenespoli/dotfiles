@@ -58,6 +58,10 @@ export PYENV_VERSION=miniconda3-latest
 export PYSPARK_DRIVER_PYTHON=ipython
 export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/spark/lib/python3.5/site-packages/pyspark"
 
+# unbind werase (C-w) so we can bind it with readline (inputrc)
+stty werase undef
+bind '"\C-w": backward-kill-word'
+
 # Prompt {{{1
 if [ -e ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
