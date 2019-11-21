@@ -53,7 +53,7 @@ from pygments.token import Keyword, Name, Comment, String, Error, Text, \
 
 class base16_snooker(Style):
 
-    default_style = ''
+    default_style = fg
 
     background_color = bg
     highlight_color = bg_sel
@@ -69,7 +69,7 @@ class base16_snooker(Style):
         Keyword.Type:              yellow,
         Keyword.Namespace:         pink,
 
-        Operator:                  red,        # class: 'o'
+        Operator:                  fg,        # class: 'o'
 
         # Punctuation:               fg,          # class: 'p'
 
