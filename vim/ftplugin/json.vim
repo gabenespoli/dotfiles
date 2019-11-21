@@ -5,6 +5,9 @@ if executable('jq') | setlocal formatprg=jq | endif
 nnoremap <localleader>1 :lvimgrep /^\W\W"[^"]*":\W{/j %<CR>:lopen<CR>
 nnoremap <localleader>2 :lvimgrep /^\W\{4\}"[^"]*":\W{/j %<CR>:lopen<CR>
 
+nnoremap <buffer> o za
+nnoremap <buffer> za o
+
 if expand('%:t') ==? 'karabiner.json'
   setlocal tabstop=4 softtabstop=4 shiftwidth=4
   setlocal foldmethod=expr
