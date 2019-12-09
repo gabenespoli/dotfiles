@@ -1,9 +1,9 @@
 {
   "suggest.autoTrigger": "none",
-  "signature.enable": false,
-  "signature.triggerSignatureWait": 250,
+  "signature.enable": true,
+  "signature.triggerSignatureWait": 50,
   "signature.preferShownAbove": false,
-  "signature.hideOnTextChange": true,
+  "signature.hideOnTextChange": false,
   "suggest.completionItemKindLabels": {
 		"keyword": "\uf1de",
 		"variable": "\ue79b",
