@@ -35,7 +35,7 @@ nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
 " jupytext
 nnoremap <buffer> <localleader>j :!jupytext --update -o %.ipynb %<CR>
 
-" databricks
+" Databricks:
 nnoremap <buffer> <localleader>ds :call DatabricksSave()<CR>
 function! DatabricksSave() "{{{
   let l:cmd = 'databricks workspace import -ol python'
