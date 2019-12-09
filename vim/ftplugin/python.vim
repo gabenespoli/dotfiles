@@ -43,9 +43,7 @@ nnoremap <buffer> <localleader>ds :call DatabricksSave()<CR>
 function! DatabricksSave() "{{{
   let l:cmd = 'databricks workspace import -ol python'
   let l:local_fname = expand('%')
-  let l:databricks_fname = '/Users/gabe.nespoli@sonova.com/' .
-        \ fnamemodify(trim(system('git rev-parse --show-toplevel')), ':t') . '/' . 
-        \ trim(system('git ls-files --full-name ' . expand('%')))
+  let l:databricks_fname = '/Users/gabe.nespoli@sonova.com/uploads' . expand('%')
   let l:whole_cmd = l:cmd . ' ' . shellescape(l:local_fname) . ' ' . shellescape(l:databricks_fname)
   execute(system(l:whole_cmd))
   echo('Saved to databricks: ' . l:databricks_fname)
