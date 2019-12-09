@@ -1,6 +1,6 @@
 set textwidth=79
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
-" if executable('yapf') | setlocal formatprg=yapf | endif
+if executable('yapf') | setlocal formatprg=yapf | endif
 if exists(':CocAction') | setlocal formatexpr=CocAction('formatSelected')  | endif
 
 if exists('*jedi#goto()')
