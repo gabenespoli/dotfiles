@@ -32,9 +32,6 @@ sunmap <buffer> id
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
 
-" neoclide/coc-python
-nnoremap <buffer> <localleader>i :CocCommand python.setInterpreter<CR>
-
 " jupytext
 nnoremap <buffer> <localleader>j :!jupytext --update -o %.ipynb %<CR>
 
