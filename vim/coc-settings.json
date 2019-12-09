@@ -43,10 +43,7 @@
     "--variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$",
     "--argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$"
   ],
-  "python.formatting.provider": "black",
-  "python.formatting.yapfArgs": [
-    "--style='{based_on_style: facebook}"
-  ],
+  "python.formatting.provider": "yapf",
 	"list.insertMappings": {
 		"<C-n>": "normal:j",
 		"<C-p>": "normal:k",
