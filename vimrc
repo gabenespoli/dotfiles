@@ -110,7 +110,7 @@ set statusline+=\ %<%.99f
 set statusline+=%#Modified#%m%*
 set statusline+=%w%r
 set statusline+=%=
-set statusline+=[%{coc#status()}]
+if exists("*coc#status") | set statusline+=[%{coc#status()}] | endif
 set statusline+=[%l/%L\,%c\ (%P)]
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
