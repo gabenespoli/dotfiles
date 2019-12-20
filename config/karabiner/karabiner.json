@@ -3757,15 +3757,14 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Esc: App window switcher / app switcher backwards [command+option+escape -> command+backtick]",
+                        "description": "Pok3r Esc: App window switcher / app switcher backwards [option+escape -> command+backtick]",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
                                         "mandatory": [
-                                            "command",
-                                            "option"
+                                            "left_option"
                                         ],
                                         "optional": [
                                             "caps_lock"
