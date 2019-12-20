@@ -4,6 +4,7 @@
   "signature.triggerSignatureWait": 50,
   "signature.preferShownAbove": false,
   "signature.hideOnTextChange": false,
+  "diagnostic.warningSign": "--",
   "suggest.completionItemKindLabels": {
 		"keyword": "\uf1de",
 		"variable": "\ue79b",
