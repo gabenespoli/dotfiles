@@ -3887,6 +3887,68 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Pok3r-like Fn - Media controls [right_option+p;' -> playpause/back/fwd]",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "play_or_pause"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "consumer_key_code": "scan_previous_track"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "consumer_key_code": "scan_next_track"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -4004,6 +4066,30 @@
                             "to": {
                                 "consumer_key_code": "display_brightness_decrement"
                             }
+                        },
+                        {
+                            "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": {
+                                "consumer_key_code": "play_or_pause"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "insert"
+                            },
+                            "to": {
+                                "consumer_key_code": "scan_previous_track"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "delete_forward"
+                            },
+                            "to": {
+                                "consumer_key_code": "scan_next_track"
+                            }
                         }
                     ]
                 },
@@ -4043,14 +4129,6 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "grave_accent_and_tilde"
-                            },
-                            "to": {
-                                "key_code": "escape"
-                            }
-                        },
-                        {
-                            "from": {
                                 "key_code": "escape"
                             },
                             "to": {
@@ -4059,10 +4137,10 @@
                         },
                         {
                             "from": {
-                                "key_code": "left_option"
+                                "key_code": "grave_accent_and_tilde"
                             },
                             "to": {
-                                "key_code": "left_command"
+                                "key_code": "escape"
                             }
                         },
                         {
@@ -4075,10 +4153,10 @@
                         },
                         {
                             "from": {
-                                "key_code": "right_option"
+                                "key_code": "left_option"
                             },
                             "to": {
-                                "key_code": "right_command"
+                                "key_code": "left_command"
                             }
                         },
                         {
@@ -4087,6 +4165,14 @@
                             },
                             "to": {
                                 "key_code": "right_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_option"
+                            },
+                            "to": {
+                                "key_code": "right_command"
                             }
                         }
                     ]
