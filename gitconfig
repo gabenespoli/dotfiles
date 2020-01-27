@@ -1,0 +1,20 @@
+[alias]
+  st = !"git-st"
+  br = "branch"
+  brm = "branch -m"
+  co = "checkout"
+  cob = "checkout -b"
+  cp = "cherry-pick"
+  rb = "rebase"
+  ri = "rebase --interactive"
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[color.decorate]
+  branch = 2
+  remoteBranch = 9
+  tag = 4
+  stash = 6
+  HEAD = 2
