@@ -20,7 +20,7 @@ Plug 'kana/vim-textobj-fold'
 " General: {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'junegunn/gv.vim'
+Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -252,9 +252,10 @@ function! MyGstatus()
 endfunction
 
 " junegunn/gv.vim: {{{3
-nnoremap gL :GV!<CR>
-nnoremap gl :GV<CR>
-xnoremap gl :GV<CR>
+nnoremap gl :GV <CR>
+nnoremap gL :GV --all<CR>
+xnoremap gl :GV <CR>
+xnoremap gL :GV --all<CR>
 
 " airblade/gitgutter: {{{3
 nmap ga  <Plug>(GitGutterStageHunk)

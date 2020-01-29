@@ -14,7 +14,7 @@
 	process = git-lfs filter-process
 [color.decorate]
   branch = 2
-  remoteBranch = 9
-  tag = 4
+  remoteBranch = 4
+  tag = 9
   stash = 6
-  HEAD = 2
+  HEAD = 3

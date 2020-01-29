@@ -135,9 +135,9 @@ alias gca="git commit --amend"
 alias czz="git stash save"
 alias czp="git stash pop && gs"
 alias czl="git stash list"
-alias glog="git log --graph --date=short --abbrev-commit --pretty=format:'%C(cyan)%cd %C(blue)%h%Creset%C(green)%d%Creset %s %C(italic 8)(%an)%Creset'"
-alias gl="glog -15"
-alias gll="gl --all"
+alias glog="git log --oneline --pretty=format:'%C(cyan)%h%Creset %s%C(auto)%d%Creset'"
+alias gl="glog --graph --topo-order -15"
+alias gla="gl --all -30"
 alias rb="git rebase"
 alias ri="git rebase --interactive"
 alias rr="git rebase --continue"
@@ -146,7 +146,8 @@ alias gr="git reset"
 alias grr="git reset HEAD^ && gs"
 alias gwip="git add -A && git commit -m 'WIP'"
 
-alias Gl='$EDITOR +GV +"autocmd BufWipeout <buffer> qall"'
+alias Gl='$EDITOR +"GV --format=%h\ %s%d" +"autocmd BufWipeout <buffer> qall"'
+alias GL='$EDITOR +"GV --format=%h\ %s%d --all" +"autocmd BufWipeout <buffer> qall"'
 alias Gs="$EDITOR -c 'call MyGstatus()' ."
 
 alias ts="tig status"
