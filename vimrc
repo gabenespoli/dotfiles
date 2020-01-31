@@ -253,10 +253,10 @@ function! MyGstatus()
 endfunction
 
 " junegunn/gv.vim: {{{3
-nnoremap gl :GV <CR>
-nnoremap gL :GV --all<CR>
-xnoremap gl :GV <CR>
-xnoremap gL :GV --all<CR>
+nnoremap gl :GV --all<CR>
+xnoremap gl :GV --all<CR>
+nnoremap gL :GV <CR>
+xnoremap gL :GV <CR>
 
 " airblade/gitgutter: {{{3
 nmap ga  <Plug>(GitGutterStageHunk)
