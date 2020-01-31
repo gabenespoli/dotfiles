@@ -22,11 +22,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'ryanoasis/vim-devicons'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
+Plug 'ryanoasis/vim-devicons'
 
 " Tmux: {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -39,7 +39,6 @@ if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | en
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
-Plug 'python/black',                   {'for': ['python']}
 
 " Writing Notes: {{{2
 Plug 'godlygeek/tabular',
@@ -197,7 +196,7 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
-" tpope/vim-unimpaired: {{{3
+" gabenespoli/vim-unimpaired: {{{3
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap coFn :set foldmethod=manual<CR>
 nnoremap coFi :set foldmethod=indent<CR>
@@ -252,12 +251,6 @@ function! MyGstatus()
   nmap <buffer> q <C-^>
 endfunction
 
-" junegunn/gv.vim: {{{3
-nnoremap gl :GV --all<CR>
-xnoremap gl :GV --all<CR>
-nnoremap gL :GV <CR>
-xnoremap gL :GV <CR>
-
 " airblade/gitgutter: {{{3
 nmap ga  <Plug>(GitGutterStageHunk)
 xmap ga  :GitGutterStageHunk<CR>
@@ -281,29 +274,11 @@ function! GitGutterFoldToggle()
   endif
 endfunction
 
-" ryanoasis/vim-devicons: {{{3
-let g:WebDevIconsOS = 'Darwin'
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bashrc'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_profile'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_local'] = ''
-
-" justinmk/vim-dirvish: {{{3
-let g:dirvish_mode = ':sort ,^.*[\/],'
-if has('mac')
-  let g:loaded_netrwPlugin = 1
-  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
-endif
-
-" majutsushi/tagbar: {{{3
-nnoremap <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
-let g:tagbar_compact = 1
-let g:tagbar_iconchars = ['▸', '▾']
-let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]}
-let g:tagbar_map_jump = ['<CR>', 'o']
-let g:tagbar_map_togglefold = ['za']
+" junegunn/gv.vim: {{{3
+nnoremap gl :GV --all<CR>
+xnoremap gl :GV --all<CR>
+nnoremap gL :GV <CR>
+xnoremap gL :GV <CR>
 
 " junegunn/fzf.vim: {{{3
 let $FZF_DEFAULT_OPTS .= ' --layout=default --no-border'
@@ -327,6 +302,13 @@ command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
       \ fzf#vim#with_preview(), <bang>0)
+
+" justinmk/vim-dirvish: {{{3
+let g:dirvish_mode = ':sort ,^.*[\/],'
+if has('mac')
+  let g:loaded_netrwPlugin = 1
+  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
+endif
 
 " neoclide/coc.nvim: {{{3
 if has('nvim')
@@ -363,6 +345,23 @@ function! s:show_documentation()
 endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 endif
+
+" majutsushi/tagbar: {{{3
+nnoremap <leader>t :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['▸', '▾']
+let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]}
+let g:tagbar_map_jump = ['<CR>', 'o']
+let g:tagbar_map_togglefold = ['za']
+
+" ryanoasis/vim-devicons: {{{3
+let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bashrc'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_profile'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_local'] = ''
 
 " Tmux: {{{2
 " christoomey/vim-tmux-navigator: {{{3
