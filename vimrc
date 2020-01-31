@@ -350,6 +350,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <C-k><C-l> :CocList<CR>
+nnoremap <C-k><C-r> :CocListResume<CR>
+nnoremap <C-k><C-d> :CocList diagnostics<CR>
+nnoremap <C-k><C-y> :CocList yank<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -358,7 +362,6 @@ function! s:show_documentation()
   endif
 endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
-nnoremap <C-n> :CocList<CR>
 endif
 
 " Tmux: {{{2
