@@ -22,7 +22,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
@@ -304,18 +303,6 @@ let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVaria
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
 
-" ctrlpvim/ctrlp.vim: {{{3
-nnoremap = :CtrlPBuffer<CR>
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_switch_buffer = 0 
-let g:ctrlp_prompt_mappings = {
- \ 'PrtSelectMove("j")':     ['<C-n>','<down>'],
- \ 'PrtSelectMove("k")':     ['<C-p>','<up>'],
- \ 'PrtHistory(-1)':         [],
- \ 'PrtHistory(1)':          [],
- \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
- \ }
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 
 " neoclide/coc.nvim: {{{3
 if has('nvim')
