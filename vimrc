@@ -262,7 +262,7 @@ xnoremap gL :GV --all<CR>
 nmap ga  <Plug>(GitGutterStageHunk)
 xmap ga  :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
-nmap gz  <Plug>(GitGutterPreviewHunk)
+nmap =  <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
