@@ -23,6 +23,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
 
@@ -303,6 +305,28 @@ let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVaria
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
 
+" junegunn/fzf.vim: {{{3
+let $FZF_DEFAULT_OPTS .= ' --layout=default --no-border'
+nnoremap <C-k><C-p> :MRU<CR>
+nnoremap <C-k><C-f> :GFiles<CR>
+nnoremap <C-k>f     :Files ~<CR>
+nnoremap <C-k>n     :Files ~/notes/<CR>
+nnoremap <C-k><C-g> :GGrep<CR>
+nnoremap <C-k>g     :Rg<CR>
+nnoremap <C-k><C-b> :Buffers<CR>
+nnoremap <C-k><C-m> :Marks<CR>
+nnoremap <C-k><C-t> :Tags<CR>
+command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
+command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* GGrep
+      \ call fzf#vim#grep(
+      \ 'git grep --line-number '.shellescape(<q-args>), 0,
+      \ fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+      \ fzf#vim#with_preview(), <bang>0)
 
 " neoclide/coc.nvim: {{{3
 if has('nvim')

@@ -154,6 +154,132 @@ alias Gs="$EDITOR -c 'call MyGstatus()' ."
 alias ts="tig status"
 alias tl="tig"
 
+# fzf {{{1
+
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse
+  --color=fg:7,bg:0,fg+:13,bg+:10,hl:3,hl+:3
+  --color=prompt:4,pointer:13,marker:6
+  --color=header:6,info:5,spinner:5
+'
+
+# fzf: open files {{{1
+# fe [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fe() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+# Modified version where you can press
+#   - CTRL-O to open with `open` command,
+#   - CTRL-E or Enter key to open with the $EDITOR
+fo() {
+  local out file key
+  IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+  if [ -n "$file" ]; then
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+  fi
+}
+
+# fuzzy grep open via ag
+vg() {
+  local file
+
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1}')"
+
+  if [[ -n $file ]]
+  then
+     vim $file
+  fi
+}
+
+# fzf: fco - checkout git branch/tag {{{1
+fco() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi --reverse) || return
+  git checkout $(awk '{print $2}' <<<"$target" )
+  git log --oneline --decorate -n 10
+}
+
+# fzf: fco_preview - checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD {{{1
+fco_preview() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi --reverse --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
+  git checkout $(awk '{print $2}' <<<"$target" )
+}
+
+# fzf: fshow - git commit browser {{{1
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# fzf: fgst - pick files from `git status -s`  {{{1
+is_in_git_repo() {
+  git rev-parse HEAD > /dev/null 2>&1
+}
+
+fgst() {
+  # "Nothing to see here, move along"
+  is_in_git_repo || return
+
+  local cmd="${FZF_CTRL_T_COMMAND:-"command git status -s"}"
+
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" fzf -m "$@" | while read -r item; do
+    $EDITOR $(echo "$item" | awk '{print $2}')
+  done
+  echo
+}
+
+# fzf: fcs - get git commit sha {{{1
+# example usage: git rebase -i `fcs`
+fcs() {
+  local commits commit
+  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse --decorate) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+  echo -n $(echo "$commit" | sed "s/ .*//")
+}
+
+fca() {
+  local commits commit
+  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse --decorate --all) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+  echo -n $(echo "$commit" | sed "s/ .*//")
+}
+
+# fzf: my fzf aliases {{{1
+alias fri='git rebase -i $(fcs)'
+alias fra='git rebase -i $(fca)'
+alias fcp='git cherry-pick $(fca)'
+
 # source other files {{{1
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"

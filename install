@@ -24,6 +24,7 @@ brew install tmux neovim lf git ctags tree
 brew install jq cloc tig lazygit
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
+brew install fzf bat ag ripgrep
 
 brew cask install xquartz iterm2 spectacle google-chrome karabiner-elements
 
