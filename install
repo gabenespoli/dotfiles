@@ -43,7 +43,7 @@ git clone https://github.com/gabenespoli/dotfiles "$DOTFILES"
 BAKDIR="$DOTFILES"/.bak
 mkdir -pv "$BAKDIR"
 
-for rc in *rc *profile tmux.conf; do
+for rc in *rc *profile tmux.conf gitconfig git_template; do
   [ -e "$HOME"/."$rc" ] && mv -v "$HOME"/."$rc" "$BAKDIR"/"$rc"
   ln -sfv "$DOTFILES"/"$rc" "$HOME"/."$rc"
 done
