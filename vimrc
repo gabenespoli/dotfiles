@@ -90,6 +90,7 @@ let g:vimsyn_folding='af'
 set wildignorecase
 set completeopt=menuone,preview
 set shortmess+=c
+set tags^=.git/tags;~
 set diffopt+=context:3
 set suffixesadd+=.m,.r,.R,.py
 set clipboard=unnamed
