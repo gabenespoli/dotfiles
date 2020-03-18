@@ -16,7 +16,7 @@
 [color.decorate]
   branch = 2
   remoteBranch = 4
-  tag = 9
+  tag = 5
   stash = 6
   HEAD = 3
 [init]
