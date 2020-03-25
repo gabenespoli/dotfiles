@@ -7,6 +7,12 @@ c.InteractiveShell.editor = 'nvim'
 c.TerminalInteractiveShell.editing_mode = 'emacs'
 c.TerminalInteractiveShell.highlight_matching_brackets = False
 
+# https://stackoverflow.com/questions/21532543/cpython-interactive-readline-better-backwards-deletion-of-words
+import readline
+import subprocess
+readline.parse_and_bind('"\\C-w": backward-kill-word')
+subprocess.call(['stty', 'werase', 'undef'])
+
 # Colours
 c.InteractiveShell.colors = 'nocolor'
 

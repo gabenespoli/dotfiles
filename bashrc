@@ -56,7 +56,9 @@ export TERM=xterm-256color-italic
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_VERSION=miniconda3-latest
 export PYSPARK_DRIVER_PYTHON=ipython
-export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/spark/lib/python3.5/site-packages/pyspark"
+export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/sonovads/lib/python3.5/site-packages/pyspark"
+# export MPLBACKEND="module://itermplot"
+# export ITERMPLOT=rv
 
 # unbind werase (C-w) so we can bind it with readline (inputrc)
 stty werase undef
@@ -128,6 +130,7 @@ alias gb="git branch"
 alias gg="git checkout"
 alias ggb="git checkout -b"
 alias ga="git add"
+alias gaa="git add -A"
 alias gd="git diff"
 alias gc="git commit"
 alias gcm="git commit -m"
@@ -142,9 +145,10 @@ alias rb="git rebase"
 alias ri="git rebase --interactive"
 alias rr="git rebase --continue"
 alias ra="git rebase --abort"
-alias rim="git rebase --interactive master"
+alias rim="git rebase --interactive --autosquash master"
 alias gr="git reset"
-alias grr="git reset HEAD^ && gs"
+alias grr="echo 'Use gR instead.'"
+alias gR="git reset HEAD^ && gs"
 alias gwip="git add -A && git commit -m 'WIP'"
 
 alias Gl='$EDITOR +"GV --format=%h\ %s%d"'
@@ -156,7 +160,9 @@ alias tl="tig"
 
 # fzf {{{1
 
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse
+# export FZF_DEFAULT_COMMAND="find * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"
+
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --bind=ctrl-k:ignore
   --color=fg:7,bg:0,fg+:13,bg+:10,hl:3,hl+:3
   --color=prompt:4,pointer:13,marker:6
   --color=header:6,info:5,spinner:5
@@ -195,6 +201,23 @@ vg() {
   then
      vim $file
   fi
+}
+
+# fgst - pick files from `git status -s` 
+is_in_git_repo() {
+  git rev-parse HEAD > /dev/null 2>&1
+}
+
+fgst() {
+  # "Nothing to see here, move along"
+  is_in_git_repo || return
+
+  local cmd="${FZF_CTRL_T_COMMAND:-"command git status -s"}"
+
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" fzf -m "$@" | while read -r item; do
+    echo "$item" | awk '{print $2}'
+  done
+  echo
 }
 
 # fzf: fco - checkout git branch/tag {{{1

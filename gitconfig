@@ -15,6 +15,9 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[user]
+	name = Gabe Nespoli
+	email = gabe.nespoli@sonova.com
 [color.decorate]
   branch = 2
   remoteBranch = 4

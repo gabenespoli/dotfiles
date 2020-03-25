@@ -8,6 +8,12 @@ if exists('*jedi#goto()')
   nnoremap <buffer> gD :call jedi#goto()<CR>
 endif
 
+nmap <C-l><CR> <C-l>izzjzz
+nmap <C-l><C-j> <C-l><CR>
+nmap <C-l><C-k> <C-l>iz
+
+nnoremap <buffer> <expr> <localleader>t &softtabstop==4 ? ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>' : ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>'
+
 " jeetsukumaran/vim-pythonsense
 vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
 omap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)

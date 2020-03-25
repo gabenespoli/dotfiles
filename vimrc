@@ -16,14 +16,17 @@ Plug 'tpope/vim-commentary'
 Plug 'gabenespoli/vim-unimpaired'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
+Plug 'romainl/vim-qf'
 
 " General: {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'gabenespoli/gv.vim'
+" Plug 'gabenespoli/gv.vim'
+Plug '~/bin/vim/gv.vim'
 Plug 'airblade/vim-gitgutter'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
 Plug 'ryanoasis/vim-devicons'
@@ -36,6 +39,8 @@ Plug 'jpalardy/vim-slime'
 
 " Coding: {{{2
 if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
+Plug 'dense-analysis/ale'
+" Plug 'puremourning/vimspector'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
@@ -48,7 +53,8 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
 
 " My Plugins: {{{2
-Plug 'gabenespoli/vim-colors-snooker'
+" Plug 'gabenespoli/vim-colors-snooker'
+Plug '~/bin/vim/vim-colors-snooker'
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-neovim-defaults'
@@ -144,7 +150,7 @@ nnoremap Q @q
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " paste without cutting
-vnoremap p "_dP
+" vnoremap p "_dP
 
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
@@ -156,6 +162,9 @@ nnoremap <C-w><C-^> :vsplit #<CR>
 " resize windows
 nnoremap + <C-w>+
 nnoremap _ <C-w>>
+
+" toggle fold
+nnoremap = za
 
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
@@ -225,6 +234,12 @@ nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
 
+augroup quickfix
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l* lwindow
+augroup END
+
 " map down and up to c/lnext and c/lprevious
 " lnext/lprevious if location list is open, else cnext/cprevious
 nnoremap <silent> <expr> <down>
@@ -237,19 +252,28 @@ nnoremap <silent> <expr> <up>
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 nnoremap <leader>s 1z=
 
+" Highlight merge conflict markers
+" match Search '\v^(\<|\=|\>){7}([^=].+)?$'
+
+" romainl/vim-qf {{{3
+let g:qf_shorten_path = 0
+let g:qf_mapping_ack_style = 1
+
 " General: {{{2
 " tpope/vim-fugitive: {{{3
-nmap gs :call MyGstatus()<CR>
+" nmap gs :call MyGstatus()<CR>
+nnoremap gs :Gstatus<CR>
 nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
+nnoremap <C-k><C-g> :Ggrep!<Space>
 
 function! MyGstatus()
-  Gedit :
+  Gstatus
   nmap <buffer> o <CR>
-  nmap <buffer> q <C-^>
+  nmap <buffer> q :quit<CR>
 endfunction
 
 " airblade/gitgutter: {{{3
@@ -281,28 +305,59 @@ xnoremap gl :GV --all<CR>
 nnoremap gL :GV <CR>
 xnoremap gL :GV <CR>
 
+" ctrlpvim/ctrlp.vim: {{{3
+nnoremap <C-k><C-t> :CtrlPTag<CR>
+nnoremap <C-k><C-b> :CtrlPBuffer<CR>
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_switch_buffer = 0 
+let g:ctrlp_prompt_mappings = {
+ \ 'PrtSelectMove("j")':     ['<C-n>'],
+ \ 'PrtSelectMove("k")':     ['<C-p>'],
+ \ 'PrtHistory(-1)':         ['<down>'],
+ \ 'PrtHistory(1)':          ['<up>'],
+ \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
+ \ }
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
+
 " junegunn/fzf.vim: {{{3
-let $FZF_DEFAULT_OPTS .= ' --layout=default --no-border'
-nnoremap <C-k><C-p> :MRU<CR>
-nnoremap <C-k><C-f> :GFiles<CR>
-nnoremap <C-k>f     :Files ~<CR>
-nnoremap <C-k>n     :Files ~/notes/<CR>
-nnoremap <C-k><C-g> :GGrep<CR>
-nnoremap <C-k>g     :Rg<CR>
-nnoremap <C-k><C-b> :Buffers<CR>
-nnoremap <C-k><C-m> :Marks<CR>
-nnoremap <C-k><C-t> :Tags<CR>
-command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
-command! -bang -nargs=? -complete=dir Files
-      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-command! -bang -nargs=* GGrep
-      \ call fzf#vim#grep(
-      \ 'git grep --line-number '.shellescape(<q-args>), 0,
-      \ fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-      \ fzf#vim#with_preview(), <bang>0)
+" let $FZF_DEFAULT_OPTS .= ' --layout=default --no-border'
+" " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" nnoremap <C-p>      :MRU<CR>
+" nnoremap <C-k><C-p> :Buffers<CR>
+" nnoremap <C-k><C-o> :GFiles<CR>
+" nnoremap <C-k><C-f> :Files ~<CR>
+" nnoremap <C-k>f     :Files<CR>
+" nnoremap <C-k>n     :Files ~/notes/<CR>
+" nnoremap <C-k><C-g> :Ggrep 
+" nnoremap <C-k>g     :GGrep<CR>
+" nnoremap <C-k><C-m> :Marks<CR>
+" nnoremap <C-k><C-t> :Tags<CR>
+" command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
+" command! -bang -nargs=? -complete=dir Files
+"       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" command! -bang -nargs=* GGrep
+"       \ call fzf#vim#grep(
+"       \ 'git grep --line-number '.shellescape(<q-args>), 0,
+"       \ fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+" command! -bang -nargs=* Rg
+"       \ call fzf#vim#grep(
+"       \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+"       \ fzf#vim#with_preview(), <bang>0)
+
+" " CTRL-A CTRL-Q to select all and build quickfix list
+" function! s:build_quickfix_list(lines)
+"   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+"   copen
+"   cc
+" endfunction
+
+" let g:fzf_action = {
+"   \ 'ctrl-q': function('s:build_quickfix_list'),
+"   \ 'ctrl-t': 'tab split',
+"   \ 'ctrl-x': 'split',
+"   \ 'ctrl-v': 'vsplit' }
+
+" let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " justinmk/vim-dirvish: {{{3
 let g:dirvish_mode = ':sort ,^.*[\/],'
@@ -310,6 +365,21 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
+
+" dense-analysis/ale: {{{3
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_set_loclist = 0
+" let g:ale_set_highlights = 0
+" let g:ale_fix_on_save = 1
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pydocstyle']}
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'python': ['black', 'isort'],
+      \ }
+nnoremap [d :ALEPrevious<CR>
+nnoremap ]d :ALENext<CR>
+nmap <leader>a <Plug>(ale_hover)
 
 " neoclide/coc.nvim: {{{3
 if has('nvim')
@@ -324,8 +394,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 nnoremap <silent> <expr> coy g:coc_enabled ? ':CocDisable<CR>' : ':CocEnable<CR>'
-nmap <silent> [y <Plug>(coc-diagnostic-prev)
-nmap <silent> ]y <Plug>(coc-diagnostic-next)
+" nmap <silent> [d <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]d <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <leader>gd <C-w>vgdzMzv
 nmap <leader>gD <C-w>sgdzMzv

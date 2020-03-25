@@ -32,8 +32,8 @@ color main-tracked      yellow default
 color main-remote       blue default
 color main-head         yellow black
 color main-ref          green default
-color main-tag          9 default
-color main-local-tag    9 default
+color main-tag          5 default
+color main-local-tag    5 default
 color id                cyan default
 color date              8 default
 color author            8 default

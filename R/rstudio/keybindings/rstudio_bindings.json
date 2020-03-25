@@ -1,0 +1,5 @@
+{
+    "activateConsole" : "Ctrl+2",
+    "executeCurrentSection" : "Ctrl+L",
+    "switchFocusSourceConsole" : "Cmd+L"
+}
