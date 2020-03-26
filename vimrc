@@ -300,10 +300,10 @@ function! GitGutterFoldToggle()
 endfunction
 
 " junegunn/gv.vim: {{{3
-nnoremap gl :GV --all<CR>
-xnoremap gl :GV --all<CR>
-nnoremap gL :GV <CR>
-xnoremap gL :GV <CR>
+nnoremap gL :GV --all<CR>
+xnoremap gL :GV --all<CR>
+nnoremap gl :GV <CR>
+xnoremap gl :GV <CR>
 
 " ctrlpvim/ctrlp.vim: {{{3
 nnoremap <C-k><C-t> :CtrlPTag<CR>
