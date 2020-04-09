@@ -370,6 +370,7 @@ let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'python': ['black', 'isort'],
       \ }
+let g:ale_python_flake8_options = ' max-line-length=88 '
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nmap <leader>a <Plug>(ale_hover)
