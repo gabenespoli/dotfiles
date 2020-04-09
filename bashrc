@@ -30,7 +30,7 @@ if [ "$(uname)" == "Darwin" ]; then
   alias openx="open -a Microsoft\ Excel.app"
 
 # Linux options {{{1
-else 
+else
   export PATH="/usr/local/lib:/usr/local/bin:$PATH"
   alias ls="ls -Flh --color --group-directories-first"
   alias ll="ls -Flh --color --group-directories-first"
@@ -203,7 +203,7 @@ vg() {
   fi
 }
 
-# fgst - pick files from `git status -s` 
+# fgst - pick files from `git status -s`
 is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }

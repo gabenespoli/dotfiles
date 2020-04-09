@@ -302,7 +302,7 @@ xnoremap gl :GV <CR>
 nnoremap <C-k><C-t> :CtrlPTag<CR>
 nnoremap <C-k><C-b> :CtrlPBuffer<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_switch_buffer = 0 
+let g:ctrlp_switch_buffer = 0
 let g:ctrlp_prompt_mappings = {
  \ 'PrtSelectMove("j")':     ['<C-n>'],
  \ 'PrtSelectMove("k")':     ['<C-p>'],
@@ -321,7 +321,7 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 " nnoremap <C-k><C-f> :Files ~<CR>
 " nnoremap <C-k>f     :Files<CR>
 " nnoremap <C-k>n     :Files ~/notes/<CR>
-" nnoremap <C-k><C-g> :Ggrep 
+" nnoremap <C-k><C-g> :Ggrep
 " nnoremap <C-k>g     :GGrep<CR>
 " nnoremap <C-k><C-m> :Marks<CR>
 " nnoremap <C-k><C-t> :Tags<CR>
