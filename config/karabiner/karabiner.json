@@ -10,7 +10,7 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_alone_timeout_milliseconds": 200,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
@@ -3997,6 +3997,14 @@
                     "simple_modifications": [
                         {
                             "from": {
+                                "key_code": "delete_forward"
+                            },
+                            "to": {
+                                "consumer_key_code": "scan_next_track"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "f10"
                             },
                             "to": {
@@ -4017,6 +4025,14 @@
                             },
                             "to": {
                                 "consumer_key_code": "volume_increment"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "insert"
+                            },
+                            "to": {
+                                "consumer_key_code": "scan_previous_track"
                             }
                         },
                         {
@@ -4045,6 +4061,14 @@
                         },
                         {
                             "from": {
+                                "key_code": "print_screen"
+                            },
+                            "to": {
+                                "consumer_key_code": "play_or_pause"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "right_command"
                             },
                             "to": {
@@ -4065,30 +4089,6 @@
                             },
                             "to": {
                                 "consumer_key_code": "display_brightness_decrement"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "print_screen"
-                            },
-                            "to": {
-                                "consumer_key_code": "play_or_pause"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "insert"
-                            },
-                            "to": {
-                                "consumer_key_code": "scan_previous_track"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "delete_forward"
-                            },
-                            "to": {
-                                "consumer_key_code": "scan_next_track"
                             }
                         }
                     ]
