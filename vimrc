@@ -261,20 +261,13 @@ let g:qf_mapping_ack_style = 1
 
 " General: {{{2
 " tpope/vim-fugitive: {{{3
-" nmap gs :call MyGstatus()<CR>
-nnoremap gs :Gstatus<CR>
+nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
 nnoremap gA :Gwrite<CR>
 xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
 nnoremap <C-k><C-g> :Ggrep!<Space>
-
-function! MyGstatus()
-  Gstatus
-  nmap <buffer> o <CR>
-  nmap <buffer> q :quit<CR>
-endfunction
 
 " airblade/gitgutter: {{{3
 nmap ga  <Plug>(GitGutterStageHunk)

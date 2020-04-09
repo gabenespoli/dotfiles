@@ -153,7 +153,7 @@ alias gwip="git add -A && git commit -m 'WIP'"
 
 alias Gl='$EDITOR +"GV --format=%h\ %s%d"'
 alias GL='$EDITOR +"GV --format=%h\ %s%d --all"'
-alias Gs="$EDITOR -c 'call MyGstatus()' ."
+alias Gs="$EDITOR -c ':Gedit :'"
 
 alias ts="tig status"
 alias tl="tig"
