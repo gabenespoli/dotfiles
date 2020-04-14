@@ -218,7 +218,6 @@ nnoremap com :set number!<CR>:set relativenumber!<CR>
 
 nnoremap <silent> coW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-nmap <silent> <M-S-s> coS
 nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nmap <silent> <M-S-t> coT
 
@@ -374,6 +373,7 @@ let g:ale_python_flake8_options = ' max-line-length=88 '
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nmap <leader>a <Plug>(ale_hover)
+nnoremap <silent> <M-S-s> :ALEFix<CR>:silent w<CR>
 
 " neoclide/coc.nvim: {{{3
 if has('nvim')
