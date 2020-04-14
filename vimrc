@@ -373,6 +373,7 @@ let g:ale_python_flake8_options = ' max-line-length=88 '
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nmap <leader>a <Plug>(ale_hover)
+nnoremap coy :ALEToggle<CR>
 nnoremap <silent> <M-S-s> :ALEFix<CR>:silent w<CR>
 
 " neoclide/coc.nvim: {{{3
@@ -387,7 +388,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-nnoremap <silent> <expr> coy g:coc_enabled ? ':CocDisable<CR>' : ':CocEnable<CR>'
+nnoremap <silent> <expr> coY g:coc_enabled ? ':CocDisable<CR>' : ':CocEnable<CR>'
 " nmap <silent> [d <Plug>(coc-diagnostic-prev)
 " nmap <silent> ]d <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
