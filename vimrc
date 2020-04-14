@@ -362,17 +362,14 @@ endif
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_set_loclist = 0
-" let g:ale_set_highlights = 0
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_linters = {'python': ['flake8', 'mypy', 'pydocstyle']}
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'python': ['black', 'isort'],
       \ }
-let g:ale_python_flake8_options = ' max-line-length=88 '
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
-nmap <leader>a <Plug>(ale_hover)
 nnoremap coy :ALEToggle<CR>
 nnoremap <silent> <M-S-s> :ALEFix<CR>:silent w<CR>
 
