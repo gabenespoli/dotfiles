@@ -42,8 +42,8 @@ nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
 nnoremap <buffer> <localleader>js :!jupytext --update -o %.ipynb %<CR>
 
 " jupyter notebook
-nnoremap <buffer> <localleader>a [zO# %%<CR><CR><Up># 
-nnoremap <buffer> <localleader>b ]zo# %%<CR><CR><Up># 
+nnoremap <buffer> <localleader>a [zO# %%<CR><CR><Up>
+nnoremap <buffer> <localleader>b ]zo# %%<CR><CR><Up>
 nnoremap <buffer> <localleader>- o# %%<Esc>0
 
 " Databricks:
