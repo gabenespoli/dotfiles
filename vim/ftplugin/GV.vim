@@ -11,7 +11,7 @@ nnoremap <buffer> rii j:Grebase -i --autosquash <C-r>=gv#sha()<CR><CR>
 nnoremap <buffer> rim :Grebase -i --autosquash master<CR>
 nnoremap <buffer> cf :Git commit --fixup <C-r>=gv#sha()<CR><CR>
 nnoremap <buffer> gR :Git reset HEAD^<CR>
-nmap <buffer> cp .cp<CR>
+nnoremap <buffer> cp :Git cherry-pick <C-r>=gv#sha()<CR><CR>
 
 " refresh maps
 nnoremap <buffer> R :close<CR>:GV --all<CR>
