@@ -29,7 +29,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
-Plug 'ryanoasis/vim-devicons'
 
 " Tmux: {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -111,8 +110,7 @@ endfunction
 set statusline=
 set statusline+=%{SSHIndicator()}
 set statusline+=[%n]
-set statusline+=\ (%{FugitiveHead(12)})
-set statusline+=\ %{WebDevIconsGetFileTypeSymbol()}
+set statusline+=\ (%{FugitiveHead(12)})
 set statusline+=\ %<%.99f
 set statusline+=%#Modified#%m%*
 set statusline+=%w%r
@@ -430,13 +428,6 @@ let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]}
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
-
-" ryanoasis/vim-devicons: {{{3
-let g:WebDevIconsOS = 'Darwin'
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bashrc'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_profile'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bash_local'] = ''
 
 " Tmux: {{{2
 " christoomey/vim-tmux-navigator: {{{3
