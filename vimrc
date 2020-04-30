@@ -33,7 +33,6 @@ Plug 'majutsushi/tagbar'
 " Tmux: {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'wellle/tmux-complete.vim'
 Plug 'jpalardy/vim-slime'
 
 " Coding: {{{2
