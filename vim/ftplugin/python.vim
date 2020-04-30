@@ -14,6 +14,9 @@ nmap <C-l><C-k> <C-l>iz
 
 nnoremap <buffer> <expr> <localleader>t &softtabstop==4 ? ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>' : ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>'
 
+" prabirshrestha/vim-lsp
+nmap gd <Plug>(lsp-definition)
+
 " jeetsukumaran/vim-pythonsense
 vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
 omap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)

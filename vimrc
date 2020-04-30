@@ -36,9 +36,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 
 " Coding: {{{2
-if has('nvim') | Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} | endif
 Plug 'dense-analysis/ale'
-" Plug 'puremourning/vimspector'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'liuchengxu/vista.vim'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
@@ -381,41 +385,28 @@ nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
 nnoremap <silent> <M-S-s> :ALEFix<CR>:silent w<CR>
 
-" neoclide/coc.nvim: {{{3
-if has('nvim')
-let g:coc_enable_locationlist = 0
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
+" prabirshrestha/asyncomplete:  {{{3
+let g:asyncomplete_auto_popup = 0
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
-nnoremap <silent> <expr> coY g:coc_enabled ? ':CocDisable<CR>' : ':CocEnable<CR>'
-" nmap <silent> [d <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]d <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <leader>gd <C-w>vgdzMzv
-nmap <leader>gD <C-w>sgdzMzv
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nnoremap <C-k><C-l> :CocList<CR>
-nnoremap <C-k><C-r> :CocListResume<CR>
-nnoremap <C-k><C-d> :CocList diagnostics<CR>
-nnoremap <C-k><C-y> :CocList yank<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-autocmd CursorHold * silent call CocActionAsync('highlight')
-endif
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" prabirshrestha/vim-lsp:  {{{3
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_fold_enabled = 0
+
+" liuchengxu/vista.vim:  {{{3
+let g:vista_executive_for = {
+        \ 'python': 'vim_lsp',
+        \ }
+let g:vista_ignore_kinds = ['Variable']
+let g:vista_sidebar_width = 40
 
 " majutsushi/tagbar: {{{3
 nnoremap <leader>t :TagbarToggle<CR>
