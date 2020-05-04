@@ -160,6 +160,10 @@ alias Gs="$EDITOR -c ':Gedit :'"
 alias ts="tig status"
 alias tl="tig"
 
+# fff {{{1
+export FFF_KEY_CHILD2="o"
+export FFF_KEY_PARENT="u"
+
 # fzf {{{1
 
 # export FZF_DEFAULT_COMMAND="find * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"

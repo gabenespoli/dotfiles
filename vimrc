@@ -28,6 +28,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug '/usr/local/opt/fzf'
 " Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
+" Plug 'dylanaraps/fff.vim'
 Plug 'majutsushi/tagbar'
 
 " Tmux: {{{2
@@ -369,6 +370,10 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
+
+" dylanaraps/fff.vim: {{{3
+" nnoremap - :F<CR>
+let g:fff#split = "e"
 
 " dense-analysis/ale: {{{3
 let g:ale_lint_on_text_changed = 0
