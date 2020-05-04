@@ -73,8 +73,8 @@ nnoremap <buffer> <localleader>C o# COMMAND ----------<CR><Esc>
 function! DatabricksFolds(lnum) "{{{
   if getline(a:lnum) =~# '^# MAGIC %md #'
     return '>1'
-  elseif getline(a:lnum) =~# '^# COMMAND ----------$'
-    return '>2'
+  " elseif getline(a:lnum) =~# '^# COMMAND ----------$'
+  "   return '>2'
   else
     return '='
   endif
