@@ -421,7 +421,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -458,7 +459,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -488,7 +490,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs in Office [control+ae -> home/end]",
+                        "description": "Gmacs in Microsoft [control+aebf -> home/end/ctrl+left/ctrl+right]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -496,7 +498,9 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -527,7 +531,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
-                                            "^com\\.microsoft\\.Powerpoint$"
+                                            "^com\\.microsoft\\.Powerpoint$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -548,6 +553,70 @@
                                 "to": [
                                     {
                                         "key_code": "end"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
