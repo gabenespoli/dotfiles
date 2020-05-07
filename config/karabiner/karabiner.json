@@ -512,7 +512,6 @@
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -574,7 +573,6 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.rdc\\.macos$"
-
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -606,7 +604,6 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.rdc\\.macos$"
-
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -2141,7 +2138,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "spacebar",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
@@ -2165,7 +2162,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "m",
+                                    "key_code": "n",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
@@ -2405,7 +2402,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "p",
+                                    "key_code": "m",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
@@ -2415,34 +2412,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "equal_sign",
-                                        "modifiers": [
-                                            "shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "0",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen"
+                                        "key_code": "period"
                                     }
                                 ],
                                 "type": "basic"
@@ -2483,7 +2453,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "7",
+                                    "key_code": "equal_sign",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
@@ -2493,31 +2463,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "slash"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock",
+                                        "key_code": "equal_sign",
+                                        "modifiers": [
                                             "shift"
                                         ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "period"
                                     }
                                 ],
                                 "type": "basic"
@@ -4765,7 +4714,7 @@
                         "vendor_id": 1241
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": false,
+                    "manipulate_caps_lock_led": true,
                     "simple_modifications": [
                         {
                             "from": {
@@ -4963,18 +4912,18 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "caps_lock"
+                                "key_code": "application"
                             },
                             "to": {
-                                "key_code": "left_control"
+                                "key_code": "fn"
                             }
                         },
                         {
                             "from": {
-                                "key_code": "left_control"
+                                "key_code": "caps_lock"
                             },
                             "to": {
-                                "key_code": "caps_lock"
+                                "key_code": "left_control"
                             }
                         },
                         {
@@ -4995,6 +4944,14 @@
                         },
                         {
                             "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": {
+                                "key_code": "caps_lock"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "left_option"
                             },
                             "to": {
@@ -5016,16 +4973,21 @@
                             "to": {
                                 "key_code": "right_command"
                             }
-                        },
-                        {
-                            "from": {
-                                "key_code": "application"
-                            },
-                            "to": {
-                                "key_code": "fn"
-                            }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 321,
+                        "vendor_id": 1241
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
