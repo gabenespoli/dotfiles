@@ -27,6 +27,7 @@ brew install pandoc pandoc-citeproc pandoc-crossref basictex
 brew install fzf bat ag ripgrep
 
 brew cask install xquartz iterm2 spectacle google-chrome karabiner-elements
+brew cask install alacritty
 
 # bash {{{1
 echo "-- Adding the new bash shell to the list of allowed shells"

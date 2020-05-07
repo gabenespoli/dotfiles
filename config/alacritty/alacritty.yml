@@ -1,0 +1,59 @@
+# Colors (snooker)
+colors:
+  primary:
+    background: '0x1B1F1E'
+    foreground: '0xADAD9B'
+
+  normal:
+    black: '0x1B1F1E'
+    red: '0xE52E1A'
+    green: '0x25C528'
+    yellow: '0xEBBB2B'
+    blue: '0x0094CF'
+    magenta: '0xDF7376'
+    cyan: '0x21C296'
+    white: '0xADAD9B'
+
+  bright:
+    black: '0x6A6A5B'
+    red: '0xB98036'
+    green: '0x2B302B'
+    yellow: '0x3C4137'
+    blue: '0x5B6A5B'
+    magenta: '0xCDC08B'
+    cyan: '0x5D4124'
+    white: '0xCCCCCC'
+
+# Font configuration
+font:
+  normal:
+    family: 'Cascadia Code'
+    style: Regular
+  size: 12.0
+
+# Key bindings
+key_bindings:
+  - { key: F,         mods: Command,        chars: "\x1bf" }
+  - { key: B,         mods: Command,        chars: "\x1bb" }
+  - { key: D,         mods: Command,        chars: "\x1bd" }
+  - { key: H,         mods: Option,         chars: "\x1bh" }
+  - { key: J,         mods: Option,         chars: "\x1bj" }
+  - { key: K,         mods: Option,         chars: "\x1bk" }
+  - { key: L,         mods: Command,        chars: "\x1bl" }
+  - { key: S,         mods: Command,        chars: "\x1bs" }
+  - { key: T,         mods: Command,        chars: "\x1bt" }
+  - { key: O,         mods: Command,        chars: "\x1bo" }
+  - { key: O,         mods: Command|Shift,  chars: "\x1bO" }
+  - { key: LBracket,  mods: Command,        chars: "\x1b[" }
+  - { key: RBracket,  mods: Command,        chars: "\x1b]" }
+  - { key: LBracket,  mods: Command|Shift,  chars: "\x1b{" }
+  - { key: RBracket,  mods: Command|Shift,  chars: "\x1b}" }
+  - { key: Key1,      mods: Command,        chars: "\x1b1" }
+  - { key: Key2,      mods: Command,        chars: "\x1b2" }
+  - { key: Key3,      mods: Command,        chars: "\x1b3" }
+  - { key: Key4,      mods: Command,        chars: "\x1b4" }
+  - { key: Key5,      mods: Command,        chars: "\x1b5" }
+  - { key: Key6,      mods: Command,        chars: "\x1b6" }
+  - { key: Key7,      mods: Command,        chars: "\x1b7" }
+  - { key: Key8,      mods: Command,        chars: "\x1b8" }
+  - { key: Key9,      mods: Command,        chars: "\x1b9" }
