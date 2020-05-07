@@ -347,7 +347,10 @@ let g:ale_python_black_options = '--line-length=79'
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
-nnoremap <silent> <M-S-s> :ALEFix<CR>:silent w<CR>
+augroup ale
+  au!
+  au FileType python nnoremap <buffer> gqq :ALEFix<CR>
+augroup END
 
 " prabirshrestha/asyncomplete:  {{{3
 let g:asyncomplete_auto_popup = 0
