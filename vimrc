@@ -25,8 +25,6 @@ Plug 'tpope/vim-rhubarb'
 Plug '~/bin/vim/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 " Plug 'dylanaraps/fff.vim'
 Plug 'majutsushi/tagbar'
@@ -323,46 +321,6 @@ let g:ctrlp_prompt_mappings = {
  \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
  \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-
-" junegunn/fzf.vim: {{{3
-" let $FZF_DEFAULT_OPTS .= ' --layout=default --no-border'
-" " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-" nnoremap <C-p>      :MRU<CR>
-" nnoremap <C-k><C-p> :Buffers<CR>
-" nnoremap <C-k><C-o> :GFiles<CR>
-" nnoremap <C-k><C-f> :Files ~<CR>
-" nnoremap <C-k>f     :Files<CR>
-" nnoremap <C-k>n     :Files ~/notes/<CR>
-" nnoremap <C-k><C-g> :Ggrep
-" nnoremap <C-k>g     :GGrep<CR>
-" nnoremap <C-k><C-m> :Marks<CR>
-" nnoremap <C-k><C-t> :Tags<CR>
-" command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
-" command! -bang -nargs=? -complete=dir Files
-"       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-" command! -bang -nargs=* GGrep
-"       \ call fzf#vim#grep(
-"       \ 'git grep --line-number '.shellescape(<q-args>), 0,
-"       \ fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-" command! -bang -nargs=* Rg
-"       \ call fzf#vim#grep(
-"       \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-"       \ fzf#vim#with_preview(), <bang>0)
-
-" " CTRL-A CTRL-Q to select all and build quickfix list
-" function! s:build_quickfix_list(lines)
-"   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-"   copen
-"   cc
-" endfunction
-
-" let g:fzf_action = {
-"   \ 'ctrl-q': function('s:build_quickfix_list'),
-"   \ 'ctrl-t': 'tab split',
-"   \ 'ctrl-x': 'split',
-"   \ 'ctrl-v': 'vsplit' }
-
-" let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " justinmk/vim-dirvish: {{{3
 let g:dirvish_mode = ':sort ,^.*[\/],'
