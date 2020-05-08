@@ -1,28 +1,36 @@
 # Colors (snooker)
 colors:
   primary:
-    background: '0x1B1F1E'
-    foreground: '0xADAD9B'
+    background: '#121615'
+    foreground: '#ADAD9B'
+
+  selection:
+    background: '#2B302B'
+    foreground: '#E5E5D2'
+
+  cursor:
+    cursor: '#CDC08B'
+    text: '#121615'
 
   normal:
-    black: '0x1B1F1E'
-    red: '0xE52E1A'
-    green: '0x25C528'
-    yellow: '0xEBBB2B'
-    blue: '0x0094CF'
-    magenta: '0xDF7376'
-    cyan: '0x21C296'
-    white: '0xADAD9B'
+    black: '#2B302B'
+    red: '#E52E1A'
+    green: '#25C528'
+    yellow: '#EBBB2B'
+    blue: '#0094CF'
+    magenta: '#DF7376'
+    cyan: '#21C296'
+    white: '#CDC08B'
 
   bright:
-    black: '0x6A6A5B'
-    red: '0xB98036'
-    green: '0x2B302B'
-    yellow: '0x3C4137'
-    blue: '0x5B6A5B'
-    magenta: '0xCDC08B'
-    cyan: '0x5D4124'
-    white: '0xCCCCCC'
+    black: '#6A6A5B'
+    red: '#B98036'
+    green: '#25C528'
+    yellow: '#EBBB2B'
+    blue: '#0094CF'
+    magenta: '#DF7376'
+    cyan: '#21C296'
+    white: '#E5E5D2'
 
 # Font configuration
 font:
