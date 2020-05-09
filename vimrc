@@ -25,7 +25,6 @@ Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'justinmk/vim-dirvish'
-" Plug 'dylanaraps/fff.vim'
 Plug 'majutsushi/tagbar'
 
 " Tmux: {{{2
@@ -53,8 +52,7 @@ Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
 
 " My Plugins: {{{2
-" Plug 'gabenespoli/vim-colors-snooker'
-Plug '~/bin/vim/vim-colors-snooker'
+Plug 'gabenespoli/vim-colors-snooker'
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-neovim-defaults'
@@ -259,9 +257,6 @@ nnoremap <silent> <expr> <up>
 
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 nnoremap <leader>s 1z=
-
-" Highlight merge conflict markers
-" match Search '\v^(\<|\=|\>){7}([^=].+)?$'
 
 " romainl/vim-qf {{{3
 let g:qf_shorten_path = 0
