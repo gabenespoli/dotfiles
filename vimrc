@@ -222,6 +222,10 @@ nnoremap coFm :set foldmethod=marker<CR>
 nnoremap coFs :set foldmethod=syntax<CR>
 nnoremap coFd :set foldmethod=diff<CR>
 nnoremap com :set number!<CR>:set relativenumber!<CR>
+nnoremap <expr> cot
+      \ &softtabstop==2 ?
+      \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
+      \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
 
 nnoremap <silent> coW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
