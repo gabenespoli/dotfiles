@@ -130,8 +130,8 @@ endfunction
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
 augroup line_return
-  au!
-  au BufReadPost *
+  autocmd!
+  autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \     execute 'normal! g`"zvzz' |
     \ endif
@@ -344,8 +344,8 @@ nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
 augroup ale
-  au!
-  au FileType python nnoremap <buffer> gqq :ALEFix<CR>
+  autocmd!
+  autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
 
 " prabirshrestha/asyncomplete:  {{{3
