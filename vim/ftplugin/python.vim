@@ -1,11 +1,5 @@
 set textwidth=79
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
-" if executable('yapf') | setlocal formatprg=yapf | endif
-
-" if exists('*jedi#goto()')
-"   nnoremap <buffer> gd :call jedi#goto_assignments()<CR>
-"   nnoremap <buffer> gD :call jedi#goto()<CR>
-" endif
 
 nmap <C-l><CR> <C-l>izzjzz
 nmap <C-l><C-j> <C-l><CR>
