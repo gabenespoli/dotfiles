@@ -1,11 +1,7 @@
-" general {{{1
-setlocal tabstop=4                   " number of visual spaces per TAB
-setlocal softtabstop=4               " number of spaces in tab when editing
-setlocal shiftwidth=4
 setlocal textwidth=75
+setlocal tabstop=4 softtabstop=4 shiftwidth=4
 setlocal commentstring=%%s
-
-" folding {{{1
+setlocal omnifunc=syntaxcomplete#Complete
 setlocal foldmethod=expr
 setlocal foldexpr=GetOctaveFolds(v:lnum)
 function! GetOctaveFolds(lnum) "{{{
@@ -17,6 +13,3 @@ function! GetOctaveFolds(lnum) "{{{
     return '='
   endif
 endfunction "}}}
-
-" syntax completion {{{1
-setlocal omnifunc=syntaxcomplete#Complete
