@@ -105,21 +105,21 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # install versions of python
-pyenv install 2.7.16
-pyenv install 3.7.3
+pyenv install 2.7.15
+pyenv install 3.7.7
 pyenv install miniconda-latest
 
 # envs for neovim
-pyenv virtualenv 2.7.16 neovim2
-pyenv activate neovim2
+pyenv virtualenv 2.7.15 neovim-2.7.15
+pyenv activate neovim-2.7.15
 pip install --upgrade pip
-pip install neovim pynvim python-language-server jedi
+pip install neovim pynvim
 pyenv deactivate
 
-pyenv virtualenv 3.7.3 neovim3
-pyenv activate neovim3
+pyenv virtualenv 3.7.7 neovim-3.7.7
+pyenv activate neovim-3.7.7
 pip install --upgrade pip
-pip install neovim pynvim python-language-server jedi
+pip install neovim pynvim python-language-server jedi==0.15.2 jupyter
 pyenv deactivate
 
 # envs for data science
