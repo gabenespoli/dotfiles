@@ -24,7 +24,6 @@ brew install tmux neovim lf git ctags tree jq cloc
 brew install tig bat ag ripgrep
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
-brew install bash-git-prompt
 
 brew cask install xquartz
 brew cask install alacritty
@@ -61,10 +60,6 @@ ln -sfv "$DOTFILES"/ipython/profile_default/ipython_config.py \
   "$HOME"/.ipython/profile_default/ipython_config.py
 
 # git {{{1
-if [ ! -e ~/.git-prompt.sh ]; then
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
-fi
-
 if [ ! -e ~/.git-completion.bash ]; then
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 fi
@@ -72,7 +67,7 @@ fi
 git config --global user.email "gabenespoli@gmail.com"
 git config --global user.name "Gabe Nespoli"
 
-git clone https://github.com/gabenespoli/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # tmux {{{1
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

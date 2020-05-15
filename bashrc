@@ -155,9 +155,8 @@ sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 sourcex "$HOME/.git-completion.bash"
 
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
 # stuff that should be at the end {{{1
