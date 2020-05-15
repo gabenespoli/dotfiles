@@ -20,14 +20,16 @@ echo "-- Installing Homebrew..."
 
 echo "-- Installing Homebrew packages..."
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
-brew install tmux neovim lf git ctags tree
-brew install jq cloc tig
+brew install tmux neovim lf git ctags tree jq cloc
+brew install tig bat ag ripgrep
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
-brew install bat ag ripgrep
+brew install bash-git-prompt
 
-brew cask install xquartz iterm2 spectacle google-chrome karabiner-elements
+brew cask install xquartz
 brew cask install alacritty
+brew cask install spectacle
+brew cask install karabiner-elements
 
 # bash {{{1
 echo "-- Adding the new bash shell to the list of allowed shells"
@@ -44,7 +46,7 @@ git clone https://github.com/gabenespoli/dotfiles "$DOTFILES"
 BAKDIR="$DOTFILES"/.bak
 mkdir -pv "$BAKDIR"
 
-for rc in *rc *profile tmux.conf gitconfig git_template; do
+for rc in *rc *profile *cfg tmux.conf gitconfig; do
   [ -e "$HOME"/."$rc" ] && mv -v "$HOME"/."$rc" "$BAKDIR"/"$rc"
   ln -sfv "$DOTFILES"/"$rc" "$HOME"/."$rc"
 done
@@ -119,18 +121,18 @@ pyenv deactivate
 pyenv virtualenv 3.7.7 neovim-3.7.7
 pyenv activate neovim-3.7.7
 pip install --upgrade pip
-pip install neovim pynvim python-language-server jedi==0.15.2 jupyter
+pip install neovim pynvim python-language-server jedi==0.15.2
 pyenv deactivate
 
-# envs for data science
-# (azure uses python 3.5.2, apache spark 2.4.0, databricks 5.1)
-pyenv shell miniconda3-latest
-
+# env for data science
 pip install --upgrade pip
 conda install pandas matplotlib seaborn bokeh scikit-learn \
-  ipython jupyter jupyterlab \
+  ipython jupyter jupyterlab sphinx \
   flake8 black pytest
 pip install pyspark-stubs databricks-cli
+
+# envs for databricks (python 3.5.2, spark 2.4.0, databricks 5.1)
+pyenv shell miniconda3-latest
 
 conda create -y --name spark python=3.5
 conda activate spark
@@ -148,20 +150,8 @@ conda deactivate
 
 pyenv shell --unset
 
-# set macOS defaults {{{1
-# [ -e "$DOTFILES"/macos ] && . "$DOTFILES"/macos
-
 # Spectacle.app
 echo "Setting shortcuts for Spectacle.app..."
 [ -e "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json ] && \
   mv -v "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json "$DOTFILES"/bak/spectacle.json
 cp -r "$DOTFILES"/init/spectacle.json "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json 2>/dev/null
-
-# create some default folders {{{1
-# TODO: link these from a dropbox or onedrive instead of creating them locally
-# mkdir -v "$HOME"/notes
-# mkdir -v "$HOME"/todo
-# mkdir -pv "$HOME"/projects/archive/2019
-
-# TODO: add some files from ~/bin
-# - vpn

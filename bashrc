@@ -51,9 +51,9 @@ export EDITOR='nvim'
 export CLICOLOR=1
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
 export TERM=xterm-256color-italic
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # python / spark
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_VERSION=miniconda3-latest
 export PYSPARK_DRIVER_PYTHON=ipython
 export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/sonovads/lib/python3.5/site-packages/pyspark"
@@ -63,16 +63,6 @@ export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/sonovads/lib/pyt
 # unbind werase (C-w) so we can bind it with readline (inputrc)
 stty werase undef
 bind '"\C-w": backward-kill-word'
-
-# Prompt {{{1
-if [ -e ~/.git-prompt.sh ]; then
-  source ~/.git-prompt.sh
-  GIT_PROMPT='$(__git_ps1 "\[\e[31m\]|\[\e[36m\]%s")'
-fi
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  SSH_PROMPT="^ "
-fi
-PS1="$SSH_PROMPT\[\e[34m\]\W$GIT_PROMPT\[\e[0m\] $ "
 
 # Aliases & Functions {{{1
 alias lt="tree -L 2 --dirsfirst"
@@ -157,13 +147,6 @@ alias Gl='$EDITOR +"GV --format=%h\ %s%d"'
 alias GL='$EDITOR +"GV --format=%h\ %s%d --all"'
 alias Gs="$EDITOR -c ':Gedit :'"
 
-alias ts="tig status"
-alias tl="tig"
-
-# fff {{{1
-export FFF_KEY_CHILD2="o"
-export FFF_KEY_PARENT="u"
-
 # source other files {{{1
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
@@ -172,10 +155,9 @@ sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 sourcex "$HOME/.git-completion.bash"
 
-# https://github.com/gabenespoli/bash-git-prompt
-if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-  export GIT_PROMPT_THEME=Custom
-  source "$HOME/.bash-git-prompt/gitprompt.sh"
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 # stuff that should be at the end {{{1
