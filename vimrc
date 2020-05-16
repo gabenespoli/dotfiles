@@ -24,7 +24,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'justinmk/vim-dirvish'
 Plug 'majutsushi/tagbar'
 
 " Tmux: {{{2
@@ -318,13 +317,6 @@ let g:ctrlp_prompt_mappings = {
  \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
  \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-
-" justinmk/vim-dirvish: {{{3
-let g:dirvish_mode = ':sort ,^.*[\/],'
-if has('mac')
-  let g:loaded_netrwPlugin = 1
-  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
-endif
 
 " dylanaraps/fff.vim: {{{3
 " nnoremap - :F<CR>
