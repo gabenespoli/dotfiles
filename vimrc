@@ -24,6 +24,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'cocopon/vaffle.vim'
 Plug 'majutsushi/tagbar'
 
 " Tmux: {{{2
@@ -317,6 +318,26 @@ let g:ctrlp_prompt_mappings = {
  \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
  \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
+
+" cocopon/vaffle.vim
+nnoremap - :Vaffle<CR>
+augroup vaffle
+  autocmd!
+  autocmd FileType vaffle nmap <buffer> K <Plug>(vaffle-mkdir)
+  autocmd FileType vaffle nmap <buffer> e <Plug>(vaffle-new-file)
+  autocmd FileType vaffle nmap <buffer> zh <Plug>(vaffle-toggle-hidden)
+  autocmd FileType vaffle nmap <buffer> . <Plug>(vaffle-fill-cmdline)
+  autocmd FileType vaffle nmap <buffer> x <Plug>(vaffle-toggle-current)
+  autocmd FileType vaffle nmap <buffer> s <Plug>(vaffle-open-selected-split)
+  autocmd FileType vaffle nmap <buffer> v <Plug>(vaffle-open-selected-vsplit)
+  autocmd FileType vaffle nmap <buffer> o l
+  autocmd FileType vaffle nmap <buffer> u h
+  autocmd FileType vaffle nmap <buffer> - q
+augroup END
+if has('mac')
+  let g:loaded_netrwPlugin = 1
+  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
+endif
 
 " Coding:  {{{2
 " dense-analysis/ale: {{{3
