@@ -25,12 +25,6 @@ Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cocopon/vaffle.vim'
-Plug 'majutsushi/tagbar'
-
-" Tmux: {{{2
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
 
 " Coding: {{{2
 Plug 'dense-analysis/ale'
@@ -40,16 +34,22 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
+Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
-" Writing Notes: {{{2
+" Writing: {{{2
 Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
+
+" Tmux: {{{2
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
 
 " My Plugins: {{{2
 Plug 'gabenespoli/vim-colors-snooker'
@@ -391,6 +391,44 @@ let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVaria
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
 
+" jeetsukumaran/vim-pythonsense
+let g:is_pythonsense_suppress_object_keymaps = 1
+
+" Writing: {{{2
+" tpope/vim-markdown (built-in): {{{3
+let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
+let g:markdown_folding = 1
+
+" godlygeek/tabular: {{{3
+nnoremap <leader>\| :Tabularize /\|<CR>
+
+" rickhowe/diffchar: {{{3
+let g:DiffPairVisible = 0
+let g:DiffUpdate = 0
+let g:DiffModeSync = 0
+nmap coD    <Plug>ToggleDiffCharAllLines
+nmap <Plug> <Plug>ToggleDiffCharCurrentLine
+nmap <Plug> <Plug>JumpDiffCharPrevStart
+nmap <Plug> <Plug>JumpDiffCharNextStart
+nmap <Plug> <Plug>JumpDiffCharPrevEnd
+nmap <Plug> <Plug>JumpDiffCharNextEnd
+nmap dO     <Plug>GetDiffCharPair
+nmap dP     <Plug>PutDiffCharPair
+
+" gabenespoli/vim-criticmarkup: {{{3
+let g:criticmarkup#disable#highlighting = 1
+
+" jszakmeister/markdown2ctags: {{{3
+let g:tagbar_type_markdown = {
+  \ 'ctagstype': 'markdown',
+  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
+  \ 'ctagsargs' : '-f - --sort=yes',
+  \ 'kinds' : ['s:sections', 'i:images'],
+  \ 'sro' : '|',
+  \ 'kind2scope' : {'s' : 'section',},
+  \ 'sort': 0,
+\ }
+
 " Tmux: {{{2
 " christoomey/vim-tmux-navigator: {{{3
 let g:tmux_navigator_no_mappings = 1
@@ -441,45 +479,6 @@ if exists('$TMUX')
   let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.2'}
 endif
 nnoremap g<C-l> <C-l>
-
-" Coding: {{{2
-" jeetsukumaran/vim-pythonsense
-let g:is_pythonsense_suppress_object_keymaps = 1
-
-" Writing Notes: {{{2
-" tpope/vim-markdown (built-in): {{{3
-let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
-let g:markdown_folding = 1
-
-" godlygeek/tabular: {{{3
-nnoremap <leader>\| :Tabularize /\|<CR>
-
-" rickhowe/diffchar: {{{3
-let g:DiffPairVisible = 0
-let g:DiffUpdate = 0
-let g:DiffModeSync = 0
-nmap coD    <Plug>ToggleDiffCharAllLines
-nmap <Plug> <Plug>ToggleDiffCharCurrentLine
-nmap <Plug> <Plug>JumpDiffCharPrevStart
-nmap <Plug> <Plug>JumpDiffCharNextStart
-nmap <Plug> <Plug>JumpDiffCharPrevEnd
-nmap <Plug> <Plug>JumpDiffCharNextEnd
-nmap dO     <Plug>GetDiffCharPair
-nmap dP     <Plug>PutDiffCharPair
-
-" gabenespoli/vim-criticmarkup: {{{3
-let g:criticmarkup#disable#highlighting = 1
-
-" jszakmeister/markdown2ctags: {{{3
-let g:tagbar_type_markdown = {
-  \ 'ctagstype': 'markdown',
-  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
-  \ 'ctagsargs' : '-f - --sort=yes',
-  \ 'kinds' : ['s:sections', 'i:images'],
-  \ 'sro' : '|',
-  \ 'kind2scope' : {'s' : 'section',},
-  \ 'sort': 0,
-\ }
 
 " My Plugins: {{{2
 " gabenespoli/vim-mutton
