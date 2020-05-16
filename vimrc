@@ -318,10 +318,7 @@ let g:ctrlp_prompt_mappings = {
  \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 
-" dylanaraps/fff.vim: {{{3
-" nnoremap - :F<CR>
-let g:fff#split = "e"
-
+" Coding:  {{{2
 " dense-analysis/ale: {{{3
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
