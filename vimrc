@@ -215,12 +215,6 @@ endfor
 
 " gabenespoli/vim-unimpaired: {{{3
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap coFn :set foldmethod=manual<CR>
-nnoremap coFi :set foldmethod=indent<CR>
-nnoremap coFe :set foldmethod=expr<CR>
-nnoremap coFm :set foldmethod=marker<CR>
-nnoremap coFs :set foldmethod=syntax<CR>
-nnoremap coFd :set foldmethod=diff<CR>
 nnoremap com :set number!<CR>:set relativenumber!<CR>
 nnoremap <expr> cot
       \ &softtabstop==2 ?
@@ -231,11 +225,6 @@ nnoremap <silent> coW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><C
 nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
 nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nmap <silent> <M-S-t> coT
-
-nnoremap coFM :set filetype=markdown<CR>
-nnoremap coFT :set filetype=text<CR>
-nnoremap coFS :set filetype=sh<CR>
-nnoremap coFJ :set filetype=json<CR>
 
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
