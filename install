@@ -115,7 +115,7 @@ eval "$(pyenv virtualenv-init -)"
 # install versions of python
 pyenv install 2.7.15
 pyenv install 3.7.7
-pyenv install miniconda-latest
+pyenv install miniconda3-latest
 
 # envs for neovim
 pyenv virtualenv 2.7.15 neovim-2.7.15
