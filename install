@@ -92,12 +92,23 @@ ln -sf "$HOME"/.vim/autoload/plug.vim "$HOME"/.config/nvim/autoload/
 nvim +PlugInstall +qall
 
 # python {{{1
-echo "-- Preparing to install pyenv..."
-# https://github.com/pyenv/pyenv/wiki
-brew install openssl readline sqlite3 xz zlib
-sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
-echo "-- Setting up python and virtual environments..."
-brew install pyenv pyenv-virtualenv
+echo "-- Setting up python and pyenv..."
+
+# Mac
+if [ "$(uname)" == "Darwin" ]; then
+  # https://github.com/pyenv/pyenv/wiki
+  brew install openssl readline sqlite3 xz zlib
+  sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+  brew install pyenv pyenv-virtualenv
+
+# Linux
+else
+  sudo apt-get update
+  sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+fi
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 

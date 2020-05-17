@@ -31,7 +31,9 @@ if [ "$(uname)" == "Darwin" ]; then
 
 # Linux options {{{1
 else
+  export PYENV_ROOT="$HOME/.pyenv"
   export PATH="/usr/local/lib:/usr/local/bin:$PATH"
+  export PATH="$PYENV_ROOT/bin:$PATH"
   alias ls="ls -Flh --color --group-directories-first"
   alias ll="ls -Flh --color --group-directories-first"
   alias la="ls -Flha --color --group-directories-first"
