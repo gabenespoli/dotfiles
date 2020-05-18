@@ -23,7 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cocopon/vaffle.vim'
 
 " Coding:
@@ -288,20 +287,6 @@ nnoremap gL :GV --all<CR>
 xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
-
-" ctrlpvim/ctrlp.vim: {{{2
-nnoremap <C-k><C-t> :CtrlPTag<CR>
-nnoremap <C-k><C-b> :CtrlPBuffer<CR>
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_prompt_mappings = {
- \ 'PrtSelectMove("j")':     ['<C-n>'],
- \ 'PrtSelectMove("k")':     ['<C-p>'],
- \ 'PrtHistory(-1)':         ['<down>'],
- \ 'PrtHistory(1)':          ['<up>'],
- \ 'AcceptSelection("e")':   ['<CR>', '<2-LeftMouse>'],
- \ }
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 
 " cocopon/vaffle.vim: {{{2
 nnoremap - :Vaffle<CR>
