@@ -21,7 +21,7 @@ echo "-- Installing Homebrew..."
 echo "-- Installing Homebrew packages..."
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
 brew install tmux neovim lf git ctags tree jq cloc
-brew install tig bat ag ripgrep
+brew install tig bat ag ripgrep fzf
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 

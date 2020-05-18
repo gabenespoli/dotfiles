@@ -149,6 +149,24 @@ alias Gl='$EDITOR +"GV --format=%h\ %s%d"'
 alias GL='$EDITOR +"GV --format=%h\ %s%d --all"'
 alias Gs="$EDITOR -c ':Gedit :'"
 
+# fzf {{{1
+export FZF_DEFAULT_OPTS='--height 40% --bind=ctrl-o:select-all
+  --color=hl:8,fg+:15,bg+:0,hl+:2
+  --color=info:5,prompt:2,pointer:2,marker:6,spinner:2,header:7
+  '
+
+# Modified version where you can press
+#   - CTRL-O to open with `open` command,
+#   - CTRL-E or Enter key to open with the $EDITOR
+fo() (
+  IFS=$'\n' out=("$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)")
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+  if [ -n "$file" ]; then
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+  fi
+)
+
 # source other files {{{1
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
