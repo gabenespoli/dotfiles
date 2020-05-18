@@ -23,6 +23,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'cocopon/vaffle.vim'
 
 " Coding:
@@ -287,6 +289,36 @@ nnoremap gL :GV --all<CR>
 xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
+
+" junegunn/fzf.vim: {{{2
+nnoremap <C-p>      :History<CR>
+nnoremap <C-k>f     :Files <C-r>=expand('%:h')<CR><CR>
+nnoremap <C-k><C-f> :GFiles<CR>
+nnoremap <C-k><C-p> :GFiles?<CR>
+nnoremap <C-k><C-b> :Buffers<CR>
+nnoremap <C-k><C-g> :Rg<CR>
+
+augroup fzf
+  autocmd!
+  autocmd FileType fzf tnoremap <buffer> <C-p> <Up>
+  autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
+  autocmd FileType fzf tnoremap <buffer> <Up> <C-p>
+  autocmd FileType fzf tnoremap <buffer> <Down> <C-n>
+augroup END
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " cocopon/vaffle.vim: {{{2
 nnoremap - :Vaffle<CR>
