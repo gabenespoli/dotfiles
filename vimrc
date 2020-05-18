@@ -155,22 +155,13 @@ nnoremap Q @q
 " select last paste selection
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" paste without cutting
-" vnoremap p "_dP
-
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" open alternate buffer in a vertial split
-nnoremap <C-w><C-^> :vsplit #<CR>
-
 " resize windows
 nnoremap + <C-w>+
 nnoremap _ <C-w>>
-
-" toggle fold
-nnoremap = za
 
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
