@@ -23,7 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/LeaderF'
 Plug 'cocopon/vaffle.vim'
 
 " Coding:
@@ -288,28 +287,6 @@ nnoremap gL :GV --all<CR>
 xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
-
-" Yggdroot/LeaderF: {{{2
-let g:Lf_ShortcutF = "<C-k>k"
-noremap <C-p><C-b> :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <C-p><C-r> :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <C-p><C-f> :<C-U><C-R>=printf("Leaderf file %s", "")<CR><CR>
-noremap <C-p><C-t> :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-noremap <C-p><C-g> :<C-U><C-R>=printf("Leaderf rg %s", "")<CR><CR>
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_CursorBlink = 0
-let g:Lf_CommandMap = {
-      \ '<C-v>': ['<C-y>'],
-      \ '<C-]>': ['<C-v>'],
-      \ '<C-x>': ['<C-s>'],
-      \ '<C-j>': ['<C-n>'],
-      \ '<C-k>': ['<C-p>'],
-      \ '<C-f>': ['<C-x>'],
-      \ '<Home>': ['<C-a>'],
-      \ '<End>': ['<C-e>'],
-      \ '<Left>': ['<C-b>'],
-      \ '<Right>': ['<C-f>'],
-      \ }
 
 " cocopon/vaffle.vim: {{{2
 nnoremap - :Vaffle<CR>
