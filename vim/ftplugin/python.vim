@@ -6,7 +6,8 @@ nmap <C-l><C-j> <C-l><CR>
 nmap <C-l><C-k> <C-l>iz
 
 " prabirshrestha/vim-lsp
-nmap gd <Plug>(lsp-definition)
+nmap <buffer> gd <Plug>(lsp-definition)
+nmap <buffer> gD <Plug>(lsp-peek-definition)
 
 " jeetsukumaran/vim-pythonsense
 vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
