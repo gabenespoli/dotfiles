@@ -4,10 +4,10 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-" Plugin Manager: {{{1
+" Plugins: {{{1
 call plug#begin('~/.vim/plugged')
 
-" Editing: {{{2
+" Editing:
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -18,7 +18,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
 
-" General: {{{2
+" General:
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gabenespoli/gv.vim'
@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cocopon/vaffle.vim'
 
-" Coding: {{{2
+" Coding:
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -39,19 +39,19 @@ Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
-" Writing: {{{2
+" Writing:
 Plug 'godlygeek/tabular',
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 Plug '~/bin/vim/vim-toodo'
 
-" Tmux: {{{2
+" Tmux:
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 
-" My Plugins: {{{2
+" My Plugins:
 Plug 'gabenespoli/vim-colors-snooker'
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
@@ -61,8 +61,7 @@ Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
 
-" General Settings: {{{1
-" System: {{{2
+" General: {{{1
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=300
 set undofile
@@ -74,8 +73,6 @@ if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endi
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 let g:python_host_prog = expand('~').'/.pyenv/versions/neovim-2.7.15/bin/python'
 let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim-3.7.7/bin/python'
-
-" Options: {{{2
 set hidden
 set nomodeline
 set number relativenumber
@@ -102,7 +99,7 @@ set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=BlexMono\ Nerd\ Font:h12,IBMPlexMono:h12,Source\ Code\ Pro:h12,Menlo:h12,Consolas:h12,Courier:h12
 
-" Status Line: {{{2
+" Status Line: {{{1
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
 endfunction
@@ -195,17 +192,16 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
 " Plugin Settings: {{{1
-" Colorscheme: {{{2
+" gabenespoli/vim-colors-snooker: {{{2
 let g:snooker_terminal_italics = 1
 colorscheme snooker
 nnoremap <silent> coC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
 
-" Editing: {{{2
-" tpope/vim-rsi: {{{3
+" tpope/vim-rsi: {{{2
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
 cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"
 
-" tpope/vim-surround: {{{3
+" tpope/vim-surround: {{{2
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
   execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
@@ -213,7 +209,7 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
-" gabenespoli/vim-unimpaired: {{{3
+" gabenespoli/vim-unimpaired: {{{2
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
 nnoremap com :set number!<CR>:set relativenumber!<CR>
 nnoremap <expr> cot
@@ -251,12 +247,11 @@ nnoremap <silent> <expr> <up>
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 nnoremap <leader>s 1z=
 
-" romainl/vim-qf {{{3
+" romainl/vim-qf: {{{2
 let g:qf_shorten_path = 0
 let g:qf_mapping_ack_style = 1
 
-" General: {{{2
-" tpope/vim-fugitive: {{{3
+" tpope/vim-fugitive: {{{2
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiff<CR>
 nnoremap gC :Gcommit<CR>
@@ -265,7 +260,7 @@ xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
 nnoremap <C-k><C-g> :Ggrep!<Space>
 
-" airblade/gitgutter: {{{3
+" airblade/gitgutter: {{{2
 nmap ga  <Plug>(GitGutterStageHunk)
 xmap ga  :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
@@ -288,13 +283,13 @@ function! GitGutterFoldToggle()
   endif
 endfunction
 
-" junegunn/gv.vim: {{{3
+" junegunn/gv.vim: {{{2
 nnoremap gL :GV --all<CR>
 xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
 
-" ctrlpvim/ctrlp.vim: {{{3
+" ctrlpvim/ctrlp.vim: {{{2
 nnoremap <C-k><C-t> :CtrlPTag<CR>
 nnoremap <C-k><C-b> :CtrlPBuffer<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -308,7 +303,7 @@ let g:ctrlp_prompt_mappings = {
  \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 
-" cocopon/vaffle.vim
+" cocopon/vaffle.vim: {{{2
 nnoremap - :Vaffle<CR>
 augroup vaffle
   autocmd!
@@ -328,8 +323,7 @@ if has('mac')
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
 
-" Coding:  {{{2
-" dense-analysis/ale: {{{3
+" dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_set_loclist = 0
@@ -347,7 +341,7 @@ augroup ale
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
 
-" prabirshrestha/asyncomplete:  {{{3
+" prabirshrestha/asyncomplete:  {{{2
 let g:asyncomplete_auto_popup = 0
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -359,18 +353,18 @@ inoremap <silent><expr> <TAB>
   \ asyncomplete#force_refresh()
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" prabirshrestha/vim-lsp:  {{{3
+" prabirshrestha/vim-lsp:  {{{2
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_fold_enabled = 0
 
-" liuchengxu/vista.vim:  {{{3
+" liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {
         \ 'python': 'vim_lsp',
         \ }
 let g:vista_ignore_kinds = ['Variable']
 let g:vista_sidebar_width = 40
 
-" majutsushi/tagbar: {{{3
+" majutsushi/tagbar: {{{2
 nnoremap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
@@ -384,14 +378,14 @@ let g:tagbar_map_togglefold = ['za']
 let g:is_pythonsense_suppress_object_keymaps = 1
 
 " Writing: {{{2
-" tpope/vim-markdown (built-in): {{{3
+" tpope/vim-markdown (built-in): {{{2
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
 
-" godlygeek/tabular: {{{3
+" godlygeek/tabular: {{{2
 nnoremap <leader>\| :Tabularize /\|<CR>
 
-" rickhowe/diffchar: {{{3
+" rickhowe/diffchar: {{{2
 let g:DiffPairVisible = 0
 let g:DiffUpdate = 0
 let g:DiffModeSync = 0
@@ -404,10 +398,10 @@ nmap <Plug> <Plug>JumpDiffCharNextEnd
 nmap dO     <Plug>GetDiffCharPair
 nmap dP     <Plug>PutDiffCharPair
 
-" gabenespoli/vim-criticmarkup: {{{3
+" gabenespoli/vim-criticmarkup: {{{2
 let g:criticmarkup#disable#highlighting = 1
 
-" jszakmeister/markdown2ctags: {{{3
+" jszakmeister/markdown2ctags: {{{2
 let g:tagbar_type_markdown = {
   \ 'ctagstype': 'markdown',
   \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
@@ -418,8 +412,7 @@ let g:tagbar_type_markdown = {
   \ 'sort': 0,
 \ }
 
-" Tmux: {{{2
-" christoomey/vim-tmux-navigator: {{{3
+" christoomey/vim-tmux-navigator: {{{2
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if has('mac')
@@ -457,7 +450,7 @@ if has('nvim')
   tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime: {{{3
+" jpalardy/vim-slime: {{{2
 let g:slime_no_mappings = 1
 xmap <C-l>      <Plug>SlimeRegionSend
 nmap <C-l>      <Plug>SlimeMotionSend
@@ -469,12 +462,11 @@ if exists('$TMUX')
 endif
 nnoremap g<C-l> <C-l>
 
-" My Plugins: {{{2
-" gabenespoli/vim-mutton
+" gabenespoli/vim-mutton: {{{2
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
-" Lilypond
+" Lilypond: {{{2
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
