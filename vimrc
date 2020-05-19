@@ -43,6 +43,7 @@ Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
 " Writing:
 Plug 'godlygeek/tabular',
+Plug 'junegunn/vim-easy-align'
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
@@ -254,8 +255,8 @@ xnoremap zo :diffget<CR>
 nnoremap <C-k><C-g> :Ggrep!<Space>
 
 " airblade/gitgutter: {{{2
-nmap ga  <Plug>(GitGutterStageHunk)
-xmap ga  :GitGutterStageHunk<CR>
+nmap ga <Plug>(GitGutterStageHunk)
+xmap ga :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap =  <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
@@ -393,6 +394,9 @@ let g:markdown_folding = 1
 
 " godlygeek/tabular: {{{2
 nnoremap <leader>\| :Tabularize /\|<CR>
+
+" junegunn/vim-easy-align: {{{2
+nmap cg <Plug>(EasyAlign)
 
 " rickhowe/diffchar: {{{2
 let g:DiffPairVisible = 0
