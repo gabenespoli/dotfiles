@@ -314,6 +314,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " cocopon/vaffle.vim: {{{2
+let g:vaffle_force_delete = 1
 nnoremap - :Vaffle<CR>
 augroup vaffle
   autocmd!
