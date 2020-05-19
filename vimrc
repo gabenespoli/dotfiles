@@ -17,6 +17,7 @@ Plug 'gabenespoli/vim-unimpaired'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
+Plug 'junegunn/vim-peekaboo'
 
 " General:
 Plug 'tpope/vim-fugitive'
