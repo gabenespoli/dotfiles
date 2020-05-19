@@ -31,9 +31,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 # Linux options {{{1
 else
-  export PYENV_ROOT="$HOME/.pyenv"
   export PATH="/usr/local/lib:/usr/local/bin:$PATH"
-  export PATH="$PYENV_ROOT/bin:$PATH"
   alias ls="ls -Flh --color --group-directories-first"
   alias ll="ls -Flh --color --group-directories-first"
   alias la="ls -Flha --color --group-directories-first"
@@ -56,9 +54,7 @@ export TERM=xterm-256color-italic
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # python / spark
-export PYENV_VERSION=miniconda3-latest
 export PYSPARK_DRIVER_PYTHON=ipython
-export SPARK_HOME="$HOME/.pyenv/versions/miniconda3-latest/envs/sonovads/lib/python3.5/site-packages/pyspark"
 # export MPLBACKEND="module://itermplot"
 # export ITERMPLOT=rv
 
@@ -177,12 +173,4 @@ sourcex "$HOME/.git-completion.bash"
 
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     source $HOME/.bash-git-prompt/gitprompt.sh
-fi
-
-# stuff that should be at the end {{{1
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-if command -v pyenv-virtualenv 1>/dev/null 2>&1; then
-  eval "$(pyenv virtualenv-init -)"
 fi

@@ -91,73 +91,37 @@ ln -sf "$HOME"/.vim/autoload/plug.vim "$HOME"/.config/nvim/autoload/
 
 nvim +PlugInstall +qall
 
-# python {{{1
-echo "-- Setting up python and pyenv..."
-
-# Mac
-if [ "$(uname)" == "Darwin" ]; then
-  # https://github.com/pyenv/pyenv/wiki
-  brew install openssl readline sqlite3 xz zlib
-  sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
-  brew install pyenv pyenv-virtualenv
-
-# Linux
-else
-  sudo apt-get update
-  sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-fi
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# install versions of python
-pyenv install 2.7.15
-pyenv install 3.7.7
-pyenv install miniconda3-latest
-
-# envs for neovim
-pyenv virtualenv 2.7.15 neovim-2.7.15
-pyenv activate neovim-2.7.15
-pip install --upgrade pip
-pip install neovim pynvim
-pyenv deactivate
-
-pyenv virtualenv 3.7.7 neovim-3.7.7
-pyenv activate neovim-3.7.7
-pip install --upgrade pip
-pip install neovim pynvim python-language-server jedi==0.15.2
-pyenv deactivate
-
-# env for data science
-pip install --upgrade pip
-conda install pandas matplotlib seaborn bokeh scikit-learn \
-  ipython jupyter jupyterlab sphinx \
-  flake8 black pytest
-pip install pyspark-stubs databricks-cli
-
-# envs for databricks (python 3.5.2, spark 2.4.0, databricks 5.1)
-pyenv shell miniconda3-latest
-
-conda create -y --name spark python=3.5
-conda activate spark
-pip install --upgrade pip
-conda install pyspark ipython jupyter pytest flake8
-pip install pyspark-stubs
-conda deactivate
-
-conda create -y --name spark-databricks python=3.5
-conda activate spark-databricks
-pip install --upgrade pip
-pip install --upgrade databricks-connect==5.1.*
-cp "$HOME"/lib/databricks-connect-jars/*.jar "$(databricks-connect get-jar-dir)"
-conda deactivate
-
-pyenv shell --unset
-
-# Spectacle.app
+# Spectacle.app  {{{1
 echo "Setting shortcuts for Spectacle.app..."
 [ -e "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json ] && \
   mv -v "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json "$DOTFILES"/bak/spectacle.json
 cp -r "$DOTFILES"/init/spectacle.json "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json 2>/dev/null
+
+# python with conda {{{1
+# https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p $HOME/miniconda
+conda init
+conda update -n base -c defaults conda
+
+# base env
+conda activate base
+conda install -y \
+  flake8 mypy pydocstyle black isort pytest \
+  pandas matplotlib seaborn bokeh scikit-learn \
+  ipython jupyter jupyterlab \
+  python-language-server jedi \
+  sphinx sphinx-rtd-theme
+pip install pyspark-stubs databricks-cli
+
+# env for neovim
+conda create -y -n neovim3
+conda activate neovim3
+conda install -y \
+  flake8 mypy pydocstyle black isort \
+  python-language-server jedi
+pip install neovim pynvim
+
+conda create -y -n neovim2 python=2.7.15
+conda activate neovim2
+pip install neovim pynvim
