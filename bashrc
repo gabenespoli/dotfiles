@@ -23,8 +23,6 @@ if [ "$(uname)" == "Darwin" ]; then
   export PATH="$HOME/Library/Haskell/bin:$PATH"
   export PATH="/usr/local/lib:$PATH"
   export PATH="/usr/local/bin:$PATH"
-  alias agi="brew install"
-  alias agu="brew update && brew upgrade && brew cleanup"
   alias ql='qlmanage -p &>/dev/null'
   alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
   alias openx="open -a Microsoft\ Excel.app"
@@ -35,8 +33,6 @@ else
   alias ls="ls -Flh --color --group-directories-first"
   alias ll="ls -Flh --color --group-directories-first"
   alias la="ls -Flha --color --group-directories-first"
-  alias agi="sudo apt-get -y install"
-  alias agu="sudo apt-get update && sudo apt-get upgrade"
   alias sambastart="sudo /etc/init.d/samba start"
   alias d="dropbox"
   alias ds="dropbox status"
@@ -44,7 +40,7 @@ else
 fi
 
 # Environment {{{1
-LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'; export LS_COLORS
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export EDITOR='nvim'
@@ -67,20 +63,19 @@ alias lt="tree -L 2 --dirsfirst"
 alias grep="grep --color"
 alias df="df -h"
 alias du="du -hs"
-alias wa="tmux attach"
-alias wd="tmux detach"
+alias ta="tmux attach"
+alias td="tmux detach"
+alias wa="echo Use ta instead."
+alias wd="tmux Use td instead."
 alias fold="fold -s"
 alias exe="chmod u+x"
-function catcsv() { call="awk -F \",\" '{print $"$2"}' $1"; eval ${call} ; } # usage: catcsv csvFilename columnNumber
 alias t="todo.sh"
 alias T="$EDITOR $HOME/todo/todo.txt"
 alias motes="cd $HOME/notes && mvim $HOME/notes/$(date +%Y-%m-%d).txt"
 alias octave="octave --no-gui"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
-function ranger() { /usr/local/bin/ranger --choosedir=$HOME/.rangerdir $@; cd "`cat $HOME/.rangerdir`" ; }
 alias weather="curl http://wttr.in/Kitchener"
-alias keys='keyboard | grep -v "Control\|Semicolon" && keyboard | grep -v "Command\|Semicolon" && keyboard | grep -v "Command\|Control"'
 
 # Change working dir in shell to last dir in lf on exit (adapted from ranger).
 lfcd () {
@@ -100,16 +95,9 @@ lfcd () {
 # python {{{1
 alias ca="conda deactivate && conda activate"
 alias cx="conda deactivate"
-alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias pudb="python -m pudb.run"
 alias jn="jupyter notebook"
 alias jl="jupyter lab"
-alias pylab="ipython --pylab -i -c '\
-  import pandas as pd; \
-  pd.options.display.width=0; \
-  pd.options.display.max_rows=15; \
-  pd.options.display.max_columns=9 \
-  '"
 
 # git {{{1
 alias gst="git status -sb"
@@ -141,8 +129,8 @@ alias grr="echo 'Use gR instead.'"
 alias gR="git reset HEAD^ && gs"
 alias gwip="git add -A && git commit -m 'WIP'"
 
-alias Gl='$EDITOR +"GV --format=%h\ %s%d"'
-alias GL='$EDITOR +"GV --format=%h\ %s%d --all"'
+alias Gl="$EDITOR +'GV'"
+alias GL="$EDITOR +'GV --all'"
 alias Gs="$EDITOR -c ':Gedit :'"
 
 # fzf {{{1
