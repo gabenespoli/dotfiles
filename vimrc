@@ -42,7 +42,6 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
 " Writing:
-Plug 'godlygeek/tabular',
 Plug 'junegunn/vim-easy-align'
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
@@ -392,9 +391,6 @@ let g:is_pythonsense_suppress_object_keymaps = 1
 " tpope/vim-markdown (built-in): {{{2
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
-
-" godlygeek/tabular: {{{2
-nnoremap <leader>\| :Tabularize /\|<CR>
 
 " junegunn/vim-easy-align: {{{2
 nmap cg <Plug>(EasyAlign)
