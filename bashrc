@@ -20,7 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
   fi
   alias lsa="la"
   # custom path
-  export PATH="$HOME/Library/Haskell/bin:$PATH"
   export PATH="/usr/local/lib:$PATH"
   export PATH="/usr/local/bin:$PATH"
   alias ql='qlmanage -p &>/dev/null'
