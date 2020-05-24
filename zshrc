@@ -141,7 +141,34 @@ sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 
 # Prompt {{{1
-PROMPT="%F{blue}%~%f"$'\n'"%K{black}%@ %%>%k "
+
+autoload -Uz compinit && compinit
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+# zstyle ':vcs_info:git:*' formats '%b'
+# zstyle ':vcs_info:git*' formats "%{$fg[grey]%}%s %{$reset_color%}%r/%S%{$fg[grey]%} %{$fg[blue]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
+# zstyle ':vcs_info:git*' actionformats "%s  %r/%S %b %m%u%c "
+zstyle ':vcs_info:git*' formats "[%F{green}%b%m%F{red}%u%F{green}%c%f] "
+zstyle ':vcs_info:git*' actionformats "[%F{green}%b%f (%a)] "
+# PROMPT='${vcs_info_msg_0_} % '
+PROMPT="%F{blue}%~%f "'${vcs_info_msg_0_}'$'\n'"%K{black}%F{white}%@ %%>%k%f "
+
+
+# Keybindings {{{1
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+
+
+# End {{{1
+echo "Sourced zshrc."
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
