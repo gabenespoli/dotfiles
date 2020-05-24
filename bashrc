@@ -19,9 +19,6 @@ if [[ $(uname) == "Darwin" ]]; then
     alias la="ls -Flha"
   fi
   alias lsa="la"
-  alias ql='qlmanage -p &>/dev/null'
-  alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
-  alias openx="open -a Microsoft\ Excel.app"
 
 # Linux options {{{1
 else
@@ -31,7 +28,6 @@ else
   alias sambastart="sudo /etc/init.d/samba start"
   alias d="dropbox"
   alias ds="dropbox status"
-  alias matlab="matlab -nosplash -nodesktop"
 fi
 
 # Path {{{1
