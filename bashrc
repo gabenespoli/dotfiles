@@ -19,17 +19,13 @@ if [[ $(uname) == "Darwin" ]]; then
     alias la="ls -Flha"
   fi
   alias lsa="la"
-  # custom path
-  export PATH="/usr/local/lib:$PATH"
-  export PATH="/usr/local/bin:$PATH"
   alias ql='qlmanage -p &>/dev/null'
   alias matlab="/Applications/MATLAB_R2017a.app/bin/matlab -nosplash -nodesktop"
   alias openx="open -a Microsoft\ Excel.app"
 
 # Linux options {{{1
 else
-  export PATH="/usr/local/lib:/usr/local/bin:$PATH"
-  alias ls="ls -Flh --color --group-directories-first"
+  alias ls="ls -F --color --group-directories-first"
   alias ll="ls -Flh --color --group-directories-first"
   alias la="ls -Flha --color --group-directories-first"
   alias sambastart="sudo /etc/init.d/samba start"
@@ -38,10 +34,14 @@ else
   alias matlab="matlab -nosplash -nodesktop"
 fi
 
-# Environment {{{1
-LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'; export LS_COLORS
+# Path {{{1
+export PATH="/usr/local/lib:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
+
+# Environment {{{1
+LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'; export LS_COLORS
 export EDITOR='nvim'
 export CLICOLOR=1
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
