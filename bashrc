@@ -165,3 +165,6 @@ else
   # https://ss64.com/bash/syntax-prompt.html
   PS1="\[\e[34m\]\w\[\e[0m\] $ "
 fi
+
+# End {{{1
+echo "Sourced bashrc."
