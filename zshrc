@@ -145,11 +145,7 @@ sourcex "$HOME/bin/network_aliases"
 sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 
-# prompt {{{1
+# Prompt {{{1
+PROMPT="%F{blue}%~%f"$'\n'"%K{black}%@ %%>%k "
 
 
-
-# if [ -f "$HOME/.zsh-git-prompt/zshrc.sh" ]; then
-#   source $HOME/.zsh-git-prompt/zshrc.sh
-#   PROMPT='%B%m%~%b$(git_super_status) %# '
-# fi
