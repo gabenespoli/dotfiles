@@ -158,6 +158,10 @@ sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 sourcex "$HOME/.git-completion.bash"
 
+# Prompt {{{1
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-    source $HOME/.bash-git-prompt/gitprompt.sh
+  source $HOME/.bash-git-prompt/gitprompt.sh
+else
+  # https://ss64.com/bash/syntax-prompt.html
+  PS1="\[\e[34m\]\w\[\e[0m\] $ "
 fi
