@@ -37,7 +37,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 
 # Environment {{{1
-LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'; export LS_COLORS
+export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
 export EDITOR='nvim'
 export CLICOLOR=1
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
