@@ -32,18 +32,13 @@ else
   alias ds="dropbox status"
 fi
 
-# Path {{{1
-export PATH="/usr/local/lib:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/local/bin:$PATH"
-
 # Environment {{{1
-export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
+export TERM=xterm-256color-italic
+export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/lib:$PATH"
 export EDITOR='nvim'
 export CLICOLOR=1
+export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
-export TERM=xterm-256color-italic
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # python / spark
