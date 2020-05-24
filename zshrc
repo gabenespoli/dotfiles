@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Mac options {{{1
 if [[ $(uname) == "Darwin" ]]; then
   # overwrite builtins with gnu ones
