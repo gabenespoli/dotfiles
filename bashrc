@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Mac options {{{1
-if [ "$(uname)" == "Darwin" ]; then
+if [[ $(uname) == "Darwin" ]]; then
   # overwrite builtins with gnu ones
   for gnu in coreutils findutils grep gnu-sed gawk; do
     export PATH="/usr/local/opt/$gnu/libexec/gnubin:$PATH"
