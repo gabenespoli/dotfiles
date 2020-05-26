@@ -36,22 +36,21 @@ c.InteractiveShell.colors = 'nocolor'
 
 # snooker base16 color maps
 # because the above breaks on new versions of ipython
-bg = '#1B1F1E'          # 0
-bg_light = '#2B302B'    # 10
-bg_sel = '#3C4137'     # 11
+bg = '#121615'          # NONE
+bg_light = '#2B302B'    # 0
+# bg_sel = '#3C4137'
 fg_com = '#6A6A5B'   # 8
-fg_dark = '#5F785C'      # 12
-fg = '#ADAD9B'      # 7
-fg_light = '#CDC08B'  # 13
-fg_bright = '#CCCCCC'   # 15
+# fg_dark = '#5F785C'
+fg = '#ADAD9B'      # NONE
+fg_light = '#CDC08B'  # 7
+fg_bright = '#E5E5D2'   # 15
 red = '#E52E1A'       # 1
-orange = '#B98036'        # 9
-yellow = '#EBBB2B'      # 3
 green = '#25C528'   # 2
-cyan = '#21C296'         # 6
+yellow = '#EBBB2B'      # 3
 blue = '#0094CF'     # 4
 pink = '#DF7376'       # 5
-table = '#5D4124'   # 14
+cyan = '#21C296'         # 6
+orange = '#B98036'        # 9 (brown)
 
 from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, Text, \
@@ -62,7 +61,7 @@ class base16_snooker(Style):
     default_style = fg
 
     background_color = bg
-    highlight_color = bg_sel
+    highlight_color = bg_light
 
     styles = {
         # No corresponding class for the following:
