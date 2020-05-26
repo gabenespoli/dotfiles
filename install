@@ -21,7 +21,7 @@ echo "-- Installing Homebrew..."
 echo "-- Installing Homebrew packages..."
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
 brew install tmux neovim lf git ctags tree jq cloc
-brew install tig bat ag ripgrep fzf
+brew install tig bat ag ripgrep fzf npm
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 
@@ -29,6 +29,10 @@ brew cask install xquartz
 brew cask install alacritty
 brew cask install spectacle
 brew cask install karabiner-elements
+
+npm install -g bash-language-server
+npm install -g vim-language-server
+npm install -g yaml-language-server
 
 # bash {{{1
 echo "-- Adding the new bash shell to the list of allowed shells"
