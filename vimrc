@@ -27,6 +27,7 @@ Plug 'gabenespoli/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'cocopon/vaffle.vim'
+if has('nvim') | Plug 'norcalli/nvim-colorizer.lua' | endif
 
 " Coding:
 Plug 'dense-analysis/ale'
