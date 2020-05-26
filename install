@@ -113,10 +113,10 @@ conda activate base
 conda install -y \
   flake8 mypy pydocstyle black isort pytest \
   pandas matplotlib seaborn bokeh scikit-learn \
-  ipython jupyter jupyterlab \
   python-language-server jedi \
+  ipython jupyter jupyterlab \
   sphinx sphinx-rtd-theme
-pip install pyspark-stubs databricks-cli
+pip install jupytext pyspark-stubs databricks-cli
 
 # env for neovim
 conda create -y -n neovim3
