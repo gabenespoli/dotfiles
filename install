@@ -112,7 +112,7 @@ conda update -n base -c defaults conda
 conda activate base
 conda install -y \
   flake8 mypy pydocstyle black isort pytest \
-  pandas matplotlib seaborn bokeh scikit-learn \
+  numpy pandas matplotlib seaborn bokeh dash scikit-learn \
   python-language-server jedi \
   ipython jupyter jupyterlab \
   sphinx sphinx-rtd-theme
