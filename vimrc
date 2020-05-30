@@ -388,6 +388,28 @@ let g:tagbar_map_togglefold = ['za']
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
 
+augroup pythonsense
+  autocmd!
+  autocmd FileType python vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
+  autocmd FileType python omap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
+  autocmd FileType python sunmap <buffer> aC
+  autocmd FileType python vmap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
+  autocmd FileType python omap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
+  autocmd FileType python sunmap <buffer> iC
+  autocmd FileType python vmap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
+  autocmd FileType python omap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
+  autocmd FileType python sunmap <buffer> af
+  autocmd FileType python vmap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
+  autocmd FileType python omap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
+  autocmd FileType python sunmap <buffer> if
+  autocmd FileType python omap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
+  autocmd FileType python vmap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
+  autocmd FileType python sunmap <buffer> ad
+  autocmd FileType python omap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
+  autocmd FileType python vmap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
+  autocmd FileType python sunmap <buffer> id
+augroup END
+
 " Writing: {{{2
 " tpope/vim-markdown (built-in): {{{2
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
