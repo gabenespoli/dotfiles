@@ -55,7 +55,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 
 " My Plugins:
-Plug 'gabenespoli/vim-colors-snooker'
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-neovim-defaults'
@@ -101,6 +100,8 @@ set clipboard=unnamed
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=BlexMono\ Nerd\ Font:h12,IBMPlexMono:h12,Source\ Code\ Pro:h12,Menlo:h12,Consolas:h12,Courier:h12
+let g:snooker_terminal_italics = 1
+colorscheme snooker
 
 " Status Line: {{{1
 function! SSHIndicator() abort
@@ -186,11 +187,6 @@ nnoremap <expr> zT exists(':Ggrep') == 2 ?
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
 
 " Plugin Settings: {{{1
-" gabenespoli/vim-colors-snooker: {{{2
-let g:snooker_terminal_italics = 1
-colorscheme snooker
-nnoremap <silent> coC :SnookerContrastToggle<CR>:echo g:snooker_high_contrast<CR>
-
 " tpope/vim-rsi: {{{2
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
 cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"

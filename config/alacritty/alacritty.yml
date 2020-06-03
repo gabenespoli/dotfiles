@@ -15,16 +15,16 @@ colors:
   normal:
     black: '#2B302B'
     red: '#E52E1A'
-    green: '#25C528'
-    yellow: '#EBBB2B'
-    blue: '#0094CF'
-    magenta: '#DF7376'
-    cyan: '#21C296'
+    green: '#4B9B24'
+    yellow: '#B98036'
+    blue: '#0085BA'
+    magenta: '#7A7CCF'
+    cyan: '#1DAE87'
     white: '#CDC08B'
 
   bright:
     black: '#6A6A5B'
-    red: '#B98036'
+    red: '#E5941A'
     green: '#25C528'
     yellow: '#EBBB2B'
     blue: '#0094CF'
