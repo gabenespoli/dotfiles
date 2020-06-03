@@ -35,7 +35,7 @@ colors:
 # Font configuration
 font:
   normal:
-    family: 'Cascadia Code'
+    family: 'IBM Plex Mono'
     style: Regular
   size: 12.0
 
