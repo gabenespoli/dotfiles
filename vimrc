@@ -47,7 +47,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
 Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
 Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
-Plug '~/bin/vim/vim-toodo'
 
 " Tmux:
 Plug 'tmux-plugins/vim-tmux-focus-events'
