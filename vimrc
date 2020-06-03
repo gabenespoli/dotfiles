@@ -310,10 +310,11 @@ let g:fzf_action = {
 
 " cocopon/vaffle.vim: {{{2
 let g:vaffle_force_delete = 1
-nnoremap - :Vaffle<CR>
+nnoremap - :Vaffle %s<CR>
+nnoremap <leader>- :Vaffle<CR>
 augroup vaffle
   autocmd!
-  autocmd FileType vaffle nmap <buffer> K <Plug>(vaffle-mkdir)
+  autocmd FileType vaffle nmap <buffer> O <Plug>(vaffle-mkdir)
   autocmd FileType vaffle nmap <buffer> e <Plug>(vaffle-new-file)
   autocmd FileType vaffle nmap <buffer> zh <Plug>(vaffle-toggle-hidden)
   autocmd FileType vaffle nmap <buffer> . <Plug>(vaffle-fill-cmdline)
