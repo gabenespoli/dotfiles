@@ -8,13 +8,11 @@ if [[ $(uname) == "Darwin" ]]; then
     export MANPATH="/usr/local/opt/$gnu/libexec/gnuman:$MANPATH"
   done
   if hash gls 2> /dev/null; then
-    alias ls="gls -Flh --color --group-directories-first"
-    alias lS="gls --color --group-directories-first"
+    alias ls="gls -F --color --group-directories-first"
     alias ll="gls -Flh --color --group-directories-first"
     alias la="gls -Flha --color --group-directories-first"
   else
-    alias ls="ls -Flh"
-    alias lS="ls"
+    alias ls="ls -F"
     alias ll="ls -Flh"
     alias la="ls -Flha"
   fi
