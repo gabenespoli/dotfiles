@@ -16,7 +16,6 @@ if [[ $(uname) == "Darwin" ]]; then
     alias ll="ls -Flh"
     alias la="ls -Flha"
   fi
-  alias lsa="la"
 
 # Linux options {{{1
 else
