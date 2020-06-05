@@ -18,6 +18,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
 Plug 'junegunn/vim-peekaboo'
+Plug 'kshenoy/vim-signature'
 
 " General:
 Plug 'tpope/vim-fugitive'
@@ -201,7 +202,6 @@ endfor
 
 " gabenespoli/vim-unimpaired: {{{2
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap com :set number!<CR>:set relativenumber!<CR>
 nnoremap <expr> cot
       \ &softtabstop==2 ?
       \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
@@ -240,6 +240,9 @@ nnoremap <leader>s 1z=
 " romainl/vim-qf: {{{2
 let g:qf_shorten_path = 0
 let g:qf_mapping_ack_style = 1
+
+" kshenoy/vim-signature: {{{2
+nnoremap com :SignatureToggle<CR>
 
 " tpope/vim-fugitive: {{{2
 nnoremap gs :Gedit :<CR>
