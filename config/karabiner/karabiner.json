@@ -1727,18 +1727,18 @@
                                     "key_code": "7",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
+                                        "key_code": "4",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1756,18 +1756,18 @@
                                     "key_code": "8",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
+                                        "key_code": "1",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1785,18 +1785,18 @@
                                     "key_code": "9",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
+                                        "key_code": "2",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1814,18 +1814,18 @@
                                     "key_code": "0",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
+                                        "key_code": "3",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1834,7 +1834,7 @@
                         ]
                     },
                     {
-                        "description": "Tab Layer [tab+1234 -> command+option+control[+shift]+dn/up/left/right] (for Spectacle.app)",
+                        "description": "Tab Layer [tab+123456 -> command+option+control[+shift]+dn/up/left/right/top/bottom] (for Spectacle.app)",
                         "manipulators": [
                             {
                                 "from": {
@@ -1877,50 +1877,21 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "1",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
+                                        "key_code": "1",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1938,18 +1909,18 @@
                                     "key_code": "2",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
+                                        "key_code": "2",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1967,18 +1938,105 @@
                                     "key_code": "3",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
+                                        "key_code": "3",
                                         "modifiers": [
                                             "command",
                                             "option",
-                                            "control"
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": [
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "5",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": [
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "6",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": [
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
                                         ]
                                     }
                                 ],
