@@ -5101,10 +5101,74 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "delete_forward"
+                                "key_code": "f1"
                             },
                             "to": {
-                                "consumer_key_code": "scan_next_track"
+                                "consumer_key_code": "display_brightness_decrement"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f2"
+                            },
+                            "to": {
+                                "consumer_key_code": "display_brightness_increment"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f3"
+                            },
+                            "to": {
+                                "key_code": "mission_control"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f4"
+                            },
+                            "to": {
+                                "key_code": "launchpad"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f5"
+                            },
+                            "to": {
+                                "key_code": "illumination_decrement"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f6"
+                            },
+                            "to": {
+                                "key_code": "illumination_increment"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f7"
+                            },
+                            "to": {
+                                "consumer_key_code": "rewind"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f8"
+                            },
+                            "to": {
+                                "consumer_key_code": "fastforward"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f9"
+                            },
+                            "to": {
+                                "consumer_key_code": "play_or_pause"
                             }
                         },
                         {
@@ -5371,6 +5435,19 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 45091,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -5419,7 +5496,7 @@
                         "key_code": "f6"
                     },
                     "to": {
-                        "key_code": "apple_display_brightness_increment"
+                        "key_code": "illumination_increment"
                     }
                 },
                 {
@@ -5435,7 +5512,7 @@
                         "key_code": "f8"
                     },
                     "to": {
-                        "consumer_key_code": "fastforward"
+                        "consumer_key_code": "play_or_pause"
                     }
                 },
                 {
@@ -5443,7 +5520,7 @@
                         "key_code": "f9"
                     },
                     "to": {
-                        "consumer_key_code": "play_or_pause"
+                        "consumer_key_code": "fastforward"
                     }
                 },
                 {
