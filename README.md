@@ -1,15 +1,17 @@
 # dotfiles
 
+<a name="keyboard-layers">
+
 ## Keyboard Layers
 
 1. [Main Layer](#main)
 2. [Control Layer](#control)
 3. [Command Layer](#command)
 4. [Semicolon Layer](#semicolon) (Arrows)
-5. [Tab Layer](#tab) (Window Management)
-6. [Quote Layer](#quote) (Number Pad)
-7. [Function Layer](#function) (Mac Function Keys)
-8. [Escape Layer](#escape) (Function Keys)
+5. [Quote Layer](#quote) (Number Pad)
+6. [Tab Layer](#tab) (Window Management)
+7. [Escape Layer](#escape) (Function Keys)
+8. [Function Layer](#function) (Mac Function Keys)
 9. [Option Layer](#option)
 
 <a name="main">
@@ -39,8 +41,7 @@
 
 ### Control Layer
 
-Made to be like terminal cursor navigation, and enforced pretty much
-system-wide.
+Bash keyboard shortcuts like [these](https://ss64.com/bash/syntax-keyboard.html).
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
@@ -65,8 +66,9 @@ system-wide.
 
 ### Command Layer
 
-Same as the control layer. The "Command" commands that are lost are remapped in
-the Semicolon and Tab Layers.
+Bash keyboard shortcuts like
+[these](https://ss64.com/bash/syntax-keyboard.html). The "Command" maps
+that are lost are remapped in the Semicolon and Tab Layers.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
@@ -91,8 +93,10 @@ the Semicolon and Tab Layers.
 
 ### Semicolon Layer
 
-Arrow keys and navigation cluster. Also the "Command" commands that were lost
-to the Command Layer.
+Arrow keys and navigation cluster, window management with
+[Spectacle](https://www.spectacleapp.com/), and the "Command" commands that
+were lost in the Command Layer. In Finder.app, `;-u` and `;-o` actually send
+`Cmd+Up` and `Cmd+Dn`, to navigate up and down the directory tree.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
@@ -109,33 +113,6 @@ to the Command Layer.
 |                |       |       |       |       |       |       |       |       |       |       |                    |
 |---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
 |         |         |         |                                               |         |         |         |         |
-|         |         |         |                                               |         |         |         |         |
-'---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
-```
-
-<a name="tab">
-
-### Tab Layer
-
-Number pad and window management (with
-[Spectacle](https://www.spectacleapp.com/)). Also the "Command" commands that
-were lost to the Command Layer.
-
-```
-,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
-| Win   | Win   | Win   | Win   | Win   | Win   | Win   |       |       | *     |       | -     | +     |             |
-| Next  │ Full  | Left  | Right |Center | Top   |Bottom |       |       |       |       |       |       |             |
-|-------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----------|
-| ######## |       |       |       |       |       |       | 7     | 8     | 9     |       |       |       |          |
-| ######## |       |       |       |       |       |       |       |       |       |       |       |       |          |
-|----------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'----------|
-|              |       |       | Cmd+d | Cmd+f | Cmd+g | Bksp  | 4     | 5     | 6     |       |       |              |
-|              |       |       |       |       |       |       |       |       |       |       |       |              |
-|--------------'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'--------------|
-|                |       |       |       |       | Cmd+b | 1     | .     | 2     | 3     | /     |                    |  
-|                |       |       |       |       |       |       |       |       |       |       |                    |
-|---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
-|         |         |         |                            0                  |         |         |         |         |
 |         |         |         |                                               |         |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
@@ -165,34 +142,37 @@ Number pad.
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
 
-<a name="function">
+<a name="tab">
 
-### Function Layer
+### Tab Layer
 
-Volume and media keys.
+Window management with [Spectacle](https://www.spectacleapp.com/) and the
+"Command" commands that were lost in the Command Layer.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
-|       |Bright |Bright |Mission|Launch-|Illum. |Illum. |Rewind | Play/ |Fast-  |Volume |Volume |Volume |             |
-|       │ Up    | Down  |Control| pad   | Down  | Up    |       | Pause |forward| Mute  | Down  | Up    |             |
+| Win   | Win   | Win   | Win   | Win   | Win   | Win   |       |       |       |       |       |       |             |
+| Next  │ Full  | Left  | Right |Center | Top   |Bottom |       |       |       |       |       |       |             |
 |-------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----------|
-|          |       |       |       |       |       |       |       |       |       |       |       |       |          |
-|          |       |       |       |       |       |       |       |       |       |       |       |       |          |
+| ######## |       |       |       |       |       |       |       |       |       |       |       |       |          |
+| ######## |       |       |       |       |       |       |       |       |       |       |       |       |          |
 |----------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'----------|
-|              |       |       |       |       |       |       |       |       |       |       |       |              |
+|              |       |       | Cmd+d | Cmd+f | Cmd+g |       |       |       |       |       |       |              |
 |              |       |       |       |       |       |       |       |       |       |       |       |              |
 |--------------'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'--------------|
-|                |       |       |       |       |       |       |       |       |       |       |                    |  
+|                |       |       |       |       | Cmd+b |       |       |       |       |       |                    |  
 |                |       |       |       |       |       |       |       |       |       |       |                    |
 |---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
-|         |         |         |                                               |         | ####### |         |         |
-|         |         |         |                                               |         | ####### |         |         |
+|         |         |         |                                               |         |         |         |         |
+|         |         |         |                                               |         |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
 
 <a name="escape">
 
 ### Escape Layer
+
+Actual function keys.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
@@ -210,6 +190,31 @@ Volume and media keys.
 |---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
 |         |         |         |                                               |         |         |         |         |
 |         |         |         |                                               |         |         |         |         |
+'---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
+```
+
+<a name="function">
+
+### Function Layer
+
+Mac function keys for volume and stuff.
+
+```
+,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
+|       |Bright |Bright |Mission|Launch-|Illum. |Illum. |Rewind | Play/ |Fast-  |Volume |Volume |Volume |             |
+|       │ Up    | Down  |Control| pad   | Down  | Up    |       | Pause |forward| Mute  | Down  | Up    |             |
+|-------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----------|
+|          |       |       |       |       |       |       |       |       |       | Play/ |Bright |Bright |          |
+|          |       |       |       |       |       |       |       |       |       | Pause | Down  | Up    |          |
+|----------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'----------|
+|              |       |       |       |       |       |       |       |       |       |Rewind |Fast-  |              |
+|              |       |       |       |       |       |       |       |       |       |       |forward|              |
+|--------------'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'--------------|
+|                |       |       |       |       |       |       |       |       |       |       |                    |  
+|                |       |       |       |       |       |       |       |       |       |       |                    |
+|---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
+|         |         |         |                                               |         | ####### |         |         |
+|         |         |         |                                               |         | ####### |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
 
