@@ -2,6 +2,18 @@
 
 ## Keyboard Layers
 
+1. [Main Layer](#main)
+2. [Control Layer](#control)
+3. [Command Layer](#command)
+4. [Semicolon Layer](#semicolon) (Arrows)
+5. [Tab Layer](#tab) (Window Management)
+6. [Quote Layer](#quote) (Number Pad)
+7. [Function Layer](#function) (Mac Function Keys)
+8. [Escape Layer](#escape) (Function Keys)
+9. [Option Layer](#option)
+
+<a name="main">
+
 ### Main Layer
 
 ```
@@ -22,6 +34,8 @@
 |         |         |         |                                               |         |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
+
+<a name="control">
 
 ### Control Layer
 
@@ -47,6 +61,8 @@ system-wide.
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
 
+<a name="command">
+
 ### Command Layer
 
 Same as the control layer. The "Command" commands that are lost are remapped in
@@ -70,6 +86,8 @@ the Semicolon and Tab Layers.
 |         |         | ####### |                                               | ####### |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
+
+<a name="semicolon">
 
 ### Semicolon Layer
 
@@ -95,6 +113,8 @@ to the Command Layer.
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
 
+<a name="tab">
+
 ### Tab Layer
 
 Number pad and window management (with
@@ -104,7 +124,7 @@ were lost to the Command Layer.
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
 | Win   | Win   | Win   | Win   | Win   | Win   | Win   |       |       | *     |       | -     | +     |             |
-| Next  │ Full  | Left  | Right | Center| Top   | Bottom|       |       |       |       |       |       |             |
+| Next  │ Full  | Left  | Right |Center | Top   |Bottom |       |       |       |       |       |       |             |
 |-------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----------|
 | ######## |       |       |       |       |       |       | 7     | 8     | 9     |       |       |       |          |
 | ######## |       |       |       |       |       |       |       |       |       |       |       |       |          |
@@ -119,6 +139,8 @@ were lost to the Command Layer.
 |         |         |         |                                               |         |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
+
+<a name="quote">
 
 ### Quote Layer
 
@@ -143,6 +165,8 @@ Number pad.
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
 
+<a name="function">
+
 ### Function Layer
 
 Volume and media keys.
@@ -150,7 +174,7 @@ Volume and media keys.
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
 |       |Bright |Bright |Mission|Launch-|Illum. |Illum. |Rewind | Play/ |Fast-  |Volume |Volume |Volume |             |
-|       │Up     |Down   |Control| pad   |Down   |Up     |       | Pause |forward|Mute   |Down   |Up     |             |
+|       │ Up    | Down  |Control| pad   | Down  | Up    |       | Pause |forward| Mute  | Down  | Up    |             |
 |-------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----------|
 |          |       |       |       |       |       |       |       |       |       |       |       |       |          |
 |          |       |       |       |       |       |       |       |       |       |       |       |       |          |
@@ -165,6 +189,8 @@ Volume and media keys.
 |         |         |         |                                               |         | ####### |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
+
+<a name="escape">
 
 ### Escape Layer
 
@@ -186,6 +212,8 @@ Volume and media keys.
 |         |         |         |                                               |         |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
+
+<a name="option">
 
 ### Option Layer
 
