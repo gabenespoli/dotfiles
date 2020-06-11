@@ -314,7 +314,8 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org.\\.rstudio\\.RStudio$",
-                                            "^com\\.apple\\.ScreenSharing$"
+                                            "^com\\.apple\\.ScreenSharing$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -623,6 +624,43 @@
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Gmacs in RDC [control+w -> ctrl+bksp]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
                                         "modifiers": [
                                             "control"
                                         ]
