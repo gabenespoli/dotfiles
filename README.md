@@ -95,7 +95,7 @@ that are lost are remapped in the Semicolon and Tab Layers.
 Arrow keys and navigation cluster, window management with
 [Spectacle](https://www.spectacleapp.com/), and the "Command" commands that
 were lost in the Command Layer. In Finder.app, `;-u` and `;-o` actually send
-`Cmd+Up` and `Cmd+Dn`, to navigate up and down the directory tree.
+`Cmd-Up` and `Cmd-Dn`, to navigate up and down the directory tree.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
@@ -120,7 +120,7 @@ were lost in the Command Layer. In Finder.app, `;-u` and `;-o` actually send
 
 ### Tab Layer
 
-Window management with [Spectacle](https://www.spectacleapp.com/) and the
+Number pad, window management with [Spectacle](https://www.spectacleapp.com/) and the
 "Command" commands that were lost in the Command Layer.
 
 ```
@@ -171,7 +171,7 @@ Actual function keys.
 
 ### Function Layer
 
-Mac function keys for volume and stuff.
+Mac function keys.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
