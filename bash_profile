@@ -1,7 +1,7 @@
 # https://superuser.com/a/583502/225931
-if [ -f /etc/profile ]; then
+if [ -f /etc/bash_profile ]; then
   PATH=
-  source /etc/profile
+  source /etc/bash_profile
 fi
 
 if [ -f $HOME/.bashrc ]; then
