@@ -19,6 +19,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
 # Linux options {{{1
 else
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   alias ls="ls -F --color --group-directories-first"
   alias ll="ls -Flh --color --group-directories-first"
   alias la="ls -Flha --color --group-directories-first"
