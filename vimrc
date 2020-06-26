@@ -72,8 +72,12 @@ set directory=~/.config/nvim/swap/
 if !isdirectory(expand(&undodir))   | call mkdir(expand(&undodir),   'p') | endif
 if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
 if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
-let g:python_host_prog = expand('~').'/miniconda/envs/neovim2/bin/python'
-let g:python3_host_prog = expand('~').'/miniconda/envs/neovim3/bin/python'
+if has('macunix')
+  let g:python_host_prog = expand('~').'/miniconda/envs/neovim2/bin/python'
+  let g:python3_host_prog = expand('~').'/miniconda/envs/neovim3/bin/python'
+else
+  let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
+endif
 set hidden
 set nomodeline
 set number relativenumber
