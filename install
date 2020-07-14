@@ -110,13 +110,20 @@ conda update -n base -c defaults conda
 
 # base env
 conda activate base
-conda install -y \
+conda install -c conda-forge -y \
   flake8 mypy pydocstyle black isort pytest \
   numpy pandas matplotlib seaborn bokeh dash scikit-learn \
   python-language-server jedi \
   ipython jupyter jupyterlab \
   sphinx sphinx-rtd-theme
+conda install -c conda-forge -c plotly jupyter-dash
 pip install jupytext pyspark-stubs databricks-cli
+
+# plotly support in jupyter lab
+jupyter labextension install jupyterlab-plotly@4.8.1
+
+# rebuild to activate jupyter-dash extension
+jupyter lab build
 
 # env for neovim
 conda create -y -n neovim3
