@@ -8,20 +8,20 @@ if [[ $(uname) == "Darwin" ]]; then
     export MANPATH="/usr/local/opt/$gnu/libexec/gnuman:$MANPATH"
   done
   if hash gls 2> /dev/null; then
-    alias ls="gls -F --color --group-directories-first"
-    alias ll="gls -Flh --color --group-directories-first"
+    alias ll="gls -F --color --group-directories-first"
+    alias ls="gls -Flh --color --group-directories-first"
     alias la="gls -Flha --color --group-directories-first"
   else
-    alias ls="ls -F"
-    alias ll="ls -Flh"
+    alias ll="ls -F"
+    alias ls="ls -Flh"
     alias la="ls -Flha"
   fi
 
 # Linux options {{{1
 else
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  alias ls="ls -F --color --group-directories-first"
-  alias ll="ls -Flh --color --group-directories-first"
+  alias ll="ls -F --color --group-directories-first"
+  alias ls="ls -Flh --color --group-directories-first"
   alias la="ls -Flha --color --group-directories-first"
   alias sambastart="sudo /etc/init.d/samba start"
   alias d="dropbox"
