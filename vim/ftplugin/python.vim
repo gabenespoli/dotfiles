@@ -21,6 +21,8 @@ nnoremap <buffer> <localleader>a [zO# %%<CR><CR><Up>
 nnoremap <buffer> <localleader>b ]zo# %%<CR><CR><Up>
 nnoremap <buffer> <localleader>- o# %%<Esc>0
 
+nnoremap <buffer> <localleader>r :JupycentReadIpynb<CR>
+
 " Databricks:
 nnoremap <buffer> <localleader>o zjo<CR># COMMAND ----------<Esc>2ko<CR>
 nnoremap <buffer> <localleader>O [zO# COMMAND ----------<CR><CR><CR><Esc>ki
