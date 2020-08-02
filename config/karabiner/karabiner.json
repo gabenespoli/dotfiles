@@ -2163,7 +2163,7 @@
                         ]
                     },
                     {
-                        "description": "Tab Layer [tab+12qw456 -> command+option+control[+shift]+dn/up/left/right/top/bottom] (for Spectacle.app)",
+                        "description": "Tab Layer [tab+123456 -> command+option+control[+shift]+dn/up/left/right/top/bottom] (for Spectacle.app)",
                         "manipulators": [
                             {
                                 "from": {
@@ -2235,7 +2235,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "q",
+                                    "key_code": "2",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2264,7 +2264,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "w",
+                                    "key_code": "3",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2293,7 +2293,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "2",
+                                    "key_code": "4",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2514,7 +2514,7 @@
                         ]
                     },
                     {
-                        "description": "Tab Layer [tab+34 -> control+option+left/right]",
+                        "description": "Tab Layer [tab+qw -> control+option+left/right]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2525,7 +2525,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "q",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
@@ -2553,7 +2553,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "4",
+                                    "key_code": "w",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock",
