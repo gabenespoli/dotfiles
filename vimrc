@@ -27,6 +27,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gabenespoli/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish'
 
 " Coding:
 Plug 'dense-analysis/ale'
@@ -314,6 +315,13 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+" justinmk/vim-dirvish: {{{2
+let g:dirvish_mode = ':sort ,^.*[\/],'
+if has('mac')
+  let g:loaded_netrwPlugin = 1
+  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
+endif
 
 " dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0
