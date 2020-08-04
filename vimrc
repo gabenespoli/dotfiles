@@ -255,6 +255,7 @@ nnoremap gA :Gwrite<CR>
 xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
 nnoremap <C-k><C-g> :Ggrep!<Space>
+nnoremap co<Space> :Git co<Space>
 
 " airblade/gitgutter: {{{2
 nmap ga <Plug>(GitGutterStageHunk)
