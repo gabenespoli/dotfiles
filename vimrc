@@ -27,7 +27,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gabenespoli/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'cocopon/vaffle.vim'
 
 " Coding:
 Plug 'dense-analysis/ale'
@@ -315,28 +314,6 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
-
-" cocopon/vaffle.vim: {{{2
-let g:vaffle_force_delete = 1
-nnoremap - :Vaffle %s<CR>
-nnoremap <leader>- :Vaffle<CR>
-augroup vaffle
-  autocmd!
-  autocmd FileType vaffle nmap <buffer> O <Plug>(vaffle-mkdir)
-  autocmd FileType vaffle nmap <buffer> e <Plug>(vaffle-new-file)
-  autocmd FileType vaffle nmap <buffer> zh <Plug>(vaffle-toggle-hidden)
-  autocmd FileType vaffle nmap <buffer> . <Plug>(vaffle-fill-cmdline)
-  autocmd FileType vaffle nmap <buffer> x <Plug>(vaffle-toggle-current)
-  autocmd FileType vaffle nmap <buffer> s <Plug>(vaffle-open-selected-split)
-  autocmd FileType vaffle nmap <buffer> v <Plug>(vaffle-open-selected-vsplit)
-  autocmd FileType vaffle nmap <buffer> o l
-  autocmd FileType vaffle nmap <buffer> u h
-  autocmd FileType vaffle nmap <buffer> - q
-augroup END
-if has('mac')
-  let g:loaded_netrwPlugin = 1
-  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
-endif
 
 " dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0
