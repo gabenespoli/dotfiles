@@ -39,7 +39,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
-Plug 'tmhedberg/SimpylFold'
+Plug 'kalekundert/vim-coiled-snake'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
 " Writing:
