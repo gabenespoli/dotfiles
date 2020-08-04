@@ -105,7 +105,6 @@
                                         ],
                                         "optional": [
                                             "caps_lock",
-                                            "shift",
                                             "option",
                                             "command"
                                         ]
@@ -434,7 +433,8 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$"
+                                            "^io\\.alacritty$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -673,7 +673,7 @@
                         ]
                     },
                     {
-                        "description": "Gmacs in RDC [control+w -> ctrl+bksp]",
+                        "description": "Gmacs in RDC [lots of command/control replacements]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -700,6 +700,36 @@
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
                                         "modifiers": [
                                             "control"
                                         ]
