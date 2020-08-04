@@ -347,6 +347,7 @@ let g:ale_fixers = {
       \ 'python': ['black', 'isort'],
       \ }
 let g:ale_python_black_options = '--line-length=79'
+let g:ale_python_isort_options = '--line-width=79 --force-single-line-imports'
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
