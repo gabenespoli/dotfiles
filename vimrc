@@ -28,6 +28,7 @@ Plug 'gabenespoli/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
+Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 
 " Coding:
 Plug 'dense-analysis/ale'

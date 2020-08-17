@@ -30,3 +30,15 @@ nnoremap <buffer> e :edit <C-R>=expand('%')<CR>
 nnoremap <buffer> cp :!cp '<C-r><C-l>' '<C-r><C-l>'
 nnoremap <buffer> mv :!mv '<C-r><C-l>' '<C-r><C-l>'
 nnoremap <buffer> mk :!mkdir '<C-R>=expand('%')<CR>'<Left>
+
+" roginfarrer/vim-dirvish-dovish
+let g:dirvish_dovish_map_keys = 0
+unmap <buffer> p
+nmap <silent><buffer> i <Plug>(dovish_create_file)
+nmap <silent><buffer> I <Plug>(dovish_create_directory)
+nmap <silent><buffer> D <Plug>(dovish_delete)
+nmap <silent><buffer> r <Plug>(dovish_rename)
+nmap <silent><buffer> y <Plug>(dovish_yank)
+xmap <silent><buffer> y <Plug>(dovish_yank)
+nmap <silent><buffer> p <Plug>(dovish_copy)
+nmap <silent><buffer> P <Plug>(dovish_move)
