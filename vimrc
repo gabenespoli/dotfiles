@@ -288,10 +288,9 @@ nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
 
 " junegunn/fzf.vim: {{{2
-nnoremap <C-p>      :History<CR>
-nnoremap <C-k>f     :Files <C-r>=expand('%:h')<CR><CR>
-nnoremap <C-k><C-f> :GFiles<CR>
-nnoremap <C-k><C-p> :GFiles?<CR>
+nnoremap <C-p>      :GFiles<CR>
+nnoremap <C-k><C-p> :Files <C-r>=expand('%:h')<CR><CR>
+nnoremap <C-k><C-f> :History<CR>
 nnoremap <C-k><C-b> :Buffers<CR>
 nnoremap <C-k><C-g> :Rg<CR>
 
