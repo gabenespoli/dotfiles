@@ -431,6 +431,53 @@
             ]
           },
           {
+            "description": "Gmacs key bindings [control+k -> cmd+shift+right, cmd+x]",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.apple\\.Terminal$",
+                      "^com\\.googlecode\\.iterm2$",
+                      "^io\\.alacritty$",
+                      "^org\\.vim\\.MacVim",
+                      "^org\\.rstudio\\.RStudio$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "control"
+                    ],
+                    "optional": [
+                      "caps_lock"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "command",
+                      "shift"
+                    ]
+                  },
+                  {
+                      "key_code": "x",
+                      "modifiers": [
+                          "command"
+                      ],
+                      "repeat": false
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Gmacs key bindings [command+d -> opt+forward delete]",
             "manipulators": [
               {
