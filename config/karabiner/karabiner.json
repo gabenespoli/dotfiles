@@ -384,7 +384,7 @@
             ]
           },
           {
-            "description": "Gmacs key bindings [control+u -> cmd+backspace]",
+            "description": "Gmacs key bindings [control+u -> cmd+shift+left, cmd+x]",
             "manipulators": [
               {
                 "conditions": [
@@ -406,18 +406,24 @@
                       "control"
                     ],
                     "optional": [
-                      "caps_lock",
-                      "shift",
-                      "option"
+                      "caps_lock"
                     ]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "delete_or_backspace",
+                    "key_code": "left_arrow",
                     "modifiers": [
-                      "command"
+                      "command",
+                      "shift"
                     ]
+                  },
+                  {
+                      "key_code": "x",
+                      "modifiers": [
+                          "command"
+                      ],
+                      "repeat": false
                   }
                 ],
                 "type": "basic"
