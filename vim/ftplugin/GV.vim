@@ -7,6 +7,7 @@ nmap <buffer> { [[o
 nnoremap <buffer> co<Space> :Git checkout<Space>
 nnoremap <buffer> cb :Git branch<Space>
 nnoremap <buffer> ri<Space> :Grebase -i --autosquash<Space>
+nnoremap <buffer> r<Space> :Git rebase<Space>
 
 nnoremap <buffer> coo :Git checkout <C-r>=gv#sha()<CR><CR>
 nnoremap <buffer> cf :Git commit --fixup <C-r>=gv#sha()<CR><CR>
