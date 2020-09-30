@@ -130,6 +130,7 @@ alias Gs="$EDITOR -c ':Gedit :'"
 
 # fzf {{{1
 export FZF_DEFAULT_OPTS='--height 40% --bind=ctrl-o:select-all
+  --bind=ctrl-k:abort
   --color=hl:8,fg+:15,bg+:0,hl+:2
   --color=info:5,prompt:2,pointer:2,marker:6,spinner:2,header:7
   '
