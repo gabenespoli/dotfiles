@@ -356,10 +356,7 @@ let g:lsc_auto_map = {
 nnoremap <C-w><C-]> :vertical LSClientGoToDefinitionSplit<CR>
 
 " liuchengxu/vista.vim:  {{{2
-let g:vista_executive_for = {
-        \ 'python': 'vim_lsp',
-        \ }
-let g:vista_ignore_kinds = ['Variable']
+let g:vista_executive_for = {'python': 'vim_lsc'}
 let g:vista_sidebar_width = 40
 
 " majutsushi/tagbar: {{{2
