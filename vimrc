@@ -32,6 +32,7 @@ Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 
 " Coding:
 Plug 'dense-analysis/ale'
+Plug 'natebosch/vim-lsc'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
@@ -90,7 +91,7 @@ set foldmethod=marker
 set foldtext=getline(v:foldstart)
 let g:vimsyn_folding='af'
 set wildignorecase
-set completeopt=menuone,preview
+set completeopt=menuone
 set shortmess+=c
 set tags^=.git/tags;~
 set diffopt+=context:3
@@ -336,6 +337,23 @@ augroup ale
   autocmd!
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
+
+" natebosch/vim-lsc:  {{{2
+let g:lsc_server_commands = {'python': 'pyls'}
+let g:lsc_enable_autocomplete = v:false
+let g:lsc_enable_diagnostics = v:false
+let g:lsc_auto_map = {
+      \ 'GoToDefinition': '<C-]>',
+      \ 'FindReferences': 'gr',
+      \ 'FindImplementations': 'gI',
+      \ 'Rename': 'gR',
+      \ 'ShowHover': v:true,
+      \ 'DocumentSymbol': 'go',
+      \ 'WorkspaceSymbol': 'gS',
+      \ 'SignatureHelp': 'gm',
+      \ 'Completion': 'completefunc',
+      \ }
+nnoremap <C-w><C-]> :vertical LSClientGoToDefinitionSplit<CR>
 
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {
