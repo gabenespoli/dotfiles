@@ -32,11 +32,6 @@ Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 
 " Coding:
 Plug 'dense-analysis/ale'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
@@ -341,22 +336,6 @@ augroup ale
   autocmd!
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
-
-" prabirshrestha/asyncomplete:  {{{2
-let g:asyncomplete_auto_popup = 0
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ asyncomplete#force_refresh()
-inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" prabirshrestha/vim-lsp:  {{{2
-let g:lsp_diagnostics_enabled = 0
-let g:lsp_fold_enabled = 0
 
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {
