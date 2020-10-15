@@ -6,6 +6,7 @@ nmap <buffer> { [[o
 " git command maps
 nnoremap <buffer> co<Space> :Git checkout<Space>
 nnoremap <buffer> cb :Git branch<Space>
+nnoremap <buffer> cm<Space> :Git merge<Space>
 nnoremap <buffer> ri<Space> :Grebase -i --autosquash<Space>
 nnoremap <buffer> r<Space> :Git rebase<Space>
 
