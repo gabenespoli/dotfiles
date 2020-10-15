@@ -7,15 +7,14 @@ nmap <buffer> { [[o
 nnoremap <buffer> co<Space> :Git checkout<Space>
 nnoremap <buffer> cb :Git branch<Space>
 nnoremap <buffer> cm<Space> :Git merge<Space>
-nnoremap <buffer> ri<Space> :Grebase -i --autosquash<Space>
+nnoremap <buffer> ri<Space> :Git rebase -i --autosquash<Space>
 nnoremap <buffer> r<Space> :Git rebase<Space>
 
 nnoremap <buffer> coo :Git checkout <C-r>=gv#sha()<CR><CR>
 nnoremap <buffer> cf :Git commit --fixup <C-r>=gv#sha()<CR><CR>
 nnoremap <buffer> cp :Git cherry-pick <C-r>=gv#sha()<CR><CR>
 nnoremap <buffer> gR :Git reset HEAD^<CR>
-nnoremap <buffer> rii j:Grebase -i --autosquash <C-r>=gv#sha()<CR><CR>
-nnoremap <buffer> rim :Grebase -i --autosquash master<CR>
+nnoremap <buffer> rii j:Git rebase -i --autosquash <C-r>=gv#sha()<CR><CR>
 
 " refresh maps
 nnoremap <buffer> R :close<CR>:GV --all<CR>
