@@ -48,7 +48,8 @@ red = '#E52E1A'       # 1
 green = '#25C528'   # 2
 yellow = '#EBBB2B'      # 3
 blue = '#0094CF'     # 4
-pink = '#DF7376'       # 5
+pink = '#DF7376'       # 13
+purple = '#7A7CCF'       # 5
 cyan = '#21C296'         # 6
 orange = '#B98036'        # 9 (brown)
 
@@ -72,7 +73,7 @@ class base16_snooker(Style):
 
         Keyword:                   green,
         Keyword.Type:              yellow,
-        Keyword.Namespace:         pink,
+        Keyword.Namespace:         purple,
 
         Operator:                  fg,        # class: 'o'
 
