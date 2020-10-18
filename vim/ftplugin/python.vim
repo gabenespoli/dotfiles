@@ -13,6 +13,13 @@ nmap <buffer> gD <Plug>(lsp-peek-definition)
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
 
+" ipython magic commands
+function SlimeSendTimeit()
+  let text = substitute(getline('.'), '^[^=]*=\ \?', '', '')
+  execute 'SlimeSend1 %timeit ' . text
+endfunction
+nnoremap <buffer> <C-l><C-t> :call SlimeSendTimeit()<CR>
+
 " jupytext
 nnoremap <buffer> <localleader>js :!jupytext --update -o %.ipynb %<CR>
 
