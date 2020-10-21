@@ -77,7 +77,7 @@ else
 endif
 set hidden
 set nomodeline
-set number relativenumber
+set number
 set equalalways splitright splitbelow
 set nowrap linebreak breakindent whichwrap+=h,l
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
