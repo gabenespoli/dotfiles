@@ -18,7 +18,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
 Plug 'junegunn/vim-peekaboo'
-Plug 'kshenoy/vim-signature'
 
 " General:
 Plug 'tpope/vim-fugitive'
