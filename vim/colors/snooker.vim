@@ -207,8 +207,8 @@ endif
 " my own extras {{{2
 call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg_light})
 call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com})
-call s:h('TodoStatus',    {'bg': s:pink,   'fg': s:fg_bright})
-call s:h('ErrorStatus',   {'bg': s:red,    'fg': s:fg_bright})
+call s:h('TodoStatus',    {'fg': s:pink,   'bg': s:bg_light})
+call s:h('ErrorStatus',   {'fg': s:red,    'bg': s:bg_light})
 hi! link TabMod           Modified
 hi! link TabModSel        TabMod
 hi! link markdownPandocCitation pandocCiteKey
