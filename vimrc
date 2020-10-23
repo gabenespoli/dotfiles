@@ -123,9 +123,9 @@ function! LinterStatus() abort
    let l:all_errors = l:counts.error + l:counts.style_error
    let l:all_non_errors = l:counts.total - l:all_errors
    return l:counts.total == 0 ? '' : printf(
-   \ '[W:%d E:%d]',
-   \ l:all_non_errors,
-   \ l:all_errors
+   \ '[E:%d W:%d]',
+   \ l:all_errors,
+   \ l:all_non_errors
    \)
 endfunction
 
