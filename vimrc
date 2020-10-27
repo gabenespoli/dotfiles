@@ -112,7 +112,7 @@ set statusline+=%{SSHIndicator()}
 set statusline+=[%n]
 set statusline+=\ (%{FugitiveHead(12)})
 set statusline+=\ %<%.99f
-set statusline+=\ %y%h%w%#Modified#%m%*%r
+set statusline+=\ %y%h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
