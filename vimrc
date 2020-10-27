@@ -114,8 +114,17 @@ set statusline+=\ (%{FugitiveHead(12)})
 set statusline+=\ %<%.99f
 set statusline+=\ %y%h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
+set statusline+=%{LspStatus()}
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
+
+function! LspStatus() abort
+  let l:status = LSCServerStatus()
+  if l:status != '' 
+    let l:status = '[LSP:' . l:status . ']'
+  endif
+  return l:status
+endfunction
 
 " display errors from Ale in statusline (https://kadekillary.work/post/statusline-vim/)
 function! LinterStatus() abort
