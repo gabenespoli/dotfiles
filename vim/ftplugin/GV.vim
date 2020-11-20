@@ -44,3 +44,20 @@ if has('mac')
 
   endfunction
 endif
+
+" make graph prettier with box drawing symbols and bullets
+function GVPretty()
+  set modifiable
+  " handle corner case where line is '| / /'
+  execute '%s/^|\//|╱/g'
+  execute '%s/|/│/g'
+  " for forward slash only look in first few characters of line
+  " we don't want to replace the slash in origin/master, for e.g.
+  execute '%s/^\(.\{0,5\}\)\//\1╱/g'
+  execute '%s/\\/╲/g'
+  execute '%s/\*/∙/g'
+  set nomodifiable
+  normal! gg
+endfunction
+
+call GVPretty()
