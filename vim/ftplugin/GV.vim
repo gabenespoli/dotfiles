@@ -60,4 +60,4 @@ function GVPretty()
   normal! gg
 endfunction
 
-call GVPretty()
+" call GVPretty()
