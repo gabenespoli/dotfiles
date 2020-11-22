@@ -496,3 +496,11 @@ let g:mutton_min_side_width = 25
 filetype off
 set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
 filetype on
+
+" local vimrc {{{2
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    execute 'source' a:file
+  endif
+endfunction
+call SourceIfExists("~/.vimrc_local")
