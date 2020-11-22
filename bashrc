@@ -70,6 +70,7 @@ alias octave="octave --no-gui"
 alias lilyjazz="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond --include='$HOME/.lyp/packages/lilyjazz@0.2.0' '$@'"
 alias lilypond="$HOME/.lyp/lilyponds/2.18.2/bin/lilypond '$@'"
 alias weather="curl http://wttr.in/Kitchener"
+alias nnvim="~/nvim-osx64/bin/nvim"
 
 # Change working dir in shell to last dir in lf on exit (adapted from ranger).
 lfcd () {
