@@ -93,7 +93,6 @@ alias cx="conda deactivate"
 alias pudb="python -m pudb.run"
 alias jn="jupyter notebook"
 alias jl="jupyter lab"
-alias black="black --line-length=79"
 
 # git {{{1
 alias gst="git status -sb"
