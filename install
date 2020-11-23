@@ -19,6 +19,7 @@ echo "-- Installing Homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "-- Installing Homebrew packages..."
+brew install git
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
 brew install tmux neovim lf git ctags tree jq cloc
 brew install tig bat ag ripgrep fzf npm
