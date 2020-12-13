@@ -1,143 +1,132 @@
-"""My ipython config (gabenespoli@gmail.com)"""
-c = get_config()
+"""iPython config."""
+
+import readline
+import subprocess
+
+import IPython
+import prompt_toolkit
+from prompt_toolkit.styles.pygments import pygments_token_to_classname
+from prompt_toolkit.styles.style import Style
+from pygments.token import Comment
+from pygments.token import Error
+from pygments.token import Keyword
+from pygments.token import Literal
+from pygments.token import Name
+from pygments.token import Number
+from pygments.token import Operator
+from pygments.token import Punctuation
+from pygments.token import String
+from pygments.token import Text
+from pygments.token import Token
+
+c = get_config()  # noqa: F821
 
 c.InteractiveShell.autoindent = False
 c.InteractiveShell.confirm_exit = False
-c.InteractiveShell.editor = 'nvim'
-c.TerminalInteractiveShell.editing_mode = 'emacs'
-c.TerminalInteractiveShell.highlight_matching_brackets = False
+c.InteractiveShell.editor = "nvim"
+c.TerminalInteractiveShell.editing_mode = "emacs"
+c.TerminalInteractiveShell.highlight_matching_brackets = True
 
+# Fix C-w behaviour
+# -----------------
 # https://stackoverflow.com/questions/21532543/cpython-interactive-readline-better-backwards-deletion-of-words
-import readline
-import subprocess
 readline.parse_and_bind('"\\C-w": backward-kill-word')
-subprocess.call(['stty', 'werase', 'undef'])
+subprocess.call(["stty", "werase", "undef"])
 
-# Colours
-c.InteractiveShell.colors = 'nocolor'
-
-# # base16 color maps
-# bg = 'ansiblack'          # 0
-# bg_light = 'ansibrightgreen'    # 10
-# bg_sel = 'ansibrightyellow'     # 11
-# fg_com = 'ansibrightblack'   # 8
-# fg_dark = 'ansibrightblue'      # 12
-# fg = 'ansigray'      # 7
-# fg_light = 'ansibrightmagenta'  # 13
-# fg_bright = 'ansiwhite'   # 15
-# red = 'ansired'       # 1
-# orange = 'ansibrightred'        # 9
-# yellow = 'ansiyellow'      # 3
-# green = 'ansigreen'   # 2
-# cyan = 'ansicyan'         # 6
-# blue = 'ansiblue'     # 4
-# pink = 'ansimagenta'       # 5
-# table = 'ansibrightcyan'   # 14
-
-# snooker base16 color maps
-# because the above breaks on new versions of ipython
-bg = '#121615'          # NONE
-bg_light = '#2B302B'    # 0
-# bg_sel = '#3C4137'
-fg_com = '#6A6A5B'   # 8
-# fg_dark = '#5F785C'
-fg = '#ADAD9B'      # NONE
-fg_light = '#CDC08B'  # 7
-fg_bright = '#E5E5D2'   # 15
-red = '#E52E1A'       # 1
-green = '#25C528'   # 2
-yellow = '#EBBB2B'      # 3
-blue = '#0094CF'     # 4
-pink = '#DF7376'       # 13
-purple = '#7A7CCF'       # 5
-cyan = '#21C296'         # 6
-orange = '#B98036'        # 9 (brown)
-
-from pygments.style import Style
-from pygments.token import Keyword, Name, Comment, String, Error, Text, \
-     Number, Operator, Generic, Whitespace, Punctuation, Other, Literal
-
-class base16_snooker(Style):
-
-    default_style = fg
-
-    background_color = bg
-    highlight_color = bg_light
-
-    styles = {
-        # No corresponding class for the following:
-        Text:                      fg,
-
-        Comment:                   fg_com,      # class: 'c'
-        Error:                     red,
-
-        Keyword:                   green,
-        Keyword.Type:              yellow,
-        Keyword.Namespace:         purple,
-
-        Operator:                  fg,        # class: 'o'
-
-        # Punctuation:               fg,          # class: 'p'
-
-        Name:                      fg,          # class: 'n'
-        Name.Attribute:            blue,        # class: 'na' - to be revised
-        # Name.Builtin:              "",          # class: 'nb'
-        # Name.Builtin.Pseudo:       "",          # class: 'bp'
-        Name.Class:                blue,      # class: 'nc' - to be revised
-        # Name.Constant:             cyan,         # class: 'no' - to be revised
-        # Name.Decorator:            cyan,        # class: 'nd' - to be revised
-        # Name.Entity:               "",          # class: 'ni'
-        # Name.Exception:            red,         # class: 'ne'
-        Name.Function:             blue,        # class: 'nf'
-        # Name.Property:             "",          # class: 'py'
-        # Name.Label:                "",          # class: 'nl'
-        # Name.Namespace:            yellow,      # class: 'nn' - to be revised
-        # Name.Other:                blue,        # class: 'nx'
-        # Name.Tag:                  cyan,        # class: 'nt' - like a keyword
-        # Name.Variable:             red,         # class: 'nv' - to be revised
-        # Name.Variable.Class:       "",          # class: 'vc' - to be revised
-        # Name.Variable.Global:      "",          # class: 'vg' - to be revised
-        # Name.Variable.Instance:    "",          # class: 'vi' - to be revised
-
-        Number:                    cyan,
-
-        # Literal:                   orange,    # class: 'l'
-        # Literal.Date:              green,     # class: 'ld'
-
-        String:                    cyan,       # class: 's'
-        # String.Backtick:           "",          # class: 'sb'
-        # String.Char:               fg,  # class: 'sc'
-        # String.Doc:                fg_com,     # class: 'sd' - like a comment
-        # String.Double:             "",          # class: 's2'
-        String.Escape:             orange,      # class: 'se'
-        # String.Heredoc:            "",          # class: 'sh'
-        # String.Interpol:           orange,      # class: 'si'
-        # String.Other:              "",          # class: 'sx'
-        # String.Regex:              "",          # class: 'sr'
-        # String.Single:             "",          # class: 's1'
-        # String.Symbol:             "",          # class: 'ss'
-
-        # Generic:                   "",                    # class: 'g'
-        # Generic.Deleted:           red,                   # class: 'gd',
-        # Generic.Emph:              "italic",              # class: 'ge'
-        # Generic.Error:             "",                    # class: 'gr'
-        # Generic.Heading:           "bold " + fg,  # class: 'gh'
-        # Generic.Inserted:          green,                 # class: 'gi'
-        # Generic.Output:            "",                    # class: 'go'
-        # Generic.Prompt:            blue,     # class: 'gp'
-        # Generic.Strong:            "bold",                # class: 'gs'
-        # Generic.Subheading:        "bold " + cyan,        # class: 'gu'
-        # Generic.Traceback:         "",                    # class: 'gt'
+# Colors
+# ------
+# With parts taken from petobens config
+# https://github.com/petobens/dotfiles/blob/master/python/ipython_config.py
 
 
-    }
+def my_style_from_pygments_dict(pygments_dict):
+    """Monkey patch prompt toolkit style function to fix completion colors.
 
-c.TerminalInteractiveShell.highlighting_style = base16_snooker
+    Fix completion highlighting as per
+    https://github.com/ipython/ipython/issues/11526
 
-from pygments.token import Token
+    """
+    pygments_style = []
+    for token, style in pygments_dict.items():
+        if isinstance(token, str):
+            pygments_style.append((token, style))
+        else:
+            pygments_style.append((pygments_token_to_classname(token), style))
+    return Style(pygments_style)
+
+
+prompt_toolkit.styles.pygments.style_from_pygments_dict = (
+    my_style_from_pygments_dict
+)
+IPython.terminal.interactiveshell.style_from_pygments_dict = (
+    my_style_from_pygments_dict
+)
+
+
+# Palette (snooker)
+bg = "#121615"
+fg = "#ADAD9B"
+
+bg_light = "#2B302B"
+fg_com = "#6A6A5B"
+fg_light = "#CDC08B"
+fg_bright = "#E5E5D2"
+
+red = "#E52E1A"
+green = "#1C9C20"
+brown = "#B98036"
+blue = "#0085BA"
+purple = "#7A7CCF"
+cyan = "#1DAE87"
+
+orange = "#E5941A"
+green_light = "#25C528"
+yellow = "#EBBB2B"
+blue_light = "#0094CF"
+pink = "#DF7376"
+cyan_light = "#21C296"
+
+# See:
+# https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/prompt_toolkit/styles/defaults.py # noqa
+# https://pygments.org/docs/tokens/
 c.TerminalInteractiveShell.highlighting_style_overrides = {
+    Text: fg,
+    Error: red,
+    Comment: fg_com,
+    Keyword: green,
+    Keyword.Type: yellow,
+    Keyword.Namespace: purple,
+    Keyword.Constant: cyan,
+    Keyword.Namespace: purple,
+    Name: fg,
+    Name.Attribute: blue,
+    Name.Namespace: fg,
+    Name.Builtin: blue,
+    Name.Function: blue,
+    Name.Class: yellow,
+    Name.Decorator: purple,
+    Name.Exception: green_light,
+    Name.Variable.Magic: red,  # dunder methods
+    Number: cyan,
+    Operator: fg,
+    Operator.Word: green_light,
+    Literal: cyan,
+    String: cyan,
+    String.Affix: brown,
+    String.Doc: cyan,
+    String.Escape: orange,
+    String.Interpol: cyan,
     Token.Prompt: green,
     Token.PromptNum: green,
     Token.OutPrompt: orange,
     Token.OutPromptNum: orange,
+    Token.MatchingBracket: f"bg:{fg_light} {bg}",
+    Token.MatchingBracket: f"bg:{fg_light} {bg}",
+    Punctuation: brown,
+    "completion-menu": f"bg:{bg_light} {fg_bright}",
+    "completion-menu.completion.current": f"bg:{blue_light} {bg}",
+    "completion-menu.completion": f"bg:{bg_light} {fg_bright}",
+    "completion-menu.meta.completion.current": f"bg:{blue_light} {bg}",
+    "completion-menu.meta.completion": f"bg:{bg_light} {fg_bright}",
+    "completion-menu.multi-column-meta": f"bg:{bg_light} {fg_bright}",
 }
