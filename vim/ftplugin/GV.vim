@@ -2,6 +2,7 @@ silent! unmap <buffer> <C-p>
 silent! unmap <buffer> <C-n>
 nmap <buffer> } ]]o
 nmap <buffer> { [[o
+nmap <buffer> p o<C-w>lzM<C-w>h
 
 " git command maps
 nnoremap <buffer> co<Space> :Git checkout<Space>
