@@ -357,6 +357,7 @@ hi! link gvGitHub                   Tag
 hi! link gvJira                     Tag
 call s:h('gvHead',                  {'fg': s:pink})
 call s:h('gvOrigin',                {'fg': s:blue_light})
+call s:h('gvPlotly',                {'fg': s:purple})
 
 " DiffChar {{{2
 hi! link dcDiffDelPos               Normal
