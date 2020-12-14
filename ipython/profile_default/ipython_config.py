@@ -2,9 +2,11 @@
 
 import readline
 import subprocess
+from datetime import datetime
 
 import IPython
 import prompt_toolkit
+from IPython.terminal.prompts import Prompts
 from prompt_toolkit.styles.pygments import pygments_token_to_classname
 from prompt_toolkit.styles.style import Style
 from pygments.token import Comment
@@ -120,6 +122,12 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Token.PromptNum: green,
     Token.OutPrompt: orange,
     Token.OutPromptNum: orange,
+    Token.PromptTime: f"bg:{bg_light} {fg}",
+    Token.PromptText: f"bg:{bg_light} {blue}",
+    Token.PromptContinuation: blue,
+    Token.PromptSpace: fg,
+    Token.OutPromptTime: f"bg:{bg_light} {fg}",
+    Token.OutPromptText: f"bg:{bg_light} {purple}",
     Token.MatchingBracket: f"bg:{fg_light} {bg}",
     Token.MatchingBracket: f"bg:{fg_light} {bg}",
     Punctuation: brown,
@@ -130,3 +138,31 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     "completion-menu.meta.completion": f"bg:{bg_light} {fg_bright}",
     "completion-menu.multi-column-meta": f"bg:{bg_light} {fg_bright}",
 }
+
+
+class MyPrompt(Prompts):  # noqa: D101
+    # https://ipython.readthedocs.io/en/stable/config/details.html#custom-prompts
+    def in_prompt_tokens(self, cli=None):  # noqa: D102
+        return [
+            (Token.PromptTime, datetime.now().strftime("%H:%M")),
+            (Token.PromptText, " >>>"),
+            (Token.PromptSpace, " "),
+        ]
+
+    def out_prompt_tokens(self, cli=None):  # noqa: D102
+        return [
+            (Token.OutPromptTime, datetime.now().strftime("%H:%M")),
+            (Token.OutPromptText, " >>>"),
+            (Token.PromptSpace, " "),
+        ]
+
+    def continuation_prompt_tokens(self, width=None):  # noqa: D102
+        if width is None:
+            width = self._width()
+        return [
+            (Token.PromptContinuation, (" " * (width - 5)) + " ..."),
+            (Token.PromptSpace, " "),
+        ]
+
+
+c.TerminalInteractiveShell.prompts_class = MyPrompt
