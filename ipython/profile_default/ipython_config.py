@@ -28,6 +28,7 @@ c.InteractiveShell.confirm_exit = False
 c.InteractiveShell.editor = "nvim"
 c.TerminalInteractiveShell.editing_mode = "emacs"
 c.TerminalInteractiveShell.highlight_matching_brackets = True
+c.TerminalInteractiveShell.true_color = True
 
 # Fix C-w behaviour
 # -----------------
