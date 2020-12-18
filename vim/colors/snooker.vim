@@ -184,7 +184,7 @@ else
 endif
 
 call s:h('Pmenu',         {'fg': s:fg, 'bg': s:bg_light})
-hi! link PmenuSel         Cursor
+call s:h('PmenuSel',      {'fg': s:blue_light, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('PmenuSbar',     {'fg': s:fg, 'bg': s:bg_light})
 call s:h('PmenuThumb',    {'fg': s:fg, 'bg': s:bg_light})
 call s:h('TabLine',       {'fg': s:fg_com, 'bg': s:bg_light})
