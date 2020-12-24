@@ -3,15 +3,12 @@ colors:
   primary:
     background: '#121615'
     foreground: '#ADAD9B'
-
   selection:
     background: '#2B302B'
     foreground: '#E5E5D2'
-
   cursor:
     cursor: '#CDC08B'
     text: '#121615'
-
   normal:
     black: '#2B302B'
     red: '#E52E1A'
@@ -21,7 +18,6 @@ colors:
     magenta: '#7A7CCF'
     cyan: '#1DAE87'
     white: '#CDC08B'
-
   bright:
     black: '#6A6A5B'
     red: '#E5941A'
