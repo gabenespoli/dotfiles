@@ -10,12 +10,15 @@ if expand('%:t') ==? 'karabiner.json'
   setlocal foldmethod=expr
   setlocal foldexpr=KarabinerFolds(v:lnum)
   function! KarabinerFolds(lnum)
+    let l:line = getline(a:lnum)
     " if     getline(a:lnum) =~# '\v^[^"]*"description":'
-    if     getline(a:lnum) =~# '\v^[^"]*"(description|global|devices)":'
+    if l:line =~# '\v^[^"]*"(global|profiles|devices)":'
     " if     getline(a:lnum) =~# '\v^[^"]*"(global|profiles)":'
       return '>1'
-    elseif getline(a:lnum) =~# '\v^[^"]*"(conditions|from|to|to_after_key_up|to_if_alone)":'
+    elseif l:line =~# '\v^[^"]*"(description|product_id)":'
       return '>2'
+    elseif l:line =~# '\v^[^"]*"(conditions|from|to|to_after_key_up|to_if_alone)":'
+      return '>3'
     " elseif getline(a:lnum) =~# '\v^[^"]*"(complex_modifications|devices|fn_function_keys|selected|simple_modifications|virtual_hid_keyboard)":'
     "   return '>2'
     " elseif getline(a:lnum) =~# '\v^[^"]{12}"name":'
