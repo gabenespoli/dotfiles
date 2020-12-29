@@ -67,7 +67,7 @@ IPython.terminal.interactiveshell.style_from_pygments_dict = (
 
 
 # Palette (snooker)
-bg = "#121615"
+bg = "#0f111b"
 fg = "#ADAD9B"
 
 bg_light = "#2B302B"
@@ -78,16 +78,16 @@ fg_bright = "#E5E5D2"
 red = "#E52E1A"
 green = "#1C9C20"
 brown = "#B98036"
-blue = "#0085BA"
+blue = "#0094CF"
 purple = "#7A7CCF"
 cyan = "#1DAE87"
 
 orange = "#E5941A"
 green_light = "#25C528"
 yellow = "#EBBB2B"
-blue_light = "#0094CF"
+blue_light = "#00a3cc"
 pink = "#DF7376"
-cyan_light = "#21C296"
+cyan_light = "#5ccc96"
 
 # See:
 # https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/prompt_toolkit/styles/defaults.py # noqa

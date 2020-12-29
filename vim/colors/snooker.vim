@@ -29,15 +29,15 @@ if !exists('g:snooker_color_cursor')
 endif
 
 " Colors {{{1
-let s:bg              = { 'gui': '#121615', 'cterm': 'NONE' }
+let s:bg              = { 'gui': '#0f111b', 'cterm': 'NONE' }
 let s:fg              = { 'gui': '#ADAD9B', 'cterm': 'NONE' }
 let s:none            = { 'gui': 'NONE',    'cterm': 'NONE' }
 
 let s:bg_light        = { 'gui': '#2B302B', 'cterm': '0'    }
 let s:red             = { 'gui': '#E52E1A', 'cterm': '1'    }
 let s:green           = { 'gui': '#1C9C20', 'cterm': '2'    }
-let s:brown           = { 'gui': '#B98036', 'cterm': '3'    }
-let s:blue            = { 'gui': '#0085BA', 'cterm': '4'    }
+let s:brown           = { 'gui': '#a57230', 'cterm': '3'    }
+let s:blue            = { 'gui': '#0094CF', 'cterm': '4'    }
 let s:purple          = { 'gui': '#7A7CCF', 'cterm': '5'    }
 let s:cyan            = { 'gui': '#1DAE87', 'cterm': '6'    }
 let s:fg_light        = { 'gui': '#CDC08B', 'cterm': '7'    }
@@ -46,9 +46,9 @@ let s:fg_com          = { 'gui': '#6A6A5B', 'cterm': '8'    }
 let s:orange          = { 'gui': '#E5941A', 'cterm': '9'    }
 let s:green_light     = { 'gui': '#25C528', 'cterm': '10'   }
 let s:yellow          = { 'gui': '#EBBB2B', 'cterm': '11'   }
-let s:blue_light      = { 'gui': '#0094CF', 'cterm': '12'   }
+let s:blue_light      = { 'gui': '#00a3cc', 'cterm': '12'   }
 let s:pink            = { 'gui': '#DF7376', 'cterm': '13'   }
-let s:cyan_light      = { 'gui': '#21C296', 'cterm': '14'   }
+let s:cyan_light      = { 'gui': '#5ccc96', 'cterm': '14'   }
 let s:fg_bright       = { 'gui': '#E5E5D2', 'cterm': '15'   }
 
 if g:snooker_spell_undercurl == 1
@@ -84,23 +84,23 @@ else
 endif
 call s:h('Comment',       {'fg': s:fg_com, 'gui': 'italic', 'cterm': 'italic'})
 
-call s:h('Constant',      {'fg': s:cyan})
-hi! link String           Constant
-call s:h('Character',     {'fg': s:cyan_light})
+call s:h('Constant',      {'fg': s:cyan_light})
+call s:h('String',        {'fg': s:cyan})
+hi! link Character        Constant
 hi! link Number           Constant
-hi! link Boolean          Character
+hi! link Boolean          Constant
 hi! link Float            Constant
 
 call s:h('Identifier',    {'fg': s:blue})
 hi! link Function         Identifier
 
-call s:h('Statement',     {'fg': s:green})
-call s:h('Conditional',   {'fg': s:green_light})
+call s:h('Statement',     {'fg': s:green_light})
+call s:h('Conditional',   {'fg': s:green})
 hi! link Repeat           Conditional
-hi! link Label            Statement
+hi! link Label            Conditional
 hi! link Operator         Normal
 hi! link Keyword          Statement
-hi! link Exception        Conditional
+call s:h('Exception',     {'fg': s:orange})
 
 call s:h('PreProc',       {'fg': s:purple})
 hi! link Include          PreProc

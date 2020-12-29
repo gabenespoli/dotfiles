@@ -1,31 +1,35 @@
 # Colors (snooker)
 colors:
   primary:
-    background: '#121615'
+    background: '#0f111b'  # background from spaceduck
     foreground: '#ADAD9B'
+
   selection:
     background: '#2B302B'
     foreground: '#E5E5D2'
+
   cursor:
     cursor: '#CDC08B'
-    text: '#121615'
+    text: '#0f111b'
+
   normal:
     black: '#2B302B'
     red: '#E52E1A'
     green: '#4B9B24'
-    yellow: '#B98036'
-    blue: '#0085BA'
+    yellow: '#a57230'
+    blue: '#0094CF'
     magenta: '#7A7CCF'
     cyan: '#1DAE87'
     white: '#CDC08B'
+
   bright:
     black: '#6A6A5B'
     red: '#E5941A'
     green: '#25C528'
     yellow: '#EBBB2B'
-    blue: '#0094CF'
+    blue: '#00a3cc'
     magenta: '#DF7376'
-    cyan: '#21C296'
+    cyan: '#5ccc96'
     white: '#E5E5D2'
 
 # Font configuration
