@@ -22,7 +22,6 @@ Plug 'junegunn/vim-peekaboo'
 
 " General:
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug '~/bin/vim/gv.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
