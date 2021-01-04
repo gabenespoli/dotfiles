@@ -20,6 +20,14 @@ function SlimeSendTimeit()
 endfunction
 nnoremap <buffer> <C-l><C-t> :call SlimeSendTimeit()<CR>
 
+" strip type def in function signature
+function SlimeSendArg()
+  let text = substitute(getline('.'), ':[^=]*', ' ', '')
+  let text = substitute(text, ',$', '', '')
+  execute 'SlimeSend1 ' . text
+endfunction
+nnoremap <buffer> <C-l><C-g> :call SlimeSendArg()<CR>
+
 " jupytext
 nnoremap <buffer> <localleader>js :!jupytext --update -o %.ipynb %<CR>
 
