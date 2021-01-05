@@ -129,7 +129,7 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Token.PromptSpace: fg,
     Token.OutPromptTime: f"bg:{bg_light} {fg}",
     Token.OutPromptText: f"bg:{bg_light} {purple}",
-    "matching-bracket.cursor": f"bg:{fg_light} {bg}",
+    "matching-bracket.cursor": f"bg:{fg_com} {bg}",
     "matching-bracket.other": f"bg:{fg_com} {bg}",
     Punctuation: brown,
     "completion-menu": f"bg:{bg_light} {fg_bright}",
