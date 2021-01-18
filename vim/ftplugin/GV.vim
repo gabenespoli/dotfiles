@@ -62,3 +62,15 @@ function GVPretty()
 endfunction
 
 " call GVPretty()
+
+" Folding
+setlocal foldmethod=expr
+setlocal foldexpr=GvFolds(v:lnum)
+function! GvFolds(lnum)
+  let l:line = getline(a:lnum)
+  if l:line =~# '\v^\*'
+    return '>1'
+  else
+    return '='
+  endif
+endfunction
