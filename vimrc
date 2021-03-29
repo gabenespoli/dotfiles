@@ -331,13 +331,11 @@ endif
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_set_loclist = 0
-let g:ale_linters = {'python': ['flake8', 'pydocstyle']}
+let g:ale_linters = {'python': ['flake8']}
 let g:ale_fixers = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ '*': ['trim_whitespace'],
       \ 'python': ['black', 'isort'],
       \ }
-let g:ale_python_black_options = '--line-length=79 --target-version=py37'
-let g:ale_python_isort_options = '--line-width=79 --force-single-line-imports'
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
