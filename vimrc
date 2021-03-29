@@ -255,13 +255,12 @@ nnoremap com :SignatureToggle<CR>
 
 " tpope/vim-fugitive: {{{2
 nnoremap gs :Gedit :<CR>
-nnoremap gZ :Gdiff<CR>
-nnoremap gC :Gcommit<CR>
-nnoremap gA :Gwrite<CR>
+nnoremap gZ :Gdiffsplit<CR>
+nnoremap gC :Git commit<CR>
 xnoremap zp :diffput<CR>
 xnoremap zo :diffget<CR>
-nnoremap <C-k><C-g> :Ggrep!<Space>
-nnoremap co<Space> :Git co<Space>
+nnoremap <C-k>g :Ggrep!<Space>
+nnoremap co<Space> :Git checkout<Space>
 
 " airblade/gitgutter: {{{2
 nmap ga <Plug>(GitGutterStageHunk)
