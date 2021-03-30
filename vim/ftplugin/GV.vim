@@ -5,6 +5,8 @@ nmap <buffer> { [[o
 nmap <buffer> p o<C-w>lzM<C-w>h
 
 " git command maps
+nnoremap <buffer> git :Git
+
 nnoremap <buffer> co<Space> :Git checkout<Space>
 nnoremap <buffer> cb<Space> :Git branch<Space>
 nnoremap <buffer> cm<Space> :Git merge<Space>
