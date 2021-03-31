@@ -133,6 +133,8 @@ if has('nvim')
   call s:h('NonText',     {'fg': s:bg_light, 'gui': 'bold', 'cterm': 'bold'})
   call s:h('Whitespace',  {'fg': s:bg_light})
   call s:h('EndOfBuffer', {'fg': s:bg_light})
+elseif has('gui')
+  call s:h('NonText',     {'fg': s:bg})
 else
   call s:h('NonText',     {'fg': s:bg_light})
 endif
