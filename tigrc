@@ -34,7 +34,7 @@ color main-head         yellow black
 color main-ref          green default
 color main-tag          5 default
 color main-local-tag    5 default
-color id                cyan default
+color id                yellow default
 color date              8 default
 color author            8 default
 color graph-commit      12 default
