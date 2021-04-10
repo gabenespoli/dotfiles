@@ -99,7 +99,7 @@ set suffixesadd+=.m,.r,.R,.py
 set clipboard=unnamed
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
-set guifont=BlexMono\ Nerd\ Font:h12,IBMPlexMono:h12,Source\ Code\ Pro:h12,Menlo:h12,Consolas:h12,Courier:h12
+set guifont=DM\ Mono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
 let g:snooker_terminal_italics = 1
 colorscheme snooker
 
