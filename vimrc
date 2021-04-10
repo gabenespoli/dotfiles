@@ -348,6 +348,7 @@ augroup END
 let g:lsc_server_commands = {'python': 'pyls'}
 let g:lsc_enable_autocomplete = v:false
 let g:lsc_enable_diagnostics = v:false
+let g:lsc_enable_diagnosticsa = v:false
 let g:lsc_auto_map = {
       \ 'GoToDefinition': '<C-]>',
       \ 'FindReferences': 'gr',
