@@ -14,16 +14,6 @@ function! MarkdownFoldFlat(lnum) "{{{
   endif
 endfunction "}}}
 
-" move up and down by visual line {{{1
-noremap <buffer> <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <buffer> <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-noremap <buffer> <silent> <expr> gj (v:count == 0 ? 'j' : 'gj')
-noremap <buffer> <silent> <expr> gk (v:count == 0 ? 'k' : 'gk')
-inoremap <buffer> <silent> <Down> <C-o>gj
-inoremap <buffer> <silent> <Up>   <C-o>gk
-inoremap <buffer> <silent> <expr> <C-n> (v:count == 0 && !pumvisible() ? '<C-o>gj' : '<C-n>')
-inoremap <buffer> <silent> <expr> <C-p> (v:count == 0 && !pumvisible() ? '<C-o>gk' : '<C-p>')
-
 " add markdown headings {{{1
 nnoremap <buffer> <localleader>1 :silent! s/^#\{1,6\}\ //g<CR>I#<Space><Esc>
 nnoremap <buffer> <localleader>2 :silent! s/^#\{1,6\}\ //g<CR>I##<Space><Esc>
