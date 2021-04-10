@@ -36,6 +36,7 @@ Plug 'natebosch/vim-lsc'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
+Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
@@ -375,6 +376,21 @@ let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]}
 let g:tagbar_map_jump = ['<CR>', 'o']
 let g:tagbar_map_togglefold = ['za']
+
+" kalekundert/vim-coiled-snake 
+nmap zuz <Space>M<Space>m
+nnoremap <Space>M :set foldexpr=coiledsnake#FoldExpr(v:lnum)<CR>:set foldmethod=expr<CR>
+nnoremap <Space>m :set foldmethod=manual<CR>:set foldexpr=<CR>
+
+""Konfekt/FastFold
+"nmap zuz <Plug>(FastFoldUpdate)
+"let g:fastfold_savehook = 0
+"" let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+"let g:fastfold_fold_command_suffixes =  []
+"" let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+"let g:fastfold_fold_movement_commands = []
+"let g:fastfold_force = 1
+"let g:fastfold_minlines = 0
 
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
