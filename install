@@ -109,19 +109,36 @@ bash ~/miniconda.sh -b -p $HOME/miniconda
 conda init
 conda update -n base -c defaults conda
 
+# base 3.7 env
+conda create -y -n base37 python=3.7.10
+conda activate base37
+conda install -c conda-forge -y \
+  flake8 mypy pydocstyle black isort pytest python-language-server jedi \
+  numpy pandas pyarrow matplotlib seaborn plotly dash \
+  scikit-learn statsmodels xgboost catboost lightgbm \
+  python-dotenv sqlalchemy pyodbc \
+  ipython jupyter jupyterlab
+conda install -c conda-forge -c plotly -y jupyter-dash
+pip install jupytext jupyterlab_execute_time
+jupyter labextension install jupyterlab-plotly jupyterlab-dash plotlywidget
+jupyter lab build
+
 # base env
 conda activate base
 conda install -c conda-forge -y \
   flake8 mypy pydocstyle black isort pytest \
-  numpy pandas matplotlib seaborn bokeh dash scikit-learn statsmodels \
+  numpy pandas pyarrow matplotlib seaborn dash \
+  scikit-learn statsmodels xgboost catboost lightgbm \
   python-language-server jedi \
   ipython jupyter jupyterlab \
-  sphinx sphinx-rtd-theme
-conda install -c conda-forge -c plotly jupyter-dash
-pip install jupytext pyspark-stubs databricks-cli jupyterlab_execute_time
+  python-dotenv sqlalchemy pyodbc \
+  sphinx sphinx-rtd-theme \
+conda install -c conda-forge -c plotly -y jupyter-dash
+pip install jupytext jupyterlab_execute_time
+pip install pyspark-stubs databricks-cli
 
 # plotly support in jupyter lab
-jupyter labextension install jupyterlab-plotly jupyterlab-dash
+jupyter labextension install jupyterlab-plotly jupyterlab-dash plotlywidget
 
 # rebuild to activate jupyter-dash extension
 jupyter lab build
