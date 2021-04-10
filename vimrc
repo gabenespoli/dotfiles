@@ -38,7 +38,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
-Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
+" Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 
 " Writing:
 Plug 'junegunn/vim-easy-align'
@@ -59,8 +59,57 @@ Plug 'gabenespoli/vim-komono'
 Plug 'gabenespoli/vim-jupycent'
 
 Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 call plug#end()
+
+" lua <<EOF
+
+" require'nvim-treesitter.configs'.setup {
+"   ensure_installed = { "python" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"   highlight = {
+"     enable = true,              -- false will disable the whole extension
+"   },
+" }
+
+" require'nvim-treesitter.configs'.setup {
+"   textobjects = {
+"     select = {
+"       enable = true,
+"       keymaps = {
+"         -- You can use the capture groups defined in textobjects.scm
+"         ["af"] = "@function.outer",
+"         ["if"] = "@function.inner",
+"         ["ac"] = "@class.outer",
+"         ["ic"] = "@class.inner",
+
+"         -- Or you can define your own textobjects like this
+"         ["iF"] = {
+"           python = "(function_definition) @function",
+"           cpp = "(function_definition) @function",
+"           c = "(function_definition) @function",
+"           java = "(method_declaration) @function",
+"         },
+"       },
+"     },
+"   },
+" }
+
+" require'nvim-treesitter.configs'.setup {
+"   textobjects = {
+"     swap = {
+"       enable = true,
+"       swap_next = {
+"         ["]a"] = "@parameter.inner",
+"       },
+"       swap_previous = {
+"         ["[a"] = "@parameter.inner",
+"       },
+"     },
+"   },
+" }
+
+" EOF
 
 " General: {{{1
 if has('mac') | set fileformats=unix,dos | endif
