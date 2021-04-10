@@ -58,6 +58,8 @@ Plug 'gabenespoli/vim-neovim-defaults'
 Plug 'gabenespoli/vim-komono'
 Plug 'gabenespoli/vim-jupycent'
 
+Plug 'nvim-treesitter/nvim-treesitter'
+
 call plug#end()
 
 " General: {{{1
