@@ -67,9 +67,6 @@ set undofile
 set undodir=~/.config/nvim/undo/
 set backupdir=~/.config/nvim/backup/
 set directory=~/.config/nvim/swap/
-if !isdirectory(expand(&undodir))   | call mkdir(expand(&undodir),   'p') | endif
-if !isdirectory(expand(&backupdir)) | call mkdir(expand(&backupdir), 'p') | endif
-if !isdirectory(expand(&directory)) | call mkdir(expand(&directory), 'p') | endif
 if has('macunix')
   let g:python_host_prog = expand('~').'/miniconda/envs/neovim2/bin/python'
   let g:python3_host_prog = expand('~').'/miniconda/envs/neovim3/bin/python'
