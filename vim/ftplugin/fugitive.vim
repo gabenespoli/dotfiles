@@ -1,3 +1,4 @@
+nnoremap <buffer> git :Git
 nnoremap <buffer> <silent> rim :<C-U>Grebase -i --autosquash master<CR>
 nnoremap <buffer> <silent> ri<Space> :Grebase -i --autosquash<Space>
 nmap <buffer> o <CR>
