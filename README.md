@@ -7,9 +7,9 @@
 1. [Main Layer](#main)
 2. [Control Layer](#control)
 3. [Command Layer](#command)
-4. [Semicolon Layer](#semicolon) (Arrows)
+4. [Semicolon Layer](#semicolon) (Arrows, Symbols, Media)
 5. [Tab Layer](#tab) (Number Pad, Window Management)
-6. [Escape Layer](#escape) (Function Keys)
+6. [Escape/Quote Layer](#escape) (Function Keys, Numbers, Symbols)
 7. [Function Layer](#function) (Mac Function Keys)
 8. [Option Layer](#option)
 
@@ -92,26 +92,25 @@ that are lost are remapped in the Semicolon and Tab Layers.
 
 ### Semicolon Layer
 
-Arrow keys and navigation cluster, window management with
-[Spectacle](https://www.spectacleapp.com/), and the "Command" commands that
-were lost in the Command Layer. In Finder.app, `;-u` and `;-o` actually send
-`Cmd-Up` and `Cmd-Dn`, to navigate up and down the directory tree.
+Arrow keys and navigation cluster, shifted number row, and media keys. In
+Finder.app, `;-u` and `;-o` actually send `Cmd-Up` and `Cmd-Dn`, to navigate up
+and down the directory tree.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
-| `     |       |       |       |       |       |       | Win   | Win   | Win   | Win   |       |       |             |
-|       │       |       |       |       |       |       | Center| Full  | Left  | Right |       |       |             |
+| `     |       |       |       |       |       |       |       |Volume |Volume |Volume |Volume |Volume |             |
+|       │       |       |       |       |       |       |       | Down  | Up    | Mute  | Down  | Up    |             |
 |-------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---------|
-|           |       |       |       |       |       | Del   | Home  | PgUp  | End   |       |       |       |         |
-|           |       |       |       |       |       |       |       |       |       |       |       |       |         |
+| ~         | !     | @     | #     | $     | %     | Del   | Home  | PgUp  | End   | Play/ | F14   | F15   |         |
+|           |       |       |       |       |       |       |       |       |       | Pause |       |       |         |
 |-----------'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'---------|
-|             |       |       | Cmd+d | Cmd+f | Cmd+g | Left  | Down  | Up    | Right | ##### |       |               |
+| `           | ^     | &     | *     | (     | )     | Left  | Down  | Up    | Right | ##### |       |               |
 |             |       |       |       |       |       | Arrow | Arrow | Arrow | Arrow | ##### |       |               |
 |-------------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'---------------|
-|                |       |       |       |       | Cmd+b | PgDn  | Enter |       |       |       |                    |  
-|                |       |       |       |       |       |       |       |       |       |       |                    |
+|                |Volume |Volume |Volume | -     | =     | PgDn  | Enter |Rewind | Fast- |       |                    |  
+|                | Mute  | Down  | Up    |       |       |       |       |       |Forward|       |                    |
 |---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
-|         |         |         |                                               |         |         |         |         |
+|         |         |         |                    Play/Pause                 |         |         |         |         |
 |         |         |         |                                               |         |         |         |         |
 '---------'---------'---------'-----------------------------------------------'---------'---------'---------'---------'
 ```
@@ -125,16 +124,16 @@ Number pad, window management with [Spectacle](https://www.spectacleapp.com/) an
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
-| Win   | Win   |Win    |Desktop|Desktop| Win   |Win    |       | *     |       |       | -     | +     |             |
+| Win   | Win   |Win    |Desktop|Desktop| Win   |Win    |       | *     | (     | )     | -     | +     |             |
 | Next  │ Full  |Center |Left   |Right  | Top   |Bottom |       |       |       |       |       |       |             |
 |-------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---------|
-| ######### | Win   | Win   |       |       |       |       | 7     | 8     | 9     |       |       |       |         |
+| ######### | Win   | Win   |       |       |       |       | 7     | 8     | 9     | 0     | *     | /     |         |
 | ######### | Left  | Right |       |       |       |       |       |       |       |       |       |       |         |
 |-----------'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'---------|
-|             |       |       | Cmd+d | Cmd+f | Cmd+g | Bksp  | 4     | 5     | 6     |       |       |               |
+|             |       |       | Cmd+d | Cmd+f | Cmd+g | Bksp  | 4     | 5     | 6     | +     | -     |               |
 |             |       |       |       |       |       |       |       |       |       |       |       |               |
 |-------------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'---------------|
-|                |       |       |       |       | Cmd+b | 1     | .     | 2     | 3     | /     |                    |  
+|                |       |       |       |       | Cmd+b | 1     | .     | 2     | 3     | =     |                    |  
 |                |       |       |       |       |       |       |       |       |       |       |                    |
 |---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
 |         |         |         |                            0                  |         |         |         |         |
@@ -144,22 +143,22 @@ Number pad, window management with [Spectacle](https://www.spectacleapp.com/) an
 
 <a name="escape">
 
-### Escape Layer
+### Escape/Quote Layer
 
-Actual function keys.
+Function keys, number row and shifted number row. This layer can be triggered using either `Esc` or `'`.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
 | ##### | F1    | F2    | F3    | F4    | F5    | F6    | F7    | F8    | F9    | F10   | F11   | F12   |             |
 | ##### │       |       |       |       |       |       |       |       |       |       |       |       |             |
 |-------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---------|
-|           |       |       |       |       |       |       |       |       |       |       |       |       |         |
+| ~         | !     | @     | #     | $     | %     | ^     | &     | *     | (     | )     |       |       |         |
 |           |       |       |       |       |       |       |       |       |       |       |       |       |         |
 |-----------'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'-,-----'---------|
-|             |       |       |       |       |       |       |       |       |       |       |       |               |
-|             |       |       |       |       |       |       |       |       |       |       |       |               |
+| `           | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     | 0     | ##### |               |
+|             |       |       |       |       |       |       |       |       |       |       | ##### |               |
 |-------------'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'--,----'---------------|
-|                |       |       |       |       |       |       |       |       |       |       |                    |  
+|                |       |       |       | _     | +     |       |       |       |       |       |                    |  
 |                |       |       |       |       |       |       |       |       |       |       |                    |
 |---------,------'--,----'----,--'-------'-------'-------'-------'-------'----,--'------,'-------',---------,---------|
 |         |         |         |                                               |         |         |         |         |
@@ -175,8 +174,8 @@ Mac function keys.
 
 ```
 ,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------,-------------,
-|       |Bright |Bright |Mission|Launch-|Illum. |Illum. |Rewind | Play/ |Fast-  |Volume |Volume |Volume |             |
-|       │ Up    | Down  |Control| pad   | Down  | Up    |       | Pause |forward| Mute  | Down  | Up    |             |
+|       |       |       |       |       |       |       |       |       |       |Volume |Volume |Volume |             |
+|       │       |       |       |       |       |       |       |       |       | Mute  | Down  | Up    |             |
 |-------'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---'---,---------|
 |           |       |       |       |       |       |       |       |       |       | Play/ |Bright |Bright |         |
 |           |       |       |       |       |       |       |       |       |       | Pause | Down  | Up    |         |
