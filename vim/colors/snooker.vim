@@ -315,6 +315,13 @@ call s:h('jsonKeyword',             {'fg': s:blue})
 call s:h('jsonNull',                {'fg': s:brown})
 call s:h('jsonBraces',              {'fg': s:fg})
 
+" sql {{{2
+hi! link sqlStatement Function
+hi! link sqlKeyword Function
+hi! link sqlOperator Special
+hi! link sqlFunction Statement
+hi! link Quote String
+
 " Plugin Groups {{{1
 " Fugitive {{{2
 call s:h('fugitiveUnstagedModifier', {'fg': s:red})
