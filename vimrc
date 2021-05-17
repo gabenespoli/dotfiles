@@ -332,13 +332,16 @@ let g:ale_linters = {'python': ['flake8']}
 let g:ale_fixers = {
       \ '*': ['trim_whitespace'],
       \ 'python': ['black', 'isort'],
+      \ 'sql': ['sqlformat'],
       \ }
+let g:ale_sql_sqlformat_options = '-a'
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
 augroup ale
   autocmd!
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
+  autocmd FileType sql nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
 
 " natebosch/vim-lsc:  {{{2
