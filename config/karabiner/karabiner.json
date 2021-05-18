@@ -678,7 +678,41 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "g",
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "right_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^io\\.alacritty$",
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
                                     "modifiers": {
                                         "mandatory": [
                                             "command",
@@ -693,7 +727,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g",
+                                        "key_code": "b",
                                         "modifiers": [
                                             "command"
                                         ]
@@ -3153,6 +3187,17 @@
                         "description": "Esc Layer [esc+numbers -> function keys]+dn/up/left/right]",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "type": "device_unless",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 1240,
+                                                "product_id": 61033
+                                            }
+                                        ]
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
