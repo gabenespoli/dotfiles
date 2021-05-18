@@ -8,7 +8,7 @@
 2. [Control Layer](#control)
 3. [Command Layer](#command)
 4. [Semicolon Layer](#semicolon) (Arrows, Symbols, Media)
-5. [Tab Layer](#tab) (Number Pad, Window Management)
+5. [Tab/A Layer](#tab) (Number Pad, Window Management)
 6. [Escape/Quote Layer](#escape) (Function Keys, Numbers, Symbols)
 7. [Function Layer](#function) (Mac Function Keys)
 8. [Option Layer](#option)
@@ -117,10 +117,11 @@ and down the directory tree.
 
 <a name="tab">
 
-### Tab Layer
+### Tab/A Layer
 
 Number pad, window management with [Spectacle](https://www.spectacleapp.com/) and the
-"Command" commands that were lost in the Command Layer.
+"Command" commands that were lost in the Command Layer. This layer can be
+triggered by either `Tab` or `A`.
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
@@ -130,13 +131,13 @@ Number pad, window management with [Spectacle](https://www.spectacleapp.com/) an
 | ######## |Space |Space |      |      |      |      | 7    | 8    | 9    | 0    | *    | /    |        |
 | ######## |Left  |Right |      |      |      |      |      |      |      |      |      |      |        |
 |----------'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'--------|
-|            |      |      |Cmd+d |Cmd+f |Cmd+g | Bksp | 4    | 5    | 6    | +    | -    |             |
-|            |      |      |      |      |      |      |      |      |      |      |      |             |
+|            | #### |      |Cmd+d |Cmd+f |Cmd+g | Bksp | 4    | 5    | 6    | +    | -    |             |
+|            | #### |      |      |      |      |      |      |      |      |      |      |             |
 |------------'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'-------------|
-|               |      |      |      |      |Cmd+b | 1    | .    | 2    | 3    | =    |                 |  
-|               |      |      |      |      |      |      |      |      |      |      |                 |
+|               |      |      |Space |Space |Cmd+b | 1    | .    | 2    | 3    | =    |                 |  
+|               |      |      |Left  |Right |      |      |      |      |      |      |                 |
 |--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
-|        |        |        |                            0           |        |        |        |        |
+|        |        |        |                     0                  |        |        |        |        |
 |        |        |        |                                        |        |        |        |        |
 '--------'--------'--------'----------------------------------------'--------'--------'--------'--------'
 ```
