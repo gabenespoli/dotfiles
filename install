@@ -137,6 +137,7 @@ conda install -c conda-forge -y \
 conda install -c conda-forge -c plotly -y jupyter-dash
 pip install jupytext jupyterlab_execute_time
 pip install pyspark-stubs databricks-cli
+conda install -c conda-forge python-kaleido
 
 # plotly support in jupyter lab
 jupyter labextension install jupyterlab-plotly jupyterlab-dash plotlywidget
