@@ -26,6 +26,10 @@ syntax match TodoTickBoxDoing   /^\s*-\ \[\*\]\ /
 syntax match TodoTickBoxExclaim /^\s*-\ \[!\]\ /
 syntax match TodoTickBoxPush    /^\s*-\ \[$\]\ /
 
+syntax match TodoBox            /^\s*\[\ \]\ /
+syntax match TodoBoxDoneChar    /^\s*\[x\]\ /
+syntax match TodoBoxDone        /^\s*\[x\]\ .*$/ contains=TodoBoxDoneChar
+
 " tags {{{1
 syntax match TodoProject            /+\S*\>/
 " syntax match TodoKey            /\S*:\S*/
@@ -85,10 +89,14 @@ hi def link TodoTickBoxDoing    TodoDoing
 hi def link TodoTickBoxExclaim  TodoExclaim
 hi def link TodoTickBoxComment  TodoComment
 
+hi def link TodoBox             TodoTodoChar
+hi def link TodoBoxDoneChar     TodoDoneChar
+hi def link TodoBoxDone         TodoDone
+
 hi def link TodoProject         Identifier
 " hi def link TodoKey             Identifier
 " hi def link TodoPoints          Identifier
-hi def link TodoJIRA            Tag
+hi def link TodoJIRA            Identifier
 hi def link TodoDue             DiffAdd
 hi def link TodoURL             markdownItalic
 
@@ -97,7 +105,7 @@ hi def link TodoWaiting         TodoContext
 hi def link TodoNext            TodoContext
 
 hi def link TodoDate            Normal
-hi def link TodoDateToday       ErrorMsg
+hi def link TodoDateToday       TodoDate
 
 hi def link TodoPriorityAChar   Type
 hi def link TodoPriorityBChar   Todo
