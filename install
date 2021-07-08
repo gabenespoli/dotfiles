@@ -32,6 +32,7 @@ brew cask install alacritty
 brew cask install spectacle
 brew cask install karabiner-elements
 
+npm install -g pyright
 npm install -g bash-language-server
 npm install -g vim-language-server
 npm install -g yaml-language-server
