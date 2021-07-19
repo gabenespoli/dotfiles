@@ -32,7 +32,6 @@ Plug 'kristijanhusak/vim-dirvish-git'
 
 " Coding:
 Plug 'dense-analysis/ale'
-Plug 'natebosch/vim-lsc'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
@@ -111,17 +110,8 @@ set statusline+=\ (%{FugitiveHead(12)})
 set statusline+=\ %<%.99f
 set statusline+=\ %y%h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
-set statusline+=%{LspStatus()}
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
-
-function! LspStatus() abort
-  let l:status = LSCServerStatus()
-  if l:status != '' 
-    let l:status = '[LSP:' . l:status . ']'
-  endif
-  return l:status
-endfunction
 
 " display errors from Ale in statusline (https://kadekillary.work/post/statusline-vim/)
 function! LinterStatus() abort
@@ -346,24 +336,6 @@ augroup ale
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
   autocmd FileType sql nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
-
-" natebosch/vim-lsc:  {{{2
-let g:lsc_server_commands = {'python': 'pyls'}
-let g:lsc_enable_autocomplete = v:false
-let g:lsc_enable_diagnostics = v:false
-let g:lsc_enable_diagnosticsa = v:false
-let g:lsc_auto_map = {
-      \ 'GoToDefinition': '<C-]>',
-      \ 'FindReferences': 'gr',
-      \ 'FindImplementations': 'gI',
-      \ 'Rename': 'gR',
-      \ 'ShowHover': v:true,
-      \ 'DocumentSymbol': 'go',
-      \ 'WorkspaceSymbol': 'gS',
-      \ 'SignatureHelp': 'gm',
-      \ 'Completion': 'completefunc',
-      \ }
-nnoremap <C-w><C-]> :vertical LSClientGoToDefinitionSplit<CR>
 
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {'python': 'vim_lsc'}
