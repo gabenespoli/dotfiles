@@ -98,7 +98,7 @@ set clipboard=unnamed
 set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
-set guifont=DM\ Mono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
+set guifont=IBMPlexMono:h16,Menlo:h16,Consolas:h16,Courier:h16
 let g:snooker_terminal_italics = 1
 set background=dark
 if has('gui')
