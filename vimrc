@@ -39,6 +39,7 @@ Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
+Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 
 " Writing:
 Plug 'junegunn/vim-easy-align'
