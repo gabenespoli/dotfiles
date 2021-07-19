@@ -29,6 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
+Plug 'overcache/NeoSolarized'
 
 " Coding:
 Plug 'dense-analysis/ale'
@@ -97,7 +98,12 @@ set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=DM\ Mono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
 let g:snooker_terminal_italics = 1
-colorscheme snooker
+set background=dark
+if has('gui')
+  colorscheme NeoSolarized
+else
+  colorscheme snooker
+endif
 
 " Status Line: {{{1
 function! SSHIndicator() abort
