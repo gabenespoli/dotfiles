@@ -175,6 +175,9 @@ nnoremap _ <C-w>>
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
+"open file under cursor in vertical split
+nnoremap <C-w><C-f> <C-w><C-v>gf
+
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
 
