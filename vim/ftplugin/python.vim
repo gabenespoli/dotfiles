@@ -5,10 +5,6 @@ nmap <C-l><CR> <C-l>izzjzz
 nmap <C-l><C-j> <C-l><CR>
 nmap <C-l><C-k> <C-l>iz
 
-" prabirshrestha/vim-lsp
-nmap <buffer> gd <Plug>(lsp-definition)
-nmap <buffer> gD <Plug>(lsp-peek-definition)
-
 " matplotlib
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
