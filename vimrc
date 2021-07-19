@@ -95,6 +95,7 @@ set tags^=.git/tags;~
 set diffopt+=context:3
 set suffixesadd+=.m,.r,.R,.py
 set clipboard=unnamed
+set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=DM\ Mono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
