@@ -35,6 +35,8 @@ Plug 'overcache/NeoSolarized'
 Plug 'dense-analysis/ale'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-dotenv'
+Plug 'tpope/vim-dadbod'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
