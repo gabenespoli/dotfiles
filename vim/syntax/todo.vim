@@ -10,8 +10,8 @@ syntax match TodoDoneChar       /^\s*x\ /
 syntax match TodoDone           /^\s*x\ .*$/ contains=TodoDoneChar
 syntax match TodoDoingChar      /^\s*\*\ /
 syntax match TodoDoing          /^\s*\*\ .*$/ contains=TodoDoingChar,TodoProject,TodoContext,TodoWaiting,TodoURL,TodoDue,TodoJIRA
-syntax match TodoExclaimChar    /^\s*!\ /
-syntax match TodoExclaim        /^\s*!\ .*$/ contains=TodoExclaimChar,TodoProject,TodoContext,TodoWaiting,TodoURL,TodoJIRA
+syntax match TodoWaitChar    /^\s*@\ /
+syntax match TodoWait        /^\s*@\ .*$/ contains=TodoWaitChar,TodoProject,TodoContext,TodoWaiting,TodoURL,TodoJIRA
 syntax match TodoCommentChar    /^\s*>\ /
 syntax match TodoComment        /^\s*>\ .*$/ contains=TodoCommentChar,TodoProject,TodoContext,TodoWaiting,TodoURL,TodoJIRA
 syntax match TodoWaitingChar    /^\s*?\ /
@@ -23,7 +23,7 @@ syntax match TodoPush           /^\s*\$\ .*$/ contains=TodoPushChar,TodoProject,
 syntax match TodoTickBox        /^\s*-\ \[\ \]\ /
 syntax match TodoTickBoxDone    /^\s*-\ \[x\]\ /
 syntax match TodoTickBoxDoing   /^\s*-\ \[\*\]\ /
-syntax match TodoTickBoxExclaim /^\s*-\ \[!\]\ /
+syntax match TodoTickBoxWait /^\s*-\ \[@\]\ /
 syntax match TodoTickBoxPush    /^\s*-\ \[$\]\ /
 
 syntax match TodoBox            /^\s*\[\ \]\ /
@@ -75,8 +75,8 @@ hi def link TodoDoneChar        Special
 hi def link TodoDone            Comment
 hi def link TodoDoingChar       Statement
 hi def link TodoDoing           Statement
-hi def link TodoExclaimChar     Todo
-hi def link TodoExclaim         Todo
+hi def link TodoWaitChar        Constant
+hi def link TodoWait            Constant
 hi def link TodoCommentChar     Type
 hi def link TodoComment         Comment
 hi def link TodoWaitingChar     Error
@@ -86,7 +86,7 @@ hi def link TodoPush            Comment
 hi def link TodoTickBox         TodoTodo
 hi def link TodoTickBoxDone     TodoDone
 hi def link TodoTickBoxDoing    TodoDoing
-hi def link TodoTickBoxExclaim  TodoExclaim
+hi def link TodoTickBoxWait     TodoWait
 hi def link TodoTickBoxComment  TodoComment
 
 hi def link TodoBox             TodoTodoChar

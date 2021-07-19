@@ -294,6 +294,7 @@ hi! link matlabCellCommentIndented  Title
 
 " vim {{{2
 hi! link vimCommentTitle            Title
+hi! link vimScriptDelim             Todo
 
 " python {{{2
 hi! link pythonAttribute            Type
