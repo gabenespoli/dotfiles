@@ -317,8 +317,8 @@ call s:h('jsonNull',                {'fg': s:brown})
 call s:h('jsonBraces',              {'fg': s:fg})
 
 " sql {{{2
-hi! link sqlStatement Function
-hi! link sqlKeyword Function
+hi! link sqlStatement PreProc
+hi! link sqlKeyword PreProc
 hi! link sqlOperator Special
 hi! link sqlFunction Statement
 hi! link Quote String
