@@ -5,7 +5,7 @@ nmap <C-l><CR> <C-l>izzjzz
 nmap <C-l><C-j> <C-l><CR>
 nmap <C-l><C-k> <C-l>ip
 
-nnoremap <buffer> gqq :Black<CR>
+nnoremap <buffer> gqq :Isort<CR>:Black<CR>
 
 " matplotlib
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>

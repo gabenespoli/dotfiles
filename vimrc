@@ -42,6 +42,7 @@ Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
+Plug 'fisadev/vim-isort'
 
 " Writing:
 Plug 'junegunn/vim-easy-align'
