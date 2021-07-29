@@ -37,7 +37,7 @@ font:
   normal:
     family: 'Dank Mono'
     style: Regular
-  size: 14.0
+  size: 15.0
 
 # Key bindings
 key_bindings:
