@@ -1,7 +1,7 @@
 set textwidth=88
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
-nmap <C-l><CR> <C-l>izzjzz
+nmap <C-l><CR> <C-l>ip}j
 nmap <C-l><C-j> <C-l><CR>
 nmap <C-l><C-k> <C-l>ip
 
