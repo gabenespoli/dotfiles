@@ -35,7 +35,7 @@ colors:
 # Font configuration
 font:
   normal:
-    family: 'IBM Plex Mono'
+    family: 'Dank Mono'
     style: Regular
   size: 14.0
 
