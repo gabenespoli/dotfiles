@@ -33,6 +33,7 @@ Plug 'overcache/NeoSolarized'
 
 " Coding:
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'dense-analysis/ale'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
@@ -185,6 +186,7 @@ nnoremap <silent> <leader>z :pclose<CR>
 
 " echo syntax under cursor
 nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
+nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
@@ -344,6 +346,30 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+}
+EOF
+
+" nvim-treesitter/playground:  {{{2
+lua <<EOF
+require "nvim-treesitter.configs".setup {
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+    },
+  }
 }
 EOF
 
