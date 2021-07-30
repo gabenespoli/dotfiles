@@ -32,6 +32,7 @@ Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'overcache/NeoSolarized'
 
 " Coding:
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'dense-analysis/ale'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
@@ -327,6 +328,24 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
+
+" nvim-treesitter:  {{{2
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      -- ["foo.bar"] = "Identifier",
+    -- },
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
 
 " dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0

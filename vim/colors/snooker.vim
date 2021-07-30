@@ -206,6 +206,63 @@ if has('nvim')
   hi! link TermCursorNC   Cursor
 endif
 
+" treesitter groups {{{2
+" hi! link TSNone                 guifg=foreground
+" hi! link TSPunctDelimiter       links to Delimiter
+" hi! link TSPunctBracket         links to Delimiter
+" hi! link TSPunctSpecial         links to Delimiter
+" hi! link TSConstant             links to Constant
+" hi! link TSConstBuiltin         links to Special
+
+hi! link TSConstBuiltin         Constant
+" hi! link TSConstMacro           links to Define
+" hi! link TSString               links to String
+" hi! link TSStringRegex          links to String
+" hi! link TSStringEscape         links to SpecialChar
+" hi! link TSCharacter            links to Character
+" hi! link TSNumber               links to Number
+" hi! link TSBoolean              links to Boolean
+" hi! link TSFloat                links to Float
+" hi! link TSFunction             links to Function
+" hi! link TSFuncBuiltin          links to Special
+
+hi! link TSFuncBuiltin          Function
+" hi! link TSFuncMacro            links to Macro
+" hi! link TSParameter            links to Identifier
+" hi! link TSParameterReference   links to TSParameter
+" hi! link TSMethod               links to Function
+" hi! link TSField                links to Identifier
+" hi! link TSProperty             links to Identifier
+" hi! link TSConstructor          links to Special
+
+hi! link TSConstructor          Todo
+" hi! link TSAnnotation           links to PreProc
+" hi! link TSAttribute            links to PreProc
+" hi! link TSNamespace            links to Include
+" hi! link TSConditional          links to Conditional
+" hi! link TSRepeat               links to Repeat
+" hi! link TSLabel                links to Label
+" hi! link TSOperator             links to Operator
+" hi! link TSKeyword              links to Keyword
+" hi! link TSKeywordFunction      links to Keyword
+" hi! link TSKeywordOperator      links to TSOperator
+" hi! link TSException            links to Exception
+" hi! link TSType                 links to Type
+" hi! link TSTypeBuiltin          links to Type
+" hi! link TSInclude              links to Include
+" hi! link TSVariableBuiltin      links to Special
+
+hi! link TSVariableBuiltin      Type
+" hi! link TSText                 links to TSNone
+" hi! link TSStrong               cterm=bold gui=bold
+" hi! link TSEmphasis             cterm=italic gui=italic
+" hi! link TSUnderline            cterm=underline gui=underline
+" hi! link TSTitle                links to Title
+" hi! link TSLiteral              links to String
+" hi! link TSURI                  links to Underlined
+" hi! link TSTag                  links to Label
+" hi! link TSTagDelimiter         links to Delimiter
+
 " my own extras {{{2
 call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'cterm': 'reverse'})
 call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com, 'cterm': 'reverse'})
