@@ -383,7 +383,7 @@ let g:ale_fixers = {
       \ 'python': ['black', 'isort'],
       \ 'sql': ['sqlformat'],
       \ }
-let g:ale_sql_sqlformat_options = '-a'
+let g:ale_sql_sqlformat_options = '-rs -k upper'
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
 nnoremap coy :ALEToggle<CR>
