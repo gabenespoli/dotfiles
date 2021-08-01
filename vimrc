@@ -37,7 +37,6 @@ Plug 'nvim-treesitter/playground'
 Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
 Plug 'liuchengxu/vista.vim'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-dadbod'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
@@ -448,16 +447,6 @@ nnoremap ]D <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {'python': 'nvim_lsp'}
 let g:vista_sidebar_width = 40
-
-" majutsushi/tagbar: {{{2
-nnoremap <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
-let g:tagbar_compact = 1
-let g:tagbar_iconchars = ['▸', '▾']
-let g:tagbar_type_r = {'ctagstype': 'r', 'kinds': ['f:Functions', 'g:GlobalVariables', 'v:FunctionVariables',]}
-let g:tagbar_map_jump = ['<CR>', 'o']
-let g:tagbar_map_togglefold = ['za']
 
 " kalekundert/vim-coiled-snake 
 nmap zuz <Space>M<Space>m
