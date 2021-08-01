@@ -446,7 +446,7 @@ nnoremap [D <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]D <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 " liuchengxu/vista.vim:  {{{2
-let g:vista_executive_for = {'python': 'vim_lsc'}
+let g:vista_executive_for = {'python': 'nvim_lsp'}
 let g:vista_sidebar_width = 40
 
 " majutsushi/tagbar: {{{2
