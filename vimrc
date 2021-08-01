@@ -387,7 +387,7 @@ let g:ale_fixers = {
 let g:ale_sql_sqlformat_options = '-rs -k upper'
 nnoremap [d :ALEPrevious<CR>
 nnoremap ]d :ALENext<CR>
-nnoremap coy :ALEToggle<CR>
+nnoremap cod :ALEToggle<CR>
 augroup ale
   autocmd!
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
