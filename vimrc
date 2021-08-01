@@ -32,10 +32,11 @@ Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'overcache/NeoSolarized'
 
 " Coding:
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nathunsmitty/nvim-ale-diagnostic', {'branch': 'main'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-dadbod'
@@ -331,44 +332,12 @@ if has('mac')
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
 
-" nvim-treesitter:  {{{2
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
-EOF
-
-" nvim-treesitter/playground:  {{{2
-lua <<EOF
-require "nvim-treesitter.configs".setup {
-  playground = {
-    enable = true,
-    disable = {},
-    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-    persist_queries = false, -- Whether the query persists across vim sessions
-    keybindings = {
-      toggle_query_editor = 'o',
-      toggle_hl_groups = 'i',
-      toggle_injected_languages = 't',
-      toggle_anonymous_nodes = 'a',
-      toggle_language_display = 'I',
-      focus_language = 'f',
-      unfocus_language = 'F',
-      update = 'R',
-      goto_node = '<cr>',
-      show_help = '?',
-    },
-  }
-}
-EOF
-
 " dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_set_loclist = 0
+" let g:ale_hover_to_floating_window = 1
+" let g:ale_hover_to_floating_preview = 1
 let g:ale_linters = {'python': ['flake8']}
 let g:ale_fixers = {
       \ '*': ['trim_whitespace'],
@@ -434,6 +403,40 @@ nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <C-k><C-d> <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [D <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]D <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
+" nvim-treesitter:  {{{2
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+" nvim-treesitter/playground:  {{{2
+lua <<EOF
+require "nvim-treesitter.configs".setup {
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+    },
+  }
+}
+EOF
 
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {'python': 'nvim_lsp'}
