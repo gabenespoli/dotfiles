@@ -35,6 +35,7 @@ Plug 'overcache/NeoSolarized'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'dense-analysis/ale'
+Plug 'neovim/nvim-lspconfig'
 Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-dotenv'
@@ -392,6 +393,57 @@ augroup ale
   autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
   autocmd FileType sql nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
+
+" neovim/nvim-lspconfig:  {{{2
+lua << EOF
+require('lspconfig').pyright.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off",
+      }
+    }
+  }
+}
+
+require("nvim-ale-diagnostic")
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = true,
+    underline = false,
+    update_in_insert = false,
+    virtual_text = false,
+  }
+)
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  --local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+end
+
+EOF
+
+nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
+nmap <C-]> gd
+nmap <C-w><C-]> <C-w><C-v><C-]>zt
+nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <C-k><C-d> <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap [D <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap ]D <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {'python': 'vim_lsc'}
