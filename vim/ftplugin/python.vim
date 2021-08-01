@@ -1,12 +1,6 @@
 set textwidth=88
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
-nmap <C-l><CR> <C-l>ip}j
-nmap <C-l><C-j> <C-l><CR>
-nmap <C-l><C-k> <C-l>ip
-
-nnoremap <buffer> gqq :Isort<CR>:Black<CR>
-
 " matplotlib
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
