@@ -395,7 +395,6 @@ end
 EOF
 
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-nmap <C-]> gd
 nmap <C-w><C-]> <C-w><C-v><C-]>zt
 nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>

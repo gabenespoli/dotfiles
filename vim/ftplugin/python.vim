@@ -1,6 +1,8 @@
 set textwidth=88
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
+nmap <buffer> <C-]> gd
+
 " matplotlib
 nnoremap <buffer> <localleader>q :SlimeSend1 plt.close()<CR>
 nnoremap <buffer> <localleader>Q :SlimeSend1 plt.close('all')<CR>
