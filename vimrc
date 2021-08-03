@@ -179,8 +179,9 @@ nnoremap _ <C-w>>
 " open current file in new tab (uses the x mark)
 nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 
-"open file under cursor in vertical split
+" open file/tag under cursor in vertical split
 nnoremap <C-w><C-f> <C-w><C-v>gf
+nnoremap <C-w><C-]> <C-w><C-v><C-]>zt
 
 " close preview window (alternative to builtin <C-w>z)
 nnoremap <silent> <leader>z :pclose<CR>
@@ -395,7 +396,6 @@ end
 EOF
 
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-nmap <C-w><C-]> <C-w><C-v><C-]>zt
 nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
