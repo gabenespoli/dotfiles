@@ -403,6 +403,11 @@ nnoremap <C-k><C-d> <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [D <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap ]D <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
+augroup nvimlsp
+  autocmd!
+  autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
+augroup END
+
 " nvim-treesitter:  {{{2
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
