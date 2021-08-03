@@ -351,7 +351,7 @@ nnoremap ]d :ALENext<CR>
 nnoremap cod :ALEToggle<CR>
 augroup ale
   autocmd!
-  autocmd FileType python nnoremap <buffer> gqq :ALEFix<CR>
+  autocmd FileType python nnoremap <buffer> gqq :Isort<CR>:Black<CR>
   autocmd FileType sql nnoremap <buffer> gqq :ALEFix<CR>
 augroup END
 
