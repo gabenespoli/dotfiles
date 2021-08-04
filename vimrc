@@ -61,7 +61,6 @@ Plug 'jpalardy/vim-slime'
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-neovim-defaults'
-Plug 'gabenespoli/vim-komono'
 Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
@@ -201,6 +200,9 @@ nnoremap <expr> zT
       \ exists(':Ggrep') == 2 ?
       \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
       \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
+
+" quick text file in ~/notes folder
+nnoremap <C-k><C-j> execute 'edit '.expand('~').'/notes/'.strftime("%Y-%m-%d").'.txt'
 
 " Plugin Settings: {{{1
 " tpope/vim-rsi: {{{2
