@@ -86,15 +86,15 @@ call s:h('Comment',       {'fg': s:fg_com, 'gui': 'italic', 'cterm': 'italic'})
 
 call s:h('Constant',      {'fg': s:cyan_light})
 call s:h('String',        {'fg': s:cyan})
-hi! link Character        Constant
-hi! link Number           Constant
+hi! link Character        String
+hi! link Number           String
 hi! link Boolean          Constant
-hi! link Float            Constant
+hi! link Float            String
 
 call s:h('Identifier',    {'fg': s:blue})
-hi! link Function         Identifier
+call s:h('Function',      {'fg': s:blue_light})
 
-call s:h('Statement',     {'fg': s:green_light})
+call s:h('Statement',     {'fg': s:green})
 call s:h('Conditional',   {'fg': s:green})
 hi! link Repeat           Conditional
 hi! link Label            Conditional
@@ -108,15 +108,15 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h('Type',          {'fg': s:yellow})
+call s:h('Type',          {'fg': s:brown})
 call s:h('Structure',     {'fg': s:green})
 hi! link StorageClass     Type
 hi! link Typedef          Type
 
-call s:h('Special',       {'fg': s:brown})
-call s:h('SpecialChar',   {'fg': s:orange})
+call s:h('Special',       {'fg': s:orange})
+call s:h('SpecialChar',   {'fg': s:yellow})
 hi! link Tag              Special
-hi! link Delimiter        Special
+call s:h('Delimiter',     {'fg': s:brown})
 hi! link SpecialComment   Special
 hi! link Debug            Special
 
@@ -210,11 +210,15 @@ endif
 " hi! link TSNone                 guifg=foreground
 " hi! link TSPunctDelimiter       links to Delimiter
 " hi! link TSPunctBracket         links to Delimiter
-" hi! link TSPunctSpecial         links to Delimiter
-" hi! link TSConstant             links to Constant
-" hi! link TSConstBuiltin         links to Special
 
+" hi! link TSPunctSpecial         links to Delimiter
+hi! link TSPunctSpecial         Todo
+
+" hi! link TSConstant             links to Constant
+
+" hi! link TSConstBuiltin         links to Special
 hi! link TSConstBuiltin         Constant
+
 " hi! link TSConstMacro           links to Define
 " hi! link TSString               links to String
 " hi! link TSStringRegex          links to String
@@ -224,18 +228,23 @@ hi! link TSConstBuiltin         Constant
 " hi! link TSBoolean              links to Boolean
 " hi! link TSFloat                links to Float
 " hi! link TSFunction             links to Function
-" hi! link TSFuncBuiltin          links to Special
 
+" hi! link TSFuncBuiltin          links to Special
 hi! link TSFuncBuiltin          Function
+
 " hi! link TSFuncMacro            links to Macro
+
 " hi! link TSParameter            links to Identifier
+hi! link TSParameter            PreProc
+
 " hi! link TSParameterReference   links to TSParameter
 " hi! link TSMethod               links to Function
 " hi! link TSField                links to Identifier
 " hi! link TSProperty             links to Identifier
-" hi! link TSConstructor          links to Special
 
+" hi! link TSConstructor          links to Special
 hi! link TSConstructor          Todo
+
 " hi! link TSAnnotation           links to PreProc
 " hi! link TSAttribute            links to PreProc
 " hi! link TSNamespace            links to Include
@@ -250,9 +259,10 @@ hi! link TSConstructor          Todo
 " hi! link TSType                 links to Type
 " hi! link TSTypeBuiltin          links to Type
 " hi! link TSInclude              links to Include
-" hi! link TSVariableBuiltin      links to Special
 
+" hi! link TSVariableBuiltin      links to Special
 hi! link TSVariableBuiltin      Type
+
 " hi! link TSText                 links to TSNone
 " hi! link TSStrong               cterm=bold gui=bold
 " hi! link TSEmphasis             cterm=italic gui=italic
