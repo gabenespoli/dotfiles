@@ -2,35 +2,35 @@
 colors:
   primary:
     background: '#0f111b'  # background from spaceduck
-    foreground: '#ADAD9B'
+    foreground: '#adad9b'
 
   selection:
-    background: '#2B302B'
-    foreground: '#E5E5D2'
+    background: '#2b302b'
+    foreground: '#e5e5d2'
 
   cursor:
-    cursor: '#CDC08B'
+    cursor: '#cdc08b'
     text: '#0f111b'
 
   normal:
-    black: '#2B302B'
-    red: '#E52E1A'
-    green: '#4B9B24'
+    black: '#2b302b'
+    red: '#e52e1a'
+    green: '#4b9b24'
     yellow: '#a57230'
-    blue: '#0094CF'
-    magenta: '#7A7CCF'
-    cyan: '#1DAE87'
-    white: '#CDC08B'
+    blue: '#0094cf'
+    magenta: '#7a7ccf'
+    cyan: '#1dae87'
+    white: '#cdc08b'
 
   bright:
-    black: '#6A6A5B'
-    red: '#E5941A'
-    green: '#25C528'
+    black: '#6a6a5b'
+    red: '#e5941a'
+    green: '#25c528'
     yellow: '#c89b13'
     blue: '#00a3cc'
-    magenta: '#DF7376'
+    magenta: '#df7376'
     cyan: '#5ccc96'
-    white: '#E5E5D2'
+    white: '#e5e5d2'
 
 # Font configuration
 font:
