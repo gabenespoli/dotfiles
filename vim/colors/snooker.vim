@@ -510,3 +510,7 @@ call s:h('CocInfoSign',             {'fg': s:yellow})
 call s:h('CocHintSign',             {'fg': s:blue})
 call s:h('CocSelectedText',         {'fg': s:red})
 call s:h('CocCodeLens',             {'fg': s:fg_light})
+
+" ale {{{2
+hi! link ALEErrorSign               Error
+hi! link ALEWarningSign             Todo
