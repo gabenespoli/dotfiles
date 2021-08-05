@@ -200,13 +200,13 @@ call s:h('ColorColumn',   {'bg': s:bg_light})
 call s:h('MatchParen',    {'fg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('qfLineNr',      {'fg': s:fg})
 
-" nvim-only groups {{{2
+" nvim-only groups
 if has('nvim')
   hi! link TermCursor     Cursor
   hi! link TermCursorNC   Cursor
 endif
 
-" treesitter groups {{{2
+" Treesitter {{{1
 " hi! link TSNone                 guifg=foreground
 " hi! link TSPunctDelimiter       links to Delimiter
 " hi! link TSPunctBracket         links to Delimiter
@@ -390,7 +390,7 @@ hi! link sqlOperator Special
 hi! link sqlFunction Statement
 hi! link Quote String
 
-" Plugin Groups {{{1
+" Plugins {{{1
 " Fugitive {{{2
 call s:h('fugitiveUnstagedModifier', {'fg': s:red})
 call s:h('fugitiveStagedModifier', {'fg': s:green})
