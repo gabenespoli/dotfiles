@@ -514,3 +514,6 @@ call s:h('CocCodeLens',             {'fg': s:fg_light})
 " ale {{{2
 hi! link ALEErrorSign               Error
 hi! link ALEWarningSign             Todo
+
+" telescope.nvim {{{2
+hi! link TelescopeMatching          Search
