@@ -212,7 +212,7 @@ endif
 " hi! link TSPunctBracket         links to Delimiter
 
 " hi! link TSPunctSpecial         links to Delimiter
-hi! link TSPunctSpecial         Todo
+hi! link TSPunctSpecial         SpecialChar
 
 " hi! link TSConstant             links to Constant
 
