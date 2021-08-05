@@ -148,7 +148,7 @@ hi! link ModeMsg MoreMsg
 call s:h('LineNr',        {'fg': s:fg_com})
 call s:h('CursorLineNr',  {'fg': s:fg, 'bg': s:bg_light})
 call s:h('Question',      {'fg': s:green})
-call s:h('StatusLine',    {'fg': s:fg_com, 'bg': s:bg, 'cterm': 'reverse'})
+call s:h('StatusLine',    {'fg': s:fg_com, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('Conceal',       {'fg': s:fg})
 call s:h('StatusLineNC',  {'fg': s:fg_com, 'bg': s:bg_light})
 call s:h('VertSplit',     {'fg': s:bg_light, 'bg': s:bg})
@@ -190,7 +190,7 @@ call s:h('PmenuSel',      {'fg': s:blue_light, 'bg': s:bg, 'gui': 'reverse', 'ct
 call s:h('PmenuSbar',     {'fg': s:fg, 'bg': s:bg_light})
 call s:h('PmenuThumb',    {'fg': s:fg, 'bg': s:bg_light})
 call s:h('TabLine',       {'fg': s:fg_com, 'bg': s:bg_light})
-call s:h('TabLineSel',    {'fg': s:fg_com, 'bg': s:bg, 'cterm': 'reverse'})
+call s:h('TabLineSel',    {'fg': s:fg_com, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('TabLineFill',   {'fg': s:fg, 'bg': s:bg})
 call s:h('CursorColumn',  {'bg': s:bg_light})
 call s:h('CursorLine',    {'bg': s:bg_light})
@@ -273,11 +273,11 @@ hi! link TSVariableBuiltin      Type
 " hi! link TSTag                  links to Label
 " hi! link TSTagDelimiter         links to Delimiter
 
-" my own extras {{{2
-call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'cterm': 'reverse'})
-call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com, 'cterm': 'reverse'})
-call s:h('TodoStatus',    {'fg': s:pink,   'bg': s:bg_light, 'cterm': 'reverse'})
-call s:h('ErrorStatus',   {'fg': s:red,    'bg': s:bg_light, 'cterm': 'reverse'})
+" my own extras {{{1
+call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('TodoStatus',    {'fg': s:pink,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('ErrorStatus',   {'fg': s:red,    'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 hi! link TabMod           Modified
 hi! link TabModSel        TabMod
 hi! link markdownPandocCitation pandocCiteKey
