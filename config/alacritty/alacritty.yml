@@ -35,8 +35,11 @@ colors:
 # Font configuration
 font:
   normal:
-    family: 'Dank Mono'
+    family: 'DankMono Nerd Font'
     style: Regular
+  offset:
+    x: 0
+    y: 2
   size: 14.0
 
 # Key bindings
