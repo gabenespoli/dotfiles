@@ -24,6 +24,9 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/bin/vim/gv.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
@@ -296,6 +299,35 @@ nnoremap gL :GV --all<CR>
 xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
+
+" telescope.nvim  {{2
+nnoremap <C-k><C-k> :Telescope 
+nnoremap <C-p>      :Telescope git_files<CR>
+nnoremap <C-k><C-b> :Telescope buffers<CR>
+nnoremap <C-k><C-f> :lua require('telescope.builtin').file_browser({dir_icon = '>'})<CR>
+nnoremap <C-k><C-g> :Telescope live_grep<CR>
+nnoremap <C-k><C-h> :Telescope oldfiles<CR>
+nnoremap <C-k><C-p> :Telescope find_files<CR>
+nnoremap <C-k><C-r> :Telescope registers<CR>
+nnoremap <C-k><C-t> :Telescope lsp_document_symbols<CR>
+
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+      },
+      n = {
+        ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+      },
+    },
+  }
+}
+EOF
 
 " justinmk/vim-dirvish: {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
