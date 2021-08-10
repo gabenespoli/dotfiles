@@ -35,7 +35,7 @@ colors:
 # Font configuration
 font:
   normal:
-    family: 'DankMono Nerd Font'
+    family: 'DankMono Nerd Font Mono'
     style: Regular
   offset:
     x: 0
