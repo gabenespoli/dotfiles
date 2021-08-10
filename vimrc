@@ -27,6 +27,8 @@ Plug '~/bin/vim/gv.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'lambdalisue/nerdfont.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
@@ -120,9 +122,10 @@ endfunction
 set statusline=
 set statusline+=%{SSHIndicator()}
 set statusline+=[%n]
-set statusline+=\ (%{FugitiveHead(12)})
-set statusline+=\ %<%.99f
-set statusline+=\ %y%h%w%#Modified#%m%*%#ErrorStatus#%r%*
+set statusline+=\ (%{FugitiveHead(12)})
+set statusline+=\ %{nerdfont#find()}
+set statusline+=[%<%.99f]
+set statusline+=\ %h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
@@ -329,6 +332,11 @@ require('telescope').setup{
 }
 EOF
 
+" kyazdani42/nvim-web-devicons:  {{{2
+lua << EOF
+require('nvim-web-devicons').setup{}
+EOF
+
 " justinmk/vim-dirvish: {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
 if has('mac')
@@ -360,6 +368,34 @@ augroup END
 
 " neovim/nvim-lspconfig:  {{{2
 lua << EOF
+
+require('vim.lsp.protocol').CompletionItemKind = {
+  '', -- Text
+  '', -- Method 
+  '', -- Function
+  '', -- Constructor
+  '', -- Field ﰠ
+  '', -- Variable
+  'פּ', -- Class ﴯפּ
+  'ﰮ', -- Interface ﰮ
+  '', -- Module
+  '', -- Property
+  '', -- Unit
+  '', -- Value
+  '', -- Enum
+  '', -- Keyword 
+  '﬌', -- Snippet ﬌
+  '', -- Color
+  '', -- File 
+  '', -- Reference 
+  '', -- Folder 
+  '', -- EnumMember
+  '', -- Constant
+  '', -- Struct 
+  '', -- Event
+  '', -- Operator
+  '', -- TypeParameter
+}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
