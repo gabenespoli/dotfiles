@@ -108,13 +108,13 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h('Type',          {'fg': s:brown})
+call s:h('Type',          {'fg': s:yellow})
 call s:h('Structure',     {'fg': s:green})
 hi! link StorageClass     Type
 hi! link Typedef          Type
 
 call s:h('Special',       {'fg': s:orange})
-call s:h('SpecialChar',   {'fg': s:yellow})
+hi! link SpecialChar      Special
 hi! link Tag              Special
 call s:h('Delimiter',     {'fg': s:brown})
 hi! link SpecialComment   Special
@@ -212,7 +212,7 @@ endif
 " hi! link TSPunctBracket         links to Delimiter
 
 " hi! link TSPunctSpecial         links to Delimiter
-hi! link TSPunctSpecial         SpecialChar
+hi! link TSPunctSpecial         Special
 
 " hi! link TSConstant             links to Constant
 
@@ -243,7 +243,7 @@ hi! link TSParameter            PreProc
 " hi! link TSProperty             links to Identifier
 
 " hi! link TSConstructor          links to Special
-hi! link TSConstructor          Todo
+hi! link TSConstructor          Type
 
 " hi! link TSAnnotation           links to PreProc
 " hi! link TSAttribute            links to PreProc
