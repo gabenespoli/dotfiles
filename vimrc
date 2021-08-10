@@ -24,8 +24,6 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/bin/vim/gv.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
@@ -298,35 +296,6 @@ nnoremap gL :GV --all<CR>
 xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
-
-" junegunn/fzf.vim: {{{2
-nnoremap <C-p>      :GFiles<CR>
-nnoremap <C-k><C-p> :Files <C-r>=expand('%:h')<CR><CR>
-nnoremap <C-k><C-f> :History<CR>
-nnoremap <C-k><C-b> :Buffers<CR>
-nnoremap <C-k><C-g> :Rg<CR>
-
-augroup fzf
-  autocmd!
-  autocmd FileType fzf tnoremap <buffer> <C-p> <Up>
-  autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
-  autocmd FileType fzf tnoremap <buffer> <Up> <C-p>
-  autocmd FileType fzf tnoremap <buffer> <Down> <C-n>
-augroup END
-
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
 
 " justinmk/vim-dirvish: {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
