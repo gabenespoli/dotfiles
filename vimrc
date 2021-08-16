@@ -31,6 +31,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
+Plug 'sjl/gundo.vim'
 Plug 'overcache/NeoSolarized'
 
 " Coding:
@@ -362,6 +363,9 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
+
+" sjl/gundo.vim:  {{{2
+nnoremap <C-k><C-u> :GundoToggle<CR>
 
 " dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0
