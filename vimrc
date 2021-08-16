@@ -28,7 +28,6 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lambdalisue/nerdfont.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
@@ -123,12 +122,20 @@ set statusline=
 set statusline+=%{SSHIndicator()}
 set statusline+=[%n]
 set statusline+=\ (%{FugitiveHead(12)})
-set statusline+=\ %{nerdfont#find()}
+set statusline+=\ %{Devicon()}
 set statusline+=[%<%.99f]
 set statusline+=\ %h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
+
+function! Devicon() abort
+  let l:filename = expand('%:t')
+  let l:ext = expand('%:e')
+  let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
+        \ . '"' . l:filename . '", "' . l:ext . '"))')
+  return l:icon[1:3]
+endfunction
 
 " display errors from Ale in statusline (https://kadekillary.work/post/statusline-vim/)
 function! LinterStatus() abort
