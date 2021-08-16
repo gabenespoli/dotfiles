@@ -313,15 +313,15 @@ nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
 
 " telescope.nvim  {{2
-nnoremap <C-k><Space> :Telescope<Space>
-nnoremap <C-p>      :Telescope git_files<CR>
-nnoremap <C-k><C-b> :Telescope buffers<CR>
-nnoremap <C-k><C-f> :lua require('telescope.builtin').file_browser({dir_icon = ''})<CR>
-nnoremap <C-k><C-g> :Telescope live_grep<CR>
-nnoremap <C-k><C-h> :Telescope oldfiles<CR>
-nnoremap <C-k><C-p> :Telescope find_files<CR>
-nnoremap <C-k><C-r> :Telescope registers<CR>
-nnoremap <C-k><C-t> :Telescope lsp_document_symbols<CR>
+nnoremap <C-k><Space>   :Telescope<Space>
+nnoremap <C-p>          :Telescope git_files<CR>
+nnoremap <C-k><C-b>     :Telescope buffers<CR>
+nnoremap <C-k><C-f>     :lua require('telescope.builtin').file_browser({dir_icon = ''})<CR>
+nnoremap <C-k><C-g>     :Telescope live_grep<CR>
+nnoremap <C-k><C-h>     :Telescope oldfiles<CR>
+nnoremap <C-k><C-p>     :Telescope find_files<CR>
+nnoremap <C-k><C-r>     :Telescope registers<CR>
+nnoremap <C-k><C-t>     :Telescope lsp_document_symbols<CR>
 
 lua << EOF
 local actions = require('telescope.actions')
