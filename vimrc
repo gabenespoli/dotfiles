@@ -124,7 +124,7 @@ set statusline+=[%n]
 set statusline+=\ (%{FugitiveHead(12)})
 set statusline+=\ %{Devicon()}
 set statusline+=[%<%.99f]
-set statusline+=\ %h%w%#Modified#%m%*%#ErrorStatus#%r%*
+set statusline+=%h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
