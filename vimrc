@@ -272,9 +272,6 @@ nnoremap <leader>s 1z=
 let g:qf_shorten_path = 0
 let g:qf_mapping_ack_style = 1
 
-" kshenoy/vim-signature: {{{2
-nnoremap com :SignatureToggle<CR>
-
 " tpope/vim-fugitive: {{{2
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
