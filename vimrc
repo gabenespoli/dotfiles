@@ -130,11 +130,13 @@ set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
-  let l:filename = expand('%:t')
-  let l:ext = expand('%:e')
-  let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
-        \ . '"' . l:filename . '", "' . l:ext . '"))')
-  return l:icon[1:3]
+  if stridx(expand('%:p'), '.git') != -1
+    return ''
+  else
+    let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
+          \ . '"' . expand('%:t') . '", "' . expand('%:e') . '"))')
+    return l:icon[1:3]
+  endif
 endfunction
 
 " display errors from Ale in statusline (https://kadekillary.work/post/statusline-vim/)
@@ -314,7 +316,7 @@ xnoremap gl :GV <CR>
 nnoremap <C-k><C-k> :Telescope 
 nnoremap <C-p>      :Telescope git_files<CR>
 nnoremap <C-k><C-b> :Telescope buffers<CR>
-nnoremap <C-k><C-f> :lua require('telescope.builtin').file_browser({dir_icon = '>'})<CR>
+nnoremap <C-k><C-f> :lua require('telescope.builtin').file_browser({dir_icon = ''})<CR>
 nnoremap <C-k><C-g> :Telescope live_grep<CR>
 nnoremap <C-k><C-h> :Telescope oldfiles<CR>
 nnoremap <C-k><C-p> :Telescope find_files<CR>
@@ -341,7 +343,14 @@ EOF
 
 " kyazdani42/nvim-web-devicons:  {{{2
 lua << EOF
-require('nvim-web-devicons').setup{}
+require("nvim-web-devicons").setup{
+  override = {
+    cfg = {icon = ""},
+    vimrc = {icon = ""},
+    bashrc = {icon = ""},
+    bash_profile = {icon = ""},
+  },
+}
 EOF
 
 " justinmk/vim-dirvish: {{{2
