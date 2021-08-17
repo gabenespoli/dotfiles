@@ -30,26 +30,26 @@ endif
 
 " Colors {{{1
 let s:bg              = { 'gui': '#0f111b', 'cterm': 'NONE' }
-let s:fg              = { 'gui': '#ADAD9B', 'cterm': 'NONE' }
+let s:fg              = { 'gui': '#adad9b', 'cterm': 'NONE' }
 let s:none            = { 'gui': 'NONE',    'cterm': 'NONE' }
 
-let s:bg_light        = { 'gui': '#2B302B', 'cterm': '0'    }
-let s:red             = { 'gui': '#E52E1A', 'cterm': '1'    }
-let s:green           = { 'gui': '#1C9C20', 'cterm': '2'    }
+let s:bg_light        = { 'gui': '#2b302b', 'cterm': '0'    }
+let s:red             = { 'gui': '#e52e1a', 'cterm': '1'    }
+let s:green           = { 'gui': '#1c9c20', 'cterm': '2'    }
 let s:brown           = { 'gui': '#a57230', 'cterm': '3'    }
-let s:blue            = { 'gui': '#0094CF', 'cterm': '4'    }
-let s:purple          = { 'gui': '#7A7CCF', 'cterm': '5'    }
-let s:cyan            = { 'gui': '#1DAE87', 'cterm': '6'    }
-let s:fg_light        = { 'gui': '#CDC08B', 'cterm': '7'    }
+let s:blue            = { 'gui': '#0094cf', 'cterm': '4'    }
+let s:purple          = { 'gui': '#7a7ccf', 'cterm': '5'    }
+let s:cyan            = { 'gui': '#1dae87', 'cterm': '6'    }
+let s:fg_light        = { 'gui': '#cdc08b', 'cterm': '7'    }
 
-let s:fg_com          = { 'gui': '#6A6A5B', 'cterm': '8'    }
-let s:orange          = { 'gui': '#E5941A', 'cterm': '9'    }
-let s:green_light     = { 'gui': '#25C528', 'cterm': '10'   }
+let s:fg_com          = { 'gui': '#6a6a5b', 'cterm': '8'    }
+let s:orange          = { 'gui': '#e5941a', 'cterm': '9'    }
+let s:green_light     = { 'gui': '#25c528', 'cterm': '10'   }
 let s:yellow          = { 'gui': '#c89b13', 'cterm': '11'   }
 let s:blue_light      = { 'gui': '#00a3cc', 'cterm': '12'   }
-let s:pink            = { 'gui': '#DF7376', 'cterm': '13'   }
+let s:pink            = { 'gui': '#df7376', 'cterm': '13'   }
 let s:cyan_light      = { 'gui': '#5ccc96', 'cterm': '14'   }
-let s:fg_bright       = { 'gui': '#E5E5D2', 'cterm': '15'   }
+let s:fg_bright       = { 'gui': '#e5e5d2', 'cterm': '15'   }
 
 if g:snooker_spell_undercurl == 1
   let s:sp_un      = 'undercurl'
