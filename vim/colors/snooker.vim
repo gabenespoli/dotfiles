@@ -516,4 +516,5 @@ hi! link ALEErrorSign               Error
 hi! link ALEWarningSign             Todo
 
 " telescope.nvim {{{2
-hi! link TelescopeMatching          Search
+hi! link TelescopeMatching          Todo
+hi! link TelescopeSelection         PmenuSel
