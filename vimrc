@@ -390,7 +390,7 @@ augroup END
 lua << EOF
 
 require('vim.lsp.protocol').CompletionItemKind = {
-  '', -- Text
+  '', -- Text 
   '', -- Method 
   '', -- Function
   '', -- Constructor
