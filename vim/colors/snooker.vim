@@ -143,7 +143,7 @@ call s:h('ErrorMsg',      {'fg': s:fg_bright, 'bg': s:red})
 call s:h('IncSearch',     {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('Search',        {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('MoreMsg',       {'fg': s:fg_com})
-hi! link ModeMsg MoreMsg
+hi! link ModeMsg          MoreMsg
 
 call s:h('LineNr',        {'fg': s:fg_com})
 call s:h('CursorLineNr',  {'fg': s:fg, 'bg': s:bg_light})
