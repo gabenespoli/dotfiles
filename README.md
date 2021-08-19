@@ -152,8 +152,8 @@ Number pad, window management with [Spectacle](https://www.spectacleapp.com/) an
 | Win  | Win  | Win  | Win  | Win  | Win  | Win  |      | *    |      |      |      |      |            |
 | Next | Full |Center| Left |Right | Top  |Bottom|      |      |      |      |      |      |            |
 |------'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--------|
-| ######## |Space |Space |      |      |      |      | 7    | 8    | 9    | +    | *    |      |        |
-| ######## |Left  |Right |      |      |      |      |      |      |      |      |      |      |        |
+| ######## |Space |Space |Shift-| Tab  |      | Del  | 7    | 8    | 9    | +    | *    |      |        |
+| ######## |Left  |Right |Tab   |      |      |      |      |      |      |      |      |      |        |
 |----------'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'--------|
 |            | ,    |Space |Cmd+d |Cmd+f |Cmd+g | Bksp | 4    | 5    | 6    | -    | '    | Enter       |
 |            |      |      |      |      |      |      |      |      |      |      |      |             |

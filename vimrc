@@ -500,6 +500,7 @@ EOF
 " liuchengxu/vista.vim:  {{{2
 let g:vista_executive_for = {'python': 'nvim_lsp'}
 let g:vista_sidebar_width = 40
+nnoremap <C-k><C-v> :Vista!!<CR>
 
 " kalekundert/vim-coiled-snake 
 nmap zuz <Space>M<Space>m
