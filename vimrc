@@ -502,9 +502,11 @@ let g:vista_sidebar_width = 40
 nnoremap <C-k><C-v> :Vista!!<CR>
 
 " kalekundert/vim-coiled-snake 
-nmap zuz <Space>M<Space>m
-nnoremap <Space>M :set foldexpr=coiledsnake#FoldExpr(v:lnum)<CR>:set foldmethod=expr<CR>
-nnoremap <Space>m :set foldmethod=manual<CR>:set foldexpr=<CR>
+augroup python_coiled_snake
+  autocmd!
+  autocmd FileType python setlocal foldmethod=expr
+  autocmd FileType python setlocal foldexpr=coiledsnake#FoldExpr(v:lnum)
+augroup END
 
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
