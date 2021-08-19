@@ -108,6 +108,7 @@ set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=IBMPlexMono:h16,Menlo:h16,Consolas:h16,Courier:h16
 let g:snooker_terminal_italics = 1
 set background=dark
+set termguicolors
 if has('gui')
   colorscheme NeoSolarized
 else
