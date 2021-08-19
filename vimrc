@@ -349,6 +349,7 @@ require("nvim-web-devicons").setup{
     vimrc = {icon = ""},
     bashrc = {icon = ""},
     bash_profile = {icon = ""},
+    sql  =  {icon = "", color = "#a57230", name = "sql"},
   },
 }
 EOF
