@@ -44,7 +44,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-dadbod'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
-Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
@@ -506,16 +505,6 @@ nnoremap <C-k><C-v> :Vista!!<CR>
 nmap zuz <Space>M<Space>m
 nnoremap <Space>M :set foldexpr=coiledsnake#FoldExpr(v:lnum)<CR>:set foldmethod=expr<CR>
 nnoremap <Space>m :set foldmethod=manual<CR>:set foldexpr=<CR>
-
-""Konfekt/FastFold
-"nmap zuz <Plug>(FastFoldUpdate)
-"let g:fastfold_savehook = 0
-"" let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-"let g:fastfold_fold_command_suffixes =  []
-"" let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
-"let g:fastfold_fold_movement_commands = []
-"let g:fastfold_force = 1
-"let g:fastfold_minlines = 0
 
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
