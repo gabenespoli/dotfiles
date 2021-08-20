@@ -45,6 +45,7 @@ Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-dadbod'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
+Plug 'Konfekt/FastFold'
 Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 Plug 'fisadev/vim-isort'
@@ -502,13 +503,6 @@ EOF
 let g:vista_executive_for = {'python': 'nvim_lsp'}
 let g:vista_sidebar_width = 40
 nnoremap <C-k><C-v> :Vista!!<CR>
-
-" kalekundert/vim-coiled-snake 
-augroup python_coiled_snake
-  autocmd!
-  autocmd FileType python setlocal foldmethod=expr
-  autocmd FileType python setlocal foldexpr=coiledsnake#FoldExpr(v:lnum)
-augroup END
 
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
