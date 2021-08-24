@@ -66,8 +66,8 @@ Bash keyboard shortcuts like [these](https://ss64.com/bash/syntax-keyboard.html)
 ### Command Layer
 
 Bash keyboard shortcuts like
-[these](https://ss64.com/bash/syntax-keyboard.html). The "Command" maps
-that are lost are remapped in the Semicolon and Tab Layers.
+[these](https://ss64.com/bash/syntax-keyboard.html). The "Command" maps that
+are lost are remapped in the Tab Layer.
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
@@ -107,7 +107,7 @@ and down the directory tree.
 |            | ^    | &    | *    | (    | )    |Left  |Down  |Up    |Right | #### |      |             |
 |            |      |      |      |      |      |Arrow |Arrow |Arrow |Arrow | #### |      |             |
 |------------'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'-------------|
-|               |      | +    | -    | _    | =    | PgDn | Enter|Prev  |Next  |      |                 |  
+|               |      | +    | -    | _    | =    | PgDn |Enter |Prev  |Next  |      |                 |  
 |               |      |      |      |      |      |      |      |Track |Track |      |                 |
 |--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
 |        |        |        |                Play/Pause              | Volume |        |        |        |
@@ -119,7 +119,8 @@ and down the directory tree.
 
 ### Quote/Escape Layer
 
-Function keys, number row and shifted number row. This layer can be triggered using either `'` or `Esc`.
+Function keys, number row and a number pad, and some brackets and math symbols.
+This layer can be triggered using either `'` or `Esc`.
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
@@ -149,8 +150,8 @@ Number pad, window management with [Spectacle](https://www.spectacleapp.com/) an
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
-| Win  | Win  | Win  | Win  | Win  | Win  | Win  |      | *    |      |      |      |      |            |
-| Next | Full |Center| Left |Right | Top  |Bottom|      |      |      |      |      |      |            |
+|Win   |Win   |Win   |Win   |Win   |Win   |Win   |      | *    |      |      |      |      |            |
+|Next  |Full  |Center|Left  |Right |Top   |Bottom|      |      |      |      |      |      |            |
 |------'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--------|
 | ######## |Space |Space |Shift-| Tab  |      | Del  | 7    | 8    | 9    | +    | *    |      |        |
 | ######## |Left  |Right |Tab   |      |      |      |      |      |      |      |      |      |        |
@@ -169,8 +170,6 @@ Number pad, window management with [Spectacle](https://www.spectacleapp.com/) an
 <a name="function">
 
 ### Function Layer
-
-Mac function keys.
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
