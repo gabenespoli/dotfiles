@@ -24,10 +24,6 @@ if !exists('g:snooker_high_contrast')
   let g:snooker_high_contrast = 1
 endif
 
-if !exists('g:snooker_color_cursor')
-  let g:snooker_color_cursor = 1
-endif
-
 " Colors {{{1
 let s:bg              = { 'gui': '#0f111b', 'cterm': 'NONE' }
 let s:fg              = { 'gui': '#adad9b', 'cterm': 'NONE' }
@@ -77,11 +73,7 @@ endfunction
 " (see `:h w18`)
 
 call s:h('Normal',        {'fg': s:fg})
-if g:snooker_color_cursor
-  call s:h('Cursor',      {'fg': s:fg_light, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
-else
-  call s:h('Cursor',      {'fg': s:fg, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
-endif
+call s:h('Cursor',        {'fg': s:bg, 'bg': s:fg_light})
 call s:h('Comment',       {'fg': s:fg_com, 'gui': 'italic', 'cterm': 'italic'})
 
 call s:h('Constant',      {'fg': s:cyan_light})
