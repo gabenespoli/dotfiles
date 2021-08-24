@@ -151,6 +151,7 @@ fo() (
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/private/github"
 sourcex "$HOME/bin/network_aliases"
+sourcex "$HOME/dotfiles/bash_functions"
 sourcex "$HOME/.bash_aliases"
 sourcex "$HOME/.bash_local"
 sourcex "$HOME/.git-completion.bash"
