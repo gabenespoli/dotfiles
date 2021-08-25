@@ -399,7 +399,7 @@ xnoremap gl :GV <CR>
 nnoremap <C-k><C-k>     :Telescope<Space>
 nnoremap <C-p>          :Telescope git_files<CR>
 nnoremap <C-k><C-b>     :Telescope buffers<CR>
-nnoremap <C-k><C-f>     :lua require('telescope.builtin').file_browser({dir_icon = ''})<CR>
+nnoremap <C-k><C-f>     :lua require('telescope.builtin').file_browser({dir_icon='', hidden=true})<CR>
 nnoremap <C-k><C-g>     :Telescope live_grep<CR>
 nnoremap <C-k><C-h>     :Telescope oldfiles<CR>
 nnoremap <C-k><C-p>     :Telescope find_files<CR>
