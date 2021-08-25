@@ -589,7 +589,6 @@ let g:fastfold_fold_movement_commands = []
 
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
-
 augroup pythonsense
   autocmd!
   autocmd FileType python vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
