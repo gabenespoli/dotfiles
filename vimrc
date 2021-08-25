@@ -17,8 +17,9 @@ Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
+Plug 'sjl/gundo.vim'
 
-" General:
+" Files:
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/bin/vim/gv.vim'
@@ -29,7 +30,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
-Plug 'sjl/gundo.vim'
 
 " Coding:
 Plug 'dense-analysis/ale'
@@ -357,6 +357,9 @@ endfor
 let g:qf_shorten_path = 0
 let g:qf_mapping_ack_style = 1
 
+" sjl/gundo.vim:  {{{2
+nnoremap <C-k><C-u> :GundoToggle<CR>
+
 " tpope/vim-fugitive: {{{2
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
@@ -445,9 +448,6 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
-
-" sjl/gundo.vim:  {{{2
-nnoremap <C-k><C-u> :GundoToggle<CR>
 
 " dense-analysis/ale: {{{2
 let g:ale_lint_on_text_changed = 0
