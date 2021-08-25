@@ -396,8 +396,7 @@ nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
 
 " telescope.nvim  {{2
-nnoremap <C-k><Space>   :Telescope<Space>
-nnoremap <C-k><C-Space> :Telescope<Space>
+nnoremap <C-k><C-k>     :Telescope<Space>
 nnoremap <C-p>          :Telescope git_files<CR>
 nnoremap <C-k><C-b>     :Telescope buffers<CR>
 nnoremap <C-k><C-f>     :lua require('telescope.builtin').file_browser({dir_icon = ''})<CR>
