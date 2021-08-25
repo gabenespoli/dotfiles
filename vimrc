@@ -44,7 +44,7 @@ Plug 'tpope/vim-dadbod'
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
-Plug 'jeetsukumaran/vim-pythonsense',  {'for': ['python']}
+Plug 'gabenespoli/vim-pythonsense',  {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 Plug 'fisadev/vim-isort'
 
@@ -122,6 +122,7 @@ set statusline+=\ %{Devicon()}
 set statusline+=[%<%.99f]
 set statusline+=%h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
+set statusline+=%{PywhereStatusline()}
 set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
 
@@ -132,6 +133,18 @@ function! Devicon() abort
     let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
           \ . '"' . expand('%:t') . '", "' . expand('%:e') . '"))')
     return l:icon[1:3]
+  endif
+endfunction
+
+function! PywhereStatusline() abort
+  if &filetype != 'python'
+    return ''
+  endif
+  let l:loc = pythonsense#get_python_location()
+  if l:loc == ''
+    return ''
+  else
+    return ' > ' . l:loc
   endif
 endfunction
 
