@@ -41,6 +41,8 @@ Plug 'nvim-treesitter/playground'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-dadbod'
+
+" Python:
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
