@@ -22,7 +22,7 @@ Plug 'sjl/gundo.vim'
 " Files:
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
-Plug '~/bin/vim/gv.vim'
+Plug 'junegunn/gv.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
