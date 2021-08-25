@@ -522,9 +522,9 @@ require('lspconfig').pyright.setup {
   }
 }
 
-require("nvim-ale-diagnostic")
+require('nvim-ale-diagnostic')
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     signs = true,
     underline = false,
@@ -550,7 +550,7 @@ augroup END
 
 " nvim-treesitter:  {{{2
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -560,7 +560,7 @@ EOF
 
 " nvim-treesitter/playground:  {{{2
 lua <<EOF
-require "nvim-treesitter.configs".setup {
+require('nvim-treesitter.configs').setup {
   playground = {
     enable = true,
     disable = {},
