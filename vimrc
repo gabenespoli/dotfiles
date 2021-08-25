@@ -583,6 +583,10 @@ require "nvim-treesitter.configs".setup {
 }
 EOF
 
+" Konfekt/FastFold:  {{{2
+let g:fastfold_fold_command_suffixes = []
+let g:fastfold_fold_movement_commands = []
+
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
 
