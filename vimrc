@@ -13,7 +13,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'gabenespoli/vim-unimpaired'
 Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
@@ -219,7 +218,23 @@ nnoremap <expr> zT
 " quick text file in ~/notes folder
 nnoremap <C-k><C-j> execute 'edit '.expand('~').'/notes/'.strftime("%Y-%m-%d").'.txt'
 
-" visual star (asterisk) search
+" quickfix
+nnoremap <silent> <expr> <leader>q
+      \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
+      \ ':botright copen<CR>' : ':cclose<CR>'
+nnoremap <silent> <expr> <leader>l
+      \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
+      \ ':botright lopen<CR>' : ':lclose<CR>'
+
+augroup quickfix
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l* lwindow
+augroup END
+
+nnoremap <leader>s 1z=
+
+" visual star (asterisk) search  {{{2
 " https://github.com/bronson/vim-visual-star-search/blob/master/plugin/visual-star-search.vim
 " Makes * and # work on visual mode too.  global function so user mappings can call it.
 " specifying 'raw' for the second argument prevents escaping the result for vimgrep
@@ -242,6 +257,83 @@ endfunction
 xnoremap * :<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
 
+" bracket mappings (unimpaired)  {{{2
+nnoremap [l :lprevious<CR>
+nnoremap ]l :lnext<CR>
+nnoremap [L :lfirst<CR>
+nnoremap ]L :llast<CR>
+nnoremap [q :cprevious<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]Q :clast<CR>
+
+" map down and up to c/lnext and c/lprevious
+" lnext/lprevious if location list is open, else cnext/cprevious
+nnoremap <silent> <expr> <down>
+      \ empty(filter(getwininfo(), 'v:val.loclist')) ?
+      \ ':cnext<CR>' : ':lnext<CR>'
+nnoremap <silent> <expr> <up>
+      \ empty(filter(getwininfo(), 'v:val.loclist')) ?
+      \ ':cprevious<CR>' : ':lprevious<CR>'
+
+" move lines up and down (modified from tpope/vim-unimpaired)  {{{2
+function! s:ExecMove(cmd) abort
+  " let old_fdm = &foldmethod
+  " if old_fdm !=# 'manual'
+  "   let &foldmethod = 'manual'
+  " endif
+  normal! m`
+  silent! exe a:cmd
+  norm! ``
+  " if old_fdm !=# 'manual'
+  "   let &foldmethod = old_fdm
+  " endif
+endfunction
+
+function! s:Move(cmd, count, map) abort
+  call s:ExecMove('move'.a:cmd.a:count)
+  silent! call repeat#set("\<Plug>unimpairedMove".a:map, a:count)
+endfunction
+
+function! s:MoveSelectionUp(count) abort
+  call s:ExecMove("'<,'>move'<--".a:count)
+  silent! call repeat#set("\<Plug>unimpairedMoveSelectionUp", a:count)
+endfunction
+
+function! s:MoveSelectionDown(count) abort
+  call s:ExecMove("'<,'>move'>+".a:count)
+  silent! call repeat#set("\<Plug>unimpairedMoveSelectionDown", a:count)
+endfunction
+
+nnoremap <silent> <Plug>unimpairedMoveUp            :<C-U>call <SID>Move('--',v:count1,'Up')<CR>
+nnoremap <silent> <Plug>unimpairedMoveDown          :<C-U>call <SID>Move('+',v:count1,'Down')<CR>
+noremap  <silent> <Plug>unimpairedMoveSelectionUp   :<C-U>call <SID>MoveSelectionUp(v:count1)<CR>
+noremap  <silent> <Plug>unimpairedMoveSelectionDown :<C-U>call <SID>MoveSelectionDown(v:count1)<CR>
+
+nmap [e <Plug>unimpairedMoveUp
+nmap ]e <Plug>unimpairedMoveDown
+xmap [e <Plug>unimpairedMoveSelectionUp
+xmap ]e <Plug>unimpairedMoveSelectionDown
+
+" option mappings (co)  {{{2
+nnoremap coc :set cursorline!<CR>
+nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap coh :set hlsearch!<CR>
+nnoremap con :set number!<CR>
+nnoremap cor :set relativenumber!<CR>
+nnoremap cos :set spell!<CR>
+nnoremap <expr> cot
+      \ &softtabstop==2 ?
+      \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
+      \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
+nnoremap cou :set cursorcolumn!<CR>
+nnoremap <silent> cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+
+nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nnoremap <silent> coW :set wrap!<CR>
+nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
+nnoremap <silent><expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
+
 " Plugin Settings: {{{1
 " tpope/vim-rsi: {{{2
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
@@ -254,43 +346,6 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
-
-" gabenespoli/vim-unimpaired: {{{2
-nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
-nnoremap <expr> cot
-      \ &softtabstop==2 ?
-      \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
-      \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
-
-nnoremap <silent> coW :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
-nnoremap <silent> coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
-nmap <silent> <M-S-t> coT
-
-nnoremap <silent> <expr> <leader>q
-      \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
-      \ ':botright copen<CR>' : ':cclose<CR>'
-nnoremap <silent> <expr> <leader>l
-      \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
-      \ ':botright lopen<CR>' : ':lclose<CR>'
-
-augroup quickfix
-  autocmd!
-  autocmd QuickFixCmdPost [^l]* cwindow
-  autocmd QuickFixCmdPost l* lwindow
-augroup END
-
-" map down and up to c/lnext and c/lprevious
-" lnext/lprevious if location list is open, else cnext/cprevious
-nnoremap <silent> <expr> <down>
-      \ empty(filter(getwininfo(), 'v:val.loclist')) ?
-      \ ':cnext<CR>' : ':lnext<CR>'
-nnoremap <silent> <expr> <up>
-      \ empty(filter(getwininfo(), 'v:val.loclist')) ?
-      \ ':cprevious<CR>' : ':lprevious<CR>'
-
-nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
-nnoremap <leader>s 1z=
 
 " romainl/vim-qf: {{{2
 let g:qf_shorten_path = 0
