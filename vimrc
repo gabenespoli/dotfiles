@@ -17,7 +17,6 @@ Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
-Plug 'junegunn/vim-peekaboo'
 
 " General:
 Plug 'tpope/vim-fugitive'
@@ -38,7 +37,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nathunsmitty/nvim-ale-diagnostic', {'branch': 'main'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-dadbod'
 
@@ -49,12 +47,6 @@ Plug 'Konfekt/FastFold'
 Plug 'gabenespoli/vim-pythonsense',  {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 Plug 'fisadev/vim-isort'
-
-" Writing:
-Plug 'junegunn/vim-easy-align'
-Plug 'rickhowe/diffchar.vim',          {'for': ['markdown', 'pandoc']}
-Plug 'gabenespoli/vim-criticmarkup',   {'for': ['markdown', 'pandoc']}
-Plug 'jszakmeister/markdown2ctags',    {'for': ['markdown', 'pandoc']}
 
 " Tmux:
 Plug 'christoomey/vim-tmux-navigator'
@@ -345,6 +337,10 @@ nnoremap <silent> coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nnoremap <silent><expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 
 " Plugin Settings: {{{1
+" tpope/vim-markdown (built-in): {{{2
+let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
+let g:markdown_folding = 1
+
 " tpope/vim-rsi: {{{2
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
 cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"
@@ -587,11 +583,6 @@ require "nvim-treesitter.configs".setup {
 }
 EOF
 
-" liuchengxu/vista.vim:  {{{2
-let g:vista_executive_for = {'python': 'nvim_lsp'}
-let g:vista_sidebar_width = 40
-nnoremap <C-k><C-v> :Vista!!<CR>
-
 " jeetsukumaran/vim-pythonsense
 let g:is_pythonsense_suppress_object_keymaps = 1
 
@@ -616,41 +607,6 @@ augroup pythonsense
   autocmd FileType python vmap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
   autocmd FileType python sunmap <buffer> id
 augroup END
-
-" Writing: {{{2
-" tpope/vim-markdown (built-in): {{{2
-let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
-let g:markdown_folding = 1
-
-" junegunn/vim-easy-align: {{{2
-nmap cg <Plug>(EasyAlign)
-
-" rickhowe/diffchar: {{{2
-let g:DiffPairVisible = 0
-let g:DiffUpdate = 0
-let g:DiffModeSync = 0
-nmap coD    <Plug>ToggleDiffCharAllLines
-nmap <Plug> <Plug>ToggleDiffCharCurrentLine
-nmap <Plug> <Plug>JumpDiffCharPrevStart
-nmap <Plug> <Plug>JumpDiffCharNextStart
-nmap <Plug> <Plug>JumpDiffCharPrevEnd
-nmap <Plug> <Plug>JumpDiffCharNextEnd
-nmap dO     <Plug>GetDiffCharPair
-nmap dP     <Plug>PutDiffCharPair
-
-" gabenespoli/vim-criticmarkup: {{{2
-let g:criticmarkup#disable#highlighting = 1
-
-" jszakmeister/markdown2ctags: {{{2
-let g:tagbar_type_markdown = {
-  \ 'ctagstype': 'markdown',
-  \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
-  \ 'ctagsargs' : '-f - --sort=yes',
-  \ 'kinds' : ['s:sections', 'i:images'],
-  \ 'sro' : '|',
-  \ 'kind2scope' : {'s' : 'section',},
-  \ 'sort': 0,
-\ }
 
 " christoomey/vim-tmux-navigator: {{{2
 let g:tmux_navigator_no_mappings = 1
@@ -708,11 +664,6 @@ nnoremap g<C-l> <C-l>
 " gabenespoli/vim-mutton: {{{2
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
-
-" Lilypond: {{{2
-filetype off
-set runtimepath+=/Users/gmac/.lyp/lilyponds/2.18.2/share/lilypond/current/vim
-filetype on
 
 " local vimrc {{{2
 function! SourceIfExists(file)
