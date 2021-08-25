@@ -31,7 +31,6 @@ Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'sjl/gundo.vim'
-Plug 'overcache/NeoSolarized'
 
 " Coding:
 Plug 'dense-analysis/ale'
@@ -109,11 +108,7 @@ set guifont=IBMPlexMono:h16,Menlo:h16,Consolas:h16,Courier:h16
 let g:snooker_terminal_italics = 1
 set background=dark
 set termguicolors
-if has('gui')
-  colorscheme NeoSolarized
-else
-  colorscheme snooker
-endif
+colorscheme snooker
 
 " Status Line: {{{1
 function! SSHIndicator() abort
