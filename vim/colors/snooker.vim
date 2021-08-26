@@ -396,28 +396,6 @@ hi! link fugitiveCount              Todo
 hi! link diffLine                   Tag
 hi! link diffSubName                Identifier
 
-" GitGutter / Signify {{{2
-call s:h('GitGutterAdd',            {'fg': s:green})
-call s:h('GitGutterChange',         {'fg': s:yellow})
-call s:h('GitGutterDelete',         {'fg': s:red})
-call s:h('GitGutterChangeDelete',   {'fg': s:brown})
-call s:h('GitGutterAddLine',        {'fg': s:bg, 'bg': s:green})
-call s:h('GitGutterChangeLine',     {'fg': s:bg, 'bg': s:yellow})
-call s:h('GitGutterDeleteLine',     {'fg': s:bg, 'bg': s:red})
-call s:h('GitGutterChangeDeleteLine', {'fg': s:bg, 'bg': s:brown})
-
-call s:h('SignifySignAdd',          {'fg': s:green})
-call s:h('SignifySignChange',       {'fg': s:yellow})
-call s:h('SignifySignDelete',       {'fg': s:red})
-call s:h('SignifySignChangeDelete', {'fg': s:brown})
-call s:h('SignifyLineAdd',          {'fg': s:bg, 'bg': s:green})
-call s:h('SignifyLineChange',       {'fg': s:bg, 'bg': s:yellow})
-call s:h('SignifyLineDelete',       {'fg': s:bg, 'bg': s:red})
-call s:h('SignifyLineChangeDelete', {'fg': s:bg, 'bg': s:brown})
-
-call s:h('diffAdded',               {'fg': s:green})
-call s:h('diffRemoved',             {'fg': s:red})
-
 " GV.vim {{{2
 hi! link gvSha                      Delimiter
 hi! link gvAuthor                   Comment
@@ -427,33 +405,6 @@ hi! link gvJira                     Tag
 call s:h('gvHead',                  {'fg': s:pink})
 call s:h('gvOrigin',                {'fg': s:blue_light})
 call s:h('gvPlotly',                {'fg': s:purple})
-
-" DiffChar {{{2
-hi! link dcDiffDelPos               Normal
-hi! link dcDiffAddPos               DiffDelete
-hi! link dcDiffPair                 DiffText
-hi! link dcDiffChange               Normal
-hi! link dcDiffDelStr               Normal
-hi! link dcDiffText                 Normal
-
-" CtrlP {{{2
-call s:h('CtrlPMatch',              {'fg': s:yellow})
-call s:h('CtrlPPrtBase',            {'fg': s:fg_bright, 'bg': s:bg})
-hi! link CtrlPPrtCursor             Cursor
-hi! link CtrlPBufferNr              Constant
-hi! link CtrlPBufferInd             Identifier
-hi! link CtrlPBufferHid             Normal
-hi! link CtrlPBufferVis             Comment
-hi! link CtrlPBufferCur             Question
-hi! link CtrlPBufferHidMod          CtrlPBufferHid
-hi! link CtrlPBufferVisMod          CtrlPBufferVis
-hi! link CtrlPBufferCurMod          CtrlPBufferCur
-hi! link CtrlPBufferPath            Comment
-hi! link CtrlPMode1                 Modified
-hi! link CtrlPMode2                 StatusLine
-call s:h('CtrlPStats',              {'fg': s:red, 'bg': s:fg_com})
-hi! link CtrlPTagKind               Tag
-hi! link CtrlPqfLineCol             Normal
 
 " netrw {{{2
 call s:h('netrwClassify',           {'fg': s:fg_com})
@@ -467,41 +418,6 @@ hi link DirvishGitRenamed Identifier
 hi link DirvishGitUnmerged Debug
 hi link DirvishGitIgnored Comment
 hi link DirvishGitUntracked Operator
-
-" NERDTree {{{2
-call s:h('NERDTreeExecFile',        {'fg': s:pink})
-hi! link NERDTreeLinkFile           netrwSymLink
-hi! link NERDTreeLinkDir            netrwSymLink
-call s:h('NERDTreeLinkTarget',      {'fg': s:fg})
-call s:h('NERDTreeFlags',           {'fg': s:fg_com})
-
-" Tagbar {{{2
-hi! link TagbarScope                Normal
-hi! link TagbarType                 Comment
-hi! link TagbarFoldIcon             Tag
-
-" xolox/vim-notes {{{2
-hi link notesTitle                  Title
-hi link notesAtxHeading             Title
-hi link notesAtxMarker              Title
-hi link notesTodo                   Todo
-hi link notesXXX                    notesTodo
-hi link notesFixMe                  notesTodo
-hi link notesDoneMarker             Statement
-
-" MattesGroeger/vim-bookmarks {{{2
-hi link BookmarkSign                Statement
-hi link BookmarkAnnotationSign      Statement
-hi link BookmarkLine                Statement
-hi link BookmarkAnnotationLine      Statement
-
-" coc.nvim {{{2
-call s:h('CocErrorSign',            {'fg': s:red})
-call s:h('CocWarningSign',          {'fg': s:brown})
-call s:h('CocInfoSign',             {'fg': s:yellow})
-call s:h('CocHintSign',             {'fg': s:blue})
-call s:h('CocSelectedText',         {'fg': s:red})
-call s:h('CocCodeLens',             {'fg': s:fg_light})
 
 " ale {{{2
 hi! link ALEErrorSign               Error
