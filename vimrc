@@ -55,7 +55,6 @@ Plug 'jpalardy/vim-slime'
 " My Plugins:
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
-Plug 'gabenespoli/vim-neovim-defaults'
 Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
