@@ -21,7 +21,7 @@ if !exists('g:snooker_gui_color_undercurl')
 endif
 
 if !exists('g:snooker_high_contrast')
-  let g:snooker_high_contrast = 1
+  let g:snooker_high_contrast = 0
 endif
 
 " Colors {{{1
@@ -154,15 +154,15 @@ call s:h('FoldColumn',    {'fg': s:fg_light, 'bg': s:bg_light})
 call s:h('SignColumn',    {'fg': s:fg})
 
 if g:snooker_high_contrast
-  call s:h('DiffAdd',       {'fg': s:green,  'gui': 'reverse', 'cterm': 'reverse'})
-  call s:h('DiffDelete',    {'fg': s:red,    'gui': 'reverse', 'cterm': 'reverse'})
-  call s:h('DiffChange',    {'fg': s:fg})
-  call s:h('DiffText',      {'fg': s:yellow, 'gui': 'reverse', 'cterm': 'reverse'})
+  call s:h('DiffAdd',       {'fg': s:green_light, 'gui': 'reverse', 'cterm': 'reverse'})
+  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'reverse', 'cterm': 'reverse'})
+  call s:h('DiffChange',    {'fg': s:blue,        'gui': 'reverse', 'cterm': 'reverse'})
+  call s:h('DiffText',      {'fg': s:yellow,      'gui': 'reverse', 'cterm': 'reverse'})
 else
-  call s:h('DiffAdd',       {'fg': s:green,  'gui': 'none', 'cterm': 'none'})
-  call s:h('DiffDelete',    {'fg': s:red,    'gui': 'none', 'cterm': 'none'})
-  call s:h('DiffChange',    {'fg': s:fg})
-  call s:h('DiffText',      {'fg': s:yellow, 'gui': 'none', 'cterm': 'none'})
+  call s:h('DiffAdd',       {'fg': s:green_light, 'gui': 'none', 'cterm': 'none'})
+  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'none', 'cterm': 'none'})
+  call s:h('DiffChange',    {'fg': s:blue,        'gui': 'none', 'cterm': 'none'})
+  call s:h('DiffText',      {'fg': s:yellow,      'gui': 'none', 'cterm': 'none'})
 endif
 
 if has('gui_running') && g:snooker_gui_color_undercurl
@@ -386,25 +386,28 @@ hi! link Quote String
 " Fugitive {{{2
 call s:h('fugitiveUnstagedModifier', {'fg': s:red})
 call s:h('fugitiveStagedModifier', {'fg': s:green})
-hi! link fugitiveHeading            Title
-hi! link fugitiveHeader             Title
-hi! link fugitiveStagedHeading      Title
-hi! link fugitiveUnstagedHeading    Title
-hi! link fugitiveUntrackedHeading   Title
-hi! link fugitiveSymbolicRef        Statement
+hi! link fugitiveHeading            PreProc
+hi! link fugitiveHeader             PreProc
+" hi! link fugitiveStagedHeading      Title
+" hi! link fugitiveUnstagedHeading    Title
+" hi! link fugitiveUntrackedHeading   Title
+hi! link fugitiveSymbolicRef        Conditional
 hi! link fugitiveCount              Todo
-hi! link diffLine                   Tag
+" hi! link diffLine                   Tag
 hi! link diffSubName                Identifier
+hi! link diffAdded                  DiffAdd
+hi! link diffRemoved                DiffDelete
+hi! link diffChanged                DiffChange
 
 " GV.vim {{{2
-hi! link gvSha                      Delimiter
+" hi! link gvSha                      Delimiter
 hi! link gvAuthor                   Comment
-hi! link gvTag                      PreProc
-hi! link gvGitHub                   Tag
-hi! link gvJira                     Tag
-call s:h('gvHead',                  {'fg': s:pink})
-call s:h('gvOrigin',                {'fg': s:blue_light})
-call s:h('gvPlotly',                {'fg': s:purple})
+hi! link gvTag                      Tag
+hi! link gvGitHub                   PreProd
+hi! link gvJira                     PreProc
+" call s:h('gvHead',                  {'fg': s:pink})
+" call s:h('gvOrigin',                {'fg': s:blue_light})
+" call s:h('gvPlotly',                {'fg': s:purple})
 
 " netrw {{{2
 call s:h('netrwClassify',           {'fg': s:fg_com})
@@ -422,6 +425,16 @@ hi link DirvishGitUntracked Operator
 " ale {{{2
 hi! link ALEErrorSign               Error
 hi! link ALEWarningSign             Todo
+" hi! link ALEErrorSignLineNr         DiffDelete
+" hi! link ALEWarningSignLineNr       DiffChange
+" hi! link ALEStyleErrorSignLineNr    ALEErrorSignLineNr
+" hi! link ALEStyleWarningSignLineNr  ALEWarningSignLineNr
+" hi! link ALEInfoSignLineNr          DiffText
+hi! link ALEErrorSignLineNr         ErrorMsg
+hi! link ALEWarningSignLineNr       WarningMsg
+hi! link ALEStyleErrorSignLineNr    ALEErrorSignLineNr
+hi! link ALEStyleWarningSignLineNr  ALEWarningSignLineNr
+hi! link ALEInfoSignLineNr          PmenuSel
 
 " telescope.nvim {{{2
 hi! link TelescopeMatching          Todo
