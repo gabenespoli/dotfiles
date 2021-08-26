@@ -40,7 +40,7 @@ font:
   offset:
     x: 0
     y: 2
-  size: 14.0
+  size: 16.0
 
 # Key bindings
 key_bindings:
