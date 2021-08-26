@@ -459,6 +459,12 @@ if has('mac')
 endif
 
 " dense-analysis/ale: {{{2
+let g:ale_sign_highlight_linenrs = 1
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+let g:ale_sign_info = ''
+let g:ale_sign_style_error = ''
+let g:ale_sign_style_warning = ''
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_set_loclist = 0
