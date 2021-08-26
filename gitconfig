@@ -23,10 +23,12 @@
 	email = gabe.nespoli@sonova.com
 [color.decorate]
   branch = 10
-  remoteBranch = 12
-  tag = 5
+  remoteBranch = 2
+  tag = 9
   stash = 6
   HEAD = 13
 [init]
 	templatedir = ~/.git_template
 	defaultBranch = main
+[credential]
+	helper = osxkeychain
