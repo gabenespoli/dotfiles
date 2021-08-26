@@ -363,8 +363,6 @@ nnoremap <C-k><C-u> :GundoToggle<CR>
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
 nnoremap gC :Git commit<CR>
-xnoremap zp :diffput<CR>
-xnoremap zo :diffget<CR>
 nnoremap <C-k>g :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
 
