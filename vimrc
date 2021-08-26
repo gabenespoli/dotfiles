@@ -366,6 +366,12 @@ nnoremap gC :Git commit<CR>
 nnoremap <C-k>g :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
 
+" junegunn/gv.vim: {{{2
+nnoremap gL :GV --all<CR>
+xnoremap gL :GV --all<CR>
+nnoremap gl :GV <CR>
+xnoremap gl :GV <CR>
+
 " lewis6991/gitsigns.nvim:  {{{2
 lua << EOF
 require('gitsigns').setup {
@@ -398,12 +404,6 @@ nnoremap gb :Gitsigns blame_line<CR>
 nnoremap cog :Gitsigns toggle_signs<CR>
 nnoremap co<C-g> :Gitsigns toggle_numhl<CR>
 nnoremap coG :Gitsigns toggle_linehl<CR>
-
-" junegunn/gv.vim: {{{2
-nnoremap gL :GV --all<CR>
-xnoremap gL :GV --all<CR>
-nnoremap gl :GV <CR>
-xnoremap gl :GV <CR>
 
 " telescope.nvim  {{2
 nnoremap <C-k><C-k>     :Telescope<Space>
