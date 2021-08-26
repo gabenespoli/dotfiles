@@ -363,6 +363,7 @@ nnoremap <C-k><C-u> :GundoToggle<CR>
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
 nnoremap gC :Git commit<CR>
+nnoremap gB :Git blame<CR>
 nnoremap <C-k>g :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
 
@@ -409,13 +410,14 @@ nnoremap coG :Gitsigns toggle_linehl<CR>
 nnoremap <C-k><C-k>     :Telescope<Space>
 nnoremap <C-p>          :Telescope git_files<CR>
 nnoremap <C-k><C-b>     :Telescope buffers<CR>
+nnoremap <C-k>b         :Telescope git_branches<CR>
 nnoremap <C-k><C-f>     :lua require('telescope.builtin').file_browser({dir_icon='', hidden=true})<CR>
 nnoremap <C-k><C-g>     :Telescope live_grep<CR>
 nnoremap <C-k><C-h>     :Telescope oldfiles<CR>
 nnoremap <C-k><C-p>     :Telescope find_files<CR>
 nnoremap <C-k><C-r>     :Telescope registers<CR>
 nnoremap <C-k><C-t>     :Telescope lsp_document_symbols<CR>
-nnoremap <C-k>gs        :Telescope git_status<CR>
+nnoremap gS             :Telescope git_status<CR>
 nnoremap <C-k>gl        :Telescope git_commits<CR>
 
 lua << EOF
