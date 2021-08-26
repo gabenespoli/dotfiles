@@ -7,6 +7,10 @@ scriptencoding utf-8
 " Plugins: {{{1
 call plug#begin('~/.vim/plugged')
 
+" Dependencies:
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
 " Editing:
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
@@ -14,17 +18,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'wellle/targets.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-fold'
 Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 
 " Files:
 Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
 Plug 'junegunn/gv.vim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
