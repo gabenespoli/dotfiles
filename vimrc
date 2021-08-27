@@ -32,9 +32,7 @@ Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
 
 " Coding:
-Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
-Plug 'nathunsmitty/nvim-ale-diagnostic', {'branch': 'main'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-dotenv'
@@ -116,7 +114,6 @@ set statusline+=[%<%.99f]
 set statusline+=%h%w%#Modified#%m%*%#ErrorStatus#%r%*
 set statusline+=%=
 set statusline+=%{PywhereStatusline()}
-set statusline+=%{LinterStatus()}
 set statusline+=[%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
@@ -139,18 +136,6 @@ function! PywhereStatusline() abort
   else
     return ' > ' . l:loc
   endif
-endfunction
-
-" display errors from Ale in statusline (https://kadekillary.work/post/statusline-vim/)
-function! LinterStatus() abort
-   let l:counts = ale#statusline#Count(bufnr(''))
-   let l:all_errors = l:counts.error + l:counts.style_error
-   let l:all_non_errors = l:counts.total - l:all_errors
-   return l:counts.total == 0 ? '' : printf(
-   \ '[E:%d W:%d]',
-   \ l:all_errors,
-   \ l:all_non_errors
-   \)
 endfunction
 
 " Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
@@ -455,34 +440,6 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
-
-" dense-analysis/ale: {{{2
-let g:ale_sign_highlight_linenrs = 1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:ale_sign_info = ''
-let g:ale_sign_style_error = ''
-let g:ale_sign_style_warning = ''
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_insert_leave = 0
-let g:ale_set_loclist = 0
-" let g:ale_hover_to_floating_window = 1
-" let g:ale_hover_to_floating_preview = 1
-let g:ale_linters = {'python': ['flake8']}
-let g:ale_fixers = {
-      \ '*': ['trim_whitespace'],
-      \ 'python': ['black', 'isort'],
-      \ 'sql': ['sqlformat'],
-      \ }
-let g:ale_sql_sqlformat_options = '-rs -k upper'
-nnoremap [d :ALEPrevious<CR>
-nnoremap ]d :ALENext<CR>
-nnoremap cod :ALEToggle<CR>
-augroup ale
-  autocmd!
-  autocmd FileType python nnoremap <buffer> gqq :Isort<CR>:Black<CR>
-  autocmd FileType sql nnoremap <buffer> gqq :ALEFix<CR>
-augroup END
 
 " neovim/nvim-lspconfig:  {{{2
 lua << EOF
