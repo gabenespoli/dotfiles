@@ -201,8 +201,7 @@ nnoremap <C-w><C-]> <C-w><C-v><C-]>zt
 nnoremap <silent> <leader>z :pclose<CR>
 
 " echo syntax under cursor
-nnoremap <silent> zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
-nnoremap zS :TSHighlightCapturesUnderCursor<CR>
+nnoremap <silent> <leader>zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
@@ -595,6 +594,7 @@ require('nvim-treesitter.configs').setup {
   }
 }
 EOF
+nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
 " Konfekt/FastFold:  {{{2
 let g:fastfold_fold_command_suffixes = []
