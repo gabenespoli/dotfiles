@@ -147,21 +147,21 @@ call s:h('VertSplit',     {'fg': s:bg_light, 'bg': s:bg})
 call s:h('Title',         {'fg': s:fg_bright, 'gui': 'bold,italic', 'cterm': 'bold,italic'})
 call s:h('Visual',        {'fg': s:fg_bright, 'bg': s:fg_com})
 call s:h('VisualNOS',     {'fg': s:fg_bright, 'bg': s:fg_com})
-call s:h('WarningMsg',    {'fg': s:fg_bright, 'bg': s:brown})
+call s:h('WarningMsg',    {'fg': s:bg, 'bg': s:orange})
 call s:h('WildMenu',      {'fg': s:bg_light, 'bg': s:fg_bright})
 call s:h('Folded',        {'fg': s:fg, 'bg': s:bg_light, 'gui': 'italic', 'cterm': 'italic'})
 call s:h('FoldColumn',    {'fg': s:fg_light, 'bg': s:bg_light})
 call s:h('SignColumn',    {'fg': s:fg})
 
 if g:snooker_high_contrast
-  call s:h('DiffAdd',       {'fg': s:green_light, 'gui': 'reverse', 'cterm': 'reverse'})
-  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'reverse', 'cterm': 'reverse'})
+  call s:h('DiffAdd',       {'fg': s:green,       'gui': 'reverse', 'cterm': 'reverse'})
   call s:h('DiffChange',    {'fg': s:blue,        'gui': 'reverse', 'cterm': 'reverse'})
+  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'reverse', 'cterm': 'reverse'})
   call s:h('DiffText',      {'fg': s:yellow,      'gui': 'reverse', 'cterm': 'reverse'})
 else
   call s:h('DiffAdd',       {'fg': s:green_light, 'gui': 'none', 'cterm': 'none'})
-  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'none', 'cterm': 'none'})
   call s:h('DiffChange',    {'fg': s:blue,        'gui': 'none', 'cterm': 'none'})
+  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'none', 'cterm': 'none'})
   call s:h('DiffText',      {'fg': s:yellow,      'gui': 'none', 'cterm': 'none'})
 endif
 
@@ -409,6 +409,12 @@ hi! link gvJira                     PreProc
 " call s:h('gvOrigin',                {'fg': s:blue_light})
 " call s:h('gvPlotly',                {'fg': s:purple})
 
+" gitsigns.nvim
+call s:h('GitSignsAdd',             {'fg': s:green})
+call s:h('GitSignsChange',          {'fg': s:yellow})
+call s:h('GitSignsDelete',          {'fg': s:red})
+call s:h('GitSignsChangeDelete',    {'fg': s:orange})
+
 " netrw {{{2
 call s:h('netrwClassify',           {'fg': s:fg_com})
 call s:h('netrwSymLink',            {'fg': s:cyan})
@@ -439,3 +445,9 @@ hi! link ALEInfoSignLineNr          PmenuSel
 " telescope.nvim {{{2
 hi! link TelescopeMatching          Todo
 hi! link TelescopeSelection         PmenuSel
+
+" nvim-lspconfig {{{2
+hi! link LspDiagnosticsSignErrorNr       ErrorMsg
+hi! link LspDiagnosticsSignWarningNr     WarningMsg
+hi! link LspDiagnosticsSignHintNr        Title
+hi! link LspDiagnosticsSignInformationNr Keyword
