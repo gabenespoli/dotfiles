@@ -575,13 +575,14 @@ vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
 
 EOF
 
-nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <C-k><C-d> <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap [D <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap ]D <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <C-k><C-d> :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nmap     <C-k>d <C-k><C-d>
+nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
+nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
 
 augroup nvimlsp
   autocmd!
