@@ -115,17 +115,11 @@ call s:h('Todo',          {'fg': s:pink})
 
 " Extra Groups {{{1
 " ordered according to `:help hitest.vim`
-
 call s:h('SpecialKey',    {'fg': s:fg})
-if has('nvim')
-  call s:h('NonText',     {'fg': s:bg_light, 'gui': 'bold', 'cterm': 'bold'})
-  call s:h('Whitespace',  {'fg': s:bg_light})
-  call s:h('EndOfBuffer', {'fg': s:bg_light})
-elseif has('gui')
-  call s:h('NonText',     {'fg': s:bg})
-else
-  call s:h('NonText',     {'fg': s:bg_light})
-endif
+call s:h('NonText',     {'fg': s:bg_light, 'gui': 'bold', 'cterm': 'bold'})
+call s:h('Whitespace',  {'fg': s:bg_light})
+call s:h('EndOfBuffer', {'fg': s:bg_light})
+call s:h('NonText',     {'fg': s:bg_light})
 call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:fg_bright, 'bg': s:red})
 call s:h('IncSearch',     {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
@@ -182,10 +176,8 @@ call s:h('MatchParen',    {'fg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'}
 call s:h('qfLineNr',      {'fg': s:fg})
 
 " nvim-only groups
-if has('nvim')
-  hi! link TermCursor     Cursor
-  hi! link TermCursorNC   Cursor
-endif
+hi! link TermCursor     Cursor
+hi! link TermCursorNC   Cursor
 
 " Treesitter {{{1
 " hi! link TSNone                 guifg=foreground
