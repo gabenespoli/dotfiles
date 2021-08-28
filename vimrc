@@ -478,6 +478,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
+require('lspconfig').efm.setup {}
 require('lspconfig').pyright.setup {
   on_attach = on_attach,
   flags = {
@@ -491,8 +492,6 @@ require('lspconfig').pyright.setup {
     }
   }
 }
-
-require('nvim-ale-diagnostic')
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
