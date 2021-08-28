@@ -20,10 +20,6 @@ if !exists('g:snooker_gui_color_undercurl')
   let g:snooker_gui_color_undercurl = 0
 endif
 
-if !exists('g:snooker_high_contrast')
-  let g:snooker_high_contrast = 0
-endif
-
 " Colors {{{1
 let s:bg              = { 'gui': '#0f111b', 'cterm': 'NONE' }
 let s:fg              = { 'gui': '#adad9b', 'cterm': 'NONE' }
@@ -153,17 +149,10 @@ call s:h('Folded',        {'fg': s:fg, 'bg': s:bg_light, 'gui': 'italic', 'cterm
 call s:h('FoldColumn',    {'fg': s:fg_light, 'bg': s:bg_light})
 call s:h('SignColumn',    {'fg': s:fg})
 
-if g:snooker_high_contrast
-  call s:h('DiffAdd',       {'fg': s:green,       'gui': 'reverse', 'cterm': 'reverse'})
-  call s:h('DiffChange',    {'fg': s:blue,        'gui': 'reverse', 'cterm': 'reverse'})
-  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'reverse', 'cterm': 'reverse'})
-  call s:h('DiffText',      {'fg': s:yellow,      'gui': 'reverse', 'cterm': 'reverse'})
-else
-  call s:h('DiffAdd',       {'fg': s:green_light, 'gui': 'none', 'cterm': 'none'})
-  call s:h('DiffChange',    {'fg': s:blue,        'gui': 'none', 'cterm': 'none'})
-  call s:h('DiffDelete',    {'fg': s:red,         'gui': 'none', 'cterm': 'none'})
-  call s:h('DiffText',      {'fg': s:yellow,      'gui': 'none', 'cterm': 'none'})
-endif
+call s:h('DiffAdd',       {'fg': s:bg, 'bg': s:green})
+call s:h('DiffChange',    {'fg': s:bg, 'bg': s:blue})
+call s:h('DiffDelete',    {'fg': s:bg, 'bg': s:red})
+call s:h('DiffText',      {'fg': s:bg, 'bg': s:yellow})
 
 if has('gui_running') && g:snooker_gui_color_undercurl
   call s:h('SpellBad',    {'gui': s:sp_un, 'sp': s:red})
@@ -333,11 +322,7 @@ hi! link pandocNoFormatted          pandocCiteKey
 hi! link criticAdd                  DiffAdd
 hi! link criticDel                  DiffDelete
 hi! link criticHighlighter          DiffText
-if g:snooker_high_contrast
-  call s:h('criticMeta',            {'bg': s:pink, 'fg': s:bg})
-else
-  call s:h('criticMeta',            {'bg': s:none, 'fg': s:pink})
-endif
+hi! link criticsMeta                DiffChange
 
 " Octave/Matlab {{{2
 hi! link octaveDelimiter            Delimiter
@@ -384,20 +369,16 @@ hi! link Quote String
 
 " Plugins {{{1
 " Fugitive {{{2
-call s:h('fugitiveUnstagedModifier', {'fg': s:red})
-call s:h('fugitiveStagedModifier', {'fg': s:green})
-hi! link fugitiveHeading            PreProc
-hi! link fugitiveHeader             PreProc
-" hi! link fugitiveStagedHeading      Title
-" hi! link fugitiveUnstagedHeading    Title
-" hi! link fugitiveUntrackedHeading   Title
-hi! link fugitiveSymbolicRef        Conditional
-hi! link fugitiveCount              Todo
-" hi! link diffLine                   Tag
-hi! link diffSubName                Identifier
-hi! link diffAdded                  DiffAdd
-hi! link diffRemoved                DiffDelete
-hi! link diffChanged                DiffChange
+call s:h('fugitiveUnstagedModifier',  {'fg': s:red})
+call s:h('fugitiveStagedModifier',    {'fg': s:green})
+hi! link fugitiveHeading              PreProc
+hi! link fugitiveHeader               PreProc
+hi! link fugitiveSymbolicRef          Conditional
+hi! link fugitiveCount                Todo
+hi! link diffSubName                  Identifier
+call s:h('diffAdded',                 {'fg': s:green})
+call s:h('diffRemoved',               {'fg': s:red})
+call s:h('diffChanged',               {'fg': s:yellow})
 
 " GV.vim {{{2
 " hi! link gvSha                      Delimiter
