@@ -9,7 +9,7 @@ set background=dark
 let g:colors_name='snooker'
 
 if !exists('g:snooker_terminal_italics')
-  let g:snooker_terminal_italics = 0
+  let g:snooker_terminal_italics = 1
 endif
 
 if !exists('g:snooker_spell_undercurl')
