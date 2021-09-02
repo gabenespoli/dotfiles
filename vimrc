@@ -106,13 +106,12 @@ function! SSHIndicator() abort
 endfunction
 set statusline=
 set statusline+=%{SSHIndicator()}
-set statusline+=[%n]
-set statusline+=\ (%{FugitiveHead(12)})
-set statusline+=\ %{Devicon()}
-set statusline+=[%<%.99f]
-set statusline+=%h%w%#Modified#%m%*%#ErrorStatus#%r%*
-set statusline+=%=
+set statusline+=\ %n
+set statusline+=\ \ \ (%{FugitiveHead(12)})
+set statusline+=\ \ %{Devicon()}\ %<%.99f
+set statusline+=\ %h%w%#Modified#%m%*%#StatusError#%r%*
 set statusline+=%{PywhereStatusline()}
+set statusline+=%=
 set statusline+=[%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
@@ -133,7 +132,7 @@ function! PywhereStatusline() abort
   if l:loc == ''
     return ''
   else
-    return ' > ' . l:loc
+    return ' ' . substitute(l:loc, '(def:)', ' ', '')
   endif
 endfunction
 
