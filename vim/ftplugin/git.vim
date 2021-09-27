@@ -11,3 +11,16 @@ function PreviewWindowExists()
   endfor
   return 0
 endfunction
+
+" fold at filenames
+function! GitFolds(lnum) "{{{
+  if getline(a:lnum) =~# '^diff'
+    return '>1'
+  else
+    return '='
+  endif
+endfunction "}}}
+
+setlocal foldmethod=expr
+setlocal foldexpr=GitFolds(v:lnum)
+setlocal foldtext=getline(v:foldstart)
