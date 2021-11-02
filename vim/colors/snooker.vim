@@ -116,10 +116,10 @@ call s:h('Todo',          {'fg': s:pink})
 " Extra Groups {{{1
 " ordered according to `:help hitest.vim`
 call s:h('SpecialKey',    {'fg': s:fg})
-call s:h('NonText',     {'fg': s:bg_light, 'gui': 'bold', 'cterm': 'bold'})
-call s:h('Whitespace',  {'fg': s:bg_light})
-call s:h('EndOfBuffer', {'fg': s:bg_light})
-call s:h('NonText',     {'fg': s:bg_light})
+call s:h('NonText',       {'fg': s:bg_light, 'gui': 'bold', 'cterm': 'bold'})
+call s:h('Whitespace',    {'fg': s:bg_light})
+call s:h('EndOfBuffer',   {'fg': s:bg_light})
+call s:h('NonText',       {'fg': s:bg_light})
 call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:fg_bright, 'bg': s:red})
 call s:h('IncSearch',     {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
@@ -176,8 +176,8 @@ call s:h('MatchParen',    {'fg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'}
 call s:h('qfLineNr',      {'fg': s:fg})
 
 " nvim-only groups
-hi! link TermCursor     Cursor
-hi! link TermCursorNC   Cursor
+hi! link TermCursor     DiffText
+hi! link TermCursorNC   DiffChange
 
 " Treesitter {{{1
 " hi! link TSNone                 guifg=foreground
@@ -249,8 +249,10 @@ hi! link TSVariableBuiltin      Type
 " my own extras {{{1
 call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('TodoStatus',    {'fg': s:pink,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('ErrorStatus',   {'fg': s:red,    'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusTodo',    {'fg': s:pink,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusError',   {'fg': s:red,    'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusPreview', {'fg': s:blue,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('StatusFunction',{'fg': s:fg_com, 'bg': s:fg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 hi! link TabMod           Modified
 hi! link TabModSel        TabMod
 hi! link markdownPandocCitation pandocCiteKey
@@ -370,21 +372,21 @@ hi! link fugitiveCount                Todo
 hi! link diffSubName                  Identifier
 call s:h('diffAdded',                 {'fg': s:green})
 call s:h('diffRemoved',               {'fg': s:red})
-call s:h('diffChanged',               {'fg': s:yellow})
+call s:h('diffChanged',               {'fg': s:blue})
+call s:h('diffLine',                  {'fg': s:yellow, 'gui': 'reverse', 'cterm': 'reverse'})
 
 " GV.vim {{{2
 " hi! link gvSha                      Delimiter
 hi! link gvAuthor                   Comment
 hi! link gvTag                      Tag
-hi! link gvGitHub                   PreProd
+hi! link gvGitHub                   PreProc
 hi! link gvJira                     PreProc
-" call s:h('gvHead',                  {'fg': s:pink})
-" call s:h('gvOrigin',                {'fg': s:blue_light})
-" call s:h('gvPlotly',                {'fg': s:purple})
+call s:h('gvHead',                  {'fg': s:pink})
+call s:h('gvOrigin',                {'fg': s:blue_light})
 
 " gitsigns.nvim
-call s:h('GitSignsAdd',             {'fg': s:green})
-call s:h('GitSignsChange',          {'fg': s:yellow})
+call s:h('GitSignsAdd',             {'fg': s:green_light})
+call s:h('GitSignsChange',          {'fg': s:blue_light})
 call s:h('GitSignsDelete',          {'fg': s:red})
 call s:h('GitSignsChangeDelete',    {'fg': s:orange})
 
@@ -401,26 +403,32 @@ hi link DirvishGitUnmerged Debug
 hi link DirvishGitIgnored Comment
 hi link DirvishGitUntracked Operator
 
-" ale {{{2
-hi! link ALEErrorSign               Error
-hi! link ALEWarningSign             Todo
-" hi! link ALEErrorSignLineNr         DiffDelete
-" hi! link ALEWarningSignLineNr       DiffChange
-" hi! link ALEStyleErrorSignLineNr    ALEErrorSignLineNr
-" hi! link ALEStyleWarningSignLineNr  ALEWarningSignLineNr
-" hi! link ALEInfoSignLineNr          DiffText
-hi! link ALEErrorSignLineNr         ErrorMsg
-hi! link ALEWarningSignLineNr       WarningMsg
-hi! link ALEStyleErrorSignLineNr    ALEErrorSignLineNr
-hi! link ALEStyleWarningSignLineNr  ALEWarningSignLineNr
-hi! link ALEInfoSignLineNr          PmenuSel
-
 " telescope.nvim {{{2
 hi! link TelescopeMatching          Todo
 hi! link TelescopeSelection         PmenuSel
 
 " nvim-lspconfig {{{2
-hi! link LspDiagnosticsSignErrorNr       ErrorMsg
-hi! link LspDiagnosticsSignWarningNr     WarningMsg
-hi! link LspDiagnosticsSignHintNr        Title
-hi! link LspDiagnosticsSignInformationNr Keyword
+call s:h('LspDiagnosticsDefaultError',        {'fg': s:red})
+call s:h('LspDiagnosticsDefaultWarning',      {'fg': s:orange})
+call s:h('LspDiagnosticsDefaultHint',         {'fg': s:blue})
+call s:h('LspDiagnosticsDefaultInformation',  {'fg': s:fg_bright})
+hi! link LspDiagnosticsSignErrorNr            ErrorMsg
+hi! link LspDiagnosticsSignWarningNr          WarningMsg
+call s:h('LspDiagnosticsSignHintNr',          {'fg': s:blue, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+
+" nvim-tree.lua {{{2
+call s:h('NvimTreeSymlink',       {'fg': s:cyan})
+call s:h('NvimTreeFolderIcon',    {'fg': s:blue})
+call s:h('NvimTreeRootFolder',    {'fg': s:blue_light})
+call s:h('NvimTreeExecFile',      {'fg': s:purple})
+hi! link NvimTreeSpecialFile      Special
+call s:h('NvimTreeWindowPicker',  {'fg': s:bg, 'bg': s:pink})
+call s:h('NvimTreeImageFile',     {'fg': s:purple})
+call s:h('NvimTreeOpenedFile',    {'fg': s:yellow})
+call s:h('NvimTreeGitDirty',      {'fg': s:red})
+call s:h('NvimTreeGitDeleted',    {'fg': s:red})
+call s:h('NvimTreeGitStaged',     {'fg': s:green})
+call s:h('NvimTreeGitMerge',      {'fg': s:orange})
+call s:h('NvimTreeGitRenamed',    {'fg': s:yellow})
+call s:h('NvimTreeIndentMarker',  {'fg': s:fg_com})
+call s:h('NvimTreeGitNew',        {'fg': s:fg_light})
