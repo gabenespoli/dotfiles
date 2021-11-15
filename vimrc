@@ -573,6 +573,19 @@ vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
 
 EOF
 
+function MyCompletion()
+  let col = col('.') - 1
+  if pumvisible()
+    return "\<C-n>"
+  elseif !col || getline('.')[col - 1]  =~ '\s'
+    " if cursor is at bol or in front of whitespace
+    return "\<Tab>"
+  else
+    return "\<C-x>\<C-o>"
+  endif
+endfunction
+inoremap <Tab> <C-r>=MyCompletion()<CR>
+
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
