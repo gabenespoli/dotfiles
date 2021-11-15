@@ -1,8 +1,11 @@
 nnoremap <buffer> git :Git
 nnoremap <buffer> <silent> rim :<C-U>Grebase -i --autosquash master<CR>
 nnoremap <buffer> <silent> ri<Space> :Grebase -i --autosquash<Space>
-nmap <buffer> o <CR>
+nmap <buffer> o gO
 nnoremap <buffer> gR :Git reset HEAD^<CR>
+nmap <buffer> <C-n> )
+nmap <buffer> <C-p> (
+nmap <buffer> <C-i> =
 
 " if fugitive was the first buffer, and is still the only buffer,
 " q will quit vim, otherwise switch to previous buffer
