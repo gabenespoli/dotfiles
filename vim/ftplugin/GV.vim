@@ -25,6 +25,9 @@ nnoremap <buffer> <C-r> :close<CR>:GV<CR>
 nnoremap <buffer> gL :close<CR>:GV --all<CR>
 nnoremap <buffer> gl :close<CR>:GV <CR>
 
+" use gs to properly get into fugitive git status
+nmap <buffer> gs <C-w><C-q>:Gedit :<CR>
+
 " gx map to go to Jira issue online
 if has('mac')
   nnoremap <buffer> gx :call GoToJira()<CR>
