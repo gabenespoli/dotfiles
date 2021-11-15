@@ -560,10 +560,10 @@ function PrintDiagnostics(opts, bufnr, line_nr, client_id)
 
   local diagnostic_message = ""
   for i, diagnostic in ipairs(line_diagnostics) do
-    diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
+    diagnostic_message = diagnostic_message .. string.format("(%d) %s", i, diagnostic.message or "")
     print(diagnostic_message)
     if i ~= #line_diagnostics then
-      diagnostic_message = diagnostic_message .. " | "
+      diagnostic_message = diagnostic_message .. ", "
     end
   end
   vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
