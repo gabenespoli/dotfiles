@@ -484,7 +484,9 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.azuredatastudio\\.oss$"
+                                            "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.com\\.apple\\.Notes$",
+                                            "^com\\.microsoft\\.teams$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
