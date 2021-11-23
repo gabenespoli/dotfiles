@@ -790,7 +790,8 @@
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
-                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.teams$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
