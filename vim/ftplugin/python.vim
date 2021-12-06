@@ -1,4 +1,4 @@
-set textwidth=79
+set textwidth=88
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 " matplotlib
