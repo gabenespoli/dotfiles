@@ -1,4 +1,4 @@
-" use C-n/p for CtrlP, not dirvish
+" use C-n/p for other things, not dirvish
 nmap <buffer> <C-p> q<C-p>
 nmap <buffer> <C-n> q<C-n>
 
