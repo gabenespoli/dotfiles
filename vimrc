@@ -107,9 +107,9 @@ endfunction
 set statusline=
 set statusline+=%{SSHIndicator()}
 set statusline+=\ %n
-set statusline+=\ \ \ (%{FugitiveHead(12)})
+set statusline+=\ \ \ %{FugitiveHead(12)}
 set statusline+=\ \ %{Devicon()}\ %<%.99f
-set statusline+=\ %h%w%#Modified#%m%*%#StatusError#%r%*
+set statusline+=\ %h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
 set statusline+=%{PywhereStatusline()}
 set statusline+=%=
 set statusline+=[%l/%L\,%c\ (%P)]
