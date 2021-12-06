@@ -638,7 +638,7 @@ nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 let g:fastfold_fold_command_suffixes = []
 let g:fastfold_fold_movement_commands = []
 
-" jeetsukumaran/vim-pythonsense
+" jeetsukumaran/vim-pythonsense:  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
 augroup pythonsense
   autocmd!
