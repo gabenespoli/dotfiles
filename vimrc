@@ -24,7 +24,7 @@ Plug 'sjl/gundo.vim'
 " Files:
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'airblade/vim-gitgutter'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
@@ -163,7 +163,7 @@ nnoremap <C-q> q
 nnoremap Q @q
 
 " select last paste selection
-nnoremap <expr> gP '`[' . strpart(getregtype(), 0, 1) . '`]'
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " popup menu: esc to exit, enter to select
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
@@ -354,38 +354,28 @@ xnoremap gL :GV --all<CR>
 nnoremap gl :GV <CR>
 xnoremap gl :GV <CR>
 
-" lewis6991/gitsigns.nvim:  {{{2
-lua << EOF
-require('gitsigns').setup {
-  signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChangeDelete', text = '~', numhl='GitSignsChangeDeleteNr', linehl='GitSignsChangeDeleteLn'},
-  },
-  keymaps = {
-      ['n ]c'] = { expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
-      ['n [c'] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
-      ['o ic'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-      ['x ic'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-      ['o ac'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-      ['x ac'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-  },
-  preview_config = {border = ''},
-}
-EOF
+" airblade/gitgutter: {{{2
+nmap ga <Plug>(GitGutterStageHunk)
+xmap ga :GitGutterStageHunk<CR>
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap =  <Plug>(GitGutterPreviewHunk)
+nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
+nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
+let g:gitgutter_override_sign_column_highlight = 0
 
-nnoremap = :Gitsigns preview_hunk<CR>
-nnoremap gp :Gitsigns preview_hunk<CR>
-nnoremap ga :Gitsigns stage_hunk<CR>
-nnoremap ghu :Gitsigns reset_hunk<CR>
-nnoremap ghU :Gitsigns undo_stage_hunk<CR>
-nnoremap gb :Gitsigns blame_line<CR>
-
-nnoremap cog :Gitsigns toggle_signs<CR>
-nnoremap co<C-g> :Gitsigns toggle_numhl<CR>
-nnoremap coG :Gitsigns toggle_linehl<CR>
+nnoremap coz :call GitGutterFoldToggle()<CR>
+function! GitGutterFoldToggle()
+  if gitgutter#utility#getbufvar(bufnr(''), 'folded')
+    GitGutterFold
+    let l:buffoldexpr = gitgutter#utility#getbufvar(bufnr(''), 'foldexpr')
+    if l:buffoldexpr != 0
+      let &foldexpr = l:buffoldexpr
+    endif
+  else
+    call gitgutter#utility#setbufvar(bufnr(''), 'foldexpr', &foldexpr)
+    GitGutterFold
+  endif
+endfunction
 
 " telescope.nvim  {{2
 nnoremap <C-k><C-k>     :Telescope<Space>
