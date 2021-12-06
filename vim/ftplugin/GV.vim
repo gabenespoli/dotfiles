@@ -3,6 +3,7 @@ silent! unmap <buffer> <C-n>
 nmap <buffer> } ]]o
 nmap <buffer> { [[o
 nmap <buffer> p o<C-w>lzM<C-w>h
+nmap <buffer> = o
 
 " git command maps
 nnoremap <buffer> git :Git
