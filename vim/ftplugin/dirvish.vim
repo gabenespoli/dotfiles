@@ -27,9 +27,6 @@ endif
 " my shell operations
 nnoremap <buffer> cd :cd <C-R>=expand('%')<CR>
 nnoremap <buffer> e :edit <C-R>=expand('%')<CR>
-nnoremap <buffer> cp :!cp '<C-r><C-l>' '<C-r><C-l>'
-nnoremap <buffer> mv :!mv '<C-r><C-l>' '<C-r><C-l>'
-nnoremap <buffer> mk :!mkdir '<C-R>=expand('%')<CR>'<Left>
 
 " roginfarrer/vim-dirvish-dovish
 let g:dirvish_dovish_map_keys = 0
