@@ -662,6 +662,11 @@ augroup pythonsense
   autocmd FileType python sunmap <buffer> id
 augroup END
 
+augroup pythonformat
+  autocmd!
+  autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
+augroup END
+
 " christoomey/vim-tmux-navigator: {{{2
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
