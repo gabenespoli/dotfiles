@@ -384,6 +384,16 @@ hi! link gvJira                     PreProc
 call s:h('gvHead',                  {'fg': s:pink})
 call s:h('gvOrigin',                {'fg': s:blue_light})
 
+" GitGutter / Signify {{{2
+call s:h('GitGutterAdd',            {'fg': s:green_light})
+call s:h('GitGutterChange',         {'fg': s:blue_light})
+call s:h('GitGutterDelete',         {'fg': s:red})
+call s:h('GitGutterChangeDelete',   {'fg': s:orange})
+call s:h('GitGutterAddLine',        {'fg': s:bg, 'bg': s:green_light})
+call s:h('GitGutterChangeLine',     {'fg': s:bg, 'bg': s:blue_light})
+call s:h('GitGutterDeleteLine',     {'fg': s:bg, 'bg': s:red})
+call s:h('GitGutterChangeDeleteLine', {'fg': s:bg, 'bg': s:orange})
+
 " gitsigns.nvim
 call s:h('GitSignsAdd',             {'fg': s:green_light})
 call s:h('GitSignsChange',          {'fg': s:blue_light})
