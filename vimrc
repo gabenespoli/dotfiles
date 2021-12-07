@@ -565,7 +565,7 @@ vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
 
 EOF
 
-function MyCompletion()
+function! MyCompletion()
   let col = col('.') - 1
   if pumvisible()
     return "\<C-n>"
