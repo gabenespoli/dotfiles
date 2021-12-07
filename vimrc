@@ -362,6 +362,9 @@ nmap =  <Plug>(GitGutterPreviewHunk)
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_sign_added = '│'
+let g:gitgutter_sign_modified = '│'
+let g:gitgutter_sign_modified_removed = '~'
 
 nnoremap coz :call GitGutterFoldToggle()<CR>
 function! GitGutterFoldToggle()
