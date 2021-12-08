@@ -23,6 +23,7 @@ Plug 'sjl/gundo.vim'
 
 " Files:
 Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -372,6 +373,23 @@ function! GitGutterFoldToggle()
     GitGutterFold
   endif
 endfunction
+
+" rbong/vim_flog:  {{2
+nmap gl :Flog -date=short<CR>
+xmap gl :Flog -date=short<CR>
+augroup flog
+  autocmd!
+  autocmd FileType floggraph nmap <buffer> gs gq:Gedit :<CR>
+  autocmd FileType floggraph nmap <buffer> o <CR>
+  autocmd FileType floggraph nmap <buffer> p <CR><C-w>lzM<C-w>h
+  autocmd FileType floggraph nmap <buffer> git :Git
+  autocmd FileType floggraph nmap <buffer> r<Space> :Git rebase<Space>
+  autocmd FileType floggraph nmap <buffer> co<Space> :Git checkout<Space>
+  autocmd FileType floggraph nmap <buffer> . "hy<C-g>:Git  <C-R>h<S-Left><Left>
+  autocmd FileType floggraph nmap <buffer> cf :<C-U>call flog#run_command('Git commit -m "fixup! %h"', 0, 1)<CR>
+  autocmd FileType floggraph nmap <buffer> cp :<C-U>call flog#run_command('Git cherry-pick %h', 0, 1)<CR>
+  autocmd FileType floggraph nmap <buffer> gR :<C-U>call flog#run_command('Git reset HEAD^, 0, 1)<CR>
+augroup END
 
 " telescope.nvim  {{2
 nnoremap <C-k><C-k>     :Telescope<Space>

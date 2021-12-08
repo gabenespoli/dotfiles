@@ -384,6 +384,18 @@ hi! link gvJira                     PreProc
 call s:h('gvHead',                  {'fg': s:pink})
 call s:h('gvOrigin',                {'fg': s:blue_light})
 
+" flog {{{2
+hi! link flogAuthor                 Comment
+hi! link flogHash                   Comment
+hi! link flogRefTag                 Tag
+call s:h('flogRefHead',             {'fg': s:pink})
+hi! link flogRefHeadBranch          flogRefHead
+call s:h('flogGraphEdge1',          {'fg': s:blue_light})
+call s:h('flogGraphEdge2',          {'fg': s:pink})
+call s:h('flogGraphEdge3',          {'fg': s:purple})
+call s:h('flogGraphEdge4',          {'fg': s:yellow})
+call s:h('flogGraphEdge5',          {'fg': s:green_light})
+
 " GitGutter / Signify {{{2
 call s:h('GitGutterAdd',            {'fg': s:green_light})
 call s:h('GitGutterChange',         {'fg': s:blue_light})
