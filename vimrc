@@ -23,7 +23,6 @@ Plug 'sjl/gundo.vim'
 
 " Files:
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -347,12 +346,6 @@ nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
 nnoremap <C-k>g :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
-
-" junegunn/gv.vim: {{{2
-nnoremap gL :GV --all<CR>
-xnoremap gL :GV --all<CR>
-nnoremap gl :GV <CR>
-xnoremap gl :GV <CR>
 
 " airblade/gitgutter: {{{2
 nmap ga <Plug>(GitGutterStageHunk)

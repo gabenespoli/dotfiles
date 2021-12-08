@@ -124,8 +124,6 @@ alias grr="echo 'Use gR instead.'"
 alias gR="git reset HEAD^ && gs"
 alias gwip="git add -A && git commit -m 'WIP'"
 
-alias Gl="$EDITOR +'GV'"
-alias GL="$EDITOR +'GV --all'"
 alias Gs="$EDITOR -c ':Gedit :'"
 
 # fzf {{{1
