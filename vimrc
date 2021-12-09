@@ -375,8 +375,9 @@ function! GitGutterFoldToggle()
 endfunction
 
 " rbong/vim_flog:  {{2
-nmap gl :Flog -date=short<CR>
-xmap gl :Flog -date=short<CR>
+let g:flog_default_arguments = {'date': 'short'}
+nmap gl :Flog<CR>
+xmap gl :Flog<CR>
 augroup flog
   autocmd!
   autocmd FileType floggraph nmap <buffer> gs gq:Gedit :<CR>
@@ -386,9 +387,9 @@ augroup flog
   autocmd FileType floggraph nmap <buffer> r<Space> :Git rebase<Space>
   autocmd FileType floggraph nmap <buffer> co<Space> :Git checkout<Space>
   autocmd FileType floggraph nmap <buffer> . "hy<C-g>:Git  <C-R>h<S-Left><Left>
-  autocmd FileType floggraph nmap <buffer> cf :<C-U>call flog#run_command('Git commit -m "fixup! %h"', 0, 1)<CR>
+  autocmd FileType floggraph nmap <buffer> cf :<C-U>call flog#run_command('Git commit --fixup=%h', 0, 1)<CR>
   autocmd FileType floggraph nmap <buffer> cp :<C-U>call flog#run_command('Git cherry-pick %h', 0, 1)<CR>
-  autocmd FileType floggraph nmap <buffer> gR :<C-U>call flog#run_command('Git reset HEAD^, 0, 1)<CR>
+  autocmd FileType floggraph nmap <buffer> gR :<C-U>call flog#run_command('Git reset HEAD^', 0, 1)<CR>
 augroup END
 
 " telescope.nvim  {{2
