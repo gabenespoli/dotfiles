@@ -36,7 +36,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-dotenv'
-Plug 'tpope/vim-dadbod'
 
 " Python:
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
