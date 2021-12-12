@@ -25,7 +25,6 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
@@ -390,37 +389,6 @@ augroup flog
   autocmd FileType floggraph nmap <buffer> cp :<C-U>call flog#run_command('Git cherry-pick %h', 0, 1)<CR>
   autocmd FileType floggraph nmap <buffer> gR :<C-U>call flog#run_command('Git reset HEAD^', 0, 1)<CR>
 augroup END
-
-" telescope.nvim  {{2
-nnoremap <C-k><C-k>     :Telescope<Space>
-nnoremap <C-p>          :Telescope git_files<CR>
-nnoremap <C-k><C-b>     :Telescope buffers<CR>
-nnoremap <C-k>co<Space> :Telescope git_branches<CR>
-nnoremap <C-k><C-f>     :lua require('telescope.builtin').file_browser({dir_icon='', hidden=true})<CR>
-nnoremap <C-k><C-g>     :Telescope live_grep<CR>
-nnoremap <C-k><C-h>     :Telescope oldfiles<CR>
-nnoremap <C-k><C-p>     :Telescope find_files<CR>
-nnoremap <C-k><C-r>     :Telescope registers<CR>
-nnoremap <C-k><C-t>     :Telescope lsp_document_symbols<CR>
-nnoremap gS             :Telescope git_status<CR>
-
-lua << EOF
-local actions = require('telescope.actions')
-require('telescope').setup{
-  defaults = {
-    mappings = {
-      i = {
-        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        --["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-      },
-      n = {
-        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        --["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-      },
-    },
-  }
-}
-EOF
 
 " kyazdani42/nvim-web-devicons:  {{{2
 lua << EOF
