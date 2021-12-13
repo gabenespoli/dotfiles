@@ -437,59 +437,12 @@ require("nvim-web-devicons").setup{
 }
 EOF
 
-" justinmk/vim-dirvish & roginfarrer/vim-dirvish-dovish:  {{{2
+" justinmk/vim-dirvish: {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
 if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
-
-let g:dirvish_dovish_map_keys = 0
-
-augroup dirvish
-  autocmd!
-
-  " use C-n/p for other things, not dirvish
-  autocmd FileType dirvish nmap <buffer> <C-p> q<C-p>
-  autocmd FileType dirvish nmap <buffer> <C-n> q<C-n>
-
-  " use - as a toggle; use u to go up a dir when in dirvish
-  autocmd FileType dirvish nmap <silent> <buffer> - gq
-  autocmd FileType dirvish nmap <silent> <buffer> q gq
-  autocmd FileType dirvish nmap <silent> <buffer> u <Plug>(dirvish_up)
-  autocmd FileType dirvish nnoremap U u
-
-  " my preferred maps for open, split, vsplit, tab open
-  autocmd FileType dirvish nmap <silent> <buffer> o :call dirvish#open('edit', 0)<CR>
-  autocmd FileType dirvish nmap <silent> <buffer> O :call dirvish#open('split', 1)<CR>
-  autocmd FileType dirvish nmap <silent> <buffer> s :call dirvish#open('split', 1)<CR>q<C-w>p
-  autocmd FileType dirvish nmap <silent> <buffer> v :call dirvish#open('vsplit', 1)<CR>q<C-w>p
-  autocmd FileType dirvish nmap <silent> <buffer> t :call dirvish#open('tabedit', 0)<CR>
-  autocmd FileType dirvish xmap <silent> <buffer> t :call dirvish#open('tabedit', 0)<CR>
-
-  " show/hide dofiles like ranger
-  autocmd FileType dirvish nnoremap <silent> <buffer> zh :silent keeppatterns g@\v/\.[^\/]+/?$@d _<CR>:setl cole=3<CR>
-
-  " open with mac system
-  if has('mac')
-    autocmd FileType dirvish nnoremap <silent> <buffer> gx :execute "!open " . shellescape("<C-r><C-l>")<CR><CR>
-  endif
-
-  " my shell operations
-  autocmd FileType dirvish nnoremap <buffer> cd :cd <C-R>=expand('%')<CR>
-  autocmd FileType dirvish nnoremap <buffer> e :edit <C-R>=expand('%')<CR>
-
-  " roginfarrer/vim-dirvish-dovish
-  autocmd FileType dirvish unmap <buffer> p
-  autocmd FileType dirvish nmap <silent><buffer> i <Plug>(dovish_create_file)
-  autocmd FileType dirvish nmap <silent><buffer> I <Plug>(dovish_create_directory)
-  autocmd FileType dirvish nmap <silent><buffer> D <Plug>(dovish_delete)
-  autocmd FileType dirvish nmap <silent><buffer> r <Plug>(dovish_rename)
-  autocmd FileType dirvish nmap <silent><buffer> y <Plug>(dovish_yank)
-  autocmd FileType dirvish xmap <silent><buffer> y <Plug>(dovish_yank)
-  autocmd FileType dirvish nmap <silent><buffer> p <Plug>(dovish_copy)
-  autocmd FileType dirvish nmap <silent><buffer> P <Plug>(dovish_move)
-augroup END
 
 " neovim/nvim-lspconfig:  {{{2
 lua << EOF
