@@ -560,8 +560,6 @@ function PrintDiagnostics(opts, bufnr, line_nr, client_id)
   vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
 end
 
-vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
-
 EOF
 
 function! MyCompletion()
@@ -587,6 +585,7 @@ nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
 
 augroup nvimlsp
   autocmd!
+  autocmd CursorHold * lua PrintDiagnostics()
   autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
 augroup END
 
