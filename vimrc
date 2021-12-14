@@ -41,7 +41,6 @@ Plug 'tpope/vim-dotenv'
 " Python:
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
-Plug 'Konfekt/FastFold'
 Plug 'gabenespoli/vim-pythonsense',  {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 Plug 'fisadev/vim-isort'
@@ -625,10 +624,6 @@ require('nvim-treesitter.configs').setup {
 }
 EOF
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
-
-" Konfekt/FastFold:  {{{2
-let g:fastfold_fold_command_suffixes = []
-let g:fastfold_fold_movement_commands = []
 
 " jeetsukumaran/vim-pythonsense:  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
