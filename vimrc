@@ -491,9 +491,9 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   }
 )
 
-local signs = { Error = "", Warning = "", Hint = "", Information = "" }
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
-  local hl = "LspDiagnosticsSign" .. type
+  local hl = "DiagnosticSign" .. type
   local hln = hl .. "Nr"
   vim.fn.sign_define(hl, { text = "", texthl = hl, numhl = hln })
 end

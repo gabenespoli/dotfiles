@@ -430,13 +430,9 @@ hi! link TelescopeMatching          Todo
 hi! link TelescopeSelection         PmenuSel
 
 " nvim-lspconfig {{{2
-call s:h('LspDiagnosticsDefaultError',        {'fg': s:red})
-call s:h('LspDiagnosticsDefaultWarning',      {'fg': s:orange})
-call s:h('LspDiagnosticsDefaultHint',         {'fg': s:blue})
-call s:h('LspDiagnosticsDefaultInformation',  {'fg': s:fg_bright})
-hi! link LspDiagnosticsSignErrorNr            ErrorMsg
-hi! link LspDiagnosticsSignWarningNr          WarningMsg
-call s:h('LspDiagnosticsSignHintNr',          {'fg': s:blue, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+hi! link DiagnosticSignErrorNr            ErrorMsg
+hi! link DiagnosticSignWarnNr             WarningMsg
+call s:h('DiagnosticSignHintNr',          {'fg': s:blue, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 
 " nvim-tree.lua {{{2
 call s:h('NvimTreeSymlink',       {'fg': s:cyan})
