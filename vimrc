@@ -34,6 +34,7 @@ Plug 'kristijanhusak/vim-dirvish-git'
 
 " Coding:
 Plug 'neovim/nvim-lspconfig'
+Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-dotenv'
@@ -588,6 +589,19 @@ augroup nvimlsp
   autocmd CursorHold * lua PrintDiagnostics()
   autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
 augroup END
+
+" WhoIsSethDaniel/toggle-lsp-diagnostics.nvim:  {{{2
+lua <<EOF
+require'toggle_lsp_diagnostics'.init(
+  {
+    signs = true,
+    underline = false,
+    update_in_insert = false,
+    virtual_text = false,
+  }
+)
+EOF
+nmap cod <Plug>(toggle-lsp-diag-signs)
 
 " nvim-treesitter:  {{{2
 lua <<EOF
