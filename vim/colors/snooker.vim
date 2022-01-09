@@ -396,7 +396,7 @@ call s:h('flogGraphEdge3',          {'fg': s:purple})
 call s:h('flogGraphEdge4',          {'fg': s:yellow})
 call s:h('flogGraphEdge5',          {'fg': s:green_light})
 
-" GitGutter / Signify {{{2
+" GitGutter / Signify / GitSigns.nvim {{{2
 call s:h('GitGutterAdd',            {'fg': s:green_light})
 call s:h('GitGutterChange',         {'fg': s:blue_light})
 call s:h('GitGutterDelete',         {'fg': s:red})
@@ -406,7 +406,6 @@ call s:h('GitGutterChangeLine',     {'fg': s:bg, 'bg': s:blue})
 call s:h('GitGutterDeleteLine',     {'fg': s:bg, 'bg': s:red})
 call s:h('GitGutterChangeDeleteLine', {'fg': s:bg, 'bg': s:orange})
 
-" gitsigns.nvim
 call s:h('GitSignsAdd',             {'fg': s:green_light})
 call s:h('GitSignsChange',          {'fg': s:blue_light})
 call s:h('GitSignsDelete',          {'fg': s:red})
