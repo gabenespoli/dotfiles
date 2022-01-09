@@ -355,11 +355,12 @@ call s:h('jsonNull',                {'fg': s:brown})
 call s:h('jsonBraces',              {'fg': s:fg})
 
 " sql {{{2
-hi! link sqlStatement PreProc
-hi! link sqlKeyword PreProc
-hi! link sqlOperator Special
-hi! link sqlFunction Statement
-hi! link Quote String
+call s:h('sqlStatement',            {'fg': s:green_light})
+hi! link sqlKeyword                 Identifier
+hi! link sqlOperator                PreProc
+hi! link sqlFunction                Function
+hi! link sqlSpecial                 Constant
+hi! link Quote                      String
 
 " Plugins {{{1
 " Fugitive {{{2
