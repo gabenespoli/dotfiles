@@ -7,14 +7,10 @@ nmap <buffer> sa <Plug>(FlogSortAuthor)
 nmap <buffer> st <Plug>(FlogSortTopo)
 nmap <buffer> sr <Plug>(FlogToggleReverse)
 
-
-nmap <buffer> git :Floggit
-
 nmap <buffer> o <CR>
 nmap <buffer> p <CR><C-w>lzM<C-w>h
 
 nmap <buffer> r<Space> :Floggit rebase<Space>
-nmap <buffer> co<Space> :Floggit checkout<Space>
 
 nmap <buffer> . "hy<C-g>:Floggit  <C-R>h<S-Left><Left>
 
