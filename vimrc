@@ -311,7 +311,6 @@ nnoremap <expr> cot
       \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
 nnoremap        cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap        coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-
 nnoremap        coW :set wrap!<CR>
 nnoremap        coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
