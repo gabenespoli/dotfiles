@@ -25,6 +25,7 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
+Plug 'ibhagwan/fzf-lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
@@ -107,7 +108,7 @@ set statusline+=%{SSHIndicator()}
 set statusline+=\ %n
 set statusline+=\ \ \ %{FugitiveHead(12)}
 set statusline+=\ \ %{Devicon()}\ %<%.99f
-set statusline+=\ %h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
+set statusline+=\ %#PmenuSel#%h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
 set statusline+=%{PywhereStatusline()}
 set statusline+=%=
 set statusline+=[%l/%L\,%c\ (%P)]
@@ -310,6 +311,7 @@ nnoremap <expr> cot
       \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
 nnoremap        cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
 nnoremap        coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+
 nnoremap        coW :set wrap!<CR>
 nnoremap        coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
@@ -376,6 +378,18 @@ endfunction
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
 xmap gl :Flog<CR>
+
+" ibhagwan/fzf-lua
+nnoremap <C-p>      :FzfLua git_files<CR>
+nnoremap <C-k><C-b> :FzfLua buffers<CR>
+nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
+nnoremap <C-k><C-g> :FzfLua live_grep<CR>
+nnoremap <C-k>gs    :FzfLua git_status<CR>
+nnoremap <C-k><C-h> :FzfLua oldfiles<CR>
+nnoremap <C-k><C-f> :FzfLua files<CR>
+nnoremap <C-k><C-k> :FzfLua resume<CR>
+nnoremap <C-k><C-r> :FzfLua registers<CR>
+nnoremap <C-k><Space> :FzfLua<Space>
 
 " kyazdani42/nvim-web-devicons:  {{{2
 lua << EOF
