@@ -25,8 +25,6 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
@@ -378,38 +376,6 @@ endfunction
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
 xmap gl :Flog<CR>
-
-" junegunn/fzf.vim: {{{2
-nnoremap <C-p>      :GFiles<CR>
-nnoremap <C-k>gs    :GFiles?<CR>
-nnoremap <C-k><C-p> :Files <C-r>=expand('%:h')<CR><CR>
-nnoremap <C-k><C-f> :History<CR>
-nnoremap <C-k><C-b> :Buffers<CR>
-nnoremap <C-k><C-g> :Rg<CR>
-nnoremap <C-k>c     :Commits<CR>
-nnoremap <C-k>b     :BCommits<CR>
-
-augroup fzf
-  autocmd!
-  autocmd FileType fzf tnoremap <buffer> <C-p> <Up>
-  autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
-  autocmd FileType fzf tnoremap <buffer> <Up> <C-p>
-  autocmd FileType fzf tnoremap <buffer> <Down> <C-n>
-augroup END
-
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
 
 " kyazdani42/nvim-web-devicons:  {{{2
 lua << EOF
