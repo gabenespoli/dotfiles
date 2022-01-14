@@ -550,6 +550,18 @@ augroup nvimlsp
   autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
 augroup END
 
+" map combining nvim lsp diagnostics with gitgutter preview
+lua << EOF
+function _G.has_line_diagnostic(bufnr, line_nr)
+  local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics(bufnr, line_nr)
+  return not vim.tbl_isempty(line_diagnostics)
+end
+EOF
+nnoremap <expr> =
+      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
+      \ ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>' :
+      \ ':let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>'
+
 " WhoIsSethDaniel/toggle-lsp-diagnostics.nvim:  {{{2
 lua <<EOF
 require'toggle_lsp_diagnostics'.init(
