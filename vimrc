@@ -351,12 +351,16 @@ nnoremap co<Space> :Git checkout<Space>
 nmap ga <Plug>(GitGutterStageHunk)
 xmap ga :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
+nnoremap <C-_> :let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>
+nnoremap g= :let g:gitgutter_preview_win_floating = 0<CR>:GitGutterPreviewHunk<CR>:wincmd p<CR>0
 nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
 nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_added = '│'
 let g:gitgutter_sign_modified = '│'
 let g:gitgutter_sign_modified_removed = '~'
+let g:gitgutter_preview_win_floating = 0
+let g:gitgutter_close_preview_on_escape = 1
 
 nnoremap coz :call GitGutterFoldToggle()<CR>
 function! GitGutterFoldToggle()
