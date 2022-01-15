@@ -382,6 +382,26 @@ nmap gl :Flog<CR>
 xmap gl :Flog<CR>
 
 " ibhagwan/fzf-lua
+lua << EOF
+require('fzf-lua').setup {
+  fzf_colors = {
+    ["fg"]          = { "fg", "CursorLine" },
+    ["bg"]          = { "bg", "Normal" },
+    ["hl"]          = { "fg", "PreProc" },
+    ["fg+"]         = { "fg", "Normal" },
+    ["bg+"]         = { "bg", "CursorLine" },
+    ["hl+"]         = { "fg", "PreProc" },
+    ["info"]        = { "fg", "Comment" },
+    ["prompt"]      = { "fg", "Identifier" },
+    ["pointer"]     = { "fg", "PmenuSel" },
+    ["marker"]      = { "fg", "Keyword" },
+    ["spinner"]     = { "fg", "Label" },
+    ["header"]      = { "fg", "Comment" },
+    ["gutter"]      = { "bg", "Normal" },
+  },
+}
+EOF
+
 nnoremap <C-p>      :FzfLua git_files<CR>
 nnoremap <C-k><C-b> :FzfLua buffers<CR>
 nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
