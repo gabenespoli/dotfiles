@@ -22,12 +22,11 @@ echo "-- Installing Homebrew packages..."
 brew install git
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
 brew install tmux neovim lf git ctags tree jq cloc
-brew install tig bat ag ripgrep fzf npm
+brew install bat ag ripgrep fzf npm
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 brew install sqlparse
 
-brew cask install xquartz
 brew cask install alacritty
 brew cask install spectacle
 brew cask install karabiner-elements
@@ -52,12 +51,12 @@ git clone https://github.com/gabenespoli/dotfiles "$DOTFILES"
 BAKDIR="$DOTFILES"/.bak
 mkdir -pv "$BAKDIR"
 
-for rc in *rc *profile *cfg tmux.conf gitconfig; do
+for rc in inputrc bashrc bash_profile tmux.conf gitconfig; do
   [ -e "$HOME"/."$rc" ] && mv -v "$HOME"/."$rc" "$BAKDIR"/"$rc"
   ln -sfv "$DOTFILES"/"$rc" "$HOME"/."$rc"
 done
 
-for cfg in karabiner ranger lf pudb; do
+for cfg in karabiner lf pudb; do
   [ -e "$HOME"/.config/"$cfg" ] && mv -v "$HOME"/.config/"$cfg" "$BAKDIR"/"$cfg"
   ln -sfv "$DOTFILES"/config/"$cfg" "$HOME"/.config
 done
@@ -80,22 +79,23 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt -
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
 
-# vim {{{1
-echo "-- Linking vim files and directories..."
-[ -e "$HOME"/.vim ] && mv -v "$HOME"/.vim "$BAKDIR"/vim
-mkdir -pv "$HOME"/.vim/autoload
-curl -fLo "$HOME"/.vim/autoload/plug.vim \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# n/vim {{{1
+# backup existing config if exists
+[ -e "$HOME"/.config/nvim ] && mv -v "$HOME"/.config/nvim "$BAKDIR"/.config/nvim
+[ -e "$HOME"/.local/share/nvim ] && mv -v "$HOME"/.local/share/nvim "$BAKDIR"/.local/share/nvim
 
-for folder in ftdetect ftplugin spell syntax; do
-  ln -sfv "$DOTFILES"/vim/"$folder" "$HOME"/.vim/"$folder"
+# install vim-plugged plugin manager
+curl -fLo "$HOME"/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+cp "$HOME"/.local/share/nvim/site/autoload/plug.vim "$HOME"/.vim/autoload/plug.vim
+
+# symlink config files & folders
+ln -sfv "$DOTFILES"/vim/init.vim "$HOME"/.config/nvim/init.vim
+for folder in colors ftdetect ftplugin syntax; do
+  ln -sfv "$DOTFILES"/vim/"$folder" "$HOME"/.config/nvim/"$folder"
 done
 
-# nvim
-mkdir -pv "$HOME"/.config/nvim/autoload
-ln -sf "$DOTFILES"/vimrc "$HOME"/.config/nvim/init.vim
-ln -sf "$HOME"/.vim/autoload/plug.vim "$HOME"/.config/nvim/autoload/
-
+# install plugins
 nvim +PlugInstall +qall
 
 # Spectacle.app  {{{1
