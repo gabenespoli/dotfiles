@@ -1,11 +1,11 @@
 " Author: Gabe Nespoli
 " Email: gabenespoli@gmail.com
-" File: vimrc/init.vim for vim/nvim
+" File: init.vim
 set encoding=utf-8
 scriptencoding utf-8
 
 " Plugins: {{{1
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " Dependencies:
 Plug 'nvim-lua/popup.nvim'
@@ -715,11 +715,3 @@ nnoremap g<C-l> <C-l>
 " gabenespoli/vim-mutton: {{{2
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
-
-" local vimrc {{{2
-function! SourceIfExists(file)
-  if filereadable(expand(a:file))
-    execute 'source' a:file
-  endif
-endfunction
-call SourceIfExists("~/.vimrc_local")
