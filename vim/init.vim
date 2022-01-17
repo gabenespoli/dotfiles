@@ -257,16 +257,9 @@ nnoremap <silent> <expr> <up>
 
 " move lines up and down (modified from tpope/vim-unimpaired)  {{{2
 function! s:ExecMove(cmd) abort
-  " let old_fdm = &foldmethod
-  " if old_fdm !=# 'manual'
-  "   let &foldmethod = 'manual'
-  " endif
   normal! m`
   silent! exe a:cmd
   norm! ``
-  " if old_fdm !=# 'manual'
-  "   let &foldmethod = old_fdm
-  " endif
 endfunction
 
 function! s:Move(cmd, count, map) abort
@@ -284,15 +277,10 @@ function! s:MoveSelectionDown(count) abort
   silent! call repeat#set("\<Plug>unimpairedMoveSelectionDown", a:count)
 endfunction
 
-nnoremap <silent> <Plug>unimpairedMoveUp            :<C-U>call <SID>Move('--',v:count1,'Up')<CR>
-nnoremap <silent> <Plug>unimpairedMoveDown          :<C-U>call <SID>Move('+',v:count1,'Down')<CR>
-noremap  <silent> <Plug>unimpairedMoveSelectionUp   :<C-U>call <SID>MoveSelectionUp(v:count1)<CR>
-noremap  <silent> <Plug>unimpairedMoveSelectionDown :<C-U>call <SID>MoveSelectionDown(v:count1)<CR>
-
-nmap [e <Plug>unimpairedMoveUp
-nmap ]e <Plug>unimpairedMoveDown
-xmap [e <Plug>unimpairedMoveSelectionUp
-xmap ]e <Plug>unimpairedMoveSelectionDown
+nnoremap <silent> [e :<C-U>call <SID>Move('--',v:count1,'Up')<CR>
+nnoremap <silent> ]e :<C-U>call <SID>Move('+',v:count1,'Down')<CR>
+xnoremap <silent> [e :<C-U>call <SID>MoveSelectionUp(v:count1)<CR>
+xnoremap <silent> ]e :<C-U>call <SID>MoveSelectionDown(v:count1)<CR>
 
 " option mappings (co)  {{{2
 nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
