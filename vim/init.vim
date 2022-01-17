@@ -179,9 +179,6 @@ nnoremap <C-w><C-t> mx:tabnew %<CR>`x
 nnoremap <C-w><C-f> <C-w><C-v>gf
 nnoremap <C-w><C-]> <C-w><C-v><C-]>zt
 
-" close preview window (alternative to builtin <C-w>z)
-nnoremap <silent> <leader>z :pclose<CR>
-
 " echo syntax under cursor
 nnoremap <silent> <leader>zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
