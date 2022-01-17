@@ -100,6 +100,11 @@ echo "Setting shortcuts for Spectacle.app..."
 cp -r "$DOTFILES"/init/spectacle.json "$HOME"/Library/Application\ Support/Spectacle/Shortcuts.json 2>/dev/null
 
 # python with conda {{{1
+for rc in isort.cfg flake8; do
+  [ -e "$HOME"/."$rc" ] && mv -v "$HOME"/."$rc" "$BAKDIR"/"$rc"
+  ln -sfv "$DOTFILES"/"$rc" "$HOME"/."$rc"
+done
+
 # https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p $HOME/miniconda
