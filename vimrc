@@ -20,19 +20,18 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dotenv'
 Plug 'wellle/targets.vim'
 Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 
-" Files:
+" Git And Files:
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
-
-Plug 'tpope/vim-dotenv'
 
 " Python:
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
@@ -100,10 +99,16 @@ set clipboard=unnamed
 set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
-set guifont=IBMPlexMono:h16,Menlo:h16,Consolas:h16,Courier:h16
+set guifont=DankMono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
 set background=dark
 set termguicolors
 colorscheme snooker
+
+" open help in a vertial split
+augroup help
+  autocmd!
+  autocmd FileType help wincmd L
+augroup END
 
 " Status Line: {{{1
 function! SSHIndicator() abort
@@ -117,7 +122,8 @@ set statusline+=\ \ %{Devicon()}\ %<%.99f
 set statusline+=\ %#PmenuSel#%h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
 set statusline+=%{PywhereStatusline()}
 set statusline+=%=
-set statusline+=[%l/%L\,%c\ (%P)]
+set statusline+=%{db_ui#statusline()}
+set statusline+=\ [%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
   if stridx(expand('%:p'), '.git') != -1
@@ -217,6 +223,7 @@ augroup quickfix
   autocmd QuickFixCmdPost l* lwindow
 augroup END
 
+" fix spelling with first suggestion
 nnoremap <leader>s 1z=
 
 " visual star (asterisk) search  {{{2
@@ -388,7 +395,6 @@ endif
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
 xmap gl :Flog<CR>
-
 nnoremap <C-k>h :vertical Flogsplit -path=%<CR>
 nnoremap <C-k>H :Flogsplit -path=%<CR>
 
@@ -398,7 +404,6 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
-
 
 " jeetsukumaran/vim-pythonsense:  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
@@ -427,17 +432,6 @@ augroup END
 augroup pythonformat
   autocmd!
   autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
-augroup END
-
-" tpope/vim-dadbod & kristijanhusak/vim-dadbod-ui:  {{{2
-let g:db_ui_use_nerd_fonts = 1
-let g:db_async = 1
-nmap <F5> <Plug>(DBUI_ExecuteQuery)
-imap <F5> <Esc><F5>
-
-augroup dadbod
-  autocmd!
-  autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
 augroup END
 
 " christoomey/vim-tmux-navigator: {{{2
@@ -535,7 +529,11 @@ augroup END
 " nvim-treesitter/playground:  {{{2
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
-" lua config:  {{{1
+" gabenespoli/vim-mutton: {{{2
+let g:mutton_min_center_width = 88
+let g:mutton_min_side_width = 25
+
+" Lua Plugins:  {{{1
 lua << EOF
 
 -- ibhagwan/fzf-lua:  {{{2
@@ -716,7 +714,3 @@ require('nvim-treesitter.configs').setup {
 }
 
 EOF
-
-" gabenespoli/vim-mutton: {{{2
-let g:mutton_min_center_width = 88
-let g:mutton_min_side_width = 25

@@ -81,12 +81,16 @@ tmux source-file ~/.tmux.conf
 
 # n/vim {{{1
 # backup existing config if exists
+[ -e "$HOME"/.vimrc ] && mv -v "$HOME"/.vimrc "$BAKDIR"/.vimrc
+[ -e "$HOME"/.vim ] && mv -v "$HOME"/.vim "$BAKDIR"/.vim
 [ -e "$HOME"/.config/nvim ] && mv -v "$HOME"/.config/nvim "$BAKDIR"/.config/nvim
 [ -e "$HOME"/.local/share/nvim ] && mv -v "$HOME"/.local/share/nvim "$BAKDIR"/.local/share/nvim
 
 # symlink config files & folders
-ln -sfv "$DOTFILES"/vim/init.vim "$HOME"/.config/nvim/init.vim
+ln -sfv "$DOTFILES"/vimrc "$HOME"/.vimrc
+ln -sfv "$DOTFILES"/vimrc "$HOME"/.config/nvim/init.vim
 for folder in colors ftdetect ftplugin syntax; do
+  ln -sfv "$DOTFILES"/vim/"$folder" "$HOME"/.vim/"$folder"
   ln -sfv "$DOTFILES"/vim/"$folder" "$HOME"/.config/nvim/"$folder"
 done
 
