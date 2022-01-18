@@ -4,7 +4,7 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-" Plugins: {{{1
+" Plugins  {{{1
 " Install vim-plugged if it isn't already
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -14,7 +14,7 @@ endif
 
 call plug#begin()
 
-" Editing:
+" Editing  {{{2
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -25,7 +25,7 @@ Plug 'wellle/targets.vim'
 Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 
-" Git And Files:
+" Git And Files  {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
@@ -33,23 +33,23 @@ Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
 
-" Python:
+" Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'gabenespoli/vim-pythonsense',  {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 Plug 'fisadev/vim-isort'
 
-" Tmux:
+" Tmux  {{{2
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 
-" My Plugins:
+" My Plugins  {{{2
 Plug 'gabenespoli/vim-mutton'
 Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-jupycent'
 
-" Lua Plugins:
+" Lua Plugins  {{{2
 if has('nvim')
   Plug 'ibhagwan/fzf-lua'
   Plug 'kyazdani42/nvim-web-devicons'
@@ -61,7 +61,7 @@ endif
 
 call plug#end()
 
-" General: {{{1
+" General  {{{1
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=300
 set undofile
@@ -110,7 +110,7 @@ augroup help
   autocmd FileType help wincmd L
 augroup END
 
-" Status Line: {{{1
+" Status Line  {{{1
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
 endfunction
@@ -159,7 +159,7 @@ augroup line_return
     \ endif
 augroup END
 
-" Keybindings: {{{1
+" Keybindings  {{{1
 set notimeout ttimeout
 let maplocalleader = "\<Space>"
 nnoremap <Space><Esc> <nop>
@@ -307,16 +307,16 @@ nnoremap        coW :set wrap!<CR>
 nnoremap        coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
 nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 
-" Plugin Settings: {{{1
-" tpope/vim-markdown (built-in): {{{2
+" Plugin Settings  {{{1
+" tpope/vim-markdown (built-in)  {{{2
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
 
-" tpope/vim-rsi: {{{2
+" tpope/vim-rsi  {{{2
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
 cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"
 
-" tpope/vim-surround: {{{2
+" tpope/vim-surround  {{{2
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
   execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
@@ -324,14 +324,14 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
-" romainl/vim-qf: {{{2
+" romainl/vim-qf  {{{2
 let g:qf_shorten_path = 0
 let g:qf_mapping_ack_style = 1
 
-" sjl/gundo.vim:  {{{2
+" sjl/gundo.vim  {{{2
 nnoremap <C-k><C-u> :GundoToggle<CR>
 
-" tpope/vim-fugitive: {{{2
+" tpope/vim-fugitive  {{{2
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
 nnoremap gC :Git commit<CR>
@@ -339,7 +339,7 @@ nnoremap gB :Git blame<CR>
 nnoremap <C-k>g :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
 
-" airblade/gitgutter: {{{2
+" airblade/gitgutter  {{{2
 nmap ga <Plug>(GitGutterStageHunk)
 xmap ga :GitGutterStageHunk<CR>
 nmap ghu <Plug>(GitGutterUndoHunk)
@@ -385,21 +385,21 @@ else
 nnoremap = :let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>
 endif
 
-" rbong/vim_flog:  {{{2
+" rbong/vim_flog  {{{2
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
 xmap gl :Flog<CR>
 nnoremap <C-k>h :vertical Flogsplit -path=%<CR>
 nnoremap <C-k>H :Flogsplit -path=%<CR>
 
-" justinmk/vim-dirvish: {{{2
+" justinmk/vim-dirvish  {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
 if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
 
-" jeetsukumaran/vim-pythonsense:  {{{2
+" jeetsukumaran/vim-pythonsense  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
 augroup pythonsense
   autocmd!
@@ -428,7 +428,7 @@ augroup pythonformat
   autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
 augroup END
 
-" christoomey/vim-tmux-navigator: {{{2
+" christoomey/vim-tmux-navigator  {{{2
 let g:tmux_navigator_no_mappings = 1
 if !has('nvim')
   if has('mac')
@@ -466,7 +466,7 @@ if has('nvim')
   tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
 endif
 
-" jpalardy/vim-slime: {{{2
+" jpalardy/vim-slime  {{{2
 let g:slime_no_mappings = 1
 xmap <C-l>      <Plug>SlimeRegionSend
 nmap <C-l>      <Plug>SlimeMotionSend
@@ -481,15 +481,15 @@ if exists('$TMUX')
 endif
 nnoremap g<C-l> <C-l>
 
-" gabenespoli/vim-mutton: {{{2
+" gabenespoli/vim-mutton  {{{2
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
-" Lua Plugins:  {{{1
+" Lua Plugins  {{{1
 if has('nvim')
 lua << EOF
 
--- ibhagwan/fzf-lua:  {{{2
+-- ibhagwan/fzf-lua  {{{2
 require('fzf-lua').setup {
   fzf_colors = {
     ["fg"]          = { "fg", "CursorLine" },
@@ -508,7 +508,7 @@ require('fzf-lua').setup {
   },
 }
 
--- kyazdani42/nvim-web-devicons:  {{{2
+-- kyazdani42/nvim-web-devicons  {{{2
 require("nvim-web-devicons").setup{
   override = {
     cfg = {icon = ""},
@@ -519,7 +519,7 @@ require("nvim-web-devicons").setup{
   },
 }
 
--- neovim/nvim-lspconfig:  {{{2
+-- neovim/nvim-lspconfig  {{{2
 require('vim.lsp.protocol').CompletionItemKind = {
   '', -- Text 
   '', -- Method 
@@ -626,7 +626,7 @@ local set_signs_limited = function(diagnostics, bufnr, client_id, sign_ns, opts)
 end
 vim.lsp.diagnostic.set_signs = set_signs_limited
 
--- WhoIsSethDaniel/toggle-lsp-diagnostics.nvim:  {{{2
+-- WhoIsSethDaniel/toggle-lsp-diagnostics.nvim  {{{2
 require'toggle_lsp_diagnostics'.init(
   {
     signs = true,
@@ -636,7 +636,7 @@ require'toggle_lsp_diagnostics'.init(
   }
 )
 
--- nvim-treesitter:  {{{2
+-- nvim-treesitter  {{{2
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
@@ -644,7 +644,7 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- nvim-treesitter/playground:  {{{2
+-- nvim-treesitter/playground  {{{2
 require('nvim-treesitter.configs').setup {
   playground = {
     enable = true,
@@ -668,7 +668,7 @@ require('nvim-treesitter.configs').setup {
 
 EOF
 
-" ibhagwan/fzf-lua:  {{{2
+" ibhagwan/fzf-lua  {{{2
 nnoremap <C-p>      :FzfLua git_files<CR>
 nnoremap <C-k><C-b> :FzfLua buffers<CR>
 nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
@@ -680,7 +680,7 @@ nnoremap <C-k><C-k> :FzfLua resume<CR>
 nnoremap <C-k><C-r> :FzfLua registers<CR>
 nnoremap <C-k><Space> :FzfLua<Space>
 
-" nvim/lsp-config:  {{{2
+" nvim/lsp-config  {{{2
 function! MyCompletion()
   let col = col('.') - 1
   if pumvisible()
@@ -707,7 +707,7 @@ augroup nvimlsp
   autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
 augroup END
 
-" nvim-treesitter/playground:  {{{2
+" nvim-treesitter/playground  {{{2
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
 endif
