@@ -68,10 +68,12 @@ call plug#end()
 " General  {{{1
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=300
-set undofile
-set undodir=~/.config/nvim/undo/
-set backupdir=~/.config/nvim/backup/
-set directory=~/.config/nvim/swap/
+if has('nvim')
+  set undofile
+  set undodir=~/.config/nvim/undo/
+  set backupdir=~/.config/nvim/backup/
+  set directory=~/.config/nvim/swap/
+endif
 if has('macunix')
   let g:python_host_prog = expand('~').'/miniconda/envs/neovim2/bin/python'
   let g:python3_host_prog = expand('~').'/miniconda/envs/neovim3/bin/python'
