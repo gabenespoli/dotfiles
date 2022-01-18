@@ -44,7 +44,12 @@ Plug 'fisadev/vim-isort'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 
-" Neovim:
+" My Plugins:
+Plug 'gabenespoli/vim-mutton'
+Plug 'gabenespoli/vim-tabsms'
+Plug 'gabenespoli/vim-jupycent'
+
+" Lua Plugins:
 if has('nvim')
   Plug 'ibhagwan/fzf-lua'
   Plug 'kyazdani42/nvim-web-devicons'
@@ -53,11 +58,6 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/playground'
 endif
-
-" My Plugins:
-Plug 'gabenespoli/vim-mutton'
-Plug 'gabenespoli/vim-tabsms'
-Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
 
@@ -487,6 +487,10 @@ if exists('$TMUX')
 endif
 nnoremap g<C-l> <C-l>
 
+" gabenespoli/vim-mutton: {{{2
+let g:mutton_min_center_width = 88
+let g:mutton_min_side_width = 25
+
 " ibhagwan/fzf-lua:  {{{2
 nnoremap <C-p>      :FzfLua git_files<CR>
 nnoremap <C-k><C-b> :FzfLua buffers<CR>
@@ -528,10 +532,6 @@ augroup END
 
 " nvim-treesitter/playground:  {{{2
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
-
-" gabenespoli/vim-mutton: {{{2
-let g:mutton_min_center_width = 88
-let g:mutton_min_side_width = 25
 
 " Lua Plugins:  {{{1
 lua << EOF
