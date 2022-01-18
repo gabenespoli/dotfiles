@@ -14,10 +14,6 @@ endif
 
 call plug#begin()
 
-" Dependencies:
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-
 " Editing:
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
