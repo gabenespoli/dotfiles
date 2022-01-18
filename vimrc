@@ -126,6 +126,9 @@ set statusline+=%{db_ui#statusline()}
 set statusline+=\ [%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
+  if !has('nvim')
+    return ''
+  endif
   if stridx(expand('%:p'), '.git') != -1
     return ''
   else
