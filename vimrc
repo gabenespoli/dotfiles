@@ -528,6 +528,7 @@ augroup END
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
 " Lua Plugins:  {{{1
+if has('nvim')
 lua << EOF
 
 -- ibhagwan/fzf-lua:  {{{2
@@ -708,3 +709,4 @@ require('nvim-treesitter.configs').setup {
 }
 
 EOF
+endif
