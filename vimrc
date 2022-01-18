@@ -200,15 +200,6 @@ nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd
 " add last search to location list
 nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
 
-" grep [git] folder for todos
-nnoremap <expr> zT 
-      \ exists(':Ggrep') == 2 ?
-      \ ':Ggrep! "TODO\\|FIXME\\|XXX"<CR><CR>:botright copen<CR>' :
-      \ ':vimgrep /TODO\|FIXME\|XXX/j *<CR><CR>:botright copen<CR>'
-
-" quick text file in ~/notes folder
-nnoremap <C-k><C-j> execute 'edit '.expand('~').'/notes/'.strftime("%Y-%m-%d").'.txt'
-
 " quickfix
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
