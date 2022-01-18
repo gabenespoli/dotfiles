@@ -390,7 +390,8 @@ call s:h('gvOrigin',                {'fg': s:blue_light})
 
 " flog {{{2
 hi! link flogAuthor                 Comment
-hi! link flogHash                   Comment
+hi! link flogHash                   Identifier
+hi! link flogRef                    Label
 hi! link flogRefTag                 Tag
 call s:h('flogRefHead',             {'fg': s:pink})
 hi! link flogRefHeadBranch          flogRefHead
