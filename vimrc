@@ -485,48 +485,6 @@ nnoremap g<C-l> <C-l>
 let g:mutton_min_center_width = 88
 let g:mutton_min_side_width = 25
 
-" ibhagwan/fzf-lua:  {{{2
-nnoremap <C-p>      :FzfLua git_files<CR>
-nnoremap <C-k><C-b> :FzfLua buffers<CR>
-nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
-nnoremap <C-k><C-g> :FzfLua live_grep<CR>
-nnoremap <C-k>gs    :FzfLua git_status<CR>
-nnoremap <C-k><C-h> :FzfLua oldfiles<CR>
-nnoremap <C-k><C-f> :FzfLua files<CR>
-nnoremap <C-k><C-k> :FzfLua resume<CR>
-nnoremap <C-k><C-r> :FzfLua registers<CR>
-nnoremap <C-k><Space> :FzfLua<Space>
-
-" nvim/lsp-config:  {{{2
-function! MyCompletion()
-  let col = col('.') - 1
-  if pumvisible()
-    return "\<C-n>"
-  elseif !col || getline('.')[col - 1]  =~ '\s'
-    " if cursor is at bol or in front of whitespace
-    return "\<Tab>"
-  else
-    return "\<C-x>\<C-o>"
-  endif
-endfunction
-inoremap <Tab> <C-r>=MyCompletion()<CR>
-
-nnoremap gd :lua vim.lsp.buf.definition()<CR>
-nnoremap gD :lua vim.lsp.buf.declaration()<CR>
-nnoremap K :lua vim.lsp.buf.hover()<CR>
-nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
-nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
-
-augroup nvimlsp
-  autocmd!
-  autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
-augroup END
-
-" nvim-treesitter/playground:  {{{2
-nnoremap zS :TSHighlightCapturesUnderCursor<CR>
-
 " Lua Plugins:  {{{1
 if has('nvim')
 lua << EOF
@@ -709,4 +667,47 @@ require('nvim-treesitter.configs').setup {
 }
 
 EOF
+
+" ibhagwan/fzf-lua:  {{{2
+nnoremap <C-p>      :FzfLua git_files<CR>
+nnoremap <C-k><C-b> :FzfLua buffers<CR>
+nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
+nnoremap <C-k><C-g> :FzfLua live_grep<CR>
+nnoremap <C-k>gs    :FzfLua git_status<CR>
+nnoremap <C-k><C-h> :FzfLua oldfiles<CR>
+nnoremap <C-k><C-f> :FzfLua files<CR>
+nnoremap <C-k><C-k> :FzfLua resume<CR>
+nnoremap <C-k><C-r> :FzfLua registers<CR>
+nnoremap <C-k><Space> :FzfLua<Space>
+
+" nvim/lsp-config:  {{{2
+function! MyCompletion()
+  let col = col('.') - 1
+  if pumvisible()
+    return "\<C-n>"
+  elseif !col || getline('.')[col - 1]  =~ '\s'
+    " if cursor is at bol or in front of whitespace
+    return "\<Tab>"
+  else
+    return "\<C-x>\<C-o>"
+  endif
+endfunction
+inoremap <Tab> <C-r>=MyCompletion()<CR>
+
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
+nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
+
+augroup nvimlsp
+  autocmd!
+  autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
+augroup END
+
+" nvim-treesitter/playground:  {{{2
+nnoremap zS :TSHighlightCapturesUnderCursor<CR>
+
 endif
