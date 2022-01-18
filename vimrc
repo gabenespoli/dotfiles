@@ -34,9 +34,9 @@ Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
 
 " Python  {{{2
-Plug 'Vimjas/vim-python-pep8-indent',  {'for': ['python']}
+Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
-Plug 'gabenespoli/vim-pythonsense',  {'for': ['python'], 'branch': 'dev'}
+Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
 Plug 'fisadev/vim-isort'
 
