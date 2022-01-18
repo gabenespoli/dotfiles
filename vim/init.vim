@@ -28,17 +28,10 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
-Plug 'ibhagwan/fzf-lua'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
 
-" Coding:
-Plug 'neovim/nvim-lspconfig'
-Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-dotenv'
 
 " Python:
@@ -51,6 +44,16 @@ Plug 'fisadev/vim-isort'
 " Tmux:
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
+
+" Neovim:
+if has('nvim')
+  Plug 'ibhagwan/fzf-lua'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
+endif
 
 " My Plugins:
 Plug 'gabenespoli/vim-mutton'
@@ -364,32 +367,133 @@ function! GitGutterFoldToggle()
   endif
 endfunction
 
-" rbong/vim_flog:  {{2
+" map combining nvim lsp diagnostics with gitgutter preview
+if has('nvim')
+lua << EOF
+function _G.has_line_diagnostic(bufnr, line_nr)
+  local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics(bufnr, line_nr)
+  return not vim.tbl_isempty(line_diagnostics)
+end
+EOF
+nnoremap <expr> =
+      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
+      \ ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>' :
+      \ ':let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>'
+
+else
+nnoremap = :let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>
+endif
+
+" rbong/vim_flog:  {{{2
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
 xmap gl :Flog<CR>
 
-" ibhagwan/fzf-lua
-lua << EOF
-require('fzf-lua').setup {
-  fzf_colors = {
-    ["fg"]          = { "fg", "CursorLine" },
-    ["bg"]          = { "bg", "Normal" },
-    ["hl"]          = { "fg", "PreProc" },
-    ["fg+"]         = { "fg", "Normal" },
-    ["bg+"]         = { "bg", "CursorLine" },
-    ["hl+"]         = { "fg", "PreProc" },
-    ["info"]        = { "fg", "Comment" },
-    ["prompt"]      = { "fg", "Identifier" },
-    ["pointer"]     = { "fg", "PmenuSel" },
-    ["marker"]      = { "fg", "Keyword" },
-    ["spinner"]     = { "fg", "Label" },
-    ["header"]      = { "fg", "Comment" },
-    ["gutter"]      = { "bg", "Normal" },
-  },
-}
-EOF
+nnoremap <C-k>h :vertical Flogsplit -path=%<CR>
+nnoremap <C-k>H :Flogsplit -path=%<CR>
 
+" justinmk/vim-dirvish: {{{2
+let g:dirvish_mode = ':sort ,^.*[\/],'
+if has('mac')
+  let g:loaded_netrwPlugin = 1
+  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
+endif
+
+
+" jeetsukumaran/vim-pythonsense:  {{{2
+let g:is_pythonsense_suppress_object_keymaps = 1
+augroup pythonsense
+  autocmd!
+  autocmd FileType python vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
+  autocmd FileType python omap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
+  autocmd FileType python sunmap <buffer> aC
+  autocmd FileType python vmap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
+  autocmd FileType python omap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
+  autocmd FileType python sunmap <buffer> iC
+  autocmd FileType python vmap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
+  autocmd FileType python omap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
+  autocmd FileType python sunmap <buffer> af
+  autocmd FileType python vmap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
+  autocmd FileType python omap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
+  autocmd FileType python sunmap <buffer> if
+  autocmd FileType python omap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
+  autocmd FileType python vmap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
+  autocmd FileType python sunmap <buffer> ad
+  autocmd FileType python omap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
+  autocmd FileType python vmap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
+  autocmd FileType python sunmap <buffer> id
+augroup END
+
+augroup pythonformat
+  autocmd!
+  autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
+augroup END
+
+" tpope/vim-dadbod & kristijanhusak/vim-dadbod-ui:  {{{2
+let g:db_ui_use_nerd_fonts = 1
+let g:db_async = 1
+nmap <F5> <Plug>(DBUI_ExecuteQuery)
+imap <F5> <Esc><F5>
+
+augroup dadbod
+  autocmd!
+  autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+augroup END
+
+" christoomey/vim-tmux-navigator: {{{2
+let g:tmux_navigator_no_mappings = 1
+if !has('nvim')
+  if has('mac')
+    execute "set <M-h>=\eh"
+    execute "set <M-j>=\ej"
+    execute "set <M-k>=\ek"
+    execute "set <M-l>=\el"
+    execute "set <M-s>=\es"
+    execute "set <M-t>=\et"
+  else
+    execute 'set <M-h>=h'
+    execute 'set <M-j>=j'
+    execute 'set <M-k>=k'
+    execute 'set <M-l>=l'
+    execute 'set <M-s>=s'
+    execute 'set <M-t>=t'
+  endif
+endif
+nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
+inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+if has('nvim')
+  tnoremap <silent> <M-h> <C-\><C-N>:TmuxNavigateLeft<CR>
+  tnoremap <silent> <M-j> <C-\><C-N>:TmuxNavigateDown<CR>
+  tnoremap <silent> <M-k> <C-\><C-N>:TmuxNavigateUp<CR>
+  tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
+endif
+
+" jpalardy/vim-slime: {{{2
+let g:slime_no_mappings = 1
+xmap <C-l>      <Plug>SlimeRegionSend
+nmap <C-l>      <Plug>SlimeMotionSend
+nmap <C-l><C-l> <Plug>SlimeLineSend
+nmap <C-l><CR> <C-l>ip}j
+nmap <C-l><C-j> <C-l><CR>
+nmap <C-l><C-k> <C-l>ip
+let g:slime_target = 'tmux'
+let g:slime_dont_ask_default = 1
+if exists('$TMUX')
+  let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.2'}
+endif
+nnoremap g<C-l> <C-l>
+
+" ibhagwan/fzf-lua:  {{{2
 nnoremap <C-p>      :FzfLua git_files<CR>
 nnoremap <C-k><C-b> :FzfLua buffers<CR>
 nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
@@ -401,8 +505,59 @@ nnoremap <C-k><C-k> :FzfLua resume<CR>
 nnoremap <C-k><C-r> :FzfLua registers<CR>
 nnoremap <C-k><Space> :FzfLua<Space>
 
-" kyazdani42/nvim-web-devicons:  {{{2
+" nvim/lsp-config:  {{{2
+function! MyCompletion()
+  let col = col('.') - 1
+  if pumvisible()
+    return "\<C-n>"
+  elseif !col || getline('.')[col - 1]  =~ '\s'
+    " if cursor is at bol or in front of whitespace
+    return "\<Tab>"
+  else
+    return "\<C-x>\<C-o>"
+  endif
+endfunction
+inoremap <Tab> <C-r>=MyCompletion()<CR>
+
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
+nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
+
+augroup nvimlsp
+  autocmd!
+  autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
+augroup END
+
+" nvim-treesitter/playground:  {{{2
+nnoremap zS :TSHighlightCapturesUnderCursor<CR>
+
+" lua config:  {{{1
 lua << EOF
+
+-- ibhagwan/fzf-lua:  {{{2
+require('fzf-lua').setup {
+  fzf_colors = {
+    ["fg"]          = { "fg", "CursorLine" },
+    ["bg"]          = { "bg", "Normal" },
+    ["hl"]          = { "fg", "Todo" },
+    ["fg+"]         = { "fg", "Normal" },
+    ["bg+"]         = { "bg", "CursorLine" },
+    ["hl+"]         = { "fg", "Todo" },
+    ["info"]        = { "fg", "Comment" },
+    ["prompt"]      = { "fg", "Identifier" },
+    ["pointer"]     = { "fg", "PmenuSel" },
+    ["marker"]      = { "fg", "Keyword" },
+    ["spinner"]     = { "fg", "Label" },
+    ["header"]      = { "fg", "Comment" },
+    ["gutter"]      = { "bg", "Normal" },
+  },
+}
+
+-- kyazdani42/nvim-web-devicons:  {{{2
 require("nvim-web-devicons").setup{
   override = {
     cfg = {icon = ""},
@@ -412,18 +567,8 @@ require("nvim-web-devicons").setup{
     sql  =  {icon = "", color = "#a57230", name = "sql"},
   },
 }
-EOF
 
-" justinmk/vim-dirvish: {{{2
-let g:dirvish_mode = ':sort ,^.*[\/],'
-if has('mac')
-  let g:loaded_netrwPlugin = 1
-  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
-endif
-
-" neovim/nvim-lspconfig:  {{{2
-lua << EOF
-
+-- neovim/nvim-lspconfig:  {{{2
 require('vim.lsp.protocol').CompletionItemKind = {
   '', -- Text 
   '', -- Method 
@@ -530,48 +675,7 @@ local set_signs_limited = function(diagnostics, bufnr, client_id, sign_ns, opts)
 end
 vim.lsp.diagnostic.set_signs = set_signs_limited
 
-EOF
-
-function! MyCompletion()
-  let col = col('.') - 1
-  if pumvisible()
-    return "\<C-n>"
-  elseif !col || getline('.')[col - 1]  =~ '\s'
-    " if cursor is at bol or in front of whitespace
-    return "\<Tab>"
-  else
-    return "\<C-x>\<C-o>"
-  endif
-endfunction
-inoremap <Tab> <C-r>=MyCompletion()<CR>
-
-nnoremap gd :lua vim.lsp.buf.definition()<CR>
-nnoremap gD :lua vim.lsp.buf.declaration()<CR>
-nnoremap K :lua vim.lsp.buf.hover()<CR>
-nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
-nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
-nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
-
-augroup nvimlsp
-  autocmd!
-  autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
-augroup END
-
-" map combining nvim lsp diagnostics with gitgutter preview
-lua << EOF
-function _G.has_line_diagnostic(bufnr, line_nr)
-  local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics(bufnr, line_nr)
-  return not vim.tbl_isempty(line_diagnostics)
-end
-EOF
-nnoremap <expr> =
-      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
-      \ ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>' :
-      \ ':let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>'
-
-" WhoIsSethDaniel/toggle-lsp-diagnostics.nvim:  {{{2
-lua <<EOF
+-- WhoIsSethDaniel/toggle-lsp-diagnostics.nvim:  {{{2
 require'toggle_lsp_diagnostics'.init(
   {
     signs = true,
@@ -580,21 +684,16 @@ require'toggle_lsp_diagnostics'.init(
     virtual_text = false,
   }
 )
-EOF
-nmap cod <Plug>(toggle-lsp-diag-signs)
 
-" nvim-treesitter:  {{{2
-lua <<EOF
+-- nvim-treesitter:  {{{2
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
 }
-EOF
 
-" nvim-treesitter/playground:  {{{2
-lua <<EOF
+-- nvim-treesitter/playground:  {{{2
 require('nvim-treesitter.configs').setup {
   playground = {
     enable = true,
@@ -615,90 +714,8 @@ require('nvim-treesitter.configs').setup {
     },
   }
 }
+
 EOF
-nnoremap zS :TSHighlightCapturesUnderCursor<CR>
-
-" jeetsukumaran/vim-pythonsense:  {{{2
-let g:is_pythonsense_suppress_object_keymaps = 1
-augroup pythonsense
-  autocmd!
-  autocmd FileType python vmap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
-  autocmd FileType python omap <buffer> aC <Plug>(PythonsenseOuterClassTextObject)
-  autocmd FileType python sunmap <buffer> aC
-  autocmd FileType python vmap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
-  autocmd FileType python omap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
-  autocmd FileType python sunmap <buffer> iC
-  autocmd FileType python vmap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
-  autocmd FileType python omap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
-  autocmd FileType python sunmap <buffer> af
-  autocmd FileType python vmap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
-  autocmd FileType python omap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
-  autocmd FileType python sunmap <buffer> if
-  autocmd FileType python omap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
-  autocmd FileType python vmap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
-  autocmd FileType python sunmap <buffer> ad
-  autocmd FileType python omap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
-  autocmd FileType python vmap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
-  autocmd FileType python sunmap <buffer> id
-augroup END
-
-augroup pythonformat
-  autocmd!
-  autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
-augroup END
-
-" christoomey/vim-tmux-navigator: {{{2
-let g:tmux_navigator_no_mappings = 1
-if !has('nvim')
-  if has('mac')
-    execute "set <M-h>=\eh"
-    execute "set <M-j>=\ej"
-    execute "set <M-k>=\ek"
-    execute "set <M-l>=\el"
-    execute "set <M-s>=\es"
-    execute "set <M-t>=\et"
-  else
-    execute 'set <M-h>=h'
-    execute 'set <M-j>=j'
-    execute 'set <M-k>=k'
-    execute 'set <M-l>=l'
-    execute 'set <M-s>=s'
-    execute 'set <M-t>=t'
-  endif
-endif
-nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
-nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
-nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-if has('nvim')
-  tnoremap <silent> <M-h> <C-\><C-N>:TmuxNavigateLeft<CR>
-  tnoremap <silent> <M-j> <C-\><C-N>:TmuxNavigateDown<CR>
-  tnoremap <silent> <M-k> <C-\><C-N>:TmuxNavigateUp<CR>
-  tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
-endif
-
-" jpalardy/vim-slime: {{{2
-let g:slime_no_mappings = 1
-xmap <C-l>      <Plug>SlimeRegionSend
-nmap <C-l>      <Plug>SlimeMotionSend
-nmap <C-l><C-l> <Plug>SlimeLineSend
-nmap <C-l><CR> <C-l>ip}j
-nmap <C-l><C-j> <C-l><CR>
-nmap <C-l><C-k> <C-l>ip
-let g:slime_target = 'tmux'
-let g:slime_dont_ask_default = 1
-if exists('$TMUX')
-  let g:slime_default_config = {'socket_name': split($TMUX, ',')[0], 'target_pane': ':.2'}
-endif
-nnoremap g<C-l> <C-l>
 
 " gabenespoli/vim-mutton: {{{2
 let g:mutton_min_center_width = 88
