@@ -96,7 +96,8 @@ for folder in colors ftdetect ftplugin syntax; do
 done
 
 # install plugins
-nvim +PlugInstall +qall
+vim +PlugInstall +qall
+nvim +PlugInstall -c "TSInstall! vim bash python r" +qall
 
 # Spectacle.app  {{{1
 echo "Setting shortcuts for Spectacle.app..."
