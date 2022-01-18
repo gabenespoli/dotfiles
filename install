@@ -84,6 +84,8 @@ tmux source-file ~/.tmux.conf
 [ -e "$HOME"/.vim ] && mv -v "$HOME"/.vim "$BAKDIR"/.vim
 [ -e "$HOME"/.config/nvim ] && mv -v "$HOME"/.config/nvim "$BAKDIR"/.config/nvim
 [ -e "$HOME"/.local/share/nvim ] && mv -v "$HOME"/.local/share/nvim "$BAKDIR"/.local/share/nvim
+mkdir -p "$HOME"/.vim
+mkdir -p "$HOME"/.config/nvim
 
 # symlink config files & folders
 ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
