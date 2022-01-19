@@ -1,3 +1,5 @@
+nmap <buffer> <expr> i exists(":Twiggy") == 2 ? ':Twiggy<CR>' : ':echo Twiggy not installed<CR>'
+
 nmap <buffer> gs q:Gedit :<CR>
 
 " need gs for git status, so use s instead of gs for sort maps

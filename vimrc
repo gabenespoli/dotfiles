@@ -29,6 +29,7 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
+Plug 'sodapopcan/vim-twiggy'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 Plug 'kristijanhusak/vim-dirvish-git'
@@ -344,6 +345,10 @@ nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
 nnoremap <C-k>g :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
+
+" sodapopcan/vim-twiggy  {{{2
+let g:twiggy_split_position = 'topleft'
+nmap <C-k>b :Twiggy<CR>
 
 " airblade/gitgutter  {{{2
 nmap ga <Plug>(GitGutterStageHunk)
