@@ -374,7 +374,7 @@ hi! link diffSubName                  Identifier
 call s:h('diffAdded',                 {'fg': s:green})
 call s:h('diffRemoved',               {'fg': s:red})
 call s:h('diffChanged',               {'fg': s:blue})
-call s:h('diffLine',                  {'fg': s:yellow, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffLine',                  {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('diffFile',                  {'fg': s:blue, 'gui': 'reverse', 'cterm': 'reverse'})
 hi! link diffNewFile                  String
 hi! link diffOldFile                  String
