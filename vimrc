@@ -713,6 +713,8 @@ nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
 
+nmap cod <Plug>(toggle-lsp-diag)
+
 augroup nvimlsp
   autocmd!
   autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
