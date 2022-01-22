@@ -178,6 +178,10 @@ nnoremap ! :!
 nnoremap <silent> <M-s> :silent w<CR>
 inoremap <silent> <M-s> <C-o>:silent w<CR>
 
+" adjust command line up/down
+cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
+cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"
+
 " q to quit, C-q for macros, q macro: <C-q>q to record, Q to replay
 nnoremap q <C-w>q
 nnoremap <C-q> q
@@ -318,10 +322,6 @@ inoremap <Tab> <C-r>=TabOmniCompletion()<CR>
 " tpope/vim-markdown (built-in)  {{{2
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
-
-" tpope/vim-rsi  {{{2
-cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<up>"
-cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<down>"
 
 " tpope/vim-surround  {{{2
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
