@@ -700,7 +700,7 @@ nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
 
-nmap cod <Plug>(toggle-lsp-diag)
+nmap cod <Plug>(toggle-lsp-diag-signs)
 
 augroup nvimlsp
   autocmd!
