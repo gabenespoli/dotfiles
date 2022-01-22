@@ -207,58 +207,20 @@ nnoremap <silent> <leader>zS :echo synIDattr(synID(line("."),col("."),1),"name")
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
 
+" fix spelling with first suggestion
+nnoremap <leader>s 1z=
+
+" quickfix & location list {{{2
 " add last search to location list
 nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
 
-" quickfix
+" toggle with leader q/l
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
       \ ':botright copen<CR>' : ':cclose<CR>'
 nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
-
-augroup quickfix
-  autocmd!
-  autocmd QuickFixCmdPost [^l]* cwindow
-  autocmd QuickFixCmdPost l* lwindow
-augroup END
-
-" fix spelling with first suggestion
-nnoremap <leader>s 1z=
-
-" visual star (asterisk) search  {{{2
-" https://github.com/bronson/vim-visual-star-search/blob/master/plugin/visual-star-search.vim
-" Makes * and # work on visual mode too.  global function so user mappings can call it.
-" specifying 'raw' for the second argument prevents escaping the result for vimgrep
-" TODO: there's a bug with raw mode.  since we're using @/ to return an unescaped
-" search string, vim's search highlight will be wrong.  Refactor plz.
-function! VisualStarSearchSet(cmdtype,...)
-  let temp = @"
-  normal! gvy
-  if !a:0 || a:1 != 'raw'
-    let @" = escape(@", a:cmdtype.'\*')
-  endif
-  let @/ = substitute(@", '\n', '\\n', 'g')
-  let @/ = substitute(@/, '\[', '\\[', 'g')
-  let @/ = substitute(@/, '\~', '\\~', 'g')
-  let @/ = substitute(@/, '\.', '\\.', 'g')
-  let @" = temp
-endfunction
-
-" replace vim's built-in visual * and # behavior
-xnoremap * :<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
-
-" bracket mappings (unimpaired)  {{{2
-nnoremap [l :lprevious<CR>
-nnoremap ]l :lnext<CR>
-nnoremap [L :lfirst<CR>
-nnoremap ]L :llast<CR>
-nnoremap [q :cprevious<CR>
-nnoremap ]q :cnext<CR>
-nnoremap [Q :cfirst<CR>
-nnoremap ]Q :clast<CR>
 
 " map down and up to c/lnext and c/lprevious
 " lnext/lprevious if location list is open, else cnext/cprevious
@@ -268,6 +230,31 @@ nnoremap <silent> <expr> <down>
 nnoremap <silent> <expr> <up>
       \ empty(filter(getwininfo(), 'v:val.loclist')) ?
       \ ':cprevious<CR>' : ':lprevious<CR>'
+
+" open qf window after qf search
+augroup quickfix
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l* lwindow
+augroup END
+
+" option mappings (co)  {{{2
+nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
+nnoremap <expr> coc &cursorline ? ':set nocursorline<CR>' : ':set cursorline<CR>'
+nnoremap <expr> cou &cursorcolumn ? ':set nocursorcolumn<CR>' : ':set cursorcolumn<CR>'
+nnoremap <expr> coh &hlsearch ? ':set nohlsearch<CR>' : ':set hlsearch<CR>'
+nnoremap <expr> con &number ? ':set nonumber<CR>' : ':set number<CR>'
+nnoremap <expr> cor &relativenumber ? ':set norelativenumber<CR>' : ':set relativenumber<CR>'
+nnoremap <expr> cos &spell ? ':set nospell<CR>' : ':set spell<CR>'
+nnoremap <expr> cot
+      \ &softtabstop==2 ?
+      \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
+      \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
+nnoremap        cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+nnoremap        coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nnoremap        coW :set wrap!<CR>
+nnoremap        coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
+nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
 
 " move lines up and down (modified from tpope/vim-unimpaired)  {{{2
 function! s:ExecMove(cmd) abort
@@ -296,23 +283,36 @@ nnoremap <silent> ]e :<C-U>call <SID>Move('+',v:count1,'Down')<CR>
 xnoremap <silent> [e :<C-U>call <SID>MoveSelectionUp(v:count1)<CR>
 xnoremap <silent> ]e :<C-U>call <SID>MoveSelectionDown(v:count1)<CR>
 
-" option mappings (co)  {{{2
-nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
-nnoremap <expr> coc &cursorline ? ':set nocursorline<CR>' : ':set cursorline<CR>'
-nnoremap <expr> cou &cursorcolumn ? ':set nocursorcolumn<CR>' : ':set cursorcolumn<CR>'
-nnoremap <expr> coh &hlsearch ? ':set nohlsearch<CR>' : ':set hlsearch<CR>'
-nnoremap <expr> con &number ? ':set nonumber<CR>' : ':set number<CR>'
-nnoremap <expr> cor &relativenumber ? ':set norelativenumber<CR>' : ':set relativenumber<CR>'
-nnoremap <expr> cos &spell ? ':set nospell<CR>' : ':set spell<CR>'
-nnoremap <expr> cot
-      \ &softtabstop==2 ?
-      \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
-      \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
-nnoremap        cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
-nnoremap        coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-nnoremap        coW :set wrap!<CR>
-nnoremap        coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
-nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
+" visual star (asterisk) search  {{{2
+" https://github.com/bronson/vim-visual-star-search/blob/master/plugin/visual-star-search.vim
+function! VisualStarSearchSet(cmdtype,...)
+  let temp = @"
+  normal! gvy
+  if !a:0 || a:1 != 'raw'
+    let @" = escape(@", a:cmdtype.'\*')
+  endif
+  let @/ = substitute(@", '\n', '\\n', 'g')
+  let @/ = substitute(@/, '\[', '\\[', 'g')
+  let @/ = substitute(@/, '\~', '\\~', 'g')
+  let @/ = substitute(@/, '\.', '\\.', 'g')
+  let @" = temp
+endfunction
+xnoremap * :<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
+
+" use tab for omni completion  {{{2
+function! TabOmniCompletion()
+  let col = col('.') - 1
+  if pumvisible()
+    return "\<C-n>"
+  elseif !col || getline('.')[col - 1]  =~ '\s'
+    " if cursor is at bol or in front of whitespace
+    return "\<Tab>"
+  else
+    return "\<C-x>\<C-o>"
+  endif
+endfunction
+inoremap <Tab> <C-r>=TabOmniCompletion()<CR>
 
 " Plugin Settings  {{{1
 " tpope/vim-markdown (built-in)  {{{2
@@ -692,19 +692,6 @@ nnoremap <C-k><C-r> :FzfLua registers<CR>
 nnoremap <C-k><Space> :FzfLua<Space>
 
 " nvim/lsp-config  {{{2
-function! MyCompletion()
-  let col = col('.') - 1
-  if pumvisible()
-    return "\<C-n>"
-  elseif !col || getline('.')[col - 1]  =~ '\s'
-    " if cursor is at bol or in front of whitespace
-    return "\<Tab>"
-  else
-    return "\<C-x>\<C-o>"
-  endif
-endfunction
-inoremap <Tab> <C-r>=MyCompletion()<CR>
-
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
