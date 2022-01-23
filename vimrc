@@ -38,11 +38,7 @@ Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
-if has('nvim')
-  Plug 'psf/black', {'branch': 'main', 'tag': '19.10b0'}
-else
-  Plug 'psf/black', {'branch': 'main'}
-endif
+  Plug 'psf/black'
 Plug 'fisadev/vim-isort'
 
 " Tmux  {{{2
