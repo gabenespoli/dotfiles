@@ -22,7 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'wellle/targets.vim'
-Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 
 " Git And Files  {{{2
@@ -326,10 +325,6 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
-
-" romainl/vim-qf  {{{2
-let g:qf_shorten_path = 0
-let g:qf_mapping_ack_style = 1
 
 " sjl/gundo.vim  {{{2
 nnoremap <C-k><C-u> :GundoToggle<CR>
