@@ -117,6 +117,15 @@ augroup help
   autocmd FileType help wincmd L
 augroup END
 
+" Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
+augroup line_return
+  autocmd!
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \     execute 'normal! g`"zvzz' |
+    \ endif
+augroup END
+
 " Status Line  {{{1
 function! SSHIndicator() abort
   if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
@@ -156,15 +165,6 @@ function! PywhereStatusline() abort
     return ' ' . substitute(l:loc, '(def:)', ' ', '')
   endif
 endfunction
-
-" Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
-augroup line_return
-  autocmd!
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \     execute 'normal! g`"zvzz' |
-    \ endif
-augroup END
 
 " Keybindings  {{{1
 set notimeout ttimeout
