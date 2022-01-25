@@ -125,7 +125,6 @@ set statusline+=\ \ %{Devicon()}\ %<%.99f
 set statusline+=\ %#PmenuSel#%h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
 set statusline+=%{PywhereStatusline()}
 set statusline+=%=
-set statusline+=%{db_ui#statusline()}
 set statusline+=\ [%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
