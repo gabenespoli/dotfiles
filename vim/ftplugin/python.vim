@@ -36,19 +36,14 @@ nnoremap <buffer> <localleader>O [zO# COMMAND ----------<CR><CR><CR><Esc>ki
 nnoremap <buffer> <localleader>c i# COMMAND ----------<Esc>
 nnoremap <buffer> <localleader>C o# COMMAND ----------<CR><Esc>
 
-" if search('^# COMMAND ----------$')
-"   setlocal foldmethod=expr
-" endif
-" setlocal foldexpr=DatabricksFolds(v:lnum)
-
-augroup highlight_databricks_cells_as_titles "{{{
-  au!
+augroup highlight_databricks_cells_as_titles
+  autocmd!
   autocmd BufEnter,BufWritePost *.py
         \ execute 'syntax match DatabricksCellMarker /^# COMMAND ----------$/'
         \ | hi! link DatabricksCellMarker Title
-augroup END "}}}
+augroup END
 
-function! DatabricksFolds(lnum) "{{{
+function! DatabricksFolds(lnum)
   " if getline(a:lnum) =~# '^# MAGIC %md #'
   "   return '>1'
   if getline(a:lnum) =~# '^# COMMAND ----------$'
@@ -56,30 +51,12 @@ function! DatabricksFolds(lnum) "{{{
   else
     return '='
   endif
-endfunction "}}}
+endfunction
 
-function! EnableDatabricksFolding() "{{{
+function! EnableDatabricksFolding()
   setlocal foldmethod=expr
   setlocal foldexpr=DatabricksFolds(v:lnum)
   setlocal foldtext=getline(v:foldstart+2)
-endfunction "}}}
+endfunction
 
-" function! JupycentSetDatabricksBuffer() "{{{
-"   execute "% s/# COMMAND ----------/# %%/g"
-"   call JupycentSetBuffer()
-" endfunction "}}}
-
-function! DatabricksSave() "{{{
-  let l:cmd = 'databricks workspace import -ol python'
-  let l:local_fname = expand('%')
-  let l:databricks_fname = '/Users/gabe.nespoli@sonova.com/uploads' . expand('%')
-  let l:whole_cmd = l:cmd . ' ' . shellescape(l:local_fname) . ' ' . shellescape(l:databricks_fname)
-  execute(system(l:whole_cmd))
-  echo('Saved to databricks: ' . l:databricks_fname)
-endfunction "}}}
-
-command! JupycentSaveDatabricks call JupycentSaveDatabricks()
-command! DatabricksFolding call EnableDatabricksFolding()
-
-nnoremap <buffer> <localleader>ds :call DatabricksSave()<CR>
 nnoremap <localleader>Fe :call EnableDatabricksFolding()<CR>
