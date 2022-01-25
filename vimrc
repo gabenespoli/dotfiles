@@ -383,7 +383,6 @@ endif
 " rbong/vim_flog  {{{2
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
-xmap gl :Flog<CR>
 nnoremap <C-k>h :vertical Flogsplit -path=%<CR>
 nnoremap <C-k>H :Flogsplit -path=%<CR>
 
