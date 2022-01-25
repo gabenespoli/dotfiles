@@ -118,11 +118,7 @@ augroup line_return
 augroup END
 
 " Status Line  {{{1
-function! SSHIndicator() abort
-  if !empty($SSH_CLIENT) || !empty($SSH_TTY) | return '^' | else | return '' | endif
-endfunction
 set statusline=
-set statusline+=%{SSHIndicator()}
 set statusline+=\ %n
 set statusline+=\ \ \ %{FugitiveHead(12)}
 set statusline+=\ \ %{Devicon()}\ %<%.99f
