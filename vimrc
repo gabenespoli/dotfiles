@@ -24,7 +24,7 @@ Plug 'tpope/vim-dotenv'
 Plug 'wellle/targets.vim'
 Plug 'sjl/gundo.vim'
 
-" Git And Files  {{{2
+" Git & Files  {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
