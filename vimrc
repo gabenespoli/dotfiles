@@ -686,6 +686,7 @@ nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap gr :lua vim.lsp.buf.references()<CR>
 nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
+nnoremap <C-k><C-l> :lua vim.diagnostic.setloclist()<CR>
 
 nmap cod <Plug>(toggle-lsp-diag-signs)
 
