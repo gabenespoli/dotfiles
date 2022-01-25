@@ -30,7 +30,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
 Plug 'sodapopcan/vim-twiggy'
 Plug 'justinmk/vim-dirvish'
-Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
+Plug 'roginfarrer/vim-dirvish-dovish'
 Plug 'kristijanhusak/vim-dirvish-git'
 
 " Python  {{{2
