@@ -23,7 +23,3 @@ nmap <buffer> ca :Floggit commit --amend<CR>
 nmap <buffer> <silent> J u:Flogjump HEAD<CR>zz
 nmap <buffer> czz :Floggit stash push<CR>
 nmap <buffer> czp :Floggit stash pop<CR>
-
-" disable split while jumping refs
-nnoremap <buffer> <silent> ]r :<C-U>call flog#next_ref()<CR>
-nnoremap <buffer> <silent> [r :<C-U>call flog#previous_ref()<CR>
