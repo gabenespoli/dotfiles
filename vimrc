@@ -77,16 +77,14 @@ else
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
 endif
 set hidden
-set nomodeline
 set number
-set equalalways splitright splitbelow
+set nomodeline
+set cursorline
+set splitright splitbelow
 set nowrap linebreak breakindent whichwrap+=h,l
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2
-set listchars+=extends:>,precedes:<
+set showmatch ignorecase smartcase nohlsearch
 set formatoptions-=t
-set cursorline
-set showmatch
-set ignorecase smartcase nohlsearch
 set foldlevel=99
 set foldmethod=marker
 set foldtext=getline(v:foldstart)
@@ -94,7 +92,6 @@ let g:vimsyn_folding='af'
 set wildignorecase
 set completeopt=menuone
 set shortmess+=c
-set tags^=.git/tags;~
 set diffopt+=context:3
 set suffixesadd+=.m,.r,.R,.py
 set clipboard=unnamed
