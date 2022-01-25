@@ -470,7 +470,7 @@ let g:slime_no_mappings = 1
 xmap <C-l>      <Plug>SlimeRegionSend
 nmap <C-l>      <Plug>SlimeMotionSend
 nmap <C-l><C-l> <Plug>SlimeLineSend
-nmap <C-l><CR> <C-l>ip}j
+nmap <C-l><CR>  <C-l>ip}j
 nmap <C-l><C-j> <C-l><CR>
 nmap <C-l><C-k> <C-l>ip
 let g:slime_target = 'tmux'
