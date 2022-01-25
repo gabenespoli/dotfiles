@@ -684,7 +684,6 @@ nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap gD :lua vim.lsp.buf.declaration()<CR>
 nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap <C-k>d :lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
 
