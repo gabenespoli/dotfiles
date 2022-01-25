@@ -1,6 +1,6 @@
 " Author: Gabe Nespoli
 " Email: gabenespoli@gmail.com
-" File: init.vim
+" File: init.vim/vimrc
 set encoding=utf-8
 scriptencoding utf-8
 
