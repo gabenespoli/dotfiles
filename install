@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# Gabe Nespoli (gabenespoli@gmail.com)
-# this script is intended to be run via curl
-# i.e. don't need to have git to first clone the dotfiles repo
-
 # Do this first {{{1
 # 1. update with software update
 #    via command line: sudo softwareupdate -ia --verbose
 # 2. make sure xcode command line tools are installed
 #    to install: xcode-select --install
 # 3. Install fonts
+#    - Dank Mono
 #    - https://github.com/IBM/plex
 #    - https://github.com/googlefonts/dm-mono
 
@@ -21,8 +18,8 @@ echo "-- Installing Homebrew..."
 echo "-- Installing Homebrew packages..."
 brew install git
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
-brew install tmux neovim lf git ctags tree jq cloc
-brew install bat ag ripgrep fzf npm
+brew install tmux neovim lf git fd ripgrep fzf bat jq cloc tree
+brew install npm
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 brew install sqlparse
