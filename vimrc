@@ -33,7 +33,6 @@ Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish'
 
 " Python  {{{2
-Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black'
@@ -629,6 +628,9 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+    enable = true
+  }
 }
 
 -- nvim-treesitter/playground  {{{2
