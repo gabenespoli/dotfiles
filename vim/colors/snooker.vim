@@ -116,7 +116,6 @@ call s:h('Todo',          {'fg': s:pink})
 " Extra Groups {{{1
 " ordered according to `:help hitest.vim`
 call s:h('SpecialKey',    {'fg': s:fg})
-call s:h('NonText',       {'fg': s:bg_light, 'gui': 'bold', 'cterm': 'bold'})
 call s:h('Whitespace',    {'fg': s:bg_light})
 call s:h('EndOfBuffer',   {'fg': s:bg_light})
 call s:h('NonText',       {'fg': s:bg_light})
