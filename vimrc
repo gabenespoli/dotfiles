@@ -469,6 +469,7 @@ nmap <C-l><CR>  <C-l>ip}j
 nmap <C-l><C-j> <C-l><CR>
 nmap <C-l><C-]> <C-l><CR>
 nmap <C-l><C-k> <C-l>ip
+nmap <C-l><C-n> }j
 let g:slime_target = 'tmux'
 let g:slime_dont_ask_default = 1
 if exists('$TMUX')
