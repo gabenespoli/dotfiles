@@ -69,7 +69,6 @@ if has('nvim')
   set directory=~/.config/nvim/swap/
 endif
 if has('macunix')
-  let g:python_host_prog = expand('~').'/miniconda/envs/neovim2/bin/python'
   let g:python3_host_prog = expand('~').'/miniconda/envs/neovim3/bin/python'
 else
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
