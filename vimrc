@@ -29,8 +29,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
 Plug 'sodapopcan/vim-twiggy'
-Plug 'justinmk/vim-dirvish'
-Plug 'roginfarrer/vim-dirvish-dovish'
+" Plug 'rhysd/conflict-marker.vim'
 
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
@@ -386,12 +385,6 @@ nnoremap <C-k>H :Flogsplit -path=%<CR>
 let g:twiggy_split_position = 'topleft'
 nmap <C-k>b :Twiggy<CR>
 
-" justinmk/vim-dirvish  {{{2
-let g:dirvish_mode = ':sort ,^.*[\/],'
-if has('mac')
-  let g:loaded_netrwPlugin = 1
-  nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
-endif
 
 " jeetsukumaran/vim-pythonsense  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
