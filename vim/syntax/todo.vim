@@ -72,7 +72,7 @@ hi def link TodoTitle           Title
 hi def link TodoTodoChar        Identifier
 hi def link TodoTodo            Normal
 hi def link TodoDoneChar        Special
-hi def link TodoDone            Comment
+hi def link TodoDone            Type
 hi def link TodoDoingChar       Statement
 hi def link TodoDoing           Statement
 hi def link TodoWaitChar        Constant
