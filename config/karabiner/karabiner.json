@@ -2984,7 +2984,7 @@
                         ]
                     },
                     {
-                        "description": "Tab Layer [tab+qw -> control+option+left/right]",
+                        "description": "Tab Layer [tab+qw -> control+left/right]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -3007,8 +3007,7 @@
                                     {
                                         "key_code": "left_arrow",
                                         "modifiers": [
-                                            "control",
-                                            "option"
+                                            "control"
                                         ]
                                     }
                                 ],
@@ -3035,8 +3034,7 @@
                                     {
                                         "key_code": "right_arrow",
                                         "modifiers": [
-                                            "control",
-                                            "option"
+                                            "control"
                                         ]
                                     }
                                 ],
