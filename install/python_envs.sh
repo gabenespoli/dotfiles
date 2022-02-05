@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "" && echo "-- Installing python envs..."
+
 for rc in isort.cfg flake8; do
   [ -e "$HOME"/."$rc" ] && mv -v "$HOME"/."$rc" "$BAKDIR"/"$rc"
   ln -sfv "$HOME"/dotfiles/"$rc" "$HOME"/."$rc"
@@ -14,6 +16,20 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~
 bash ~/miniconda.sh -b -p $HOME/miniconda
 conda init
 conda update -n base -c defaults conda
+
+# env for neovim
+conda create -y -n neovim3
+conda deactivate && activate neovim3
+conda install -y python
+pip install pynvim
+  # flake8 mypy pydocstyle black isort \
+  # python-language-server jedi
+
+conda create -y -n base38
+conda deactivate && conda activate base38
+conda install -y python=3.8
+conda install -y -c conda-forge pandas ipython statsmodels \
+  sqlalchemy pyodbc plotly python-dotenv
 
 # # base 3.7 env
 # conda create -y -n base37 python=3.7.10
@@ -30,7 +46,7 @@ conda update -n base -c defaults conda
 # jupyter lab build
 
 # base env
-conda activate base
+conda activate 
 conda install -c conda-forge -y \
   flake8 black isort pytest \
   numpy pandas pyarrow matplotlib seaborn plotly dash dash-bootstrap-components \
@@ -49,16 +65,3 @@ conda install -c conda-forge -y \
 
 # rebuild to activate jupyter-dash extension
 # jupyter lab build
-
-# env for neovim
-conda create -y -n neovim3
-conda activate neovim3
-conda install -y python
-pip install pynvim
-  # flake8 mypy pydocstyle black isort \
-  # python-language-server jedi
-# pip install neovim pynvim
-
-# conda create -y -n neovim2 python=2.7.15
-# conda activate neovim2
-# pip install neovim pynvim
