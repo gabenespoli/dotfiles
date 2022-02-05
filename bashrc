@@ -95,6 +95,7 @@ alias jn="jupyter notebook"
 alias jl="jupyter lab"
 
 # git {{{1
+export PATH="$HOME/dotfiles/git:$PATH"
 alias gst="git status -sb"
 alias gs="git st"
 alias gb="git branch"
