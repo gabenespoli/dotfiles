@@ -390,7 +390,7 @@ let g:twiggy_split_position = 'topleft'
 nmap <C-k>b :Twiggy<CR>
 
 " lambdalisue/fern.vim  {{{2
-nnoremap - :Fern .<CR>
+nnoremap - :Fern %:h<CR>
 augroup fern
   autocmd!
   autocmd FileType fern nmap <buffer> - <C-o>
