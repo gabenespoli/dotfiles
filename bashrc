@@ -29,7 +29,6 @@ else
 fi
 
 # Environment {{{1
-export TERM=xterm-256color-italic
 export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/lib:$PATH"
 export EDITOR='nvim'
 export CLICOLOR=1
