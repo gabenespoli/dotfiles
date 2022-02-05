@@ -21,7 +21,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
-Plug 'wellle/targets.vim'
+" Plug 'wellle/targets.vim'
+" Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 
 " Git & Files  {{{2
