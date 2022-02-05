@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "-- Installing Homebrew..."
+echo "" && echo "-- Installing Homebrew..."
 [ -z "$(which brew)" ] &&
   /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "-- Installing Homebrew packages..."
+echo "" && echo "-- Installing Homebrew packages..."
 brew install git
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
 brew install tmux neovim lf git fd ripgrep fzf bat jq cloc tree trash
@@ -22,13 +22,13 @@ npm install -g bash-language-server
 npm install -g vim-language-server
 npm install -g yaml-language-server
 
-echo "-- Adding git bash completion and prompt colors..."
+echo "" && echo "-- Adding git bash completion and prompt colors..."
 if [ ! -e ~/.git-completion.bash ]; then
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 fi
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
-echo "-- Installing tmux plugins..."
+echo "" && echo "-- Installing tmux plugins..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
 
@@ -53,6 +53,6 @@ done
 vim +PlugInstall +qall
 nvim +PlugInstall -c "TSInstall! vim bash python r" +qall
 
-echo "-- Adding updated bash to the list of allowed shells..."
+echo "" && echo "-- Adding updated bash to the list of allowed shells..."
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells' # Prompts for password
 chsh -s /usr/local/bin/bash # Change to the new shell, prompts for password
