@@ -7,7 +7,7 @@ echo "" && echo "-- Installing Homebrew..."
 echo "" && echo "-- Installing Homebrew packages..."
 brew install git
 brew install bash readline coreutils findutils grep gnu-sed gawk wget
-brew install tmux neovim lf git fd ripgrep fzf bat jq cloc tree trash
+brew install tmux neovim lf git fd ripgrep fzf bat jq cloc tree trash htop
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 
