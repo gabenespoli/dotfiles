@@ -199,6 +199,9 @@ nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd
 " fix spelling with first suggestion
 nnoremap <leader>s 1z=
 
+" zz but 3/4 ish instead of half
+nnoremap z<Space> zz25<C-e>
+
 " quickfix & location list {{{2
 " add last search to location list
 nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
