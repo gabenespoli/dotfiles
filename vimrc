@@ -658,6 +658,10 @@ nmap <C-k>gD      :FzfLua lsp_declarations<CR>
 nmap <C-k>gr      :FzfLua lsp_references<CR>
 nmap <C-k>gs      :FzfLua git_status<CR>
 nmap <C-k><C-h>   :FzfLua oldfiles<CR>
+nmap <C-k><C-f>   :FzfLua files<CR>
+nmap <C-k><C-k>   :FzfLua resume<CR>
+nmap <C-k><C-r>   :FzfLua registers<CR>
+nmap <C-k><Space> :FzfLua<Space>
 
 " nvim/lsp-config  {{{2
 nmap gd :lua vim.lsp.buf.definition()<CR>
