@@ -206,6 +206,11 @@ nnoremap <leader>s 1z=
 " zz but 3/4 ish instead of half
 nnoremap z<Space> zz25<C-e>
 
+" open with mac system
+if has('mac')
+  nnoremap <silent> <buffer> gx :execute "!open " . shellescape("<C-r><C-l>")<CR><CR>
+endif
+
 " quickfix & location list {{{2
 " add last search to location list
 nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
