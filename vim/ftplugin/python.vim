@@ -18,7 +18,7 @@ function SlimeSendArg()
   let text = substitute(text, ',$', '', '')
   execute 'SlimeSend1 ' . text
 endfunction
-nnoremap <buffer> <C-l><C-g> :call SlimeSendArg()<CR>
+nnoremap <buffer> <C-l><C-g> :call SlimeSendArg()<CR>j
 
 " jupytext
 nnoremap <buffer> <localleader>js :!jupytext --update -o %.ipynb %<CR>
