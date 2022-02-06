@@ -14,6 +14,7 @@ brew install pandoc pandoc-citeproc pandoc-crossref basictex
 brew install --cask karabiner-elements
 brew install --cask alacritty
 brew install --cask macvim
+brew install --cask rectangle
 
 brew install npm
 brew install efm-langserver
