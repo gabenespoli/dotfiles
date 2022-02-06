@@ -648,25 +648,25 @@ require('nvim-treesitter.configs').setup {playground = {enable = true}}
 EOF
 
 " ibhagwan/fzf-lua  {{{2
-nnoremap <C-p>      :FzfLua git_files<CR>
-nnoremap <C-k><C-b> :FzfLua buffers<CR>
-nnoremap <C-k><C-d> :FzfLua lsp_workspace_diagnostics<CR>
-nnoremap <C-k><C-g> :FzfLua live_grep<CR>
-nnoremap <C-k>gs    :FzfLua git_status<CR>
-nnoremap <C-k><C-h> :FzfLua oldfiles<CR>
-nnoremap <C-k><C-f> :FzfLua files<CR>
-nnoremap <C-k><C-k> :FzfLua resume<CR>
-nnoremap <C-k><C-r> :FzfLua registers<CR>
-nnoremap <C-k><Space> :FzfLua<Space>
+nmap <C-p>        :FzfLua git_files<CR>
+nmap <C-k><C-b>   :FzfLua buffers<CR>
+nmap <C-k>d       :FzfLua lsp_workspace_diagnostics<CR>
+nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
+nmap <C-k><C-g>   :FzfLua live_grep<CR>
+nmap <C-k>gd      :FzfLua lsp_definitions<CR>
+nmap <C-k>gD      :FzfLua lsp_declarations<CR>
+nmap <C-k>gr      :FzfLua lsp_references<CR>
+nmap <C-k>gs      :FzfLua git_status<CR>
+nmap <C-k><C-h>   :FzfLua oldfiles<CR>
 
 " nvim/lsp-config  {{{2
-nnoremap gd :lua vim.lsp.buf.definition()<CR>
-nnoremap gD :lua vim.lsp.buf.declaration()<CR>
-nnoremap K :lua vim.lsp.buf.hover()<CR>
-nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
-nnoremap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
-nnoremap <C-k><C-l> :lua vim.diagnostic.setloclist()<CR>
+nmap gd :lua vim.lsp.buf.definition()<CR>
+nmap gD :lua vim.lsp.buf.declaration()<CR>
+nmap gr :lua vim.lsp.buf.references()<CR>
+nmap K :lua vim.lsp.buf.hover()<CR>
+nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
+nmap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
+nmap <C-k><C-l> :lua vim.diagnostic.setloclist()<CR>
 
 nmap cod <Plug>(toggle-lsp-diag-signs)
 
