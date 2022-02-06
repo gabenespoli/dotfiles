@@ -28,7 +28,7 @@ nnoremap <buffer> <localleader>X :call todo#RemoveCompleted()<CR>
 nnoremap <buffer> <localleader>n :call TodoToggleNext()<CR>
 
 if has('mac')
-  nnoremap <buffer> gx :call GoToJira()<CR>
+  nnoremap <buffer> gj :call GoToJira()<CR>
   function! GoToJira()
     let l:jira_key = ''
 
