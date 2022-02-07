@@ -1,0 +1,51 @@
+{
+    "workbench.colorTheme": "Default Dark Azure Data Studio",
+    "datasource.connectionGroups": [
+        {
+            "name": "ROOT",
+            "id": "C777F06B-202E-4480-B475-FA416154D458"
+        }
+    ],
+    "datasource.connections": [
+        {
+            "options": {
+                "connectionName": "ace-dev-landing",
+                "server": "acedev-sql.database.windows.net",
+                "database": "ace-dev-landing",
+                "authenticationType": "SqlLogin",
+                "user": "acedev-sql-landing-user",
+                "password": "",
+                "connectTimeout": 30,
+                "applicationName": "azdata",
+                "originalDatabase": "ace-dev-landing",
+                "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+                "databaseDisplayName": "ace-dev-landing"
+            },
+            "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+            "providerName": "MSSQL",
+            "savePassword": true,
+            "id": "37456757-e1f7-4411-81c3-b830934a964f"
+        }
+    ],
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "'DankMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "workbench.enablePreviewFeatures": true
+}
