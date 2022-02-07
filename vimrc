@@ -78,7 +78,7 @@ if has('macunix')
 else
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
 endif
-set hidden
+set hidden laststatus=2
 set number
 set nomodeline
 set cursorline
