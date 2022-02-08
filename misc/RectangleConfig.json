@@ -1,18 +1,18 @@
 {
   "defaults" : {
     "almostMaximizeWidth" : {
-      "float" : 0
+      "float" : 0.60000002384185791
     },
-    "curtainChangeSize" : {
-      "int" : 0
-    },
-    "ignoredSnapAreas" : {
+    "centerHalfCycles" : {
       "int" : 0
     },
     "allowAnyShortcut" : {
       "bool" : false
     },
-    "centerHalfCycles" : {
+    "ignoredSnapAreas" : {
+      "int" : 0
+    },
+    "curtainChangeSize" : {
       "int" : 0
     },
     "screenEdgeGapBottom" : {
@@ -36,16 +36,16 @@
     "gapSize" : {
       "float" : 0
     },
+    "fullIgnoreBundleIds" : {
+
+    },
     "specifiedHeight" : {
       "float" : 1050
-    },
-    "todoApplication" : {
-
     },
     "disabledApps" : {
 
     },
-    "fullIgnoreBundleIds" : {
+    "todoApplication" : {
 
     },
     "unsnapRestore" : {
@@ -57,13 +57,13 @@
     "snapEdgeMarginTop" : {
       "float" : 5
     },
-    "centeredDirectionalMove" : {
+    "autoMaximize" : {
       "int" : 0
     },
     "snapModifiers" : {
       "int" : 0
     },
-    "autoMaximize" : {
+    "centeredDirectionalMove" : {
       "int" : 0
     },
     "altThirdCycle" : {
@@ -81,17 +81,17 @@
     "hideMenubarIcon" : {
       "bool" : false
     },
-    "minimumWindowHeight" : {
-      "float" : 0
-    },
     "footprintFade" : {
       "int" : 0
     },
-    "specifiedWidth" : {
-      "float" : 1680
-    },
     "snapEdgeMarginBottom" : {
       "float" : 5
+    },
+    "minimumWindowHeight" : {
+      "float" : 0
+    },
+    "specifiedWidth" : {
+      "float" : 1680
     },
     "traverseSingleScreen" : {
       "int" : 0
@@ -105,13 +105,13 @@
     "screenEdgeGapLeft" : {
       "float" : 0
     },
+    "showAllActionsInMenu" : {
+      "int" : 0
+    },
     "alternateDefaultShortcuts" : {
       "bool" : true
     },
     "subsequentExecutionMode" : {
-      "int" : 4
-    },
-    "showAllActionsInMenu" : {
       "int" : 0
     },
     "footprintBorderWidth" : {
@@ -121,7 +121,7 @@
       "bool" : false
     },
     "windowSnapping" : {
-      "int" : 0
+      "int" : 1
     },
     "snapEdgeMarginLeft" : {
       "float" : 5
@@ -129,14 +129,14 @@
     "todo" : {
       "int" : 0
     },
-    "snapEdgeMarginRight" : {
-      "float" : 5
-    },
     "obtainWindowOnClick" : {
       "int" : 0
     },
-    "footprintColor" : {
-
+    "snapEdgeMarginRight" : {
+      "float" : 5
+    },
+    "footprintAlpha" : {
+      "float" : 0.30000001192092896
     },
     "minimumWindowWidth" : {
       "float" : 0
@@ -144,11 +144,11 @@
     "attemptMatchOnNextPrevDisplay" : {
       "int" : 0
     },
-    "footprintAlpha" : {
-      "float" : 0.30000001192092896
+    "footprintColor" : {
+
     },
     "almostMaximizeHeight" : {
-      "float" : 0
+      "float" : 0.60000002384185791
     },
     "resizeOnDirectionalMove" : {
       "bool" : false
@@ -162,44 +162,40 @@
       "keyCode" : 21,
       "modifierFlags" : 1966080
     },
-    "restore" : {
-      "keyCode" : 51,
+    "previousDisplay" : {
+      "keyCode" : 15,
+      "modifierFlags" : 1966080
+    },
+    "centerHalf" : {
+      "keyCode" : 19,
       "modifierFlags" : 1966080
     },
     "maximize" : {
-      "keyCode" : 20,
-      "modifierFlags" : 1966080
-    },
-    "firstTwoThirds" : {
       "keyCode" : 18,
       "modifierFlags" : 1966080
     },
     "topHalf" : {
-      "keyCode" : 17,
-      "modifierFlags" : 1966080
-    },
-    "bottomHalf" : {
-      "keyCode" : 15,
-      "modifierFlags" : 1966080
-    },
-    "firstThird" : {
-      "keyCode" : 50,
-      "modifierFlags" : 1966080
-    },
-    "centerHalf" : {
-      "keyCode" : 14,
-      "modifierFlags" : 1966080
-    },
-    "leftHalf" : {
-      "keyCode" : 19,
-      "modifierFlags" : 1966080
-    },
-    "lastTwoThirds" : {
       "keyCode" : 23,
       "modifierFlags" : 1966080
     },
-    "lastThird" : {
+    "bottomHalf" : {
       "keyCode" : 22,
+      "modifierFlags" : 1966080
+    },
+    "leftHalf" : {
+      "keyCode" : 20,
+      "modifierFlags" : 1966080
+    },
+    "almostMaximize" : {
+      "keyCode" : 17,
+      "modifierFlags" : 1966080
+    },
+    "nextDisplay" : {
+      "keyCode" : 14,
+      "modifierFlags" : 1966080
+    },
+    "restore" : {
+      "keyCode" : 51,
       "modifierFlags" : 1966080
     }
   },
