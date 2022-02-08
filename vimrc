@@ -211,6 +211,9 @@ if has('mac')
   nnoremap <silent> <buffer> gx :execute "!open " . shellescape("<C-r><C-l>")<CR><CR>
 endif
 
+" search for conflict markers
+nnoremap <silent> cx /^<<<<<<< .*$\\|^=======\\|^\|\|\|\|\|\|\|\\|^>>>>>>> .*$<CR>:set hlsearch<CR>
+
 " quickfix & location list {{{2
 " add last search to location list
 nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
