@@ -5,9 +5,9 @@ echo "" && echo "-- Installing Homebrew..."
   /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "" && echo "-- Installing Homebrew packages..."
-brew install git
-brew install bash readline coreutils findutils grep gnu-sed gawk wget
-brew install tmux neovim lf git fd ripgrep fzf bat jq cloc tree trash htop
+brew install git bash tmux neovim
+brew install readline coreutils findutils grep gnu-sed gawk wget
+brew install lf fd ripgrep fzf bat jq cloc tree trash htop
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
 
@@ -24,35 +24,46 @@ npm install -g vim-language-server
 npm install -g yaml-language-server
 
 echo "" && echo "-- Adding git bash completion and prompt colors..."
-if [ ! -e ~/.git-completion.bash ]; then
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-fi
-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+rm ~/.bash-git-prompt && git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+ln -sfv "$HOME"/dotfiles/git-prompt-colors.sh "$HOME"/.git-prompt-colors.sh
 
 echo "" && echo "-- Installing tmux plugins..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
 
-echo "-- Symlinking files and directories..."
+# ~/.dotfiles
+ln -sfv "$HOME"/dotfiles/inputrc "$HOME"/.inputrc
+ln -sfv "$HOME"/dotfiles/bashrc "$HOME"/.bashrc
+ln -sfv "$HOME"/dotfiles/bash_profile "$HOME"/.bash_profile
+ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
+ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 
-for rc in inputrc bashrc bash_profile tmux.conf gitconfig git-prompt-colors.sh; do
-  ln -sfv "$HOME"/dotfiles/"$rc" "$HOME"/."$rc"
-done
+# ~/.config
+ln -sfc "$HOME"/dotfiles/config/karabiner "$HOME"/.config/
+ln -sfc "$HOME"/dotfiles/config/alacritty "$HOME"/.config/
+ln -sfc "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
+ln -sfc "$HOME"/dotfiles/config/bat "$HOME"/.config/
+ln -sfc "$HOME"/dotfiles/config/lf "$HOME"/.config/
+ln -sfc "$HOME"/dotfiles/config/pudb "$HOME"/.config/
 
-for cfg in karabiner alacritty efm-langserver bat lf pudb; do
-  ln -sfv "$HOME"/dotfiles/config/"$cfg" "$HOME"/.config/
-done
-
-mkdir -p "$HOME"/.vim
-mkdir -p "$HOME"/.config/nvim
-ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
+# nvim
+mkdir -pv "$HOME"/.config/nvim
 ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.config/nvim/init.vim
-for folder in colors ftdetect ftplugin syntax; do
-  ln -sfv "$HOME"/dotfiles/vim/"$folder" "$HOME"/.vim/"$folder"
-  ln -sfv "$HOME"/dotfiles/vim/"$folder" "$HOME"/.config/nvim/"$folder"
-done
+ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
+ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
+ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
+ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
+nvim +PlugInstall -c "TSInstall! bash python" +qall
+
+# vim
+mkdir -pv "$HOME"/.vim
+ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
+ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.vim/
 vim +PlugInstall +qall
-nvim +PlugInstall -c "TSInstall! vim bash python r" +qall
 
 echo "" && echo "-- Adding updated bash to the list of allowed shells..."
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells' # Prompts for password
