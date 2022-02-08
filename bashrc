@@ -29,7 +29,7 @@ else
 fi
 
 # Environment {{{1
-export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/lib:$PATH"
+export PATH="$HOME/dotfiles/bin:$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/lib:$PATH"
 export EDITOR='nvim'
 export CLICOLOR=1
 export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
@@ -85,7 +85,6 @@ alias jn="jupyter notebook"
 alias jl="jupyter lab"
 
 # git {{{1
-export PATH="$HOME/dotfiles/git:$PATH"
 alias gst="git status -sb"
 alias gs="git st"
 alias gb="git branch"
