@@ -42,8 +42,16 @@
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
         {
-        "before": ["j", "k"],
-        "after": ["<Esc>"]
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["<C-i>"],
+            "after": ["<space><space><space><space>"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["<delete>"]
         }
     ],
     "vim.leader": "<space>",
