@@ -2542,7 +2542,7 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+sdfghjk -> {}[]<bksp>\"']",
+                        "description": "Quote Layer ['+sdfghjk<tab> -> {}[]<bksp>\"'`]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2777,6 +2777,33 @@
                                 "to": [
                                     {
                                         "key_code": "quote"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock",
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde"
                                     }
                                 ],
                                 "type": "basic"
