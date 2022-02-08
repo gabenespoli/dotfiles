@@ -175,10 +175,6 @@ call s:h('ColorColumn',   {'bg': s:bg_light})
 call s:h('MatchParen',    {'fg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('qfLineNr',      {'fg': s:fg})
 
-" nvim-only groups
-hi! link TermCursor     DiffText
-hi! link TermCursorNC   DiffChange
-
 " Treesitter {{{1
 " hi! link TSNone                 guifg=foreground
 " hi! link TSPunctDelimiter       links to Delimiter
