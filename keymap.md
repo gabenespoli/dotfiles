@@ -92,7 +92,7 @@ are lost are remapped in the Tab Layer.
 
 ### Semicolon Layer
 
-Arrow keys and navigation cluster, shifted number row, and media keys. In
+Arrow keys and navigation cluster, shifted number row, and volume. In
 Finder.app, `;-u` and `;-o` actually send `Cmd-Up` and `Cmd-Dn`, to navigate up
 and down the directory tree.
 
@@ -119,8 +119,8 @@ and down the directory tree.
 
 ### Quote/Escape Layer
 
-Function keys, number row and a number pad, and some brackets and math symbols.
-This layer can be triggered using either `'` or `Esc`.
+Function keys, brackets, quotes, and some media keys. Also a closer number row
+and some math symbols. This layer can be triggered using either `'` or `Esc`.
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
@@ -130,13 +130,13 @@ This layer can be triggered using either `'` or `Esc`.
 |          | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 0    |      |      |        |
 |          |      |      |      |      |      |      |      |      |      |      |      |      |        |
 |----------'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'--------|
-|            |      | {    | }    | [    | ]    | Bksp | "    | '    |      |      | #### |             |
-|            |      |      |      |      |      |      |      |      |      |      | #### |             |
+|            |      | {    | }    | [    | ]    | Bksp | "    | '    |      |Play/ | #### |             |
+|            |      |      |      |      |      |      |      |      |      |Pause | #### |             |
 |------------'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'-------------|
 |               |      | +    | -    | _    | =    |Next  |Prev  |      |      |      |                 |  
 |               |      |      |      |      |      |Track |Track |      |      |      |                 |
 |--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
-|        |        |        |                Play/Pause              |        |        |        |        |
+|        |        |        |                                        |        |        |        |        |
 |        |        |        |                                        |        |        |        |        |
 '--------'--------'--------'----------------------------------------'--------'--------'--------'--------'
 ```
