@@ -2,12 +2,11 @@
 
 echo "" && echo "-- Installing python envs..."
 
-ln -sfv "$HOME"/dotfiles/isort.cfg "$HOME"/.isort.cfg
-ln -sfv "$HOME"/dotfiles/flake8 "$HOME"/.flake8
+ln -sfv "$HOME"/dotfiles/python/isort.cfg "$HOME"/.isort.cfg
+ln -sfv "$HOME"/dotfiles/python/flake8 "$HOME"/.flake8
 
 mkdir -pv "$HOME"/.ipython/profile_default
-ln -sfv "$HOME"/dotfiles/ipython/profile_default/ipython_config.py \
-  "$HOME"/.ipython/profile_default/ipython_config.py
+ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_default/ipython_config.py
 
 # https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O "$HOME"/miniconda.sh
