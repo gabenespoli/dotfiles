@@ -26,7 +26,7 @@ npm install -g yaml-language-server
 echo "" && echo "-- Adding git bash completion and prompt colors..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
 rm ~/.bash-git-prompt && git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
-ln -sfv "$HOME"/dotfiles/git-prompt-colors.sh "$HOME"/.git-prompt-colors.sh
+ln -sfv "$HOME"/dotfiles/misc/git-prompt-colors.sh "$HOME"/.git-prompt-colors.sh
 
 echo "" && echo "-- Installing tmux plugins..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
