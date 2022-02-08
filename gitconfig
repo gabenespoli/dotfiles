@@ -24,4 +24,7 @@
   stash = 6
   HEAD = 13
 [init]
+	templatedir = ~/.git_template
 	defaultBranch = main
+[credential]
+	helper = osxkeychain
