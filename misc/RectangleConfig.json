@@ -3,7 +3,7 @@
     "almostMaximizeWidth" : {
       "float" : 0.60000002384185791
     },
-    "centerHalfCycles" : {
+    "curtainChangeSize" : {
       "int" : 0
     },
     "allowAnyShortcut" : {
@@ -12,7 +12,7 @@
     "ignoredSnapAreas" : {
       "int" : 0
     },
-    "curtainChangeSize" : {
+    "centerHalfCycles" : {
       "int" : 0
     },
     "screenEdgeGapBottom" : {
@@ -30,12 +30,6 @@
     "SUEnableAutomaticChecks" : {
       "bool" : false
     },
-    "todoSidebarWidth" : {
-      "float" : 400
-    },
-    "gapSize" : {
-      "float" : 0
-    },
     "fullIgnoreBundleIds" : {
 
     },
@@ -44,6 +38,12 @@
     },
     "disabledApps" : {
 
+    },
+    "gapSize" : {
+      "float" : 0
+    },
+    "todoSidebarWidth" : {
+      "float" : 400
     },
     "todoApplication" : {
 
@@ -81,20 +81,20 @@
     "hideMenubarIcon" : {
       "bool" : false
     },
+    "traverseSingleScreen" : {
+      "int" : 0
+    },
     "footprintFade" : {
       "int" : 0
     },
     "snapEdgeMarginBottom" : {
       "float" : 5
     },
-    "minimumWindowHeight" : {
-      "float" : 0
-    },
     "specifiedWidth" : {
       "float" : 1680
     },
-    "traverseSingleScreen" : {
-      "int" : 0
+    "minimumWindowHeight" : {
+      "float" : 0
     },
     "screenEdgeGapRight" : {
       "float" : 0
@@ -105,13 +105,13 @@
     "screenEdgeGapLeft" : {
       "float" : 0
     },
-    "showAllActionsInMenu" : {
-      "int" : 0
-    },
     "alternateDefaultShortcuts" : {
       "bool" : true
     },
     "subsequentExecutionMode" : {
+      "int" : 0
+    },
+    "showAllActionsInMenu" : {
       "int" : 0
     },
     "footprintBorderWidth" : {
@@ -135,8 +135,8 @@
     "snapEdgeMarginRight" : {
       "float" : 5
     },
-    "footprintAlpha" : {
-      "float" : 0.30000001192092896
+    "footprintColor" : {
+
     },
     "minimumWindowWidth" : {
       "float" : 0
@@ -144,8 +144,8 @@
     "attemptMatchOnNextPrevDisplay" : {
       "int" : 0
     },
-    "footprintColor" : {
-
+    "footprintAlpha" : {
+      "float" : 0.30000001192092896
     },
     "almostMaximizeHeight" : {
       "float" : 0.60000002384185791
@@ -163,23 +163,23 @@
       "modifierFlags" : 1966080
     },
     "previousDisplay" : {
-      "keyCode" : 15,
-      "modifierFlags" : 1966080
-    },
-    "centerHalf" : {
-      "keyCode" : 19,
+      "keyCode" : 14,
       "modifierFlags" : 1966080
     },
     "maximize" : {
       "keyCode" : 18,
       "modifierFlags" : 1966080
     },
+    "centerHalf" : {
+      "keyCode" : 19,
+      "modifierFlags" : 1966080
+    },
     "topHalf" : {
       "keyCode" : 23,
       "modifierFlags" : 1966080
     },
-    "bottomHalf" : {
-      "keyCode" : 22,
+    "restore" : {
+      "keyCode" : 51,
       "modifierFlags" : 1966080
     },
     "leftHalf" : {
@@ -191,11 +191,11 @@
       "modifierFlags" : 1966080
     },
     "nextDisplay" : {
-      "keyCode" : 14,
+      "keyCode" : 15,
       "modifierFlags" : 1966080
     },
-    "restore" : {
-      "keyCode" : 51,
+    "bottomHalf" : {
+      "keyCode" : 22,
       "modifierFlags" : 1966080
     }
   },
