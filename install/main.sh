@@ -5,9 +5,10 @@ echo "" && echo "-- Installing Homebrew..."
   /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "" && echo "-- Installing Homebrew packages..."
-brew install git bash tmux neovim
-brew install readline coreutils findutils grep gnu-sed gawk wget
-brew install lf fd ripgrep fzf bat
+brew install git 
+brew install bash readline tmux neovim
+brew install coreutils findutils grep gnu-sed gawk
+brew install wget lf fd ripgrep fzf bat
 brew install jq cloc tree trash htop
 brew install reattach-to-user-namespace openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex
