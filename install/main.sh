@@ -65,7 +65,3 @@ ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.vim/
 vim +PlugInstall +qall
-
-echo "" && echo "-- Adding updated bash to the list of allowed shells..."
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells' # Prompts for password
-chsh -s /usr/local/bin/bash # Change to the new shell, prompts for password
