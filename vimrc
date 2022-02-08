@@ -418,12 +418,12 @@ augroup pythonsense
   autocmd FileType python vmap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
   autocmd FileType python omap <buffer> iC <Plug>(PythonsenseInnerClassTextObject)
   autocmd FileType python sunmap <buffer> iC
-  autocmd FileType python vmap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
-  autocmd FileType python omap <buffer> af <Plug>(PythonsenseOuterFunctionTextObject)
-  autocmd FileType python sunmap <buffer> af
-  autocmd FileType python vmap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
-  autocmd FileType python omap <buffer> if <Plug>(PythonsenseInnerFunctionTextObject)
-  autocmd FileType python sunmap <buffer> if
+  autocmd FileType python vmap <buffer> am <Plug>(PythonsenseOuterFunctionTextObject)
+  autocmd FileType python omap <buffer> am <Plug>(PythonsenseOuterFunctionTextObject)
+  autocmd FileType python sunmap <buffer> am
+  autocmd FileType python vmap <buffer> im <Plug>(PythonsenseInnerFunctionTextObject)
+  autocmd FileType python omap <buffer> im <Plug>(PythonsenseInnerFunctionTextObject)
+  autocmd FileType python sunmap <buffer> im
   autocmd FileType python omap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
   autocmd FileType python vmap <buffer> ad <Plug>(PythonsenseOuterDocStringTextObject)
   autocmd FileType python sunmap <buffer> ad
