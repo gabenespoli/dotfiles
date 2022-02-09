@@ -23,4 +23,4 @@ conda create -y -n base38
 conda deactivate && conda activate base38
 conda install -y python=3.8
 conda install -y -c conda-forge \
-  pandas ipython statsmodels sqlalchemy pyodbc plotly python-dotenv
+  pandas ipython plotly scikit-learn statsmodels sqlalchemy pyodbc python-dotenv
