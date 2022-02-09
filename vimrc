@@ -18,7 +18,7 @@ call plug#begin()
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 " Plug 'wellle/targets.vim'
@@ -323,7 +323,8 @@ inoremap <Tab> <C-r>=TabOmniCompletion()<CR>
 let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
 
-" tpope/vim-surround  {{{2
+" machakann/vim-sandwich  {{{2
+runtime macros/'sandwich'/keymap/surround.vim
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
   execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
