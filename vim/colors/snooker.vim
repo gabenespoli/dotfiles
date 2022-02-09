@@ -412,6 +412,14 @@ call s:h('GitSignsChange',          {'fg': s:blue_light})
 call s:h('GitSignsDelete',          {'fg': s:red})
 call s:h('GitSignsChangeDelete',    {'fg': s:orange})
 
+" dadbod-ui  {{{2
+hi! link NotificationInfo           PmenuSel
+hi! link NotificationError          ErrorMsg
+hi! link NotificationWarning        WarningMsg
+hi! link EchoNotificationInfo       Keyword
+hi! link EchoNotificationError      Error
+hi! link EchoNotificationWarning    Exception
+
 " netrw {{{2
 call s:h('netrwClassify',           {'fg': s:fg_com})
 call s:h('netrwSymLink',            {'fg': s:cyan})
