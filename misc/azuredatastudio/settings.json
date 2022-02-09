@@ -55,5 +55,6 @@
         }
     ],
     "vim.leader": "<space>",
-    "workbench.enablePreviewFeatures": true
+    "workbench.enablePreviewFeatures": true,
+    "window.zoomLevel": 1
 }
