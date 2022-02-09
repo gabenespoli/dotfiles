@@ -43,6 +43,11 @@ Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black'
 Plug 'fisadev/vim-isort'
 
+" Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
+
 " Tmux  {{{2
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
@@ -128,6 +133,7 @@ set statusline+=\ \ %{Devicon()}\ %<%.99f
 set statusline+=\ %#PmenuSel#%h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
 set statusline+=%{PywhereStatusline()}
 set statusline+=%=
+set statusline+=%{db_ui#statusline()}
 set statusline+=\ [%l/%L\,%c\ (%P)]
 
 function! Devicon() abort
@@ -437,6 +443,17 @@ augroup END
 augroup pythonformat
   autocmd!
   autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
+augroup END
+
+" tpope/vim-dadbod & kristijanhusak/vim-dadbod-ui  {{{2
+let g:db_ui_use_nerd_fonts = 1
+let g:db_async = 1
+nmap <F5> <Plug>(DBUI_ExecuteQuery)
+imap <F5> <Esc><F5>
+
+augroup dadbod
+  autocmd!
+  autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
 augroup END
 
 " christoomey/vim-tmux-navigator  {{{2
