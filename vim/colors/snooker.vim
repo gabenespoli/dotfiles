@@ -123,7 +123,6 @@ call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:fg_bright, 'bg': s:red})
 call s:h('IncSearch',     {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 hi! link Search PmenuSel
-" call s:h('Search',        {'fg': s:blue, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('MoreMsg',       {'fg': s:fg_com})
 hi! link ModeMsg          MoreMsg
 
