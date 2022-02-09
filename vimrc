@@ -447,6 +447,7 @@ augroup pythonsense
 augroup END
 
 " psf/black and fisadev/vim-isort  {{{2
+let g:vim_isort_map = ''
 augroup pythonformat
   autocmd!
   autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
