@@ -2547,7 +2547,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "semicolon_mode",
+                                        "name": "quote_mode",
                                         "type": "variable_if",
                                         "value": 0
                                     }
