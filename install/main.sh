@@ -49,7 +49,7 @@ ln -sfc "$HOME"/dotfiles/config/bat "$HOME"/.config/
 ln -sfc "$HOME"/dotfiles/config/lf "$HOME"/.config/
 ln -sfc "$HOME"/dotfiles/config/pudb "$HOME"/.config/
 
-# nvim
+# ~/.config/nvim
 mkdir -pv "$HOME"/.config/nvim
 ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.config/nvim/init.vim
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
@@ -58,7 +58,7 @@ ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
 nvim +PlugInstall -c "TSInstall! bash python" +qall
 
-# vim
+# ~/.vim
 mkdir -pv "$HOME"/.vim
 ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
