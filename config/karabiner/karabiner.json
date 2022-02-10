@@ -1,4 +1,4 @@
-
+{
     "global": {
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
@@ -2719,7 +2719,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "backspace"
+                                        "key_code": "delete_or_backspace"
                                     }
                                 ],
                                 "type": "basic"
@@ -2831,7 +2831,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "F1"
+                                        "key_code": "f1"
                                     }
                                 ],
                                 "type": "basic"
@@ -2854,7 +2854,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F2"
+                                        "key_code": "f2"
                                     }
                                 ],
                                 "type": "basic"
@@ -2877,7 +2877,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F3"
+                                        "key_code": "f3"
                                     }
                                 ],
                                 "type": "basic"
@@ -2900,7 +2900,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F4"
+                                        "key_code": "f4"
                                     }
                                 ],
                                 "type": "basic"
@@ -2923,7 +2923,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F5"
+                                        "key_code": "f5"
                                     }
                                 ],
                                 "type": "basic"
@@ -2946,7 +2946,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F6"
+                                        "key_code": "f6"
                                     }
                                 ],
                                 "type": "basic"
@@ -2969,7 +2969,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F7"
+                                        "key_code": "f7"
                                     }
                                 ],
                                 "type": "basic"
@@ -2992,7 +2992,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F8"
+                                        "key_code": "f8"
                                     }
                                 ],
                                 "type": "basic"
@@ -3015,7 +3015,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F9"
+                                        "key_code": "f9"
                                     }
                                 ],
                                 "type": "basic"
@@ -3038,7 +3038,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F10"
+                                        "key_code": "f10"
                                     }
                                 ],
                                 "type": "basic"
@@ -3061,7 +3061,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F11"
+                                        "key_code": "f11"
                                     }
                                 ],
                                 "type": "basic"
@@ -3084,7 +3084,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "F12"
+                                        "key_code": "f12"
                                     }
                                 ],
                                 "type": "basic"
@@ -3531,7 +3531,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "backspace",
+                                    "key_code": "delete_or_backspace",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -3540,7 +3540,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "backspace",
+                                        "key_code": "delete_or_backspace",
                                         "modifiers": [
                                             "command",
                                             "option",
