@@ -2322,14 +2322,7 @@
                                         "value": 0
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
+                                "from": {"key_code": "quote", "modifiers": {"optional": ["caps_lock"]}},
                                 "to": [
                                     {
                                         "set_variable": {
