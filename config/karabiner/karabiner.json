@@ -1400,6 +1400,16 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_unless",
+                                        "identifiers": [
+                                            {
+                                                "description": "Drop Sixty Percent (Carina)",
+                                                "vendor_id": 1240,
+                                                "product_id": 61033
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 0
@@ -2317,6 +2327,16 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_unless",
+                                        "identifiers": [
+                                            {
+                                                "description": "Drop Sixty Percent (Carina)",
+                                                "vendor_id": 1240,
+                                                "product_id": 61033
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "name": "quote_mode",
                                         "type": "variable_if",
                                         "value": 0
@@ -2935,6 +2955,23 @@
                         "description": "Tab Layer [tab+`1234567ert<bksp> -> command+option+control+shift+<key>] (for Rectangle.app)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "type": "device_unless",
+                                        "identifiers": [
+                                            {
+                                                "description": "Drop Sixty Percent (Carina)",
+                                                "vendor_id": 1240,
+                                                "product_id": 61033
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "tab_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
@@ -4022,13 +4059,19 @@
                             {
                                 "conditions": [
                                     {
+                                        "type": "device_unless",
                                         "identifiers": [
                                             {
-                                                "product_id": 61033,
-                                                "vendor_id": 1240
+                                                "description": "Drop Sixty Percent (Carina)",
+                                                "vendor_id": 1240,
+                                                "product_id": 61033
                                             }
-                                        ],
-                                        "type": "device_unless"
+                                        ]
+                                    },
+                                    {
+                                        "name": "esc_mode",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "from": {
@@ -5335,6 +5378,18 @@
                         "description": "Pok3r Esc [shift+esc -> tilde]",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "description": "USB Keyboard (Pok3r)",
+                                                "vendor_id": 1241,
+                                                "product_id": 321
+                                            }
+                                        ]
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
