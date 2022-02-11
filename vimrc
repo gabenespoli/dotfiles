@@ -333,7 +333,7 @@ let g:markdown_fenced_languages = ['bash=sh', 'matlab', 'python', 'vim', 'r']
 let g:markdown_folding = 1
 
 " machakann/vim-sandwich  {{{2
-runtime macros/'sandwich'/keymap/surround.vim
+runtime macros/sandwich/keymap/surround.vim
 for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
   execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
