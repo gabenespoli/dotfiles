@@ -237,7 +237,7 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -1416,7 +1416,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "mu_mode",
+                                            "name": "semicolon_mode",
                                             "value": 1
                                         }
                                     }
@@ -1424,7 +1424,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "mu_mode",
+                                            "name": "semicolon_mode",
                                             "value": 0
                                         }
                                     }
@@ -1439,7 +1439,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1469,7 +1469,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1499,7 +1499,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1529,7 +1529,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1564,7 +1564,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1587,7 +1587,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1615,7 +1615,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1643,7 +1643,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1671,7 +1671,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1700,7 +1700,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1723,7 +1723,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1754,7 +1754,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -1784,7 +1784,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -1819,7 +1819,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -1851,7 +1851,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -1888,7 +1888,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1911,7 +1911,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1939,7 +1939,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1966,7 +1966,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1993,7 +1993,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2020,7 +2020,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2047,7 +2047,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2074,7 +2074,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2101,7 +2101,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2128,7 +2128,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2155,7 +2155,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2182,7 +2182,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2214,7 +2214,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2237,7 +2237,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2263,7 +2263,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2286,7 +2286,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "mu_mode",
+                                        "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
