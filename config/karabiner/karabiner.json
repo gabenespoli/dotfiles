@@ -2760,7 +2760,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+caps/tab -> backtick/tilde]",
+                        "description": "Semicolon Layer [;+caps -> tilde]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2772,29 +2772,6 @@
                                 ],
                                 "from": {
                                     "key_code": "left_control",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -3990,6 +3967,34 @@
                                 "to": [
                                     {
                                         "consumer_key_code": "scan_previous_track"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Quote Layer ['+caps -> backtick]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde"
                                     }
                                 ],
                                 "type": "basic"
