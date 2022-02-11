@@ -1400,16 +1400,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
-                                        "identifiers": [
-                                            {
-                                                "description": "Drop Sixty Percent (Carina)",
-                                                "vendor_id": 1240,
-                                                "product_id": 61033
-                                            }
-                                        ]
-                                    },
-                                    {
                                         "name": "semicolon_mode",
                                         "type": "variable_if",
                                         "value": 0
@@ -2327,16 +2317,6 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_unless",
-                                        "identifiers": [
-                                            {
-                                                "description": "Drop Sixty Percent (Carina)",
-                                                "vendor_id": 1240,
-                                                "product_id": 61033
-                                            }
-                                        ]
-                                    },
-                                    {
                                         "name": "quote_mode",
                                         "type": "variable_if",
                                         "value": 0
@@ -2956,16 +2936,6 @@
                         "manipulators": [
                             {
                                 "conditions": [
-                                    {
-                                        "type": "device_unless",
-                                        "identifiers": [
-                                            {
-                                                "description": "Drop Sixty Percent (Carina)",
-                                                "vendor_id": 1240,
-                                                "product_id": 61033
-                                            }
-                                        ]
-                                    },
                                     {
                                         "name": "tab_mode",
                                         "type": "variable_if",
@@ -4058,16 +4028,6 @@
                         "manipulators": [
                             {
                                 "conditions": [
-                                    {
-                                        "type": "device_unless",
-                                        "identifiers": [
-                                            {
-                                                "description": "Drop Sixty Percent (Carina)",
-                                                "vendor_id": 1240,
-                                                "product_id": 61033
-                                            }
-                                        ]
-                                    },
                                     {
                                         "name": "esc_mode",
                                         "type": "variable_if",
