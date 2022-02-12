@@ -567,15 +567,7 @@ require('fzf-lua').setup {
 }
 
 -- kyazdani42/nvim-web-devicons  {{{2
-require("nvim-web-devicons").setup{
-  override = {
-    cfg = {icon = ""},
-    vimrc = {icon = ""},
-    bashrc = {icon = ""},
-    bash_profile = {icon = ""},
-    sql  =  {icon = "", color = "#a57230", name = "sql"},
-  },
-}
+require("nvim-web-devicons").setup{}
 
 -- neovim/nvim-lspconfig  {{{2
 require('vim.lsp.protocol').CompletionItemKind = {
