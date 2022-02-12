@@ -3003,7 +3003,7 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+<space>nm -> <play/pause><prev_track><next_track>]",
+                        "description": "Quote Layer ['+;,. -> <play/pause><prev_track><next_track>]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -3014,11 +3014,10 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "semicolon",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -3038,11 +3037,10 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "period",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -3062,11 +3060,10 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "m",
+                                    "key_code": "comma",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock",
-                                            "shift"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
