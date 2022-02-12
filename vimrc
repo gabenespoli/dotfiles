@@ -127,25 +127,45 @@ augroup END
 
 " Status Line  {{{1
 set statusline=
-set statusline+=\ %n
-set statusline+=\ \ \ %{FugitiveHead(12)}
-set statusline+=\ \ %{Devicon()}\ %<%.99f
-set statusline+=\ %#PmenuSel#%h%#StatusPreview#%w%#Modified#%m%*%#StatusError#%r%*
+set statusline+=\ %{Devicon()}%f%<
 set statusline+=%{PywhereStatusline()}
+set statusline+=%{GitStatusline()}
+set statusline+=\ %#PmenuSel#%h%w%*
+set statusline+=%#PmenuSel#%w%*
+set statusline+=%#Modified#%m%*
+set statusline+=%#StatusError#%r%*
 set statusline+=%=
 set statusline+=%{db_ui#statusline()}
-set statusline+=\ [%l/%L\,%c\ (%P)]
+set statusline+=│%{GetFiletype()}
+set statusline+=│%l/%L│%c│%P\ 
+
+function! GetFiletype() abort
+  return &filetype
+endfunction
+
+function! GitStatusline() abort
+  let l:branch = FugitiveHead(12)
+  if l:branch == ''
+    return ''
+  else
+    return '│ ' . l:branch . '│'
+  endif
+endfunction
 
 function! Devicon() abort
   if !has('nvim')
     return ''
   endif
   if stridx(expand('%:p'), '.git') != -1
-    return ''
+    return ' '
   else
     let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
           \ . '"' . expand('%:t') . '", "' . expand('%:e') . '"))')
-    return l:icon[1:3]
+    if l:icon[1:3] == ''
+      return ''
+    else
+      return l:icon[1:3] . ' '
+    endif
   endif
 endfunction
 
