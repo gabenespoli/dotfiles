@@ -42,6 +42,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -49,8 +50,7 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -75,14 +75,14 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -107,6 +107,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -115,8 +116,7 @@
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -136,6 +136,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -144,8 +145,7 @@
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -165,6 +165,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -172,8 +173,7 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -193,6 +193,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -200,8 +201,7 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -226,6 +226,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -233,8 +234,7 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     },
                                     {
                                         "name": "semicolon_mode",
@@ -264,6 +264,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -273,8 +274,7 @@
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.apple\\.ScreenSharing$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -302,6 +302,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -311,8 +312,7 @@
                                             "^org.\\.rstudio\\.RStudio$",
                                             "^com\\.apple\\.ScreenSharing$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -338,6 +338,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -345,8 +346,7 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -380,6 +380,7 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -387,8 +388,7 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -422,12 +422,12 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Notes$",
                                             "^com\\.microsoft\\.teams$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -453,13 +453,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -483,13 +483,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -520,13 +520,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -550,13 +550,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -587,13 +587,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -617,13 +617,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -654,13 +654,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -693,13 +693,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -723,13 +723,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -753,8 +753,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -778,8 +778,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -808,8 +808,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^org\\.jkiss\\.dbeaver\\.core\\.product$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^org\\.jkiss\\.dbeaver\\.core\\.product$"]
                                     }
                                 ],
                                 "from": {
@@ -834,8 +834,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^org\\.jkiss\\.dbeaver\\.core\\.product$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^org\\.jkiss\\.dbeaver\\.core\\.product$"]
                                     }
                                 ],
                                 "from": {
@@ -865,8 +865,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -891,8 +891,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -913,8 +913,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -938,8 +938,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -963,8 +963,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -988,8 +988,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -1013,8 +1013,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -1038,8 +1038,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -1063,8 +1063,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -1088,8 +1088,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
                                     }
                                 ],
                                 "from": {
@@ -1117,13 +1117,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -1146,13 +1146,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -1176,13 +1176,13 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -1211,11 +1211,11 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Outlook$",
                                             "^com\\.microsoft\\.teams$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -1240,8 +1240,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"]
                                     }
                                 ],
                                 "from": {
@@ -1271,8 +1271,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Word$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.Word$"]
                                     }
                                 ],
                                 "from": {
@@ -1304,8 +1304,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"]
                                     }
                                 ],
                                 "from": {
@@ -1331,8 +1331,8 @@
                                 "type": "basic",
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"]
                                     }
                                 ],
                                 "from": {
@@ -1358,15 +1358,16 @@
                         "description": "Ribbon in Office [command+shift+f -> command+option+r]",
                         "manipulators": [
                             {
+                                "type": "basic",
                                 "conditions": [
                                     {
+                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        ]
                                     }
                                 ],
                                 "from": {
@@ -1389,8 +1390,7 @@
                                             "option"
                                         ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             }
                         ]
                     },
