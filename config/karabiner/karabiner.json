@@ -88,13 +88,13 @@
                                     {
                                         "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
-                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
-                                            "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$",
-                                            "^com\\.google\\.Chrome$"
+                                            "^org\\.vim\\.MacVim"
                                         ]
                                     }
                                 ],
@@ -109,13 +109,13 @@
                                     {
                                         "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
-                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
-                                            "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$",
-                                            "^com\\.google\\.Chrome$"
+                                            "^org\\.vim\\.MacVim"
                                         ]
                                     }
                                 ],
@@ -130,12 +130,12 @@
                                     {
                                         "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
-                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
-                                            "^org\\.vim\\.MacVim",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^org\\.vim\\.MacVim"
                                         ]
                                     }
                                 ],
@@ -150,12 +150,12 @@
                                     {
                                         "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
-                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
-                                            "^org\\.vim\\.MacVim",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^org\\.vim\\.MacVim"
                                         ]
                                     }
                                 ],
