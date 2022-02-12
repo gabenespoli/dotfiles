@@ -22,16 +22,9 @@
                                 "type": "basic",
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "return_or_enter"
-                                    }
-                                ]
+                                "to": [{"key_code": "return_or_enter"}]
                             }
                         ]
                     },
@@ -55,16 +48,9 @@
                                 ],
                                 "from": {
                                     "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "tab"
-                                    }
-                                ]
+                                "to": [{"key_code": "tab"}]
                             }
                         ]
                     },
@@ -87,16 +73,9 @@
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ]
+                                "to": [{"key_code": "escape"}]
                             }
                         ]
                     },
@@ -121,16 +100,8 @@
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
+                                "to": [{"key_code": "left_arrow"}]
                             },
                             {
                                 "type": "basic",
@@ -150,16 +121,8 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
+                                "to": [{"key_code": "right_arrow"}]
                             },
                             {
                                 "type": "basic",
@@ -178,16 +141,8 @@
                                 ],
                                 "from": {
                                     "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
+                                "to": [{"key_code": "down_arrow"}]
                             },
                             {
                                 "type": "basic",
@@ -206,16 +161,8 @@
                                 ],
                                 "from": {
                                     "key_code": "p",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
+                                "to": [{"key_code": "up_arrow"}]
                             }
                         ]
                     },
@@ -244,16 +191,8 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace"
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
+                                "to": [{"key_code": "delete_or_backspace"}]
                             }
                         ]
                     },
@@ -279,19 +218,8 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward"
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "option"]}},
+                                "to": [{"key_code": "delete_forward"}]
                             }
                         ]
                     },
@@ -317,17 +245,8 @@
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["option"]
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
+                                "to": [{"key_code": "delete_or_backspace", "modifiers": ["option"]}]
                             }
                         ]
                     },
@@ -351,24 +270,10 @@
                                 ],
                                 "from": {
                                     "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock"]}},
                                 "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "x",
-                                        "modifiers": ["command"],
-                                        "repeat": false
-                                    }
+                                    {"key_code": "left_arrow", "modifiers": ["command", "shift"]},
+                                    {"key_code": "x", "modifiers": ["command"], "repeat": false}
                                 ]
                             }
                         ]
@@ -393,24 +298,10 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock"]}},
                                 "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "x",
-                                        "modifiers": ["command"],
-                                        "repeat": false
-                                    }
+                                    {"key_code": "right_arrow", "modifiers": ["command", "shift"]},
+                                    {"key_code": "x", "modifiers": ["command"], "repeat": false}
                                 ]
                             }
                         ]
@@ -432,17 +323,9 @@
                                 ],
                                 "from": {
                                     "key_code": "y",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["caps_lock"]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "v",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "v", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -464,21 +347,9 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": ["option"]
-                                    }
-                                ]
-                            },
+                                "to": [{"key_code": "delete_forward", "modifiers": ["option"]}]},
                             {
                                 "type": "basic",
                                 "conditions": [
@@ -494,22 +365,9 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": ["caps_lock"]
-                                    }
+                                    "modifiers": {"mandatory": ["command", "option", "control", "shift"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "d",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "d", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -531,20 +389,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "right_shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "right_shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["option"]
-                                    }
-                                ]
+                                "to": [{"key_code": "right_arrow", "modifiers": ["option"]}]
                             },
                             {
                                 "type": "basic",
@@ -561,22 +408,8 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["command", "option", "control", "shift"], "optional": ["caps_lock"]}},
+                                "to": [{"key_code": "f", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -598,20 +431,9 @@
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "right_shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "right_shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["option"]
-                                    }
-                                ]
+                                "to": [{"key_code": "left_arrow", "modifiers": ["option"]}]
                             },
                             {
                                 "type": "basic",
@@ -628,22 +450,9 @@
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option",
-                                            "control",
-                                            "shift"
-                                        ],
-                                        "optional": ["caps_lock"]
-                                    }
+                                    "modifiers": {"mandatory": ["command", "option", "control", "shift"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "b",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "b", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -665,24 +474,9 @@
                                 ],
                                 "from": {
                                     "key_code": "g",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "caps_lock",
-                                            "right_shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command", "option", "control"], "optional": ["caps_lock", "right_shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "g",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "g", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -704,20 +498,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "home"
-                                    }
-                                ]
+                                "to": [{"key_code": "home"}]
                             },
                             {
                                 "type": "basic",
@@ -734,20 +517,9 @@
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "end"
-                                    }
-                                ]
+                                "to": [{"key_code": "end"}]
                             },
                             {
                                 "type": "basic",
@@ -759,20 +531,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "right_arrow", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -784,20 +545,9 @@
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "left_arrow", "modifiers": ["control"]}]
                             }
                         ]
                     },
@@ -814,20 +564,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["command"]
-                                    }
+                                "to": [{"key_code": "left_arrow","modifiers": ["command"]}
                                 ]
                             },
                             {
@@ -840,20 +579,9 @@
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["command"]
-                                    }
+                                "to": [{"key_code": "right_arrow","modifiers": ["command"]}
                                 ]
                             }
                         ]
@@ -871,20 +599,9 @@
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["control"]
-                                    }
+                                "to": [{"key_code": "delete_or_backspace","modifiers": ["control"]}
                                 ]
                             },
                             {
@@ -897,17 +614,8 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock"]}},
+                                "to": [{"key_code": "delete_forward", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -919,20 +627,8 @@
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}},
+                                "to": [{"key_code": "delete_forward", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -944,20 +640,9 @@
                                 ],
                                 "from": {
                                     "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "z", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -969,20 +654,9 @@
                                 ],
                                 "from": {
                                     "key_code": "slash",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "slash",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "slash", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -994,20 +668,9 @@
                                 ],
                                 "from": {
                                     "key_code": "hyphen",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "hyphen", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -1019,20 +682,9 @@
                                 ],
                                 "from": {
                                     "key_code": "equal_sign",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "equal_sign", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -1044,20 +696,9 @@
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "open_bracket", "modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -1069,20 +710,9 @@
                                 ],
                                 "from": {
                                     "key_code": "close_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command"],"optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{ "key_code": "close_bracket","modifiers": ["control"]}]
                             },
                             {
                                 "type": "basic",
@@ -1094,19 +724,9 @@
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ]
+                                "to": [{"key_code": "escape"}]
                             }
                         ]
                     },
@@ -1128,19 +748,9 @@
                                 ],
                                 "from": {
                                     "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "tab"
-                                    }
-                                ]
+                                "to": [{"key_code": "tab"}]
                             },
                             {
                                 "type": "basic",
@@ -1157,20 +767,9 @@
                                 ],
                                 "from": {
                                     "key_code": "9",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "up_arrow", "modifiers": ["command"]}]
                             },
                             {
                                 "type": "basic",
@@ -1187,20 +786,9 @@
                                 ],
                                 "from": {
                                     "key_code": "0",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "down_arrow", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -1220,21 +808,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "left_arrow", "modifiers": ["command"]}]
                             },
                             {
                                 "type": "basic",
@@ -1246,21 +822,9 @@
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": [
-                                            "caps_lock",
-                                            "shift",
-                                            "option"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "right_arrow", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -1277,23 +841,9 @@
                                 ],
                                 "from": {
                                     "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ],
-                                        "optional": ["caps_lock"]
-                                    }
+                                    "modifiers": {"mandatory": ["command", "option"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "n",
-                                        "modifiers": [
-                                            "control",
-                                            "shift"
-                                        ]
-                                    }
-                                ]
+                                "to": [{"key_code": "n", "modifiers": ["control", "shift"]}]
                             }
                         ]
                     },
@@ -1310,17 +860,9 @@
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock"]
-                                    }
+                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "e",
-                                        "modifiers": ["control"]
-                                    }
-                                ]
+                                "to": [{"key_code": "e", "modifiers": ["control"]}]
                             }
                         ]
                     },
@@ -1337,20 +879,9 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift"
-                                        ],
-                                        "optional": ["caps_lock"]
-                                    }
+                                    "modifiers": {"mandatory": ["command", "shift"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "e",
-                                        "modifiers": ["command"]
-                                    }
-                                ]
+                                "to": [{"key_code": "e", "modifiers": ["command"]}]
                             }
                         ]
                     },
@@ -1372,25 +903,9 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
+                                    "modifiers": {"mandatory": ["command", "shift"], "optional": ["caps_lock"]}
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "r",
-                                        "modifiers": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
-                                ]
+                                "to": [{"key_code": "r", "modifiers": ["command", "option"]}]
                             }
                         ]
                     },
