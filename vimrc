@@ -18,11 +18,9 @@ call plug#begin()
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
-" Plug 'wellle/targets.vim'
-" Plug 'romainl/vim-qf'
+Plug 'machakann/vim-sandwich'
 Plug 'sjl/gundo.vim'
 
 " Git & Files  {{{2
@@ -34,7 +32,6 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim'
-" Plug 'rhysd/conflict-marker.vim'
 
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
