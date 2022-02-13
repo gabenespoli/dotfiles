@@ -35,10 +35,10 @@ Plug 'lambdalisue/fern-hijack.vim'
 
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
-Plug 'kalekundert/vim-coiled-snake'
+Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
-Plug 'psf/black'
-Plug 'fisadev/vim-isort'
+Plug 'psf/black', {'for': ['python']}
+Plug 'fisadev/vim-isort', {'for': ['python']}
 
 " Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod'
