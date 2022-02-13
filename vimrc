@@ -272,22 +272,22 @@ augroup quickfix
 augroup END
 
 " option mappings (co)  {{{2
-nnoremap <expr> cof &foldcolumn ? ':set foldcolumn=0<CR>' : ':set foldcolumn=2<CR>'
-nnoremap <expr> coc &cursorline ? ':set nocursorline<CR>' : ':set cursorline<CR>'
-nnoremap <expr> cou &cursorcolumn ? ':set nocursorcolumn<CR>' : ':set cursorcolumn<CR>'
-nnoremap <expr> coh &hlsearch ? ':set nohlsearch<CR>' : ':set hlsearch<CR>'
-nnoremap <expr> con &number ? ':set nonumber<CR>' : ':set number<CR>'
-nnoremap <expr> cor &relativenumber ? ':set norelativenumber<CR>' : ':set relativenumber<CR>'
-nnoremap <expr> cos &spell ? ':set nospell<CR>' : ':set spell<CR>'
+nnoremap coc :set cursorline!<CR>
+nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
+nnoremap coh :set hlsearch!<CR>
+nnoremap con :set number!<CR>
+nnoremap cor :set relativenumber!<CR>
+nnoremap cos :set spell!<CR>
 nnoremap <expr> cot
       \ &softtabstop==2 ?
       \ ':set tabstop=4 softtabstop=4 shiftwidth=4<CR>:echo 4<CR>' :
       \ ':set tabstop=2 softtabstop=2 shiftwidth=2<CR>:echo 2<CR>'
-nnoremap        cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
-nnoremap        coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
-nnoremap        coW :set wrap!<CR>
-nnoremap        coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
-nnoremap <expr> coX &winfixwidth ? ':set nowinfixwidth<CR>' : ':set winfixwidth<CR>'
+nnoremap cou :set cursorcolumn!<CR>
+nnoremap cow :set colorcolumn=<C-R>=&colorcolumn ? 0 : &textwidth<CR><CR>
+nnoremap coS :set laststatus=<C-R>=&laststatus ? 0 : 2<CR><CR>
+nnoremap coT :set showtabline=<C-R>=&showtabline==2 ? 1 : 2<CR><CR>
+nnoremap coW :set wrap!<CR>
+nnoremap coX set winfixwidth!<CR>
 
 " move lines up and down (modified from tpope/vim-unimpaired)  {{{2
 function! s:ExecMove(cmd) abort
