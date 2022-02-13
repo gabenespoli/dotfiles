@@ -540,7 +540,7 @@ endif
 nnoremap g<C-l> <C-l>
 
 " gabenespoli/vim-mutton  {{{2
-let g:mutton_min_center_width = 88
+let g:mutton_min_center_width = 94
 let g:mutton_min_side_width = 25
 
 " Lua Plugins  {{{1
