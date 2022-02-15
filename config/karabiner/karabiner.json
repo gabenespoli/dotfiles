@@ -2237,12 +2237,44 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+qwertyuiop[]] -> F-keys]",
+                        "description": "Comma Layer ['+qwertyuiop[]] -> F-keys]",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {"key_code": "comma", "modifiers": {"optional": ["caps_lock", "shift"]}},
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "comma_mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "comma_mode",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "comma"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2265,7 +2297,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2288,7 +2320,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2311,7 +2343,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2334,7 +2366,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -2357,13 +2389,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "y",
+                                    "key_code": "a",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2380,13 +2412,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "s",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2403,13 +2435,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "d",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2426,13 +2458,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "f",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2449,13 +2481,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "p",
+                                    "key_code": "g",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2472,13 +2504,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "z",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2495,13 +2527,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "quote_mode",
+                                        "name": "comma_mode",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "x",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
@@ -2511,6 +2543,75 @@
                                 "to": [
                                     {
                                         "key_code": "f12"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "comma_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "comma_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f14"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "comma_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f15"
                                     }
                                 ],
                                 "type": "basic"
