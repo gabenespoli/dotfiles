@@ -2811,7 +2811,8 @@
                                     "key_code": "left_control",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "option"
                                         ]
                                     }
                                 },
