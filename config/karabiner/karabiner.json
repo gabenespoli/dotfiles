@@ -2260,7 +2260,7 @@
                         ]
                     },
                     {
-                        "description": "Comma Layer ['+qwertyuiop[]] -> F-keys]",
+                        "description": "Comma Layer [,+<space><slash> -> ,<space>/~<slash>]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2270,7 +2270,15 @@
                                         "value": 0
                                     }
                                 ],
-                                "from": {"key_code": "comma", "modifiers": {"optional": ["caps_lock", "shift"]}},
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -2320,6 +2328,40 @@
                                 ],
                                 "type": "basic"
                             },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "comma_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "slash"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Comma Layer ['+qwertyuiop[]] -> F-keys]",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
