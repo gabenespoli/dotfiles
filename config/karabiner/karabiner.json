@@ -1975,222 +1975,63 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+sdfghjk<tab> -> {}[]<bksp>\"'`]",
+                        "description": "Quote Layer ['+dlmrstv -> 'd/'l/'m/'r/'s/'t/'v]",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 0}],
                                 "from": {"key_code": "quote", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "quote_mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "quote_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "quote"
-                                    }
-                                ],
+                                "to": [{"set_variable": {"name": "quote_mode", "value": 1}}],
+                                "to_after_key_up": [{"set_variable": {"name": "quote_mode", "value": 0}}],
+                                "to_if_alone": [{"key_code": "quote"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "t"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "d", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "d"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "r"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "l", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "l"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "s"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "m", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "m"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "d"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "r", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "r"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "m"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "s", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "s"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "v"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "t", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "t"}],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    },
-                                    {
-                                        "key_code": "l"
-                                    }
-                                ],
+                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
+                                "from": {"key_code": "v", "modifiers": {"optional": ["caps_lock"]}},
+                                "to": [{"key_code": "quote"}, {"key_code": "v"}],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Quote Layer [... -> {}[],bksp>\"']",
+                        "manipulators": [
                             {
                                 "conditions": [
                                     {
