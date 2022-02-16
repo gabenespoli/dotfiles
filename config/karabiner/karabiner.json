@@ -19,12 +19,23 @@
                         "description": "Gmacs key bindings [control+j -> return]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "return_or_enter"}]
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -32,10 +43,8 @@
                         "description": "Gmacs key bindings [control+i -> tab]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -43,14 +52,27 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "i",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "tab"}]
+                                "to": [
+                                    {
+                                        "key_code": "tab"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -58,24 +80,35 @@
                         "description": "Gmacs key bindings [control+[ -> esc]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "escape"}]
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -83,10 +116,8 @@
                         "description": "Gmacs key bindings [control+bfnp -> arrow keys]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
@@ -95,19 +126,31 @@
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^org\\.vim\\.MacVim"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
-                                "to": [{"key_code": "left_arrow"}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
@@ -116,19 +159,31 @@
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^org\\.vim\\.MacVim"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
-                                "to": [{"key_code": "right_arrow"}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
@@ -136,19 +191,31 @@
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^org\\.vim\\.MacVim"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "n",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
-                                "to": [{"key_code": "down_arrow"}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
@@ -156,13 +223,27 @@
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^org\\.vim\\.MacVim"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "p",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
-                                "to": [{"key_code": "up_arrow"}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -170,10 +251,8 @@
                         "description": "Gmacs key bindings [control+h -> delete]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -181,7 +260,8 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     },
                                     {
                                         "name": "semicolon_mode",
@@ -191,8 +271,21 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
-                                "to": [{"key_code": "delete_or_backspace"}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -200,10 +293,8 @@
                         "description": "Gmacs key bindings [control+d -> forward delete]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -213,13 +304,28 @@
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.apple\\.ScreenSharing$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "option"]}},
-                                "to": [{"key_code": "delete_forward"}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -227,10 +333,8 @@
                         "description": "Gmacs key bindings [control+w -> opt+backspace]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -240,13 +344,30 @@
                                             "^org.\\.rstudio\\.RStudio$",
                                             "^com\\.apple\\.ScreenSharing$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["any"]}},
-                                "to": [{"key_code": "delete_or_backspace", "modifiers": ["option"]}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -254,10 +375,8 @@
                         "description": "Gmacs key bindings [control+u -> cmd+shift+left, cmd+x]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -265,16 +384,38 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "u",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock"]}},
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
                                 "to": [
-                                    {"key_code": "left_arrow", "modifiers": ["command", "shift"]},
-                                    {"key_code": "x", "modifiers": ["command"], "repeat": false}
-                                ]
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "command"
+                                        ],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -282,10 +423,8 @@
                         "description": "Gmacs key bindings [control+k -> cmd+shift+right, cmd+x]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Terminal$",
@@ -293,16 +432,38 @@
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock"]}},
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
                                 "to": [
-                                    {"key_code": "right_arrow", "modifiers": ["command", "shift"]},
-                                    {"key_code": "x", "modifiers": ["command"], "repeat": false}
-                                ]
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "command"
+                                        ],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -310,22 +471,36 @@
                         "description": "Gmacs key bindings [control+y -> cmd+v]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Notes$",
                                             "^com\\.microsoft\\.teams$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "y",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "v", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -333,41 +508,74 @@
                         "description": "Gmacs key bindings [command+d -> opt+forward delete; hyper+d -> command+d]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "delete_forward", "modifiers": ["option"]}]},
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {"mandatory": ["command", "option", "control", "shift"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "d", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -375,41 +583,74 @@
                         "description": "Gmacs key bindings [command+f -> opt+right arrow; hyper+f -> command+f]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "right_shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "right_shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "right_arrow", "modifiers": ["option"]}]
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {"mandatory": ["command", "option", "control", "shift"], "optional": ["caps_lock"]}},
-                                "to": [{"key_code": "f", "modifiers": ["command"]}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -417,42 +658,74 @@
                         "description": "Gmacs key bindings [command+b -> opt+left arrow; hyper+b -> command+b]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "right_shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "right_shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "left_arrow", "modifiers": ["option"]}]
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {"mandatory": ["command", "option", "control", "shift"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option",
+                                            "control",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "b", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "b",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -460,23 +733,40 @@
                         "description": "Gmacs key bindings [command+option+control+g -> command+g]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_unless",
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "g",
-                                    "modifiers": {"mandatory": ["command", "option", "control"], "optional": ["caps_lock", "right_shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option",
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "right_shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "g", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "g",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -484,70 +774,130 @@
                         "description": "Gmacs in Microsoft [control+aebf -> home/end/ctrl+left/ctrl+right]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "home"}]
+                                "to": [
+                                    {
+                                        "key_code": "home"
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "end"}]
+                                "to": [
+                                    {
+                                        "key_code": "end"
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "right_arrow", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "b",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "left_arrow", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -555,34 +905,68 @@
                         "description": "Gmacs in GBeaver [control+ae -> cmd+left/right]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^org\\.jkiss\\.dbeaver\\.core\\.product$"]
+                                        "bundle_identifiers": [
+                                            "^org\\.jkiss\\.dbeaver\\.core\\.product$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "left_arrow","modifiers": ["command"]}
-                                ]
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^org\\.jkiss\\.dbeaver\\.core\\.product$"]
+                                        "bundle_identifiers": [
+                                            "^org\\.jkiss\\.dbeaver\\.core\\.product$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "right_arrow","modifiers": ["command"]}
-                                ]
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -590,143 +974,311 @@
                         "description": "Gmacs in RDC [lots of command/control replacements]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "w",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "delete_or_backspace","modifiers": ["control"]}
-                                ]
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock"]}},
-                                "to": [{"key_code": "delete_forward", "modifiers": ["control"]}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "d",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}},
-                                "to": [{"key_code": "delete_forward", "modifiers": ["control"]}]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "z",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "z", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "slash",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "slash", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "hyphen",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "hyphen", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "equal_sign",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "equal_sign", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "open_bracket", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "close_bracket",
-                                    "modifiers": {"mandatory": ["command"],"optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "close_bracket","modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "escape"}]
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -734,61 +1286,103 @@
                         "description": "Gmacs in Office [control+i90 -> tab/cmd+dn/cmd+up]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "i",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "tab"}]
+                                "to": [
+                                    {
+                                        "key_code": "tab"
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "9",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "up_arrow", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "0",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "down_arrow", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -796,35 +1390,69 @@
                         "description": "Gmacs in Outlook [control+ae -> cmd+left/cmd+right]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Outlook$",
                                             "^com\\.microsoft\\.teams$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "left_arrow", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Outlook$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {"mandatory": ["control"], "optional": ["caps_lock", "shift", "option"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "shift",
+                                            "option"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "right_arrow", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -832,18 +1460,36 @@
                         "description": "Gmacs in Word [control+option+n -> control+shift+n (normal style)]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Word$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Word$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "n",
-                                    "modifiers": {"mandatory": ["command", "option"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "n", "modifiers": ["control", "shift"]}]
+                                "to": [
+                                    {
+                                        "key_code": "n",
+                                        "modifiers": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -851,18 +1497,34 @@
                         "description": "Gmacs in Outlook [command+e -> control+e (archive)]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Outlook$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "e",
-                                    "modifiers": {"mandatory": ["command"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "e", "modifiers": ["control"]}]
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -870,18 +1532,35 @@
                         "description": "Gmacs in Outlook [command+shift+a -> command+e (attachments on my mac)]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.microsoft\\.Outlook$"]
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Outlook$"
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": {"mandatory": ["command", "shift"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "e", "modifiers": ["command"]}]
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -889,23 +1568,39 @@
                         "description": "Ribbon in Office [command+shift+f -> command+option+r]",
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "conditions": [
                                     {
-                                        "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.Word$",
                                             "^com\\.microsoft\\.Excel$",
                                             "^com\\.microsoft\\.Powerpoint$",
                                             "^com\\.microsoft\\.Outlook$"
-                                        ]
+                                        ],
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {"mandatory": ["command", "shift"], "optional": ["caps_lock"]}
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
                                 },
-                                "to": [{"key_code": "r", "modifiers": ["command", "option"]}]
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "command",
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -1978,53 +2673,224 @@
                         "description": "Quote Layer ['+dlmrstv -> 'd/'l/'m/'r/'s/'t/'v]",
                         "manipulators": [
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 0}],
-                                "from": {"key_code": "quote", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"set_variable": {"name": "quote_mode", "value": 1}}],
-                                "to_after_key_up": [{"set_variable": {"name": "quote_mode", "value": 0}}],
-                                "to_if_alone": [{"key_code": "quote"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "quote_mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "quote_mode",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "quote"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "d", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "d"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "d"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "l", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "l"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "l"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "m", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "m"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "m"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "r", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "r"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "r"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "s", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "s"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "s"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "t", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "t"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "t"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{"name": "quote_mode", "type": "variable_if", "value": 1}],
-                                "from": {"key_code": "v", "modifiers": {"optional": ["caps_lock"]}},
-                                "to": [{"key_code": "quote"}, {"key_code": "v"}],
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    },
+                                    {
+                                        "key_code": "v"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -5050,14 +5916,14 @@
                             {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "identifiers": [
                                             {
                                                 "description": "USB Keyboard (Pok3r)",
-                                                "vendor_id": 1241,
-                                                "product_id": 321
+                                                "product_id": 321,
+                                                "vendor_id": 1241
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
