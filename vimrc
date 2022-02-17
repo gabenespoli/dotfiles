@@ -52,6 +52,8 @@ Plug 'gabenespoli/vim-jupycent'
 
 " Lua Plugins  {{{2
 if has('nvim')
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'tamago324/lir.nvim'
   Plug 'ibhagwan/fzf-lua'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'neovim/nvim-lspconfig'
@@ -528,6 +530,35 @@ let g:mutton_min_side_width = 25
 if has('nvim')
 lua << EOF
 
+-- tamago324/lir.nvim  {{{2
+local actions = require'lir.actions'
+local clipboard_actions = require'lir.clipboard.actions'
+require'lir'.setup {
+  show_hidden_files = true,
+  devicons_enable = true,
+  hide_cursor = true,
+  mappings = {
+    ['o'] = actions.edit,
+    ['<CR>'] = actions.edit,
+    ['<C-s>'] = actions.split,
+    ['<C-v>'] = actions.vsplit,
+    ['<C-t>'] = actions.tabedit,
+    ['u'] = actions.up,
+    ['q'] = actions.quit,
+    ['-'] = actions.quit,
+    ['K'] = actions.mkdir,
+    ['e'] = actions.newfile,
+    ['R'] = actions.rename,
+    ['@'] = actions.cd,
+    ['Y'] = actions.yank_path,
+    ['.'] = actions.toggle_show_hidden,
+    ['D'] = actions.delete,
+    ['C'] = clipboard_actions.copy,
+    ['X'] = clipboard_actions.cut,
+    ['P'] = clipboard_actions.paste,
+  },
+}
+
 -- ibhagwan/fzf-lua  {{{2
 require('fzf-lua').setup {
   fzf_colors = {
@@ -673,6 +704,13 @@ require('nvim-treesitter.configs').setup {
 require('nvim-treesitter.configs').setup {playground = {enable = true}}
 
 EOF
+
+" tamago324/lir.nvim  {{{2
+nnoremap - :edit .<CR>
+augroup lir
+  autocmd!
+  autocmd FileType lir nmap gs qgs
+augroup END
 
 " ibhagwan/fzf-lua  {{{2
 nmap <C-p>        :FzfLua git_files<CR>
