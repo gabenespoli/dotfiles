@@ -79,6 +79,7 @@ lfcd () {
 }
 
 # python {{{1
+alias cl="conda env list"
 alias ca="conda deactivate && conda activate"
 alias pudb="python -m pudb.run"
 alias jn="jupyter notebook"
