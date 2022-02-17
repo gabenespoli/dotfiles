@@ -726,6 +726,7 @@ nmap K :lua vim.lsp.buf.hover()<CR>
 nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nmap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
 nmap <C-k><C-l> :lua vim.diagnostic.setloclist()<CR>
+nmap <C-k>r :lua vim.lsp.buf.rename()<CR>
 
 nmap cod <Plug>(toggle-lsp-diag-signs)
 
