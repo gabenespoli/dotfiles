@@ -28,10 +28,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
 Plug 'sodapopcan/vim-twiggy'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern-hijack.vim'
 
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
@@ -426,20 +422,6 @@ nnoremap <C-k>H :Flogsplit -path=%<CR>
 " sodapopcan/vim-twiggy  {{{2
 let g:twiggy_split_position = 'topleft'
 nmap <C-k>b :Twiggy<CR>
-
-" lambdalisue/fern.vim  {{{2
-nnoremap - :Fern . -reveal=%<CR>
-nnoremap <leader>- :Fern %:h<CR>
-augroup fern
-  autocmd!
-  autocmd FileType fern nmap <buffer> - <C-o>
-  autocmd FileType fern nmap <buffer> q <C-o>
-  autocmd FileType fern nmap <buffer> o e
-  autocmd FileType fern nmap <buffer> u <Plug>(fern-action-leave)
-  autocmd FileType fern unmap <buffer> !
-  autocmd FileType fern nmap <buffer> zh <Plug>(fern-action-hidden:toggle)
-  autocmd FileType fern unmap <buffer> <C-k>
-augroup END
 
 " jeetsukumaran/vim-pythonsense  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
