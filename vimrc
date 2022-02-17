@@ -588,6 +588,22 @@ require('vim.lsp.protocol').CompletionItemKind = {
   '', -- TypeParameter
 }
 
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
+local border = {
+      {"╭", "FloatBorder"},
+      {"─", "FloatBorder"},
+      {"╮", "FloatBorder"},
+      {"│", "FloatBorder"},
+      {"╯", "FloatBorder"},
+      {"─", "FloatBorder"},
+      {"╰", "FloatBorder"},
+      {"│", "FloatBorder"},
+}
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+}
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -602,7 +618,8 @@ require('lspconfig').pyright.setup {
   },
   settings = {
     python = {analysis = {typeCheckingMode = "off"}}
-  }
+  },
+  handlers = handlers,
 }
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(

@@ -254,6 +254,7 @@ hi! link markdownPandocCitation pandocCiteKey
 call s:h('Italic',        {'fg': s:fg_light, 'gui': 'italic', 'cterm': 'italic'})
 call s:h('Bold',          {'fg': s:fg_light, 'gui': 'bold', 'cterm': 'bold'})
 call s:h('BoldItalic',    {'fg': s:fg_light, 'gui': 'bold,italic', 'cterm': 'bold,italic'})
+call s:h('FloatBorder',   {'fg': s:fg_com})
 
 " Syntaxes {{{1
 
