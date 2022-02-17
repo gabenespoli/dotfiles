@@ -600,7 +600,9 @@ require('lspconfig').pyright.setup {
   flags = {
     debounce_text_changes = 150,
   },
-  settings = {python = {analysis = {typeCheckingMode = "off"}}}
+  settings = {
+    python = {analysis = {typeCheckingMode = "off"}}
+  }
 }
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
