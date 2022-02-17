@@ -10,7 +10,7 @@ nmap <buffer> st <Plug>(FlogSortTopo)
 nmap <buffer> sr <Plug>(FlogToggleReverse)
 
 nmap <buffer> o <CR>
-nmap <buffer> p <CR><C-w>lzM<C-w>h
+nmap <buffer> p <CR><C-w>lzMggzj<C-w>h
 
 nmap <buffer> r<Space> :Floggit rebase<Space>
 
