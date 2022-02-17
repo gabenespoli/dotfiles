@@ -124,17 +124,19 @@ augroup END
 
 " Status Line  {{{1
 set statusline=
-set statusline+=\ %{Devicon()}%f%<
-set statusline+=%{PywhereStatusline()}
-set statusline+=%{GitStatusline()}
-set statusline+=\ %#PmenuSel#%h%w%*
+set statusline+=%#PmenuSel#%h%w%*
 set statusline+=%#PmenuSel#%w%*
 set statusline+=%#Modified#%m%*
 set statusline+=%#StatusError#%r%*
+set statusline+=%{GitStatusline()}
+set statusline+=\ %{Devicon()}%f\ %<
+set statusline+=%{PywhereStatusline()}
 set statusline+=%=
 set statusline+=%{db_ui#statusline()}
-set statusline+=│%{GetFiletype()}
-set statusline+=│%l/%L│%c│%P\ 
+set statusline+=\ \ %{GetFiletype()}
+set statusline+=\ \ %P
+set statusline+=\ \ %l%L:%c
+set statusline+=\ 
 
 function! GetFiletype() abort
   return &filetype
@@ -145,7 +147,7 @@ function! GitStatusline() abort
   if l:branch == ''
     return ''
   else
-    return '│ ' . l:branch . '│'
+    return '   ' . l:branch . ' '
   endif
 endfunction
 
@@ -174,7 +176,7 @@ function! PywhereStatusline() abort
   if l:loc == ''
     return ''
   else
-    return ' ' . substitute(l:loc, '(def:)', ' ', '')
+    return ' ' . substitute(l:loc, '(def:)', ' ', '') . ' '
   endif
 endfunction
 
