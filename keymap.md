@@ -10,7 +10,7 @@
 4. [Semicolon Layer](#semicolon) (Arrows, Symbols, Media)
 5. [Tab Layer](#tab) (Number Pad, Window Management)
 6. [Quote/Escape Layer](#quote) (Function Keys, Numbers, Symbols)
-7. [Comma Lyaer](#comma) (Function Keys)
+7. [Comma Layer](#comma) (Function Keys)
 8. [Function Layer](#function) (Mac Function Keys)
 9. [Option Layer](#option)
 
