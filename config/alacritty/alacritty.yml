@@ -1,12 +1,9 @@
 # Font configuration
 font:
+  size: 14.0
   normal:
     family: 'DankMono Nerd Font Mono'
     style: Regular
-  offset:
-    x: 0
-    y: 2
-  size: 14.0
 
 # Colors (snooker)
 colors:
