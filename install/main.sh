@@ -23,7 +23,6 @@ brew install efm-langserver
 npm install -g pyright
 npm install -g bash-language-server
 npm install -g vim-language-server
-npm install -g yaml-language-server
 
 echo "" && echo "-- Adding git bash completion and prompt colors..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
