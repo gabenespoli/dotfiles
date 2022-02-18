@@ -30,6 +30,8 @@ Plug 'rbong/vim-flog'
 Plug 'sodapopcan/vim-twiggy'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish'
+" Plug 'mrossinek/vim-dirgutter'
+Plug '~/local/vim-dirgutter'
 
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
