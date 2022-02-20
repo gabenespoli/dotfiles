@@ -1,6 +1,6 @@
 # Font configuration
 font:
-  size: 14.0
+  size: 14
   normal:
     family: 'DankMono Nerd Font Mono'
     style: Regular
