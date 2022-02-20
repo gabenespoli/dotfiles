@@ -5,6 +5,12 @@ font:
     family: 'DankMono Nerd Font Mono'
     style: Regular
 
+cursor:
+  style:
+    shape: Beam
+  vi_mode_style:
+    shape: Block
+
 # Colors (snooker)
 colors:
   primary:
