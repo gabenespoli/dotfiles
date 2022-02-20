@@ -628,6 +628,8 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     underline = false,
     update_in_insert = false,
     virtual_text = false,
+    severity_sort = true,
+    border = border,
   }
 )
 
@@ -638,49 +640,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = "", texthl = hl, numhl = hln })
 end
 
--- Only show most severe diagnostic
--- https://www.reddit.com/r/neovim/comments/mvhfw7/can_built_in_lsp_diagnostics_be_limited_to_show_a/
--- Capture real implementation of function that sets signs
-local orig_set_signs = vim.lsp.diagnostic.set_signs
-local set_signs_limited = function(diagnostics, bufnr, client_id, sign_ns, opts)
-
-  -- original func runs some checks, which I think is worth doing
-  -- but maybe overkill
-  if not diagnostics then
-    diagnostics = diagnostic_cache[bufnr][client_id]
-  end
-
-  -- early escape
-  if not diagnostics then
-    return
-  end
-
-  -- Work out max severity diagnostic per line
-  local max_severity_per_line = {}
-  for _,d in pairs(diagnostics) do
-    if max_severity_per_line[d.range.start.line] then
-      local current_d = max_severity_per_line[d.range.start.line]
-      if d.severity < current_d.severity then
-        max_severity_per_line[d.range.start.line] = d
-      end
-    else
-      max_severity_per_line[d.range.start.line] = d
-    end
-  end
-
-  -- map to list
-  local filtered_diagnostics = {}
-  for i,v in pairs(max_severity_per_line) do
-    table.insert(filtered_diagnostics, v)
-  end
-
-  -- call original function
-  orig_set_signs(filtered_diagnostics, bufnr, client_id, sign_ns, opts)
-end
-vim.lsp.diagnostic.set_signs = set_signs_limited
-
 -- WhoIsSethDaniel/toggle-lsp-diagnostics.nvim  {{{2
-require'toggle_lsp_diagnostics'.init(
+require('toggle_lsp_diagnostics').init(
   {
     signs = true,
     underline = false,
