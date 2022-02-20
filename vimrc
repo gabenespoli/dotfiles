@@ -712,7 +712,6 @@ nmap <C-k>d       :FzfLua lsp_workspace_diagnostics<CR>
 nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
 nmap <C-k><C-g>   :FzfLua live_grep<CR>
 nmap <C-k>gd      :FzfLua lsp_definitions<CR>
-nmap <C-k>gD      :FzfLua lsp_declarations<CR>
 nmap <C-k>gr      :FzfLua lsp_references<CR>
 nmap <C-k>gs      :FzfLua git_status<CR>
 nmap <C-k><C-h>   :FzfLua oldfiles<CR>
@@ -723,7 +722,6 @@ nmap <C-k><Space> :FzfLua<Space>
 
 " nvim/lsp-config  {{{2
 nmap gd :lua vim.lsp.buf.definition()<CR>
-nmap gD :lua vim.lsp.buf.declaration()<CR>
 nmap gr :lua vim.lsp.buf.references()<CR>
 nmap K :lua vim.lsp.buf.hover()<CR>
 nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
