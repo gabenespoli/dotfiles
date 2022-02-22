@@ -364,7 +364,7 @@ endfor
 nnoremap <C-k><C-u> :GundoToggle<CR>
 
 " tpope/vim-fugitive  {{{2
-nnoremap gs :Gedit :<CR>
+nnoremap gS :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
 nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
@@ -711,18 +711,18 @@ nmap <C-k><C-b>   :FzfLua buffers<CR>
 nmap <C-k>d       :FzfLua lsp_workspace_diagnostics<CR>
 nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
 nmap <C-k><C-g>   :FzfLua live_grep<CR>
-nmap <C-k>gd      :FzfLua lsp_definitions<CR>
-nmap <C-k>gr      :FzfLua lsp_references<CR>
-nmap <C-k>gs      :FzfLua git_status<CR>
 nmap <C-k><C-h>   :FzfLua oldfiles<CR>
 nmap <C-k><C-f>   :FzfLua files<CR>
 nmap <C-k><C-k>   :FzfLua resume<CR>
 nmap <C-k><C-r>   :FzfLua registers<CR>
 nmap <C-k><Space> :FzfLua<Space>
+nmap gd           :FzfLua lsp_definitions<CR>
+nmap gr           :FzfLua lsp_references<CR>
+nmap gs           :FzfLua git_status<CR>
 
 " nvim/lsp-config  {{{2
-nmap gd :lua vim.lsp.buf.definition()<CR>
-nmap gr :lua vim.lsp.buf.references()<CR>
+nmap <C-k>gd :lua vim.lsp.buf.definition()<CR>
+nmap <C-k>gr :lua vim.lsp.buf.references()<CR>
 nmap K :lua vim.lsp.buf.hover()<CR>
 nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nmap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
