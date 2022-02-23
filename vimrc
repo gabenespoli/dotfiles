@@ -122,6 +122,9 @@ augroup general
     \     execute 'normal! g`"zvzz' |
     \ endif
 
+  " set cursor shape to beam on exit (https://github.com/alacritty/alacritty/issues/2839)
+  autocmd VimLeave * set guicursor=a:ver25-blinkon0
+
 augroup END
 
 " Status Line  {{{1
