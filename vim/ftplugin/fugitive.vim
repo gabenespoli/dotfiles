@@ -1,9 +1,7 @@
 nnoremap <buffer> git :Git
-nmap <buffer> o gO
-nnoremap <buffer> gR :Git reset HEAD^<CR>
 nmap <buffer> <C-n> <lt>)>
 nmap <buffer> <C-p> <lt>(>
-nmap <buffer> <C-i> =
+nnoremap <buffer> gR :Git reset HEAD^<CR>
 
 " if fugitive was the first buffer, and is still the only buffer,
 " q will quit vim, otherwise switch to previous buffer
