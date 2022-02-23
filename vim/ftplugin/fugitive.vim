@@ -1,8 +1,8 @@
 nnoremap <buffer> git :Git
 nmap <buffer> o gO
 nnoremap <buffer> gR :Git reset HEAD^<CR>
-nmap <buffer> <C-n> )
-nmap <buffer> <C-p> (
+nmap <buffer> <C-n> <lt>)>
+nmap <buffer> <C-p> <lt>(>
 nmap <buffer> <C-i> =
 
 " if fugitive was the first buffer, and is still the only buffer,
