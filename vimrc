@@ -362,7 +362,7 @@ endfor
 nnoremap <C-k><C-u> :GundoToggle<CR>
 
 " tpope/vim-fugitive  {{{2
-nnoremap gS :Gedit :<CR>
+nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
 nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
@@ -713,10 +713,10 @@ nmap <C-k><C-k>   :FzfLua resume<CR>
 nmap <C-k><C-l>   :FzfLua git_commits<CR>
 nmap <C-k><C-o>   :FzfLua oldfiles<CR>
 nmap <C-k><C-r>   :FzfLua registers<CR>
+nmap <C-k><C-s>   :FzfLua git_status<CR>
 nmap <C-k><Space> :FzfLua<Space>
 nmap gd           :FzfLua lsp_definitions<CR>
 nmap gr           :FzfLua lsp_references<CR>
-nmap gs           :FzfLua git_status<CR>
 
 " nvim/lsp-config  {{{2
 nmap <C-k>gd :lua vim.lsp.buf.definition()<CR>
