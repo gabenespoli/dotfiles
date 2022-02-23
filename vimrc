@@ -44,6 +44,7 @@ Plug 'fisadev/vim-isort', {'for': ['python']}
 Plug 'kristijanhusak/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
+Plug 'hashivim/vim-terraform'
 
 " Tmux  {{{2
 Plug 'christoomey/vim-tmux-navigator'
@@ -612,6 +613,7 @@ end
 require('lspconfig').efm.setup{}
 require('lspconfig').bashls.setup{handlers=handlers}
 require('lspconfig').vimls.setup{handlers=handlers}
+require('lspconfig').terraformls.setup{}
 require('lspconfig').pyright.setup{
   on_attach=on_attach,
   handlers=handlers,
