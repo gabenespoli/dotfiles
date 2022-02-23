@@ -539,24 +539,24 @@ lua << EOF
 -- ibhagwan/fzf-lua  {{{2
 require('fzf-lua').setup {
   fzf_colors = {
-    ["fg"]          = { "fg", "CursorLine" },
-    ["bg"]          = { "bg", "Normal" },
-    ["hl"]          = { "fg", "Todo" },
-    ["fg+"]         = { "fg", "Normal" },
-    ["bg+"]         = { "bg", "CursorLine" },
-    ["hl+"]         = { "fg", "Todo" },
-    ["info"]        = { "fg", "Comment" },
-    ["prompt"]      = { "fg", "Identifier" },
-    ["pointer"]     = { "fg", "PmenuSel" },
-    ["marker"]      = { "fg", "Keyword" },
-    ["spinner"]     = { "fg", "Label" },
-    ["header"]      = { "fg", "Comment" },
-    ["gutter"]      = { "bg", "Normal" },
+    ['fg']          = { 'fg', 'CursorLine' },
+    ['bg']          = { 'bg', 'Normal' },
+    ['hl']          = { 'fg', 'Todo' },
+    ['fg+']         = { 'fg', 'Normal' },
+    ['bg+']         = { 'bg', 'CursorLine' },
+    ['hl+']         = { 'fg', 'Todo' },
+    ['info']        = { 'fg', 'Comment' },
+    ['prompt']      = { 'fg', 'Identifier' },
+    ['pointer']     = { 'fg', 'PmenuSel' },
+    ['marker']      = { 'fg', 'Keyword' },
+    ['spinner']     = { 'fg', 'Label' },
+    ['header']      = { 'fg', 'Comment' },
+    ['gutter']      = { 'bg', 'Normal' },
   },
 }
 
 -- kyazdani42/nvim-web-devicons  {{{2
-require("nvim-web-devicons").setup{}
+require('nvim-web-devicons').setup{}
 
 -- neovim/nvim-lspconfig  {{{2
 require('vim.lsp.protocol').CompletionItemKind = {
@@ -589,18 +589,18 @@ require('vim.lsp.protocol').CompletionItemKind = {
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 local border = {
-      {"╭", "FloatBorder"},
-      {"─", "FloatBorder"},
-      {"╮", "FloatBorder"},
-      {"│", "FloatBorder"},
-      {"╯", "FloatBorder"},
-      {"─", "FloatBorder"},
-      {"╰", "FloatBorder"},
-      {"│", "FloatBorder"},
+      {'╭', 'FloatBorder'},
+      {'─', 'FloatBorder'},
+      {'╮', 'FloatBorder'},
+      {'│', 'FloatBorder'},
+      {'╯', 'FloatBorder'},
+      {'─', 'FloatBorder'},
+      {'╰', 'FloatBorder'},
+      {'│', 'FloatBorder'},
 }
 local handlers =  {
-  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border}),
+  ['textDocument/hover'] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+  ['textDocument/signatureHelp'] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border}),
 }
 
 -- Use an on_attach function to only map the following keys
@@ -617,7 +617,7 @@ require('lspconfig').pyright.setup{
   handlers=handlers,
   flags={debounce_text_changes = 150},
   settings={
-    python={analysis={typeCheckingMode = "off"}}
+    python={analysis={typeCheckingMode = 'off'}}
   },
 }
 
@@ -633,11 +633,11 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   }
 )
 
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+local signs = { Error = '', Warn = '', Hint = '', Info = '' }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  local hln = hl .. "Nr"
-  vim.fn.sign_define(hl, { text = "", texthl = hl, numhl = hln })
+  local hl = 'DiagnosticSign' .. type
+  local hln = hl .. 'Nr'
+  vim.fn.sign_define(hl, { text = '', texthl = hl, numhl = hln })
 end
 
 -- WhoIsSethDaniel/toggle-lsp-diagnostics.nvim  {{{2
