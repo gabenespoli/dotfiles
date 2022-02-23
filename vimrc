@@ -409,7 +409,7 @@ end
 EOF
 nnoremap <expr> =
       \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
-      \ ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>' :
+      \ ':lua vim.lsp.diagnostic.show_line_diagnostics({border="rounded"})<CR>' :
       \ ':let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>'
 
 else
