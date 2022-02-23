@@ -104,6 +104,7 @@ set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=DankMono\ Nerd\ Font\ Mono:h14,DankMono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
 set background=dark
+set termguicolors
 colorscheme snooker
 
 augroup general
