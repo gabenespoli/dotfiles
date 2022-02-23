@@ -106,19 +106,22 @@ set guifont=DankMono\ Nerd\ Font\ Mono:h14,DankMono:h14,IBMPlexMono:h14,Menlo:h1
 set background=dark
 colorscheme snooker
 
-" open help in a vertial split
-augroup help
+augroup general
   autocmd!
-  autocmd FileType help wincmd L
-augroup END
 
-" Line Return (https://bitbucket.org/sjl/dotfiles/): {{{2
-augroup line_return
-  autocmd!
+  " open help in a vertial split
+  autocmd FileType help wincmd L
+
+  " open qf window after qf search
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l* lwindow
+
+  " line return (https://hg.stevelosh.com/dotfiles/file/tip/vim/vimrc)
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \     execute 'normal! g`"zvzz' |
     \ endif
+
 augroup END
 
 " Status Line  {{{1
@@ -261,13 +264,6 @@ nnoremap <silent> <expr> <down>
 nnoremap <silent> <expr> <up>
       \ empty(filter(getwininfo(), 'v:val.loclist')) ?
       \ ':cprevious<CR>' : ':lprevious<CR>'
-
-" open qf window after qf search
-augroup quickfix
-  autocmd!
-  autocmd QuickFixCmdPost [^l]* cwindow
-  autocmd QuickFixCmdPost l* lwindow
-augroup END
 
 " option mappings (co)  {{{2
 nnoremap coc :set cursorline!<CR>
