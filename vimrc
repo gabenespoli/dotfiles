@@ -415,8 +415,6 @@ endif
 " rbong/vim_flog  {{{2
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
-nnoremap <C-k>h :vertical Flogsplit -path=%<CR>
-nnoremap <C-k>H :Flogsplit -path=%<CR>
 
 " sodapopcan/vim-twiggy  {{{2
 let g:twiggy_split_position = 'topleft'
@@ -706,9 +704,11 @@ nmap <C-k><C-b>   :FzfLua buffers<CR>
 nmap <C-k>d       :FzfLua lsp_workspace_diagnostics<CR>
 nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
 nmap <C-k><C-g>   :FzfLua live_grep<CR>
-nmap <C-k><C-h>   :FzfLua oldfiles<CR>
 nmap <C-k><C-f>   :FzfLua files<CR>
+nmap <C-k><C-h>   :FzfLua git_bcommits<CR>
 nmap <C-k><C-k>   :FzfLua resume<CR>
+nmap <C-k><C-l>   :FzfLua git_commits<CR>
+nmap <C-k><C-o>   :FzfLua oldfiles<CR>
 nmap <C-k><C-r>   :FzfLua registers<CR>
 nmap <C-k><Space> :FzfLua<Space>
 nmap gd           :FzfLua lsp_definitions<CR>
@@ -721,7 +721,7 @@ nmap <C-k>gr :lua vim.lsp.buf.references()<CR>
 nmap K :lua vim.lsp.buf.hover()<CR>
 nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nmap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
-nmap <C-k><C-l> :lua vim.diagnostic.setloclist()<CR>
+nmap <C-k>l :lua vim.diagnostic.setloclist()<CR>
 nmap <C-k>r :lua vim.lsp.buf.rename()<CR>
 
 nmap cod <Plug>(toggle-lsp-diag-signs)
