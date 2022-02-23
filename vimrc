@@ -366,7 +366,7 @@ nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>
 nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
-nnoremap <C-k>g :Ggrep!<Space>
+nnoremap <C-k>G :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
 
 " airblade/gitgutter  {{{2
@@ -715,12 +715,11 @@ nmap <C-k><C-o>   :FzfLua oldfiles<CR>
 nmap <C-k><C-r>   :FzfLua registers<CR>
 nmap <C-k><C-s>   :FzfLua git_status<CR>
 nmap <C-k><Space> :FzfLua<Space>
-nmap gd           :FzfLua lsp_definitions<CR>
-nmap gr           :FzfLua lsp_references<CR>
+nmap <C-k>gr      :FzfLua lsp_references<CR>
 
 " nvim/lsp-config  {{{2
-nmap <C-k>gd :lua vim.lsp.buf.definition()<CR>
-nmap <C-k>gr :lua vim.lsp.buf.references()<CR>
+nmap gd :lua vim.lsp.buf.definition()<CR>
+nmap gr :lua vim.lsp.buf.references()<CR>
 nmap K :lua vim.lsp.buf.hover()<CR>
 nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
 nmap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
