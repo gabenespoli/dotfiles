@@ -3,8 +3,8 @@ setlocal tabstop=4 softtabstop=4 shiftwidth=4
 " keybindings {{{1
 " mark as done
 nnoremap <buffer> <localleader>x :s/\m^\(([A-Z])\s\)\{0,1\}/x\ <C-R>=strftime("%Y-%m-%d")<CR>\ /<CR>
-inoremap <buffer> t() <C-R>=strftime("%Y-%m-%d")<CR>
-inoremap <buffer> tb() (<C-R>=strftime("%Y-%m-%d")<CR>)
+inoremap <buffer> ()t <C-R>=strftime("%Y-%m-%d")<CR>
+inoremap <buffer> ()tb (<C-R>=strftime("%Y-%m-%d")<CR>)
 nnoremap <buffer> <localleader>D A (<C-R>=strftime("%Y-%m-%d")<CR>)<Esc>
 
 " priority
