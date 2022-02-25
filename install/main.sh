@@ -19,12 +19,15 @@ brew install --cask macvim
 brew install --cask rectangle
 
 brew install npm
+brew install golang
 brew install efm-langserver
 brew install hashicorp/tap/terraform-ls
 npm install -g neovim
 npm install -g pyright
 npm install -g bash-language-server
 npm install -g vim-language-server
+go install github.com/lighttiger2505/sqls@latest
+go install github.com/denisenkom/go-mssqldb
 
 echo "" && echo "-- Adding git bash completion and prompt colors..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
