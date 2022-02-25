@@ -67,8 +67,11 @@ endfunction
 
 " Main Groups {{{1
 " (see `:h w18`)
-
-call s:h('Normal',        {'fg': s:fg})
+if has('gui')
+  call s:h('Normal',      {'fg': s:fg, 'bg': s:bg})
+else
+  call s:h('Normal',      {'fg': s:fg})
+endif
 call s:h('Cursor',        {'fg': s:bg, 'bg': s:fg_light})
 call s:h('Comment',       {'fg': s:fg_com, 'gui': 'italic', 'cterm': 'italic'})
 
