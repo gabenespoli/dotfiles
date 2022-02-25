@@ -63,6 +63,7 @@ if has('nvim')
   Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/playground'
+  Plug 'nanotee/sqls.nvim'
 endif
 
 call plug#end()
@@ -613,6 +614,12 @@ end
 require('lspconfig').efm.setup{handlers=handlers}
 require('lspconfig').bashls.setup{handlers=handlers}
 require('lspconfig').vimls.setup{handlers=handlers}
+require('lspconfig').sqls.setup{
+    on_attach=function(client, bufnr)
+        require('sqls').on_attach(client, bufnr)
+    end,
+    handlers=handlers,
+}
 require('lspconfig').terraformls.setup{handlers=handlers}
 require('lspconfig').pyright.setup{
   on_attach=on_attach,
