@@ -21,6 +21,7 @@ brew install --cask rectangle
 brew install npm
 brew install efm-langserver
 brew install hashicorp/tap/terraform-ls
+npm install -g neovim
 npm install -g pyright
 npm install -g bash-language-server
 npm install -g vim-language-server
