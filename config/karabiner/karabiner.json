@@ -6076,11 +6076,11 @@
                         ]
                     },
                     {
-                        "description": "Pok3r-like Fn - Media controls [right_option+p;' -> playpause/back/fwd]",
+                        "description": "Fn layer arrows [right_option+l;p' -> left/down/up/right]",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "p",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -6092,7 +6092,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "play_or_pause"
+                                        "key_code": "left_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -6111,7 +6111,26 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "scan_previous_track"
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
                                     }
                                 ],
                                 "type": "basic"
@@ -6130,7 +6149,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "scan_next_track"
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"
