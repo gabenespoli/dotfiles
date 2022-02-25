@@ -14,6 +14,11 @@ rm -v "$HOME"/miniconda.sh
 conda init
 conda update -n base -c defaults conda
 
+conda create -y -n neovim2
+conda deactivate && conda activate neovim2
+conda install -y python=2.7.18
+pip install neovim
+
 conda create -y -n neovim3
 conda deactivate && conda activate neovim3
 conda install -y python
