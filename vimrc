@@ -79,6 +79,7 @@ if has('nvim')
 endif
 if has('macunix')
   let g:python3_host_prog = expand('~').'/miniconda3/envs/neovim3/bin/python'
+  let g:python_host_prog = expand('~').'/miniconda3/envs/neovim2/bin/python'
 else
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
 endif
