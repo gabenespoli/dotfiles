@@ -1,5 +1,7 @@
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
+inoremap -- - [ ]
+
 " toggle done
 nnoremap <buffer> <C-x> :call TotesToggleDone()<CR>
 function TotesToggleDone() abort
