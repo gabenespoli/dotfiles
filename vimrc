@@ -563,31 +563,31 @@ require('nvim-web-devicons').setup{}
 
 -- neovim/nvim-lspconfig  {{{2
 require('vim.lsp.protocol').CompletionItemKind = {
-  '', -- Text 
-  '', -- Method 
-  '', -- Function
-  '', -- Constructor
-  '', -- Field ﰠ
-  '', -- Variable
-  'פּ', -- Class ﴯפּ
-  'ﰮ', -- Interface ﰮ
-  '', -- Module
-  '', -- Property
-  '', -- Unit
-  '', -- Value
-  '', -- Enum
-  '', -- Keyword 
-  '﬌', -- Snippet ﬌
-  '', -- Color
-  '', -- File 
-  '', -- Reference 
-  '', -- Folder 
-  '', -- EnumMember
-  '', -- Constant
-  '', -- Struct 
-  '', -- Event
-  '', -- Operator
-  '', -- TypeParameter
+  ' Text', -- Text 
+  ' Method', -- Method 
+  ' Function', -- Function
+  ' Constructor', -- Constructor
+  ' Field', -- Field ﰠ
+  ' Variable', -- Variable
+  'פּ Class', -- Class ﴯפּ
+  'ﰮ Interface', -- Interface ﰮ
+  ' Module', -- Module
+  ' Property', -- Property
+  ' Unit', -- Unit
+  ' Value', -- Value
+  ' Enum', -- Enum
+  ' Keyword', -- Keyword 
+  '﬌ Snippet', -- Snippet ﬌
+  ' Color', -- Color
+  ' File', -- File 
+  ' Reference', -- Reference 
+  ' Folder', -- Folder 
+  ' EnumMember', -- EnumMember
+  ' Constant', -- Constant
+  ' Struct', -- Struct 
+  ' Event', -- Event
+  ' Operator', -- Operator
+  ' TypeParameter', -- TypeParameter
 }
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
