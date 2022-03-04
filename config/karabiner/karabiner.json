@@ -474,7 +474,6 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.apple\\.Notes$",
                                             "^com\\.microsoft\\.teams$"
                                         ],
