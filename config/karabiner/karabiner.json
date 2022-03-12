@@ -3111,6 +3111,7 @@
                                     "key_code": "comma",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -3211,7 +3212,9 @@
                                     "key_code": "q",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3234,7 +3237,9 @@
                                     "key_code": "w",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3257,7 +3262,9 @@
                                     "key_code": "e",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3280,7 +3287,9 @@
                                     "key_code": "r",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3303,7 +3312,9 @@
                                     "key_code": "t",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3326,7 +3337,9 @@
                                     "key_code": "a",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3349,7 +3362,9 @@
                                     "key_code": "s",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3372,7 +3387,9 @@
                                     "key_code": "d",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3395,7 +3412,9 @@
                                     "key_code": "f",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3418,7 +3437,9 @@
                                     "key_code": "g",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3441,7 +3462,9 @@
                                     "key_code": "z",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3464,7 +3487,9 @@
                                     "key_code": "x",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3487,7 +3512,9 @@
                                     "key_code": "c",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3510,7 +3537,9 @@
                                     "key_code": "v",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3533,7 +3562,9 @@
                                     "key_code": "b",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "control",
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -4585,6 +4616,7 @@
                                     "key_code": "escape",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock"
                                         ]
                                     }
@@ -4624,6 +4656,7 @@
                                     "key_code": "1",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4648,6 +4681,7 @@
                                     "key_code": "2",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4672,6 +4706,7 @@
                                     "key_code": "3",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4696,6 +4731,7 @@
                                     "key_code": "4",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4720,6 +4756,7 @@
                                     "key_code": "5",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4744,6 +4781,7 @@
                                     "key_code": "6",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4768,6 +4806,7 @@
                                     "key_code": "7",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4792,6 +4831,7 @@
                                     "key_code": "8",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4816,6 +4856,7 @@
                                     "key_code": "9",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4840,6 +4881,7 @@
                                     "key_code": "0",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4864,6 +4906,7 @@
                                     "key_code": "hyphen",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
@@ -4888,6 +4931,7 @@
                                     "key_code": "equal_sign",
                                     "modifiers": {
                                         "optional": [
+                                            "control",
                                             "caps_lock",
                                             "shift"
                                         ]
