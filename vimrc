@@ -495,23 +495,31 @@ if !has('nvim')
     execute 'set <M-t>=t'
   endif
 endif
-nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
-nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
-nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
-inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
-vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
-vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
-vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-if has('nvim')
-  tnoremap <silent> <M-h> <C-\><C-N>:TmuxNavigateLeft<CR>
-  tnoremap <silent> <M-j> <C-\><C-N>:TmuxNavigateDown<CR>
-  tnoremap <silent> <M-k> <C-\><C-N>:TmuxNavigateUp<CR>
-  tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
+
+if has('gui')
+  map <D-h> <C-w>h
+  map <D-j> <C-w>j
+  map <D-k> <C-w>k
+  map <D-l> <C-w>l
+else
+  nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
+  nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
+  nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
+  nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
+  inoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+  inoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+  inoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+  inoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+  vnoremap <silent> <M-h> <Esc>:TmuxNavigateLeft<CR>
+  vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
+  vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
+  vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
+  if has('nvim')
+    tnoremap <silent> <M-h> <C-\><C-N>:TmuxNavigateLeft<CR>
+    tnoremap <silent> <M-j> <C-\><C-N>:TmuxNavigateDown<CR>
+    tnoremap <silent> <M-k> <C-\><C-N>:TmuxNavigateUp<CR>
+    tnoremap <silent> <M-l> <C-\><C-N>:TmuxNavigateRight<CR>
+  endif
 endif
 
 " jpalardy/vim-slime  {{{2
