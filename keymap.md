@@ -125,8 +125,8 @@ Number pad, window management with [Rectangle](https://www.rectangleapp.com/) an
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
-|      |Win   |Win   |Win   |Win   |Win   |Win   |      | *    | (    | )    |      |      | Win        |
-|      |Full  |Middle|Left  |Right |Top   |Bottom|      |      |      |      |      |      | Restore    |
+|      |Win   |Win   |Win   |Win   |Win   |Win   |      | *    | (    | )    |      |      |            |
+|      |Full  |Middle|Left  |Right |Top   |Bottom|      |      |      |      |      |      |            |
 |------'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--------|
 | ######## |Space |Space |Win Mv|Win Mv|Win   | Del  | 7    | 8    | 9    | +    | *    |      |        |
 | ######## |Left  |Right |Left  |Right |Center|      |      |      |      |      |      |      |        |
