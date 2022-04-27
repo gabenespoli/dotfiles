@@ -60,7 +60,6 @@ if has('nvim')
   Plug 'ibhagwan/fzf-lua'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'neovim/nvim-lspconfig'
-  Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/playground'
   Plug 'nanotee/sqls.nvim'
@@ -406,13 +405,13 @@ endfunction
 if has('nvim')
 lua << EOF
 function _G.has_line_diagnostic(bufnr, line_nr)
-  local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics(bufnr, line_nr)
+  local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
   return not vim.tbl_isempty(line_diagnostics)
 end
 EOF
 nnoremap <expr> =
       \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
-      \ ':lua vim.lsp.diagnostic.show_line_diagnostics({border="rounded"})<CR>' :
+      \ ':lua vim.diagnostic.open_float()<CR>' :
       \ ':let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>'
 
 else
@@ -598,57 +597,17 @@ require('vim.lsp.protocol').CompletionItemKind = {
   ' TypeParameter', -- TypeParameter
 }
 
--- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-local border = {
-      {'╭', 'FloatBorder'},
-      {'─', 'FloatBorder'},
-      {'╮', 'FloatBorder'},
-      {'│', 'FloatBorder'},
-      {'╯', 'FloatBorder'},
-      {'─', 'FloatBorder'},
-      {'╰', 'FloatBorder'},
-      {'│', 'FloatBorder'},
-}
-local handlers =  {
-  ['textDocument/hover'] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-  ['textDocument/signatureHelp'] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border}),
-}
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-end
-
-require('lspconfig').efm.setup{handlers=handlers}
-require('lspconfig').bashls.setup{handlers=handlers}
-require('lspconfig').vimls.setup{handlers=handlers}
-require('lspconfig').sqls.setup{
-    on_attach=function(client, bufnr)
-        require('sqls').on_attach(client, bufnr)
-    end,
-    handlers=handlers,
-}
-require('lspconfig').terraformls.setup{handlers=handlers}
-require('lspconfig').pyright.setup{
-  on_attach=on_attach,
-  handlers=handlers,
-  flags={debounce_text_changes = 150},
-  settings={
-    python={analysis={typeCheckingMode = 'off'}}
-  },
-}
-
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = true,
-    underline = false,
-    update_in_insert = false,
-    virtual_text = false,
-    severity_sort = true,
+-- Setup lsp diagnostics  {{{2
+vim.diagnostic.config(
+  {
+    underline=false,
+    virtual_text=false,
+    severity_sort=true,
+    float={border="rounded"},
   }
 )
 
+-- diagnostic signs and highlight groups
 local signs = { Error = '', Warn = '', Hint = '', Info = '' }
 for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
@@ -656,15 +615,29 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = '', texthl = hl, numhl = hln })
 end
 
--- WhoIsSethDaniel/toggle-lsp-diagnostics.nvim  {{{2
-require('toggle_lsp_diagnostics').init(
-  {
-    signs = true,
-    underline = false,
-    update_in_insert = false,
-    virtual_text = false,
-  }
-)
+-- Setup language servers  {{{2
+local on_attach = function(client, bufnr)
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {border="rounded"})
+  vim.lsp.handlers['textDocument/signature_help'] = vim.lsp.with(vim.lsp.handlers.signature_help, {border="rounded"})
+end
+
+require('lspconfig').efm.setup{on_attach=on_attach}
+require('lspconfig').bashls.setup{on_attach=on_attach}
+require('lspconfig').vimls.setup{on_attach=on_attach}
+require('lspconfig').sqls.setup{
+    on_attach=function(client, bufnr)
+        require('sqls').on_attach(client, bufnr)
+    end,
+}
+require('lspconfig').terraformls.setup{on_attach=on_attach}
+require('lspconfig').pyright.setup{
+  on_attach=on_attach,
+  --flags={debounce_text_changes = 150},
+  settings={
+    python={analysis={typeCheckingMode = 'off'}}
+  },
+}
 
 -- nvim-treesitter  {{{2
 require('nvim-treesitter.configs').setup {
@@ -699,12 +672,13 @@ nmap <C-k>gr      :FzfLua lsp_references<CR>
 nmap gd :lua vim.lsp.buf.definition()<CR>
 nmap gr :lua vim.lsp.buf.references()<CR>
 nmap K :lua vim.lsp.buf.hover()<CR>
-nmap [d :lua vim.lsp.diagnostic.goto_prev({enable_popup=false})<CR>
-nmap ]d :lua vim.lsp.diagnostic.goto_next({enable_popup=false})<CR>
+nmap <silent> [d :lua vim.diagnostic.goto_prev()<CR>
+nmap <silent> ]d :lua vim.diagnostic.goto_next()<CR>
 nmap <C-k>l :lua vim.diagnostic.setloclist()<CR>
 nmap <C-k>r :lua vim.lsp.buf.rename()<CR>
 
-nmap cod <Plug>(toggle-lsp-diag-signs)
+nmap cod :lua vim.diagnostic.disable()<CR>
+nmap coD :lua vim.diagnostic.enable()<CR>
 
 augroup nvimlsp
   autocmd!
