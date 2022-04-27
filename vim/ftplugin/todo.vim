@@ -1,6 +1,7 @@
 setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 inoremap -- - [ ]
+inoremap >> > [ ]
 
 " toggle done
 nnoremap <buffer> <C-x> :call TotesToggleDone()<CR>
@@ -28,10 +29,16 @@ setlocal foldmethod=expr
 setlocal foldexpr=TodoFold(v:lnum)
 function! TodoFold(lnum)
     let l:line = getline(a:lnum) 
-    if l:line =~# '^#'
+    if l:line =~# '^-'
+      return '2'
+    elseif l:line =~# '^# '
       return '>1'
-    elseif l:line =~# '^\S'
+    elseif l:line =~# '^## '
       return '>2'
+    elseif l:line =~# '^>'
+      return '>3'
+    elseif l:line =~# '^$'
+      return '>3'
     else
       return '='
     endif
