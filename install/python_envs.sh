@@ -29,3 +29,11 @@ conda deactivate && conda activate base38
 conda install -y python=3.8
 conda install -y -c conda-forge \
   pandas ipython plotly scikit-learn statsmodels sqlalchemy pyodbc python-dotenv
+
+# conda install -c conda-forge jupyterlab jupyterlab_code_formatter black isort
+# jupyter serverextension enable --py jupyterlab_code_formatter
+# jupyter labextension install @ryantam626/jupyterlab_code_formatter
+
+# Use chesterish theme for jupyter notebooks
+# conda install -c conda-forge jupyter jupyterthemes
+# $ jt -t chesterish -f roboto
