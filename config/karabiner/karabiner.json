@@ -4443,7 +4443,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+xcvb -> +=_-]",
+                        "description": "Semicolon Layer [;+xcvb,. -> +=_-<>]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -4536,6 +4536,58 @@
                                 "to": [
                                     {
                                         "key_code": "equal_sign",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
                                         "modifiers": [
                                             "shift"
                                         ]
