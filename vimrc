@@ -39,6 +39,7 @@ Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'for': ['python']}
 Plug 'fisadev/vim-isort', {'for': ['python']}
+Plug 'MathSquared/vim-python-sql'
 
 " Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod'
@@ -104,7 +105,7 @@ set clipboard=unnamed
 set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
-set guifont=DankMono\ Nerd\ Font\ Mono:h18,DankMono:h18,IBMPlexMono:h18,Menlo:h18,Consolas:h18,Courier:h18
+set guifont=DankMono\ Nerd\ Font\ Mono:h14,DankMono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
 set background=dark
 if has('nvim') | set termguicolors | endif
 colorscheme snooker
