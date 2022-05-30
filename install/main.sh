@@ -11,7 +11,7 @@ brew install coreutils findutils grep gnu-sed gawk
 brew install wget lf fd ripgrep fzf bat
 brew install jq cloc tree trash htop
 brew install openssh openssl
-brew install pandoc pandoc-citeproc pandoc-crossref basictex
+brew install pandoc pandoc-citeproc pandoc-crossref basictex xpdf
 
 brew install --cask karabiner-elements
 brew install --cask alacritty
