@@ -41,10 +41,6 @@ Plug 'psf/black', {'for': ['python']}
 Plug 'fisadev/vim-isort', {'for': ['python']}
 Plug 'MathSquared/vim-python-sql'
 
-" Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui'
-Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'hashivim/vim-terraform'
 
 " Tmux  {{{2
@@ -141,7 +137,7 @@ set statusline+=%{GitStatusline()}
 set statusline+=\ %{Devicon()}%f\ %<
 set statusline+=%{PywhereStatusline()}
 set statusline+=%=
-set statusline+=%{db_ui#statusline()}
+" set statusline+=%{db_ui#statusline()}
 set statusline+=\ \ %{GetFiletype()}
 set statusline+=\ \ %P
 set statusline+=\ \ %l%L:%c
@@ -463,17 +459,6 @@ let g:vim_isort_map = ''
 augroup pythonformat
   autocmd!
   autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
-augroup END
-
-" tpope/vim-dadbod & kristijanhusak/vim-dadbod-ui  {{{2
-let g:db_ui_use_nerd_fonts = 1
-let g:db_async = 1
-nmap <F5> <Plug>(DBUI_ExecuteQuery)
-imap <F5> <Esc><F5>
-
-augroup dadbod
-  autocmd!
-  autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
 augroup END
 
 " christoomey/vim-tmux-navigator  {{{2
