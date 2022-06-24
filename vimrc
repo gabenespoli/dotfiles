@@ -27,7 +27,6 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
-Plug 'sodapopcan/vim-twiggy'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish'
 " Plug 'mrossinek/vim-dirgutter'
@@ -418,10 +417,6 @@ endif
 " rbong/vim_flog  {{{2
 let g:flog_default_arguments = {'date': 'short'}
 nmap gl :Flog<CR>
-
-" sodapopcan/vim-twiggy  {{{2
-let g:twiggy_split_position = 'topleft'
-nmap <C-k>b :Twiggy<CR>
 
 " justinmk/vim-dirvish  {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
