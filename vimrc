@@ -24,7 +24,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'sjl/gundo.vim'
 
 " Git & Files  {{{2
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', {'tag': 'v3.7'}
 Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
 Plug 'justinmk/vim-dirvish'
@@ -60,6 +60,10 @@ if has('nvim')
   Plug 'nvim-treesitter/playground'
   Plug 'nanotee/sqls.nvim'
 endif
+
+Plug 'sainnhe/everforest'
+Plug 'morhetz/gruvbox'
+Plug 'pineapplegiant/spaceduck'
 
 call plug#end()
 
@@ -101,10 +105,15 @@ set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 set guifont=DankMono\ Nerd\ Font\ Mono:h14,DankMono:h14,IBMPlexMono:h14,Menlo:h14,Consolas:h14,Courier:h14
+
+" Colors
 set background=dark
 if has('nvim') | set termguicolors | endif
+let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme snooker
 
+" Some autocommands
 augroup general
   autocmd!
 
@@ -130,8 +139,9 @@ augroup END
 set statusline=
 set statusline+=%#PmenuSel#%h%w%*
 set statusline+=%#PmenuSel#%w%*
-set statusline+=%#Modified#%m%*
-set statusline+=%#StatusError#%r%*
+" set statusline+=%#Modified#%m%*
+set statusline+=%#DiffText#%m%*
+set statusline+=%#DiffDelete#%r%*
 set statusline+=%{GitStatusline()}
 set statusline+=\ %{Devicon()}%f\ %<
 set statusline+=%{PywhereStatusline()}
@@ -522,6 +532,10 @@ nnoremap g<C-l> <C-l>
 " gabenespoli/vim-mutton  {{{2
 let g:mutton_min_center_width = 94
 let g:mutton_min_side_width = 25
+
+" Plug 'gabenespoli/vim-tabsms'  {{{2
+highlight! link TabMod DiffText
+highlight! link TabModSel TabMod
 
 " Lua Plugins  {{{1
 if has('nvim')

@@ -136,12 +136,12 @@ call s:h('StatusLine',    {'fg': s:fg_com, 'bg': s:bg, 'gui': 'reverse', 'cterm'
 call s:h('Conceal',       {'fg': s:fg})
 call s:h('StatusLineNC',  {'fg': s:fg_com, 'bg': s:bg_light})
 call s:h('VertSplit',     {'fg': s:bg_light, 'bg': s:bg})
-call s:h('Title',         {'fg': s:fg_bright, 'gui': 'bold,italic', 'cterm': 'bold,italic'})
+call s:h('Title',         {'fg': s:fg_bright, 'bg': s:bg_light, 'gui': 'bold,italic', 'cterm': 'bold,italic'})
 call s:h('Visual',        {'fg': s:fg_bright, 'bg': s:fg_com})
 call s:h('VisualNOS',     {'fg': s:fg_bright, 'bg': s:fg_com})
 call s:h('WarningMsg',    {'fg': s:bg, 'bg': s:orange})
 call s:h('WildMenu',      {'fg': s:bg_light, 'bg': s:fg_bright})
-call s:h('Folded',        {'fg': s:fg, 'bg': s:bg_light, 'gui': 'italic', 'cterm': 'italic'})
+call s:h('Folded',        {'bg': s:bg_light})
 call s:h('FoldColumn',    {'fg': s:fg_light, 'bg': s:bg_light})
 call s:h('SignColumn',    {'fg': s:fg})
 
@@ -245,14 +245,14 @@ hi! link TSVariableBuiltin      Type
 " hi! link TSTagDelimiter         links to Delimiter
 
 " my own extras {{{1
-call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusTodo',    {'fg': s:pink,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusError',   {'fg': s:red,    'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusPreview', {'fg': s:blue,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('ReadOnly',      {'fg': s:brown,  'bg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('StatusTodo',    {'fg': s:pink,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('StatusError',   {'fg': s:red,    'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('StatusPreview', {'fg': s:blue,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 " call s:h('StatusFunction',{'fg': s:fg_com, 'bg': s:fg_light, 'gui': 'reverse', 'cterm': 'reverse'})
-hi! link TabMod           Modified
-hi! link TabModSel        TabMod
+" hi! link TabMod           Modified
+" hi! link TabModSel        TabMod
 hi! link markdownPandocCitation pandocCiteKey
 call s:h('Italic',        {'fg': s:fg_light, 'gui': 'italic', 'cterm': 'italic'})
 call s:h('Bold',          {'fg': s:fg_light, 'gui': 'bold', 'cterm': 'bold'})

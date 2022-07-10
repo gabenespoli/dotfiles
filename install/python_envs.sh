@@ -35,5 +35,9 @@ conda install -y -c conda-forge \
 # jupyter labextension install @ryantam626/jupyterlab_code_formatter
 
 # Use chesterish theme for jupyter notebooks
-# conda install -c conda-forge jupyter jupyterthemes
-# $ jt -t chesterish -f roboto
+# conda install -c conda-forge jupyterthemes
+# $ jt -t chesterish -f roboto -cellw 900
+
+# Register conda environments with jupyter, so you can use them in notebooks
+# conda install -c anaconda ipykernel
+# python -m ipykernel install --user --name=<env_name>
