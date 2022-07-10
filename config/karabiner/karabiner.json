@@ -3830,7 +3830,8 @@
                                     "key_code": "i",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
@@ -3853,7 +3854,8 @@
                                     "key_code": "n",
                                     "modifiers": {
                                         "optional": [
-                                            "caps_lock"
+                                            "caps_lock",
+                                            "shift"
                                         ]
                                     }
                                 },
