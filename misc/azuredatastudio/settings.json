@@ -25,6 +25,25 @@
             "providerName": "MSSQL",
             "savePassword": true,
             "id": "37456757-e1f7-4411-81c3-b830934a964f"
+        },
+        {
+            "options": {
+                "connectionName": "ace-churn-dev",
+                "server": "ace-churn-dev.database.windows.net",
+                "database": "ace-churn-dev",
+                "authenticationType": "SqlLogin",
+                "user": "aceadmin",
+                "password": "",
+                "connectTimeout": 30,
+                "applicationName": "azdata",
+                "originalDatabase": "ace-churn-dev",
+                "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+                "databaseDisplayName": "ace-churn-dev"
+            },
+            "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+            "providerName": "MSSQL",
+            "savePassword": true,
+            "id": "faeb5b84-79dd-4331-bdc1-deacefe7b591"
         }
     ],
     "editor.cursorBlinking": "solid",
@@ -56,5 +75,8 @@
     ],
     "vim.leader": "<space>",
     "workbench.enablePreviewFeatures": true,
-    "window.zoomLevel": 1
+    "editor.detectIndentation": false,
+    "workbench.editorAssociations": {
+        "*.{sqlplan}": "workbench.editor.executionplan"
+    }
 }

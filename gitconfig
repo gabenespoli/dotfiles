@@ -24,7 +24,12 @@
   stash = 6
   HEAD = 13
 [init]
-	templatedir = ~/.git_template
+	; templatedir = ~/.git_template
 	defaultBranch = main
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
