@@ -5961,6 +5961,33 @@
                                     }
                                 ],
                                 "from": {
+                                    "key_code": "hyphen",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "sed -i '' 's/size:.*/size: 11/' ~/.config/alacritty/alacritty.yml"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^io\\.alacritty$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "0",
                                     "modifiers": {
                                         "mandatory": [
