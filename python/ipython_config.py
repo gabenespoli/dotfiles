@@ -145,7 +145,7 @@ class MyPrompt(Prompts):  # noqa: D101
     # https://ipython.readthedocs.io/en/stable/config/details.html#custom-prompts
     def in_prompt_tokens(self, cli=None):  # noqa: D102
         return [
-            (Token.PromptTime, datetime.now().strftime("%H:%M")),
+            (Token.PromptTime, datetime.now().strftime("%m-%d %H:%M")),
             (Token.PromptText, " >>>"),
             (Token.PromptSpace, " "),
         ]
