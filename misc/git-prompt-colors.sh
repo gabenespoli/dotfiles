@@ -1,6 +1,8 @@
 override_git_prompt_colors() {
   GIT_PROMPT_THEME_NAME="Default"
 
+  Time12b="\$(date +%m-%d\ %H:%M)"
+
   ## These are the color definitions used by gitprompt.sh
   GIT_PROMPT_PREFIX="["                           # start of the git info string
   GIT_PROMPT_SUFFIX="]"                           # the end of the git info string
@@ -39,8 +41,8 @@ override_git_prompt_colors() {
   ## _LAST_COMMAND_INDICATOR_ will be replaced by the appropriate GIT_PROMPT_COMMAND_OK OR GIT_PROMPT_COMMAND_FAIL
   GIT_PROMPT_START_USER=" ${Blue}${PathShort}${ResetColor}"
   GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
-  GIT_PROMPT_END_USER="_LAST_COMMAND_INDICATOR_ \n\[\033[48;5;0m\]${Time12a}${White}\[\033[48;5;0m\] $>${ResetColor} "
-  GIT_PROMPT_END_ROOT="_LAST_COMMAND_INDICATOR_ \n\[\033[48;5;0m\]${Time12a}${White}\[\033[48;5;0m\] #>${ResetColor} "
+  GIT_PROMPT_END_USER="_LAST_COMMAND_INDICATOR_ \n\[\033[48;5;0m\]${Time12b}${White}\[\033[48;5;0m\] $>${ResetColor} "
+  GIT_PROMPT_END_ROOT="_LAST_COMMAND_INDICATOR_ \n\[\033[48;5;0m\]${Time12b}${White}\[\033[48;5;0m\] #>${ResetColor} "
 
   ## Please do not add colors to these symbols
   # GIT_PROMPT_SYMBOLS_AHEAD="↑·"             # The symbol for "n versions ahead of origin"
