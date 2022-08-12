@@ -86,7 +86,7 @@ call s:h('Identifier',    {'fg': s:blue})
 call s:h('Function',      {'fg': s:blue_light})
 
 call s:h('Statement',     {'fg': s:green})
-call s:h('Conditional',   {'fg': s:green})
+hi! link Conditional      Statement
 hi! link Repeat           Conditional
 hi! link Label            Conditional
 hi! link Operator         Normal
@@ -99,17 +99,17 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h('Type',          {'fg': s:yellow})
+call s:h('Type',          {'fg': s:brown})
 call s:h('Structure',     {'fg': s:green})
 hi! link StorageClass     Type
 hi! link Typedef          Type
 
-call s:h('Special',       {'fg': s:orange})
-hi! link SpecialChar      Special
-hi! link Tag              Special
-call s:h('Delimiter',     {'fg': s:brown})
-hi! link SpecialComment   Special
-hi! link Debug            Special
+call s:h('Special',       {'fg': s:brown})
+call s:h('SpecialChar',   {'fg': s:orange})
+hi! link Tag              SpecialChar
+call s:h('Delimiter',     {'fg': s:fg_com})
+hi! link SpecialComment   SpecialChar
+hi! link Debug            SpecialChar
 
 call s:h('Underlined',    {'gui': 'underline', 'cterm': 'underline'})
 call s:h('Ignore',        {'fg': s:bg_light})
@@ -125,7 +125,7 @@ call s:h('NonText',       {'fg': s:bg_light})
 call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:fg_bright, 'bg': s:red})
 call s:h('IncSearch',     {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
-hi! link Search PmenuSel
+call s:h('Search',        {'fg': s:yellow, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('MoreMsg',       {'fg': s:fg_com})
 hi! link ModeMsg          MoreMsg
 
@@ -183,7 +183,7 @@ call s:h('qfLineNr',      {'fg': s:fg})
 " hi! link TSPunctBracket         links to Delimiter
 
 " hi! link TSPunctSpecial         links to Delimiter
-hi! link TSPunctSpecial         Special
+" hi! link TSPunctSpecial         Special
 
 " hi! link TSConstant             links to Constant
 
@@ -360,6 +360,7 @@ hi! link sqlOperator                PreProc
 hi! link sqlFunction                Function
 hi! link sqlSpecial                 Constant
 hi! link Quote                      String
+hi! link sqlFold                    String
 
 " Plugins {{{1
 " Fugitive {{{2
