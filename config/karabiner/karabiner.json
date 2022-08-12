@@ -120,6 +120,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
@@ -153,6 +154,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
@@ -186,6 +188,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
@@ -218,6 +221,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
@@ -254,6 +258,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
@@ -296,6 +301,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
@@ -336,6 +342,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
@@ -378,6 +385,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
+                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
