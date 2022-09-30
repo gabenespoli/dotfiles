@@ -12,7 +12,7 @@ syntax match TotesKeyword       /+[^ ]*/
 syntax match TotesImportant     /![^ ]*/
 
 hi def link TotesTitle          Title
-hi def link TotesTodoBox        Todo
+hi def link TotesTodoBox        Delimiter
 hi def link TotesDoneBox        PreProc
 hi def link TotesTag            Tag
 hi def link TotesPerson         String
