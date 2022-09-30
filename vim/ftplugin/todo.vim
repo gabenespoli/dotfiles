@@ -4,16 +4,23 @@ inoremap -- - [ ]
 inoremap >> > [ ]
 
 " toggle done
-nnoremap <buffer> <C-x> :call TotesToggleDone()<CR>
+nnoremap <buffer> K :call TotesToggleDone()<CR>
 function TotesToggleDone() abort
   normal! m`
-  let l:todo = '- \[ \]'
-  let l:done = '- \[x\]'
+  let l:todo = '- '
+  let l:grup = '> '
+  let l:open = '\[ \]'
+  let l:done = '\[x\]'
   let l:line = getline(line('.'))
-  if match(l:line, l:todo) >= 0
-    execute 's/'.l:todo.'/'.l:done.'/'
-  elseif match(l:line, l:done) >= 0
-    execute 's/'.l:done.'/'.l:todo.'/'
+
+  if match(l:line, l:todo.l:open) >= 0
+    execute 's/'.l:todo.l:open.'/'.l:todo.l:done.'/'
+  elseif match(l:line, l:todo.l:done) >= 0
+    execute 's/'.l:todo.l:done.'/'.l:todo.l:open.'/'
+  elseif match(l:line, l:grup.l:open) >= 0
+    execute 's/'.l:grup.l:open.'/'.l:grup.l:done.'/'
+  elseif match(l:line, l:grup.l:done) >= 0
+    execute 's/'.l:grup.l:done.'/'.l:grup.l:open.'/'
   endif
   normal! ``
 endfunction
