@@ -692,6 +692,7 @@ nmap coD :lua vim.diagnostic.enable()<CR>
 augroup nvimlsp
   autocmd!
   autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
+  autocmd FileType python nmap <buffer> <C-]> gdzt
 augroup END
 
 " nvim-treesitter/playground  {{{2
