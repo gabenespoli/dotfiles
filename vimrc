@@ -244,6 +244,7 @@ nnoremap <leader>s 1z=
 
 " zz but 3/4 ish instead of half
 nnoremap z<Space> zz25<C-e>
+vnoremap z<Space> zz25<C-e>
 
 " open with mac system
 if has('mac')
