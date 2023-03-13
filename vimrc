@@ -274,6 +274,13 @@ nnoremap <silent> <expr> <up>
       \ empty(filter(getwininfo(), 'v:val.loclist')) ?
       \ ':cprevious<CR>' : ':lprevious<CR>'
 
+" vim diff view mappings
+nnoremap <C-k>D :windo diffthis<CR>zR
+nnoremap <expr> <Left><Left> &diff ? ':diffput<CR>' : '<Left><Left>'
+nnoremap <expr> <Right><Right> &diff ? ':diffput<CR>' : '<Right><Right>'
+nnoremap <expr> <Left><Right> &diff ? ':diffget<CR>' : '<Left><Right>'
+nnoremap <expr> <Right><Left> &diff ? ':diffget<CR>' : '<Right><Left>'
+
 " option mappings (co)  {{{2
 nnoremap coc :set cursorline!<CR>
 nnoremap cof :set foldcolumn=<C-R>=&foldcolumn ? 0 : 2<CR><CR>
