@@ -126,7 +126,7 @@ sourcex "$HOME/.git-completion.bash"
 
 # Prompt {{{1
 if [ "$TERM_PROGRAM" == "WarpTerminal" ]; then
-  continue
+  :
 elif [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
   source $HOME/.bash-git-prompt/gitprompt.sh
 else

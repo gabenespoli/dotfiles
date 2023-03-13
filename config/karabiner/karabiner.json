@@ -86,6 +86,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -125,6 +126,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -158,6 +160,7 @@
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^org\\.vim\\.MacVim"
                                         ],
@@ -192,6 +195,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -225,6 +229,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -263,6 +268,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -308,6 +314,7 @@
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.apple\\.ScreenSharing$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -349,6 +356,7 @@
                                             "^org\\.vim\\.MacVim",
                                             "^org.\\.rstudio\\.RStudio$",
                                             "^com\\.apple\\.ScreenSharing$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -390,6 +398,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -437,6 +446,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -519,6 +529,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -553,6 +564,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -594,6 +606,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -628,6 +641,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -669,6 +683,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -703,6 +718,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -744,6 +760,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^io\\.alacritty$",
+                                            "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
