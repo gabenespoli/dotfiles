@@ -1,0 +1,31 @@
+{
+    "workbench.colorTheme": "GitHub Dark",
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "'DankMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["<C-i>"],
+            "after": ["<space><space><space><space>"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["<delete>"]
+        }
+    ],
+    "vim.leader": "<space>"
+}
