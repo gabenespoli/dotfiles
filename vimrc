@@ -61,10 +61,6 @@ if has('nvim')
   Plug 'nanotee/sqls.nvim'
 endif
 
-Plug 'sainnhe/everforest'
-Plug 'morhetz/gruvbox'
-Plug 'pineapplegiant/spaceduck'
-
 call plug#end()
 
 " General  {{{1
