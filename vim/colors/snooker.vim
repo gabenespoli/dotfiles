@@ -395,11 +395,11 @@ hi! link flogRef                    Label
 hi! link flogRefTag                 Tag
 call s:h('flogRefHead',             {'fg': s:pink})
 hi! link flogRefHeadBranch          flogRefHead
-call s:h('flogGraphEdge1',          {'fg': s:blue_light})
-call s:h('flogGraphEdge2',          {'fg': s:pink})
-call s:h('flogGraphEdge3',          {'fg': s:purple})
-call s:h('flogGraphEdge4',          {'fg': s:yellow})
-call s:h('flogGraphEdge5',          {'fg': s:green_light})
+call s:h('flogBranch1',              {'fg': s:blue_light})
+call s:h('flogBranch2',              {'fg': s:pink})
+call s:h('flogBranch3',              {'fg': s:purple})
+call s:h('flogBranch4',              {'fg': s:yellow})
+call s:h('flogBranch5',              {'fg': s:green_light})
 
 " GitGutter / Signify / GitSigns.nvim {{{2
 call s:h('GitGutterAdd',            {'fg': s:green_light})

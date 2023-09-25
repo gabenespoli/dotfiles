@@ -429,7 +429,7 @@ nnoremap = :let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR
 endif
 
 " rbong/vim_flog  {{{2
-let g:flog_default_arguments = {'date': 'short'}
+let g:flog_default_opts = {'date': 'short'}
 nmap gl :Flog<CR>
 
 " justinmk/vim-dirvish  {{{2
