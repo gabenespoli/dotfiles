@@ -8,6 +8,10 @@ endif
 set background=dark
 let g:colors_name='snooker'
 
+if !exists('g:snooker_diff_high_contrast')
+  let g:snooker_diff_high_contrast = 0
+endif
+
 if !exists('g:snooker_terminal_italics')
   let g:snooker_terminal_italics = 1
 endif
@@ -42,6 +46,14 @@ let s:blue_light      = { 'gui': '#00a3cc', 'cterm': '12'   }
 let s:pink            = { 'gui': '#df7376', 'cterm': '13'   }
 let s:cyan_light      = { 'gui': '#5ccc96', 'cterm': '14'   }
 let s:fg_bright       = { 'gui': '#e5e5d2', 'cterm': '15'   }
+
+let s:green_bg        = { 'gui': '#0b3e0c', 'cterm': '2'    }
+let s:blue_bg         = { 'gui': '#003b52', 'cterm': '4'    }
+let s:red_bg          = { 'gui': '#5b120a', 'cterm': '1'    }
+let s:yellow_bg       = { 'gui': '#503e07', 'cterm': '11'   }
+
+" let s:green_bg      = { 'gui': '#12261e', 'cterm': '2'    }
+" let s:red_bg        = { 'gui': '#301a1f', 'cterm': '1'    }
 
 if g:snooker_spell_undercurl == 1
   let s:sp_un      = 'undercurl'
@@ -145,10 +157,17 @@ call s:h('Folded',        {'bg': s:bg_light})
 call s:h('FoldColumn',    {'fg': s:fg_light, 'bg': s:bg_light})
 call s:h('SignColumn',    {'fg': s:fg})
 
-call s:h('DiffAdd',       {'fg': s:bg, 'bg': s:green})
-call s:h('DiffChange',    {'fg': s:bg, 'bg': s:blue})
-call s:h('DiffDelete',    {'fg': s:bg, 'bg': s:red})
-call s:h('DiffText',      {'fg': s:bg, 'bg': s:yellow})
+if g:snooker_diff_high_contrast
+  call s:h('DiffAdd',       {'fg': s:bg, 'bg': s:green})
+  call s:h('DiffChange',    {'fg': s:bg, 'bg': s:blue})
+  call s:h('DiffDelete',    {'fg': s:bg, 'bg': s:red})
+  call s:h('DiffText',      {'fg': s:bg, 'bg': s:yellow})
+else
+  call s:h('DiffAdd',       {'bg': s:green_bg})
+  call s:h('DiffChange',    {'bg': s:blue_bg})
+  call s:h('DiffDelete',    {'bg': s:red_bg})
+  call s:h('DiffText',      {'bg': s:yellow_bg})
+endif
 
 if has('gui_running') && g:snooker_gui_color_undercurl
   call s:h('SpellBad',    {'gui': s:sp_un, 'sp': s:red})
