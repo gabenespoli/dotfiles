@@ -27,5 +27,100 @@
             "after": ["<delete>"]
         }
     ],
-    "vim.leader": "<space>"
+    "vim.leader": "<space>",
+    "workbench.editorAssociations": {
+        "*.{sqlplan}": "workbench.editor.executionplan"
+    },
+    "datasource.connectionGroups": [
+        {
+            "name": "ROOT",
+            "id": "C777F06B-202E-4480-B475-FA416154D458"
+        }
+    ],
+    "datasource.connections": [
+        {
+            "options": {
+                "connectionName": "ace-dev-landing",
+                "server": "acedev-sql.database.windows.net",
+                "database": "ace-dev-landing",
+                "authenticationType": "SqlLogin",
+                "user": "acedev-sql-landing-user",
+                "password": "",
+                "connectTimeout": 30,
+                "applicationName": "azdata",
+                "originalDatabase": "ace-dev-landing",
+                "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+                "databaseDisplayName": "ace-dev-landing"
+            },
+            "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+            "providerName": "MSSQL",
+            "savePassword": true,
+            "id": "37456757-e1f7-4411-81c3-b830934a964f"
+        },
+        {
+            "options": {
+                "connectionName": "ace-dev-landing",
+                "server": "acedev-sql.database.windows.net",
+                "database": "ace-dev-landing",
+                "authenticationType": "SqlLogin",
+                "user": "acedev-sql-landing-user",
+                "password": "",
+                "connectTimeout": 30,
+                "applicationName": "azdata",
+                "originalDatabase": "ace-dev-landing",
+                "groupId": "1ca08278-608f-4630-bca5-e052090eeebb",
+                "databaseDisplayName": "ace-dev-landing"
+            },
+            "groupId": "1ca08278-608f-4630-bca5-e052090eeebb",
+            "providerName": "MSSQL",
+            "savePassword": true,
+            "id": "dd124051-4349-42b5-ac6e-9c86ac759828"
+        },
+        {
+            "options": {
+                "connectionName": "ace-churn-dev",
+                "server": "ace-churn-dev.database.windows.net",
+                "database": "ace-churn-dev",
+                "authenticationType": "SqlLogin",
+                "user": "aceadmin",
+                "password": "",
+                "connectTimeout": 30,
+                "applicationName": "azdata",
+                "originalDatabase": "ace-churn-dev",
+                "groupId": "1ca08278-608f-4630-bca5-e052090eeebb",
+                "databaseDisplayName": "ace-churn-dev"
+            },
+            "groupId": "1ca08278-608f-4630-bca5-e052090eeebb",
+            "providerName": "MSSQL",
+            "savePassword": true,
+            "id": "faeb5b84-79dd-4331-bdc1-deacefe7b591"
+        },
+        {
+            "options": {
+                "connectionName": "",
+                "server": "sqlsvr-prod-westeu.database.windows.net",
+                "database": "sqldb-sherlockstaging-westeu",
+                "authenticationType": "AzureMFA",
+                "user": "Nespoli, Gabe (Cloud TechUser) - tc-53gnespoli@sonova.onmicrosoft.com",
+                "password": "",
+                "applicationName": "azdata",
+                "connectTimeout": 30,
+                "encrypt": "true",
+                "trustServerCertificate": "false",
+                "azureTenantId": "f1ed0701-294e-404c-a13b-f81f707f845b",
+                "azureAccount": "3bb0bbec-cd22-4eae-8424-dc83a3688ae9.f1ed0701-294e-404c-a13b-f81f707f845b",
+                "azureResourceId": "/subscriptions/584cbd32-9801-40d5-9f86-9f777b6815b1/resourceGroups/CH-SO-ACE-PROD/providers/Microsoft.Sql/servers/sqlsvr-prod-westeu/databases/sqldb-sherlockstaging-westeu",
+                "azurePortalEndpoint": "https://portal.azure.com",
+                "expiresOn": 1695670601,
+                "originalDatabase": "sqldb-sherlockstaging-westeu",
+                "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+                "databaseDisplayName": "sqldb-sherlockstaging-westeu"
+            },
+            "groupId": "C777F06B-202E-4480-B475-FA416154D458",
+            "providerName": "MSSQL",
+            "savePassword": true,
+            "id": "37eb8247-648d-4f43-af9e-850a8c59f4b1"
+        }
+    ],
+    "window.zoomLevel": 1
 }
