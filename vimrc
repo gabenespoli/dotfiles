@@ -516,7 +516,7 @@ if !has('nvim')
   endif
 endif
 
-if has('gui')
+if has('gui') || !exists('$TMUX')
   map <D-h> <C-w>h
   map <D-j> <C-w>j
   map <D-k> <C-w>k
