@@ -139,9 +139,9 @@ set statusline+=%#PmenuSel#%w%*
 " set statusline+=%#Modified#%m%*
 set statusline+=%#DiffText#%m%*
 set statusline+=%#DiffDelete#%r%*
-set statusline+=%{GitStatusline()}
-set statusline+=\ %{Devicon()}%f\ %<
-set statusline+=%{PywhereStatusline()}
+set statusline+=%#StatusGit#%{GitStatusline()}%*%{GitStatuslineEnd()}
+set statusline+=\ %#StatusFilename#%{Devicon()}%f%*\ %<
+set statusline+=%#StatusPywhere#%{PywhereStatusline()}%*%{PywhereStatuslineEnd()}
 set statusline+=%=
 " set statusline+=%{db_ui#statusline()}
 set statusline+=\ \ %{GetFiletype()}
@@ -158,7 +158,16 @@ function! GitStatusline() abort
   if l:branch == ''
     return ''
   else
-    return '   ' . l:branch . ' '
+    return '   ' . l:branch . ' '
+  endif
+endfunction
+
+function! GitStatuslineEnd() abort
+  let l:branch = FugitiveHead(12)
+  if l:branch == ''
+    return ''
+  else
+    return ''
   endif
 endfunction
 
@@ -187,7 +196,19 @@ function! PywhereStatusline() abort
   if l:loc == ''
     return ''
   else
-    return ' ' . substitute(l:loc, '(def:)', ' ', '') . ' '
+    return ' ' . substitute(l:loc, '(def:)', ' ', '') . ' '
+  endif
+endfunction
+
+function! PywhereStatuslineEnd() abort
+  if &filetype != 'python'
+    return ''
+  endif
+  let l:loc = pythonsense#get_python_location()
+  if l:loc == ''
+    return ''
+  else
+    return ''
   endif
 endfunction
 
