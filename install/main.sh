@@ -1,11 +1,24 @@
 #!/bin/bash
 
-echo "" && echo "-- Installing Homebrew..."
-[ -z "$(which brew)" ] &&
-  /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# To run this install from a new mac, when you don't have the repo yet:
+# 
+# 1. Install homebrew from https://brew.sh
+# 
+# echo "" && echo "-- Installing Homebrew..."
+# [ -z "$(which brew)" ] &&
+#   /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 
+# 2. Install git with homebrew
+# 
+# brew install git
+# 
+# 3. Clone this repo
+# 
+# git clone https://github.com/gabenespoli/dotfiles.git
+# 
+# 4. Run this script
 
 echo "" && echo "-- Installing Homebrew packages..."
-brew install git 
 brew install bash readline tmux neovim
 brew install coreutils findutils grep gnu-sed gawk
 brew install wget lf fd ripgrep fzf bat
@@ -14,14 +27,14 @@ brew install openssh openssl
 brew install pandoc pandoc-citeproc pandoc-crossref basictex xpdf
 
 brew install --cask karabiner-elements
-brew install --cask alacritty
+# brew install --cask alacritty
 brew install --cask macvim
 brew install --cask rectangle
 
 brew install npm
 brew install golang
 brew install efm-langserver
-brew install hashicorp/tap/terraform-ls
+# brew install hashicorp/tap/terraform-ls
 npm install -g neovim
 npm install -g pyright
 npm install -g bash-language-server
