@@ -52,7 +52,6 @@ ln -sfc "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
 ln -sfc "$HOME"/dotfiles/config/bat "$HOME"/.config/
 ln -sfc "$HOME"/dotfiles/config/lf "$HOME"/.config/
 ln -sfc "$HOME"/dotfiles/config/pudb "$HOME"/.config/
-ln -sfc "$HOME"/dotfiles/warp "$HOME"/.warp
 
 # ~/.config/nvim
 mkdir -pv "$HOME"/.config/nvim
