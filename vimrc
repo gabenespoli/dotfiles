@@ -402,7 +402,7 @@ nnoremap <C-k><C-u> :GundoToggle<CR>
 
 " tpope/vim-fugitive  {{{2
 nnoremap gs :Gedit :<CR>
-nnoremap gZ :Gdiffsplit<CR>
+nnoremap gZ :Gdiffsplit<CR>zR
 nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
 nnoremap <C-k>G :Ggrep!<Space>
