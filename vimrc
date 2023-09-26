@@ -663,9 +663,9 @@ end
 require('lspconfig').efm.setup{on_attach=on_attach}
 require('lspconfig').bashls.setup{on_attach=on_attach}
 require('lspconfig').vimls.setup{on_attach=on_attach}
-require('lspconfig').sqls.setup{
+require('lspconfig').sqlls.setup{
     on_attach=function(client, bufnr)
-        require('sqls').on_attach(client, bufnr)
+        require('sqlls').on_attach(client, bufnr)
     end,
 }
 require('lspconfig').terraformls.setup{on_attach=on_attach}
