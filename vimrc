@@ -107,6 +107,7 @@ set background=dark
 if has('nvim') | set termguicolors | endif
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'hard'
+let g:snooker_diff_high_contrast = 1
 colorscheme snooker
 
 " Some autocommands
