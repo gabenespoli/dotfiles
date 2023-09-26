@@ -302,6 +302,10 @@ nnoremap <expr> <Left><Left> &diff ? ':diffput<CR>' : '<Left><Left>'
 nnoremap <expr> <Right><Right> &diff ? ':diffput<CR>' : '<Right><Right>'
 nnoremap <expr> <Left><Right> &diff ? ':diffget<CR>' : '<Left><Right>'
 nnoremap <expr> <Right><Left> &diff ? ':diffget<CR>' : '<Right><Left>'
+vnoremap <expr> <Left><Left> &diff ? ':diffput<CR>' : '<Left><Left>'
+vnoremap <expr> <Right><Right> &diff ? ':diffput<CR>' : '<Right><Right>'
+vnoremap <expr> <Left><Right> &diff ? ':diffget<CR>' : '<Left><Right>'
+vnoremap <expr> <Right><Left> &diff ? ':diffget<CR>' : '<Right><Left>'
 
 " option mappings (co)  {{{2
 nnoremap coc :set cursorline!<CR>
