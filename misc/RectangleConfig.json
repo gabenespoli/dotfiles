@@ -27,6 +27,9 @@
     "screenEdgeGapTop" : {
       "float" : 0
     },
+    "SUEnableAutomaticChecks" : {
+      "bool" : false
+    },
     "todoSidebarWidth" : {
       "float" : 853
     },
@@ -36,43 +39,40 @@
     "fullIgnoreBundleIds" : {
 
     },
-    "disabledApps" : {
-
-    },
     "todoApplication" : {
       "string" : "org.vim.MacVim"
-    },
-    "SUEnableAutomaticChecks" : {
-      "bool" : false
     },
     "specifiedHeight" : {
       "float" : 1050
     },
-    "centeredDirectionalMove" : {
-      "int" : 0
+    "disabledApps" : {
+
     },
-    "unsnapRestore" : {
+    "centeredDirectionalMove" : {
       "int" : 0
     },
     "applyGapsToMaximize" : {
       "int" : 0
     },
-    "autoMaximize" : {
-      "int" : 0
-    },
     "snapEdgeMarginTop" : {
       "float" : 5
+    },
+    "unsnapRestore" : {
+      "int" : 0
     },
     "snapModifiers" : {
       "int" : 0
     },
-    "altThirdCycle" : {
+    "autoMaximize" : {
+      "int" : 0
+    },
+    "moveCursorAcrossDisplays" : {
       "int" : 0
     },
     "applyGapsToMaximizeHeight" : {
       "int" : 0
     },
-    "moveCursorAcrossDisplays" : {
+    "altThirdCycle" : {
       "int" : 0
     },
     "launchOnLogin" : {
@@ -81,11 +81,8 @@
     "hideMenubarIcon" : {
       "bool" : false
     },
-    "footprintFade" : {
+    "traverseSingleScreen" : {
       "int" : 0
-    },
-    "snapEdgeMarginBottom" : {
-      "float" : 5
     },
     "minimumWindowHeight" : {
       "float" : 0
@@ -93,8 +90,11 @@
     "specifiedWidth" : {
       "float" : 1680
     },
-    "traverseSingleScreen" : {
+    "footprintFade" : {
       "int" : 0
+    },
+    "snapEdgeMarginBottom" : {
+      "float" : 5
     },
     "screenEdgeGapRight" : {
       "float" : 0
@@ -105,11 +105,11 @@
     "screenEdgeGapLeft" : {
       "float" : 0
     },
-    "alternateDefaultShortcuts" : {
-      "bool" : true
-    },
     "showAllActionsInMenu" : {
       "int" : 0
+    },
+    "alternateDefaultShortcuts" : {
+      "bool" : true
     },
     "subsequentExecutionMode" : {
       "int" : 0
@@ -123,29 +123,29 @@
     "windowSnapping" : {
       "int" : 1
     },
+    "snapEdgeMarginLeft" : {
+      "float" : 5
+    },
     "todo" : {
       "int" : 1
     },
-    "snapEdgeMarginLeft" : {
+    "snapEdgeMarginRight" : {
       "float" : 5
     },
     "obtainWindowOnClick" : {
       "int" : 0
     },
-    "snapEdgeMarginRight" : {
-      "float" : 5
-    },
     "footprintColor" : {
 
     },
-    "minimumWindowWidth" : {
-      "float" : 0
+    "footprintAlpha" : {
+      "float" : 0.30000001192092896
     },
     "attemptMatchOnNextPrevDisplay" : {
       "int" : 0
     },
-    "footprintAlpha" : {
-      "float" : 0.30000001192092896
+    "minimumWindowWidth" : {
+      "float" : 0
     },
     "almostMaximizeHeight" : {
       "float" : 0.75
@@ -158,8 +158,24 @@
     }
   },
   "shortcuts" : {
-    "rightHalf" : {
-      "keyCode" : 21,
+    "lastFourth" : {
+      "keyCode" : 7,
+      "modifierFlags" : 1966080
+    },
+    "leftHalf" : {
+      "keyCode" : 20,
+      "modifierFlags" : 1966080
+    },
+    "nextDisplay" : {
+      "keyCode" : 15,
+      "modifierFlags" : 1966080
+    },
+    "firstThreeFourths" : {
+      "keyCode" : 6,
+      "modifierFlags" : 1966080
+    },
+    "maximize" : {
+      "keyCode" : 18,
       "modifierFlags" : 1966080
     },
     "previousDisplay" : {
@@ -170,32 +186,32 @@
       "keyCode" : 51,
       "modifierFlags" : 1966080
     },
-    "centerHalf" : {
-      "keyCode" : 19,
+    "lastThreeFourths" : {
+      "keyCode" : 9,
+      "modifierFlags" : 1966080
+    },
+    "bottomHalf" : {
+      "keyCode" : 17,
+      "modifierFlags" : 1966080
+    },
+    "rightHalf" : {
+      "keyCode" : 21,
+      "modifierFlags" : 1966080
+    },
+    "firstFourth" : {
+      "keyCode" : 8,
+      "modifierFlags" : 1966080
+    },
+    "almostMaximize" : {
+      "keyCode" : 50,
       "modifierFlags" : 1966080
     },
     "topHalf" : {
       "keyCode" : 23,
       "modifierFlags" : 1966080
     },
-    "maximize" : {
-      "keyCode" : 18,
-      "modifierFlags" : 1966080
-    },
-    "leftHalf" : {
-      "keyCode" : 20,
-      "modifierFlags" : 1966080
-    },
-    "almostMaximize" : {
-      "keyCode" : 17,
-      "modifierFlags" : 1966080
-    },
-    "nextDisplay" : {
-      "keyCode" : 15,
-      "modifierFlags" : 1966080
-    },
-    "bottomHalf" : {
-      "keyCode" : 22,
+    "centerHalf" : {
+      "keyCode" : 19,
       "modifierFlags" : 1966080
     }
   },
