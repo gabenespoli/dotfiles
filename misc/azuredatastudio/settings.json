@@ -4,7 +4,7 @@
     "editor.fontFamily": "'DankMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": false,
     "editor.quickSuggestions": {
-        "other": true,
+        "other": false,
         "comments": false,
         "strings": false
     },
