@@ -664,8 +664,6 @@ local on_attach = function(client, bufnr)
 end
 
 require('lspconfig').efm.setup{on_attach=on_attach}
-require('lspconfig').bashls.setup{on_attach=on_attach}
-require('lspconfig').vimls.setup{on_attach=on_attach}
 require('lspconfig').sqlls.setup{
     on_attach=function(client, bufnr)
         require('sqlls').on_attach(client, bufnr)
