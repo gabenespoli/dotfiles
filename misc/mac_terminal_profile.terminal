@@ -165,6 +165,8 @@
 	YXNzZXNWTlNGb250ohkbWE5TT2JqZWN0CBEaJCkyN0lMUVNYXmdud36FjpCSlLi9yNHY
 	2wAAAAAAAAEBAAAAAAAAABwAAAAAAAAAAAAAAAAAAADk
 	</data>
+	<key>FontHeightSpacing</key>
+	<real>0.90000000000000002</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
 	<key>SelectionColor</key>
@@ -198,5 +200,7 @@
 	<string>Snooker</string>
 	<key>type</key>
 	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<true/>
 </dict>
 </plist>
