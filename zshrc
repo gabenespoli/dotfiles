@@ -107,13 +107,14 @@ fi
 bindkey "\C-n" history-search-forward
 bindkey "\C-p" history-search-backward
 
-alias ll="ls -F"
-alias ls="ls -Flh"
-alias la="ls -Flha"
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
+alias ll="ls -FG"
+alias ls="ls -FlhG"
+alias la="ls -FlhaG"
 
 alias ta="tmux attach"
 alias exe="chmod u+x"
-alias weather="curl http://wttr.in/Kitchener"
 
 alias cl="conda env list"
 alias ca="conda deactivate && conda activate"
