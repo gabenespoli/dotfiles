@@ -29,8 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
 Plug 'justinmk/vim-dirvish'
 Plug 'roginfarrer/vim-dirvish-dovish'
-" Plug 'mrossinek/vim-dirgutter'
-Plug '~/local/vim-dirgutter'
+Plug 'mrossinek/vim-dirgutter'
 
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
@@ -38,9 +37,6 @@ Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
 Plug 'psf/black', {'for': ['python']}
 Plug 'fisadev/vim-isort', {'for': ['python']}
-Plug 'MathSquared/vim-python-sql'
-
-Plug 'hashivim/vim-terraform'
 
 " Tmux  {{{2
 Plug 'christoomey/vim-tmux-navigator'
