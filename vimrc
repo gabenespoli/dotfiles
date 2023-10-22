@@ -102,7 +102,7 @@ set guifont=DankMono\ Nerd\ Font\ Mono:h15,DankMono:h15,IBMPlexMono:h15,Menlo:h1
 
 " Colors
 set background=dark
-if has('nvim') | set termguicolors | endif
+if has('nvim') && exists('$TMUX') | set termguicolors | endif
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'hard'
 let g:snooker_diff_high_contrast = 1
