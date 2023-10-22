@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorTheme": "Default Dark Modern",
     "editor.cursorBlinking": "solid",
     "editor.fontFamily": "'DankMono Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": false,
@@ -111,7 +111,7 @@
                 "azureAccount": "3bb0bbec-cd22-4eae-8424-dc83a3688ae9.f1ed0701-294e-404c-a13b-f81f707f845b",
                 "azureResourceId": "/subscriptions/584cbd32-9801-40d5-9f86-9f777b6815b1/resourceGroups/CH-SO-ACE-PROD/providers/Microsoft.Sql/servers/sqlsvr-prod-westeu/databases/sqldb-sherlockstaging-westeu",
                 "azurePortalEndpoint": "https://portal.azure.com",
-                "expiresOn": 1696450719,
+                "expiresOn": 1697810353,
                 "originalDatabase": "sqldb-sherlockstaging-westeu",
                 "groupId": "C777F06B-202E-4480-B475-FA416154D458",
                 "databaseDisplayName": "sqldb-sherlockstaging-westeu"
@@ -122,5 +122,6 @@
             "id": "37eb8247-648d-4f43-af9e-850a8c59f4b1"
         }
     ],
-    "window.zoomLevel": 1
+    "workbench.enablePreviewFeatures": true,
+    "workbench.preferredDarkColorTheme": "Default Dark Modern"
 }
