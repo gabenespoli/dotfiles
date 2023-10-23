@@ -109,9 +109,9 @@ bindkey "\C-p" history-search-backward
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
-alias ll="ls -FG"
-alias ls="ls -FlhG"
-alias la="ls -FlhaG"
+alias ll="ls -F"
+alias ls="ls -Flh"
+alias la="ls -Flha"
 
 alias ta="tmux attach"
 alias exe="chmod u+x"
