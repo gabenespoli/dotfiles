@@ -196,6 +196,8 @@
 	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>VisualBell</key>
+	<false/>
 	<key>name</key>
 	<string>Snooker</string>
 	<key>type</key>
