@@ -722,4 +722,17 @@ augroup END
 " nvim-treesitter/playground  {{{2
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
+" else if no nvim
+else
+
+" junegunn/fzf.vim
+nmap <C-p>        :GFiles<CR>
+nmap <C-k><C-b>   :Buffers<CR>
+nmap <C-k><C-g>   :Rg<CR>
+nmap <C-k><C-f>   :Files<CR>
+nmap <C-k><C-h>   :BCommits<CR>
+nmap <C-k><C-l>   :Commits<CR>
+nmap <C-k><C-o>   :History<CR>
+nmap <C-k><C-s>   :GFiles?<CR>
+
 endif
