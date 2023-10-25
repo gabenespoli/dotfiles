@@ -80,7 +80,7 @@ ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
-nvim +PlugInstall -c "TSInstall! python sql bash json vim" +qall
+nvim +PlugInstall -c "TSInstall! python sql bash json vim lua" +qall
 
 echo "" && echo "-- Setting up vim..."
 mkdir -pv "$HOME"/.vim
