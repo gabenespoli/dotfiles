@@ -24,7 +24,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'sjl/gundo.vim'
 
 " Git & Files  {{{2
-Plug 'tpope/vim-fugitive', {'tag': 'v3.7'}
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbong/vim-flog'
 Plug 'justinmk/vim-dirvish'
@@ -34,7 +34,7 @@ Plug 'mrossinek/vim-dirgutter'
 " Python  {{{2
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
-Plug 'gabenespoli/vim-pythonsense', {'for': ['python'], 'branch': 'dev'}
+Plug 'gabenespoli/vim-pythonsense', {'for': ['python']}
 Plug 'psf/black', {'for': ['python']}
 Plug 'fisadev/vim-isort', {'for': ['python']}
 
