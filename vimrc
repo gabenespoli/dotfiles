@@ -12,6 +12,13 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Helper function to conditionally load plugins
+" https://github.com/junegunn/vim-plug/wiki/tips#conditional-activation
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
 call plug#begin()
 
 " Editing  {{{2
@@ -48,16 +55,13 @@ Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-jupycent'
 
 " Lua Plugins  {{{2
-if has('nvim')
-  Plug 'ibhagwan/fzf-lua'
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/playground'
-else
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-endif
+Plug 'ibhagwan/fzf-lua', Cond(has('nvim'))
+Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim'))
+Plug 'neovim/nvim-lspconfig', Cond(has('nvim'))
+Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim'), {'do': ':TSUpdate'})
+Plug 'nvim-treesitter/playground', Cond(has('nvim'))
+Plug 'junegunn/fzf', Cond(!has('nvim'))
+Plug 'junegunn/fzf.vim', Cond(!has('nvim'))
 
 call plug#end()
 
