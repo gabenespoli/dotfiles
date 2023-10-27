@@ -398,9 +398,6 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
-" sjl/gundo.vim  {{{2
-nnoremap <C-k><C-u> :GundoToggle<CR>
-
 " tpope/vim-fugitive  {{{2
 nnoremap gs :Gedit :<CR>
 nnoremap gZ :Gdiffsplit<CR>zR
