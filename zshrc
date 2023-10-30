@@ -104,8 +104,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-bindkey "\C-n" history-search-forward
-bindkey "\C-p" history-search-backward
+bindkey "^N" history-search-forward
+bindkey "^P" history-search-backward
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
