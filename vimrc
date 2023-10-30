@@ -21,45 +21,47 @@ endfunction
 
 call plug#begin()
 
-" Editing  {{{2
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dotenv'
+" Editing
+Plug 'tpope/vim-rsi', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-eunuch', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-repeat', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-commentary', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-dotenv', Cond(!exists('g:vscode'))
 Plug 'machakann/vim-sandwich'
-Plug 'sjl/gundo.vim'
+Plug 'github/copilot.vim', Cond(!exists('g:vscode'))
 
-" Git & Files  {{{2
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'rbong/vim-flog'
-Plug 'justinmk/vim-dirvish'
-Plug 'roginfarrer/vim-dirvish-dovish'
-Plug 'mrossinek/vim-dirgutter'
+" Git & Files
+Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
+Plug 'airblade/vim-gitgutter', Cond(!exists('g:vscode'))
+Plug 'rbong/vim-flog', Cond(!exists('g:vscode'))
+Plug 'justinmk/vim-dirvish', Cond(!exists('g:vscode'))
+Plug 'roginfarrer/vim-dirvish-dovish', Cond(!exists('g:vscode'))
+Plug 'mrossinek/vim-dirgutter', Cond(!exists('g:vscode'))
 
-" Python  {{{2
-Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
-Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
-Plug 'gabenespoli/vim-pythonsense', {'for': ['python']}
+" Python
+Plug 'Vimjas/vim-python-pep8-indent', Cond(!exists('g:vscode'), {'for': ['python']})
+Plug 'kalekundert/vim-coiled-snake', Cond(!exists('g:vscode'), {'for': ['python']})
+Plug 'gabenespoli/vim-pythonsense', Cond(!exists('g:vscode'), {'for': ['python']})
+" Plug 'psf/black', Cond(!exists('g:vscode'), {'for': ['python']})
+" Plug 'fisadev/vim-isort', Cond(!exists('g:vscode'), {'for': ['python']})
 Plug 'psf/black', {'for': ['python']}
 Plug 'fisadev/vim-isort', {'for': ['python']}
 
-" Tmux  {{{2
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
+" Tmux
+Plug 'christoomey/vim-tmux-navigator', Cond(!exists('g:vscode'))
+Plug 'jpalardy/vim-slime', Cond(!exists('g:vscode'))
 
-" My Plugins  {{{2
-Plug 'gabenespoli/vim-mutton'
-Plug 'gabenespoli/vim-tabsms'
-Plug 'gabenespoli/vim-jupycent'
+" My Plugins
+Plug 'gabenespoli/vim-mutton', Cond(!exists('g:vscode'))
+Plug 'gabenespoli/vim-tabsms', Cond(!exists('g:vscode'))
+Plug 'gabenespoli/vim-jupycent', Cond(!exists('g:vscode'))
 
-" Lua Plugins  {{{2
-Plug 'ibhagwan/fzf-lua', Cond(has('nvim'))
-Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim'))
-Plug 'neovim/nvim-lspconfig', Cond(has('nvim'))
-Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim'), {'do': ':TSUpdate'})
-Plug 'nvim-treesitter/playground', Cond(has('nvim'))
+" " Lua Plugins
+Plug 'ibhagwan/fzf-lua', Cond(has('nvim') && !exists('g:vscode'))
+Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim') && !exists('g:vscode'))
+Plug 'neovim/nvim-lspconfig', Cond(has('nvim') && !exists('g:vscode'))
+Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim') && !exists('g:vscode'), {'do': ':TSUpdate'})
+Plug 'nvim-treesitter/playground', Cond(has('nvim') && !exists('g:vscode'))
 Plug 'junegunn/fzf', Cond(!has('nvim'))
 Plug 'junegunn/fzf.vim', Cond(!has('nvim'))
 
@@ -106,8 +108,6 @@ set guifont=DankMono\ Nerd\ Font\ Mono:h15,DankMono:h15,IBMPlexMono:h15,Menlo:h1
 " Colors
 set background=dark
 if has('nvim') && exists('$TMUX') | set termguicolors | endif
-let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark = 'hard'
 let g:snooker_diff_high_contrast = 1
 colorscheme snooker
 
@@ -115,7 +115,7 @@ colorscheme snooker
 augroup general
   autocmd!
 
-  " open help in a vertial split
+  " open help in a vertical split
   autocmd FileType help wincmd L
 
   " open qf window after qf search
@@ -173,7 +173,7 @@ function! GitStatuslineEnd() abort
 endfunction
 
 function! Devicon() abort
-  if !has('nvim')
+  if !has('nvim') || exists('g:vscode')
     return ''
   endif
   if stridx(expand('%:p'), '.git') != -1
@@ -436,7 +436,7 @@ function! GitGutterFoldToggle()
 endfunction
 
 " map combining nvim lsp diagnostics with gitgutter preview
-if has('nvim')
+if has('nvim') && !exists('g:vscode')
 lua << EOF
 function _G.has_line_diagnostic(bufnr, line_nr)
   local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
@@ -496,6 +496,7 @@ augroup END
 
 " christoomey/vim-tmux-navigator  {{{2
 let g:tmux_navigator_no_mappings = 1
+
 if !has('nvim')
   if has('mac')
     execute "set <M-h>=\eh"
@@ -532,7 +533,7 @@ else
   vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
   vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
   vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-  if has('nvim')
+  if has('nvim') && !exists('g:vscode')
     tnoremap <silent> <M-h> <C-\><C-N>:TmuxNavigateLeft<CR>
     tnoremap <silent> <M-j> <C-\><C-N>:TmuxNavigateDown<CR>
     tnoremap <silent> <M-k> <C-\><C-N>:TmuxNavigateUp<CR>
@@ -566,7 +567,7 @@ highlight! link TabMod DiffText
 highlight! link TabModSel TabMod
 
 " Lua Plugins  {{{1
-if has('nvim')
+if has('nvim') && !exists('g:vscode')
 lua << EOF
 
 -- ibhagwan/fzf-lua  {{{2
@@ -723,7 +724,7 @@ augroup END
 " nvim-treesitter/playground  {{{2
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
-" else if no nvim
+" else if no nvim (and no vscode)
 else
 
 " junegunn/fzf.vim
@@ -736,4 +737,21 @@ nmap <C-k><C-l>   :Commits<CR>
 nmap <C-k><C-o>   :History<CR>
 nmap <C-k><C-s>   :GFiles?<CR>
 
+" end if nvim (and no vscode)
+endif
+
+" some vscode remappings
+if exists('g:vscode')
+xmap gc  <Plug>VSCodeCommentary
+nmap gc  <Plug>VSCodeCommentary
+omap gc  <Plug>VSCodeCommentary
+nmap gcc <Plug>VSCodeCommentaryLine
+nnoremap q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
+nnoremap <C-w><C-d> <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
+nnoremap gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
+nmap <C-k><C-g> <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
+nnoremap <M-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<CR>
+nnoremap <M-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<CR>
+nnoremap <M-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<CR>
+nnoremap <M-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<CR>
 endif
