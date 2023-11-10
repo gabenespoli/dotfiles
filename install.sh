@@ -43,8 +43,8 @@ npm install -g pyright
 
 # # other brew installs from before
 # brew install bash readline
-# brew install coreutils findutils grep gnu-sed gawk wget
-# brew install jq cloc tree
+brew install coreutils findutils grep gnu-sed gawk wget
+brew install jq cloc tree
 # brew install openssh openssl
 # brew install pandoc pandoc-citeproc pandoc-crossref basictex xpdf
 
