@@ -138,6 +138,7 @@ fi
 alias ta="tmux attach"
 alias lt="tree -L 2 --dirsfirst"
 alias exe="chmod u+x"
+alias fold="fold -s"
 
 alias cl="conda env list"
 alias ca="conda deactivate && conda activate"
