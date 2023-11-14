@@ -34,6 +34,7 @@ if expand('%:t') ==? 'karabiner.json'
     endif
   endfunction
 else
-  setlocal foldmethod=syntax
+  setlocal foldmethod=expr
+  setlocal foldexpr=nvim_treesitter#foldexpr()
 endif
 
