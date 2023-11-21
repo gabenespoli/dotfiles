@@ -120,21 +120,6 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
 
-if hash gls 2> /dev/null; then
-  # overwrite builtins with gnu ones if they are installed
-  for gnu in coreutils findutils grep gnu-sed gawk; do
-    export PATH="/usr/local/opt/$gnu/libexec/gnubin:$PATH"
-    export MANPATH="/usr/local/opt/$gnu/libexec/gnuman:$MANPATH"
-  done
-  alias ll="gls -F --color --group-directories-first"
-  alias ls="gls -Flh --color --group-directories-first"
-  alias la="gls -Flha --color --group-directories-first"
-else
-  alias ll="ls -F"
-  alias ls="ls -Flh"
-  alias la="ls -Flha"
-fi
-
 alias ta="tmux attach"
 alias lt="tree -L 2 --dirsfirst"
 alias exe="chmod u+x"
