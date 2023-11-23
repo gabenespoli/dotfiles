@@ -13,13 +13,6 @@ if [ -f /etc/profile ]; then
       export PATH="$HOMEBREW_PREFIX/opt/$gnu/libexec/gnubin:$PATH"
       export MANPATH="$HOMEBREW_PREFIX/opt/$gnu/libexec/gnuman:$MANPATH"
     done
-    alias ll="gls -F --color --group-directories-first"
-    alias ls="gls -Flh --color --group-directories-first"
-    alias la="gls -Flha --color --group-directories-first"
-  else
-    alias ll="ls -F"
-    alias ls="ls -Flh"
-    alias la="ls -Flha"
   fi
 
   # >>> conda initialize >>>
@@ -160,6 +153,16 @@ export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
+
+if hash gls 2> /dev/null; then
+  alias ll="gls -F --color --group-directories-first"
+  alias ls="gls -Flh --color --group-directories-first"
+  alias la="gls -Flha --color --group-directories-first"
+else
+  alias ll="ls -F"
+  alias ls="ls -Flh"
+  alias la="ls -Flha"
+fi
 
 alias ta="tmux attach"
 alias lt="tree -L 2 --dirsfirst"
