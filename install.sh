@@ -18,15 +18,19 @@
 # - [ ] Setup github auth with access tokens
 
 # general terminal stuff
-brew install neovim
-brew install tmux
-brew install htop
-brew install trash
-brew install fzf
+brew install coreutils findutils grep gnu-sed gawk wget
 brew install fd
 brew install ripgrep
-brew install bat
+brew install htop
 brew install lf
+brew install tree
+brew install trash
+brew install fzf
+brew install bat
+brew install jq
+brew install cloc
+brew install tmux
+brew install neovim
 
 # language server stuff
 brew install efm-langserver
@@ -40,13 +44,7 @@ npm install -g pyright
 # brew install golang
 # go install github.com/lighttiger2505/sqls@latest
 # go install github.com/denisenkom/go-mssqldb
-
-# # other brew installs from before
-# brew install bash readline
-brew install coreutils findutils grep gnu-sed gawk wget
-brew install jq cloc tree
-# brew install openssh openssl
-# brew install pandoc pandoc-citeproc pandoc-crossref basictex xpdf
+# go install github.com/microsoft/go-mssqldb@latest
 
 # # brew cask installs from before
 # brew install --cask karabiner-elements
@@ -74,7 +72,6 @@ echo "" && echo "-- Setting up tmux..."
 ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
-
 
 echo "" && echo "-- Setting up neovim..."
 mkdir -pv "$HOME"/.config/nvim
@@ -118,4 +115,12 @@ ln -sfv "$HOME"/dotfiles/misc/azuredatastudio/settings.json "$HOME"/Library/Appl
 # https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.azuredatastudio.oss ApplePressAndHoldEnabled -bool false
+
+echo "" && echo "-- Installing Microsoft ODBC..."
+# https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos
+brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+brew update
+HOMEBREW_ACCEPT_EULA=Y brew install msodbcsql17
+# brew install mssql-tools # install sqlcmd and bcp
+# brew install sqlcmd # install the go version of sqlcmd
 
