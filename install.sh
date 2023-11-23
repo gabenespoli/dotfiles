@@ -108,7 +108,7 @@ echo "" && echo "-- Creating python environment for neovim..."
 conda create -y -n neovim
 conda deactivate && conda activate neovim
 conda install -y python
-pip install pynvim
+pip install pynvim black isort
 
 echo "" && echo "-- Setting up Azure Data Studio..."
 ln -sfv "$HOME"/dotfiles/misc/azuredatastudio/settings.json "$HOME"/Library/Application\ Support/azuredatastudio/User/settings.json
