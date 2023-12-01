@@ -43,9 +43,7 @@ augroup highlight_databricks_cells_as_titles
         \ | hi! link DatabricksCellMarker Title
 augroup END
 
-function! DatabricksFolds(lnum)
-  " if getline(a:lnum) =~# '^# MAGIC %md #'
-  "   return '>1'
+function! DatabricksFoldsCells(lnum)
   if getline(a:lnum) =~# '^# COMMAND ----------$'
     return '>1'
   else
@@ -53,10 +51,41 @@ function! DatabricksFolds(lnum)
   endif
 endfunction
 
-function! EnableDatabricksFolding()
+function! EnableDatabricksFoldingCells()
   setlocal foldmethod=expr
-  setlocal foldexpr=DatabricksFolds(v:lnum)
+  setlocal foldexpr=DatabricksFoldsCells(v:lnum)
   setlocal foldtext=getline(v:foldstart+2)
 endfunction
 
-nnoremap <localleader>Fe :call EnableDatabricksFolding()<CR>
+nnoremap coFc :call EnableDatabricksFoldingCells()<CR>
+
+function! DatabricksFoldsMarkdown(lnum)
+  if getline(a:lnum) =~# '^# MAGIC %md # '
+    return '>1'
+  elseif getline(a:lnum) =~# '^# MAGIC %md ## '
+    return '>2'
+  elseif getline(a:lnum) =~# '^# MAGIC %md ### '
+    return '>3'
+  elseif getline(a:lnum) =~# '^# MAGIC %md #### '
+    return '>4'
+  elseif getline(a:lnum) =~# '^# MAGIC %md ##### '
+    return '>5'
+  elseif getline(a:lnum) =~# '^# MAGIC %md ###### '
+    return '>6'
+  else
+    return '='
+  endif
+endfunction
+
+function! EnableDatabricksFoldingMarkdown()
+  setlocal foldmethod=expr
+  setlocal foldexpr=DatabricksFoldsMarkdown(v:lnum)
+  setlocal foldtext=getline(v:foldstart)
+  nnoremap <buffer> zf :lvimgrep '^# MAGIC %md #' %<CR>:botright lopen<CR>
+endfunction
+
+nnoremap coFm :call EnableDatabricksFoldingMarkdown()<CR>
+
+if getline(1) == '# Databricks notebook source'
+  call EnableDatabricksFoldingMarkdown()
+endif
