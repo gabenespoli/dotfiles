@@ -35,8 +35,6 @@ Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
 Plug 'airblade/vim-gitgutter', Cond(!exists('g:vscode'))
 Plug 'rbong/vim-flog', Cond(!exists('g:vscode'))
 Plug 'justinmk/vim-dirvish', Cond(!exists('g:vscode'))
-Plug 'roginfarrer/vim-dirvish-dovish', Cond(!exists('g:vscode'))
-Plug 'mrossinek/vim-dirgutter', Cond(!exists('g:vscode'))
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent', Cond(!exists('g:vscode'), {'for': ['python']})
