@@ -174,16 +174,12 @@ function! Devicon() abort
   if !has('nvim') || exists('g:vscode')
     return ''
   endif
-  if stridx(expand('%:p'), '.git') != -1
-    return ' '
+  let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
+        \ . '"' . expand('%:t') . '", "' . expand('%:e') . '"))')
+  if l:icon[1:3] == ''
+    return ''
   else
-    let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
-          \ . '"' . expand('%:t') . '", "' . expand('%:e') . '"))')
-    if l:icon[1:3] == ''
-      return ''
-    else
-      return l:icon[1:3] . ' '
-    endif
+    return l:icon[1:3] . ' '
   endif
 endfunction
 
