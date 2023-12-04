@@ -81,6 +81,9 @@ else
   export EDITOR='nvim'
 fi
 
+# Print output in terminal, don't enter a pager
+export PAGER=""
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
