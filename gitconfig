@@ -2,7 +2,6 @@
   st = !"git-st"
   br = "branch"
   co = "checkout"
-  cob = "checkout -b"
   cp = "cherry-pick"
   r = "rebase"
   ri = "rebase --interactive"
@@ -11,25 +10,13 @@
   lg = "log --oneline --date=short --format='%C(6)%cd%C(auto) %h%d %s %C(8)(%an)' --graph" 
   lga = "log --oneline --date=short --format='%C(6)%cd%C(auto) %h%d %s %C(8)(%an)' --graph --all" 
   mg = "!f() { var=$(git symbolic-ref --short HEAD) && printf 'Merge branch %s into %s\n\nCommits from this branch:\n' $1 $var > temp_merge_msg && git log --first-parent --format='- %s' $var..$1 >> temp_merge_msg && git merge --no-ff --no-commit $1 && git commit -eF temp_merge_msg; rm -f temp_merge_msg;}; f" 
-  mergelogmsg = "!f() { var=$(git symbolic-ref --short HEAD) && printf 'Merge branch %s into %s\n\n::SUMMARY::\nBranch %s commits:\n' $1 $var $1 > temp_merge_msg && git log --format=format:'%s' $var..$1 >> temp_merge_msg && printf '\n\nBranch %s commits:\n' $var >> temp_merge_msg && git log --format=format:'%s' $1..$var >> temp_merge_msg && printf '\n\n* * * * * * * * * * * * * * * * * * * * * * * * *\n::DETAILS::\n' >> temp_merge_msg && git log --left-right $var...$1 >> temp_merge_msg && git merge --no-ff --no-commit $1 && git commit -eF temp_merge_msg; rm -f temp_merge_msg;}; f" 
-  mergerelease = "!f() { var=$(git symbolic-ref --short HEAD) && printf 'Release %s\n\n' $1 > temp_merge_msg && git log --reverse --format=format:'%s' $var..'release/'$1 >> temp_merge_msg && git merge --no-ff --no-commit 'release/'$1 && git commit -eF temp_merge_msg; rm -f temp_merge_msg; git tag $1;}; f" 
-	ctags = !.git/hooks/ctags
 [user]
 	name = Gabe Nespoli
-	email = gabe.nespoli@sonova.com
 [color.decorate]
   branch = 10
   remoteBranch = 2
   tag = 9
   stash = 6
   HEAD = 13
-[init]
-	; templatedir = ~/.git_template
-	defaultBranch = main
 [credential]
 	helper = osxkeychain
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
