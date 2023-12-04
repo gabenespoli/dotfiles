@@ -278,6 +278,7 @@ nnoremap z/ :lvimgrep // %<CR>:botright lopen<CR>
 nnoremap <silent> <expr> <leader>q
       \ empty(filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')) ?
       \ ':botright copen<CR>' : ':cclose<CR>'
+nmap <silent> dq <leader>q
 nnoremap <silent> <expr> <leader>l
       \ empty(filter(getwininfo(), 'v:val.quickfix && v:val.loclist')) ?
       \ ':botright lopen<CR>' : ':lclose<CR>'
