@@ -604,32 +604,29 @@ require 'fzf-lua'.setup{
 require('nvim-web-devicons').setup{}
 
 -- neovim/nvim-lspconfig  {{{2
+-- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#completion-kinds
 require('vim.lsp.protocol').CompletionItemKind = {
-  ' Text', -- Text 
-  ' Method', -- Method 
-  ' Function', -- Function
-  ' Constructor', -- Constructor
-  ' Field', -- Field ﰠ
-  ' Variable', -- Variable
-  'פּ Class', -- Class ﴯפּ
-  'ﰮ Interface', -- Interface ﰮ
-  ' Module', -- Module
-  ' Property', -- Property
-  ' Unit', -- Unit
-  ' Value', -- Value
-  ' Enum', -- Enum
-  ' Keyword', -- Keyword 
-  '﬌ Snippet', -- Snippet ﬌
-  ' Color', -- Color
-  ' File', -- File 
-  ' Reference', -- Reference 
-  ' Folder', -- Folder 
-  ' EnumMember', -- EnumMember
-  ' Constant', -- Constant
-  ' Struct', -- Struct 
-  ' Event', -- Event
-  ' Operator', -- Operator
-  ' TypeParameter', -- TypeParameter
+  ' Class',
+  ' Color',
+  ' Constant',
+  ' Constructor',
+  ' Enum',
+  ' EnumMember',
+  '󰄶 Field',
+  ' File',
+  ' Folder',
+  ' Function',
+  '󰜰 Interface',
+  '󰌆 Keyword',
+  'ƒ Method',
+  '󰏗 Module',
+  ' Property',
+  '󰘍 Snippet',
+  ' Struct',
+  ' Text',
+  ' Unit',
+  '󰎠 Value',
+  ' Variable',
 }
 
 -- Setup lsp diagnostics  {{{2
