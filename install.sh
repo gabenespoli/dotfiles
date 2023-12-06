@@ -55,9 +55,13 @@ npm install -g pyright
 # install oh my zsh (https://ohmyz.sh/#install)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# install powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 echo "" && echo "-- Setting up terminal..."
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 # ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
+ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config/
 
 # install fzf-tab for zsh
