@@ -58,7 +58,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "" && echo "-- Setting up terminal..."
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 # ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
-ln -sfv "$HOME"/dotfiles/config/bat "$HOME"/.config/
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config/
 ln -sfv "$HOME"/dotfiles/config/pudb "$HOME"/.config/
 
