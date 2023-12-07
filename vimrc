@@ -267,8 +267,8 @@ endif
 " search for conflict markers
 nnoremap <silent> cx /^<<<<<<< .*$\\|^=======\\|^\|\|\|\|\|\|\|\\|^>>>>>>> .*$<CR>:set hlsearch<CR>
 
-" open a note with this Monday's date
-nnoremap <C-k><C-n> :e ~/notes/<C-R>=system('date -d last-monday +%Y')<CR><BS>/<C-R>=system('date -d last-monday +%Y%m%d')<CR><BS>.txt<CR>
+" open a note for the current quarter
+nnoremap <C-k><C-n> :e ~/notes/<C-R>=system('echo $(/bin/date +%YQ)$(($(/bin/date +%m)/4+1))')<CR><BS>.txt<CR>
 
 " quickfix & location list {{{2
 " add last search to location list
