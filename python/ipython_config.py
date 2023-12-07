@@ -146,14 +146,14 @@ class MyPrompt(Prompts):  # noqa: D101
     def in_prompt_tokens(self, cli=None):  # noqa: D102
         return [
             (Token.PromptTime, datetime.now().strftime("%m-%d %H:%M")),
-            (Token.PromptText, " >>>"),
+            (Token.PromptText, " ❯❯❯"),
             (Token.PromptSpace, " "),
         ]
 
     def out_prompt_tokens(self, cli=None):  # noqa: D102
         return [
             (Token.OutPromptTime, datetime.now().strftime("%H:%M")),
-            (Token.OutPromptText, " >>>"),
+            (Token.OutPromptText, " ❯❯❯"),
             (Token.PromptSpace, " "),
         ]
 
