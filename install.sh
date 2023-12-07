@@ -75,6 +75,9 @@ ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
 
+# Setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
+tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
+
 echo "" && echo "-- Setting up neovim..."
 mkdir -pv "$HOME"/.config/nvim
 ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.config/nvim/init.vim
