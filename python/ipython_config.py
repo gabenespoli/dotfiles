@@ -124,11 +124,11 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Token.OutPrompt: orange,
     Token.OutPromptNum: orange,
     Token.PromptTime: f"bg:{bg_light} {fg}",
-    Token.PromptText: f"bg:{bg_light} {blue}",
+    Token.PromptText: f"{blue}",
     Token.PromptContinuation: blue,
     Token.PromptSpace: fg,
     Token.OutPromptTime: f"bg:{bg_light} {fg}",
-    Token.OutPromptText: f"bg:{bg_light} {purple}",
+    Token.OutPromptText: f"{purple}",
     "matching-bracket.cursor": f"bg:{fg_com} {bg}",
     "matching-bracket.other": f"bg:{fg_com} {bg}",
     Punctuation: brown,
@@ -145,14 +145,14 @@ class MyPrompt(Prompts):  # noqa: D101
     # https://ipython.readthedocs.io/en/stable/config/details.html#custom-prompts
     def in_prompt_tokens(self):
         return [
-            (Token.PromptTime, datetime.now().strftime("%m-%d %H:%M")),
+            (Token.PromptTime, datetime.now().strftime("%H:%M:%S")),
             (Token.PromptText, " ❯❯❯"),
             (Token.PromptSpace, " "),
         ]
 
     def out_prompt_tokens(self):
         return [
-            (Token.OutPromptTime, datetime.now().strftime("%H:%M")),
+            (Token.OutPromptTime, datetime.now().strftime("%H:%M:%S")),
             (Token.OutPromptText, " ❯❯❯"),
             (Token.PromptSpace, " "),
         ]
