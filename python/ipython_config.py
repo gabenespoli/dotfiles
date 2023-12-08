@@ -143,14 +143,14 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
 
 class MyPrompt(Prompts):  # noqa: D101
     # https://ipython.readthedocs.io/en/stable/config/details.html#custom-prompts
-    def in_prompt_tokens(self, cli=None):  # noqa: D102
+    def in_prompt_tokens(self):
         return [
             (Token.PromptTime, datetime.now().strftime("%m-%d %H:%M")),
             (Token.PromptText, " ❯❯❯"),
             (Token.PromptSpace, " "),
         ]
 
-    def out_prompt_tokens(self, cli=None):  # noqa: D102
+    def out_prompt_tokens(self):
         return [
             (Token.OutPromptTime, datetime.now().strftime("%H:%M")),
             (Token.OutPromptText, " ❯❯❯"),
