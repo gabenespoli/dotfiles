@@ -62,7 +62,8 @@ echo "" && echo "-- Setting up terminal..."
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 # ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
-ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config/
+mkdir -pv "$HOME"/.config/lf
+ln -sfv "$HOME"/dotfiles/lfrc "$HOME"/.config/lf/lfrc
 
 # install fzf-tab for zsh
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
