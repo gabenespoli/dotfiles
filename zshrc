@@ -130,6 +130,8 @@ else
   alias la="ls -Flha"
 fi
 
+alias le="eza -l --group-directories-first --no-permissions --no-user --no-time --icons --git --git-repos --git-ignore"
+
 alias ta="tmux attach"
 alias lt="tree -L 2 --dirsfirst"
 alias exe="chmod u+x"
