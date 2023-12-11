@@ -23,6 +23,7 @@ brew install fd
 brew install ripgrep
 brew install htop
 brew install lf
+brew install eza
 brew install tree
 brew install trash
 brew install fzf
