@@ -1,6 +1,8 @@
 """iPython config."""
 
+import os
 import readline
+import shutil
 import subprocess
 from datetime import datetime
 
@@ -119,16 +121,16 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     String.Doc: cyan,
     String.Escape: orange,
     String.Interpol: cyan,
-    Token.Prompt: green,
-    Token.PromptNum: green,
+    Token.Prompt: blue,
+    Token.PromptNum: bg_light,
     Token.OutPrompt: orange,
     Token.OutPromptNum: orange,
-    Token.PromptTime: f"bg:{bg_light} {fg}",
-    Token.PromptText: f"{blue}",
-    Token.PromptContinuation: blue,
+    Token.PromptTime: cyan,
+    Token.PromptText: green,
+    Token.PromptContinuation: fg_com,
     Token.PromptSpace: fg,
-    Token.OutPromptTime: f"bg:{bg_light} {fg}",
-    Token.OutPromptText: f"{purple}",
+    # Token.OutPromptTime: f"bg:{bg_light} {fg}",
+    Token.OutPromptText: yellow,
     "matching-bracket.cursor": f"bg:{fg_com} {bg}",
     "matching-bracket.other": f"bg:{fg_com} {bg}",
     Punctuation: brown,
@@ -143,25 +145,49 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
 
 class MyPrompt(Prompts):  # noqa: D101
     # https://ipython.readthedocs.io/en/stable/config/details.html#custom-prompts
+    def prompt_setup(self, update_time: bool = True):
+        homedir = os.path.expanduser("~")
+        self.cwd = os.getcwd().replace(homedir, "~")
+
+        if hasattr(self, "current_time"):
+            self.execution_time = datetime.now() - self.current_time
+        else:
+            self.execution_time = ""
+
+        if update_time:
+            self.current_time = datetime.now()
+            self.timestr = datetime.now().strftime("%H:%M:%S")
+
+        self.terminal_width = shutil.get_terminal_size().columns
+        self.line_width = (
+            self.terminal_width - self.cwd.__len__() - self.timestr.__len__() - 5 - 14
+        )
+
     def in_prompt_tokens(self):
+        self.prompt_setup()
         return [
-            (Token.PromptTime, datetime.now().strftime("%H:%M:%S")),
-            (Token.PromptText, " ❯❯❯"),
+            (Token.OutPromptText, "󰌠 "),
+            (Token.Prompt, self.cwd),
+            (Token.PromptSpace, " "),
+            (Token.PromptNum, "─" * self.line_width),
+            (Token.PromptSpace, " "),
+            (Punctuation, f"{self.execution_time}"),
+            (Token.PromptSpace, " "),
+            (Token.PromptTime, self.timestr),
+            (Token.PromptSpace, " \n"),
+            (Token.PromptText, "❯❯❯"),
             (Token.PromptSpace, " "),
         ]
 
     def out_prompt_tokens(self):
-        return [
-            (Token.OutPromptTime, datetime.now().strftime("%H:%M:%S")),
-            (Token.OutPromptText, " ❯❯❯"),
-            (Token.PromptSpace, " "),
-        ]
+        self.prompt_setup(update_time=False)
+        return []
 
     def continuation_prompt_tokens(self, width=None):  # noqa: D102
         if width is None:
             width = self._width()
         return [
-            (Token.PromptContinuation, (" " * (width - 5)) + " ..."),
+            (Token.PromptContinuation, (" " * (width - 5)) + "..."),
             (Token.PromptSpace, " "),
         ]
 
