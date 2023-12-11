@@ -131,9 +131,10 @@ else
 fi
 
 alias le="eza -l --group-directories-first --no-permissions --no-user --no-time --icons --git --git-repos --git-ignore"
+alias lt="eza -l --group-directories-first --no-permissions --no-user --no-time --icons --git --git-repos --git-ignore --tree"
 
 alias ta="tmux attach"
-alias lt="tree -L 2 --dirsfirst"
+alias lT="tree -L 2 --dirsfirst"
 alias exe="chmod u+x"
 alias fold="fold -s"
 
