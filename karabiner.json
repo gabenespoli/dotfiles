@@ -50,7 +50,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
@@ -86,7 +86,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
@@ -125,7 +125,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim"
@@ -160,7 +160,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^org\\.vim\\.MacVim"
@@ -194,7 +194,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim"
@@ -228,7 +228,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim"
@@ -267,7 +267,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
@@ -311,7 +311,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$",
@@ -353,7 +353,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^org.\\.rstudio\\.RStudio$",
                                             "^com\\.apple\\.ScreenSharing$",
@@ -397,7 +397,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
@@ -445,7 +445,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
@@ -529,7 +529,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -564,7 +564,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -606,7 +606,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -641,7 +641,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -683,7 +683,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -718,7 +718,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -760,7 +760,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
@@ -5119,7 +5119,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.apple\\.Terminal$"
                                         ],
                                         "type": "frontmost_application_if"
@@ -5151,7 +5151,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.apple\\.Terminal$"
                                         ],
                                         "type": "frontmost_application_if"
@@ -5183,7 +5183,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.apple\\.Terminal$"
                                         ],
                                         "type": "frontmost_application_if"
@@ -6097,7 +6097,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^io\\.alacritty$"
+                                            "^org\\.alacritty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -6124,7 +6124,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^io\\.alacritty$"
+                                            "^org\\.alacritty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -6151,7 +6151,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^io\\.alacritty$"
+                                            "^org\\.alacritty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
