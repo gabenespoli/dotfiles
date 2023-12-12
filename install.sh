@@ -69,6 +69,8 @@ ln -sfv "$HOME"/dotfiles/lfrc "$HOME"/.config/lf/lfrc
 # install fzf-tab for zsh
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
+mkdir -p "$HOME"/.config/karabiner
+ln -sfv "$HOME"/dotfiles/karabiner.json "$HOME"/.config/karabiner/karabiner.json
 ln -sfv "$HOME"/dotfiles/config/karabiner/karabiner.json "$HOME"/.config/karabiner/karabiner.json
 ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
 
