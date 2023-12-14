@@ -6,8 +6,8 @@ syntax match TotesDone          /^\s*- \[x]/ contains=TotesDoneBox
 syntax match TotesNode          /^\s*> \[ \]/ contains=TotesTodoBox
 syntax match TotesNodeDone      /^\s*> \[x]/ contains=TotesDoneBox
 syntax match TotesDoing         /[->] \[\.\].*/
-syntax match TotesTag           /@[a-z][^ ]*/
-syntax match TotesPerson        /@[A-Z][^ ]*/
+syntax match TotesTag           /@[a-z][^ ()]*/
+syntax match TotesPerson        /@[A-Z][^ ()]*/
 syntax match TotesKeyword       /+[^ ]*/
 syntax match TotesImportant     /![^ ]*/
 
