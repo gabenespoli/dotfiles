@@ -142,6 +142,7 @@ alias cl="conda env list"
 alias ca="conda deactivate && conda activate"
 
 alias gs="git status --short"
+alias co="git checkout"
 alias ga="git add"
 alias gd="git diff"
 alias gc="git commit"
