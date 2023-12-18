@@ -14,7 +14,8 @@ nmap <buffer> p <CR><C-w>lzMggzj<C-w>h
 
 nmap <buffer> r<Space> :Floggit rebase<Space>
 
-" nmap <buffer> . "hy<C-g>:Floggit  <C-R>h<S-Left><Left>
+nmap <buffer> <leader>. <Plug>(FlogStartCommand)
+nnoremap <buffer> . :<C-U>Floggit<Space><Space><C-R>=flog#Format('%H')<CR><S-Left><Left>
 
 nmap <buffer> cf :<C-U>call flog#run_command('Git commit --fixup=%h', 0, 1)<CR>
 nmap <buffer> cp :<C-U>call flog#run_command('Git cherry-pick %h', 0, 1)<CR>
