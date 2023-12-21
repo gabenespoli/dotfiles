@@ -1,3 +1,6 @@
+" need gs for git status, so use s instead of gs for sort maps
+nmap <buffer> gS <Plug>(FlogVSplitStaged)
+
 nmap <buffer> o <CR>
 nmap <buffer> p <CR><C-w>lzMggzj<C-w>h
 
