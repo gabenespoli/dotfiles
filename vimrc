@@ -147,6 +147,7 @@ set statusline+=\ \ %P
 set statusline+=\ \ %l%L:%c
 set statusline+=\ 
 
+" Status Line git functions  {{{2
 function! GetFiletype() abort
   return &filetype
 endfunction
@@ -168,7 +169,9 @@ function! GitStatuslineEnd() abort
     return ''
   endif
 endfunction
+"}}}
 
+" Status Line devicon fucnctions  {{{2
 function! Devicon() abort
   if !has('nvim') || exists('g:vscode')
     return ''
@@ -181,7 +184,9 @@ function! Devicon() abort
     return l:icon[1:3] . ' '
   endif
 endfunction
+"}}}
 
+" Status Line python functions  {{{2
 " Copy of pythonsense#echo_python_location() that returns the result
 " instead of echoing it
 function! s:pythonsense_get_python_location()
@@ -253,6 +258,7 @@ function! PywhereStatuslineEnd() abort
     return ''
   endif
 endfunction
+"}}}
 
 " Keybindings  {{{1
 set notimeout ttimeout
