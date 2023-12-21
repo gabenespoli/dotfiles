@@ -1,14 +1,3 @@
-" nmap <buffer> <expr> i exists(":Twiggy") == 2 ? ':Twiggy<CR>' : ':echo Twiggy not installed<CR>'
-
-" nmap <buffer> gS q:Gedit :<CR>
-
-" " need gs for git status, so use s instead of gs for sort maps
-" nmap <buffer> ss <Plug>(FlogCycleSort)
-" nmap <buffer> sd <Plug>(FlogSortDate)
-" nmap <buffer> sa <Plug>(FlogSortAuthor)
-" nmap <buffer> st <Plug>(FlogSortTopo)
-" nmap <buffer> sr <Plug>(FlogToggleReverse)
-
 nmap <buffer> o <CR>
 nmap <buffer> p <CR><C-w>lzMggzj<C-w>h
 
