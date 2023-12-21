@@ -142,7 +142,6 @@ set statusline+=%#StatusGit#%{GitStatusline()}%*%{GitStatuslineEnd()}
 set statusline+=\ %#StatusFilename#%{Devicon()}%f%*\ %<
 set statusline+=%#StatusPywhere#%{PywhereStatusline()}%*%{PywhereStatuslineEnd()}
 set statusline+=%=
-" set statusline+=%{db_ui#statusline()}
 set statusline+=\ \ %{GetFiletype()}
 set statusline+=\ \ %P
 set statusline+=\ \ %l%L:%c
