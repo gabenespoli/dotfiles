@@ -394,6 +394,7 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
 endfor
 
 " tpope/vim-fugitive  {{{2
+nnoremap git :Git
 nnoremap gs :tab Git<CR>
 nnoremap gZ :Gdiffsplit<CR>zR
 nnoremap gC :Git commit<CR>
