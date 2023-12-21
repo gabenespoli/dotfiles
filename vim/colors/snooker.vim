@@ -272,7 +272,7 @@ hi! link TSVariableBuiltin      Type
 " call s:h('StatusFunction',{'fg': s:fg_com, 'bg': s:fg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('StatusGit',       {'fg': s:fg_com, 'bg': s:green_light, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('StatusFilename',  {'fg': s:fg_com, 'bg': s:blue_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusPywhere',   {'fg': s:fg_com, 'bg': s:blue_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusPywhere',   {'fg': s:fg_com, 'bg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
 " hi! link TabMod           Modified
 " hi! link TabModSel        TabMod
 hi! link markdownPandocCitation pandocCiteKey
