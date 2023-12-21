@@ -135,7 +135,6 @@ augroup END
 set statusline=
 set statusline+=%#PmenuSel#%h%w%*
 set statusline+=%#PmenuSel#%w%*
-" set statusline+=%#Modified#%m%*
 set statusline+=%#DiffText#%m%*
 set statusline+=%#DiffDelete#%r%*
 set statusline+=%#StatusGit#%{GitStatusline()}%*%{GitStatuslineEnd()}
