@@ -144,9 +144,9 @@ hi! link ModeMsg          MoreMsg
 call s:h('LineNr',        {'fg': s:fg_com})
 call s:h('CursorLineNr',  {'fg': s:fg, 'bg': s:bg_light})
 call s:h('Question',      {'fg': s:green})
-call s:h('StatusLine',    {'fg': s:fg_com, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusLine',    {'fg': s:bg_light, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('Conceal',       {'fg': s:fg})
-call s:h('StatusLineNC',  {'fg': s:fg_com, 'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusLineNC',  {'fg': s:bg_light, 'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('VertSplit',     {'fg': s:bg_light, 'bg': s:bg})
 call s:h('Title',         {'fg': s:fg_bright, 'bg': s:bg_light, 'gui': 'bold,italic', 'cterm': 'bold,italic'})
 call s:h('Visual',        {'fg': s:fg_bright, 'bg': s:fg_com})
@@ -270,9 +270,9 @@ hi! link TSVariableBuiltin      Type
 " call s:h('StatusError',   {'fg': s:red,    'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 " call s:h('StatusPreview', {'fg': s:blue,   'bg': s:bg_light, 'gui': 'reverse', 'cterm': 'reverse'})
 " call s:h('StatusFunction',{'fg': s:fg_com, 'bg': s:fg_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusGit',       {'fg': s:fg_com, 'bg': s:green_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusFilename',  {'fg': s:fg_com, 'bg': s:blue_light, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('StatusPywhere',   {'fg': s:fg_com, 'bg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusGit',       {'fg': s:bg_light, 'bg': s:green_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusFilename',  {'fg': s:bg_light, 'bg': s:blue_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('StatusPywhere',   {'fg': s:bg_light, 'bg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
 " hi! link TabMod           Modified
 " hi! link TabModSel        TabMod
 hi! link markdownPandocCitation pandocCiteKey
