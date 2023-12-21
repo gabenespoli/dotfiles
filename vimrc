@@ -182,11 +182,59 @@ function! Devicon() abort
   endif
 endfunction
 
+" Copy of pythonsense#echo_python_location() that returns the result
+" instead of echoing it
+function! s:pythonsense_get_python_location()
+    let indent_char = pythonsense#get_indent_char()
+    let pyloc = []
+    let current_line = line('.')
+    let obj_pattern = '\(class\|def\|async def\)'
+    while current_line > 0
+        if getline(current_line) !~ '^\s*$'
+            break
+        endif
+        let current_line = current_line - 1
+    endwhile
+    if current_line == 0
+        return
+    endif
+    let target_line_indent = pythonsense#get_line_indent_count(current_line)
+    if target_line_indent < 0
+        break
+    endif
+    let previous_line = current_line
+    while current_line > 0
+        let pattern = '^' . indent_char . '\{0,' . target_line_indent . '}' . obj_pattern
+        let current_line_text = getline(current_line)
+        if current_line_text =~# pattern
+            let obj_name = matchstr(current_line_text, '^\s*\(class\|def\|async def\)\s\+\zs\k\+')
+            if get(g:, "pythonsense_extended_location_info", 1)
+                let obj_type = matchstr(current_line_text, '^\s*\zs\(class\|def\|async def\)')
+                call add(pyloc, "(" . obj_type . ":)" . obj_name)
+            else
+                call add(pyloc, obj_name)
+            endif
+            let target_line_indent = pythonsense#get_line_indent_count(current_line) - 1
+        endif
+        if target_line_indent < 0
+            break
+        endif
+        let previous_line = current_line
+        let current_line = current_line - 1
+    endwhile
+    if get(g:, "pythonsense_extended_location_info", 1)
+        let joiner = " > "
+    else
+        let joiner = "."
+    endif
+    return join(reverse(pyloc), joiner)
+endfunction
+
 function! PywhereStatusline() abort
   if &filetype != 'python'
     return ''
   endif
-  let l:loc = pythonsense#get_python_location()
+  let l:loc = s:pythonsense_get_python_location()
   if l:loc == ''
     return ''
   else
@@ -198,7 +246,7 @@ function! PywhereStatuslineEnd() abort
   if &filetype != 'python'
     return ''
   endif
-  let l:loc = pythonsense#get_python_location()
+  let l:loc = s:pythonsense_get_python_location()
   if l:loc == ''
     return ''
   else
