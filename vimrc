@@ -190,7 +190,7 @@ function! PywhereStatusline() abort
   if l:loc == ''
     return ''
   else
-    return ' ' . substitute(l:loc, '(def:)', ' ', '') . ' '
+    return ' ' . substitute(l:loc, '(def:)', ' ', '') . '() '
   endif
 endfunction
 
