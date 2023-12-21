@@ -131,7 +131,7 @@ augroup general
 
 augroup END
 
-" Status Line  {{{1
+" Statusline  {{{1
 set statusline=
 set statusline+=%#PmenuSel#%h%w%*
 set statusline+=%#PmenuSel#%w%*
@@ -147,7 +147,7 @@ set statusline+=\ \ %P
 set statusline+=\ \ %l%L:%c
 set statusline+=\ 
 
-" Status Line git functions  {{{2
+" Statusline git functions  {{{2
 function! GetFiletype() abort
   return &filetype
 endfunction
@@ -171,7 +171,7 @@ function! GitStatuslineEnd() abort
 endfunction
 "}}}
 
-" Status Line devicon fucnctions  {{{2
+" Statusline devicon fucnctions  {{{2
 function! Devicon() abort
   if !has('nvim') || exists('g:vscode')
     return ''
@@ -186,7 +186,7 @@ function! Devicon() abort
 endfunction
 "}}}
 
-" Status Line python functions  {{{2
+" Statusline python functions  {{{2
 " Copy of pythonsense#echo_python_location() that returns the result
 " instead of echoing it
 function! s:pythonsense_get_python_location()
