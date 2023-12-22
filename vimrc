@@ -242,7 +242,9 @@ function! PywhereStatusline() abort
   if l:loc == ''
     return ''
   else
-    return ' ' . substitute(l:loc, '(def:)', ' ', '') . '() '
+    let l:loc = substitute(l:loc, '(def:)', ' ', '')
+    let l:loc = substitute(l:loc, '(class:)', ' ', '')
+    return ' ' . l:loc . '() '
   endif
 endfunction
 
