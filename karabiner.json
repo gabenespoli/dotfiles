@@ -1416,7 +1416,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Outlook$"
+                                            "^com\\.microsoft\\.Outlook$",
+                                            "^com\\.microsoft\\.onenote\\.mac$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1448,7 +1449,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Outlook$"
+                                            "^com\\.microsoft\\.Outlook$",
+                                            "^com\\.microsoft\\.onenote\\.mac$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
