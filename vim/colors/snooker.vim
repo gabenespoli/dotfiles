@@ -137,7 +137,7 @@ call s:h('NonText',       {'fg': s:bg_light})
 call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:fg_bright, 'bg': s:red})
 call s:h('IncSearch',     {'fg': s:pink, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('Search',        {'fg': s:yellow, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('Search',        {'fg': s:pink, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('MoreMsg',       {'fg': s:fg_com})
 hi! link ModeMsg          MoreMsg
 
