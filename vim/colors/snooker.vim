@@ -111,7 +111,7 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h('Type',          {'fg': s:brown})
+call s:h('Type',          {'fg': s:orange})
 call s:h('Structure',     {'fg': s:green})
 hi! link StorageClass     Type
 hi! link Typedef          Type
