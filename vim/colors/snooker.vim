@@ -197,71 +197,84 @@ call s:h('MatchParen',    {'fg': s:fg_com, 'gui': 'reverse', 'cterm': 'reverse'}
 call s:h('qfLineNr',      {'fg': s:fg})
 
 " Treesitter {{{1
-" hi! link TSNone                 guifg=foreground
-" hi! link TSPunctDelimiter       links to Delimiter
-" hi! link TSPunctBracket         links to Delimiter
-
-" hi! link TSPunctSpecial         links to Delimiter
-" hi! link TSPunctSpecial         Special
-
-" hi! link TSConstant             links to Constant
-
-" hi! link TSConstBuiltin         links to Special
-hi! link TSConstBuiltin         Constant
-
-" hi! link TSConstMacro           links to Define
-" hi! link TSString               links to String
-" hi! link TSStringRegex          links to String
-" hi! link TSStringEscape         links to SpecialChar
-" hi! link TSCharacter            links to Character
-" hi! link TSNumber               links to Number
-" hi! link TSBoolean              links to Boolean
-" hi! link TSFloat                links to Float
-" hi! link TSFunction             links to Function
-
-" hi! link TSFuncBuiltin          links to Special
-hi! link TSFuncBuiltin          Function
-
-" hi! link TSFuncMacro            links to Macro
-
-" hi! link TSParameter            links to Identifier
-hi! link TSParameter            PreProc
-
-" hi! link TSParameterReference   links to TSParameter
-" hi! link TSMethod               links to Function
-" hi! link TSField                links to Identifier
-" hi! link TSProperty             links to Identifier
-
-" hi! link TSConstructor          links to Special
-hi! link TSConstructor          Type
-
-" hi! link TSAnnotation           links to PreProc
-" hi! link TSAttribute            links to PreProc
-" hi! link TSNamespace            links to Include
-" hi! link TSConditional          links to Conditional
-" hi! link TSRepeat               links to Repeat
-" hi! link TSLabel                links to Label
-" hi! link TSOperator             links to Operator
-" hi! link TSKeyword              links to Keyword
-" hi! link TSKeywordFunction      links to Keyword
-" hi! link TSKeywordOperator      links to TSOperator
-" hi! link TSException            links to Exception
-" hi! link TSType                 links to Type
-" hi! link TSTypeBuiltin          links to Type
-" hi! link TSInclude              links to Include
-
-" hi! link TSVariableBuiltin      links to Special
-hi! link TSVariableBuiltin      Type
-
-" hi! link TSText                 links to TSNone
-" hi! link TSStrong               cterm=bold gui=bold
-" hi! link TSEmphasis             cterm=italic gui=italic
-" hi! link TSUnderline            cterm=underline gui=underline
-" hi! link TSTitle                links to Title
-" hi! link TSLiteral              links to String
-" hi! link TSURI                  links to Underlined
-" hi! link TSTag                  links to Label
-" hi! link TSTagDelimiter         links to Delimiter
+" hi! link @annotation
+" hi! link @attribute
+" hi! link @attribute.typescript
+hi! link @boolean               Boolean
+hi! link @character             Character
+" hi! link @character.special
+hi! link @comment               Comment
+hi! link @conditional           Conditional
+hi! link @constant              Constant
+hi! link @constant.builtin      Constant
+" hi! link @constant.macro
+hi! link @constructor           Type
+" hi! link @danger
+" hi! link @debug
+" hi! link @define
+hi! link @error                 Error
+hi! link @exception             Exception
+" hi! link @field
+hi! link @float                 Float
+" hi! link @function
+hi! link @function.builtin      Function
+" hi! link @function.call
+" hi! link @function.macro
+hi! link @include               Include
+hi! link @keyword               Keyword
+" hi! link @keyword.function
+" hi! link @keyword.operator
+" hi! link @keyword.return
+" hi! link @label
+" hi! link @method
+" hi! link @method.call
+" hi! link @namespace
+" hi! link @none
+" hi! link @note
+hi! link @number                Number
+hi! link @operator              Operator
+hi! link @parameter             Special
+" hi! link @parameter.reference
+hi! link @preproc               PreProc
+" hi! link @property
+" hi! link @punctuation.bracket
+" hi! link @punctuation.delimiter
+" hi! link @punctuation.special
+" hi! link @repeat
+" hi! link @storageclass
+hi! link @string                String
+" hi! link @string.escape
+" hi! link @string.regex
+" hi! link @string.special
+" hi! link @symbol
+" hi! link @tag
+" hi! link @tag.attribute
+" hi! link @tag.delimiter
+" hi! link @text
+" hi! link @text.danger
+" hi! link @text.diff.add
+" hi! link @text.diff.delete
+" hi! link @text.emphasis
+" hi! link @text.environment
+" hi! link @text.environment.name
+" hi! link @text.literal
+" hi! link @text.math
+" hi! link @text.note
+" hi! link @text.reference
+" hi! link @text.strike
+" hi! link @text.strong
+" hi! link @text.title
+" hi! link @text.todo
+" hi! link @text.underline
+" hi! link @text.uri
+" hi! link @text.warning
+hi! link @type                  Type
+hi! link @type.builtin          Type
+" hi! link @type.definition
+" hi! link @type.qualifier
+hi! link @variable              Normal
+hi! link @variable.builtin      Type
+hi! link @warning               WarningMsg
 
 " my own extras {{{1
 " call s:h('Modified',      {'fg': s:yellow, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
