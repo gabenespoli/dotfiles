@@ -79,7 +79,7 @@ endfunction
 
 " Main Groups {{{1
 " (see `:h w18`)
-if has('gui')
+if has('gui') || exists('g:gui_vimr')
   call s:h('Normal',      {'fg': s:fg, 'bg': s:bg})
 else
   call s:h('Normal',      {'fg': s:fg})
