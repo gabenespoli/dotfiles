@@ -1416,8 +1416,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Outlook$",
-                                            "^com\\.microsoft\\.teams$"
+                                            "^com\\.microsoft\\.Outlook$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
