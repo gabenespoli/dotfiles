@@ -52,6 +52,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -88,6 +89,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -128,7 +130,8 @@
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^dev\\.warp\\.Warp-Stable$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -163,7 +166,8 @@
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -197,7 +201,8 @@
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^dev\\.warp\\.Warp-Stable$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -231,7 +236,8 @@
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^dev\\.warp\\.Warp-Stable$",
-                                            "^org\\.vim\\.MacVim"
+                                            "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -269,6 +275,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
@@ -313,6 +320,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^org\\.rstudio\\.RStudio$",
                                             "^com\\.google\\.Chrome$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -355,6 +363,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^org.\\.rstudio\\.RStudio$",
                                             "^com\\.apple\\.ScreenSharing$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -399,6 +408,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
@@ -447,6 +457,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
+                                            "^com\\.qvacua\\.VimR",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$"
                                         ],
