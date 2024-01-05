@@ -132,7 +132,7 @@ augroup general
 augroup END
 
 " Statusline  {{{1
-set statusline=
+set statusline=
 set statusline+=%#PmenuSel#%h%w%*
 set statusline+=%#PmenuSel#%w%*
 set statusline+=%#DiffText#%m%*
@@ -144,7 +144,7 @@ set statusline+=%=
 set statusline+=\ \ %{GetFiletype()}
 set statusline+=\ \ %P
 set statusline+=\ \ %l%L:%c
-set statusline+=\ 
+set statusline+=\ 
 
 " Statusline git functions  {{{2
 function! GetFiletype() abort
@@ -156,7 +156,7 @@ function! GitStatusline() abort
   if l:branch == ''
     return ''
   else
-    return '   ' . l:branch . ' '
+    return '  ' . l:branch . ' '
   endif
 endfunction
 
