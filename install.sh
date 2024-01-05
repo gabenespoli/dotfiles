@@ -5,7 +5,7 @@
 # - [ ] Import mac terminal profile
 # - [ ] Check "Use Option as Meta key" in mac terminal
 # - [ ] Install Homebrew
-# - [ ] Install Macvim
+# - [ ] Install Macvim / VimR
 # - [ ] Install Logi options+, login to sync settings
 # - [ ] Install Karabiner, link settings, set simple mods for internal keyboard
 # - [ ] Install Rectangle, import settings
@@ -51,6 +51,7 @@ npm install -g pyright
 # brew install --cask karabiner-elements
 # brew install --cask alacritty
 # brew install --cask macvim
+# brew install --cask vimr
 # brew install --cask rectangle
 
 # install oh my zsh (https://ohmyz.sh/#install)
