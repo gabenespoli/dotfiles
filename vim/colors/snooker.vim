@@ -95,7 +95,7 @@ hi! link Boolean          Constant
 hi! link Float            String
 
 call s:h('Identifier',    {'fg': s:blue})
-call s:h('Function',      {'fg': s:blue_light})
+hi! link Function         Identifier
 
 call s:h('Statement',     {'fg': s:green})
 hi! link Conditional      Statement
