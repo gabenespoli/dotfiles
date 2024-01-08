@@ -540,6 +540,11 @@ augroup pythonsense
 augroup END
 
 " psf/black and fisadev/vim-isort  {{{2
+let g:vim_isort_config_overrides = {
+  \ 'line_length': 88, 
+  \ 'use_parentheses': 0,
+  \ 'force_single_line': 1
+  \ }
 let g:vim_isort_map = ''
 augroup pythonformat
   autocmd!
