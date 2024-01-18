@@ -104,8 +104,8 @@ export PAGER=""
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-bindkey "^N" history-search-forward
-bindkey "^P" history-search-backward
+bindkey "^N" history-beginning-search-forward
+bindkey "^P" history-beginning-search-backward
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;34m'
