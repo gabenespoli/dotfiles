@@ -102,7 +102,7 @@ set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 if !exists('g:gui_vimr')
-  set guifont=DankMono\ Nerd\ Font:h15,BlexMono\ Nerd\ Font:h15,IBMPlexMono:h15,Menlo:h15,Consolas:h15,Courier:h15
+  set guifont=MonoLisaWSLiga\ Nerd\ Font:h15,DankMono\ Nerd\ Font:h15,BlexMono\ Nerd\ Font:h15,IBMPlexMono:h15,Menlo:h15,Consolas:h15,Courier:h15
 endif
 
 " Colors
