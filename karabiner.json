@@ -5189,7 +5189,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -5220,7 +5221,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -5251,7 +5253,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.qvacua\\.VimR"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
