@@ -1,7 +1,7 @@
 {
     "workbench.colorTheme": "Atom One Dark",
     "editor.cursorBlinking": "solid",
-    "editor.fontFamily": "'DankMono Nerd Font', 'BlexMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'MonoLisaLigaParens Nerd Font', 'DankMono Nerd Font', 'BlexMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": false,
     "editor.quickSuggestions": {
         "other": false,
