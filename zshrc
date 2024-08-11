@@ -38,6 +38,13 @@ if [ -f /etc/profile ]; then
   unset __conda_setup
   # <<< conda initialize <<<
 
+  # pyenv
+  if [ -d "$HOME/.pyenv" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+  fi
+
 fi
 
 # main zsh options  {{{1
