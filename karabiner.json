@@ -6769,6 +6769,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -6799,6 +6805,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -6822,6 +6834,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -6876,6 +6896,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -6906,6 +6932,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -6929,6 +6961,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -6983,6 +7023,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7013,6 +7059,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7036,6 +7088,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7090,6 +7150,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7120,6 +7186,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7143,6 +7215,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7197,6 +7277,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7218,6 +7304,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7270,6 +7364,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7291,6 +7391,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7343,6 +7451,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7364,6 +7478,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7416,6 +7538,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7448,6 +7576,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7511,6 +7647,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7534,6 +7676,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
@@ -7588,6 +7738,12 @@
                             {
                                 "conditions": [
                                     {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
                                         "name": "mouse_keys_mode_v4",
                                         "type": "variable_if",
                                         "value": 1
@@ -7611,6 +7767,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.logic10$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "modifiers": {
                                         "optional": [
