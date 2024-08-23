@@ -43,6 +43,7 @@ if [ -f /etc/profile ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
   fi
 
 fi
@@ -145,6 +146,10 @@ alias lT="tree -L 2 --dirsfirst"
 alias exe="chmod u+x"
 alias fold="fold -s"
 
+alias vl="pyenv virtualenvs"  # list
+alias va="pyenv activate"
+alias vc="pyenv virtualenv"  # create
+alias vd="pyenv virtualenv-delete"
 alias cl="conda env list"
 alias ca="conda deactivate && conda activate"
 
