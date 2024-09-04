@@ -40,10 +40,8 @@ Plug 'justinmk/vim-dirvish', Cond(!exists('g:vscode'))
 Plug 'Vimjas/vim-python-pep8-indent', Cond(!exists('g:vscode'), {'for': ['python']})
 Plug 'kalekundert/vim-coiled-snake', Cond(!exists('g:vscode'), {'for': ['python']})
 Plug 'gabenespoli/vim-pythonsense', Cond(!exists('g:vscode'), {'for': ['python']})
-" Plug 'psf/black', Cond(!exists('g:vscode'), {'for': ['python']})
-" Plug 'fisadev/vim-isort', Cond(!exists('g:vscode'), {'for': ['python']})
-Plug 'psf/black', {'for': ['python']}
-Plug 'fisadev/vim-isort', {'for': ['python']}
+Plug 'psf/black', Cond(!exists('g:vscode'), {'for': ['python']})
+Plug 'fisadev/vim-isort', Cond(!exists('g:vscode'), {'for': ['python']})
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator', Cond(!exists('g:vscode'))
