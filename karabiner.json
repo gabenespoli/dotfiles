@@ -53,7 +53,8 @@
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -90,7 +91,8 @@
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -129,6 +131,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR"
@@ -166,6 +169,7 @@
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$",
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR"
                                         ],
@@ -200,6 +204,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR"
@@ -235,6 +240,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR"
@@ -277,7 +283,8 @@
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
                                             "^dev\\.warp\\.Warp-Stable$",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     },
@@ -322,6 +329,7 @@
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
                                             "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$",
                                             "^com\\.google\\.Chrome$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.apple\\.ScreenSharing$"
@@ -365,6 +373,7 @@
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
                                             "^org.\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$",
                                             "^com\\.apple\\.ScreenSharing$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.rdc\\.macos$"
@@ -410,7 +419,8 @@
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
                                             "^dev\\.warp\\.Warp-Stable$",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -459,7 +469,8 @@
                                             "^org\\.vim\\.MacVim",
                                             "^com\\.qvacua\\.VimR",
                                             "^dev\\.warp\\.Warp-Stable$",
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -6579,7 +6590,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -6606,7 +6618,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^org\\.rstudio\\.RStudio$"
+                                            "^org\\.rstudio\\.RStudio$",
+                                            "^com\\.rstudio\\.desktop$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
