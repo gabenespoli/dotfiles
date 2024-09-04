@@ -3979,7 +3979,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "left_control",
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "caps_lock"
