@@ -660,7 +660,16 @@ require 'fzf-lua'.setup{
 }
 
 -- kyazdani42/nvim-web-devicons  {{{2
-require('nvim-web-devicons').setup{}
+require('nvim-web-devicons').setup{
+ override_by_extension = {
+  ["txt"] = {
+    icon = "󰈙",
+    color = "#89e051",
+    cterm_color = "113",
+    name = "Txt"
+  }
+ };
+}
 
 -- neovim/nvim-lspconfig  {{{2
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#completion-kinds
