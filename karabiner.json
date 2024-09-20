@@ -42,6 +42,33 @@
                         ]
                     },
                     {
+                        "description": "Gmacs key bindings [control+m -> control+return]",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter",
+                                        "modifiers": [
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Gmacs key bindings [control+i -> tab]",
                         "manipulators": [
                             {
