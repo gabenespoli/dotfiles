@@ -32,7 +32,6 @@ Plug 'github/copilot.vim', Cond(!exists('g:vscode'))
 
 " Git & Files
 Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
-Plug 'airblade/vim-gitgutter', Cond(!exists('g:vscode'))
 Plug 'rbong/vim-flog', Cond(!exists('g:vscode'))
 Plug 'justinmk/vim-dirvish', Cond(!exists('g:vscode'))
 
@@ -52,7 +51,8 @@ Plug 'gabenespoli/vim-mutton', Cond(!exists('g:vscode'))
 Plug 'gabenespoli/vim-tabsms', Cond(!exists('g:vscode'))
 Plug 'gabenespoli/vim-jupycent', Cond(!exists('g:vscode'))
 
-" " Lua Plugins
+" Lua Plugins
+Plug 'lewis6991/gitsigns.nvim', Cond(!exists('g:vscode'))
 Plug 'ibhagwan/fzf-lua', Cond(has('nvim') && !exists('g:vscode'))
 Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim') && !exists('g:vscode'))
 Plug 'neovim/nvim-lspconfig', Cond(has('nvim') && !exists('g:vscode'))
@@ -458,52 +458,6 @@ nnoremap gB :Git blame<CR>
 nnoremap <C-k>G :Ggrep!<Space>
 nnoremap co<Space> :Git checkout<Space>
 
-" airblade/gitgutter  {{{2
-nmap ga <Plug>(GitGutterStageHunk)
-xmap ga :GitGutterStageHunk<CR>
-nmap ghu <Plug>(GitGutterUndoHunk)
-nnoremap <C-_> :let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>
-nnoremap g= :let g:gitgutter_preview_win_floating = 0<CR>:GitGutterPreviewHunk<CR>:wincmd p<CR>0
-nnoremap <silent> cog :GitGutterToggle<CR>:echo g:gitgutter_enabled<CR>
-nnoremap <silent> coG :GitGutterLineHighlightsToggle<CR>:echo g:gitgutter_highlight_lines<CR>
-let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_sign_added = '│'
-let g:gitgutter_sign_modified = '│'
-let g:gitgutter_sign_modified_removed = '~'
-let g:gitgutter_preview_win_floating = 0
-let g:gitgutter_close_preview_on_escape = 1
-
-nnoremap coz :call GitGutterFoldToggle()<CR>
-function! GitGutterFoldToggle()
-  if gitgutter#utility#getbufvar(bufnr(''), 'folded')
-    GitGutterFold
-    let l:buffoldexpr = gitgutter#utility#getbufvar(bufnr(''), 'foldexpr')
-    if l:buffoldexpr != 0
-      let &foldexpr = l:buffoldexpr
-    endif
-  else
-    call gitgutter#utility#setbufvar(bufnr(''), 'foldexpr', &foldexpr)
-    GitGutterFold
-  endif
-endfunction
-
-" map combining nvim lsp diagnostics with gitgutter preview
-if has('nvim') && !exists('g:vscode')
-lua << EOF
-function _G.has_line_diagnostic(bufnr, line_nr)
-  local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
-  return not vim.tbl_isempty(line_diagnostics)
-end
-EOF
-nnoremap <expr> =
-      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
-      \ ':lua vim.diagnostic.open_float()<CR>' :
-      \ ':let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>'
-
-else
-nnoremap = :let g:gitgutter_preview_win_floating = 1<CR>:GitGutterPreviewHunk<CR>
-endif
-
 " rbong/vim_flog  {{{2
 let g:flog_default_opts = {'date': 'short'}
 nmap gl :Flog<CR>
@@ -671,6 +625,40 @@ require('nvim-web-devicons').setup{
  };
 }
 
+-- lewis6991/gitsigns.nvim  {{{2
+require('gitsigns').setup{
+  on_attach = function(bufnr)
+    local gitsigns = require('gitsigns')
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({']c', bang = true})
+      else
+        gitsigns.nav_hunk('next')
+      end
+    end)
+
+    map('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({'[c', bang = true})
+      else
+        gitsigns.nav_hunk('prev')
+      end
+    end)
+
+    -- Actions
+    map('v', 'ga', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+    map('v', 'ghu', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+  end
+}
+
 -- neovim/nvim-lspconfig  {{{2
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#completion-kinds
 require('vim.lsp.protocol').CompletionItemKind = {
@@ -749,6 +737,35 @@ require('nvim-treesitter.configs').setup {
 require('nvim-treesitter.configs').setup {playground = {enable = true}}
 
 EOF
+
+" lewis6991/gitsigns  {{{2
+nmap ga :Gitsigns stage_hunk<CR>
+nmap ghu :Gitsigns reset_hunk<CR>
+" vmaps for stage/reset defined above in lua
+nmap cog :Gitsigns toggle_signs<CR>
+nmap coGl :Gitsigns toggle_linehl<CR>
+nmap coGn :Gitsigns toggle_numhl<CR>
+nmap ghu :Gitsigns reset_hunk<CR>
+vmap ac :<C-U>Gitsigns select_hunk<CR>
+omap ac :<C-U>Gitsigns select_hunk<CR>
+nmap dac :<C-U>Gitsigns select_hunk<CR>d
+nmap cac :<C-U>Gitsigns select_hunk<CR>c
+
+" map combining nvim lsp diagnostics with gitgutter preview
+if has('nvim') && !exists('g:vscode')
+lua << EOF
+function _G.has_line_diagnostic(bufnr, line_nr)
+  local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
+  return not vim.tbl_isempty(line_diagnostics)
+end
+EOF
+nnoremap <expr> =
+      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
+      \ ':lua vim.diagnostic.open_float()<CR>' :
+      \ ':Gitsigns preview_hunk<CR>'
+else
+nnoremap = :Gitsigns preview_hunk<CR>
+endif
 
 " ibhagwan/fzf-lua  {{{2
 nmap <C-p>        :FzfLua git_files<CR>
