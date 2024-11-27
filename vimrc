@@ -712,7 +712,7 @@ vim.diagnostic.config(
 )
 
 -- diagnostic signs and highlight groups
-local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
 for type, icon in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
   local hln = hl .. 'Nr'
