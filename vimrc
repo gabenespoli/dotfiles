@@ -627,6 +627,21 @@ require('nvim-web-devicons').setup{
 
 -- lewis6991/gitsigns.nvim  {{{2
 require('gitsigns').setup{
+  signs_staged_enable = true,
+  signs = {
+    add          = {text = '┃'},
+    change       = {text = '┃'},
+    delete       = {text = '_'},
+    topdelete    = {text = '‾'},
+    changedelete = {text = '┃'},
+  },
+  signs_staged = {
+    add          = {  text = '┋ '},
+    change       = {  text = '┋ '},
+    delete       = {  text = '﹍'},
+    topdelete    = {  text = '﹉'},
+    changedelete = {  text = '┋ '},
+  },
   on_attach = function(bufnr)
     local gitsigns = require('gitsigns')
 
@@ -656,6 +671,7 @@ require('gitsigns').setup{
     -- Actions
     map('v', 'ga', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
     map('v', 'ghu', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+
   end
 }
 
@@ -742,9 +758,9 @@ EOF
 nmap ga :Gitsigns stage_hunk<CR>
 nmap ghu :Gitsigns reset_hunk<CR>
 " vmaps for stage/reset defined above in lua
-nmap cog :Gitsigns toggle_signs<CR>
-nmap coGl :Gitsigns toggle_linehl<CR>
-nmap coGn :Gitsigns toggle_numhl<CR>
+nmap cogg :Gitsigns toggle_signs<CR>
+nmap cogl :Gitsigns toggle_linehl<CR>
+nmap cogn :Gitsigns toggle_numhl<CR>
 nmap ghu :Gitsigns reset_hunk<CR>
 vmap ac :<C-U>Gitsigns select_hunk<CR>
 omap ac :<C-U>Gitsigns select_hunk<CR>

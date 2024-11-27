@@ -450,6 +450,23 @@ call s:h('GitSignsAdd',             {'fg': s:green_light})
 call s:h('GitSignsChange',          {'fg': s:blue_light})
 call s:h('GitSignsDelete',          {'fg': s:red})
 call s:h('GitSignsChangeDelete',    {'fg': s:orange})
+call s:h('GitSignsAddLn',           {'fg': s:green, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsChangeLn',        {'fg': s:blue, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsDeleteLn',        {'fg': s:red, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsChangeDeleteLn',  {'fg': s:orange, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsAddNr',           {'fg': s:green, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsChangeNr',        {'fg': s:blue, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsDeleteNr',        {'fg': s:red, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('GitSignsChangeDeleteNr',  {'fg': s:orange, 'gui': 'reverse', 'cterm': 'reverse'})
+
+" call s:h('GitSignsAddStagedLn',           {'bg': s:green_bg, 'fg': s:bg})
+" call s:h('GitSignsChangeStagedLn',        {'bg': s:blue_bg, 'fg': s:bg})
+" call s:h('GitSignsDeleteStagedLn',        {'bg': s:red_bg, 'fg': s:bg})
+" call s:h('GitSignsChangeDeleteStagedLn',  {'bg': s:yellow_bg, 'fg': s:bg})
+" call s:h('GitSignsAddStagedLn',           {'fg': s:green_bg, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('GitSignsChangeStagedLn',        {'fg': s:blue_bg, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('GitSignsDeleteStagedLn',        {'fg': s:red_bg, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+" call s:h('GitSignsChangeDeleteStagedLn',  {'fg': s:yellow_bg, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
 
 " dadbod-ui  {{{2
 hi! link NotificationInfo           PmenuSel
