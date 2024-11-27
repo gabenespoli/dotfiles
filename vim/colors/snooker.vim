@@ -494,6 +494,8 @@ hi! link TelescopeMatching          Todo
 hi! link TelescopeSelection         PmenuSel
 
 " nvim-lspconfig {{{2
+hi! link DiagnosticSignError              ErrorMsg
+hi! link DiagnosticSignWarn               WarningMsg
 hi! link DiagnosticSignErrorNr            ErrorMsg
 hi! link DiagnosticSignWarnNr             WarningMsg
 call s:h('DiagnosticSignHintNr',          {'fg': s:blue, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
