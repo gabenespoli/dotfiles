@@ -169,6 +169,10 @@ else
   call s:h('DiffText',      {'bg': s:yellow_bg})
 endif
 
+call s:h('Added',           {'fg': s:green_light})
+call s:h('Changed',         {'fg': s:blue_light})
+call s:h('Removed',         {'fg': s:red})
+
 if has('gui_running') && g:snooker_gui_color_undercurl
   call s:h('SpellBad',    {'gui': s:sp_un, 'sp': s:red})
   call s:h('SpellCap',    {'gui': s:sp_un, 'sp': s:pink})
