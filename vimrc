@@ -80,7 +80,11 @@ elseif isdirectory(expand('~').'/.pyenv/neovim3')
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
 endif
 set hidden laststatus=2
-set number
+if has('gui')
+  set nonumber
+else
+  set number
+endif
 set nomodeline
 set cursorline
 set splitright splitbelow
