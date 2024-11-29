@@ -5,6 +5,7 @@ inoremap >> > [ ]
 
 " toggle done
 nnoremap <buffer> K :call TotesToggleDone()<CR>
+nnoremap <buffer> <leader>d :call TotesToggleDone()<CR>
 function TotesToggleDone() abort
   normal! m`
   let l:todo = '- '
