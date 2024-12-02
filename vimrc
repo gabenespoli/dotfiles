@@ -82,8 +82,10 @@ endif
 set hidden laststatus=2
 if has('gui')
   set nonumber
+  set mouse=a
 else
   set number
+  set mouse=n
 endif
 set nomodeline
 set cursorline
@@ -102,7 +104,6 @@ set shortmess+=c
 set diffopt+=context:3
 set suffixesadd+=.m,.r,.R,.py
 set clipboard=unnamed
-set mouse=n
 set guioptions=g
 set guicursor=n-v-sm:block-blinkon0,i-ci-c:ver25-blinkon0,r-cr-o:hor20-blinkon0
 if !exists('g:gui_vimr')
