@@ -10,6 +10,7 @@ syntax match TotesNodeDone      /^\s*> \[x]/ contains=TotesDoneBox
 syntax match TotesTag           /@[a-z][^ ()]*/
 syntax match TotesPerson        /@[A-Z][^ ()]*/
 syntax match TotesKeyword       /+[^ ]*/
+syntax match TotesImportant     /![^ ]*/
 
 hi def link TotesTitle          Title
 hi def link TotesTodoBox        Delimiter
@@ -21,3 +22,4 @@ hi def link TotesPerson         String
 hi def link TotesKeyword        Identifier
 hi def link TotesNode           PreProc
 hi def link TotesNodeDone       PreProc
+hi def link TotesImportant      Error
