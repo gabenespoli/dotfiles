@@ -83,14 +83,14 @@ ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
 nvim +PlugInstall -c "TSInstall! python sql bash json vim lua" +qall
 
-# vim
-# mkdir -pv "$HOME"/.vim
-# ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
-# ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
-# ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
-# ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
-# ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.vim/
-# vim +PlugInstall +qall
+# vim (for macvim)
+mkdir -pv "$HOME"/.vim
+ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
+ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.vim/
+vim +PlugInstall +qall
 
 # python
 mkdir -pv "$HOME"/.ipython/profile_default
