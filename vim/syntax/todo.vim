@@ -15,7 +15,7 @@ syntax match TotesImportant     /![^ ]*/
 hi def link TotesTitle          Title
 hi def link TotesTodoBox        Delimiter
 hi def link TotesDoneBox        Special
-hi def link TotesDoingBox       Identifier
+hi def link TotesDoingBox       Constant
 hi def link TotesImportantBox   Todo
 hi def link TotesTag            Tag
 hi def link TotesPerson         String
