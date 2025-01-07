@@ -64,9 +64,7 @@ mkdir -pv "$HOME"/.config/lf
 ln -sfv "$HOME"/dotfiles/lfrc "$HOME"/.config/lf/lfrc
 
 # karabiner
-mkdir -p "$HOME"/.config/karabiner
-ln -sfv "$HOME"/dotfiles/karabiner.json "$HOME"/.config/karabiner/karabiner.json
-ln -sfv "$HOME"/dotfiles/config/karabiner/karabiner.json "$HOME"/.config/karabiner/karabiner.json
+ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
 
 # tmux
