@@ -2,8 +2,6 @@
 
 # Todo list for setting up a new mac
 #
-# - [ ] Import mac terminal profile
-# - [ ] Check "Use Option as Meta key" in mac terminal
 # - [ ] Install Homebrew
 # - [ ] Install Logi options+, login to sync settings
 # - [ ] Install Karabiner, link settings, set simple mods for internal keyboard
@@ -11,8 +9,7 @@
 # - [ ] Setup zsh
 # - [ ] Setup neovim
 # - [ ] Setup tmux
-# - [ ] Install dank mono nerd font
-# - [ ] Install azure data studio, link settings
+# - [ ] Install font (mono lisa, dank mono)
 # - [ ] Install pyenv / miniconda
 # - [ ] Setup github auth with access tokens
 
@@ -22,7 +19,12 @@ brew install fd ripgrep fzf
 brew install htop lf tree trash cloc jq
 brew install tmux neovim
 brew install pyenv pyenv-virtualenv
+
+# casks
+brew install --cask karabiner-elements
 brew install --cask ghostty
+brew install --cask rectangle
+brew install --cask macvim
 
 # language server stuff
 brew install efm-langserver
@@ -37,13 +39,6 @@ npm install -g pyright
 # go install github.com/lighttiger2505/sqls@latest
 # go install github.com/denisenkom/go-mssqldb
 # go install github.com/microsoft/go-mssqldb@latest
-
-# # brew cask installs from before
-# brew install --cask karabiner-elements
-# brew install --cask alacritty
-# brew install --cask macvim
-# brew install --cask vimr
-# brew install --cask rectangle
 
 # install oh my zsh (https://ohmyz.sh/#install)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
