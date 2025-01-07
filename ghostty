@@ -7,6 +7,7 @@ clipboard-write = allow
 
 font-family = MonoLisaWSLiga Nerd Font
 font-size = 13
+adjust-cell-width = -1
 
 keybind = cmd+zero=esc:0
 keybind = cmd+one=esc:1
