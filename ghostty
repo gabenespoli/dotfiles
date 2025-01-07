@@ -1,5 +1,23 @@
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
-# command as meta (esc + _)
+clipboard-read = allow
+clipboard-write = allow
+
+font-family = MonoLisaWSLiga Nerd Font
+font-size = 13
+
+keybind = cmd+zero=esc:0
+keybind = cmd+one=esc:1
+keybind = cmd+two=esc:2
+keybind = cmd+three=esc:3
+keybind = cmd+four=esc:4
+keybind = cmd+five=esc:5
+keybind = cmd+six=esc:6
+keybind = cmd+seven=esc:7
+keybind = cmd+eight=esc:8
+keybind = cmd+nine=esc:9
 keybind = cmd+b=esc:b
 keybind = cmd+d=esc:d
 keybind = cmd+f=esc:f
@@ -8,35 +26,14 @@ keybind = cmd+j=esc:j
 keybind = cmd+k=esc:k
 keybind = cmd+l=esc:l
 keybind = cmd+o=esc:o
-keybind = cmd+O=esc:O
+keybind = cmd+shift+o=esc:O
 keybind = cmd+s=esc:s
 keybind = cmd+t=esc:t
 keybind = cmd+left_bracket=esc:left_bracket
 keybind = cmd+right_bracket=esc:right_bracket
+keybind = "cmd+shift+left_bracket=esc:{"
+keybind = "cmd+shift+right_bracket=esc:}"
 
-keybind = cmd+zero=esc:zero
-keybind = cmd+one=esc:one
-keybind = cmd+two=esc:two
-keybind = cmd+three=esc:three
-keybind = cmd+four=esc:four
-keybind = cmd+five=esc:five
-
-font-family = MonoLisaWSLiga Nerd Font
-font-size = 10
-
-cursor-style = block
-cursor-style-blink = false
-shell-integration-features = no-cursor
-
-clipboard-read = allow
-clipboard-write = allow
-
-# macos-icon
-# macos-icon-frame
-# macos-icon-ghost-color
-# macos-icon-screen-color
-
-# snooker theme
 palette = 0=#2b302b
 palette = 1=#e52e1a
 palette = 2=#1c9c20
