@@ -22,6 +22,7 @@ brew install fd ripgrep fzf
 brew install htop lf tree trash cloc jq
 brew install tmux neovim
 brew install pyenv pyenv-virtualenv
+brew install --cask ghostty
 
 # language server stuff
 brew install efm-langserver
@@ -54,6 +55,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-^/.oh-my-zsh/custom}/plugins/fzf-tab
 
 # terminal
+mkdir -pv "$HOME"/.config/ghostty
+ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh

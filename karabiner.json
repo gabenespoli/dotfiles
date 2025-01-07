@@ -76,6 +76,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -114,6 +115,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -155,6 +157,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.Chrome$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
@@ -192,6 +195,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.Chrome$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -228,6 +232,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
@@ -264,6 +269,7 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.rstudio\\.RStudio$",
@@ -305,6 +311,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -351,6 +358,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -395,6 +403,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -441,6 +450,7 @@
                                             "^com\\.azuredatastudio\\.oss$",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -491,6 +501,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^org\\.vim\\.MacVim",
@@ -577,6 +588,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -612,6 +624,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -654,6 +667,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -689,6 +703,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -731,6 +746,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -766,6 +782,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -808,6 +825,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.apple\\.Terminal$",
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.alacritty$",
                                             "^dev\\.warp\\.Warp-Stable$",
@@ -5581,6 +5599,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$"
                                         ],
@@ -5618,6 +5637,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$"
                                         ],
@@ -5656,6 +5676,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$"
                                         ],

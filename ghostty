@@ -1,0 +1,60 @@
+
+# command as meta (esc + _)
+keybind = cmd+b=esc:b
+keybind = cmd+d=esc:d
+keybind = cmd+f=esc:f
+keybind = cmd+h=esc:h
+keybind = cmd+j=esc:j
+keybind = cmd+k=esc:k
+keybind = cmd+l=esc:l
+keybind = cmd+o=esc:o
+keybind = cmd+O=esc:O
+keybind = cmd+s=esc:s
+keybind = cmd+t=esc:t
+keybind = cmd+left_bracket=esc:left_bracket
+keybind = cmd+right_bracket=esc:right_bracket
+
+keybind = cmd+zero=esc:zero
+keybind = cmd+one=esc:one
+keybind = cmd+two=esc:two
+keybind = cmd+three=esc:three
+keybind = cmd+four=esc:four
+keybind = cmd+five=esc:five
+
+font-family = MonoLisaWSLiga Nerd Font
+font-size = 10
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+clipboard-read = allow
+clipboard-write = allow
+
+# macos-icon
+# macos-icon-frame
+# macos-icon-ghost-color
+# macos-icon-screen-color
+
+# snooker theme
+palette = 0=#2b302b
+palette = 1=#e52e1a
+palette = 2=#1c9c20
+palette = 3=#a57230
+palette = 4=#0094cf
+palette = 5=#5e72d5
+palette = 6=#1dae87
+palette = 7=#cdc08b
+palette = 8=#6a6a5b
+palette = 9=#e5941a
+palette = 10=#25c528
+palette = 11=#c89b13
+palette = 12=#00a3cc
+palette = 13=#df7376
+palette = 14=#4abe65
+palette = 15=#e5e5d2
+background = 0f111b
+foreground = adad9b
+cursor-color = adad9b
+selection-background = c6dcfc
+selection-foreground = 000000
