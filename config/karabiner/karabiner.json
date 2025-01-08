@@ -1129,6 +1129,681 @@
                         ]
                     },
                     {
+                        "description": "Semicolon Layer [;+hjkl -> arrows]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "semicolon_mode",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "semicolon_mode",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "semicolon" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+in -> pgup/pgdn]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [{ "key_code": "page_up" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [{ "key_code": "page_down" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+m -> return]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "return_or_enter" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+y -> delete]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "delete_forward" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+Esc -> backtick]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["caps_lock", "option"] }
+                                },
+                                "to": [{ "key_code": "grave_accent_and_tilde" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+caps -> tilde]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+uo -> home/end]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [{ "key_code": "home" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [{ "key_code": "end" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+uo -> cmd+up/dn] (Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+[] -> F14/F15 (mac screen brightness)]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "f14" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "f15" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+qwertasdfg -> symbols (shifted number row)]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "2",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "3",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "optional": ["caps_lock", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Semicolon Layer [;+xcvb,. -> +=_-<>]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "equal_sign" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "hyphen" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "semicolon_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Tab Layer [tab+`12345ert<bksp>zxcv -> command+option+control+shift+<key>] (for Rectangle.app)",
                         "manipulators": [
                             {
@@ -1465,7 +2140,7 @@
                         ]
                     },
                     {
-                        "description": "Tab Layer [tab+bdfg -> command+bdfg]",
+                        "description": "Tab Layer Gmacs replacements [tab+bdfg -> command+bdfg]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2262,6 +2937,121 @@
                         ]
                     },
                     {
+                        "description": "Quote Layer ['+;,. -> <play/pause><prev_track><next_track>]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "key_code": "play_or_pause" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "consumer_key_code": "scan_next_track" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [{ "consumer_key_code": "scan_previous_track" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Quote Layer ['+caps -> backtick]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["caps_lock", "option"] }
+                                },
+                                "to": [{ "key_code": "grave_accent_and_tilde" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Quote Layer ['+cx -> en/em dash]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "quote_mode",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["left_option", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Comma Layer [,+<space><slash> -> ,<space>/~<slash>]",
                         "manipulators": [
                             {
@@ -2567,814 +3357,6 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+;,. -> <play/pause><prev_track><next_track>]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "play_or_pause" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "consumer_key_code": "scan_next_track" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "consumer_key_code": "scan_previous_track" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Quote Layer ['+caps -> backtick]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_control",
-                                    "modifiers": { "optional": ["caps_lock", "option"] }
-                                },
-                                "to": [{ "key_code": "grave_accent_and_tilde" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Quote Layer ['+cx -> en/em dash]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "quote_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["left_option", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+hjkl -> arrows]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "semicolon_mode",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "semicolon_mode",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "semicolon" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
-                                },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
-                                },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
-                                },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": { "optional": ["caps_lock", "left_shift", "right_shift", "left_command", "right_command", "left_option", "right_option", "control"] }
-                                },
-                                "to": [{ "key_code": "right_arrow" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+in -> pgup/pgdn]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [{ "key_code": "page_up" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [{ "key_code": "page_down" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+m -> return]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "return_or_enter" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+y -> delete]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "delete_forward" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+Esc -> backtick]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": { "optional": ["caps_lock", "option"] }
-                                },
-                                "to": [{ "key_code": "grave_accent_and_tilde" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+caps -> tilde]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_control",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+uo -> home/end]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.finder$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [{ "key_code": "home" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.finder$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [{ "key_code": "end" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+uo -> cmd+up/dn] (Finder)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.finder$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.finder$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+[] -> F14/F15 (mac screen brightness)]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "f14" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "f15" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+qwertasdfg -> symbols (shifted number row)]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "1",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "2",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "3",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "4",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "5",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "6",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "7",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "8",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "9",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "g",
-                                    "modifiers": { "optional": ["caps_lock", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "0",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Semicolon Layer [;+xcvb,. -> +=_-<>]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "equal_sign" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "hyphen",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "hyphen" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "comma",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "period",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Alternate fullscreen [option+shift+tab -> command+option+control+up] (for Spectacle.app)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": { "mandatory": ["left_option", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["command", "option", "control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Esc Layer [esc+numbers -> function keys]+dn/up/left/right]",
                         "manipulators": [
                             {
@@ -3591,114 +3573,6 @@
                         ]
                     },
                     {
-                        "description": "Command-as-Meta in terminals [command+hjkl -> option+hjkl]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.alacritty$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "h",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.alacritty$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "j",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.alacritty$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "l",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Command-as-Meta in terminals [command+012345 -> option+012345]",
                         "manipulators": [
                             {
@@ -3850,6 +3724,214 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "6",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "7",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "8",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Command-as-Meta in terminals [command+hjkl -> option+hjkl]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "j",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -3992,152 +4074,6 @@
                         ]
                     },
                     {
-                        "description": "Command-as-Meta in terminals [command+[] -> option+[]]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Command-as-Meta in terminals [control+tab] -> option+shift+]]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": ["option", "shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Command-as-Meta in terminals [control+shift+tab] -> option+shift+[]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": ["control", "shift"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": ["option", "shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Command-as-Meta in terminals [command+shift+f -> option+shift+f]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.mitchellh\\.ghostty$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.apple\\.Terminal$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["command", "shift"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": ["option", "shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Command-as-Meta in terminals [command+t -> option+t]",
                         "manipulators": [
                             {
@@ -4198,7 +4134,148 @@
                         ]
                     },
                     {
-                        "description": "Control-tab in ghostty [control(+shift)+tab] -> command+shift+[]]",
+                        "description": "Command-as-Meta in terminals [command+[] -> option+[]]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock", "shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock", "shift"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Command-as-Meta in terminals [control(+shift)+tab] -> option+shift+[]]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": ["option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Command-as-Meta in terminals [command+shift+f -> option+shift+f]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.mitchellh\\.ghostty$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": ["option", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ghostty control-tab [control(+shift)+tab] -> command+shift+[]]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -4388,165 +4465,6 @@
                         ]
                     },
                     {
-                        "description": "Alacritty font size [command + 0= -> 14/18]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "hyphen",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "sed -i '' 's/size:.*/size: 11/' ~/.config/alacritty/alacritty.yml" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "0",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "sed -i '' 's/size:.*/size: 14/' ~/.config/alacritty/alacritty.yml" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.alacritty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "equal_sign",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "sed -i '' 's/size:.*/size: 18/' ~/.config/alacritty/alacritty.yml" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Esc [shift+esc -> tilde]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "description": "USB Keyboard (Pok3r)",
-                                                "product_id": 321,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": ["shift"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Backtick [right_option+esc -> backtick]",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": ["right_option"],
-                                        "optional": ["caps_lock", "left_option"]
-                                    }
-                                },
-                                "to": [{ "key_code": "grave_accent_and_tilde" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Esc: App window switcher / app switcher backwards [option+escape -> command+backtick]",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r-like Fn Brightness [option+[] -> bright up/dn]",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["right_option"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [{ "key_code": "display_brightness_decrement" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": {
-                                        "mandatory": ["right_option"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [{ "key_code": "display_brightness_increment" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Fn layer arrows [right_option+l;p' -> left/down/up/right]",
                         "manipulators": [
                             {
@@ -4697,7 +4615,7 @@
                         ]
                     },
                     {
-                        "description": "Chrome tab switch [control+tab -> command+shift+]]",
+                        "description": "Chrome tab switch [control(+shift)+tab -> command+shift+[]]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -4722,12 +4640,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Chrome tab switch [control+shift+tab -> command+shift+[]",
-                        "manipulators": [
+                            },
                             {
                                 "conditions": [
                                     {
@@ -4748,35 +4661,6 @@
                                     {
                                         "key_code": "open_bracket",
                                         "modifiers": ["command", "shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Firefox Easy Container Shortcuts extension new tab [command+t -> command+option+t]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.mozilla\\.firefox$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": ["command", "option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -4807,6 +4691,24 @@
                                     {
                                         "key_code": "f",
                                         "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Alternate fullscreen [option+shift+tab -> command+option+control+up] (for Spectacle.app)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "mandatory": ["left_option", "shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": ["command", "option", "control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -4888,52 +4790,32 @@
                         ]
                     },
                     {
-                        "description": "Slack switch convos like messages.android.com [control+,. -> opt+up/dn]",
+                        "description": "Pok3r Esc [shift+esc -> tilde]",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": [
-                                            "^com\\.tinyspeck\\.slackmacgap$"
+                                        "identifiers": [
+                                            {
+                                                "description": "USB Keyboard (Pok3r)",
+                                                "product_id": 321,
+                                                "vendor_id": 1241
+                                            }
                                         ],
-                                        "type": "frontmost_application_if"
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "comma",
+                                    "key_code": "escape",
                                     "modifiers": {
-                                        "mandatory": ["control"],
+                                        "mandatory": ["shift"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.tinyspeck\\.slackmacgap$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["option"]
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["shift"]
                                     }
                                 ],
                                 "type": "basic"
@@ -4941,54 +4823,65 @@
                         ]
                     },
                     {
-                        "description": "Teams switch convos like messages.android.com [control+,. -> cmd+opt+left/right]",
+                        "description": "Pok3r Backtick [right_option+esc -> backtick]",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.teams$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "comma",
+                                    "key_code": "escape",
                                     "modifiers": {
-                                        "mandatory": ["control"],
+                                        "mandatory": ["right_option"],
+                                        "optional": ["caps_lock", "left_option"]
+                                    }
+                                },
+                                "to": [{ "key_code": "grave_accent_and_tilde" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Pok3r Esc: App window switcher / app switcher backwards [option+escape -> command+backtick]",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": ["left_option"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["command", "option"]
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Pok3r-like Fn Brightness [option+[] -> bright up/dn]",
+                        "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.teams$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "period",
+                                    "key_code": "open_bracket",
                                     "modifiers": {
-                                        "mandatory": ["control"],
+                                        "mandatory": ["right_option"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["command", "option"]
+                                "to": [{ "key_code": "display_brightness_decrement" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                        "mandatory": ["right_option"],
+                                        "optional": ["caps_lock"]
                                     }
-                                ],
+                                },
+                                "to": [{ "key_code": "display_brightness_increment" }],
                                 "type": "basic"
                             }
                         ]
