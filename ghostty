@@ -15,6 +15,7 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 font-family = MonoLisaWSLiga Nerd Font
 font-size = 13
+font-thicken = true
 adjust-cell-width = -1
 
 # keybindings
