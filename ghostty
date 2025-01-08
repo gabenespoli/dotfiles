@@ -1,14 +1,23 @@
+# system
+auto-update = check
+clipboard-read = allow
+clipboard-write = allow
+macos-titlebar-style = hidden
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = a57230
+macos-icon-screen-color = 1dae87
+
+# terminal
+resize-overlay = never
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
-
-clipboard-read = allow
-clipboard-write = allow
-
 font-family = MonoLisaWSLiga Nerd Font
 font-size = 13
 adjust-cell-width = -1
 
+# keybindings
 keybind = cmd+zero=esc:0
 keybind = cmd+one=esc:1
 keybind = cmd+two=esc:2
@@ -35,6 +44,11 @@ keybind = cmd+right_bracket=esc:right_bracket
 keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
+# TODO: these aren't working
+# keybind = "ctrl+shift+tab=esc:{"
+# keybind = "ctrl+tab=esc:}"
+
+# colors
 palette = 0=#2b302b
 palette = 1=#e52e1a
 palette = 2=#1c9c20
