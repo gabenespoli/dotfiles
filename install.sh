@@ -1,17 +1,13 @@
 #!/bin/bash
 
 # Todo list for setting up a new mac
-#
-# - [ ] Install Homebrew
-# - [ ] Install Logi options+, login to sync settings
-# - [ ] Install Karabiner, link settings, set simple mods for internal keyboard
-# - [ ] Install Rectangle, import settings
-# - [ ] Setup zsh
-# - [ ] Setup neovim
-# - [ ] Setup tmux
-# - [ ] Install font (mono lisa, dank mono)
-# - [ ] Install pyenv / miniconda
+# - [ ] Install git
+# - [ ] Clone dotfiles into ~/dotfiles
 # - [ ] Setup github auth with access tokens
+# - [ ] Install homebrew (https://brew.sh/)
+# - [ ] Install fonts (Mono Lisa, Dank Mono)
+# - [ ] Install Logi options+, login to sync settings
+# - [ ] Run this script (install.sh)
 
 # general terminal stuff
 brew install coreutils findutils grep gnu-sed gawk wget
@@ -31,23 +27,6 @@ brew install efm-langserver
 brew install npm
 npm install -g neovim
 npm install -g pyright
-
-# # other language servers (bash, vim, sql)
-# npm install -g bash-language-server
-# npm install -g vim-language-server
-# brew install golang
-# go install github.com/lighttiger2505/sqls@latest
-# go install github.com/denisenkom/go-mssqldb
-# go install github.com/microsoft/go-mssqldb@latest
-
-# install oh my zsh (https://ohmyz.sh/#install)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# install powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-# install zsh plugins
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-^/.oh-my-zsh/custom}/plugins/fzf-tab
 
 # terminal
 mkdir -pv "$HOME"/.config/ghostty
@@ -69,6 +48,13 @@ tmux source-file ~/.tmux.conf
 
 # Setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
 tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
+
+# install oh my zsh (https://ohmyz.sh/#install)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-^/.oh-my-zsh/custom}/plugins/fzf-tab
+
+# install powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # neovim
 mkdir -pv "$HOME"/.config/nvim
@@ -111,12 +97,6 @@ ln -sfv "$HOME"/dotfiles/python/flake8 "$HOME"/.flake8
 pyenv virtualenv 3.11 neovim
 pyenv activate neovim
 pip install pynvim black isort
-
-# echo "" && echo "-- Setting up Azure Data Studio..."
-# ln -sfv "$HOME"/dotfiles/misc/azuredatastudio/settings.json "$HOME"/Library/Application\ Support/azuredatastudio/User/settings.json
-# # https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode
-# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-# defaults write com.azuredatastudio.oss ApplePressAndHoldEnabled -bool false
 
 # echo "" && echo "-- Installing Microsoft ODBC..."
 # # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos
