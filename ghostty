@@ -44,10 +44,6 @@ keybind = cmd+right_bracket=esc:right_bracket
 keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
-# TODO: these aren't working
-# keybind = "ctrl+shift+tab=esc:{"
-# keybind = "ctrl+tab=esc:}"
-
 # colors
 palette = 0=#2b302b
 palette = 1=#e52e1a
