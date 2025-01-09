@@ -3,10 +3,6 @@ auto-update = check
 clipboard-read = allow
 clipboard-write = allow
 macos-titlebar-style = hidden
-macos-icon = custom-style
-macos-icon-frame = beige
-macos-icon-ghost-color = a57230
-macos-icon-screen-color = 1dae87
 
 # terminal
 resize-overlay = never
