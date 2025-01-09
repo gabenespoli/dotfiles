@@ -18,3 +18,9 @@
   HEAD = 13
 [credential]
   helper = osxkeychain
+[include]
+  path = ~/.gitconfig_local
+; example contents of ~/.gitconfig-local
+; [user]
+;  name = Gabe Nespoli
+;  email = gabenespoli@gmail.com
