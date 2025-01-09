@@ -15,7 +15,7 @@
 # general terminal stuff
 brew install coreutils findutils grep gnu-sed gawk wget
 brew install fd ripgrep fzf
-brew install htop lf tree trash cloc jq
+brew install htop lf eza tree trash cloc jq
 brew install tmux neovim
 brew install pyenv pyenv-virtualenv
 
