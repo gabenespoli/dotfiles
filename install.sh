@@ -8,6 +8,8 @@
 # - [ ] Clone dotfiles into ~/dotfiles
 # - [ ] Run this script (install.sh)
 # - [ ] Set user and email in ~/dotfiles/.git/config
+# - [ ] Add ~/.gitconfig-local containing user/email
+# - [ ] Add ~/.bash_local with custom stuff
 # - [ ] Setup github auth with access tokens
 
 # general terminal stuff
