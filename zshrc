@@ -128,7 +128,27 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
 export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
 
-if hash gls 2> /dev/null; then
+eza_git_ls () {
+  # switch between --git and --git-repos based on the presence of .git dir
+  # last arg must be the dir
+  if [ -d "${@: -1}"/.git ]; then
+    eza --group-directories-first --icons --git "$@"
+  else
+    eza --group-directories-first --icons --git-repos "$@"
+  fi
+}
+
+if hash eza 2> /dev/null; then
+  alias ls="eza_git_ls -l --no-filesize --no-permissions --no-user --no-time"
+  alias la="eza_git_ls -la --no-filesize --no-permissions --no-user --no-time"
+  alias lt="eza_git_ls -l --no-filesize --no-permissions --no-user --no-time --tree --level=2"
+  alias ll="eza_git_ls -l"
+  if hash gls 2> /dev/null; then
+    alias lss="gls -F --color --group-directories-first"
+  else
+    alias lss="ls"
+  fi
+elif hash gls 2> /dev/null; then
   alias ll="gls -F --color --group-directories-first"
   alias ls="gls -Flh --color --group-directories-first"
   alias la="gls -Flha --color --group-directories-first"
@@ -137,9 +157,6 @@ else
   alias ls="ls -Flh"
   alias la="ls -Flha"
 fi
-
-alias le="eza -l --group-directories-first --no-permissions --no-user --no-time --icons --git --git-ignore --git-repos"
-alias lt="eza -l --group-directories-first --no-permissions --no-user --no-time --icons --git --git-ignore --tree --level=2"
 
 alias ta="tmux attach"
 alias lT="tree -L 2 --dirsfirst"
