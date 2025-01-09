@@ -130,8 +130,13 @@ export JQ_COLORS='0;36:0;36:0;36:0;36:0;36:0;31:0;31'
 
 eza_git_ls () {
   # switch between --git and --git-repos based on the presence of .git dir
-  # last arg must be the dir
-  if [ -d "${@: -1}"/.git ]; then
+  DIR="."
+  for var in "$@"; do
+    if [ -d "$var" ]; then
+      DIR="$var"
+    fi
+  done
+  if [ -d "$DIR"/.git ]; then
     eza --group-directories-first --icons --git "$@"
   else
     eza --group-directories-first --icons --git-repos "$@"
