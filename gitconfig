@@ -10,8 +10,6 @@
   lg = "log --oneline --date=short --format='%C(6)%cd%C(auto) %h%d %s %C(8)(%an)' --graph" 
   lga = "log --oneline --date=short --format='%C(6)%cd%C(auto) %h%d %s %C(8)(%an)' --graph --all" 
   mg = "!f() { var=$(git symbolic-ref --short HEAD) && printf 'Merge branch %s into %s\n\nCommits from this branch:\n' $1 $var > temp_merge_msg && git log --first-parent --format='- %s' $var..$1 >> temp_merge_msg && git merge --no-ff --no-commit $1 && git commit -eF temp_merge_msg; rm -f temp_merge_msg;}; f" 
-[user]
-  name = Gabe Nespoli
 [color.decorate]
   branch = 10
   remoteBranch = 2
