@@ -2,12 +2,13 @@
 
 # Todo list for setting up a new mac
 # - [ ] Install git
-# - [ ] Clone dotfiles into ~/dotfiles
-# - [ ] Setup github auth with access tokens
 # - [ ] Install homebrew (https://brew.sh/)
 # - [ ] Install fonts (Mono Lisa, Dank Mono)
 # - [ ] Install Logi options+, login to sync settings
+# - [ ] Clone dotfiles into ~/dotfiles
 # - [ ] Run this script (install.sh)
+# - [ ] Set user and email in ~/dotfiles/.git/config
+# - [ ] Setup github auth with access tokens
 
 # general terminal stuff
 brew install coreutils findutils grep gnu-sed gawk wget
