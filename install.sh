@@ -83,19 +83,6 @@ ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_defau
 ln -sfv "$HOME"/dotfiles/python/isort.cfg "$HOME"/.isort.cfg
 ln -sfv "$HOME"/dotfiles/python/flake8 "$HOME"/.flake8
 
-# miniconda
-# # https://docs.conda.io/projects/miniconda/en/latest/
-# mkdir -p ~/miniconda3
-# curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-# bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-# rm -rf ~/miniconda3/miniconda.sh
-
-# neovim python host prog
-# conda create -y -n neovim
-# conda deactivate && conda activate neovim
-# conda install -y python
-# pip install pynvim black isort
-
 # pyenv
 pyenv install 3.10
 pyenv install 3.11
