@@ -157,14 +157,15 @@ elif hash gls 2> /dev/null; then
   alias ll="gls -F --color --group-directories-first"
   alias ls="gls -Flh --color --group-directories-first"
   alias la="gls -Flha --color --group-directories-first"
+  alias lt="tree -L 2 --dirsfirst"
 else
   alias ll="ls -F"
   alias ls="ls -Flh"
   alias la="ls -Flha"
+  alias lt="tree -L 2 --dirsfirst"
 fi
 
 alias ta="tmux attach"
-alias lT="tree -L 2 --dirsfirst"
 alias exe="chmod u+x"
 alias fold="fold -s"
 
