@@ -194,7 +194,7 @@ alias gR="git reset HEAD^ && gs"
 
 alias Gl="$EDITOR +'Flog'"
 alias GL="$EDITOR +'Flog -all'"
-alias Gs="$EDITOR -c ':tab Git'"
+alias Gs="$EDITOR -c ':Gedit :'"
 alias GS=Gs
 
 export FZF_DEFAULT_OPTS='

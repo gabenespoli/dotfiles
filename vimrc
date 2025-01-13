@@ -457,7 +457,7 @@ endfor
 
 " tpope/vim-fugitive  {{{2
 nnoremap git :Git
-nnoremap gs :tab Git<CR>
+nnoremap gs :let g:fugitive_last_bufnr = bufnr()<CR>:Gedit :<CR>:let w:fugitive_last_bufnr = g:fugitive_last_bufnr<CR>
 nnoremap gZ :Gdiffsplit<CR>zR
 nnoremap gC :Git commit<CR>
 nnoremap gB :Git blame<CR>
