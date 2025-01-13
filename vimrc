@@ -122,6 +122,7 @@ augroup general
 
   " open help in a vertical split
   autocmd FileType help wincmd L
+  autocmd BufNew fugitive.txt wincmd L
 
   " open qf window after qf search
   autocmd QuickFixCmdPost [^l]* cwindow
