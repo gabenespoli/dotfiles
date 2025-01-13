@@ -96,6 +96,10 @@ ln -sfv "$HOME"/dotfiles/python/flake8 "$HOME"/.flake8
 # conda install -y python
 # pip install pynvim black isort
 
+# pyenv
+pyenv install 3.10
+pyenv install 3.11
+
 # neovim python host prog
 pyenv virtualenv 3.11 neovim
 pyenv activate neovim
