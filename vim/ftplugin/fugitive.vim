@@ -8,3 +8,5 @@ nmap <buffer> zo >
 nmap <buffer> zc <
 nmap <buffer> zj )
 nmap <buffer> zk (
+
+nmap <buffer> o <CR>
