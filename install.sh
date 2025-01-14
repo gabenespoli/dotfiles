@@ -37,8 +37,7 @@ ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
-mkdir -pv "$HOME"/.config/lf
-ln -sfv "$HOME"/dotfiles/lfrc "$HOME"/.config/lf/lfrc
+ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 
 # karabiner
 ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
