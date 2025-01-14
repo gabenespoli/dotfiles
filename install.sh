@@ -41,7 +41,7 @@ mkdir -pv "$HOME"/.config/ghostty
 ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
-ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
+ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config
 
 # setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
 tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
