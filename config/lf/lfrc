@@ -27,6 +27,8 @@ map \$ shell-wait
 # Use D for trash
 map D %trash $fx
 
+set icons true
+
 # Define a custom 'open' command
 # ------------------------------
 # This command is called when current file is not a directory. You may want to
