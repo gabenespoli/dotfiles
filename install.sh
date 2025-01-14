@@ -12,49 +12,44 @@
 # - [ ] Add ~/.bash_local with custom stuff
 # - [ ] Setup github auth with access tokens
 
-# general terminal stuff
+# install stuff
 brew install coreutils findutils grep gnu-sed gawk wget
 brew install fd ripgrep fzf
 brew install htop lf eza tree trash cloc jq
 brew install tmux neovim
 brew install pyenv pyenv-virtualenv
 
-# casks
 brew install --cask karabiner-elements
 brew install --cask ghostty
 brew install --cask rectangle
 brew install --cask macvim
 
-# language server stuff
 brew install efm-langserver
 brew install npm
 npm install -g neovim
 npm install -g pyright
 
-# terminal
-mkdir -pv "$HOME"/.config/ghostty
-ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
+# link files
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
-ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
-ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
-
-# karabiner
-ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
-ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
-
-# tmux
+ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
 
-# Setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
+mkdir -pv "$HOME"/.config/ghostty
+ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
+ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
+ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
+ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config/
+
+# setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
 tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
 
-# install oh my zsh (https://ohmyz.sh/#install)
+# install oh-my-zsh (https://ohmyz.sh/#install)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# install powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
+# install powerlevel10k zsh theme (https://github.com/romkatv/powerlevel10k)
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # neovim
