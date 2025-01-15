@@ -264,7 +264,6 @@ fi             # FILE 
 *materialize.min.js         # 00;38;2;238;110;115
 *materialize.min.css        # 00;38;2;238;110;115
 *mootools.min.js            # 00;38;2;236;236;236
-*vimrc                      # 00;38;2;1;152;51
 Vagrantfile                 # 00;38;2;21;99;255
 
 # archives or compressed (extensions from dircolors defaults)
