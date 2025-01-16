@@ -164,6 +164,7 @@ else
 fi
 
 alias ta="tmux attach"
+alias tl="tmux list-sessions"
 alias exe="chmod u+x"
 alias fold="fold -s"
 
