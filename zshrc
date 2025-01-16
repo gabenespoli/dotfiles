@@ -163,7 +163,16 @@ else
   alias lt="tree -L 2 --dirsfirst"
 fi
 
-alias ta="tmux attach"
+ta () {
+  if [[ $# == 1 ]]; then
+    # if only one arg, assume it is for -t
+    tmux attach -t $@
+  else
+    # else requires -t and all args are passed
+    tmux attach $@
+  fi
+}
+
 alias tl="tmux list-sessions"
 alias exe="chmod u+x"
 alias fold="fold -s"
