@@ -40,8 +40,8 @@ keybind = cmd+o=esc:o
 keybind = cmd+shift+o=esc:O
 keybind = cmd+s=esc:s
 keybind = cmd+t=esc:t
-keybind = cmd+left_bracket=esc:left_bracket
-keybind = cmd+right_bracket=esc:right_bracket
+keybind = "cmd+left_bracket=esc:["
+keybind = "cmd+right_bracket=esc:]"
 keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
