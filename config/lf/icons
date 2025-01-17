@@ -124,9 +124,10 @@ fi             # FILE 
 *.ml            λ    # 00;38;2;227;121;51
 *.mli           λ    # 00;38;2;227;121;51
 *.diff              # 00;38;2;65;83;91
-*.db                # 00;38;2;218;216;216
-*.sql               # 00;38;2;218;216;216
-*.dump              # 00;38;2;218;216;216
+*.db                # 00;38;2;218;216;216
+*.sql               # 00;38;2;218;216;216
+*.saql              # 00;38;2;218;216;216
+*.dump              # 00;38;2;218;216;216
 *.clj               # 00;38;2;141;193;73
 *.cljc              # 00;38;2;141;193;73
 *.cljs              # 00;38;2;81;154;186
@@ -173,6 +174,7 @@ fi             # FILE 
 *.rproj         󰗆    # 00;38;2;53;138;91
 *.sol           󰡪    # 00;38;2;81;154;186
 *.pem               # 00;38;2;205;155;62
+*.txt           
 
 # file names (vim-devicons) (case-insensitive not supported in lf)
 *gruntfile.coffee           # 00;38;2;227;121;51
@@ -185,6 +187,7 @@ fi             # FILE 
 *dropbox                    # 00;38;2;0;97;254
 *.ds_store                  # 00;38;2;77;90;94
 *.gitconfig                 # 00;38;2;65;83;91
+*.gitconfig_local           # 00;38;2;65;83;91
 *gitconfig                  # 00;38;2;65;83;91
 *.gitignore                 # 00;38;2;65;83;91
 *.gitattributes             # 00;38;2;65;83;91
@@ -203,17 +206,18 @@ fi             # FILE 
 *.bashprofile           󱆃    # 00;38;2;137;224;81
 *.bash_profile          󱆃    # 00;38;2;137;224;81
 *.bash_history          󱆃    # 00;38;2;137;224;81
+*.bash_local            󱆃    # 00;38;2;137;224;81
 *.zsh_history           󱆃    # 00;38;2;137;224;81
 *favicon.ico                # 00;38;2;203;203;65
 *license                    # 00;38;2;203;203;65
 *node_modules               # 00;38;2;232;39;75
 *react.jsx                  # 00;38;2;81;154;186
 *procfile                   # 00;38;2;160;116;196
-*dockerfile                 # 00;38;2;81;154;186
-*docker-compose.yml         # 00;38;2;81;154;186
-*docker-compose.yaml        # 00;38;2;81;154;186
-*compose.yml                # 00;38;2;81;154;186
-*compose.yaml               # 00;38;2;81;154;186
+*dockerfile                 # 00;38;2;81;154;186
+*docker-compose.yml         # 00;38;2;81;154;186
+*docker-compose.yaml        # 00;38;2;81;154;186
+*compose.yml                # 00;38;2;81;154;186
+*compose.yaml               # 00;38;2;81;154;186
 *rakefile                   # 00;38;2;112;21;22
 *config.ru                  # 00;38;2;112;21;22
 *gemfile                    # 00;38;2;112;21;22
@@ -223,7 +227,11 @@ fi             # FILE 
 *tmux.conf                  # 00;38;2;109;128;134
 *.tmux.conf                 # 00;38;2;109;128;134
 *readme.md              󰂺    # 00;38;2;81;154;186
-*ghostty                󱙝
+*ghostty                󰊠
+*.python_history        
+*todo.txt               
+*lfrc                   
+*requirements.txt       
 
 # file names (case-sensitive adaptations)
 *Gruntfile.coffee           # 00;38;2;227;121;51
@@ -237,9 +245,9 @@ fi             # FILE 
 *LICENSE                    # 00;38;2;203;203;65
 *React.jsx                  # 00;38;2;81;154;186
 *Procfile                   # 00;38;2;160;116;196
-*Dockerfile                 # 00;38;2;81;154;186
-*Docker-compose.yml         # 00;38;2;81;154;186
-*Docker-compose.yaml        # 00;38;2;81;154;186
+*Dockerfile                 # 00;38;2;81;154;186
+*Docker-compose.yml         # 00;38;2;81;154;186
+*Docker-compose.yaml        # 00;38;2;81;154;186
 *Rakefile                   # 00;38;2;112;21;22
 *Gemfile                    # 00;38;2;112;21;22
 *Makefile                   # 00;38;2;109;128;134
