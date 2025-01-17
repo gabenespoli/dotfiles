@@ -142,6 +142,7 @@ eza_git_ls () {
 }
 
 if hash eza 2> /dev/null; then
+  export EZA_CONFIG_DIR="$HOME/.config/eza"
   alias ls="eza_git_ls -l --no-filesize --no-permissions --no-user --no-time"
   alias la="eza_git_ls -la --no-filesize --no-permissions --no-user --no-time"
   alias lt="eza_git_ls -l --no-filesize --no-permissions --no-user --no-time --tree --level=2"

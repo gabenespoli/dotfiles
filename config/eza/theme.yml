@@ -1,0 +1,10 @@
+# example theme.yml: https://github.com/eza-community/eza/blob/main/docs/theme.yml
+# list of default icons: https://github.com/eza-community/eza/blob/main/src/output/icons.rs
+
+filenames:
+  vimrc: {icon: {glyph:  }}
+  ghostty: {icon: {glyph: 󰊠 }}
+  gitconfig: {icon: {glyph:  }}
+  todo.txt: {icon: {glyph:  }}
+extensions:
+  saql: {icon: {glyph:  }}
