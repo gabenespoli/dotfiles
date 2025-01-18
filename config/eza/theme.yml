@@ -4,7 +4,12 @@
 filenames:
   vimrc: {icon: {glyph:  }}
   ghostty: {icon: {glyph: 󰊠 }}
-  gitconfig: {icon: {glyph:  }}
   todo.txt: {icon: {glyph:  }}
+  .gitconfig: {icon: {glyph:  }}
+  .gitconfig_local: {icon: {glyph:  }}
+  .gitattributes: {icon: {glyph:  }}
+  .gitignore: {icon: {glyph:  }}
+  gitconfig: {icon: {glyph:  }}
+  gitignore: {icon: {glyph:  }}
 extensions:
   saql: {icon: {glyph:  }}

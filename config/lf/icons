@@ -186,11 +186,11 @@ fi             # FILE 
 *mix.lock                   # 00;38;2;160;116;196
 *dropbox                    # 00;38;2;0;97;254
 *.ds_store                  # 00;38;2;77;90;94
-*.gitconfig                 # 00;38;2;65;83;91
-*.gitconfig_local           # 00;38;2;65;83;91
-*gitconfig                  # 00;38;2;65;83;91
-*.gitignore                 # 00;38;2;65;83;91
-*.gitattributes             # 00;38;2;65;83;91
+*.gitconfig                 # 00;38;2;65;83;91
+*.gitconfig_local           # 00;38;2;65;83;91
+*gitconfig                  # 00;38;2;65;83;91
+*.gitignore                 # 00;38;2;65;83;91
+*.gitattributes             # 00;38;2;65;83;91
 *.gitlab-ci.yml             # 00;38;2;226;67;41
 *.bashrc                󱆃    # 00;38;2;137;224;81
 *bashrc                 󱆃    # 00;38;2;137;224;81
