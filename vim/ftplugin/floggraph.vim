@@ -10,7 +10,7 @@ nmap <buffer> <leader>. <Plug>(FlogStartCommand)
 nnoremap <buffer> . :<C-U>Floggit<Space><Space><C-R>=flog#Format('%H')<CR><S-Left><Left>
 
 nmap <buffer> cf :<C-U>call flog#Exec('Git commit --fixup=%h')<CR>
-nmap <buffer> cp :<C-U>call flog#Exec('Git cherry-pick %h')<CR>
+" nmap <buffer> cp :<C-U>call flog#Exec('Git cherry-pick %h')<CR>
 nmap <buffer> gR :<C-U>call flog#Exec('Git reset HEAD^')<CR>
 nmap <buffer> ca :Floggit commit --amend<CR>
 nmap <buffer> <silent> J u:Flogjump HEAD<CR>zz
