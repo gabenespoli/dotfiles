@@ -12,4 +12,4 @@ filenames:
   gitconfig: {icon: {glyph:  }}
   gitignore: {icon: {glyph:  }}
 extensions:
-  saql: {icon: {glyph:  }}
+  saql: {icon: {glyph:  }}
