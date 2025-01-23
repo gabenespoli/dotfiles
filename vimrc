@@ -34,6 +34,7 @@ Plug 'github/copilot.vim', Cond(!exists('g:vscode'))
 Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
 Plug 'rbong/vim-flog', Cond(!exists('g:vscode'))
 Plug 'justinmk/vim-dirvish', Cond(!exists('g:vscode'))
+Plug 'brianhuster/dirvish-git.nvim', Cond(!exists('g:vscode'))
 
 " Python
 Plug 'Vimjas/vim-python-pep8-indent', Cond(!exists('g:vscode'), {'for': ['python']})
@@ -474,6 +475,18 @@ if has('mac')
   let g:loaded_netrwPlugin = 1
   nnoremap gx :execute '!open ' . shellescape(expand('<cfile>'), 1)<CR><CR>
 endif
+
+" brianhuster/dirvish-git.nvim  {{{2
+let g:dirvish_git_icons = {
+    \ 'modified': '-M ',
+    \ 'staged': '-S ',
+    \ 'renamed': '-R ',
+    \ 'unmerged': '-X ',
+    \ 'ignored': '-I ',
+    \ 'untracked': '-N ',
+    \ 'file': '-- ',
+    \ 'directory': '-- ',
+    \ }
 
 " jeetsukumaran/vim-pythonsense  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
