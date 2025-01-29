@@ -2937,7 +2937,7 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+;,. -> <play/pause><prev_track><next_track>]",
+                        "description": "Quote Layer ['+spacebar/n/b -> <play/pause><next_track><prev_track>]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2948,7 +2948,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "semicolon",
+                                    "key_code": "spacebar",
                                     "modifiers": { "optional": ["caps_lock"] }
                                 },
                                 "to": [{ "key_code": "play_or_pause" }],
@@ -2963,7 +2963,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "period",
+                                    "key_code": "n",
                                     "modifiers": { "optional": ["caps_lock"] }
                                 },
                                 "to": [{ "consumer_key_code": "scan_next_track" }],
@@ -2978,7 +2978,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "comma",
+                                    "key_code": "b",
                                     "modifiers": { "optional": ["caps_lock"] }
                                 },
                                 "to": [{ "consumer_key_code": "scan_previous_track" }],
