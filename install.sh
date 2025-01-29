@@ -84,7 +84,7 @@ pyenv install 3.11
 # neovim python host prog
 pyenv virtualenv 3.11 neovim
 pyenv activate neovim
-pip install pynvim black isort
+pip install pynvim black isort jupytext
 
 # echo "" && echo "-- Installing Microsoft ODBC..."
 # # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos

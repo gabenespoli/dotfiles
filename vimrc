@@ -600,6 +600,9 @@ let g:mutton_min_side_width = 25
 highlight! link TabMod DiffText
 highlight! link TabModSel TabMod
 
+" gabenespoli/vim-jupycent  {{{2
+let g:jupycent_command = expand('~').'/.pyenv/versions/neovim/bin/jupytext'
+
 " Lua Plugins  {{{1
 if has('nvim') && !exists('g:vscode')
 lua << EOF
