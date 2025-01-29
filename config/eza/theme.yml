@@ -57,19 +57,19 @@
 #   multi_link_file: {foreground: Red, background: Yellow}
 
 git:
-  new: {foreground: Green}
-  modified: {foreground: Blue}
-  deleted: {foreground: Red}
-  renamed: {foreground: Yellow}
-  typechange: {foreground: Purple}
-  ignored: {foreground: Default, is_dimmed: true}
-  conflicted: {foreground: Red}
+  new: {foreground: "#25c528"}  # light green
+  modified: {foreground: "#00a3cc"}  # light blue
+  deleted: {foreground: "#e52e1a"}  # red
+  renamed: {foreground: "#e5941a"}  # orange
+  typechange: {foreground: "#5e72d5"}  # purple
+  ignored: {foreground: "#6a6a5b"}  # fg com
+  conflicted: {foreground: "#df7376"}  # pink
 
 git_repo:
-  branch_main: {foreground: Green}
-  branch_other: {foreground: Yellow}
-  git_clean: {foreground: Green}
-  git_dirty: {foreground: Yellow}
+  branch_main: {foreground: "#1c9c20"}  # green
+  branch_other: {foreground: "#e5941a"}
+  git_clean: {foreground: "#1c9c20"}  # green
+  git_dirty: {foreground: "#df7376"}  # pink
 
 # security_context:
 #   colon: {foreground: Default, is_dimmed: true}
