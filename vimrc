@@ -330,8 +330,12 @@ endif
 " search for conflict markers
 nnoremap <silent> cx /^<<<<<<< .*$\\|^=======\\|^\|\|\|\|\|\|\|\\|^>>>>>>> .*$<CR>:set hlsearch<CR>
 
-" open a note for the current quarter
-nnoremap <C-k><C-n> :e ~/notes/<C-R>=system('echo $(/bin/date +%YQ)$(($(/bin/date +%m)/4+1))')<CR><BS>.txt<CR>
+" open ~/notes/todo.txt
+nnoremap <C-k><C-t> :e ~/notes/todo.txt<CR>
+" open ~/notes/YYYYQX.txt to archive todos based on current quarter
+nnoremap <C-k><C-a> :e ~/notes/<C-R>=system('echo $(/bin/date +%YQ)$(($(/bin/date +%m)/4+1))')<CR><BS>.txt<CR>
+" open ~/notes/YYYY-mm-dd.txt
+nnoremap <C-k><C-n> :e ~/notes/<C-R>=strftime("%Y-%m-%d")<CR>.txt<CR>
 
 " quickfix & location list {{{2
 " add last search to location list
