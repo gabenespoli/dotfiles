@@ -2295,41 +2295,6 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+[] -> F14/F15 (mac screen brightness)]",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "f14" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "semicolon_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": { "optional": ["caps_lock"] }
-                                },
-                                "to": [{ "key_code": "f15" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Semicolon Layer [;+qwertasdfg -> symbols (shifted number row)]",
                         "manipulators": [
                             {
