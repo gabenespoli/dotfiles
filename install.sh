@@ -11,6 +11,7 @@
 # - [ ] Add ~/.gitconfig-local containing user/email
 # - [ ] Add ~/.bash_local with custom stuff
 # - [ ] Setup github auth with access tokens
+# - [ ] Add misc/RectangleConfig.json to Rectangle
 
 # install stuff
 brew install coreutils findutils grep gnu-sed gawk wget
@@ -20,8 +21,8 @@ brew install tmux neovim
 brew install pyenv pyenv-virtualenv
 
 brew install --cask karabiner-elements
-brew install --cask ghostty
 brew install --cask rectangle
+brew install --cask ghostty
 brew install --cask macvim
 
 brew install efm-langserver
