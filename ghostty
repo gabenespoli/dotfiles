@@ -46,24 +46,24 @@ keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
 # colors
-palette = 0=#2b302b  # bg light
-palette = 1=#e52e1a  # red
-palette = 2=#1c9c20  # green
-palette = 3=#a57230  # brown
-palette = 4=#0094cf  # blue
-palette = 5=#5e72d5  # purple
-palette = 6=#1dae87  # cyan
-palette = 7=#cdc08b  # fg light
-palette = 8=#6a6a5b  # fg com
-palette = 9=#e5941a  # orange
-palette = 10=#25c528  # bright green
-palette = 11=#c89b13  # yellow
-palette = 12=#00a3cc  # bright blue
-palette = 13=#df7376  # pink
-palette = 14=#4abe65  # bright cyan
-palette = 15=#e5e5d2  # bg bright
-background = 0f111b  # bg black
-foreground = adad9b  # fg
-cursor-color = adad9b  # fg
+palette = 0=2b302b
+palette = 1=e52e1a
+palette = 2=1c9c20
+palette = 3=a57230
+palette = 4=0094cf
+palette = 5=5e72d5
+palette = 6=1dae87
+palette = 7=cdc08b
+palette = 8=6a6a5b
+palette = 9=e5941a
+palette = 10=25c528
+palette = 11=c89b13
+palette = 12=00a3cc
+palette = 13=df7376
+palette = 14=4abe65
+palette = 15=e5e5d2
+background = 0f111b
+foreground = adad9b
+cursor-color = adad9b
 selection-background = c6dcfc
 selection-foreground = 000000
