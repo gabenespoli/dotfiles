@@ -83,6 +83,8 @@ DISABLE_AUTO_TITLE="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+plugins=(fzf-tab)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
