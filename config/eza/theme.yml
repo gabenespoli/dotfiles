@@ -67,9 +67,9 @@ git:
 
 git_repo:
   branch_main: {foreground: "#1c9c20"}  # green
-  branch_other: {foreground: "#e5941a"}
+  branch_other: {foreground: "#a57230"}  # brown
   git_clean: {foreground: "#1c9c20"}  # green
-  git_dirty: {foreground: "#df7376"}  # pink
+  git_dirty: {foreground: "#00a3cc"}  # light blue
 
 # security_context:
 #   colon: {foreground: Default, is_dimmed: true}
