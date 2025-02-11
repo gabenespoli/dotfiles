@@ -203,8 +203,8 @@ alias grlog="git reflog --format='%C(6)%cr%C(auto) %h %C(9)%gD %C(auto)%gs %d'"
 alias glr="grlog -15"
 alias gR="git reset HEAD^ && gs"
 
-alias Gl="$EDITOR +'Flog'"
-alias GL="$EDITOR +'Flog -all'"
+alias Gl="$EDITOR -c 'Flog'"
+alias GL="$EDITOR -c 'Flog -all'"
 alias Gs="$EDITOR -c ':Gedit :'"
 alias GS=Gs
 
