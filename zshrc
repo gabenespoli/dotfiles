@@ -207,12 +207,22 @@ alias Gl="$EDITOR -c 'Flog'"
 alias GL="$EDITOR -c 'Flog -all'"
 alias Gs="$EDITOR -c ':Gedit :'"
 alias GS=Gs
+alias nv="nvim -c 'FzfLua git_files'"
 
-export FZF_DEFAULT_OPTS='
-  --layout reverse
-  --color=hl:8,fg+:15,bg+:0,hl+:2,info:5,prompt:2,pointer:2,marker:6,spinner:2,header:7
-  --preview "bat --style=numbers --color=always --line-range :500 {}"
-  '
+export FZF_DEFAULT_OPTS='--color 16'
+
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:*' fzf-flags --color 16
+zstyle ':fzf-tab:*' continuous-trigger '/'
+
+# fzf-tab previews (some copied/modified from fzf-tab-source)
+zstyle ':fzf-tab:complete:*' fzf-preview 'less ${realpath#-*=}'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --group-directories-first --icons --git $realpath'
+zstyle ':fzf-tab:complete:(\\|*/|)git:argument-1' fzf-preview 'git $word --help'
+zstyle ':fzf-tab:complete:(\\|*/|)brew:argument-1' fzf-preview 'brew $word --help'
+zstyle ':fzf-tab:complete:brew-(list|ls):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew list $word'
+zstyle ':fzf-tab:complete:brew-((|un)install|info|cleanup):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew info $word'
 
 # Change working dir in shell to last dir in lf on exit
 lfcd () {

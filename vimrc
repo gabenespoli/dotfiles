@@ -622,21 +622,6 @@ require 'fzf-lua'.setup{
       ["ctrl-q"]        = actions.file_sel_to_qf,
     },
   },
-  fzf_colors = {
-    ['fg']          = { 'fg', 'CursorLine' },
-    ['bg']          = { 'bg', 'Normal' },
-    ['hl']          = { 'fg', 'Todo' },
-    ['fg+']         = { 'fg', 'Normal' },
-    ['bg+']         = { 'bg', 'CursorLine' },
-    ['hl+']         = { 'fg', 'Todo' },
-    ['info']        = { 'fg', 'Comment' },
-    ['prompt']      = { 'fg', 'Identifier' },
-    ['pointer']     = { 'fg', 'PmenuSel' },
-    ['marker']      = { 'fg', 'Keyword' },
-    ['spinner']     = { 'fg', 'Label' },
-    ['header']      = { 'fg', 'Comment' },
-    ['gutter']      = { 'bg', 'Normal' },
-  },
 }
 
 -- kyazdani42/nvim-web-devicons  {{{2
