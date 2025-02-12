@@ -799,7 +799,6 @@ endif
 " ibhagwan/fzf-lua  {{{2
 nmap <C-p>        :FzfLua git_files<CR>
 nmap <C-k><C-b>   :FzfLua buffers<CR>
-nmap <C-k>d       :FzfLua lsp_workspace_diagnostics<CR>
 nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
 nmap <C-k><C-g>   :FzfLua live_grep<CR>
 nmap <C-k><C-f>   :FzfLua files<CR>
@@ -818,7 +817,7 @@ nmap gr :lua vim.lsp.buf.references()<CR>
 nmap K :lua vim.lsp.buf.hover()<CR>
 nmap <silent> [d :lua vim.diagnostic.goto_prev()<CR>
 nmap <silent> ]d :lua vim.diagnostic.goto_next()<CR>
-nmap <C-k>l :lua vim.diagnostic.setloclist()<CR>
+nmap <C-k>d :lua vim.diagnostic.setloclist()<CR>
 nmap <C-k>r :lua vim.lsp.buf.rename()<CR>
 
 nmap cod :lua vim.diagnostic.disable()<CR>
