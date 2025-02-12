@@ -802,7 +802,6 @@ nmap <C-k><C-b>   :FzfLua buffers<CR>
 nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
 nmap <C-k><C-g>   :FzfLua live_grep<CR>
 nmap <C-k><C-f>   :FzfLua files<CR>
-nmap <C-k><C-h>   :FzfLua git_bcommits<CR>
 nmap <C-k><C-k>   :FzfLua resume<CR>
 nmap <C-k><C-l>   :FzfLua git_commits<CR>
 nmap <C-k><C-o>   :FzfLua oldfiles<CR>
@@ -840,7 +839,6 @@ nmap <C-p>        :GFiles<CR>
 nmap <C-k><C-b>   :Buffers<CR>
 nmap <C-k><C-g>   :Rg<CR>
 nmap <C-k><C-f>   :Files<CR>
-nmap <C-k><C-h>   :BCommits<CR>
 nmap <C-k><C-l>   :Commits<CR>
 nmap <C-k><C-o>   :History<CR>
 nmap <C-k><C-s>   :GFiles?<CR>
