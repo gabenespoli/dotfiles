@@ -2765,7 +2765,7 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer ['+ui -> {}]",
+                        "description": "Quote Layer ['+op -> {}]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2776,7 +2776,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "o",
                                     "modifiers": { "optional": ["caps_lock", "command", "option", "control", "shift"] }
                                 },
                                 "to": [
@@ -2796,7 +2796,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "p",
                                     "modifiers": { "optional": ["caps_lock", "command", "option", "control", "shift"] }
                                 },
                                 "to": [
@@ -2845,7 +2845,7 @@
                         ]
                     },
                     {
-                        "description": "Quote Layer [;+yo -> pgup/pgdn]",
+                        "description": "Quote Layer [;+jk -> pgdn/pgup]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2856,10 +2856,10 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "y",
+                                    "key_code": "j",
                                     "modifiers": { "optional": ["caps_lock", "shift"] }
                                 },
-                                "to": [{ "key_code": "page_up" }],
+                                "to": [{ "key_code": "page_down" }],
                                 "type": "basic"
                             },
                             {
@@ -2871,10 +2871,10 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "o",
+                                    "key_code": "k",
                                     "modifiers": { "optional": ["caps_lock", "shift"] }
                                 },
-                                "to": [{ "key_code": "page_down" }],
+                                "to": [{ "key_code": "page_up" }],
                                 "type": "basic"
                             }
                         ]
