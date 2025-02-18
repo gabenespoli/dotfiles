@@ -144,8 +144,8 @@ augroup END
 set statusline=
 set statusline+=%#PmenuSel#%h%w%*
 set statusline+=%#PmenuSel#%w%*
-set statusline+=%#DiffText#%m%*
-set statusline+=%#DiffDelete#%r%*
+set statusline+=%#WarningMsg#%m%*
+set statusline+=%#ErrorMsg#%r%*
 set statusline+=%#StatusGit#%{GitStatusline()}%*%{GitStatuslineEnd()}
 set statusline+=\ %#StatusFilename#%{Devicon()}%f%*\ %<
 set statusline+=%#StatusPywhere#%{PywhereStatusline()}%*%{PywhereStatuslineEnd()}
@@ -599,7 +599,7 @@ let g:mutton_min_center_width = 94
 let g:mutton_min_side_width = 25
 
 " Plug 'gabenespoli/vim-tabsms'  {{{2
-highlight! link TabMod DiffText
+highlight! link TabMod WarningMsg
 highlight! link TabModSel TabMod
 
 " gabenespoli/vim-jupycent  {{{2
