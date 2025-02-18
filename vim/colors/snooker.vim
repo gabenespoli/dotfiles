@@ -412,10 +412,10 @@ hi! link fugitiveHeading               PreProc
 hi! link fugitiveHeader                PreProc
 hi! link fugitiveSymbolicRef           Conditional
 hi! link fugitiveCount                 Todo
-call s:h('diffLine',                   {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('diffSubName',                {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('diffIndexLine',              {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
-call s:h('diffFile',                   {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffLine',                   {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffSubName',                {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffIndexLine',              {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffFile',                   {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
 
 " GV.vim {{{2
 " hi! link gvSha                         Delimiter
