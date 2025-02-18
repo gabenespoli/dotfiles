@@ -273,12 +273,13 @@ hi! link @string                String
 " hi! link @text.underline
 " hi! link @text.uri
 " hi! link @text.warning
-hi! link @type                  Type
-hi! link @type.builtin          Type
+" hi! link @type                  Type
+call s:h('@type.builtin',       {'fg': s:brown})
 " hi! link @type.definition
 " hi! link @type.qualifier
 hi! link @variable              Normal
-hi! link @variable.builtin      Type
+hi! link @variable.builtin      Normal
+hi! link @variable.parameter    PreProc
 hi! link @warning               WarningMsg
 
 " my own extras {{{1
