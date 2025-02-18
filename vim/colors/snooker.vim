@@ -410,7 +410,7 @@ call s:h('fugitiveUnstagedModifier',   {'fg': s:red})
 call s:h('fugitiveStagedModifier',     {'fg': s:green})
 hi! link fugitiveHeading               PreProc
 hi! link fugitiveHeader                PreProc
-hi! link fugitiveSymbolicRef           Conditional
+hi! link fugitiveSymbolicRef           Label
 hi! link fugitiveCount                 Todo
 call s:h('diffLine',                   {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('diffSubName',                {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
