@@ -114,7 +114,6 @@ endif
 " Colors
 set background=dark
 if has('nvim') && exists('$TMUX') | set termguicolors | endif
-let g:snooker_diff_high_contrast = 1
 colorscheme snooker
 
 " Some autocommands
