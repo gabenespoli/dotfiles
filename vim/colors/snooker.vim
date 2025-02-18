@@ -438,6 +438,9 @@ call s:h('flogBranch2',                {'fg': s:pink})
 call s:h('flogBranch3',                {'fg': s:purple})
 call s:h('flogBranch4',                {'fg': s:yellow})
 call s:h('flogBranch5',                {'fg': s:green_light})
+call s:h('flogBranch6',                {'fg': s:brown})
+call s:h('flogBranch7',                {'fg': s:orange})
+call s:h('flogBranch8',                {'fg': s:cyan_light})
 
 " GitGutter / Signify / GitSigns.nvim {{{2
 call s:h('GitGutterAdd',               {'fg': s:green_light})
