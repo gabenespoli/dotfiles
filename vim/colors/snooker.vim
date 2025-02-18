@@ -39,7 +39,7 @@ let s:cyan            = { 'gui': '#1dae87', 'cterm': '6'    }
 let s:fg_light        = { 'gui': '#cdc08b', 'cterm': '7'    }
 
 let s:fg_com          = { 'gui': '#6a6a5b', 'cterm': '8'    }
-let s:orange          = { 'gui': '#e5941a', 'cterm': '9'    }
+let s:orange          = { 'gui': '#ea901a', 'cterm': '9'    }  " e5941a
 let s:green_light     = { 'gui': '#25c528', 'cterm': '10'   }
 let s:yellow          = { 'gui': '#c89b13', 'cterm': '11'   }
 let s:blue_light      = { 'gui': '#00a3cc', 'cterm': '12'   }
