@@ -204,28 +204,29 @@ call s:h('qfLineNr',         {'fg': s:fg})
 " hi! link @annotation
 " hi! link @attribute
 " hi! link @attribute.typescript
-hi! link @boolean               Boolean
-hi! link @character             Character
-" hi! link @character.special
-hi! link @comment               Comment
-hi! link @conditional           Conditional
-hi! link @constant              Constant
-hi! link @constant.builtin      Constant
+" hi! link @boolean               Boolean
+" hi! link @character             Character
+" hi! link @character.special     SpecialChar
+" hi! link @comment               Comment
+" hi! link @conditional           Conditional
+" hi! link @constant              Constant
+" hi! link @constant.builtin      Constant
 " hi! link @constant.macro
 hi! link @constructor           Type
 " hi! link @danger
 " hi! link @debug
-" hi! link @define
-hi! link @error                 Error
-hi! link @exception             Exception
+" hi! link @define                Define
+" hi! link @error                 Error
+" hi! link @exception             Exception
 " hi! link @field
-hi! link @float                 Float
-" hi! link @function
-hi! link @function.builtin      Function
+" hi! link @float                 Float
+" hi! link @function              Function
+" hi! link @function.builtin      Function
 " hi! link @function.call
 " hi! link @function.macro
-hi! link @include               Include
-hi! link @keyword               Keyword
+" hi! link @include               Include
+" hi! link @keyword               Keyword
+" hi! link @keyword.import
 " hi! link @keyword.function
 " hi! link @keyword.operator
 " hi! link @keyword.return
@@ -236,18 +237,18 @@ call s:h('@module',             {'fg': s:fg})
 " hi! link @namespace
 " hi! link @none
 " hi! link @note
-hi! link @number                Number
-hi! link @operator              Operator
+" hi! link @number                Number
+" hi! link @operator              Operator
 hi! link @parameter             Special
 " hi! link @parameter.reference
-hi! link @preproc               PreProc
+" hi! link @preproc               PreProc
 " hi! link @property
 " hi! link @punctuation.bracket
 " hi! link @punctuation.delimiter
 " hi! link @punctuation.special
 " hi! link @repeat
-" hi! link @storageclass
-hi! link @string                String
+" hi! link @storageclass          StorageClass
+" hi! link @string                String
 " hi! link @string.escape
 " hi! link @string.regex
 " hi! link @string.special
