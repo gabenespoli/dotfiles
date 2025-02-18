@@ -48,15 +48,15 @@ keybind = "cmd+shift+right_bracket=esc:}"
 # colors
 palette = 0=2b302b
 palette = 1=e52e1a
-palette = 2=1c9c20
+palette = 2=1c9c40
 palette = 3=a57230
 palette = 4=0094cf
-palette = 5=5e72d5
+palette = 5=8b72da
 palette = 6=1dae87
 palette = 7=cdc08b
 palette = 8=6a6a5b
-palette = 9=e5941a
-palette = 10=25c528
+palette = 9=ea901a
+palette = 10=22bd4e
 palette = 11=c89b13
 palette = 12=00a3cc
 palette = 13=df7376
