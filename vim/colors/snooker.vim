@@ -34,7 +34,7 @@ let s:red             = { 'gui': '#e52e1a', 'cterm': '1'    }
 let s:green           = { 'gui': '#1c9c40', 'cterm': '2'    }  " 1c9c20
 let s:brown           = { 'gui': '#a57230', 'cterm': '3'    }
 let s:blue            = { 'gui': '#0094cf', 'cterm': '4'    }
-let s:purple          = { 'gui': '#5e72d5', 'cterm': '5'    }
+let s:purple          = { 'gui': '#7772da', 'cterm': '5'    }  " 5e72d5
 let s:cyan            = { 'gui': '#1dae87', 'cterm': '6'    }
 let s:fg_light        = { 'gui': '#cdc08b', 'cterm': '7'    }
 
