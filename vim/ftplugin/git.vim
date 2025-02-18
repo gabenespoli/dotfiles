@@ -12,10 +12,12 @@ function PreviewWindowExists()
   return 0
 endfunction
 
-" fold at filenames
+" fold at filenames and hunks
 function! GitFolds(lnum) "{{{
   if getline(a:lnum) =~# '^diff'
     return '>1'
+  elseif getline(a:lnum) =~# '^@@'
+    return '>2'
   else
     return '='
   endif
