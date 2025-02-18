@@ -1,3 +1,5 @@
+nnoremap <buffer> zo zO
+nnoremap <buffer> zO zo
 nnoremap <buffer> = za
 nmap <buffer> <expr> q PreviewWindowExists() ? ':pclose<CR>' : '<C-w>q'
 " nmap <buffer> <expr> o PreviewWindowExists() ? 'p' : 'gO:setlocal previewwindow<CR><C-w>p'
