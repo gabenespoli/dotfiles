@@ -169,8 +169,8 @@ else
   call s:h('DiffText',       {'bg': s:yellow_bg})
 endif
 
-call s:h('Added',            {'fg': s:green})
-call s:h('Changed',          {'fg': s:blue})
+call s:h('Added',            {'fg': s:green_light})
+call s:h('Changed',          {'fg': s:blue_light})
 call s:h('Removed',          {'fg': s:red})
 
 if has('gui_running') && g:snooker_gui_color_undercurl
@@ -407,7 +407,7 @@ hi! link sqlFold                       String
 " Plugins {{{1
 " Fugitive {{{2
 call s:h('fugitiveUnstagedModifier',   {'fg': s:red})
-call s:h('fugitiveStagedModifier',     {'fg': s:green})
+call s:h('fugitiveStagedModifier',     {'fg': s:green_light})
 hi! link fugitiveHeading               PreProc
 hi! link fugitiveHeader                PreProc
 hi! link fugitiveSymbolicRef           Label
