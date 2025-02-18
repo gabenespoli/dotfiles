@@ -169,8 +169,8 @@ else
   call s:h('DiffText',       {'bg': s:yellow_bg})
 endif
 
-call s:h('Added',            {'fg': s:green_light})
-call s:h('Changed',          {'fg': s:blue_light})
+call s:h('Added',            {'fg': s:green})
+call s:h('Changed',          {'fg': s:blue})
 call s:h('Removed',          {'fg': s:red})
 
 if has('gui_running') && g:snooker_gui_color_undercurl
@@ -409,14 +409,10 @@ hi! link fugitiveHeading               PreProc
 hi! link fugitiveHeader                PreProc
 hi! link fugitiveSymbolicRef           Conditional
 hi! link fugitiveCount                 Todo
-hi! link diffSubName                   Identifier
-call s:h('diffAdded',                  {'fg': s:green})
-call s:h('diffRemoved',                {'fg': s:red})
-call s:h('diffChanged',                {'fg': s:blue})
 call s:h('diffLine',                   {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffSubName',                {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('diffIndexLine',              {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('diffFile',                   {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
-hi! link diffNewFile                   String
-hi! link diffOldFile                   String
 
 " GV.vim {{{2
 " hi! link gvSha                         Delimiter
