@@ -232,6 +232,7 @@ hi! link @keyword               Keyword
 " hi! link @label
 " hi! link @method
 " hi! link @method.call
+call s:h('@module',             {'fg': s:fg})
 " hi! link @namespace
 " hi! link @none
 " hi! link @note
