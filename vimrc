@@ -4,6 +4,9 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+" VSCode settings at the end
+if !exists('g:vscode')
+
 " Plugins  {{{1
 " Install vim-plugged if it isn't already
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -12,55 +15,51 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Helper function to conditionally load plugins
-" https://github.com/junegunn/vim-plug/wiki/tips#conditional-activation
-function! Cond(cond, ...)
-  let opts = get(a:000, 0, {})
-  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
-endfunction
-
 call plug#begin()
 
 " Editing
-Plug 'tpope/vim-rsi', Cond(!exists('g:vscode'))
-Plug 'tpope/vim-eunuch', Cond(!exists('g:vscode'))
-Plug 'tpope/vim-repeat', Cond(!exists('g:vscode'))
-Plug 'tpope/vim-commentary', Cond(!exists('g:vscode'))
-Plug 'tpope/vim-dotenv', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dotenv'
 Plug 'machakann/vim-sandwich'
-Plug 'github/copilot.vim', Cond(!exists('g:vscode'))
+Plug 'github/copilot.vim'
 
 " Git & Files
-Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
-Plug 'rbong/vim-flog', Cond(!exists('g:vscode'))
-Plug 'justinmk/vim-dirvish', Cond(!exists('g:vscode'))
-Plug 'brianhuster/dirvish-git.nvim', Cond(!exists('g:vscode'))
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
+Plug 'justinmk/vim-dirvish'
+Plug 'brianhuster/dirvish-git.nvim'
 
 " Python
-Plug 'Vimjas/vim-python-pep8-indent', Cond(!exists('g:vscode'), {'for': ['python']})
-Plug 'kalekundert/vim-coiled-snake', Cond(!exists('g:vscode'), {'for': ['python']})
-Plug 'gabenespoli/vim-pythonsense', Cond(!exists('g:vscode'), {'for': ['python']})
-Plug 'psf/black', Cond(!exists('g:vscode'), {'for': ['python']})
-Plug 'fisadev/vim-isort', Cond(!exists('g:vscode'), {'for': ['python']})
+Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
+Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
+Plug 'gabenespoli/vim-pythonsense', {'for': ['python']}
+Plug 'psf/black', {'for': ['python']}
+Plug 'fisadev/vim-isort', {'for': ['python']}
 
 " Tmux
-Plug 'christoomey/vim-tmux-navigator', Cond(!exists('g:vscode'))
-Plug 'jpalardy/vim-slime', Cond(!exists('g:vscode'))
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
 
 " My Plugins
-Plug 'gabenespoli/vim-mutton', Cond(!exists('g:vscode'))
-Plug 'gabenespoli/vim-tabsms', Cond(!exists('g:vscode'))
-Plug 'gabenespoli/vim-jupycent', Cond(!exists('g:vscode'))
+Plug 'gabenespoli/vim-mutton'
+Plug 'gabenespoli/vim-tabsms'
+Plug 'gabenespoli/vim-jupycent'
 
 " Lua Plugins
-Plug 'lewis6991/gitsigns.nvim', Cond(!exists('g:vscode'))
-Plug 'ibhagwan/fzf-lua', Cond(has('nvim') && !exists('g:vscode'))
-Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim') && !exists('g:vscode'))
-Plug 'neovim/nvim-lspconfig', Cond(has('nvim') && !exists('g:vscode'))
-Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim') && !exists('g:vscode'), {'do': ':TSUpdate'})
-Plug 'nvim-treesitter/playground', Cond(has('nvim') && !exists('g:vscode'))
-Plug 'junegunn/fzf', Cond(!has('nvim'))
-Plug 'junegunn/fzf.vim', Cond(!has('nvim'))
+if has('nvim')
+  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'ibhagwan/fzf-lua'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
+else
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
+endif
 
 call plug#end()
 
@@ -180,7 +179,7 @@ endfunction
 
 " Statusline devicon fucnctions  {{{2
 function! Devicon() abort
-  if !has('nvim') || exists('g:vscode')
+  if !has('nvim')
     return ''
   endif
   let l:icon = execute('lua print(require("nvim-web-devicons").get_icon('
@@ -568,7 +567,7 @@ else
   vnoremap <silent> <M-j> <Esc>:TmuxNavigateDown<CR>
   vnoremap <silent> <M-k> <Esc>:TmuxNavigateUp<CR>
   vnoremap <silent> <M-l> <Esc>:TmuxNavigateRight<CR>
-  if has('nvim') && !exists('g:vscode')
+  if has('nvim')
     tnoremap <silent> <M-h> <C-\><C-N>:TmuxNavigateLeft<CR>
     tnoremap <silent> <M-j> <C-\><C-N>:TmuxNavigateDown<CR>
     tnoremap <silent> <M-k> <C-\><C-N>:TmuxNavigateUp<CR>
@@ -597,15 +596,15 @@ nnoremap g<C-l> <C-l>
 let g:mutton_min_center_width = 94
 let g:mutton_min_side_width = 25
 
-" Plug 'gabenespoli/vim-tabsms'  {{{2
+" gabenespoli/vim-tabsms  {{{2
 highlight! link TabMod WarningMsg
 highlight! link TabModSel TabMod
 
 " gabenespoli/vim-jupycent  {{{2
 let g:jupycent_command = expand('~').'/.pyenv/versions/neovim/bin/jupytext'
 
-" Lua Plugins  {{{1
-if has('nvim') && !exists('g:vscode')
+" Lua Plugin Settings  {{{1
+if has('nvim')
 lua << EOF
 
 -- ibhagwan/fzf-lua  {{{2
@@ -779,36 +778,6 @@ omap ac :<C-U>Gitsigns select_hunk<CR>
 nmap dac :<C-U>Gitsigns select_hunk<CR>d
 nmap cac :<C-U>Gitsigns select_hunk<CR>c
 
-" map combining nvim lsp diagnostics with gitgutter preview
-if has('nvim') && !exists('g:vscode')
-lua << EOF
-function _G.has_line_diagnostic(bufnr, line_nr)
-  local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
-  return not vim.tbl_isempty(line_diagnostics)
-end
-EOF
-nnoremap <expr> =
-      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
-      \ ':lua vim.diagnostic.open_float()<CR>' :
-      \ ':Gitsigns preview_hunk<CR>'
-else
-nnoremap = :Gitsigns preview_hunk<CR>
-endif
-
-" ibhagwan/fzf-lua  {{{2
-nmap <C-p>        :FzfLua git_files<CR>
-nmap <C-k><C-b>   :FzfLua buffers<CR>
-nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
-nmap <C-k><C-g>   :FzfLua live_grep<CR>
-nmap <C-k><C-f>   :FzfLua files<CR>
-nmap <C-k><C-k>   :FzfLua resume<CR>
-nmap <C-k><C-l>   :FzfLua git_commits<CR>
-nmap <C-k><C-o>   :FzfLua oldfiles<CR>
-nmap <C-k><C-r>   :FzfLua registers<CR>
-nmap <C-k><C-s>   :FzfLua git_status<CR>
-nmap <C-k><Space> :FzfLua<Space>
-nmap <C-k>gr      :FzfLua lsp_references<CR>
-
 " nvim/lsp-config  {{{2
 nmap gd :lua vim.lsp.buf.definition()<CR>
 nmap gr :lua vim.lsp.buf.references()<CR>
@@ -830,33 +799,61 @@ augroup END
 " nvim-treesitter/playground  {{{2
 nnoremap zS :TSHighlightCapturesUnderCursor<CR>
 
-" else if no nvim (and no vscode)
+" end if has nvim
+end
+
+" map combining nvim lsp diagnostics with gitgutter preview  {{{2
+if has('nvim')
+lua << EOF
+function _G.has_line_diagnostic(bufnr, line_nr)
+  local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
+  return not vim.tbl_isempty(line_diagnostics)
+end
+EOF
+nnoremap <expr> =
+      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
+      \ ':lua vim.diagnostic.open_float()<CR>' :
+      \ ':Gitsigns preview_hunk<CR>'
 else
-
-" junegunn/fzf.vim
-nmap <C-p>        :GFiles<CR>
-nmap <C-k><C-b>   :Buffers<CR>
-nmap <C-k><C-g>   :Rg<CR>
-nmap <C-k><C-f>   :Files<CR>
-nmap <C-k><C-l>   :Commits<CR>
-nmap <C-k><C-o>   :History<CR>
-nmap <C-k><C-s>   :GFiles?<CR>
-
-" end if nvim (and no vscode)
+  nnoremap = :Gitsigns preview_hunk<CR>
 endif
 
-" some vscode remappings
-if exists('g:vscode')
-xmap gc  <Plug>VSCodeCommentary
-nmap gc  <Plug>VSCodeCommentary
-omap gc  <Plug>VSCodeCommentary
-nmap gcc <Plug>VSCodeCommentaryLine
-nnoremap q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
-nnoremap <C-w><C-d> <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
-nnoremap gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
-nmap <C-k><C-g> <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
-nnoremap <M-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<CR>
-nnoremap <M-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<CR>
-nnoremap <M-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<CR>
-nnoremap <M-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<CR>
+" ibhagwan/fzf-lua & junegunn/fzf.vim  {{{2
+if has('nvim')
+  nmap <C-p>        :FzfLua git_files<CR>
+  nmap <C-k><C-b>   :FzfLua buffers<CR>
+  nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
+  nmap <C-k><C-g>   :FzfLua live_grep<CR>
+  nmap <C-k><C-f>   :FzfLua files<CR>
+  nmap <C-k><C-k>   :FzfLua resume<CR>
+  nmap <C-k><C-l>   :FzfLua git_commits<CR>
+  nmap <C-k><C-o>   :FzfLua oldfiles<CR>
+  nmap <C-k><C-r>   :FzfLua registers<CR>
+  nmap <C-k><C-s>   :FzfLua git_status<CR>
+  nmap <C-k><Space> :FzfLua<Space>
+  nmap <C-k>gr      :FzfLua lsp_references<CR>
+else
+  nmap <C-p>        :GFiles<CR>
+  nmap <C-k><C-b>   :Buffers<CR>
+  nmap <C-k><C-g>   :Rg<CR>
+  nmap <C-k><C-f>   :Files<CR>
+  nmap <C-k><C-l>   :Commits<CR>
+  nmap <C-k><C-o>   :History<CR>
+  nmap <C-k><C-s>   :GFiles?<CR>
+endif
+
+" VSCode Settings  {{{1
+else
+  xmap gc  <Plug>VSCodeCommentary
+  nmap gc  <Plug>VSCodeCommentary
+  omap gc  <Plug>VSCodeCommentary
+  nmap gcc <Plug>VSCodeCommentaryLine
+  nnoremap q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
+  nnoremap <C-w><C-d> <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
+  nnoremap gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
+  nmap <C-k><C-g> <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
+  nnoremap <M-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<CR>
+  nnoremap <M-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<CR>
+  nnoremap <M-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<CR>
+  nnoremap <M-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<CR>
 endif
