@@ -416,6 +416,9 @@ call s:h('diffLine',                   {'fg': s:purple, 'gui': 'reverse', 'cterm
 call s:h('diffSubName',                {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('diffIndexLine',              {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
 call s:h('diffFile',                   {'fg': s:cyan, 'gui': 'reverse', 'cterm': 'reverse'})
+hi! link diffAdded                     DiffAdd
+hi! link diffRemoved                   DiffDelete
+hi! link diffChanged                   DiffChange
 
 " GV.vim {{{2
 " hi! link gvSha                         Delimiter
