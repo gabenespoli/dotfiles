@@ -184,8 +184,6 @@ alias vl="pyenv virtualenvs"  # list
 alias va="pyenv activate"
 alias vc="pyenv virtualenv"  # create
 alias vd="pyenv virtualenv-delete"
-alias cl="conda env list"
-alias ca="conda deactivate && conda activate"
 
 alias gs="git status --short"
 alias co="git checkout"
