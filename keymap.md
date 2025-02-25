@@ -7,9 +7,9 @@
 1. [Main Layer](#main)
 2. [Control Layer](#control)
 3. [Command Layer](#command)
-4. [Semicolon Layer](#semicolon) (Arrows, Symbols, Media)
-5. [Tab Layer](#tab) (Number Pad, Window Management)
-6. [Quote/Escape Layer](#quote) (Function Keys, Numbers, Symbols)
+4. [Semicolon Layer](#semicolon) (Arrows/Navigation, Symbols)
+5. [Quote/Escape Layer](#quote) (Function Keys, Symbols, Navigation, Media)
+6. [Tab Layer](#tab) (Number Pad, Window Management)
 7. [Comma Layer](#comma) (Function Keys)
 8. [Function Layer](#function) (Mac Function Keys)
 9. [Option Layer](#option)
@@ -93,7 +93,8 @@ are lost are remapped in the Tab Layer.
 
 ### Semicolon Layer
 
-Arrow keys and navigation cluster, shifted number row, and volume.
+Arrow keys and some navigation, shifted number row, parenthesis, brackets, and
+some other symbols.
 
 ```
 ,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
@@ -110,6 +111,34 @@ Arrow keys and navigation cluster, shifted number row, and volume.
 |               |      |      |      |      |      |      |      |      |      |      |                 |
 |--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
 |        |        |        |                                        |        |        |        |        |
+|        |        |        |                                        |        |        |        |        |
+'--------'--------'--------'----------------------------------------'--------'--------'--------'--------'
+```
+
+<a name="quote">
+
+### Quote/Escape Layer
+
+Function keys, braces, dashes, some navigation and some media keys. Also a
+closer number row and some math symbols. This layer can be triggered using
+either `'` or `Esc`. In Finder.app, `'-j` and `'-k` actually send `Cmd-Up` and
+`Cmd-Dn`, to navigate up and down the directory tree.
+
+```
+,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
+| #### | F1   | F2   | F3   | F4   | F5   | F6   | F7   | F8   | F9   | F10  | F11  | F12  |            |
+| #### |      |      |      |      |      |      |      |      |      |      |      |      |            |
+|------'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--------|
+|          |      |      |      | 'r   | 't   |      | Del  |      | {    | }    |      |      |        |
+|          |      |      |      |      |      |      |      |      |      |      |      |      |        |
+|----------'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'--------|
+| `          |      | 's   | 'd   |      |      | Bksp | PgDn | PgUp | 'l   |      | #### |             |
+|            |      |      |      |      |      |      |      |      |      |      | #### |             |
+|------------'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'-------------|
+|               |      | – en | — em | 'v   |Prev  |Next  | 'm   |      |      |      |                 |  
+|               |      |      |      |      |Track |Track |      |      |      |      |                 |
+|--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
+|        |        |        |              Play / Pause              |        |        |        |        |
 |        |        |        |                                        |        |        |        |        |
 '--------'--------'--------'----------------------------------------'--------'--------'--------'--------'
 ```
@@ -136,34 +165,6 @@ Number pad, window management with [Rectangle](https://www.rectangleapp.com/) an
 |               |L 3/4 |R 1/4 |L 1/4 |R 3/4 |      |      |      |      |      |      |                 |
 |--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
 |        |        |        |                     0                  |        |        |        |        |
-|        |        |        |                                        |        |        |        |        |
-'--------'--------'--------'----------------------------------------'--------'--------'--------'--------'
-```
-
-<a name="quote">
-
-### Quote/Escape Layer
-
-Function keys, brackets, quotes, and some media keys. Also a closer number row
-and some math symbols. This layer can be triggered using either `'` or `Esc`. In
-Finder.app, `'-y` and `'-o` actually send `Cmd-Up` and `Cmd-Dn`, to navigate up
-and down the directory tree.
-
-```
-,------,------,------,------,------,------,------,------,------,------,------,------,------,------------,
-| #### | F1   | F2   | F3   | F4   | F5   | F6   | F7   | F8   | F9   | F10  | F11  | F12  |            |
-| #### |      |      |      |      |      |      |      |      |      |      |      |      |            |
-|------'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--'---,--------|
-|          |      |      |      | 'r   | 't   |      | Del  |      | {    | }    |      |      |        |
-|          |      |      |      |      |      |      |      |      |      |      |      |      |        |
-|----------'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'-,----'--------|
-| `          |      | 's   | 'd   |      |      | Bksp | PgDn | PgUp | 'l   |      | #### |             |
-|            |      |      |      |      |      |      |      |      |      |      | #### |             |
-|------------'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'--,---'-------------|
-|               |      | – en | — em | 'v   |Prev  |Next  | 'm   |      |      |      |                 |  
-|               |      |      |      |      |Track |Track |      |      |      |      |                 |
-|--------,------'-,----'---,--'------'------'------'------'------'--,---'----,-'------'-----------------|
-|        |        |        |              Play / Pause              |        |        |        |        |
 |        |        |        |                                        |        |        |        |        |
 '--------'--------'--------'----------------------------------------'--------'--------'--------'--------'
 ```
