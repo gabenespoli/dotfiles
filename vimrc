@@ -75,8 +75,6 @@ if has('nvim')
 endif
 if isdirectory(expand('~').'/.pyenv/versions/neovim')
   let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim/bin/python'
-elseif isdirectory(expand('~').'/miniconda3/envs/neovim')
-  let g:python3_host_prog = expand('~').'/miniconda3/envs/neovim/bin/python'
 elseif isdirectory(expand('~').'/.pyenv/neovim3')
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
 endif
