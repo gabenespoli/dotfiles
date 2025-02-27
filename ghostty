@@ -45,16 +45,31 @@ keybind = "cmd+right_bracket=esc:]"
 keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
-# colors  {{{1
+# colors snooker (dark) {{{1
+
+# bg, bg_light
+background = 0f111b
 palette = 0=2b302b
+
+# fg_com, fg, fg_light, fg_bright
+palette = 8=6a6a5b
+foreground = adad9b
+palette = 7=cdc08b
+palette = 15=e5e5d2
+
+cursor-color = adad9b
+selection-foreground = adad9b
+selection-background = 003b52
+
+# red, green, yellow, blue, purple, cyan
 palette = 1=e52e1a
 palette = 2=1c9c40
 palette = 3=a57230
 palette = 4=0094cf
 palette = 5=8b72da
 palette = 6=1dae87
-palette = 7=cdc08b
-palette = 8=6a6a5b
+
+# orange, green_light, yellow, pink, cyan_light
 palette = 9=ea901a
 palette = 10=22bd4e
 palette = 11=c89b13
