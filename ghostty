@@ -1,4 +1,4 @@
-# system
+# system  {{{1
 auto-update = check
 clipboard-read = allow
 clipboard-write = allow
@@ -8,7 +8,7 @@ macos-icon-frame = beige
 macos-icon-ghost-color = ffffff
 macos-icon-screen-color = 000000
 
-# terminal
+# terminal  {{{1
 resize-overlay = never
 cursor-style = block
 cursor-style-blink = false
@@ -18,7 +18,7 @@ font-size = 13
 font-thicken = true
 adjust-cell-width = -1
 
-# keybindings
+# keybindings  {{{1
 keybind = cmd+zero=esc:0
 keybind = cmd+one=esc:1
 keybind = cmd+two=esc:2
@@ -45,7 +45,7 @@ keybind = "cmd+right_bracket=esc:]"
 keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
-# colors
+# colors  {{{1
 palette = 0=2b302b
 palette = 1=e52e1a
 palette = 2=1c9c40
