@@ -25,7 +25,7 @@ if !exists('g:snooker_gui_color_undercurl')
 endif
 
 " Colors {{{1
-let s:bg              = { 'gui': '#0f111b', 'cterm': 'NONE' }
+let s:bg              = { 'gui': '#0f171b', 'cterm': 'NONE' }
 let s:fg              = { 'gui': '#adad9b', 'cterm': 'NONE' }
 let s:none            = { 'gui': 'NONE',    'cterm': 'NONE' }
 

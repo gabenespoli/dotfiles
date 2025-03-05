@@ -48,7 +48,7 @@ keybind = "cmd+shift+right_bracket=esc:}"
 # colors snooker (dark) {{{1
 
 # bg, bg_light
-background = 0f111b
+background = 0f171b
 palette = 0=2b302b
 
 # fg_com, fg, fg_light, fg_bright
