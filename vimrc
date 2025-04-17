@@ -84,7 +84,7 @@ if has('gui')
   set mouse=a
 else
   set number
-  set mouse=n
+  set mouse=
 endif
 set nomodeline
 set cursorline
