@@ -486,22 +486,32 @@ require('vim.lsp.protocol').CompletionItemKind = {
 }
 
 -- Setup lsp diagnostics
-vim.diagnostic.config(
-  {
-    underline=false,
-    virtual_text=false,
-    severity_sort=true,
-    float={border="rounded"},
+vim.diagnostic.config {
+  underline=false,
+  virtual_text=false,
+  severity_sort=true,
+  float={border="rounded"},
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "",
+      [vim.diagnostic.severity.HINT] = "",
+    },
+    texthl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+      [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+      [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+      [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+      [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+      [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+      [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+    },
   }
-)
-
--- diagnostic signs and highlight groups
-local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
-for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
-  local hln = hl .. 'Nr'
-  vim.fn.sign_define(hl, { text = '', texthl = hl, numhl = hln })
-end
+}
 
 -- Setup language servers
 local on_attach = function(client, bufnr)

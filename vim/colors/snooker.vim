@@ -505,9 +505,12 @@ hi! link TelescopeSelection            PmenuSel
 " nvim-lspconfig {{{2
 hi! link DiagnosticSignError           ErrorMsg
 hi! link DiagnosticSignWarn            WarningMsg
-hi! link DiagnosticSignErrorNr         ErrorMsg
-hi! link DiagnosticSignWarnNr          WarningMsg
-call s:h('DiagnosticSignHintNr',       {'fg': s:blue, 'bg': s:bg, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('DiagnosticSignInfo',         {'fg': s:bg_light, 'bg': s:blue_light, 'gui': 'reverse', 'cterm': 'reverse'})
+call s:h('DiagnosticSignHint',         {'fg': s:bg_light, 'bg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})
+hi! link DiagnosticSignErrorNr         DiagnosticSignError
+hi! link DiagnosticSignWarnNr          DiagnosticSignWarn
+hi! link DiagnosticSignInfoNr          DiagnosticSignInfo
+hi! link DiagnosticSignHintNr          DiagnosticSignHint
 
 " nvim-tree.lua {{{2
 call s:h('NvimTreeSymlink',            {'fg': s:cyan})
