@@ -1,6 +1,9 @@
 " need gs for git status, so use gS instead
 nmap <buffer> gS <Plug>(FlogVSplitStaged)
 
+nmap ) <Plug>(FlogVNextCommitRight)
+nmap ( <Plug>(FlogVPrevCommitRight)
+
 nmap <buffer> o <CR>
 nmap <buffer> p <CR><C-w>lzMggzj<C-w>h
 
