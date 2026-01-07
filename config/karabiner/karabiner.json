@@ -2128,11 +2128,7 @@
                                     "key_code": "u",
                                     "modifiers": { "optional": ["caps_lock", "command", "option", "control", "shift"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket"
-                                    }
-                                ],
+                                "to": [{ "key_code": "open_bracket" }],
                                 "type": "basic"
                             },
                             {
@@ -2147,11 +2143,7 @@
                                     "key_code": "i",
                                     "modifiers": { "optional": ["caps_lock", "command", "option", "control", "shift"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket"
-                                    }
-                                ],
+                                "to": [{ "key_code": "close_bracket" }],
                                 "type": "basic"
                             }
                         ]
