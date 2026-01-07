@@ -309,7 +309,6 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
@@ -350,7 +349,6 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.azuredatastudio\\.oss$",
-                                            "^com\\.microsoft\\.VSCode$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.mitchellh\\.ghostty$",
                                             "^com\\.googlecode\\.iterm2$",
