@@ -520,14 +520,14 @@ local on_attach = function(client, bufnr)
   vim.lsp.handlers['textDocument/signature_help'] = vim.lsp.with(vim.lsp.handlers.signature_help, {border="rounded"})
 end
 
-require('lspconfig').efm.setup{on_attach=on_attach}
-require('lspconfig').sqlls.setup{
+vim.lsp.config.efm = {on_attach=on_attach}
+vim.lsp.config.sqlls = {
     on_attach=function(client, bufnr)
         require('sqlls').on_attach(client, bufnr)
     end,
 }
-require('lspconfig').terraformls.setup{on_attach=on_attach}
-require('lspconfig').pyright.setup{
+vim.lsp.config.terraformls = {on_attach=on_attach}
+vim.lsp.config.pyright = {
   on_attach=on_attach,
   --flags={debounce_text_changes = 150},
   settings={
