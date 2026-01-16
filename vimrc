@@ -4,8 +4,6 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-if !exists('g:vscode')  " VSCode settings at the end
-
 " Plugins  {{{1
 " Install vim-plugged if it isn't already
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -853,20 +851,4 @@ nnoremap <expr> =
       \ ':Gitsigns preview_hunk<CR>'
 else
   nnoremap = :Gitsigns preview_hunk<CR>
-endif
-
-" VSCode Settings  {{{1
-else
-  xmap gc  <Plug>VSCodeCommentary
-  nmap gc  <Plug>VSCodeCommentary
-  omap gc  <Plug>VSCodeCommentary
-  nmap gcc <Plug>VSCodeCommentaryLine
-  nnoremap q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
-  nnoremap <C-w><C-d> <Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>
-  nnoremap gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
-  nmap <C-k><C-g> <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
-  nnoremap <M-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<CR>
-  nnoremap <M-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<CR>
-  nnoremap <M-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<CR>
-  nnoremap <M-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<CR>
 endif
