@@ -31,7 +31,6 @@ Plug 'machakann/vim-sandwich'
 Plug 'github/copilot.vim'
 Plug 'neovim/nvim-lspconfig', Cond(has('nvim'))
 Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim'), {'do': ':TSUpdate'})
-Plug 'nvim-treesitter/playground', Cond(has('nvim'))
 
 " Git & Files
 Plug 'tpope/vim-fugitive'
@@ -551,23 +550,6 @@ augroup nvimlsp
 augroup END
 
 endif
-
-" nvim-treesitter  {{{2
-if has('nvim')
-lua << EOF
-require('nvim-treesitter.configs').setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
-
--- nvim-treesitter/playground
-require('nvim-treesitter.configs').setup {playground = {enable = true}}
-
-EOF
-endif
-
 
 " tpope/vim-fugitive  {{{2
 nnoremap git :Git
