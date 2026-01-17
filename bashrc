@@ -29,7 +29,9 @@ else
 fi
 
 # Environment {{{1
-export PATH="$HOME/dotfiles/bin:$HOME/local/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:/usr/local/lib:$PATH"
+export PATH="/usr/local/bin:/usr/local/lib:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
 export EDITOR='nvim'
 export CLICOLOR=1
 export LS_COLORS=$LS_COLORS:'di=0;34:ln=0;36:ex=0;35:ow=30;42:'
