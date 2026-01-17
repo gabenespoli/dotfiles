@@ -193,6 +193,12 @@ alias GS=Gs
 alias nv="nvim -c 'FzfLua git_files'"
 
 export FZF_DEFAULT_OPTS='--color 16'
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+export FZF_DEFAULT_COMMAND='
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
+  git ls-files --cached --others --exclude-standard ||
+  fd --type f --hidden
+'
 
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' menu no
