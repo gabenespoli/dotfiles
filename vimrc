@@ -303,7 +303,10 @@ nnoremap <C-w><C-f> <C-w><C-v>gf
 nnoremap <C-w><C-]> <C-w><C-v><C-]>zt
 
 " echo syntax under cursor
-nnoremap <silent> <leader>zS :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
+nnoremap <expr> zS 
+      \ has('nvim') ? 
+      \ ':Inspect<CR>' :
+      \ ':echo synIDattr(synID(line("."),col("."),1),"name")<CR>'
 
 " change pwd to that of current file or git repo
 nnoremap <expr> cd exists(":Gcd") == 2 ? ':Gcd<CR>:pwd<CR>' : ':cd %:p:h<CR>:pwd<CR>'
