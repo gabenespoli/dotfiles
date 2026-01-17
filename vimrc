@@ -554,6 +554,22 @@ augroup END
 
 endif
 
+" nvim-treesitter  {{{2
+if has('nvim')
+augroup treesitter
+  autocmd!
+  autocmd FileType python :lua vim.treesitter.start()
+  autocmd FileType vim :lua vim.treesitter.start()
+  autocmd FileType sql :lua vim.treesitter.start()
+  autocmd FileType zsh :lua vim.treesitter.start()
+  autocmd FileType bash :lua vim.treesitter.start()
+  autocmd FileType yaml :lua vim.treesitter.start()
+  autocmd FileType html :lua vim.treesitter.start()
+  autocmd FileType gitconfig :lua vim.treesitter.start()
+  autocmd FileType json :lua vim.treesitter.start()
+augroup END
+endif
+
 " tpope/vim-fugitive  {{{2
 nnoremap git :Git
 nnoremap gs :let g:fugitive_last_bufnr = bufnr()<CR>:Gedit :<CR>:let w:fugitive_last_bufnr = g:fugitive_last_bufnr<CR>
