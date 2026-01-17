@@ -226,6 +226,9 @@ lfcd () {
 function sourcex() { [ -f "$1" ] && source "$1" ; }
 sourcex "$HOME/.bash_local"
 
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
