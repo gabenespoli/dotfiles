@@ -30,6 +30,8 @@ brew install npm
 npm install -g neovim
 npm install -g pyright
 
+brew install rust
+cargo install --locked tree-sitter-cli
 # link files
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
