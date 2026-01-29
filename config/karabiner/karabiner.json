@@ -2114,7 +2114,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+ui -> []]",
+                        "description": "Semicolon Layer [;+yi -> []]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2125,7 +2125,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "y",
                                     "modifiers": { "optional": ["caps_lock", "command", "option", "control", "shift"] }
                                 },
                                 "to": [{ "key_code": "open_bracket" }],
@@ -2214,7 +2214,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+yo -> home/end]",
+                        "description": "Semicolon Layer [;+uo -> home/end]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2231,7 +2231,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "y",
+                                    "key_code": "u",
                                     "modifiers": { "optional": ["caps_lock", "shift"] }
                                 },
                                 "to": [{ "key_code": "home" }],
@@ -2261,7 +2261,7 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Layer [;+yo -> cmd+up/dn] (Finder)",
+                        "description": "Semicolon Layer [;+uo -> cmd+up/dn] (Finder)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2278,7 +2278,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "y",
+                                    "key_code": "u",
                                     "modifiers": { "optional": ["caps_lock"] }
                                 },
                                 "to": [
@@ -4253,44 +4253,34 @@
                         ]
                     },
                     {
-                      "description": "Mouse Button 4/5/7 Navigation",
-                      "manipulators": [
-                        {
-                          "type": "basic",
-                          "from": {
-                            "pointing_button": "button4"
-                          },
-                          "to": [
+                        "description": "Mouse Button 4/5/7 Navigation",
+                        "manipulators": [
                             {
-                              "key_code": "left_arrow",
-                              "modifiers": ["left_control"]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "basic",
-                          "from": {
-                            "pointing_button": "button5"
-                          },
-                          "to": [
+                                "from": { "pointing_button": "button4" },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
-                              "key_code": "right_arrow",
-                              "modifiers": ["left_control"]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "basic",
-                          "from": {
-                            "pointing_button": "button7"
-                          },
-                          "to": [
+                                "from": { "pointing_button": "button5" },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
-                              "shell_command": "open -a 'Mission Control'"
+                                "from": { "pointing_button": "button7" },
+                                "to": [{ "shell_command": "open -a 'Mission Control'" }],
+                                "type": "basic"
                             }
-                          ]
-                        }
-                      ]
+                        ]
                     },
                     {
                         "description": "Ghostty control-tab [control(+shift)+tab] -> command+shift+[]]",
@@ -5353,7 +5343,8 @@
                         "vendor_id": 1133
                     },
                     "ignore": false,
-                    "ignore_vendor_events": true
+                    "ignore_vendor_events": true,
+                    "mouse_flip_horizontal_wheel": true
                 }
             ],
             "fn_function_keys": [
