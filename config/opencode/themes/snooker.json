@@ -30,8 +30,8 @@
       "light": "cyan"
     },
     "accent": {
-      "dark": "blue",
-      "light": "blue"
+      "dark": "purple",
+      "light": "purple"
     },
     "error": {
       "dark": "red",
@@ -62,7 +62,7 @@
       "light": "fg_bright"
     },
     "backgroundPanel": {
-      "dark": "fg_com",
+      "dark": "bg_light",
       "light": "fg_com"
     },
     "backgroundElement": {
@@ -106,28 +106,28 @@
       "light": "red"
     },
     "diffAddedBg": {
-      "dark": "#3B4252",
-      "light": "#E5E9F0"
+      "dark": "#12261e",
+      "light": "#12261e"
     },
     "diffRemovedBg": {
-      "dark": "#3B4252",
-      "light": "#E5E9F0"
+      "dark": "#301a1f",
+      "light": "#301a1f"
     },
     "diffContextBg": {
-      "dark": "blue_light",
-      "light": "blue_light"
+      "dark": "bg_light",
+      "light": "fg_com"
     },
     "diffLineNumber": {
       "dark": "blue",
       "light": "blue"
     },
     "diffAddedLineNumberBg": {
-      "dark": "#3B4252",
-      "light": "#E5E9F0"
+      "dark": "#12261e",
+      "light": "#12261e"
     },
     "diffRemovedLineNumberBg": {
-      "dark": "#3B4252",
-      "light": "#E5E9F0"
+      "dark": "#301a1f",
+      "light": "#301a1f"
     },
     "markdownText": {
       "dark": "fg",
