@@ -32,6 +32,9 @@ npm install -g pyright
 
 brew install rust
 cargo install --locked tree-sitter-cli
+
+brew install anomalyco/tap/opencode
+
 # link files
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
@@ -46,6 +49,8 @@ ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
+ln -sv "$HOME"/dotfiles/config/opencode/opencode.json "$HOME"/.config/opencode
+ln -sv "$HOME"/dotfiles/config/opencode/themes "$HOME"/.config/opencode
 
 # setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
 tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
