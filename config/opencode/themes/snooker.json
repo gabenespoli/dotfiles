@@ -5,7 +5,7 @@
     "bg2": "#141f1f",
     "fg": "#adad9b",
     "bg_light": "#2b302b",
-    "red": "#2E3440",
+    "red": "#e52e1a",
     "green": "#1c9c40",
     "brown": "#a57230",
     "blue": "#0094cf",
@@ -55,7 +55,7 @@
       "light": "bg_light"
     },
     "textMuted": {
-      "dark": "fg_com",
+      "dark": "fg",
       "light": "fg_com"
     },
     "background": {
@@ -63,7 +63,7 @@
       "light": "fg_bright"
     },
     "backgroundPanel": {
-      "dark": "bg2",
+      "dark": "bg_light",
       "light": "fg_com"
     },
     "backgroundElement": {
@@ -115,7 +115,7 @@
       "light": "#301a1f"
     },
     "diffContextBg": {
-      "dark": "bg_light",
+      "dark": "bg",
       "light": "fg_com"
     },
     "diffLineNumber": {
@@ -167,7 +167,7 @@
       "light": "fg_com"
     },
     "markdownListItem": {
-      "dark": "fg_com",
+      "dark": "fg",
       "light": "fg_com"
     },
     "markdownListEnumeration": {
