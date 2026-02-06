@@ -27,8 +27,8 @@
       "light": "fg_com"
     },
     "secondary": {
-      "dark": "cyan",
-      "light": "cyan"
+      "dark": "pink",
+      "light": "pink"
     },
     "accent": {
       "dark": "purple",
