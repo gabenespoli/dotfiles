@@ -45,6 +45,7 @@ tmux source-file ~/.tmux.conf
 
 mkdir -pv "$HOME"/.config/ghostty
 ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
+ln -sfv "$HOME"/dotfiles/config/ghostty-themes "$HOME"/.config/ghostty/themes
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config
