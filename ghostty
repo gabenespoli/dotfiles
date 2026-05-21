@@ -14,7 +14,7 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 font-family = MonoLisaWSLiga Nerd Font
-font-size = 13
+font-size = 14
 font-thicken = true
 adjust-cell-width = -1
 
@@ -45,22 +45,41 @@ keybind = "cmd+right_bracket=esc:]"
 keybind = "cmd+shift+left_bracket=esc:{"
 keybind = "cmd+shift+right_bracket=esc:}"
 
-# colors snooker (dark) {{{1
+
+# theme = dark:Belafonte Night,light:Belafonte Day
+# theme = Flexoki Light
+# theme = Everforest Light Med
+
+
+# colors snooker  {{{1
+
+# # base colours (light)  {{{2
+# # bg, bg_light
+# background = e5e5d2
+# palette = 0=b8b8a9
+# # fg_com, fg, fg_light, fg_bright
+# palette = 8=adad9b
+# foreground = 6a6a5b
+# palette = 7=2b302b
+# palette = 15=0f171b
+# cursor-color = 6a6a5b
+# selection-foreground = 6a6a5b
+# selection-background = 003b52
+
+# base colours (dark)  {{{2
 
 # bg, bg_light
 background = 0f171b
 palette = 0=2b302b
-
 # fg_com, fg, fg_light, fg_bright
 palette = 8=6a6a5b
 foreground = adad9b
 palette = 7=cdc08b
 palette = 15=e5e5d2
-
 cursor-color = adad9b
 selection-foreground = adad9b
 selection-background = 003b52
-
+# colours colours {{{2
 # red, green, yellow, blue, purple, cyan
 palette = 1=e52e1a
 palette = 2=1c9c40
@@ -68,17 +87,130 @@ palette = 3=a57230
 palette = 4=0094cf
 palette = 5=8b72da
 palette = 6=1dae87
-
-# orange, green_light, yellow, pink, cyan_light
+# orange, green_light, yellow, blue_light, pink, cyan_light
 palette = 9=ea901a
 palette = 10=22bd4e
 palette = 11=c89b13
 palette = 12=00a3cc
 palette = 13=df7376
 palette = 14=4abe65
-palette = 15=e5e5d2
-background = 0f111b
-foreground = adad9b
-cursor-color = adad9b
-selection-background = 003b52
-selection-foreground = adad9b
+
+
+# colors other  {{{1
+
+# # solarized light
+# # bg, bg_light
+# background = eee8d5
+# palette = 0=839496
+# # fg_com, fg, fg_light, fg_bright
+# palette = 8=657b83
+# foreground = 586e75
+# palette = 7=073642
+# palette = 15=002b36
+# cursor-color = 657b83
+# selection-foreground = 657b83
+# selection-background = 003b52
+# # red, green, yellow (brown?), blue, purple, cyan
+# palette = 1=dc322f
+# palette = 2=859900
+# palette = 3=b58900
+# palette = 4=268bd2
+# palette = 5=6c71c4
+# palette = 6=2aa198
+# # orange, green_light, yellow, blue_light, pink, cyan_light
+# palette = 9=cb4b16
+# palette = 10=2aa198
+# palette = 11=b58900
+# palette = 12=268bd2
+# palette = 13=d33682
+# palette = 14=2aa198
+
+
+# # https://github.com/igrmk/garlic/blob/master/kitty/Garlic_Sun.conf
+# foreground #ffffff
+# background #3b3c3e
+# background_opacity 0.93
+# dim_opacity 0.75
+# selection_foreground #000000
+# selection_background #fffacd
+# color0 #2e3436
+# color1 #f7bbbb
+# color2 #9eea56
+# color3 #f5e030
+# color4 #6495d4
+# color5 #d595d9
+# color6 #40c8ca
+# color7 #e3e7df
+# color8 #959793
+# color9 #ffd9d9
+# color10 #b9ffb4
+# color11 #fff09f
+# color12 #a5c5ff
+# color13 #f5c0ff
+# color14 #95f7ff
+# color15 #ffffff
+# mark1_foreground black
+# mark1_background #98d3cb
+# mark2_foreground black
+# mark2_background #f2dcd3
+# mark3_foreground black
+# mark3_background #f274bc
+# cursor #ffffff
+# cursor_text_color #000000
+# active_tab_background #d7d9db
+# active_tab_foreground #3b3c3e
+# active_tab_font_style bold
+# inactive_tab_background #9fa1a2
+# inactive_tab_foreground #4b4c4e
+# inactive_tab_font_style normal
+# tab_bar_background none
+# wayland_titlebar_color #3b3c3e
+
+# # everforest (light)  {{{2
+# palette = 0=b9c0ab
+# palette = 1=f85552
+# palette = 2=8da101
+# palette = 3=dfa000
+# palette = 4=3a94c5
+# palette = 5=df69ba
+# palette = 6=35a77c
+# palette = 7=5c6a72
+# palette = 8=829181
+# palette = 9=f57d26
+# palette = 10=93b259
+# palette = 11=dfa000
+# palette = 12=3a94c5
+# palette = 13=e66868
+# palette = 14=35a77c
+# palette = 15=5c6a72
+# background = b9c0ab
+# foreground = 5c6a72
+# cursor-color = 5c6a72
+# selection-background = e1e7dd
+# selection-foreground = 5c6a72
+# # blue light 12
+# # cyan light 14
+# # brown 3
+
+# # noctis lilac (light)  {{{2
+# palette = 0=e0def1
+# palette = 1=ec6392
+# palette = 2=57a871
+# palette = 3=eb8f34
+# palette = 4=4192e9
+# palette = 5=5543f5
+# palette = 6=4193a5
+# palette = 7=9895b4
+# palette = 8=c7c6d2
+# palette = 9=d44f24
+# palette = 10=57a871
+# palette = 11=dea459
+# palette = 12=4192e9
+# palette = 13=5543f5
+# palette = 14=4193a5
+# palette = 15=9895b4
+# background = f2f1f7
+# foreground = 1c1372
+# cursor-color = 1c1372
+# selection-background = e0def1
+# selection-foreground = 1c1372
