@@ -5,7 +5,6 @@ if exists('syntax on')
     syntax reset
 endif
 
-set background=dark
 let g:colors_name='snooker'
 
 if !exists('g:snooker_diff_high_contrast')
@@ -25,35 +24,61 @@ if !exists('g:snooker_gui_color_undercurl')
 endif
 
 " Colors {{{1
-let s:bg              = { 'gui': '#0f171b', 'cterm': 'NONE' }
-let s:fg              = { 'gui': '#adad9b', 'cterm': 'NONE' }
 let s:none            = { 'gui': 'NONE',    'cterm': 'NONE' }
 
-let s:bg_light        = { 'gui': '#2b302b', 'cterm': '0'    }
-let s:red             = { 'gui': '#e52e1a', 'cterm': '1'    }
-let s:green           = { 'gui': '#1c9c40', 'cterm': '2'    }  " 1c9c20
-let s:brown           = { 'gui': '#a57230', 'cterm': '3'    }
-let s:blue            = { 'gui': '#0094cf', 'cterm': '4'    }
-let s:purple          = { 'gui': '#8b72da', 'cterm': '5'    }  " 5e72d5
-let s:cyan            = { 'gui': '#1dae87', 'cterm': '6'    }
-let s:fg_light        = { 'gui': '#cdc08b', 'cterm': '7'    }
+if &background ==# 'light'
+  let s:bg              = { 'gui': '#e5e5d2', 'cterm': 'NONE' }
+  let s:fg              = { 'gui': '#2d2d24', 'cterm': 'NONE' }
 
-let s:fg_com          = { 'gui': '#6a6a5b', 'cterm': '8'    }
-let s:orange          = { 'gui': '#ea901a', 'cterm': '9'    }  " e5941a
-let s:green_light     = { 'gui': '#22bd4e', 'cterm': '10'   }  " 25c528
-let s:yellow          = { 'gui': '#c89b13', 'cterm': '11'   }
-let s:blue_light      = { 'gui': '#00a3cc', 'cterm': '12'   }
-let s:pink            = { 'gui': '#df7376', 'cterm': '13'   }
-let s:cyan_light      = { 'gui': '#4abe65', 'cterm': '14'   }
-let s:fg_bright       = { 'gui': '#e5e5d2', 'cterm': '15'   }
+  let s:bg_light        = { 'gui': '#d0d0be', 'cterm': '0'    }
+  let s:red             = { 'gui': '#e52e1a', 'cterm': '1'    }
+  let s:green           = { 'gui': '#1c8c38', 'cterm': '2'    }
+  let s:brown           = { 'gui': '#8f6228', 'cterm': '3'    }
+  let s:blue            = { 'gui': '#0085ba', 'cterm': '4'    }
+  let s:purple          = { 'gui': '#7560c4', 'cterm': '5'    }
+  let s:cyan            = { 'gui': '#18956f', 'cterm': '6'    }
+  let s:fg_light        = { 'gui': '#252a25', 'cterm': '7'    }
 
-let s:green_bg        = { 'gui': '#0b3e0c', 'cterm': '2'    }
-let s:blue_bg         = { 'gui': '#003b52', 'cterm': '4'    }
-let s:red_bg          = { 'gui': '#5b120a', 'cterm': '1'    }
-let s:yellow_bg       = { 'gui': '#503e07', 'cterm': '11'   }
+  let s:fg_com          = { 'gui': '#b0b09e', 'cterm': '8'    }
+  let s:orange          = { 'gui': '#d07815', 'cterm': '9'    }
+  let s:green_light     = { 'gui': '#1a9a3e', 'cterm': '10'   }
+  let s:yellow          = { 'gui': '#a58010', 'cterm': '11'   }
+  let s:blue_light      = { 'gui': '#008cb0', 'cterm': '12'   }
+  let s:pink            = { 'gui': '#c85a5d', 'cterm': '13'   }
+  let s:cyan_light      = { 'gui': '#389048', 'cterm': '14'   }
+  let s:fg_bright       = { 'gui': '#0f171b', 'cterm': '15'   }
 
-" let s:green_bg      = { 'gui': '#12261e', 'cterm': '2'    }
-" let s:red_bg        = { 'gui': '#301a1f', 'cterm': '1'    }
+  let s:green_bg        = { 'gui': '#d0e8d0', 'cterm': '2'    }
+  let s:blue_bg         = { 'gui': '#cce4f0', 'cterm': '4'    }
+  let s:red_bg          = { 'gui': '#f0d0d0', 'cterm': '1'    }
+  let s:yellow_bg       = { 'gui': '#e8dfc0', 'cterm': '11'   }
+else
+  let s:bg              = { 'gui': '#0f171b', 'cterm': 'NONE' }
+  let s:fg              = { 'gui': '#adad9b', 'cterm': 'NONE' }
+
+  let s:bg_light        = { 'gui': '#2b302b', 'cterm': '0'    }
+  let s:red             = { 'gui': '#e52e1a', 'cterm': '1'    }
+  let s:green           = { 'gui': '#1c9c40', 'cterm': '2'    }
+  let s:brown           = { 'gui': '#a57230', 'cterm': '3'    }
+  let s:blue            = { 'gui': '#0094cf', 'cterm': '4'    }
+  let s:purple          = { 'gui': '#8b72da', 'cterm': '5'    }
+  let s:cyan            = { 'gui': '#1dae87', 'cterm': '6'    }
+  let s:fg_light        = { 'gui': '#cdc08b', 'cterm': '7'    }
+
+  let s:fg_com          = { 'gui': '#6a6a5b', 'cterm': '8'    }
+  let s:orange          = { 'gui': '#ea901a', 'cterm': '9'    }
+  let s:green_light     = { 'gui': '#22bd4e', 'cterm': '10'   }
+  let s:yellow          = { 'gui': '#c89b13', 'cterm': '11'   }
+  let s:blue_light      = { 'gui': '#00a3cc', 'cterm': '12'   }
+  let s:pink            = { 'gui': '#df7376', 'cterm': '13'   }
+  let s:cyan_light      = { 'gui': '#4abe65', 'cterm': '14'   }
+  let s:fg_bright       = { 'gui': '#e5e5d2', 'cterm': '15'   }
+
+  let s:green_bg        = { 'gui': '#0b3e0c', 'cterm': '2'    }
+  let s:blue_bg         = { 'gui': '#003b52', 'cterm': '4'    }
+  let s:red_bg          = { 'gui': '#5b120a', 'cterm': '1'    }
+  let s:yellow_bg       = { 'gui': '#503e07', 'cterm': '11'   }
+endif
 
 if g:snooker_spell_undercurl == 1
   let s:sp_un      = 'undercurl'
