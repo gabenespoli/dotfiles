@@ -515,17 +515,9 @@ vim.diagnostic.config {
 
 -- Setup language servers
 local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {border="rounded"})
-  vim.lsp.handlers['textDocument/signature_help'] = vim.lsp.with(vim.lsp.handlers.signature_help, {border="rounded"})
+  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 end
 
-vim.lsp.config.efm = {on_attach=on_attach}
-vim.lsp.config.sqlls = {
-    on_attach=function(client, bufnr)
-        require('sqlls').on_attach(client, bufnr)
-    end,
-}
 vim.lsp.config.terraformls = {on_attach=on_attach}
 vim.lsp.config.ruff = {on_attach=on_attach}
 vim.lsp.config.pyright = {
@@ -537,18 +529,20 @@ vim.lsp.config.pyright = {
     }}
   },
 }
+
+vim.lsp.enable({'pyright', 'ruff', 'terraformls'})
 EOF
 
 nmap gd :lua vim.lsp.buf.definition()<CR>
 nmap gr :lua vim.lsp.buf.references()<CR>
-nmap K :lua vim.lsp.buf.hover()<CR>
+nmap K :lua vim.lsp.buf.hover({border="rounded"})<CR>
 nmap <silent> [d :lua vim.diagnostic.goto_prev()<CR>
 nmap <silent> ]d :lua vim.diagnostic.goto_next()<CR>
 nmap <C-k>d :lua vim.diagnostic.setloclist()<CR>
 nmap <C-k>r :lua vim.lsp.buf.rename()<CR>
 
-nmap cod :lua vim.diagnostic.disable()<CR>
-nmap coD :lua vim.diagnostic.enable()<CR>
+nmap cod :lua vim.diagnostic.enable(false)<CR>
+nmap coD :lua vim.diagnostic.enable(true)<CR>
 
 augroup nvimlsp
   autocmd!
@@ -565,11 +559,11 @@ augroup treesitter
   autocmd FileType python :lua vim.treesitter.start()
   autocmd FileType vim :lua vim.treesitter.start()
   autocmd FileType sql :lua vim.treesitter.start()
-  autocmd FileType zsh :lua vim.treesitter.start()
+  autocmd FileType zsh :lua vim.treesitter.start(0, 'bash')
   autocmd FileType bash :lua vim.treesitter.start()
   autocmd FileType yaml :lua vim.treesitter.start()
   autocmd FileType html :lua vim.treesitter.start()
-  autocmd FileType gitconfig :lua vim.treesitter.start()
+  autocmd FileType gitconfig :lua vim.treesitter.start(0, 'git_config')
   autocmd FileType json :lua vim.treesitter.start()
 augroup END
 endif
