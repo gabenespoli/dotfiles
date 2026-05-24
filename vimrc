@@ -47,8 +47,6 @@ Plug 'junegunn/fzf.vim', Cond(!has('nvim'))
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python']}
-Plug 'psf/black', {'for': ['python']}
-Plug 'fisadev/vim-isort', {'for': ['python']}
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -70,7 +68,9 @@ if has('nvim')
   set backupdir=~/.config/nvim/backup/
   set directory=~/.config/nvim/swap/
 endif
-if isdirectory(expand('~').'/.pyenv/versions/neovim')
+if isdirectory(expand('~').'/.local/share/nvim/python')
+  let g:python3_host_prog = expand('~').'/.local/share/nvim/python/bin/python'
+elseif isdirectory(expand('~').'/.pyenv/versions/neovim')
   let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim/bin/python'
 elseif isdirectory(expand('~').'/.pyenv/neovim3')
   let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
@@ -527,11 +527,14 @@ vim.lsp.config.sqlls = {
     end,
 }
 vim.lsp.config.terraformls = {on_attach=on_attach}
+vim.lsp.config.ruff = {on_attach=on_attach}
 vim.lsp.config.pyright = {
   on_attach=on_attach,
-  --flags={debounce_text_changes = 150},
   settings={
-    python={analysis={typeCheckingMode = 'off'}}
+    python={analysis={
+      typeCheckingMode = 'off',
+      diagnosticMode = 'off',
+    }}
   },
 }
 EOF
@@ -752,17 +755,13 @@ augroup pythonsense
   autocmd FileType python sunmap <buffer> id
 augroup END
 
-" psf/black and fisadev/vim-isort  {{{2
-let g:vim_isort_config_overrides = {
-  \ 'line_length': 88, 
-  \ 'use_parentheses': 0,
-  \ 'force_single_line': 1
-  \ }
-let g:vim_isort_map = ''
+" ruff format (via LSP, nvim only)  {{{2
+if has('nvim')
 augroup pythonformat
   autocmd!
-  autocmd FileType python nmap <buffer> gqq :Isort<CR>:Black<CR>
+  autocmd FileType python nmap <buffer> gqq :lua vim.lsp.buf.format()<CR>
 augroup END
+endif
 
 " christoomey/vim-tmux-navigator  {{{2
 let g:tmux_navigator_no_mappings = 1

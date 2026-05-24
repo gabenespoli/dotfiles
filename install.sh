@@ -32,17 +32,15 @@ brew install coreutils findutils grep gnu-sed gawk wget
 brew install fd ripgrep fzf
 brew install htop lf eza tree trash cloc jq
 brew install tmux neovim
-brew install pyenv pyenv-virtualenv
+brew install uv ruff pyright
 
 brew install --cask karabiner-elements
 brew install --cask rectangle
 brew install --cask ghostty
 brew install --cask macvim
 
-brew install efm-langserver
 brew install npm
 npm install -g neovim
-npm install -g pyright
 
 brew install rust
 source "$HOME/.cargo/env"
@@ -62,7 +60,7 @@ ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
 ln -sfv "$HOME"/dotfiles/config/ghostty-themes "$HOME"/.config/ghostty/themes
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
-ln -sfv "$HOME"/dotfiles/config/efm-langserver "$HOME"/.config
+ln -sfv "$HOME"/dotfiles/config/ruff "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
 mkdir -pv "$HOME"/.config/opencode
 ln -sfv "$HOME"/dotfiles/config/opencode/opencode.json "$HOME"/.config/opencode
@@ -74,18 +72,11 @@ tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
 # python
 mkdir -pv "$HOME"/.ipython/profile_default
 ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_default/ipython_config.py
-ln -sfv "$HOME"/dotfiles/python/isort.cfg "$HOME"/.isort.cfg
-ln -sfv "$HOME"/dotfiles/python/flake8 "$HOME"/.flake8
 
-# pyenv (must be before neovim setup since nvim needs the python host)
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv install 3.11:latest
-pyenv virtualenv 3.11 neovim
-pyenv activate neovim
-pip install -U pip
-pip install pynvim black isort jupytext
-pyenv deactivate
+# python venv for neovim host (must be before neovim setup)
+uv python install 3.11
+uv venv "$HOME"/.local/share/nvim/python --python 3.11
+uv pip install --python "$HOME"/.local/share/nvim/python/bin/python pynvim jupytext
 
 # neovim
 mkdir -pv "$HOME"/.config/nvim

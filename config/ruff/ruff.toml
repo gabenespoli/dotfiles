@@ -1,0 +1,7 @@
+line-length = 88
+
+[format]
+quote-style = "double"
+
+[lint.isort]
+force-single-line = true
