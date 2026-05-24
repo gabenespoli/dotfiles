@@ -78,18 +78,52 @@ uv python install 3.11
 uv venv "$HOME"/.local/share/nvim/python --python 3.11
 uv pip install --python "$HOME"/.local/share/nvim/python/bin/python pynvim jupytext
 
+# New file structure in dotfiles/
+# nvim/
+# ├── init.lua           -- nvim entry point: sources shared.vim, loads lua modules + lazy.nvim
+# ├── shared.vim         -- all vimscript shared between nvim and macvim
+# ├── macvim.vim         -- vim-plug + vim-specific stuff (symlinked as ~/.vimrc)
+# ├── lua/
+# │   ├── options.lua    -- nvim-specific options (undofile, python host, termguicolors)
+# │   ├── keymaps.lua    -- nvim-specific keymaps (LSP, fzf-lua, gitsigns, tmux nav)
+# │   ├── statusline.lua -- lua statusline with devicons
+# │   └── plugins/
+# │       ├── shared.lua -- plugins shared by both (vim-plug list mirrored for lazy)
+# │       └── nvim.lua   -- nvim-only plugins (lsp, treesitter, gitsigns, fzf-lua, devicons)
+# gvimrc                 -- GUI-only settings (font, mouse, nonumber)
+# How it works
+# - Neovim: ~/.config/nvim/init.lua -> sources shared.vim, then loads lua modules
+# - MacVim: ~/.vimrc -> macvim.vim which installs shared plugins via vim-plug, then sources shared.vim, then adds vim-specific keymaps/statusline
+# - GUI settings: ~/.gvimrc -> gvimrc (only loaded by MacVim GUI)
+# - Runtime files (colors, ftplugin, syntax, ftdetect) stay in vim/ and are symlinked into both ~/.config/nvim/ and ~/.vim/
+# To activate
+# 1. Remove old symlinks: rm ~/.config/nvim/init.vim ~/.vimrc
+# 2. Re-run the relevant section of install.sh, or manually:
+#    ln -sf ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+#    ln -sf ~/dotfiles/nvim/shared.vim ~/.config/nvim/shared.vim
+#    ln -sf ~/dotfiles/nvim/lua ~/.config/nvim/lua
+#    ln -sf ~/dotfiles/nvim/macvim.vim ~/.vimrc
+#    ln -sf ~/dotfiles/gvimrc ~/.gvimrc
+# 3. Open nvim -- lazy.nvim will bootstrap itself and install plugins on first run
+# 4. Open MacVim -- run :PlugInstall
+# The old vimrc is untouched so you can roll back if needed.
+
 # neovim
 mkdir -pv "$HOME"/.config/nvim
-ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.config/nvim/init.vim
+ln -sfv "$HOME"/dotfiles/nvim/init.lua "$HOME"/.config/nvim/init.lua
+ln -sfv "$HOME"/dotfiles/nvim/shared.vim "$HOME"/.config/nvim/shared.vim
+ln -sfv "$HOME"/dotfiles/nvim/lua "$HOME"/.config/nvim/lua
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
-nvim +PlugInstall -c "TSInstall! python sql bash json vim lua" +qall
+nvim --headless "+Lazy! sync" +qa
+nvim --headless -c "TSInstall! python sql bash json vim lua" +qa
 
 # vim (for macvim)
 mkdir -pv "$HOME"/.vim
-ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
+ln -sfv "$HOME"/dotfiles/nvim/macvim.vim "$HOME"/.vimrc
+ln -sfv "$HOME"/dotfiles/gvimrc "$HOME"/.gvimrc
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
