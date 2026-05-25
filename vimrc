@@ -21,40 +21,32 @@ endfunction
 
 call plug#begin()
 
-" Editing
+" MacVim + Nvim plugins
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'machakann/vim-sandwich'
-Plug 'github/copilot.vim'
-Plug 'neovim/nvim-lspconfig', Cond(has('nvim'))
-Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim'), {'do': ':TSUpdate'})
-
-" Git & Files
-Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
 Plug 'justinmk/vim-dirvish'
 Plug 'brianhuster/dirvish-git.nvim'
+Plug 'gabenespoli/vim-mutton'
+Plug 'gabenespoli/vim-tabsms'
+
+" Nvim-only plugins
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 Plug 'lewis6991/gitsigns.nvim', Cond(has('nvim'))
 Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim'))
 Plug 'ibhagwan/fzf-lua', Cond(has('nvim'))
-Plug 'junegunn/fzf', Cond(!has('nvim'))
-Plug 'junegunn/fzf.vim', Cond(!has('nvim'))
-
-" Python
+Plug 'github/copilot.vim'
+Plug 'neovim/nvim-lspconfig', Cond(has('nvim'))
+Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim'), {'do': ':TSUpdate'})
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python']}
-
-" Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
-
-" My Plugins
-Plug 'gabenespoli/vim-mutton'
-Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
@@ -690,7 +682,7 @@ require('nvim-web-devicons').setup{
 EOF
 endif
 
-" ibhagwan/fzf-lua & junegunn/fzf.vim  {{{2
+" ibhagwan/fzf-lua  {{{2
 if has('nvim')
 lua << EOF
 local actions = require('fzf-lua.actions')
