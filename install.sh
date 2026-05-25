@@ -27,50 +27,47 @@ set -e
 #   - [ ] Restart your terminal to pick up zsh/p10k changes
 # =============================================================================
 
-# install stuff
+# --- Core CLI utils ---
 brew install coreutils findutils grep gnu-sed gawk wget
 brew install fd ripgrep fzf
 brew install htop lf eza tree trash cloc jq
-brew install tmux neovim
-brew install uv ruff pyright
-
-brew install --cask karabiner-elements
-brew install --cask rectangle
-brew install --cask ghostty
-brew install --cask macvim
-
-brew install anomalyco/tap/opencode
-
-# link files
-ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
-ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
+ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
+ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
-ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# --- Karabiner ---
+brew install --cask karabiner-elements
+ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
+
+# --- Rectangle ---
+brew install --cask rectangle
+
+# --- Ghostty ---
+brew install --cask ghostty
 mkdir -pv "$HOME"/.config/ghostty
 ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
 ln -sfv "$HOME"/dotfiles/config/ghostty-themes "$HOME"/.config/ghostty/themes
-ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
-ln -sfv "$HOME"/dotfiles/config/karabiner "$HOME"/.config
-ln -sfv "$HOME"/dotfiles/config/ruff "$HOME"/.config
-ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
-mkdir -pv "$HOME"/.config/opencode
-ln -sfv "$HOME"/dotfiles/config/opencode/opencode.json "$HOME"/.config/opencode
-ln -sfv "$HOME"/dotfiles/config/opencode/themes "$HOME"/.config/opencode
 
-# setup terminfo for italics inside tmux (https://gist.github.com/nicm/ea9cf3c93f22e0246ec858122d9abea1)
-tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
-
-# python
-mkdir -pv "$HOME"/.ipython/profile_default
-ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_default/ipython_config.py
-
-# python tools for neovim
+# --- Python ---
+brew install uv ruff pyright
 uv tool install pynvim
 uv tool install jupytext
+mkdir -pv "$HOME"/.ipython/profile_default
+ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_default/ipython_config.py
+ln -sfv "$HOME"/dotfiles/config/ruff "$HOME"/.config
 
-# neovim
+# --- MacVim ---
+brew install --cask macvim
+mkdir -pv "$HOME"/.vim
+ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
+ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
+ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.vim/
+vim +PlugInstall +qall
+
+# --- Neovim ---
+brew install neovim
 mkdir -pv "$HOME"/.config/nvim
 ln -sfv "$HOME"/dotfiles/config/nvim/init.lua "$HOME"/.config/nvim/init.lua
 ln -sfv "$HOME"/dotfiles/config/nvim/lua "$HOME"/.config/nvim/lua
@@ -81,25 +78,27 @@ ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
 nvim --headless "+Lazy! sync" +qa
 nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
 
-# vim (for macvim)
-mkdir -pv "$HOME"/.vim
-ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
-ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
-ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
-ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.vim/
-ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.vim/
-vim +PlugInstall +qall
-
-# install oh-my-zsh LAST (spawns new shell, may interrupt script)
-# https://ohmyz.sh/#install
+# --- Zsh and Tmux ---
+brew install tmux
+ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
+ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
+ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/Aloxaf/fzf-tab "$HOME"/.oh-my-zsh/custom/plugins/fzf-tab
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
 
+# --- OpenCode ---
+brew install anomalyco/tap/opencode
+mkdir -pv "$HOME"/.config/opencode
+ln -sfv "$HOME"/dotfiles/config/opencode/opencode.json "$HOME"/.config/opencode
+ln -sfv "$HOME"/dotfiles/config/opencode/themes "$HOME"/.config/opencode
+
 echo ""
 echo "Done! Restart your shell (or open a new terminal) to pick up zsh changes."
 
-# echo "" && echo "-- Installing Microsoft ODBC..."
+# --- Microsoft ODBC (uncomment if needed) ---
 # # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos
 # brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
 # brew update
