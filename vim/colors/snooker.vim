@@ -74,10 +74,10 @@ else
   let s:cyan_light      = { 'gui': '#4abe65', 'cterm': '14'   }
   let s:fg_bright       = { 'gui': '#e5e5d2', 'cterm': '15'   }
 
-  let s:green_bg        = { 'gui': '#0b3e0c', 'cterm': '2'    }
-  let s:blue_bg         = { 'gui': '#003b52', 'cterm': '4'    }
-  let s:red_bg          = { 'gui': '#5b120a', 'cterm': '1'    }
-  let s:yellow_bg       = { 'gui': '#503e07', 'cterm': '11'   }
+  let s:green_bg        = { 'gui': '#1a3d24', 'cterm': '2'    }
+  let s:blue_bg         = { 'gui': '#1a3345', 'cterm': '4'    }
+  let s:red_bg          = { 'gui': '#3a1c1f', 'cterm': '1'    }
+  let s:yellow_bg       = { 'gui': '#332a15', 'cterm': '11'   }
 endif
 
 if g:snooker_spell_undercurl == 1
