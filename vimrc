@@ -108,7 +108,6 @@ endif
 " Colors
 " set background=dark
 if has('nvim') && exists('$TMUX') | set termguicolors | endif
-set notermguicolors
 colorscheme snooker
 
 " Some autocommands
