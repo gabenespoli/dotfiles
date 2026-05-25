@@ -520,12 +520,20 @@ end
 vim.lsp.config.terraformls = {on_attach=on_attach}
 vim.lsp.config.ruff = {on_attach=on_attach}
 vim.lsp.config.pyright = {
+  on_init = function(client)
+    local venv_python = client.root_dir .. '/.venv/bin/python'
+    if vim.fn.filereadable(venv_python) == 1 then
+      client.config.settings.python.pythonPath = venv_python
+    end
+  end,
   on_attach=on_attach,
   settings={
-    python={analysis={
-      typeCheckingMode = 'off',
-      diagnosticMode = 'off',
-    }}
+    python={
+      analysis={
+        typeCheckingMode = 'off',
+        diagnosticMode = 'off',
+      },
+    }
   },
 }
 
