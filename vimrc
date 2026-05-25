@@ -5,6 +5,7 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Plugins  {{{1
+if !has('nvim')
 " Install vim-plugged if it isn't already
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -12,16 +13,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Helper function to conditionally load plugins
-" https://github.com/junegunn/vim-plug/wiki/tips#conditional-activation
-function! Cond(cond, ...)
-  let opts = get(a:000, 0, {})
-  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
-endfunction
-
 call plug#begin()
 
-" MacVim + Nvim plugins
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -29,44 +22,24 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'machakann/vim-sandwich'
 Plug 'justinmk/vim-dirvish'
-Plug 'brianhuster/dirvish-git.nvim'
-Plug 'gabenespoli/vim-mutton'
-Plug 'gabenespoli/vim-tabsms'
-
-" Nvim-only plugins
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
-Plug 'lewis6991/gitsigns.nvim', Cond(has('nvim'))
-Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim'))
-Plug 'ibhagwan/fzf-lua', Cond(has('nvim'))
 Plug 'github/copilot.vim'
-Plug 'neovim/nvim-lspconfig', Cond(has('nvim'))
-Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim'), {'do': ':TSUpdate'})
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
 Plug 'kalekundert/vim-coiled-snake', {'for': ['python']}
 Plug 'gabenespoli/vim-pythonsense', {'for': ['python']}
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
+Plug 'gabenespoli/vim-mutton'
+Plug 'gabenespoli/vim-tabsms'
 Plug 'gabenespoli/vim-jupycent'
 
 call plug#end()
+endif
 
 " General  {{{1
 if has('mac') | set fileformats=unix,dos | endif
 set updatetime=300
-if has('nvim')
-  set undofile
-  set undodir=~/.config/nvim/undo/
-  set backupdir=~/.config/nvim/backup/
-  set directory=~/.config/nvim/swap/
-endif
-if isdirectory(expand('~').'/.local/share/nvim/python')
-  let g:python3_host_prog = expand('~').'/.local/share/nvim/python/bin/python'
-elseif isdirectory(expand('~').'/.pyenv/versions/neovim')
-  let g:python3_host_prog = expand('~').'/.pyenv/versions/neovim/bin/python'
-elseif isdirectory(expand('~').'/.pyenv/neovim3')
-  let g:python3_host_prog = expand('~').'/.pyenv/neovim3/bin/python'
-endif
 set hidden laststatus=2
 if has('gui')
   set nonumber
@@ -99,8 +72,12 @@ endif
 
 " Colors
 " set background=dark
-if has('nvim') && exists('$TMUX') | set termguicolors | endif
+set notermguicolors
 colorscheme snooker
+if has('gui_macvim')
+  let &background = v:os_appearance == 1 ? 'dark' : 'light'
+  autocmd OSAppearanceChanged * let &background = v:os_appearance == 1 ? 'dark' : 'light'
+endif
 
 " Some autocommands
 augroup general
@@ -448,125 +425,6 @@ for char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%' ]
   execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
-" neovim/nvim-lspconfig  {{{2
-if has('nvim')
-lua << EOF
--- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#completion-kinds
-require('vim.lsp.protocol').CompletionItemKind = {
-  ' Class',
-  ' Color',
-  ' Constant',
-  ' Constructor',
-  ' Enum',
-  ' EnumMember',
-  '󰄶 Field',
-  ' File',
-  ' Folder',
-  ' Function',
-  '󰜰 Interface',
-  '󰌆 Keyword',
-  'ƒ Method',
-  '󰏗 Module',
-  ' Property',
-  '󰘍 Snippet',
-  ' Struct',
-  ' Text',
-  ' Unit',
-  '󰎠 Value',
-  ' Variable',
-}
-
--- Setup lsp diagnostics
-vim.diagnostic.config {
-  underline=false,
-  virtual_text=false,
-  severity_sort=true,
-  float={border="rounded"},
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "",
-      [vim.diagnostic.severity.WARN] = "",
-      [vim.diagnostic.severity.INFO] = "",
-      [vim.diagnostic.severity.HINT] = "",
-    },
-    texthl = {
-      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-      [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-      [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-      [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-    },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-      [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-      [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-      [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-    },
-  }
-}
-
--- Setup language servers
-local on_attach = function(client, bufnr)
-  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
-end
-
-vim.lsp.config.terraformls = {on_attach=on_attach}
-vim.lsp.config.ruff = {on_attach=on_attach}
-vim.lsp.config.pyright = {
-  on_init = function(client)
-    local venv_python = client.root_dir .. '/.venv/bin/python'
-    if vim.fn.filereadable(venv_python) == 1 then
-      client.config.settings.python.pythonPath = venv_python
-    end
-  end,
-  on_attach=on_attach,
-  settings={
-    python={
-      analysis={
-        typeCheckingMode = 'off',
-        diagnosticMode = 'off',
-      },
-    }
-  },
-}
-
-vim.lsp.enable({'pyright', 'ruff', 'terraformls'})
-EOF
-
-nmap gd :lua vim.lsp.buf.definition()<CR>
-nmap gr :lua vim.lsp.buf.references()<CR>
-nmap K :lua vim.lsp.buf.hover({border="rounded"})<CR>
-nmap <silent> [d :lua vim.diagnostic.goto_prev()<CR>
-nmap <silent> ]d :lua vim.diagnostic.goto_next()<CR>
-nmap <C-k>d :lua vim.diagnostic.setloclist()<CR>
-nmap <C-k>r :lua vim.lsp.buf.rename()<CR>
-
-nmap cod :lua vim.diagnostic.enable(false)<CR>
-nmap coD :lua vim.diagnostic.enable(true)<CR>
-
-augroup nvimlsp
-  autocmd!
-  autocmd FileType python nmap <buffer> <C-w><C-d> <C-w><C-v>gdzt
-  autocmd FileType python nmap <buffer> <C-]> gdzt
-augroup END
-
-endif
-
-" nvim-treesitter  {{{2
-if has('nvim')
-augroup treesitter
-  autocmd!
-  autocmd FileType python :lua vim.treesitter.start()
-  autocmd FileType vim :lua vim.treesitter.start()
-  autocmd FileType sql :lua vim.treesitter.start()
-  autocmd FileType zsh :lua vim.treesitter.start(0, 'bash')
-  autocmd FileType bash :lua vim.treesitter.start()
-  autocmd FileType yaml :lua vim.treesitter.start()
-  autocmd FileType html :lua vim.treesitter.start()
-  autocmd FileType gitconfig :lua vim.treesitter.start(0, 'git_config')
-  autocmd FileType json :lua vim.treesitter.start()
-augroup END
-endif
-
 " tpope/vim-fugitive  {{{2
 nnoremap git :Git
 nnoremap gs :let g:fugitive_last_bufnr = bufnr()<CR>:Gedit :<CR>:let w:fugitive_last_bufnr = g:fugitive_last_bufnr<CR>
@@ -599,131 +457,6 @@ let g:dirvish_git_icons = {
     \ 'directory': '-- ',
     \ }
 
-" lewis6991/gitsigns.nvim  {{{2
-if has('nvim')
-lua << EOF
-require('gitsigns').setup{
-  signs_staged_enable = true,
-  signs = {
-    add          = {text = '┃'},
-    change       = {text = '┃'},
-    delete       = {text = '_'},
-    topdelete    = {text = '‾'},
-    changedelete = {text = '┃'},
-  },
-  signs_staged = {
-    add          = {  text = '┋ '},
-    change       = {  text = '┋ '},
-    delete       = {  text = '﹍'},
-    topdelete    = {  text = '﹉'},
-    changedelete = {  text = '┋ '},
-  },
-  on_attach = function(bufnr)
-    local gitsigns = require('gitsigns')
-
-    local function map(mode, l, r, opts)
-      opts = opts or {}
-      opts.buffer = bufnr
-      vim.keymap.set(mode, l, r, opts)
-    end
-
-    -- Navigation
-    map('n', ']c', function()
-      if vim.wo.diff then
-        vim.cmd.normal({']c', bang = true})
-      else
-        gitsigns.nav_hunk('next')
-      end
-    end)
-
-    map('n', '[c', function()
-      if vim.wo.diff then
-        vim.cmd.normal({'[c', bang = true})
-      else
-        gitsigns.nav_hunk('prev')
-      end
-    end)
-
-    -- Actions
-    map('v', 'ga', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-    map('v', 'ghu', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-
-  end
-}
-EOF
-
-nmap ga :Gitsigns stage_hunk<CR>
-nmap ghu :Gitsigns reset_hunk<CR>
-" vmaps for stage/reset defined above in lua
-nmap cogg :Gitsigns toggle_signs<CR>
-nmap cogl :Gitsigns toggle_linehl<CR>
-nmap cogn :Gitsigns toggle_numhl<CR>
-nmap ghu :Gitsigns reset_hunk<CR>
-vmap ac :<C-U>Gitsigns select_hunk<CR>
-omap ac :<C-U>Gitsigns select_hunk<CR>
-nmap dac :<C-U>Gitsigns select_hunk<CR>d
-nmap cac :<C-U>Gitsigns select_hunk<CR>c
-
-endif
-
-" kyazdani42/nvim-web-devicons  {{{2
-if has('nvim')
-lua << EOF
-require('nvim-web-devicons').setup{
- override_by_extension = {
-  ["txt"] = {
-    icon = "󰈙",
-    color = "#89e051",
-    cterm_color = "113",
-    name = "Txt"
-  }
- };
-}
-EOF
-endif
-
-" ibhagwan/fzf-lua  {{{2
-if has('nvim')
-lua << EOF
-local actions = require('fzf-lua.actions')
-require 'fzf-lua'.setup{
-  actions = {
-    files = {
-      -- instead of the default action 'actions.file_edit_or_qf'
-      -- it's important to define all other actions here as this
-      -- table does not get merged with the global defaults
-      ["default"]       = actions.file_edit,
-      ["ctrl-s"]        = actions.file_split,
-      ["ctrl-v"]        = actions.file_vsplit,
-      ["ctrl-t"]        = actions.file_tabedit,
-      ["ctrl-q"]        = actions.file_sel_to_qf,
-    },
-  },
-}
-EOF
-
-nmap <C-p>        :FzfLua git_files<CR>
-nmap <C-k><C-b>   :FzfLua buffers<CR>
-nmap <C-k><C-d>   :FzfLua lsp_document_diagnostics<CR>
-nmap <C-k><C-g>   :FzfLua live_grep<CR>
-nmap <C-k><C-f>   :FzfLua files<CR>
-nmap <C-k><C-k>   :FzfLua resume<CR>
-nmap <C-k><C-l>   :FzfLua git_commits<CR>
-nmap <C-k><C-o>   :FzfLua oldfiles<CR>
-nmap <C-k><C-r>   :FzfLua registers<CR>
-nmap <C-k><C-s>   :FzfLua git_status<CR>
-nmap <C-k><Space> :FzfLua<Space>
-nmap <C-k>gr      :FzfLua lsp_references<CR>
-else
-nmap <C-p>        :GFiles<CR>
-nmap <C-k><C-b>   :Buffers<CR>
-nmap <C-k><C-g>   :Rg<CR>
-nmap <C-k><C-f>   :Files<CR>
-nmap <C-k><C-l>   :Commits<CR>
-nmap <C-k><C-o>   :History<CR>
-nmap <C-k><C-s>   :GFiles?<CR>
-endif
-
 " jeetsukumaran/vim-pythonsense  {{{2
 let g:is_pythonsense_suppress_object_keymaps = 1
 augroup pythonsense
@@ -747,14 +480,6 @@ augroup pythonsense
   autocmd FileType python vmap <buffer> id <Plug>(PythonsenseInnerDocStringTextObject)
   autocmd FileType python sunmap <buffer> id
 augroup END
-
-" ruff format (via LSP, nvim only)  {{{2
-if has('nvim')
-augroup pythonformat
-  autocmd!
-  autocmd FileType python nmap <buffer> gqq :lua vim.lsp.buf.format()<CR>
-augroup END
-endif
 
 " christoomey/vim-tmux-navigator  {{{2
 let g:tmux_navigator_no_mappings = 1
@@ -829,20 +554,4 @@ highlight! link TabMod WarningMsg
 highlight! link TabModSel TabMod
 
 " gabenespoli/vim-jupycent  {{{2
-let g:jupycent_command = expand('~').'/.pyenv/versions/neovim/bin/jupytext'
-
-" map combining nvim lsp diagnostics with GitSigns preview  {{{2
-if has('nvim')
-lua << EOF
-function _G.has_line_diagnostic(bufnr, line_nr)
-  local line_diagnostics = vim.diagnostic.get(bufnr, {lnum=line_nr})
-  return not vim.tbl_isempty(line_diagnostics)
-end
-EOF
-nnoremap <expr> =
-      \ v:lua.has_line_diagnostic(bufnr('%'), line('.') - 1) ?
-      \ ':lua vim.diagnostic.open_float()<CR>' :
-      \ ':Gitsigns preview_hunk<CR>'
-else
-  nnoremap = :Gitsigns preview_hunk<CR>
-endif
+let g:jupycent_command = expand('~').'/.local/bin/jupytext'

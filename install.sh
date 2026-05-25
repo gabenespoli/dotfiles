@@ -73,19 +73,20 @@ tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
 mkdir -pv "$HOME"/.ipython/profile_default
 ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_default/ipython_config.py
 
-# python venv for neovim host (must be before neovim setup)
-uv python install 3.11
-uv venv "$HOME"/.local/share/nvim/python --python 3.11
-uv pip install --python "$HOME"/.local/share/nvim/python/bin/python pynvim jupytext
+# python tools for neovim
+uv tool install pynvim
+uv tool install jupytext
 
 # neovim
 mkdir -pv "$HOME"/.config/nvim
-ln -sfv "$HOME"/dotfiles/vimrc "$HOME"/.config/nvim/init.vim
+ln -sfv "$HOME"/dotfiles/config/nvim/init.lua "$HOME"/.config/nvim/init.lua
+ln -sfv "$HOME"/dotfiles/config/nvim/lua "$HOME"/.config/nvim/lua
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
-nvim +PlugInstall -c "TSInstall! python sql bash json vim lua" +qall
+nvim --headless "+Lazy! sync" +qa
+nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
 
 # vim (for macvim)
 mkdir -pv "$HOME"/.vim
