@@ -157,8 +157,13 @@ alias tl="tmux list-sessions"
 alias exe="chmod u+x"
 alias fold="fold -s"
 
-alias vl="uv python list"
-alias vc="uv venv"
+alias vl="pyenv virtualenvs"
+alias va="pyenv activate"
+alias vc="pyenv virtualenv"
+alias vd="pyenv virtualenv-delete"
+
+alias uvl="uv python list"
+alias uvc="uv venv"
 
 alias gs="git status --short"
 alias co="git checkout"
