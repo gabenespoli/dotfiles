@@ -57,22 +57,22 @@ return {
         ' Variable',
       }
 
-      -- on_attach
-      local on_attach = function(client, bufnr)
-        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
-        vim.lsp.handlers['textDocument/signature_help'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
-      end
-
       -- Server configs
-      vim.lsp.config.efm = { on_attach = on_attach }
-      vim.lsp.config.terraformls = { on_attach = on_attach }
+      vim.lsp.config.ruff = {}
+      vim.lsp.config.terraformls = {}
       vim.lsp.config.pyright = {
-        on_attach = on_attach,
         settings = {
-          python = { analysis = { typeCheckingMode = 'off' } },
+          pyright = { disableOrganizeImports = true },
+          python = {
+            analysis = {
+              diagnosticMode = 'off',
+              typeCheckingMode = 'off',
+            },
+          },
         },
       }
+
+      vim.lsp.enable({ 'ruff', 'pyright', 'terraformls' })
     end,
   },
 
@@ -81,10 +81,19 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
-      local filetypes = { 'python', 'vim', 'sql', 'zsh', 'bash', 'yaml', 'html', 'gitconfig', 'json' }
+      local filetypes = { 'python', 'vim', 'sql', 'bash', 'yaml', 'html', 'json' }
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
         callback = function() vim.treesitter.start() end,
+      })
+      -- zsh uses bash parser; gitconfig uses git_config parser
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'zsh',
+        callback = function() vim.treesitter.start(0, 'bash') end,
+      })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'gitconfig',
+        callback = function() vim.treesitter.start(0, 'git_config') end,
       })
     end,
   },

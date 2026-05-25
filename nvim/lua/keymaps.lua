@@ -31,20 +31,21 @@ end
 -- LSP keymaps
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { silent = true })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { silent = true })
+vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end)
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, { silent = true })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, { silent = true })
 vim.keymap.set('n', '<C-k>d', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<C-k>r', vim.lsp.buf.rename)
 vim.keymap.set('n', 'cod', function() vim.diagnostic.enable(false) end)
 vim.keymap.set('n', 'coD', function() vim.diagnostic.enable(true) end)
 
--- Python LSP navigation
+-- Python LSP navigation + formatting
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'python',
   callback = function()
     vim.keymap.set('n', '<C-w><C-d>', '<C-w><C-v>gdzt', { buffer = true })
     vim.keymap.set('n', '<C-]>', 'gdzt', { buffer = true })
+    vim.keymap.set('n', 'gqq', function() vim.lsp.buf.format() end, { buffer = true })
   end,
 })
 
