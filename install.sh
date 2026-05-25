@@ -99,10 +99,10 @@ uv pip install --python "$HOME"/.local/share/nvim/python/bin/python pynvim jupyt
 # To activate
 # 1. Remove old symlinks: rm ~/.config/nvim/init.vim ~/.vimrc
 # 2. Re-run the relevant section of install.sh, or manually:
-#    ln -sf ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
-#    ln -sf ~/dotfiles/nvim/shared.vim ~/.config/nvim/shared.vim
-#    ln -sf ~/dotfiles/nvim/lua ~/.config/nvim/lua
-#    ln -sf ~/dotfiles/nvim/macvim.vim ~/.vimrc
+#    ln -sf ~/dotfiles/config/nvim/init.lua ~/.config/nvim/init.lua
+#    ln -sf ~/dotfiles/config/nvim/shared.vim ~/.config/nvim/shared.vim
+#    ln -sf ~/dotfiles/config/nvim/lua ~/.config/nvim/lua
+#    ln -sf ~/dotfiles/config/nvim/macvim.vim ~/.vimrc
 #    ln -sf ~/dotfiles/gvimrc ~/.gvimrc
 # 3. Open nvim -- lazy.nvim will bootstrap itself and install plugins on first run
 # 4. Open MacVim -- run :PlugInstall
@@ -110,9 +110,9 @@ uv pip install --python "$HOME"/.local/share/nvim/python/bin/python pynvim jupyt
 
 # neovim
 mkdir -pv "$HOME"/.config/nvim
-ln -sfv "$HOME"/dotfiles/nvim/init.lua "$HOME"/.config/nvim/init.lua
-ln -sfv "$HOME"/dotfiles/nvim/shared.vim "$HOME"/.config/nvim/shared.vim
-ln -sfv "$HOME"/dotfiles/nvim/lua "$HOME"/.config/nvim/lua
+ln -sfv "$HOME"/dotfiles/config/nvim/init.lua "$HOME"/.config/nvim/init.lua
+ln -sfv "$HOME"/dotfiles/config/nvim/shared.vim "$HOME"/.config/nvim/shared.vim
+ln -sfv "$HOME"/dotfiles/config/nvim/lua "$HOME"/.config/nvim/lua
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
@@ -122,7 +122,7 @@ nvim --headless -c "TSInstall! python sql bash json vim lua" +qa
 
 # vim (for macvim)
 mkdir -pv "$HOME"/.vim
-ln -sfv "$HOME"/dotfiles/nvim/macvim.vim "$HOME"/.vimrc
+ln -sfv "$HOME"/dotfiles/config/nvim/macvim.vim "$HOME"/.vimrc
 ln -sfv "$HOME"/dotfiles/gvimrc "$HOME"/.gvimrc
 ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.vim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.vim/
