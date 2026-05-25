@@ -39,13 +39,6 @@ brew install --cask rectangle
 brew install --cask ghostty
 brew install --cask macvim
 
-brew install npm
-npm install -g neovim
-
-brew install rust
-source "$HOME/.cargo/env"
-cargo install --locked tree-sitter-cli
-
 brew install anomalyco/tap/opencode
 
 # link files
