@@ -1,226 +1,245 @@
 {
   "$schema": "https://opencode.ai/theme.json",
   "defs": {
-    "bg": "#0f171b",
-    "bg2": "#141f1f",
-    "fg": "#adad9b",
-    "bg_light": "#2b302b",
-    "red": "#e52e1a",
-    "green": "#1c9c40",
-    "brown": "#a57230",
-    "blue": "#0094cf",
-    "purple": "#8b72da",
-    "cyan": "#1dae87",
-    "fg_light": "#cdc08b",
-    "fg_com": "#6a6a5b",
-    "orange": "#ea901a",
-    "green_light": "#22bd4e",
-    "yellow": "#c89b13",
-    "blue_light": "#00a3cc",
-    "pink": "#df7376",
-    "cyan_light": "#4abe65",
-    "fg_bright": "#e5e5d2"
+    "d_bg": "#0f171b",
+    "d_bg2": "#141f1f",
+    "d_fg": "#adad9b",
+    "d_bg_light": "#2b302b",
+    "d_red": "#e52e1a",
+    "d_green": "#1c9c40",
+    "d_brown": "#a57230",
+    "d_blue": "#0094cf",
+    "d_purple": "#8b72da",
+    "d_cyan": "#1dae87",
+    "d_fg_light": "#cdc08b",
+    "d_fg_com": "#6a6a5b",
+    "d_orange": "#ea901a",
+    "d_green_light": "#22bd4e",
+    "d_yellow": "#c89b13",
+    "d_blue_light": "#00a3cc",
+    "d_pink": "#df7376",
+    "d_cyan_light": "#4abe65",
+    "d_fg_bright": "#e5e5d2",
+
+    "l_bg": "#e5e5d2",
+    "l_fg": "#2d2d24",
+    "l_bg_light": "#d0d0be",
+    "l_red": "#e52e1a",
+    "l_green": "#1c8c38",
+    "l_brown": "#8f6228",
+    "l_blue": "#0085ba",
+    "l_purple": "#7560c4",
+    "l_cyan": "#18956f",
+    "l_fg_light": "#252a25",
+    "l_fg_com": "#b0b09e",
+    "l_orange": "#d07815",
+    "l_green_light": "#1a9a3e",
+    "l_yellow": "#a58010",
+    "l_blue_light": "#008cb0",
+    "l_pink": "#c85a5d",
+    "l_cyan_light": "#389048",
+    "l_fg_bright": "#0f171b"
   },
   "theme": {
     "primary": {
-      "dark": "fg_com",
-      "light": "fg_com"
+      "dark": "d_fg_com",
+      "light": "l_fg_com"
     },
     "secondary": {
-      "dark": "pink",
-      "light": "pink"
+      "dark": "d_pink",
+      "light": "l_pink"
     },
     "accent": {
-      "dark": "purple",
-      "light": "purple"
+      "dark": "d_purple",
+      "light": "l_purple"
     },
     "error": {
-      "dark": "red",
-      "light": "red"
+      "dark": "d_red",
+      "light": "l_red"
     },
     "warning": {
-      "dark": "orange",
-      "light": "orange"
+      "dark": "d_orange",
+      "light": "l_orange"
     },
     "success": {
-      "dark": "green_light",
-      "light": "green_light"
+      "dark": "d_green_light",
+      "light": "l_green_light"
     },
     "info": {
-      "dark": "purple",
-      "light": "purple"
+      "dark": "d_purple",
+      "light": "l_purple"
     },
     "text": {
-      "dark": "fg",
-      "light": "bg_light"
+      "dark": "d_fg",
+      "light": "l_fg"
     },
     "textMuted": {
-      "dark": "fg",
-      "light": "fg_com"
+      "dark": "d_fg",
+      "light": "l_fg_com"
     },
     "background": {
-      "dark": "bg",
-      "light": "fg_bright"
+      "dark": "d_bg",
+      "light": "l_bg"
     },
     "backgroundPanel": {
-      "dark": "bg_light",
-      "light": "fg_com"
+      "dark": "d_bg_light",
+      "light": "l_bg_light"
     },
     "backgroundElement": {
-      "dark": "bg_light",
-      "light": "bg_light"
+      "dark": "d_bg_light",
+      "light": "l_bg_light"
     },
     "border": {
-      "dark": "fg",
-      "light": "fg"
+      "dark": "d_fg",
+      "light": "l_fg"
     },
     "borderActive": {
-      "dark": "blue",
-      "light": "blue"
+      "dark": "d_blue",
+      "light": "l_blue"
     },
     "borderSubtle": {
-      "dark": "fg_com",
-      "light": "fg_com"
+      "dark": "d_fg_com",
+      "light": "l_fg_com"
     },
     "diffAdded": {
-      "dark": "green_light",
-      "light": "green_light"
+      "dark": "d_green_light",
+      "light": "l_green_light"
     },
     "diffRemoved": {
-      "dark": "red",
-      "light": "red"
+      "dark": "d_red",
+      "light": "l_red"
     },
     "diffContext": {
-      "dark": "brown",
-      "light": "brown"
+      "dark": "d_brown",
+      "light": "l_brown"
     },
     "diffHunkHeader": {
-      "dark": "purple",
-      "light": "purple"
+      "dark": "d_purple",
+      "light": "l_purple"
     },
     "diffHighlightAdded": {
-      "dark": "green_light",
-      "light": "green_light"
+      "dark": "d_green_light",
+      "light": "l_green_light"
     },
     "diffHighlightRemoved": {
-      "dark": "red",
-      "light": "red"
+      "dark": "d_red",
+      "light": "l_red"
     },
     "diffAddedBg": {
       "dark": "#12261e",
-      "light": "#12261e"
+      "light": "#d0e8d0"
     },
     "diffRemovedBg": {
       "dark": "#301a1f",
-      "light": "#301a1f"
+      "light": "#f0d0d0"
     },
     "diffContextBg": {
-      "dark": "bg",
-      "light": "fg_com"
+      "dark": "d_bg",
+      "light": "l_bg"
     },
     "diffLineNumber": {
-      "dark": "blue",
-      "light": "blue"
+      "dark": "d_blue",
+      "light": "l_blue"
     },
     "diffAddedLineNumberBg": {
       "dark": "#12261e",
-      "light": "#12261e"
+      "light": "#d0e8d0"
     },
     "diffRemovedLineNumberBg": {
       "dark": "#301a1f",
-      "light": "#301a1f"
+      "light": "#f0d0d0"
     },
     "markdownText": {
-      "dark": "fg",
-      "light": "bg_light"
+      "dark": "d_fg",
+      "light": "l_fg"
     },
     "markdownHeading": {
-      "dark": "fg_bright",
-      "light": "bg_light"
+      "dark": "d_fg_bright",
+      "light": "l_fg_bright"
     },
     "markdownLink": {
-      "dark": "brown",
-      "light": "brown"
+      "dark": "d_brown",
+      "light": "l_brown"
     },
     "markdownLinkText": {
-      "dark": "blue",
-      "light": "blue"
+      "dark": "d_blue",
+      "light": "l_blue"
     },
     "markdownCode": {
-      "dark": "cyan_light",
-      "light": "cyan_light"
+      "dark": "d_cyan_light",
+      "light": "l_cyan_light"
     },
     "markdownBlockQuote": {
-      "dark": "brown",
-      "light": "brown"
+      "dark": "d_brown",
+      "light": "l_brown"
     },
     "markdownEmph": {
-      "dark": "blue_light",
-      "light": "blue_light"
+      "dark": "d_blue_light",
+      "light": "l_blue_light"
     },
     "markdownStrong": {
-      "dark": "fg_light",
-      "light": "fg_light"
+      "dark": "d_fg_light",
+      "light": "l_fg_light"
     },
     "markdownHorizontalRule": {
-      "dark": "fg_com",
-      "light": "fg_com"
+      "dark": "d_fg_com",
+      "light": "l_fg_com"
     },
     "markdownListItem": {
-      "dark": "fg",
-      "light": "fg_com"
+      "dark": "d_fg",
+      "light": "l_fg"
     },
     "markdownListEnumeration": {
-      "dark": "fg_light",
-      "light": "fg_light"
+      "dark": "d_fg_light",
+      "light": "l_fg_light"
     },
     "markdownImage": {
-      "dark": "orange",
-      "light": "orange"
+      "dark": "d_orange",
+      "light": "l_orange"
     },
     "markdownImageText": {
-      "dark": "fg_light",
-      "light": "fg_light"
+      "dark": "d_fg_light",
+      "light": "l_fg_light"
     },
     "markdownCodeBlock": {
-      "dark": "fg",
-      "light": "fg"
+      "dark": "d_fg",
+      "light": "l_fg"
     },
     "syntaxComment": {
-      "dark": "fg_com",
-      "light": "fg_com"
+      "dark": "d_fg_com",
+      "light": "l_fg_com"
     },
     "syntaxKeyword": {
-      "dark": "green",
-      "light": "green"
+      "dark": "d_green",
+      "light": "l_green"
     },
     "syntaxFunction": {
-      "dark": "blue",
-      "light": "blue"
+      "dark": "d_blue",
+      "light": "l_blue"
     },
     "syntaxVariable": {
-      "dark": "fg_light",
-      "light": "fg_light"
+      "dark": "d_fg_light",
+      "light": "l_fg_light"
     },
     "syntaxString": {
-      "dark": "cyan",
-      "light": "cyan"
+      "dark": "d_cyan",
+      "light": "l_cyan"
     },
     "syntaxNumber": {
-      "dark": "cyan",
-      "light": "cyan"
+      "dark": "d_cyan",
+      "light": "l_cyan"
     },
     "syntaxType": {
-      "dark": "yellow",
-      "light": "yellow"
+      "dark": "d_yellow",
+      "light": "l_yellow"
     },
     "syntaxOperator": {
-      "dark": "fg",
-      "light": "fg"
+      "dark": "d_fg",
+      "light": "l_fg"
     },
     "syntaxPunctuation": {
-      "dark": "fg",
-      "light": "fg"
+      "dark": "d_fg",
+      "light": "l_fg"
     }
   }
 }
