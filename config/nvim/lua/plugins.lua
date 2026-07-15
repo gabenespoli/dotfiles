@@ -104,6 +104,28 @@ return {
   },
 
   {
+    'stevearc/conform.nvim',
+    config = function()
+      require('conform').setup({
+        formatters_by_ft = {
+          python = { 'ruff_organize_imports', 'ruff_format' },
+        },
+      })
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'python',
+        callback = function(args)
+          vim.keymap.set({ 'n', 'v' }, 'gq', function()
+            require('conform').format({ bufnr = args.buf, lsp_format = 'never' })
+          end, { buffer = args.buf })
+          vim.keymap.set('n', 'gqq', function()
+            require('conform').format({ bufnr = args.buf, lsp_format = 'never' })
+          end, { buffer = args.buf })
+        end,
+      })
+    end,
+  },
+
+  {
     'ibhagwan/fzf-lua',
     config = function()
       local actions = require('fzf-lua.actions')

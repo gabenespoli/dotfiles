@@ -56,6 +56,9 @@ vim.diagnostic.config({
 -- Language servers
 local on_attach = function(client, bufnr)
   vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+  -- Prevent LSP from overriding formatexpr (use conform.nvim instead)
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
 end
 
 vim.lsp.config('terraformls', { on_attach = on_attach })
