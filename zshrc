@@ -6,23 +6,25 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Setup $PATH
-if [ -f /etc/profile ]; then
+if [[ "$OSTYPE" == darwin* ]]; then
+  if [ -f /etc/profile ]; then
 
-  # Setup PATH from scratch every time
-  PATH=""
-  MANPATH=""
-  source /etc/profile
+    # Setup PATH from scratch every time
+    PATH=""
+    MANPATH=""
+    source /etc/profile
 
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  if hash gls 2> /dev/null; then
-    # Overwrite builtins with homebrew-installed GNU ones
-    for gnu in coreutils findutils grep gnu-sed gawk; do
-      export PATH="$HOMEBREW_PREFIX/opt/$gnu/libexec/gnubin:$PATH"
-      export MANPATH="$HOMEBREW_PREFIX/opt/$gnu/libexec/gnuman:$MANPATH"
-    done
+    if hash gls 2> /dev/null; then
+      # Overwrite builtins with homebrew-installed GNU ones
+      for gnu in coreutils findutils grep gnu-sed gawk; do
+        export PATH="$HOMEBREW_PREFIX/opt/$gnu/libexec/gnubin:$PATH"
+        export MANPATH="$HOMEBREW_PREFIX/opt/$gnu/libexec/gnuman:$MANPATH"
+      done
+    fi
+
   fi
-
 fi
 
 # main zsh options  {{{1
@@ -143,6 +145,10 @@ else
   alias lt="tree -L 2 --dirsfirst"
 fi
 
+if [[ "$OSTYPE" == linux* ]]; then
+  alias trash="trash-put"
+fi
+
 ta () {
   if [[ $# == 1 ]]; then
     # if only one arg, assume it is for -t
@@ -188,7 +194,11 @@ alias GS=Gs
 alias nv="nvim -c 'FzfLua git_files'"
 
 export FZF_DEFAULT_OPTS='--color 16'
-source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+if [[ "$OSTYPE" == darwin* ]]; then
+  source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+elif [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
 export FZF_DEFAULT_COMMAND='
   git rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
   git ls-files --cached --others --exclude-standard ||
@@ -204,9 +214,11 @@ zstyle ':fzf-tab:*' continuous-trigger '/'
 zstyle ':fzf-tab:complete:*' fzf-preview 'less ${realpath#-*=}'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --group-directories-first --icons --git $realpath'
 zstyle ':fzf-tab:complete:(\\|*/|)git:argument-1' fzf-preview 'git $word --help'
-zstyle ':fzf-tab:complete:(\\|*/|)brew:argument-1' fzf-preview 'brew $word --help'
-zstyle ':fzf-tab:complete:brew-(list|ls):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew list $word'
-zstyle ':fzf-tab:complete:brew-((|un)install|info|cleanup):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew info $word'
+if [[ "$OSTYPE" == darwin* ]]; then
+  zstyle ':fzf-tab:complete:(\\|*/|)brew:argument-1' fzf-preview 'brew $word --help'
+  zstyle ':fzf-tab:complete:brew-(list|ls):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew list $word'
+  zstyle ':fzf-tab:complete:brew-((|un)install|info|cleanup):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew info $word'
+fi
 
 # Change working dir in shell to last dir in lf on exit
 lfcd () {
