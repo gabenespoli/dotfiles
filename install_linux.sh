@@ -61,10 +61,12 @@ mkdir -pv "$HOME"/.ipython/profile_default
 ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_default/ipython_config.py
 ln -sfv "$HOME"/dotfiles/config/ruff "$HOME"/.config
 
-# --- Neovim (PPA for latest stable) ---
-sudo add-apt-repository -y ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install -y neovim
+# --- Neovim (latest stable from GitHub releases) ---
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+tar xzf nvim-linux-x86_64.tar.gz
+sudo mv nvim-linux-x86_64 /opt/nvim
+sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
+rm nvim-linux-x86_64.tar.gz
 mkdir -pv "$HOME"/.config/nvim
 ln -sfv "$HOME"/dotfiles/config/nvim/init.lua "$HOME"/.config/nvim/init.lua
 ln -sfv "$HOME"/dotfiles/config/nvim/lua "$HOME"/.config/nvim/lua
