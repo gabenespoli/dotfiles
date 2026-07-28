@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+export NONINTERACTIVE=1
 
 # =============================================================================
 # New Linux (Xubuntu 24.04) Setup Script
