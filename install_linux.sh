@@ -32,7 +32,7 @@ sudo ln -sfv "$(which fdfind)" /usr/local/bin/fd
 
 # eza (needs the gierens PPA on Ubuntu 24.04)
 sudo mkdir -p /etc/apt/keyrings
-wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/gierens.gpg
 echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
 sudo apt update
 sudo apt install -y eza
@@ -46,6 +46,7 @@ tar xzf lf-linux-amd64.tar.gz
 sudo mv lf /usr/local/bin/
 rm lf-linux-amd64.tar.gz
 
+mkdir -pv "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
@@ -64,6 +65,7 @@ ln -sfv "$HOME"/dotfiles/config/ruff "$HOME"/.config
 # --- Neovim (latest stable from GitHub releases) ---
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 tar xzf nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
 sudo mv nvim-linux-x86_64 /opt/nvim
 sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 rm nvim-linux-x86_64.tar.gz
@@ -74,18 +76,18 @@ ln -sfv "$HOME"/dotfiles/vim/colors "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
-nvim --headless "+Lazy! sync" +qa
-nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
+/usr/local/bin/nvim --headless "+Lazy! sync" +qa
+/usr/local/bin/nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
 
 # --- Zsh and Tmux ---
 sudo apt install -y zsh tmux
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
 ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone https://github.com/Aloxaf/fzf-tab "$HOME"/.oh-my-zsh/custom/plugins/fzf-tab
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
+[ -d ~/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+[ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+[ -d "$HOME/.oh-my-zsh/custom/plugins/fzf-tab" ] || git clone https://github.com/Aloxaf/fzf-tab "$HOME"/.oh-my-zsh/custom/plugins/fzf-tab
+[ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
 chsh -s /usr/bin/zsh
 
 # --- Media Server ---
