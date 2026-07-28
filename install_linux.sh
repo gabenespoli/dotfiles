@@ -97,3 +97,33 @@ rm google-chrome-stable_current_amd64.deb
 
 echo ""
 echo "Done! Log out and back in (or reboot) for zsh to take effect as your default shell."
+
+# # Remove apt-installed CLI tools
+# sudo apt remove -y fd-find ripgrep fzf eza htop tree cloc
+
+# # Remove the eza PPA
+# sudo rm -f /etc/apt/sources.list.d/gierens.list
+# sudo rm -f /etc/apt/keyrings/gierens.gpg
+
+# # Remove the fd symlink
+# sudo rm -f /usr/local/bin/fd
+
+# # Remove trash-cli (keep this one — it stays as apt)
+# # sudo apt remove -y trash-cli  # <-- DON'T run this, you still want it via apt
+
+# # Remove manually installed neovim
+# sudo rm -rf /opt/nvim
+# sudo rm -f /usr/local/bin/nvim
+
+# # Remove manually installed tree-sitter
+# sudo rm -f /usr/local/bin/tree-sitter
+
+# # Remove manually installed lf
+# sudo rm -f /usr/local/bin/lf
+
+# # Remove uv (installed via curl)
+# rm -rf "$HOME/.local/bin/uv" "$HOME/.local/bin/uvx"
+# # uv tool uninstall pynvim jupytext ruff pyright  # run this first if uv is still in PATH
+
+# # Clean up apt
+# sudo apt autoremove -y
