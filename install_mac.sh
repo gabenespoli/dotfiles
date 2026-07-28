@@ -80,7 +80,6 @@ nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
 
 # --- Zsh and Tmux ---
 brew install tmux
-ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
 ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -88,6 +87,7 @@ tic -x "$HOME"/dotfiles/misc/tmux-256color.terminfo
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/Aloxaf/fzf-tab "$HOME"/.oh-my-zsh/custom/plugins/fzf-tab
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
+ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 
 # --- OpenCode ---
 brew install anomalyco/tap/opencode

@@ -60,14 +60,14 @@ nvim --headless "+Lazy! sync" +qa
 nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
 
 # --- Zsh and Tmux ---
-brew install tmux
-ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
+sudo apt install -y zsh tmux
 ln -sfv "$HOME"/dotfiles/p10k.zsh "$HOME"/.p10k.zsh
 ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
 [ -d ~/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 [ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 [ -d "$HOME/.oh-my-zsh/custom/plugins/fzf-tab" ] || git clone https://github.com/Aloxaf/fzf-tab "$HOME"/.oh-my-zsh/custom/plugins/fzf-tab
 [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
+ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 chsh -s /usr/bin/zsh
 
 # --- Media Server ---
