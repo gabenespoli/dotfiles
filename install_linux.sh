@@ -48,7 +48,7 @@ ln -sfv "$HOME"/dotfiles/python/ipython_config.py "$HOME"/.ipython/profile_defau
 ln -sfv "$HOME"/dotfiles/config/ruff "$HOME"/.config
 
 # --- Neovim ---
-brew install neovim
+brew install neovim tree-sitter-cli
 mkdir -pv "$HOME"/.config/nvim
 ln -sfv "$HOME"/dotfiles/config/nvim/init.lua "$HOME"/.config/nvim/init.lua
 ln -sfv "$HOME"/dotfiles/config/nvim/lua "$HOME"/.config/nvim/lua
