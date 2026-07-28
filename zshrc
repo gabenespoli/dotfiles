@@ -25,6 +25,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
     fi
 
   fi
+elif [[ "$OSTYPE" == linux* ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # main zsh options  {{{1
@@ -194,11 +196,7 @@ alias GS=Gs
 alias nv="nvim -c 'FzfLua git_files'"
 
 export FZF_DEFAULT_OPTS='--color 16'
-if [[ "$OSTYPE" == darwin* ]]; then
-  source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
-elif [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-fi
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
 export FZF_DEFAULT_COMMAND='
   git rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
   git ls-files --cached --others --exclude-standard ||
