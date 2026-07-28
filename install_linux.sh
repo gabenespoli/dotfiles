@@ -39,9 +39,12 @@ sudo apt install -y eza
 
 sudo apt install -y trash-cli
 
-# lf — no apt package; install manually from GitHub releases:
-#   https://github.com/gokcehan/lf/releases
-#   Download the linux-amd64 tarball, extract, and move `lf` to /usr/local/bin
+# lf file manager (from GitHub releases)
+LF_VERSION=$(curl -s https://api.github.com/repos/gokcehan/lf/releases/latest | jq -r '.tag_name')
+curl -LO "https://github.com/gokcehan/lf/releases/download/${LF_VERSION}/lf-linux-amd64.tar.gz"
+tar xzf lf-linux-amd64.tar.gz
+sudo mv lf /usr/local/bin/
+rm lf-linux-amd64.tar.gz
 
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
