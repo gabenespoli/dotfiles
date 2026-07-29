@@ -96,11 +96,12 @@ autologin-user-timeout=0
 EOF
 
 # --- mount eg drive ---
-mkdir -pv "$HOME"/eg
-if ! grep -q "eg" /etc/fstab 2>/dev/null; then
-  echo "UUID=f9d65897-d5ba-4838-a937-b5a26291f970  $HOME/eg  ext4  defaults,nofail  0  2" | sudo tee -a /etc/fstab
+sudo mkdir -pv /mnt/eg
+if ! grep -q "/mnt/eg" /etc/fstab 2>/dev/null; then
+  echo "UUID=f9d65897-d5ba-4838-a937-b5a26291f970  /mnt/eg  ext4  defaults,nofail  0  2" | sudo tee -a /etc/fstab
 fi
 sudo mount -a
+ln -sfv /mnt/eg "$HOME"/eg
 
 # # --- backup eg drive to sdc via rsync ---
 # # TODO:
@@ -108,12 +109,12 @@ sudo mount -a
 # #   2. Format: sudo mkfs.ext4 /dev/sdc1
 # #   3. Find by-id: ls -l /dev/disk/by-id/ | grep sdc | grep -v "part"
 # #   4. Add to fstab:
-# #        /dev/disk/by-id/ata-<sdc_serial>  "$HOME"/eg-backup  ext4  defaults,nofail  0  2
-# #   5. sudo mkdir -pv "$HOME"/eg-backup && sudo mount -a
-# #   6. Initial sync: sudo rsync -a --delete "$HOME"/eg/ "$HOME"/eg-backup/
+# #        /dev/disk/by-id/ata-<sdc_serial>  /mnt/eg-backup  ext4  defaults,nofail  0  2
+# #   5. sudo mkdir -pv /mnt/eg-backup && sudo mount -a
+# #   6. Initial sync: sudo rsync -a --delete /mnt/eg/ /mnt/eg-backup/
 # #   7. Uncomment the crontab line below to schedule hourly backups:
 # #
-# # CRON_JOB="0 * * * * rsync -a --delete \$HOME/eg/ \$HOME/eg-backup/"
+# # CRON_JOB="0 * * * * rsync -a --delete /mnt/eg/ /mnt/eg-backup/"
 # # (crontab -l 2>/dev/null | grep -v "eg-backup"; echo "$CRON_JOB") | crontab -
 
 # --- jellyfin media server ---
