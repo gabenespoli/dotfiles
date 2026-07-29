@@ -116,6 +116,8 @@ sudo mount -a
 # # CRON_JOB="0 * * * * rsync -a --delete \$HOME/eg/ \$HOME/eg-backup/"
 # # (crontab -l 2>/dev/null | grep -v "eg-backup"; echo "$CRON_JOB") | crontab -
 
+# --- jellyfin media server ---
+curl -s https://repo.jellyfin.org/install-debuntu.sh | sudo bash
 # --- install jellyfin and media server ---
 # TODO: configure Jellyfin
 
