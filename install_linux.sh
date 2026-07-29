@@ -103,6 +103,26 @@ fi
 sudo mount -a
 ln -sfv /mnt/eg "$HOME"/eg
 
+# --- samba share ---
+sudo apt install -y samba
+if ! grep -q "\[eg\]" /etc/samba/smb.conf 2>/dev/null; then
+  sudo tee -a /etc/samba/smb.conf <<EOF
+
+[eg]
+   path = /mnt/eg
+   browseable = yes
+   read only = no
+   guest ok = no
+   valid users = $USER
+   force user = $USER
+EOF
+fi
+# Manual: set samba password (interactive)
+#   sudo smbpasswd -a $USER
+sudo systemctl enable --now smbd
+# Manual: if using ufw, allow samba
+#   sudo ufw allow samba
+
 # # --- backup eg drive to sdc via rsync ---
 # # TODO:
 # #   1. Partition sdc: sudo gdisk /dev/sdc (single ext4 partition, type 8300)
