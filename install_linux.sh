@@ -88,7 +88,12 @@ sudo apt install -y ./google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
 
 # --- auto login ---
-# TODO: configure auto-login for Xubuntu
+sudo mkdir -pv /etc/lightdm/lightdm.conf.d
+sudo tee /etc/lightdm/lightdm.conf.d/50-autologin.conf <<EOF
+[Seat:*]
+autologin-user=$USER
+autologin-user-timeout=0
+EOF
 
 # --- mount eg drive ---
 mkdir -pv "$HOME"/eg
