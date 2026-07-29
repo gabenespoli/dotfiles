@@ -78,9 +78,28 @@ sudo systemctl enable --now ssh
 
 # VNC screen sharing
 sudo apt install -y x11vnc
-x11vnc -storepasswd
-# Add to Xubuntu "Session and Startup" to launch on boot:
-#   x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth ~/.vnc/passwd -rfbport 5900 -shared
+mkdir -pv "$HOME"/.local/bin
+tee "$HOME"/.local/bin/x11vnc_autostart.sh <<'SCRIPT'
+#!/bin/bash
+sleep 3
+AUTH_FILE=$(find /run /var/run -name "xauth" -type f 2>/dev/null | head -1)
+if [ -n "$AUTH_FILE" ]; then
+  exec /usr/bin/x11vnc -auth "$AUTH_FILE" -forever -loop -noxdamage -repeat -rfbauth "$HOME/.vnc/passwd" -rfbport 5900 -shared -display :0
+else
+  exec /usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth "$HOME/.vnc/passwd" -rfbport 5900 -shared -display :0
+fi
+SCRIPT
+chmod +x "$HOME"/.local/bin/x11vnc_autostart.sh
+mkdir -pv "$HOME"/.config/autostart
+tee "$HOME"/.config/autostart/x11vnc.desktop <<EOF
+[Desktop Entry]
+Type=Application
+Name=x11vnc
+Exec=$HOME/.local/bin/x11vnc_autostart.sh
+StartupNotify=false
+EOF
+# Manual: set VNC password (interactive)
+#   x11vnc -storepasswd
 
 # Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
