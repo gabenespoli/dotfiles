@@ -90,8 +90,26 @@ rm google-chrome-stable_current_amd64.deb
 # --- auto login ---
 # TODO: configure auto-login for Xubuntu
 
-# --- mount eg drive and create samba server ---
-# TODO: configure Samba
+# --- mount eg drive ---
+mkdir -pv "$HOME"/eg
+if ! grep -q "eg" /etc/fstab 2>/dev/null; then
+  echo "UUID=f9d65897-d5ba-4838-a937-b5a26291f970  $HOME/eg  ext4  defaults,nofail  0  2" | sudo tee -a /etc/fstab
+fi
+sudo mount -a
+
+# # --- backup eg drive to sdc via rsync ---
+# # TODO:
+# #   1. Partition sdc: sudo gdisk /dev/sdc (single ext4 partition, type 8300)
+# #   2. Format: sudo mkfs.ext4 /dev/sdc1
+# #   3. Find by-id: ls -l /dev/disk/by-id/ | grep sdc | grep -v "part"
+# #   4. Add to fstab:
+# #        /dev/disk/by-id/ata-<sdc_serial>  "$HOME"/eg-backup  ext4  defaults,nofail  0  2
+# #   5. sudo mkdir -pv "$HOME"/eg-backup && sudo mount -a
+# #   6. Initial sync: sudo rsync -a --delete "$HOME"/eg/ "$HOME"/eg-backup/
+# #   7. Uncomment the crontab line below to schedule hourly backups:
+# #
+# # CRON_JOB="0 * * * * rsync -a --delete \$HOME/eg/ \$HOME/eg-backup/"
+# # (crontab -l 2>/dev/null | grep -v "eg-backup"; echo "$CRON_JOB") | crontab -
 
 # --- install jellyfin and media server ---
 # TODO: configure Jellyfin
