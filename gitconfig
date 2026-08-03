@@ -18,9 +18,10 @@
   HEAD = 13
 [include]
   path = ~/.gitconfig_local
-; example contents of ~/.gitconfig-local
+; example contents of ~/.gitconfig_local mac/linux
 ; [user]
 ;   name = Gabe Nespoli
 ;   email = gabenespoli@gmail.com
+; more ~/.gitconfig_local for mac
 ; [credential]
 ;   helper = osxkeychain
