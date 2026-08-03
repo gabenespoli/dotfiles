@@ -125,7 +125,8 @@ if hash eza 2> /dev/null; then
   alias ls="eza_git_ls -l --no-filesize --no-permissions --no-user --no-time"
   alias la="eza_git_ls -la --no-filesize --no-permissions --no-user --no-time"
   alias lt="eza_git_ls -l --no-filesize --no-permissions --no-user --no-time --tree --level=2"
-  alias ll="eza_git_ls -l"
+  alias ll="eza_git_ls -l --total-size"
+  alias lla="eza_git_ls -la --total-size"
   if hash gls 2> /dev/null; then
     alias lss="gls -F --color --group-directories-first"
   else
