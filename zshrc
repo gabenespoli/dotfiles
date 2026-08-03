@@ -70,12 +70,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+# Preferred editor
+export EDITOR='nvim'
 
 # Print output in terminal, don't enter a pager
 export PAGER=""
