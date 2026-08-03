@@ -30,6 +30,8 @@ export NONINTERACTIVE=1
 # --- System packages (apt) ---  {{{1
 sudo apt update
 sudo apt install -y build-essential zsh trash-cli
+sudo apt install -y vlc libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
 
 # --- Core CLI utils (brew) ---  {{{1
 brew install fd ripgrep fzf
