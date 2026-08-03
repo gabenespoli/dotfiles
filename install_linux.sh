@@ -70,6 +70,13 @@ ln -sfv "$HOME"/dotfiles/tmux.conf "$HOME"/.tmux.conf
 ln -sfv "$HOME"/dotfiles/zshrc "$HOME"/.zshrc
 chsh -s /usr/bin/zsh
 
+# --- Ghostty terminal ---
+sudo add-apt-repository -y ppa:mkasberg/ghostty-ubuntu
+sudo apt update
+sudo apt install -y ghostty
+mkdir -pv "$HOME"/.config/ghostty
+ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
+
 # --- Media Server ---
 
 # SSH
