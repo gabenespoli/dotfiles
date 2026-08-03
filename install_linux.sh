@@ -113,6 +113,16 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
 
+# --- swap caps lock and ctrl ---
+sudo mkdir -pv /etc/X11/xorg.conf.d
+sudo tee /etc/X11/xorg.conf.d/10-keyboard.conf <<EOF
+Section "InputClass"
+    Identifier "keyboard"
+    MatchIsKeyboard "on"
+    Option "XkbOptions" "ctrl:swapcaps"
+EndSection
+EOF
+
 # --- auto login ---
 sudo mkdir -pv /etc/lightdm/lightdm.conf.d
 sudo tee /etc/lightdm/lightdm.conf.d/50-autologin.conf <<EOF
