@@ -190,5 +190,12 @@ curl -s https://repo.jellyfin.org/install-debuntu.sh | sudo bash
 # --- install jellyfin and media server ---
 # TODO: configure Jellyfin
 
+# --- OpenCode ---
+brew install anomalyco/tap/opencode
+mkdir -pv "$HOME"/.config/opencode
+ln -sfv "$HOME"/dotfiles/config/opencode/opencode.json "$HOME"/.config/opencode
+ln -sfv "$HOME"/dotfiles/config/opencode/themes "$HOME"/.config/opencode
+
+# --- Done ---
 echo ""
 echo "Done! Log out and back in (or reboot) for zsh to take effect as your default shell."
