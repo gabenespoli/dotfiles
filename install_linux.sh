@@ -80,13 +80,11 @@ config-file = $HOME/dotfiles/ghostty
 config-file = $HOME/dotfiles/ghostty_linux
 EOF
 
-# --- Media Server ---
-
-# SSH
+# --- SSH ---
 sudo apt install -y openssh-server
 sudo systemctl enable --now ssh
 
-# VNC screen sharing
+# --- VNC screen sharing ---
 sudo apt install -y x11vnc
 mkdir -pv "$HOME"/.local/bin
 tee "$HOME"/.local/bin/x11vnc_autostart.sh <<'SCRIPT'
@@ -111,7 +109,7 @@ EOF
 # Manual: set VNC password (interactive)
 #   x11vnc -storepasswd
 
-# Google Chrome
+# --- Google Chrome ---
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
