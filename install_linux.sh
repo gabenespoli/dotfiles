@@ -138,6 +138,12 @@ autologin-user=$USER
 autologin-user-timeout=0
 EOF
 
+# --- no lock screen on sleep/wake ---  {{{1
+for prop in /lock/enabled /lock/saver-activation/enabled /lock/sleep-activation; do
+  xfconf-query -c xfce4-screensaver -p "$prop" --create -t bool -s false || true
+done
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate --create -t bool -s false || true
+
 # --- mount eg drive ---  {{{1
 sudo mkdir -pv /mnt/eg
 if ! grep -q "/mnt/eg" /etc/fstab 2>/dev/null; then
