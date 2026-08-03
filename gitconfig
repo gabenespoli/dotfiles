@@ -22,6 +22,6 @@
 ; [user]
 ;   name = Gabe Nespoli
 ;   email = gabenespoli@gmail.com
-; more ~/.gitconfig_local for mac
 ; [credential]
-;   helper = osxkeychain
+;   helper = osxkeychain  ; for mac
+;   helper = store  ; for linux
