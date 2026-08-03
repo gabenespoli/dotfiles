@@ -1,0 +1,4 @@
+window-theme = dark
+keybind = ctrl+i=text:\x09
+keybind = ctrl+[=text:\x1B
+keybind = ctrl+m=text:\x0D

@@ -75,7 +75,10 @@ sudo add-apt-repository -y ppa:mkasberg/ghostty-ubuntu
 sudo apt update
 sudo apt install -y ghostty
 mkdir -pv "$HOME"/.config/ghostty
-ln -sfv "$HOME"/dotfiles/ghostty "$HOME"/.config/ghostty/config
+tee "$HOME"/.config/ghostty/config <<EOF
+config-file = $HOME/dotfiles/ghostty
+config-file = $HOME/dotfiles/ghostty_linux
+EOF
 
 # --- Media Server ---
 
