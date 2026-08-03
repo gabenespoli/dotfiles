@@ -139,6 +139,11 @@ fi
 sudo mount -a
 ln -sfv /mnt/eg "$HOME"/eg
 
+# --- install Nerd Fonts from eg drive ---
+mkdir -pv "$HOME"/.local/share/fonts
+find "$HOME"/eg/Software/Fonts/NerdFonts -type f \( -name "*.ttf" -o -name "*.otf" \) -exec cp -v {} "$HOME"/.local/share/fonts/ \;
+fc-cache -f "$HOME"/.local/share/fonts
+
 # --- samba share ---
 sudo apt install -y samba
 if ! grep -q "\[eg\]" /etc/samba/smb.conf 2>/dev/null; then
