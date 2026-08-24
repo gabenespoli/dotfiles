@@ -169,6 +169,21 @@ alias vd="pyenv virtualenv-delete"
 
 alias uvl="uv python list"
 alias uvc="uv venv"
+uva() { source "${1:-.}/.venv/bin/activate" }
+alias uvd="deactivate"
+# auto-activate .venv on cd
+autoload -Uz add-zsh-hook
+_venv_auto() {
+  local dir="$PWD" target=""
+  while [[ "$dir" != / ]]; do
+    [[ -f "$dir/.venv/bin/activate" ]] && { target="$dir/.venv"; break }
+    dir="${dir:h}"
+  done
+  [[ -n "$VIRTUAL_ENV" && "$VIRTUAL_ENV" != "$target" ]] && deactivate
+  [[ -n "$target" && "$VIRTUAL_ENV" != "$target" ]] && source "$target/bin/activate"
+}
+add-zsh-hook chpwd _venv_auto
+_venv_auto
 
 alias gs="git status --short"
 alias co="git checkout"
