@@ -437,6 +437,7 @@ nnoremap co<Space> :Git checkout<Space>
 " rbong/vim_flog  {{{2
 let g:flog_default_opts = {'date': 'short'}
 nmap gl :Flog<CR>
+nmap gL :Flog -path=%<CR>
 
 " justinmk/vim-dirvish  {{{2
 let g:dirvish_mode = ':sort ,^.*[\/],'
