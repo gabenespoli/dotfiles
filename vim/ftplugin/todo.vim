@@ -37,12 +37,16 @@ setlocal foldmethod=expr
 setlocal foldexpr=TodoFold(v:lnum)
 function! TodoFold(lnum)
     let l:line = getline(a:lnum) 
-    if l:line =~# '^# '
+    if l:line =~# '^\s*$'
+      return '0'
+    elseif l:line =~# '^# '
       return '>1'
     elseif l:line =~# '^## '
       return '>2'
     elseif l:line =~# '^>'
       return '>3'
+    elseif l:line =~# '^\S'
+      return '0'
     else
       return '='
     endif
