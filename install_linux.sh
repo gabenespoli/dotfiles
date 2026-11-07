@@ -153,6 +153,7 @@ if ! grep -q "/mnt/eg" /etc/fstab 2>/dev/null; then
 fi
 sudo mount -a
 ln -sfv /mnt/eg "$HOME"/eg
+ln -sfv /mnt/eg/repos "$HOME"/repos
 
 # --- install Nerd Fonts from eg drive ---  {{{1
 mkdir -pv "$HOME"/.local/share/fonts
