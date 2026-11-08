@@ -176,11 +176,27 @@ autoload -Uz add-zsh-hook
 _venv_auto() {
   local dir="$PWD" target=""
   while [[ "$dir" != / ]]; do
-    [[ -f "$dir/.venv/bin/activate" ]] && { target="$dir/.venv"; break }
+    [[ -f "$dir/.venv/bin/activate" ]] && { target="$dir/.venv"; break; }
     dir="${dir:h}"
   done
-  [[ -n "$VIRTUAL_ENV" && "$VIRTUAL_ENV" != "$target" ]] && deactivate
-  [[ -n "$target" && "$VIRTUAL_ENV" != "$target" ]] && source "$target/bin/activate"
+
+  # Already in the right environment: nothing to do
+  [[ -n "$target" && "$VIRTUAL_ENV" == "$target" ]] && return
+
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    if (( $+functions[deactivate] )); then
+      deactivate
+    else
+      # Stale/inherited VIRTUAL_ENV: clean it up manually
+      local old="$VIRTUAL_ENV"
+      export PATH="${PATH//${old}\/bin:/}"
+      export PATH="${PATH//:${old}\/bin/}"
+      export PATH="${PATH//${old}\/bin/}"
+      unset VIRTUAL_ENV VIRTUAL_ENV_PROMPT
+    fi
+  fi
+
+  [[ -n "$target" ]] && source "$target/bin/activate"
 }
 add-zsh-hook chpwd _venv_auto
 _venv_auto
