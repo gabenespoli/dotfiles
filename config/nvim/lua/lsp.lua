@@ -90,16 +90,25 @@ end
 configure_diagnostics()
 
 -- Language servers
+local python_root_markers = {
+  'pyproject.toml',
+  'ruff.toml',
+  'setup.py',
+  'setup.cfg',
+}
+
 local function python_root(bufnr, on_dir)
   local filename = vim.api.nvim_buf_get_name(bufnr)
-  local root = vim.fs.root(filename, {
-    'pyproject.toml',
-    'ruff.toml',
-    'setup.py',
-    'setup.cfg',
-  })
+  local file_dir = vim.fs.dirname(filename)
+  local home = vim.fs.normalize(vim.env.HOME)
+  local root = vim.fs.root(filename, python_root_markers)
 
-  on_dir(root or vim.fs.dirname(filename))
+  if root == home then
+    root = nil
+  end
+
+  root = root or file_dir
+  on_dir(root == home and nil or root)
 end
 
 local on_attach = function(client, bufnr)
