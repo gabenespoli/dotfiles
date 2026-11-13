@@ -1,9 +1,5 @@
 vim.cmd('source ~/.vimrc')
 
-require('options')
-require('lsp')
-require('keymaps')
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(lazypath) then
@@ -12,3 +8,7 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup('plugins')
+
+require('options')
+require('lsp')
+require('keymaps')

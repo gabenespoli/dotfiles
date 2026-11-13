@@ -1,10 +1,20 @@
 -- Neovim-specific keymaps
 
 -- LSP
+local lsp = require('lsp')
+
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', '<C-k>d', vim.diagnostic.setloclist)
-vim.keymap.set('n', 'cod', function() vim.diagnostic.enable(false) end)
-vim.keymap.set('n', 'coD', function() vim.diagnostic.enable(true) end)
+vim.keymap.set('n', 'codd', function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  vim.diagnostic.enable(
+    not vim.diagnostic.is_enabled({ bufnr = bufnr }),
+    { bufnr = bufnr }
+  )
+end)
+vim.keymap.set('n', 'codg', lsp.toggle_gutter)
+vim.keymap.set('n', 'codl', lsp.toggle_line)
+vim.keymap.set('n', 'codn', lsp.toggle_number)
 
 -- Python LSP
 vim.api.nvim_create_autocmd('FileType', {

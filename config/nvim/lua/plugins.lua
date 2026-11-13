@@ -37,6 +37,8 @@ return {
     end,
   },
 
+  'neovim/nvim-lspconfig',
+
   {
     'lewis6991/gitsigns.nvim',
     config = function()
