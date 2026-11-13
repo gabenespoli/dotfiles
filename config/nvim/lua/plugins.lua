@@ -13,7 +13,6 @@ return {
   'gabenespoli/vim-tabsms',
   'tpope/vim-fugitive',
   'rbong/vim-flog',
-  'github/copilot.vim',
   { 'Vimjas/vim-python-pep8-indent', ft = 'python' },
   { 'kalekundert/vim-coiled-snake', ft = 'python' },
   { 'gabenespoli/vim-pythonsense', ft = 'python' },

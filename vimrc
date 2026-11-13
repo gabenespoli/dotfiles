@@ -24,7 +24,6 @@ Plug 'machakann/vim-sandwich'
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
-Plug 'github/copilot.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python']}
