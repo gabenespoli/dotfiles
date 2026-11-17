@@ -59,7 +59,7 @@ ln -sfv "$HOME"/dotfiles/vim/ftdetect "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/ftplugin "$HOME"/.config/nvim/
 ln -sfv "$HOME"/dotfiles/vim/syntax "$HOME"/.config/nvim/
 nvim --headless "+Lazy! sync" +qa
-nvim --headless "+TSInstall! python sql bash json vim lua git_config" +qa
+nvim --headless "+TSInstall! python sql bash json yaml toml go vim lua git_config" +qa
 
 # --- Zsh and Tmux ---  {{{1
 sudo apt install -y zsh tmux
