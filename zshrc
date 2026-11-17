@@ -64,7 +64,7 @@ DISABLE_AUTO_TITLE="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(fzf-tab)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -224,7 +224,23 @@ alias GS=Gs
 alias nv="nvim -c 'FzfLua git_files'"
 
 export FZF_DEFAULT_OPTS='--color 16'
+
+# Use fzf's native completion directly with <Tab>.
+# An empty trigger means fzf completion is invoked without requiring **.
+export FZF_COMPLETION_TRIGGER=''
+export FZF_COMPLETION_OPTS='--preview-window=right:50%:wrap'
+
+# Preview files and directories in fzf completion.
+_fzf_comprun() {
+  shift
+
+  fzf \
+    --preview 'if [ -d {} ]; then eza -1 --color=always --group-directories-first --icons --git -- {}; else less -N -- {}; fi' \
+    "$@"
+}
+
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+source $(brew --prefix)/opt/fzf/shell/completion.zsh
 export FZF_DEFAULT_COMMAND='
   git rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
   git ls-files --cached --others --exclude-standard ||
@@ -233,18 +249,6 @@ export FZF_DEFAULT_COMMAND='
 
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:*' fzf-flags --color 16
-zstyle ':fzf-tab:*' continuous-trigger '/'
-
-# fzf-tab previews (some copied/modified from fzf-tab-source)
-zstyle ':fzf-tab:complete:*' fzf-preview 'less ${realpath#-*=}'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --group-directories-first --icons --git $realpath'
-zstyle ':fzf-tab:complete:(\\|*/|)git:argument-1' fzf-preview 'git $word --help'
-if [[ "$OSTYPE" == darwin* ]]; then
-  zstyle ':fzf-tab:complete:(\\|*/|)brew:argument-1' fzf-preview 'brew $word --help'
-  zstyle ':fzf-tab:complete:brew-(list|ls):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew list $word'
-  zstyle ':fzf-tab:complete:brew-((|un)install|info|cleanup):(|installed_)(cask|formula|tap)-argument-rest' fzf-preview 'brew info $word'
-fi
 
 # Change working dir in shell to last dir in lf on exit
 lfcd () {
