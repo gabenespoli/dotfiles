@@ -232,10 +232,46 @@ export FZF_COMPLETION_OPTS='--preview-window=right:50%:wrap'
 
 # Preview files and directories in fzf completion.
 _fzf_comprun() {
+  local walker_root='.'
+  local walker_types='file,dir'
+  local argument
+  local read_walker_types=false
+
+  for argument in "$@"; do
+    if $read_walker_types; then
+      walker_types=$argument
+      read_walker_types=false
+      continue
+    fi
+
+    case "$argument" in
+      --walker) read_walker_types=true ;;
+      --walker-root=*) walker_root=${argument#--walker-root=} ;;
+      --walker=*) walker_types=${argument#--walker=} ;;
+    esac
+  done
+
+  local fd_types='--type f --type d'
+  if [[ "$walker_types" == dir,* ]]; then
+    fd_types='--type d'
+  fi
+
+  local quoted_root=${(q)walker_root}
+  local recursive_source="fd --hidden --follow --exclude .git $fd_types . $quoted_root"
+  local current_source="fd --hidden --follow --exclude .git --max-depth 1 $fd_types . $quoted_root"
+  local recursive_action="reload($recursive_source)"
+  local current_action="reload($current_source)"
+  local toggle_action
+
+  toggle_action="case \"\$FZF_PROMPT\" in '[recursive]'*) printf '%s\\n' 'change-prompt([current] > )+change-header(Ctrl-R: recursive)+$current_action' ;; *) printf '%s\\n' 'change-prompt([recursive] > )+change-header(Ctrl-R: current directory)+$recursive_action' ;; esac"
+
   shift
 
   fzf \
     --preview 'if [ -d {} ]; then eza -1 --color=always --group-directories-first --icons --git -- {}; else less -N -- {}; fi' \
+    --prompt='[recursive] > ' \
+    --header='Ctrl-R: toggle recursive/current directory' \
+    --bind="ctrl-r:transform:$toggle_action" \
     "$@"
 }
 
