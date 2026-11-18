@@ -43,6 +43,9 @@ cmd open ${{
 
 map o open
 map <enter> open
+map <tab> :toggle; down
+map <c-p> up
+map <c-n> down
 
 # Rename file
 # -----------
