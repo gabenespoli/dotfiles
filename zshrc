@@ -257,8 +257,11 @@ _fzf_comprun() {
   fi
 
   local quoted_root=${(q)walker_root}
-  local recursive_source="fd --hidden --follow --exclude .git $fd_types . $quoted_root"
-  local current_source="fd --hidden --follow --exclude .git --max-depth 1 $fd_types . $quoted_root"
+  local root_args=''
+  [[ "$walker_root" != . ]] && root_args=" $quoted_root"
+
+  local recursive_source="fd --hidden --follow --exclude .git $fd_types .$root_args"
+  local current_source="fd --hidden --follow --exclude .git --max-depth 1 $fd_types .$root_args"
   local recursive_action="reload($recursive_source)"
   local current_action="reload($current_source)"
   local toggle_action
@@ -272,6 +275,22 @@ _fzf_comprun() {
     --prompt='[recursive] > ' \
     --bind="ctrl-r:transform:$toggle_action" \
     "$@"
+}
+
+# Generate completion candidates with fd instead of fzf's built-in walker,
+# so the initial list and the reloaded lists come from the same source.
+# Omitting the search path when the root is '.' keeps fd from prefixing
+# entries with './'.
+_fzf_compgen_path() {
+  local root_args=()
+  [[ "$1" != . ]] && root_args=("$1")
+  fd --hidden --follow --exclude .git --type f --type d . "${root_args[@]}"
+}
+
+_fzf_compgen_dir() {
+  local root_args=()
+  [[ "$1" != . ]] && root_args=("$1")
+  fd --hidden --follow --exclude .git --type d . "${root_args[@]}"
 }
 
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
