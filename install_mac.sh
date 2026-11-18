@@ -29,10 +29,12 @@ set -e
 
 # --- Core CLI utils ---
 brew install coreutils findutils grep gnu-sed gawk wget
-brew install fd ripgrep fzf
+brew install fd ripgrep fzf bat
 brew install htop lf eza tree trash cloc jq
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
+ln -sfv "$HOME"/dotfiles/config/bat "$HOME"/.config
+bat cache --build
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 
 # --- Karabiner ---

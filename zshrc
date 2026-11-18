@@ -286,7 +286,7 @@ _fzf_comprun() {
   shift
 
   fzf \
-    --preview 'if [ -d {2} ]; then eza -1 --color=always --group-directories-first --icons=always --git -- {2}; else less -N -- {2}; fi' \
+    --preview 'if [ -d {2} ]; then eza -1 --color=always --group-directories-first --icons=always --git -- {2}; else bat --style=numbers --color=always --line-range :500 -- {2}; fi' \
     --prompt='r> ' \
     --bind="ctrl-r:transform:$toggle_action" \
     "$@"

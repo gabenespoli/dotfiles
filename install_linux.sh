@@ -34,11 +34,13 @@ sudo apt install -y vlc libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 
 # --- Core CLI utils (brew) ---  {{{1
-brew install fd ripgrep fzf
+brew install fd ripgrep fzf bat
 brew install htop lf eza tree cloc jq wget
 mkdir -pv "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
+ln -sfv "$HOME"/dotfiles/config/bat "$HOME"/.config
+bat cache --build
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 
 # --- Python ---  {{{1
