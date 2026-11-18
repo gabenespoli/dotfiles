@@ -431,10 +431,10 @@ hi! link sqlFold                       String
 
 " Plugins {{{1
 " Fugitive {{{2
-call s:h('fugitiveUnstagedModifier',   {'fg': s:red})
+call s:h('fugitiveUnstagedModifier',   {'fg': s:brown})
 call s:h('fugitiveStagedModifier',     {'fg': s:green_light})
-hi! link fugitiveHeading               PreProc
-hi! link fugitiveHeader                PreProc
+call s:h('fugitiveUntrackedModifier',  {'fg': s:fg_com})
+hi! link fugitiveHeader                Identifier
 hi! link fugitiveSymbolicRef           Label
 hi! link fugitiveCount                 Todo
 call s:h('diffLine',                   {'fg': s:purple, 'gui': 'reverse', 'cterm': 'reverse'})

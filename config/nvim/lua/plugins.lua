@@ -91,16 +91,7 @@ return {
   {
     'kyazdani42/nvim-web-devicons',
     config = function()
-      require('nvim-web-devicons').setup({
-        override_by_extension = {
-          ['txt'] = {
-            icon = '󰈙',
-            color = '#89e051',
-            cterm_color = '113',
-            name = 'Txt',
-          },
-        },
-      })
+      require('devicons').setup()
     end,
   },
 
@@ -131,6 +122,11 @@ return {
     config = function()
       local actions = require('fzf-lua.actions')
       require('fzf-lua').setup({
+        git = {
+          icons = {
+            ['?'] = { icon = '?', color = 'grey' },
+          }
+        },
         fzf_colors = {
           ['bg+'] = '0',
           ['fg+'] = '-1:regular',

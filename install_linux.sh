@@ -43,6 +43,11 @@ ln -sfv "$HOME"/dotfiles/config/bat "$HOME"/.config
 bat cache --build
 ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 
+# To update vendored eza icon glyphs and colours from nvim-web-devicons:
+# mkdir -p "$HOME/.cache"
+# nvim --headless -u NONE -l "$HOME/dotfiles/misc/export_nvim_devicons.lua" > "$HOME/.cache/nvim-devicons.json"
+# ruby "$HOME/dotfiles/misc/generate_eza_theme.rb" "$HOME/.cache/nvim-devicons.json" "$HOME/dotfiles/config/eza/theme.yml"
+
 # --- Python ---  {{{1
 brew install uv ruff pyright
 uv tool install pynvim

@@ -379,7 +379,7 @@
       # Styling for up-to-date Git status.
       local       meta='%f'   # default foreground
       local      clean='%2F'  # green foreground
-      local   modified='%11F' # bright yellow foreground
+      local   modified='%3F' # bright yellow foreground
       local  untracked='%8F' # bright black foreground
       local conflicted='%13F'  # pink foreground
     else
