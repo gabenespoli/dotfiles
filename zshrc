@@ -230,6 +230,15 @@ export FZF_DEFAULT_OPTS='--color 16,bg+:0,fg+:-1:regular,pointer:4'
 export FZF_COMPLETION_TRIGGER=''
 export FZF_COMPLETION_OPTS='--preview-window=right:50%:wrap'
 
+# Show devicons in file/dir completion as colored-icon<TAB>path. The opts are
+# scoped to path/dir completion only (other completion pickers have no icon
+# field, and --accept-nth=2 would insert nothing there). Display and matching
+# use both fields; only the path (field 2) is inserted on accept. --ansi
+# renders the icon colors while leaving names plain for fzf's match
+# highlighting (fzf-lua style).
+export FZF_COMPLETION_PATH_OPTS="--ansi --delimiter='\t' --with-nth='{1} {2}' --accept-nth=2"
+export FZF_COMPLETION_DIR_OPTS="$FZF_COMPLETION_PATH_OPTS"
+
 # Preview files and directories in fzf completion.
 _fzf_comprun() {
   local walker_root='.'
@@ -260,8 +269,14 @@ _fzf_comprun() {
   local root_args=''
   [[ "$walker_root" != . ]] && root_args=" $quoted_root"
 
-  local recursive_source="fd --hidden --follow --exclude .git $fd_types .$root_args"
-  local current_source="fd --hidden --follow --exclude .git --max-depth 1 $fd_types .$root_args"
+  # Decoration appended to every fd source: icon colors from eza are kept,
+  # names are reset to plain so fzf match highlighting shows through. Double
+  # quotes only (no single quotes), because the sources are embedded in a
+  # single-quoted printf argument inside the ctrl-r toggle action below.
+  local icon_pipe='| xargs -r -d "\n" eza -1 --icons=always --color=always -d | sed -E "s/^((\x1b\[[0-9;]*m)*\S+) /\1\x1b[0m\t/; :a; s/(\t[^\x1b]*)\x1b\[[0-9;]*m/\1/; ta; s/\x1b\[[0-9;]*m$//"'
+
+  local recursive_source="fd --hidden --follow --exclude .git $fd_types .$root_args$icon_pipe"
+  local current_source="fd --hidden --follow --exclude .git --max-depth 1 $fd_types .$root_args$icon_pipe"
   local recursive_action="reload($recursive_source)"
   local current_action="reload($current_source)"
   local toggle_action
@@ -271,7 +286,7 @@ _fzf_comprun() {
   shift
 
   fzf \
-    --preview 'if [ -d {} ]; then eza -1 --color=always --group-directories-first --icons --git -- {}; else less -N -- {}; fi' \
+    --preview 'if [ -d {2} ]; then eza -1 --color=always --group-directories-first --icons=always --git -- {2}; else less -N -- {2}; fi' \
     --prompt='r> ' \
     --bind="ctrl-r:transform:$toggle_action" \
     "$@"
@@ -280,17 +295,23 @@ _fzf_comprun() {
 # Generate completion candidates with fd instead of fzf's built-in walker,
 # so the initial list and the reloaded lists come from the same source.
 # Omitting the search path when the root is '.' keeps fd from prefixing
-# entries with './'.
+# entries with './'. Output is decorated as colored-icon<TAB>path (same
+# pipeline as the reload sources above).
+_fzf_decorate_icons() {
+  xargs -r -d '\n' eza -1 --icons=always --color=always -d \
+    | sed -E "s/^((\x1b\[[0-9;]*m)*\S+) /\1\x1b[0m\t/; :a; s/(\t[^\x1b]*)\x1b\[[0-9;]*m/\1/; ta; s/\x1b\[[0-9;]*m$//"
+}
+
 _fzf_compgen_path() {
   local root_args=()
   [[ "$1" != . ]] && root_args=("$1")
-  fd --hidden --follow --exclude .git --type f --type d . "${root_args[@]}"
+  fd --hidden --follow --exclude .git --type f --type d . "${root_args[@]}" | _fzf_decorate_icons
 }
 
 _fzf_compgen_dir() {
   local root_args=()
   [[ "$1" != . ]] && root_args=("$1")
-  fd --hidden --follow --exclude .git --type d . "${root_args[@]}"
+  fd --hidden --follow --exclude .git --type d . "${root_args[@]}" | _fzf_decorate_icons
 }
 
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
