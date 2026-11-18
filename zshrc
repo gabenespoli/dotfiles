@@ -263,14 +263,13 @@ _fzf_comprun() {
   local current_action="reload($current_source)"
   local toggle_action
 
-  toggle_action="case \"\$FZF_PROMPT\" in '[recursive]'*) printf '%s\\n' 'change-prompt([current] > )+change-header(Ctrl-R: recursive)+$current_action' ;; *) printf '%s\\n' 'change-prompt([recursive] > )+change-header(Ctrl-R: current directory)+$recursive_action' ;; esac"
+  toggle_action="case \"\$FZF_PROMPT\" in '[recursive]'*) printf '%s\\n' 'change-prompt([current] > )+$current_action' ;; *) printf '%s\\n' 'change-prompt([recursive] > )+$recursive_action' ;; esac"
 
   shift
 
   fzf \
     --preview 'if [ -d {} ]; then eza -1 --color=always --group-directories-first --icons --git -- {}; else less -N -- {}; fi' \
     --prompt='[recursive] > ' \
-    --header='Ctrl-R: toggle recursive/current directory' \
     --bind="ctrl-r:transform:$toggle_action" \
     "$@"
 }
