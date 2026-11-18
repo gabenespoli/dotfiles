@@ -131,6 +131,11 @@ return {
     config = function()
       local actions = require('fzf-lua.actions')
       require('fzf-lua').setup({
+        fzf_colors = {
+          ['bg+'] = '0',
+          ['fg+'] = '-1:regular',
+          ['pointer'] = '4',
+        },
         actions = {
           files = {
             ['default'] = actions.file_edit,

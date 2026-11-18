@@ -223,7 +223,7 @@ alias Gs="$EDITOR -c ':Gedit :'"
 alias GS=Gs
 alias nv="nvim -c 'FzfLua git_files'"
 
-export FZF_DEFAULT_OPTS='--color 16'
+export FZF_DEFAULT_OPTS='--color 16,bg+:0,fg+:-1:regular,pointer:4'
 
 # Use fzf's native completion directly with <Tab>.
 # An empty trigger means fzf completion is invoked without requiring **.
@@ -266,13 +266,13 @@ _fzf_comprun() {
   local current_action="reload($current_source)"
   local toggle_action
 
-  toggle_action="case \"\$FZF_PROMPT\" in '[recursive]'*) printf '%s\\n' 'change-prompt([current] > )+$current_action' ;; *) printf '%s\\n' 'change-prompt([recursive] > )+$recursive_action' ;; esac"
+  toggle_action="case \"\$FZF_PROMPT\" in 'c>'*) printf '%s\\n' 'change-prompt(r> )+$recursive_action' ;; *) printf '%s\\n' 'change-prompt(c> )+$current_action' ;; esac"
 
   shift
 
   fzf \
     --preview 'if [ -d {} ]; then eza -1 --color=always --group-directories-first --icons --git -- {}; else less -N -- {}; fi' \
-    --prompt='[recursive] > ' \
+    --prompt='r> ' \
     --bind="ctrl-r:transform:$toggle_action" \
     "$@"
 }
