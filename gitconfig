@@ -17,8 +17,8 @@
   stash = 6
   HEAD = 13
 [color.status]
-  changed = 11
-  updated = 11
+  changed = 13
+  updated = 13
   untracked = 8
 [include]
   path = ~/.gitconfig_local

@@ -122,7 +122,7 @@ return {
     config = function()
       local actions = require('fzf-lua.actions')
       local git_icon_preprocess = [[
-        require('fzf-lua.utils').cache_ansi_escseq('git_modified', '\27[38;5;11m')
+        require('fzf-lua.utils').cache_ansi_escseq('git_modified', '\27[38;5;13m')
         return require('fzf-lua.make_entry').preprocess
       ]]
       require('fzf-lua').setup({
