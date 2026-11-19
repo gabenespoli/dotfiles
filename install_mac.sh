@@ -41,6 +41,7 @@ ln -sfv "$HOME"/dotfiles/gitconfig "$HOME"/.gitconfig
 # mkdir -p "$HOME/.cache"
 # nvim --headless -u NONE -l "$HOME/dotfiles/misc/export_nvim_devicons.lua" > "$HOME/.cache/nvim-devicons.json"
 # ruby "$HOME/dotfiles/misc/generate_eza_theme.rb" "$HOME/.cache/nvim-devicons.json" "$HOME/dotfiles/config/eza/theme.yml"
+# ruby "$HOME/dotfiles/misc/generate_lf_icons.rb" "$HOME/.cache/nvim-devicons.json" "$HOME/dotfiles/config/lf/icons"
 
 # --- Karabiner ---
 brew install --cask karabiner-elements

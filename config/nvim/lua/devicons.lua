@@ -7,6 +7,12 @@ M.override_by_extension = {
     cterm_color = "113",
     name = "Txt",
   },
+  saql = {
+    icon = "",
+    color = "#DAD8D8",
+    cterm_color = "7",
+    name = "Saql",
+  },
 }
 
 M.override_by_filename = {
@@ -21,6 +27,12 @@ M.override_by_filename = {
     color = "#019833",
     cterm_color = "2",
     name = "Vimrc",
+  },
+  ["todo.txt"] = {
+    icon = "",
+    color = "#89e051",
+    cterm_color = "113",
+    name = "TodoTxt",
   },
 }
 

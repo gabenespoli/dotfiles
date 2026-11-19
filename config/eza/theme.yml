@@ -3,6 +3,1831 @@
 ---
 colourful: true
 extensions:
+  xpi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF1B01"
+  bat:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#C1F12E"
+  razor:
+    icon:
+      glyph: "\U000F1998"
+      style:
+        foreground: "#512BD4"
+  ini:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  dot:
+    icon:
+      glyph: "\U000F1049"
+      style:
+        foreground: "#30638E"
+  o:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9F0500"
+  drl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFAFAF"
+  db:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DAD8D8"
+  env:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FAF743"
+  rkt:
+    icon:
+      glyph: "\U000F0627"
+      style:
+        foreground: "#9F1D20"
+  dconf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  yml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D70000"
+  zip:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  dll:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4D2C0B"
+  "\U0001F525":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4C1F"
+  rss:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FB9D3B"
+  geom:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5586A6"
+  dockerignore:
+    icon:
+      glyph: "\U000F0868"
+      style:
+        foreground: "#458EE6"
+  sc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CC3E44"
+  download:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#44CDA8"
+  d.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D59855"
+  heic:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  xm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  Dockerfile:
+    icon:
+      glyph: "\U000F0868"
+      style:
+        foreground: "#458EE6"
+  sha1:
+    icon:
+      glyph: "\U000F0565"
+      style:
+        foreground: "#8C86AF"
+  rake:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#701516"
+  sha224:
+    icon:
+      glyph: "\U000F0565"
+      style:
+        foreground: "#8C86AF"
+  fodg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFB57"
+  dxf:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  gradle:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#005F87"
+  ebook:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#EAB16D"
+  fodp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FE9C45"
+  gv:
+    icon:
+      glyph: "\U000F1049"
+      style:
+        foreground: "#30638E"
+  fcbak:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  ui:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#015BF0"
+  ebuild:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4C416E"
+  h:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  skp:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  d:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B03931"
+  edn:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  fodt:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2DCBFD"
+  fdmdownload:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#44CDA8"
+  ics:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2B2E83"
+  xcstrings:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2596BE"
+  c:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#599EFF"
+  frag:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5586A6"
+  qrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#40CD52"
+  qm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2596BE"
+  el:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8172BE"
+  elc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8172BE"
+  hh:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  pyx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5AA7E4"
+  hpp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  gcode:
+    icon:
+      glyph: "\U000F042B"
+      style:
+        foreground: "#1471AD"
+  eot:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  xcf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#635B46"
+  pyw:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5AA7E4"
+  mpp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  htm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E34C26"
+  xaml:
+    icon:
+      glyph: "\U000F0673"
+      style:
+        foreground: "#512BD4"
+  pyi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFBC03"
+  epub:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#EAB16D"
+  ttf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  hex:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2E63FF"
+  wvc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  ejs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  wv:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  huff:
+    icon:
+      glyph: "\U000F0858"
+      style:
+        foreground: "#4242C7"
+  wrz:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  exe:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9F0500"
+  tbc:
+    icon:
+      glyph: "\U000F06D3"
+      style:
+        foreground: "#1E5CB3"
+  exs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B88CD9"
+  csproj:
+    icon:
+      glyph: "\U000F0AAE"
+      style:
+        foreground: "#512BD4"
+  pxd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5AA7E4"
+  terminal:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#31B53E"
+  f3d:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  woff:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  fsi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  wmv:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  hxx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  fbx:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  ical:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2B2E83"
+  pub:
+    icon:
+      glyph: "\U000F0DD6"
+      style:
+        foreground: "#E3C58E"
+  fcmacro:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  fcmat:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  fcparam:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  fcscript:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  aiff:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  android:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#34A853"
+  fctb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  fctl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  ifb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2B2E83"
+  ape:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  feature:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00A818"
+  apk:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#34A853"
+  ige:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  wma:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  iges:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  app:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9F0500"
+  igs:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  fods:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#78FC4E"
+  image:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D0BEC8"
+  applescript:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8085"
+  signature:
+    icon:
+      glyph: "\U000F0627"
+      style:
+        foreground: "#E37933"
+  gleam:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFAFF3"
+  gemspec:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#701516"
+  img:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D0BEC8"
+  dwg:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  webmanifest:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F1E05A"
+  dropbox:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0061FE"
+  crdownload:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#44CDA8"
+  wav:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  m4v:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  kts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#7F52FF"
+  gpr:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  asmdef:
+    icon:
+      glyph: "\U000F0431"
+      style:
+        foreground: "#407AAB"
+  gresource:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  vi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FEC60A"
+  mts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  ass:
+    icon:
+      glyph: "\U000F0A16"
+      style:
+        foreground: "#FFB713"
+  woff2:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  iso:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D0BEC8"
+  gz:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  ixx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  epp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFA61A"
+  jar:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ffaf67"
+  avi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  svelte:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF3E00"
+  vsh:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5D87BF"
+  xul:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E37933"
+  t:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  hrl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B83998"
+  sha256:
+    icon:
+      glyph: "\U000F0565"
+      style:
+        foreground: "#8C86AF"
+  s:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0071C5"
+  azcli:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0078D4"
+  go:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00ADD8"
+  vh:
+    icon:
+      glyph: "\U000F035B"
+      style:
+        foreground: "#019833"
+  sha384:
+    icon:
+      glyph: "\U000F0565"
+      style:
+        foreground: "#8C86AF"
+  bak:
+    icon:
+      glyph: "\U000F006F"
+      style:
+        foreground: "#6D8086"
+  icalendar:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2B2E83"
+  cue:
+    icon:
+      glyph: "\U000F0CB9"
+      style:
+        foreground: "#ED95AE"
+  aif:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  jwmrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0078CD"
+  fcstd1:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  csv:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#89E051"
+  gql:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E535AB"
+  jxl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  fcstd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  kbx:
+    icon:
+      glyph: "\U000F0BC4"
+      style:
+        foreground: "#737672"
+  sass:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F55385"
+  eln:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8172BE"
+  scala:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CC3E44"
+  scss:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F55385"
+  kdb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#529B34"
+  gnumakefile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  erl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B83998"
+  pptx:
+    icon:
+      glyph: "\U000F0227"
+      style:
+        foreground: "#CB4A32"
+  kdbx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#529B34"
+  eex:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B88CD9"
+  kdenlive:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#83B8F2"
+  elf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9F0500"
+  kdenlivetitle:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#83B8F2"
+  kicad_dru:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  elm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  kicad_mod:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  kicad_pcb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  kicad_prl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  kicad_pro:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  kicad_sch:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  erb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#701516"
+  kicad_wks:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  ko:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DCDDD6"
+  fish:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4D5A5E"
+  pcm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0075AA"
+  kpp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F245FB"
+  f90:
+    icon:
+      glyph: "\U000F121A"
+      style:
+        foreground: "#734F96"
+  kra:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F245FB"
+  krz:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F245FB"
+  ksh:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4D5A5E"
+  fsscript:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  fsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  gd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  mov:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  sqlite3:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DAD8D8"
+  gif:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  git:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F14C28"
+  lck:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#BBBBBB"
+  http:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#008EC7"
+  txz:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  info:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFCD"
+  cfc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#01A4BA"
+  md5:
+    icon:
+      glyph: "\U000F0565"
+      style:
+        foreground: "#8C86AF"
+  pyc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFE291"
+  glb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFB13B"
+  lff:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  glsl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5586A6"
+  godot:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  lib:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4D2C0B"
+  graphql:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E535AB"
+  out:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9F0500"
+  3gp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  sub:
+    icon:
+      glyph: "\U000F0A16"
+      style:
+        foreground: "#FFB713"
+  stories.svelte:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  haml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#EAEAE1"
+  cbl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#005CA5"
+  lrc:
+    icon:
+      glyph: "\U000F0A16"
+      style:
+        foreground: "#FFB713"
+  zst:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  hx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#EA8220"
+  hbs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F0772B"
+  heex:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B88CD9"
+  luac:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#51A0CF"
+  html:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E44D26"
+  m:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#599EFF"
+  tsconfig:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF8700"
+  ico:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  ogx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  m3u8:
+    icon:
+      glyph: "\U000F0CB9"
+      style:
+        foreground: "#ED95AE"
+  import:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  ino:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#56B6C2"
+  ipynb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F57D01"
+  java:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CC3E44"
+  3mf:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  ogv:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  jsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#20C2E3"
+  spec.jsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#20C2E3"
+  jpeg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  jpg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  json5:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  jsonc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  jsonl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  sbt:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CC3E44"
+  jl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A270BA"
+  R:
+    icon:
+      glyph: "\U000F07D4"
+      style:
+        foreground: "#2266BA"
+  kt:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#7F52FF"
+  leex:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B88CD9"
+  less:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#563D7C"
+  stories.vue:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  srt:
+    icon:
+      glyph: "\U000F0A16"
+      style:
+        foreground: "#FFB713"
+  strings:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2596BE"
+  license:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  liquid:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#95BF47"
+  lock:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#BBBBBB"
+  query:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#90A850"
+  sig:
+    icon:
+      glyph: "\U000F0627"
+      style:
+        foreground: "#E37933"
+  luau:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00A2FF"
+  stories.jsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  makefile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  markdown:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DDDDDD"
+  material:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B83998"
+  mdx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  mint:
+    icon:
+      glyph: "\U000F032A"
+      style:
+        foreground: "#87C095"
+  mojo:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4C1F"
+  tsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#1354BF"
+  mo:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9772FB"
+  mustache:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E37933"
+  nim:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F3D400"
+  nix:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#7EBAE4"
+  tgz:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  aac:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  norg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4878BE"
+  nu:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#3AA675"
+  obj:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  stories.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  ml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E37933"
+  odin:
+    icon:
+      glyph: "\U000F07E2"
+      style:
+        foreground: "#3882D2"
+  mp3:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  scad:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F9D72C"
+  opus:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0075AA"
+  org:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#77AA99"
+  otf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  pck:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  pdf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B30B00"
+  tcl:
+    icon:
+      glyph: "\U000F06D3"
+      style:
+        foreground: "#1E5CB3"
+  pl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  php:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  svx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF0042"
+  tex:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#3D6117"
+  png:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  po:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2596BE"
+  adb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#599EFF"
+  ai:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  lhs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  prisma:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5A67D8"
+  bazel:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#89E051"
+  odg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFB57"
+  ps1:
+    icon:
+      glyph: "\U000F0A0A"
+      style:
+        foreground: "#4273CA"
+  psb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  psd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  psd1:
+    icon:
+      glyph: "\U000F0A0A"
+      style:
+        foreground: "#6975C4"
+  psm1:
+    icon:
+      glyph: "\U000F0A0A"
+      style:
+        foreground: "#6975C4"
+  sldasm:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  pp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFA61A"
+  sldprt:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  pyd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFE291"
+  pyo:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFE291"
+  x:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#599EFF"
+  py:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFBC03"
+  qml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#40CD52"
+  r:
+    icon:
+      glyph: "\U000F07D4"
+      style:
+        foreground: "#2266BA"
+  rasi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  res:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CC3E44"
+  so:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DCDDD6"
+  resi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F55385"
+  rlib:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DEA584"
+  rmd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  rproj:
+    icon:
+      glyph: "\U000F05C6"
+      style:
+        foreground: "#358A5B"
+  ods:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#78FC4E"
+  rb:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#701516"
+  mkv:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  rs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DEA584"
+  spec.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  mli:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E37933"
+  spec.tsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#1354BF"
+  mm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  scm:
+    icon:
+      glyph: "\U000F0627"
+      style:
+        foreground: "#EEEEEE"
+  spx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0075AA"
+  sh:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4D5A5E"
+  slim:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E34C26"
+  mobi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#EAB16D"
+  sml:
+    icon:
+      glyph: "\U000F0627"
+      style:
+        foreground: "#E37933"
+  ste:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  sol:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  sql:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DAD8D8"
+  sqlite:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DAD8D8"
+  stl:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  stories.js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  ssa:
+    icon:
+      glyph: "\U000F0A16"
+      style:
+        foreground: "#FFB713"
+  mp4:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  styl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8DC149"
+  sublime:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E37933"
+  suo:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#854CC7"
+  msf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#137BE1"
+  svg:
+    icon:
+      glyph: "\U000F0721"
+      style:
+        foreground: "#FFB13B"
+  swift:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E37933"
+  odt:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2DCBFD"
+  sv:
+    icon:
+      glyph: "\U000F035B"
+      style:
+        foreground: "#019833"
+  webm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  stories.tsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  templ:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DBBD30"
+  txt:
+    icon:
+      glyph: "\U000F0219"
+      style:
+        foreground: "#89e051"
+  7z:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  tmux:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#14BA19"
+  toml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9C4221"
+  diff:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#41535B"
+  tscn:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  twig:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8DC149"
+  a:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DCDDD6"
+  ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  json:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  vim:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#019833"
+  nswag:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#85EA2D"
+  typ:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0DBCC0"
+  blade.php:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F05340"
+  yaml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D70000"
+  svgz:
+    icon:
+      glyph: "\U000F0721"
+      style:
+        foreground: "#FFB13B"
+  vala:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#7B3DB9"
+  svh:
+    icon:
+      glyph: "\U000F035B"
+      style:
+        foreground: "#019833"
+  vhdl:
+    icon:
+      glyph: "\U000F035B"
+      style:
+        foreground: "#019833"
+  saql:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DAD8D8"
+  odf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF5A96"
+  wasm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5C4CDB"
+  ads:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  webp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  webpack:
+    icon:
+      glyph: "\U000F072B"
+      style:
+        foreground: "#519ABA"
   wgsl:
     icon:
       glyph: ""
@@ -18,26 +1843,26 @@ extensions:
       glyph: "\U000F021B"
       style:
         foreground: "#207245"
-  bak:
+  blend:
     icon:
-      glyph: "\U000F006F"
+      glyph: "\U000F00AB"
       style:
-        foreground: "#6D8086"
-  frag:
+        foreground: "#EA7600"
+  xml:
     icon:
-      glyph: ""
+      glyph: "\U000F05C0"
       style:
-        foreground: "#5586A6"
+        foreground: "#E37933"
   xslt:
     icon:
       glyph: "\U000F05C0"
       style:
         foreground: "#33A9DC"
-  yaml:
+  oga:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#D70000"
+        foreground: "#0075AA"
   zig:
     icon:
       glyph: ""
@@ -48,21 +1873,401 @@ extensions:
       glyph: ""
       style:
         foreground: "#89E051"
-  bazel:
+  ifc:
     icon:
-      glyph: ""
+      glyph: "\U000F0EEB"
       style:
-        foreground: "#89E051"
-  gcode:
+        foreground: "#839463"
+  test.js:
     icon:
-      glyph: "\U000F042B"
+      glyph: ""
       style:
-        foreground: "#1471AD"
-  gemspec:
+        foreground: "#CBCB41"
+  odp:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FE9C45"
+  test.jsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#20C2E3"
+  lua:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#51A0CF"
+  test.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  xlsx:
+    icon:
+      glyph: "\U000F021B"
+      style:
+        foreground: "#207245"
+  test.tsx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#1354BF"
+  vue:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8DC149"
+  vhd:
+    icon:
+      glyph: "\U000F035B"
+      style:
+        foreground: "#019833"
+  brep:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  nfo:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFCD"
+  bin:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#9F0500"
+  tres:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  tf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5F43E9"
+  bz:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  tfvars:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5F43E9"
+  bz2:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  mk:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  bz3:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  stories.mjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF4785"
+  tmpl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DBBD30"
+  stp:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  c++:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F34B7D"
+  step:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  sln:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#854CC7"
+  torrent:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#44CDA8"
+  ogg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0075AA"
+  cache:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  spec.js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  flac:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0075AA"
+  cast:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD971F"
+  slvs:
+    icon:
+      glyph: "\U000F0EEB"
+      style:
+        foreground: "#839463"
+  flc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  slnx:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#854CC7"
+  flf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECECEC"
+  mjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F1E05A"
+  cc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F34B7D"
+  ccm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F34B7D"
+  part:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#44CDA8"
+  fs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  patch:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#41535B"
+  md:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DDDDDD"
+  ppt:
+    icon:
+      glyph: "\U000F0227"
+      style:
+        foreground: "#CB4A32"
+  magnet:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A51B16"
+  cfm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#01A4BA"
+  typoscript:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF8700"
+  cjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  m4a:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AFFF"
+  m3u:
+    icon:
+      glyph: "\U000F0CB9"
+      style:
+        foreground: "#ED95AE"
+  xz:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#ECA517"
+  unity:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FDFDFD"
+  cxxm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  cljc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8DC149"
+  pls:
+    icon:
+      glyph: "\U000F0CB9"
+      style:
+        foreground: "#ED95AE"
+  cljd:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  ply:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  pm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  cljs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  vert:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5586A6"
+  sha512:
+    icon:
+      glyph: "\U000F0565"
+      style:
+        foreground: "#8C86AF"
+  cob:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#005CA5"
+  ex:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B88CD9"
+  pot:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2596BE"
+  conda:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#43B02A"
+  log:
+    icon:
+      glyph: "\U000F0331"
+      style:
+        foreground: "#DDDDDD"
+  config.ru:
     icon:
       glyph: ""
       style:
         foreground: "#701516"
+  dump:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#DAD8D8"
+  cow:
+    icon:
+      glyph: "\U000F019A"
+      style:
+        foreground: "#965824"
+  pro:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E4B854"
+  prefab:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#94D4F9"
+  wrl:
+    icon:
+      glyph: "\U000F01A7"
+      style:
+        foreground: "#888888"
+  vsix:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#854CC7"
+  f#:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  cppm:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  v:
+    icon:
+      glyph: "\U000F035B"
+      style:
+        foreground: "#019833"
+  cpy:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#005CA5"
+  hs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  asc:
+    icon:
+      glyph: "\U000F099D"
+      style:
+        foreground: "#576D7F"
   ada:
     icon:
       glyph: ""
@@ -78,11 +2283,11 @@ extensions:
       glyph: ""
       style:
         foreground: "#0091BD"
-  blade.php:
+  astro:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F05340"
+        foreground: "#E23F67"
   avif:
     icon:
       glyph: ""
@@ -113,6 +2318,11 @@ extensions:
       glyph: ""
       style:
         foreground: "#9F74B3"
+  cshtml:
+    icon:
+      glyph: "\U000F1997"
+      style:
+        foreground: "#512BD4"
   blp:
     icon:
       glyph: "\U000F0EBE"
@@ -128,11 +2338,11 @@ extensions:
       glyph: ""
       style:
         foreground: "#24A148"
-  brep:
+  kicad_sym:
     icon:
-      glyph: "\U000F0EEB"
+      glyph: ""
       style:
-        foreground: "#839463"
+        foreground: "#FFFFFF"
   bzl:
     icon:
       glyph: ""
@@ -143,6 +2353,16 @@ extensions:
       glyph: ""
       style:
         foreground: "#6D8086"
+  fnl:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFF3D7"
+  pxi:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5AA7E4"
   clj:
     icon:
       glyph: ""
@@ -163,21 +2383,21 @@ extensions:
       glyph: ""
       style:
         foreground: "#CBCB41"
-  bz3:
+  hurl:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#ECA517"
+        foreground: "#FF0288"
   conf:
     icon:
       glyph: ""
       style:
         foreground: "#6D8086"
-  gv:
+  cts:
     icon:
-      glyph: "\U000F1049"
+      glyph: ""
       style:
-        foreground: "#30638E"
+        foreground: "#519ABA"
   cp:
     icon:
       glyph: ""
@@ -213,26 +2433,31 @@ extensions:
       glyph: ""
       style:
         foreground: "#663399"
-  csv:
+  qss:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#89E051"
+        foreground: "#40CD52"
+  cuh:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
   cu:
     icon:
       glyph: ""
       style:
         foreground: "#89E051"
-  d:
+  cxx:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#B03931"
-  cbl:
+        foreground: "#519ABA"
+  dart:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#005CA5"
+        foreground: "#03589C"
   desktop:
     icon:
       glyph: ""
@@ -243,2429 +2468,101 @@ extensions:
       glyph: "\U000F022C"
       style:
         foreground: "#185ABD"
-  cc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F34B7D"
-  ccm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F34B7D"
-  hh:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  cfc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#01A4BA"
-  hpp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  dot:
-    icon:
-      glyph: "\U000F1049"
-      style:
-        foreground: "#30638E"
-  hrl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B83998"
-  drl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFAFAF"
-  cfm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#01A4BA"
-  htm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E34C26"
-  eex:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B88CD9"
-  ejs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  elf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9F0500"
-  ex:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B88CD9"
-  elm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  cljd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  epp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFA61A"
-  erl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B83998"
-  erb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#701516"
-  cob:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005CA5"
-  fnl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFF3D7"
-  fish:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4D5A5E"
-  conda:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#43B02A"
-  f90:
-    icon:
-      glyph: "\U000F121A"
-      style:
-        foreground: "#734F96"
-  webpack:
-    icon:
-      glyph: "\U000F072B"
-      style:
-        foreground: "#519ABA"
-  f#:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  fsi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  fsscript:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  fsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  gd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  tgz:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  cppm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  gif:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  cpy:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005CA5"
-  c++:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F34B7D"
-  ics:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2B2E83"
-  hbs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F0772B"
-  crdownload:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#44CDA8"
-  vue:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8DC149"
-  ifc:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  vhd:
-    icon:
-      glyph: "\U000F035B"
-      style:
-        foreground: "#019833"
-  ige:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  gleam:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFAFF3"
-  iges:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  vhdl:
-    icon:
-      glyph: "\U000F035B"
-      style:
-        foreground: "#019833"
-  igs:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  cshtml:
-    icon:
-      glyph: "\U000F1997"
-      style:
-        foreground: "#512BD4"
-  log:
-    icon:
-      glyph: "\U000F0331"
-      style:
-        foreground: "#DDDDDD"
-  vala:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#7B3DB9"
-  fodp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FE9C45"
-  bz2:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  ical:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2B2E83"
-  csproj:
-    icon:
-      glyph: "\U000F0AAE"
-      style:
-        foreground: "#512BD4"
-  typ:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0DBCC0"
-  s:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0071C5"
-  git:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F14C28"
-  ass:
-    icon:
-      glyph: "\U000F0A16"
-      style:
-        foreground: "#FFB713"
-  ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  xml:
-    icon:
-      glyph: "\U000F05C0"
-      style:
-        foreground: "#E37933"
-  twig:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8DC149"
-  tscn:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  cts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  cast:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  toml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9C4221"
-  tmux:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#14BA19"
-  cue:
-    icon:
-      glyph: "\U000F0CB9"
-      style:
-        foreground: "#ED95AE"
-  tf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5F43E9"
-  txt:
-    icon:
-      glyph: "\U000F0219"
-      style:
-        foreground: "#89e051"
-  templ:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DBBD30"
-  dart:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#03589C"
-  cuh:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  fctb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  cxx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  sv:
-    icon:
-      glyph: "\U000F035B"
-      style:
-        foreground: "#019833"
-  cxxm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  v:
-    icon:
-      glyph: "\U000F035B"
-      style:
-        foreground: "#019833"
-  feature:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00A818"
-  patch:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#41535B"
-  info:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFCD"
-  d.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#D59855"
-  svg:
-    icon:
-      glyph: "\U000F0721"
-      style:
-        foreground: "#FFB13B"
-  svelte:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF3E00"
-  suo:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#854CC7"
-  sublime:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  magnet:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A51B16"
-  image:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#D0BEC8"
-  styl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8DC149"
-  stp:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  ssa:
-    icon:
-      glyph: "\U000F0A16"
-      style:
-        foreground: "#FFB713"
-  fctl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  img:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#D0BEC8"
-  md:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DDDDDD"
-  nswag:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#85EA2D"
-  sqlite:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DAD8D8"
-  md5:
-    icon:
-      glyph: "\U000F0565"
-      style:
-        foreground: "#8C86AF"
-  sql:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DAD8D8"
-  svh:
-    icon:
-      glyph: "\U000F035B"
-      style:
-        foreground: "#019833"
-  heic:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  dll:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4D2C0B"
-  svgz:
-    icon:
-      glyph: "\U000F0721"
-      style:
-        foreground: "#FFB13B"
-  hs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  slim:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E34C26"
-  stl:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  glsl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5586A6"
-  mjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F1E05A"
-  iso:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#D0BEC8"
-  lhs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  ixx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  mkv:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  jar:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ffaf67"
-  env:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FAF743"
-  mli:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  scala:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  mm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  flc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  svx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF0042"
-  x:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#599EFF"
-  dconf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  mobi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EAB16D"
-  strings:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2596BE"
-  jl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A270BA"
-  terminal:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#31B53E"
-  stories.vue:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  mov:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  rlib:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DEA584"
-  mp3:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  jwmrc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0078CD"
-  mp4:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  stories.tsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  mpp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  jxl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  msf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#137BE1"
-  kbx:
-    icon:
-      glyph: "\U000F0BC4"
-      style:
-        foreground: "#737672"
-  tbc:
-    icon:
-      glyph: "\U000F06D3"
-      style:
-        foreground: "#1E5CB3"
-  stories.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  mts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  rasi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  kdb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#529B34"
-  nfo:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFCD"
-  stories.svelte:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  fs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  kdbx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#529B34"
-  stories.mjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  kdenlive:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#83B8F2"
-  pptx:
-    icon:
-      glyph: "\U000F0227"
-      style:
-        foreground: "#CB4A32"
-  kdenlivetitle:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#83B8F2"
-  kicad_dru:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  stories.jsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  kicad_mod:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  kicad_pcb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  kicad_prl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  kicad_pro:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  kicad_sch:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  kicad_sym:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  kicad_wks:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  ko:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DCDDD6"
-  xlsx:
-    icon:
-      glyph: "\U000F021B"
-      style:
-        foreground: "#207245"
-  h:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  kpp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F245FB"
-  odf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF5A96"
-  kra:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F245FB"
-  krz:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F245FB"
-  ksh:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4D5A5E"
-  odg:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFB57"
-  hxx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  blend:
-    icon:
-      glyph: "\U000F00AB"
-      style:
-        foreground: "#EA7600"
-  sub:
-    icon:
-      glyph: "\U000F0A16"
-      style:
-        foreground: "#FFB713"
-  odp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FE9C45"
-  kts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#7F52FF"
-  odt:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2DCBFD"
-  lck:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#BBBBBB"
-  t:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  ogg:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0075AA"
-  ogv:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  step:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  ogx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  bat:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#C1F12E"
-  ste:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  lff:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  bin:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9F0500"
-  godot:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  lib:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4D2C0B"
-  graphql:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E535AB"
-  sml:
-    icon:
-      glyph: "\U000F0627"
-      style:
-        foreground: "#E37933"
-  torrent:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#44CDA8"
-  ttf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  test.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  haml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EAEAE1"
-  test.jsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#20C2E3"
-  lrc:
-    icon:
-      glyph: "\U000F0A16"
-      style:
-        foreground: "#FFB713"
-  test.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  hx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EA8220"
-  test.tsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#1354BF"
-  heex:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B88CD9"
-  luac:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#51A0CF"
-  html:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E44D26"
-  m:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#599EFF"
-  spx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0075AA"
-  ico:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  part:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#44CDA8"
-  m3u8:
-    icon:
-      glyph: "\U000F0CB9"
-      style:
-        foreground: "#ED95AE"
-  import:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  ino:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#56B6C2"
-  ipynb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F57D01"
-  java:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  pcm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0075AA"
-  js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  pxi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5AA7E4"
-  jsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#20C2E3"
-  dropbox:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0061FE"
-  jpeg:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  jpg:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  json5:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  jsonc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  jsonl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  spec.tsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#1354BF"
-  tsconfig:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF8700"
-  pm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  kt:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#7F52FF"
-  leex:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B88CD9"
-  less:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#563D7C"
-  docx:
-    icon:
-      glyph: "\U000F022C"
-      style:
-        foreground: "#185ABD"
-  typoscript:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF8700"
-  pot:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2596BE"
-  license:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  liquid:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#95BF47"
-  txz:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  unity:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FDFDFD"
-  sig:
-    icon:
-      glyph: "\U000F0627"
-      style:
-        foreground: "#E37933"
-  luau:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00A2FF"
-  prefab:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#94D4F9"
-  makefile:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  markdown:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DDDDDD"
-  material:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B83998"
-  mdx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  mint:
-    icon:
-      glyph: "\U000F032A"
-      style:
-        foreground: "#87C095"
-  mojo:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4C1F"
-  spec.jsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#20C2E3"
-  bz:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  dockerignore:
-    icon:
-      glyph: "\U000F0868"
-      style:
-        foreground: "#458EE6"
-  spec.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  astro:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E23F67"
-  cljs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  cljc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8DC149"
-  vert:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5586A6"
-  so:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DCDDD6"
-  vh:
-    icon:
-      glyph: "\U000F035B"
-      style:
-        foreground: "#019833"
-  rake:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#701516"
-  vi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FEC60A"
-  pub:
-    icon:
-      glyph: "\U000F0DD6"
-      style:
-        foreground: "#E3C58E"
-  m4a:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  slvs:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
   rar:
     icon:
       glyph: ""
       style:
         foreground: "#ECA517"
-  vsh:
+  docx:
     icon:
-      glyph: ""
+      glyph: "\U000F022C"
       style:
-        foreground: "#5D87BF"
-  pxd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5AA7E4"
-  slnx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#854CC7"
-  m3u:
-    icon:
-      glyph: "\U000F0CB9"
-      style:
-        foreground: "#ED95AE"
-  vsix:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#854CC7"
-  glb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFB13B"
-  ui:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#015BF0"
-  gnumakefile:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  mk:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  config.ru:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#701516"
-  pyi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFBC03"
-  wav:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  sldasm:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  pyw:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5AA7E4"
-  webmanifest:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F1E05A"
-  pyx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5AA7E4"
-  wrl:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  qm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2596BE"
-  qrc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#40CD52"
-  qss:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#40CD52"
-  wma:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  skp:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  R:
-    icon:
-      glyph: "\U000F07D4"
-      style:
-        foreground: "#2266BA"
-  psm1:
-    icon:
-      glyph: "\U000F0A0A"
-      style:
-        foreground: "#6975C4"
-  woff:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  wv:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  woff2:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  diff:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#41535B"
-  geom:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5586A6"
-  wrz:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  razor:
-    icon:
-      glyph: "\U000F1998"
-      style:
-        foreground: "#512BD4"
-  gz:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  json:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  vim:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#019833"
-  eot:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  cjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  xaml:
-    icon:
-      glyph: "\U000F0673"
-      style:
-        foreground: "#512BD4"
-  rkt:
-    icon:
-      glyph: "\U000F0627"
-      style:
-        foreground: "#9F1D20"
-  "\U0001F525":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4C1F"
-  xcf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#635B46"
-  lock:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#BBBBBB"
-  zst:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  query:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#90A850"
-  sha224:
-    icon:
-      glyph: "\U000F0565"
-      style:
-        foreground: "#8C86AF"
-  xcstrings:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2596BE"
-  gradle:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005F87"
-  adb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#599EFF"
-  c:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#599EFF"
-  epub:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EAB16D"
-  asmdef:
-    icon:
-      glyph: "\U000F0431"
-      style:
-        foreground: "#407AAB"
-  xm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  rss:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FB9D3B"
-  Dockerfile:
-    icon:
-      glyph: "\U000F0868"
-      style:
-        foreground: "#458EE6"
-  xpi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF1B01"
-  huff:
-    icon:
-      glyph: "\U000F0858"
-      style:
-        foreground: "#4242C7"
-  hurl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF0288"
-  pro:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E4B854"
-  exs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B88CD9"
-  sc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  xul:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  hex:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2E63FF"
-  ifb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2B2E83"
-  xz:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  ply:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  pls:
-    icon:
-      glyph: "\U000F0CB9"
-      style:
-        foreground: "#ED95AE"
-  gresource:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  ini:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  yml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#D70000"
-  3gp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  sha1:
-    icon:
-      glyph: "\U000F0565"
-      style:
-        foreground: "#8C86AF"
-  zip:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  3mf:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  out:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9F0500"
-  sha256:
-    icon:
-      glyph: "\U000F0565"
-      style:
-        foreground: "#8C86AF"
-  fcparam:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  sha384:
-    icon:
-      glyph: "\U000F0565"
-      style:
-        foreground: "#8C86AF"
-  oga:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0075AA"
-  sha512:
-    icon:
-      glyph: "\U000F0565"
-      style:
-        foreground: "#8C86AF"
-  wvc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  azcli:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0078D4"
-  signature:
-    icon:
-      glyph: "\U000F0627"
-      style:
-        foreground: "#E37933"
-  m4v:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  mo:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9772FB"
-  mustache:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  nim:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F3D400"
-  nix:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#7EBAE4"
-  sldprt:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  wmv:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  norg:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4878BE"
-  nu:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#3AA675"
-  obj:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  gpr:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  ml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  odin:
-    icon:
-      glyph: "\U000F07E2"
-      style:
-        foreground: "#3882D2"
-  icalendar:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2B2E83"
-  scad:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F9D72C"
-  opus:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0075AA"
-  org:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#77AA99"
-  otf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  pck:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  pdf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B30B00"
-  fcbak:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  pl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  php:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  spec.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  tex:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#3D6117"
-  png:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  po:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2596BE"
-  ods:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#78FC4E"
-  ai:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  ppt:
-    icon:
-      glyph: "\U000F0227"
-      style:
-        foreground: "#CB4A32"
-  prisma:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5A67D8"
-  o:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9F0500"
-  tmpl:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DBBD30"
-  ps1:
-    icon:
-      glyph: "\U000F0A0A"
-      style:
-        foreground: "#4273CA"
-  psb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  psd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  psd1:
-    icon:
-      glyph: "\U000F0A0A"
-      style:
-        foreground: "#6975C4"
-  download:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#44CDA8"
-  stories.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF4785"
-  pp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFA61A"
-  pyc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFE291"
-  pyd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFE291"
-  pyo:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFE291"
-  tfvars:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5F43E9"
-  py:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFBC03"
-  qml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#40CD52"
-  r:
-    icon:
-      glyph: "\U000F07D4"
-      style:
-        foreground: "#2266BA"
-  dwg:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  res:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  dxf:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  resi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F55385"
-  ebook:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EAB16D"
-  rmd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  rproj:
-    icon:
-      glyph: "\U000F05C6"
-      style:
-        foreground: "#358A5B"
-  cow:
-    icon:
-      glyph: "\U000F019A"
-      style:
-        foreground: "#965824"
-  rb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#701516"
-  ebuild:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4C416E"
-  rs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DEA584"
-  sass:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F55385"
-  sbt:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  edn:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  7z:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECA517"
-  scm:
-    icon:
-      glyph: "\U000F0627"
-      style:
-        foreground: "#EEEEEE"
-  scss:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F55385"
-  sh:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4D5A5E"
-  el:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8172BE"
-  sln:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#854CC7"
-  a:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DCDDD6"
-  gql:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E535AB"
-  sol:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
-  elc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8172BE"
-  aac:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  sqlite3:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DAD8D8"
-  srt:
-    icon:
-      glyph: "\U000F0A16"
-      style:
-        foreground: "#FFB713"
-  eln:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8172BE"
-  fcscript:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  fcstd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  fcstd1:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  go:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00ADD8"
-  applescript:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8085"
-  fdmdownload:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#44CDA8"
-  swift:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  ads:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  asc:
-    icon:
-      glyph: "\U000F099D"
-      style:
-        foreground: "#576D7F"
-  lua:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#51A0CF"
-  tcl:
-    icon:
-      glyph: "\U000F06D3"
-      style:
-        foreground: "#1E5CB3"
-  aif:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  flac:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#0075AA"
-  aiff:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  android:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#34A853"
-  exe:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9F0500"
-  tres:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#6D8086"
-  flf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#ECECEC"
-  ape:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AFFF"
-  db:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DAD8D8"
-  apk:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#34A853"
-  f3d:
-    icon:
-      glyph: "\U000F0EEB"
-      style:
-        foreground: "#839463"
-  tsx:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#1354BF"
-  fodg:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFB57"
-  app:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#9F0500"
-  cache:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  fbx:
-    icon:
-      glyph: "\U000F01A7"
-      style:
-        foreground: "#888888"
-  http:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#008EC7"
-  avi:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  fcmacro:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  fcmat:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  fods:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#78FC4E"
-  dump:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#DAD8D8"
-  wasm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5C4CDB"
-  webm:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD971F"
-  webp:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  fodt:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2DCBFD"
+        foreground: "#185ABD"
   dockerfile:
     icon:
       style:
         foreground: "#458EE6"
-  saql:
-    icon:
-      glyph: ""
 filenames:
-  prisma.config.mts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5A67D8"
-  prisma.config.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#5A67D8"
-  _gvimrc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#019833"
-  _vimrc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#019833"
-  bitbucket-pipelines.yml:
-    icon:
-      glyph: "\U000F00A8"
-      style:
-        foreground: "#2684FF"
-  py.typed:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFBC03"
-  rakefile:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#701516"
-  readme:
-    icon:
-      glyph: "\U000F00BA"
-      style:
-        foreground: "#EDEDED"
-  build:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#89E051"
-  readme.md:
-    icon:
-      glyph: "\U000F00BA"
-      style:
-        foreground: "#EDEDED"
-  ".pnpmfile.cjs":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F9AD02"
-  build.gradle:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005F87"
-  robots.txt:
-    icon:
-      glyph: "\U000F06A9"
-      style:
-        foreground: "#5D7096"
-  build.zig.zon:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F69A1B"
-  bun.lock:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EADCD1"
-  copying.lesser:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  security.md:
-    icon:
-      glyph: "\U000F0483"
-      style:
-        foreground: "#BEC4C9"
   license:
     icon:
       glyph: ""
       style:
         foreground: "#D0BF41"
-  checkhealth:
+  bun.lockb:
     icon:
-      glyph: "\U000F04D9"
+      glyph: ""
       style:
-        foreground: "#75B4FB"
+        foreground: "#EADCD1"
   cantorrc:
     icon:
       glyph: ""
       style:
         foreground: "#1C99F3"
-  sxhkdrc:
+  ".babelrc":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#2F2F2F"
+        foreground: "#CBCB41"
   makefile:
     icon:
       glyph: ""
       style:
         foreground: "#6D8086"
-  commit_editmsg:
+  ".bash_profile":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F54D27"
-  tailwind.config.js:
-    icon:
-      glyph: "\U000F13FF"
-      style:
-        foreground: "#20C2E3"
-  copying:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
+        foreground: "#89E051"
   cmakelists.txt:
     icon:
       glyph: ""
       style:
         foreground: "#DCE3EB"
-  tailwind.config.mjs:
+  ".bashrc":
     icon:
-      glyph: "\U000F13FF"
+      glyph: ""
       style:
-        foreground: "#20C2E3"
-  tailwind.config.ts:
+        foreground: "#89E051"
+  code_of_conduct:
     icon:
-      glyph: "\U000F13FF"
+      glyph: ""
       style:
-        foreground: "#20C2E3"
-  taskfile.dist.yaml:
+        foreground: "#E41662"
+  ".clang-format":
     icon:
-      glyph: "\U000F01A6"
+      glyph: ""
       style:
-        foreground: "#69D3C9"
-  hyprlandd.conf:
+        foreground: "#97C3E6"
+  node_modules:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#00AAAE"
+        foreground: "#E8274B"
   code_of_conduct.md:
     icon:
       glyph: ""
       style:
         foreground: "#E41662"
-  hyprlock.conf:
+  ".clang-tidy":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#00AAAE"
-  commitlint.config.js:
+        foreground: "#97C3E6"
+  ".clangd":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#97C3E6"
+  ".codespellrc":
+    icon:
+      glyph: "\U000F04C6"
+      style:
+        foreground: "#35DA60"
+  commitlint.config.ts:
     icon:
       glyph: "\U000F0718"
       style:
         foreground: "#2B9689"
-  hyprpaper.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AAAE"
-  dockerfile:
-    icon:
-      glyph: "\U000F0868"
-      style:
-        foreground: "#458EE6"
-  hyprsunset.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AAAE"
-  i18n.config.js:
-    icon:
-      glyph: "\U000F05CA"
-      style:
-        foreground: "#7986CB"
   compose.yaml:
     icon:
       glyph: "\U000F0868"
@@ -2676,106 +2573,76 @@ filenames:
       glyph: "\U000F0868"
       style:
         foreground: "#458EE6"
+  vercel.json:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
   containerfile:
     icon:
       glyph: "\U000F0868"
       style:
         foreground: "#458EE6"
-  i18n.config.ts:
+  ".dockerignore":
     icon:
-      glyph: "\U000F05CA"
+      glyph: "\U000F0868"
       style:
-        foreground: "#7986CB"
-  i3blocks.conf:
+        foreground: "#458EE6"
+  docker-compose.yaml:
     icon:
-      glyph: ""
+      glyph: "\U000F0868"
       style:
-        foreground: "#E8EBEE"
-  dune:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8a421e"
+        foreground: "#458EE6"
   docker-compose.yml:
     icon:
       glyph: "\U000F0868"
       style:
         foreground: "#458EE6"
-  ".editorconfig":
+  mpv.conf:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#FFF2F2"
-  i3status.conf:
+        foreground: "#3B1342"
+  ".ds_store":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#E8EBEE"
-  index.theme:
+        foreground: "#41535B"
+  vite.config.js:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#2DB96F"
+        foreground: "#8040FF"
   eslint.config.cjs:
     icon:
       glyph: ""
       style:
         foreground: "#4B32C3"
-  eslint.config.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4B32C3"
-  eslint.config.mjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4B32C3"
-  ionic.config.json:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4F8FF7"
-  ext_typoscript_setup.txt:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF8700"
-  vite.config.mjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8040FF"
   vite.config.mts:
     icon:
       glyph: ""
       style:
         foreground: "#8040FF"
-  ".babelrc":
+  vite.config.ts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#CBCB41"
-  kalgebrarc:
+        foreground: "#8040FF"
+  vitest.config.cjs:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#1C99F3"
-  favicon.ico:
+        foreground: "#739B1B"
+  next.config.js:
     icon:
-      glyph: ""
-      style:
-        foreground: "#CBCB41"
-  kdeglobals:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#1C99F3"
-  fp-info-cache:
-    icon:
-      glyph: ""
+      glyph: ""
       style:
         foreground: "#FFFFFF"
+  ".env":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FAF743"
   vitest.config.cts:
     icon:
       glyph: ""
@@ -2786,241 +2653,96 @@ filenames:
       glyph: ""
       style:
         foreground: "#739B1B"
-  vitest.config.mjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#739B1B"
-  vitest.config.mts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#739B1B"
-  ".bashrc":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#89E051"
-  vlcrc:
-    icon:
-      glyph: "\U000F057C"
-      style:
-        foreground: "#EE7A00"
-  ".clang-format":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#97C3E6"
-  go.mod:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00ADD8"
-  gemfile:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#701516"
-  weston.ini:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFBB01"
-  go.sum:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00ADD8"
-  ".codespellrc":
-    icon:
-      glyph: "\U000F04C6"
-      style:
-        foreground: "#35DA60"
-  go.work:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00ADD8"
-  lxde-rc.xml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#909090"
-  ".gitconfig":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F54D27"
-  wrangler.jsonc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F48120"
-  gradle.properties:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005F87"
-  gradlew:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005F87"
-  wrangler.toml:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F48120"
-  xdph.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00AAAE"
-  ".dockerignore":
-    icon:
-      glyph: "\U000F0868"
-      style:
-        foreground: "#458EE6"
-  xmobarrc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD4D5D"
-  gruntfile.babel.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  webpack:
-    icon:
-      glyph: "\U000F072B"
-      style:
-        foreground: "#519ABA"
-  ".ds_store":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#41535B"
-  mpv.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#3B1342"
-  xmonad.hs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FD4D5D"
-  gruntfile.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  gruntfile.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E37933"
-  xsettingsd.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E54D18"
-  next.config.cjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  code_of_conduct:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E41662"
-  ".env":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FAF743"
-  next.config.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  gulpfile.coffee:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  gulpfile.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  gulpfile.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CC3E44"
-  ".eslintignore":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4B32C3"
-  nuxt.config.cjs:
-    icon:
-      glyph: "\U000F1106"
-      style:
-        foreground: "#00C58E"
   nuxt.config.js:
     icon:
       glyph: "\U000F1106"
       style:
         foreground: "#00C58E"
-  nuxt.config.mjs:
+  ".eslintignore":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4B32C3"
+  nuxt.config.ts:
     icon:
       glyph: "\U000F1106"
       style:
         foreground: "#00C58E"
-  config:
+  package-lock.json:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#6D8086"
+        foreground: "#7A0D21"
   ".eslintrc":
     icon:
       glyph: ""
       style:
         foreground: "#4B32C3"
-  bspwmrc:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2F2F2F"
   ".git-blame-ignore-revs":
     icon:
       glyph: ""
       style:
         foreground: "#F54D27"
-  package.json:
+  weston.ini:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#E8274B"
-  security:
+        foreground: "#FFBB01"
+  playwright.config.cjs:
     icon:
-      glyph: "\U000F0483"
+      glyph: ""
       style:
-        foreground: "#BEC4C9"
-  platformio.ini:
+        foreground: "#2FAD33"
+  ext_typoscript_setup.txt:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F6822B"
-  brewfile:
+        foreground: "#FF8700"
+  ".gitlab-ci.yml":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#701516"
+        foreground: "#E24329"
+  playwright.config.cts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2FAD33"
+  playwright.config.js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2FAD33"
+  favicon.ico:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  ".gitmodules":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F54D27"
+  playwright.config.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2FAD33"
+  ".gtkrc-2.0":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  xmobarrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FD4D5D"
+  pnpm-workspace.yaml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F9AD02"
   fp-lib-table:
     icon:
       glyph: ""
@@ -3031,166 +2753,66 @@ filenames:
       glyph: ""
       style:
         foreground: "#7A0D21"
-  ".gitlab-ci.yml":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E24329"
-  ".clang-tidy":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#97C3E6"
-  eslint.config.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4B32C3"
-  svelte.config.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FF3E00"
-  ".gitmodules":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F54D27"
-  vagrantfile:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#1563FF"
-  ".gtkrc-2.0":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
-  node_modules:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#E8274B"
-  unlicense:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#D0BF41"
-  bun.lockb:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EADCD1"
-  workspace:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#89E051"
   ".gvimrc":
     icon:
       glyph: ""
       style:
         foreground: "#019833"
-  gradle-wrapper.properties:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#005F87"
   xmobarrc.hs:
     icon:
       glyph: ""
       style:
         foreground: "#FD4D5D"
-  gulpfile.babel.js:
+  xmonad.hs:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#CC3E44"
-  settings.gradle:
+        foreground: "#FD4D5D"
+  xorg.conf:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#005F87"
+        foreground: "#E54D18"
+  prettier.config.mjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4285F4"
   ".justfile":
     icon:
       glyph: ""
       style:
         foreground: "#6D8086"
-  vite.config.ts:
+  prisma.config.mts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#8040FF"
-  vite.config.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8040FF"
-  vite.config.cts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#8040FF"
+        foreground: "#5A67D8"
   ".luacheckrc":
     icon:
       glyph: ""
       style:
         foreground: "#00A2FF"
-  vite.config.cjs:
+  prisma.config.ts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#8040FF"
-  mix.lock:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#B88CD9"
-  sym-lib-table:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
+        foreground: "#5A67D8"
   ".luaurc":
     icon:
       glyph: ""
       style:
         foreground: "#00A2FF"
-  tsconfig.json:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
   ".mailmap":
     icon:
       glyph: "\U000F02A2"
       style:
         foreground: "#F54D27"
-  tmux.conf.local:
+  ".nanorc":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#14BA19"
-  tmux.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#14BA19"
-  prusaslicergcodeviewer.ini:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EC6B23"
-  qtproject.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#40CD52"
-  ".srcinfo":
-    icon:
-      glyph: "\U000F08C7"
-      style:
-        foreground: "#0F94D2"
+        foreground: "#440077"
   ".xauthority":
     icon:
       glyph: ""
@@ -3201,116 +2823,181 @@ filenames:
       glyph: ""
       style:
         foreground: "#E54D18"
-  ".npmignore":
+  readme:
     icon:
-      glyph: ""
+      glyph: "\U000F00BA"
       style:
-        foreground: "#E8274B"
-  authors.txt:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A172FF"
+        foreground: "#EDEDED"
   directory.build.props:
     icon:
       glyph: ""
       style:
         foreground: "#00A2FF"
-  directory.build.targets:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00A2FF"
-  directory.packages.props:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#00A2FF"
-  freecad.conf:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#CB333B"
-  prusaslicer.ini:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#EC6B23"
-  ".nuxtrc":
-    icon:
-      glyph: "\U000F1106"
-      style:
-        foreground: "#00C58E"
   jenkinsfile:
     icon:
       glyph: ""
       style:
         foreground: "#D33833"
-  taskfile.yml:
+  pkgbuild:
     icon:
-      glyph: "\U000F01A6"
+      glyph: ""
       style:
-        foreground: "#69D3C9"
-  ".pre-commit-config.yaml":
+        foreground: "#0F94D2"
+  prusaslicer.ini:
     icon:
-      glyph: "\U000F06E2"
+      glyph: ""
       style:
-        foreground: "#F8B424"
-  taskfile.yaml:
+        foreground: "#EC6B23"
+  directory.build.targets:
     icon:
-      glyph: "\U000F01A6"
+      glyph: ""
       style:
-        foreground: "#69D3C9"
-  ".nvmrc":
+        foreground: "#00A2FF"
+  prusaslicergcodeviewer.ini:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#5FA04E"
-  taskfile.dist.yml:
-    icon:
-      glyph: "\U000F01A6"
-      style:
-        foreground: "#69D3C9"
-  ".prettierignore":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4285F4"
-  ".nanorc":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#440077"
-  procfile:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#A074C4"
-  ghostty:
-    icon:
-      glyph: "\U000F02A0"
-      style:
-        foreground: "#DDDDDD"
-  ".clangd":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#97C3E6"
-  rmd:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#519ABA"
+        foreground: "#EC6B23"
   ".npmrc":
     icon:
       glyph: ""
       style:
         foreground: "#E8274B"
+  authors:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A172FF"
+  ".srcinfo":
+    icon:
+      glyph: "\U000F08C7"
+      style:
+        foreground: "#0F94D2"
+  freecad.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CB333B"
+  directory.packages.props:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00A2FF"
+  bun.lock:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#EADCD1"
+  go.sum:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00ADD8"
+  ".nvmrc":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#5FA04E"
+  vagrantfile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#1563FF"
+  eslint.config.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4B32C3"
+  nuxt.config.cjs:
+    icon:
+      glyph: "\U000F1106"
+      style:
+        foreground: "#00C58E"
+  ".pnpmfile.cjs":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F9AD02"
+  settings.gradle:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#005F87"
+  vitest.config.mjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#739B1B"
+  svelte.config.js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FF3E00"
+  config:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  ".pre-commit-config.yaml":
+    icon:
+      glyph: "\U000F06E2"
+      style:
+        foreground: "#F8B424"
+  ghostty:
+    icon:
+      glyph: "\U000F02A0"
+      style:
+        foreground: "#DDDDDD"
+  sxhkdrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2F2F2F"
+  sym-lib-table:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  ".prettierignore":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4285F4"
   vimrc:
     icon:
       glyph: ""
       style:
         foreground: "#019833"
+  ".prettierrc.mjs":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4285F4"
+  todo.txt:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#89e051"
+  vitest.config.ts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#739B1B"
+  ".prettierrc":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4285F4"
+  tailwind.config.mjs:
+    icon:
+      glyph: "\U000F13FF"
+      style:
+        foreground: "#20C2E3"
+  ".prettierrc.cjs":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4285F4"
   ".prettierrc.js":
     icon:
       glyph: ""
@@ -3326,217 +3013,372 @@ filenames:
       glyph: ""
       style:
         foreground: "#4285F4"
-  ".prettierrc.mjs":
+  gradle-wrapper.properties:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#4285F4"
+        foreground: "#005F87"
   ".prettierrc.toml":
     icon:
       glyph: ""
       style:
         foreground: "#4285F4"
-  ".prettierrc.yaml":
+  gradle.properties:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#4285F4"
+        foreground: "#005F87"
   ".prettierrc.yml":
     icon:
       glyph: ""
       style:
         foreground: "#4285F4"
-  ".pylintrc":
+  gradlew:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#6D8086"
-  playwright.config.cjs:
+        foreground: "#005F87"
+  tmux.conf:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#2FAD33"
+        foreground: "#14BA19"
   ".settings.json":
     icon:
       glyph: ""
       style:
         foreground: "#854CC7"
-  hyprland.conf:
+  xdph.conf:
     icon:
       glyph: ""
       style:
         foreground: "#00AAAE"
-  gruntfile.coffee:
+  go.mod:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00ADD8"
+  gruntfile.babel.js:
     icon:
       glyph: ""
       style:
         foreground: "#E37933"
-  commitlint.config.ts:
+  vlcrc:
     icon:
-      glyph: "\U000F0718"
+      glyph: "\U000F057C"
       style:
-        foreground: "#2B9689"
-  ".gitignore":
-    icon:
-      glyph: ""
-      style:
-        foreground: "#F54D27"
+        foreground: "#EE7A00"
   ".vimrc":
     icon:
       glyph: ""
       style:
         foreground: "#019833"
-  ".bash_profile":
+  vitest.config.mts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#89E051"
+        foreground: "#739B1B"
   ".xinitrc":
     icon:
       glyph: ""
       style:
         foreground: "#E54D18"
-  ".prettierrc":
+  gruntfile.coffee:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#4285F4"
-  ".xsession":
+        foreground: "#E37933"
+  gruntfile.js:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#E54D18"
-  ".condarc":
+        foreground: "#E37933"
+  gruntfile.ts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#43B02A"
+        foreground: "#E37933"
   ".zprofile":
     icon:
       glyph: ""
       style:
         foreground: "#89E051"
-  ".gitattributes":
+  eslint.config.mjs:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F54D27"
+        foreground: "#4B32C3"
   ".zshenv":
     icon:
       glyph: ""
       style:
         foreground: "#89E051"
-  ".prettierrc.cjs":
+  authors.txt:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#4285F4"
+        foreground: "#A172FF"
   ".zshrc":
     icon:
       glyph: ""
       style:
         foreground: "#89E051"
-  package-lock.json:
+  gulpfile.coffee:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#7A0D21"
-  nuxt.config.ts:
+        foreground: "#CC3E44"
+  gulpfile.js:
     icon:
-      glyph: "\U000F1106"
+      glyph: ""
       style:
-        foreground: "#00C58E"
-  gnumakefile:
+        foreground: "#CC3E44"
+  gulpfile.ts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#6D8086"
-  next.config.ts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#FFFFFF"
+        foreground: "#CC3E44"
   hypridle.conf:
     icon:
       glyph: ""
       style:
         foreground: "#00AAAE"
-  lxqt.conf:
+  wrangler.jsonc:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#0192D3"
-  pkgbuild:
+        foreground: "#F48120"
+  qtproject.conf:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#0F94D2"
-  authors:
+        foreground: "#40CD52"
+  workspace:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#A172FF"
-  license.md:
+        foreground: "#89E051"
+  ".prettierrc.yaml":
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#D0BF41"
-  kritarc:
+        foreground: "#4285F4"
+  hyprland.conf:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F245FB"
-  kritadisplayrc:
+        foreground: "#00AAAE"
+  wrangler.toml:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F245FB"
-  kdenliverc:
+        foreground: "#F48120"
+  hyprlandd.conf:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#83B8F2"
-  kdenlive-layoutsrc:
+        foreground: "#00AAAE"
+  bspwmrc:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#83B8F2"
+        foreground: "#2F2F2F"
+  hyprlock.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AAAE"
+  ".npmignore":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E8274B"
+  hyprpaper.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AAAE"
+  xsettingsd.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E54D18"
+  hyprsunset.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00AAAE"
+  webpack:
+    icon:
+      glyph: "\U000F072B"
+      style:
+        foreground: "#519ABA"
+  i18n.config.js:
+    icon:
+      glyph: "\U000F05CA"
+      style:
+        foreground: "#7986CB"
+  vite.config.mjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8040FF"
+  dune:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8a421e"
+  _vimrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#019833"
+  ".editorconfig":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFF2F2"
+  i18n.config.ts:
+    icon:
+      glyph: "\U000F05CA"
+      style:
+        foreground: "#7986CB"
+  i3blocks.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E8EBEE"
+  tsconfig.json:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#519ABA"
+  ".xsession":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E54D18"
+  taskfile.yml:
+    icon:
+      glyph: "\U000F01A6"
+      style:
+        foreground: "#69D3C9"
+  i3status.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#E8EBEE"
+  index.theme:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#2DB96F"
+  taskfile.yaml:
+    icon:
+      glyph: "\U000F01A6"
+      style:
+        foreground: "#69D3C9"
+  taskfile.dist.yml:
+    icon:
+      glyph: "\U000F01A6"
+      style:
+        foreground: "#69D3C9"
+  taskfile.dist.yaml:
+    icon:
+      glyph: "\U000F01A6"
+      style:
+        foreground: "#69D3C9"
+  tailwind.config.ts:
+    icon:
+      glyph: "\U000F13FF"
+      style:
+        foreground: "#20C2E3"
+  ionic.config.json:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4F8FF7"
+  security.md:
+    icon:
+      glyph: "\U000F0483"
+      style:
+        foreground: "#BEC4C9"
+  fp-info-cache:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFFFFF"
+  robots.txt:
+    icon:
+      glyph: "\U000F06A9"
+      style:
+        foreground: "#5D7096"
   justfile:
     icon:
       glyph: ""
       style:
         foreground: "#6D8086"
-  vitest.config.ts:
+  gemfile:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#739B1B"
-  xorg.conf:
+        foreground: "#701516"
+  rmd:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#E54D18"
-  playwright.config.cts:
+        foreground: "#519ABA"
+  kdeglobals:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#2FAD33"
-  playwright.config.js:
+        foreground: "#1C99F3"
+  gtkrc:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#2FAD33"
+        foreground: "#FFFFFF"
+  kdenlive-layoutsrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#83B8F2"
+  ".gitattributes":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F54D27"
+  procfile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#A074C4"
+  nuxt.config.mjs:
+    icon:
+      glyph: "\U000F1106"
+      style:
+        foreground: "#00C58E"
+  ".gitconfig":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F54D27"
+  kdenliverc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#83B8F2"
+  ".gitignore":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F54D27"
+  kritadisplayrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F245FB"
   playwright.config.mjs:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2FAD33"
-  playwright.config.mts:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#2FAD33"
-  playwright.config.ts:
     icon:
       glyph: ""
       style:
@@ -3546,47 +3388,62 @@ filenames:
       glyph: ""
       style:
         foreground: "#F9AD02"
-  vitest.config.cjs:
+  playwright.config.mts:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#739B1B"
-  pnpm-workspace.yaml:
+        foreground: "#2FAD33"
+  kalgebrarc:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#F9AD02"
-  vercel.json:
+        foreground: "#1C99F3"
+  kritarc:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#FFFFFF"
+        foreground: "#F245FB"
   groovy:
     icon:
       glyph: ""
       style:
         foreground: "#4A687C"
-  docker-compose.yaml:
+  package.json:
     icon:
-      glyph: "\U000F0868"
+      glyph: ""
       style:
-        foreground: "#458EE6"
-  gtkrc:
+        foreground: "#E8274B"
+  license.md:
     icon:
-      glyph: ""
+      glyph: ""
+      style:
+        foreground: "#D0BF41"
+  platformio.ini:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F6822B"
+  next.config.ts:
+    icon:
+      glyph: ""
       style:
         foreground: "#FFFFFF"
-  prettier.config.cjs:
+  next.config.cjs:
     icon:
-      glyph: ""
+      glyph: ""
       style:
-        foreground: "#4285F4"
+        foreground: "#FFFFFF"
+  mix.lock:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#B88CD9"
+  lxqt.conf:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#0192D3"
   prettier.config.js:
-    icon:
-      glyph: ""
-      style:
-        foreground: "#4285F4"
-  prettier.config.mjs:
     icon:
       glyph: ""
       style:
@@ -3596,6 +3453,156 @@ filenames:
       glyph: ""
       style:
         foreground: "#4285F4"
+  lxde-rc.xml:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#909090"
+  py.typed:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#FFBC03"
+  brewfile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#701516"
+  gulpfile.babel.js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CC3E44"
+  _gvimrc:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#019833"
+  checkhealth:
+    icon:
+      glyph: "\U000F04D9"
+      style:
+        foreground: "#75B4FB"
+  bitbucket-pipelines.yml:
+    icon:
+      glyph: "\U000F00A8"
+      style:
+        foreground: "#2684FF"
+  tmux.conf.local:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#14BA19"
+  ".nuxtrc":
+    icon:
+      glyph: "\U000F1106"
+      style:
+        foreground: "#00C58E"
+  unlicense:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#D0BF41"
+  vite.config.cjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8040FF"
+  commit_editmsg:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F54D27"
+  vite.config.cts:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#8040FF"
+  copying:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
+  commitlint.config.js:
+    icon:
+      glyph: "\U000F0718"
+      style:
+        foreground: "#2B9689"
+  eslint.config.js:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4B32C3"
+  build:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#89E051"
+  ".condarc":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#43B02A"
+  security:
+    icon:
+      glyph: "\U000F0483"
+      style:
+        foreground: "#BEC4C9"
+  build.gradle:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#005F87"
+  tailwind.config.js:
+    icon:
+      glyph: "\U000F13FF"
+      style:
+        foreground: "#20C2E3"
+  go.work:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#00ADD8"
+  readme.md:
+    icon:
+      glyph: "\U000F00BA"
+      style:
+        foreground: "#EDEDED"
+  rakefile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#701516"
+  build.zig.zon:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#F69A1B"
+  prettier.config.cjs:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#4285F4"
+  gnumakefile:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  ".pylintrc":
+    icon:
+      glyph: ""
+      style:
+        foreground: "#6D8086"
+  dockerfile:
+    icon:
+      glyph: "\U000F0868"
+      style:
+        foreground: "#458EE6"
+  copying.lesser:
+    icon:
+      glyph: ""
+      style:
+        foreground: "#CBCB41"
   ".SRCINFO":
     icon:
       style:
@@ -4184,9 +4191,6 @@ filenames:
     icon:
       style:
         foreground: "#E54D18"
-  todo.txt:
-    icon:
-      glyph: ""
   ".gitconfig_local":
     icon:
       glyph: ""
