@@ -12,6 +12,9 @@
     "thinking": "show"
   },
   "animations": true,
+  "cursor": {
+    "blinking": false,
+  },
   "keybinds": {
     "agent.cycle": ["tab", "shift+tab"]
   }
