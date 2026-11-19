@@ -210,6 +210,7 @@ curl -s https://repo.jellyfin.org/install-debuntu.sh | sudo bash
 brew install anomalyco/tap/opencode
 mkdir -pv "$HOME"/.config/opencode
 ln -sfv "$HOME"/dotfiles/config/opencode/opencode.json "$HOME"/.config/opencode
+ln -sfv "$HOME"/dotfiles/config/opencode/cli.json "$HOME"/.config/opencode
 ln -sfv "$HOME"/dotfiles/config/opencode/themes "$HOME"/.config/opencode
 
 # --- Done ---
