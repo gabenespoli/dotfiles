@@ -431,7 +431,7 @@ hi! link sqlFold                       String
 
 " Plugins {{{1
 " Fugitive {{{2
-call s:h('fugitiveUnstagedModifier',   {'fg': s:brown})
+call s:h('fugitiveUnstagedModifier',   {'fg': s:yellow})
 call s:h('fugitiveStagedModifier',     {'fg': s:green_light})
 call s:h('fugitiveUntrackedModifier',  {'fg': s:fg_com})
 hi! link fugitiveHeader                Identifier

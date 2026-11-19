@@ -121,11 +121,18 @@ return {
     'ibhagwan/fzf-lua',
     config = function()
       local actions = require('fzf-lua.actions')
+      local git_icon_preprocess = [[
+        require('fzf-lua.utils').cache_ansi_escseq('git_modified', '\27[38;5;11m')
+        return require('fzf-lua.make_entry').preprocess
+      ]]
       require('fzf-lua').setup({
         git = {
           icons = {
             ['?'] = { icon = '?', color = 'grey' },
-          }
+            ['M'] = { icon = 'M', color = 'git_modified' },
+          },
+          files = { fn_preprocess = git_icon_preprocess },
+          status = { fn_preprocess = git_icon_preprocess },
         },
         fzf_colors = {
           ['bg+'] = '0',

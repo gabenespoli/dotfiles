@@ -16,6 +16,10 @@
   tag = 9
   stash = 6
   HEAD = 13
+[color.status]
+  changed = 11
+  updated = 11
+  untracked = 8
 [include]
   path = ~/.gitconfig_local
 ; example contents of ~/.gitconfig_local mac/linux

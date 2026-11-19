@@ -452,7 +452,7 @@ let g:dirvish_git_icons = {
     \ 'renamed': '-R ',
     \ 'unmerged': '-X ',
     \ 'ignored': '-I ',
-    \ 'untracked': '-N ',
+    \ 'untracked': '-? ',
     \ 'file': '-- ',
     \ 'directory': '-- ',
     \ }
