@@ -51,14 +51,53 @@ vim.keymap.set('n', 'dac', ':<C-U>Gitsigns select_hunk<CR>d')
 vim.keymap.set('n', 'cac', ':<C-U>Gitsigns select_hunk<CR>c')
 
 -- Diagnostic/Gitsigns preview on =
+local preview_win, preview_source, preview_is_hunk
+
+local function find_hunk_preview()
+  for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    if vim.w[win].gitsigns_preview == 'hunk' then
+      return win
+    end
+  end
+end
+
 vim.keymap.set('n', '=', function()
+  local source = vim.api.nvim_get_current_win()
   local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line('.') - 1 })
-  if #diagnostics > 0 then
-    vim.diagnostic.open_float()
-  else
+  local is_hunk = #diagnostics == 0
+  local win
+  if is_hunk then
     vim.cmd('Gitsigns preview_hunk')
+    win = find_hunk_preview()
+  else
+    local _, diagnostic_win = vim.diagnostic.open_float()
+    win = diagnostic_win
+  end
+  if win ~= preview_win or source ~= win then
+    preview_win, preview_source, preview_is_hunk = win, source, win ~= nil and is_hunk
   end
 end)
+
+vim.keymap.set('n', '<Esc>', function()
+  local current = vim.api.nvim_get_current_win()
+  local win = preview_win
+  -- GitSigns replaces the popup window when navigating between hunks.
+  if preview_is_hunk then
+    win = find_hunk_preview()
+  end
+  if not win or not vim.api.nvim_win_is_valid(win) or (current ~= preview_source and current ~= win) then
+    return '<Esc>'
+  end
+
+  preview_win, preview_source, preview_is_hunk = nil, nil, nil
+  -- Expression mappings cannot close windows directly.
+  vim.schedule(function()
+    if vim.api.nvim_win_is_valid(win) then
+      vim.api.nvim_win_close(win, true)
+    end
+  end)
+  return ''
+end, { expr = true, desc = 'Close the diagnostic or Gitsigns preview' })
 
 -- Treesitter
 vim.api.nvim_create_autocmd('FileType', {
