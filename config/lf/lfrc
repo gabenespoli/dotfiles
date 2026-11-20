@@ -29,6 +29,9 @@ map D %trash $fx
 
 set icons true
 
+# Preview files with bat (external previewer also follows symlinks)
+set previewer ~/.config/lf/preview
+
 # Define a custom 'open' command
 # ------------------------------
 # This command is called when current file is not a directory. You may want to
