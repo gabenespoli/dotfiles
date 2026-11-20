@@ -20,7 +20,7 @@
 # fi      -       # FILE
 
 # file types (with matching order)
-ln             # LINK
+ln target       # LINK (use target's icon)
 or             # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
 ow             # OTHER_WRITABLE
