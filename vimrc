@@ -294,8 +294,8 @@ endif
 " search for conflict markers
 nnoremap <silent> cx /^<<<<<<< .*$\\|^=======\\|^\|\|\|\|\|\|\|\\|^>>>>>>> .*$<CR>:set hlsearch<CR>
 
-" open ~/notes/todo.txt
-nnoremap <C-k><C-t> :e ~/notes/todo.txt<CR>
+" open ~/todo.txt
+nnoremap <C-k><C-t> :e ~/todo.txt<CR>
 " open ~/notes/YYYYQX.txt to archive todos based on current quarter
 nnoremap <C-k><C-a> :e ~/notes/<C-R>=system('echo $(/bin/date +%YQ)$(($(/bin/date +%m)/4+1))')<CR><BS>.txt<CR>
 " open ~/notes/YYYY-mm-dd.txt
