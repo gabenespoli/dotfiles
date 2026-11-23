@@ -36,18 +36,24 @@ nnoremap <buffer> <localleader>D A (<C-R>=strftime("%Y-%m-%d")<CR>)<Esc>
 setlocal foldmethod=expr
 setlocal foldexpr=TodoFold(v:lnum)
 function! TodoFold(lnum)
-    let l:line = getline(a:lnum) 
-    if l:line =~# '^\s*$'
-      return '0'
-    elseif l:line =~# '^# '
-      return '>1'
-    elseif l:line =~# '^## '
-      return '>2'
-    elseif l:line =~# '^>'
-      return '>3'
-    elseif l:line =~# '^\S'
-      return '0'
-    else
-      return '='
+  let l:line = getline(a:lnum)
+  if l:line !~# '^\S'
+    return '='
+  endif
+
+  let l:heading = matchstr(l:line, '^##\?\ze ')
+  if !empty(l:heading)
+    return '>' . strlen(l:heading)
+  endif
+
+  let l:lnum = a:lnum - 1
+  while l:lnum > 0
+    let l:heading = matchstr(getline(l:lnum), '^##\?\ze ')
+    if !empty(l:heading)
+      break
     endif
+    let l:lnum -= 1
+  endwhile
+  let l:level = strlen(l:heading)
+  return l:line =~# '^>' ? '>' . (l:level + 1) : l:level
 endfunction
