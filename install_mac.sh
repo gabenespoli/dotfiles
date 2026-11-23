@@ -28,9 +28,10 @@ set -e
 # =============================================================================
 
 # --- Core CLI utils ---
+brew install trash 
 brew install coreutils findutils grep gnu-sed gawk wget
-brew install fd ripgrep fzf bat
-brew install htop lf eza tree trash cloc jq
+brew install fd ripgrep fzf bat lf eza htop
+brew install tree cloc jq ffmpeg
 ln -sfv "$HOME"/dotfiles/config/lf "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/eza "$HOME"/.config
 ln -sfv "$HOME"/dotfiles/config/bat "$HOME"/.config
