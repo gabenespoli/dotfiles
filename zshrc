@@ -287,7 +287,7 @@ _fzf_comprun() {
 
   fzf \
     --preview 'if [ -d {2} ]; then eza -1 --color=always --group-directories-first --icons=always --git -- {2}; else bat --style=numbers --color=always --line-range :500 -- {2}; fi' \
-    --prompt='r> ' \
+    --prompt='c> ' \
     --bind="ctrl-r:transform:$toggle_action" \
     "$@"
 }
@@ -305,13 +305,13 @@ _fzf_decorate_icons() {
 _fzf_compgen_path() {
   local root_args=()
   [[ "$1" != . ]] && root_args=("$1")
-  fd --hidden --follow --exclude .git --type f --type d . "${root_args[@]}" | _fzf_decorate_icons
+  fd --hidden --follow --exclude .git --max-depth 1 --type f --type d . "${root_args[@]}" | _fzf_decorate_icons
 }
 
 _fzf_compgen_dir() {
   local root_args=()
   [[ "$1" != . ]] && root_args=("$1")
-  fd --hidden --follow --exclude .git --type d . "${root_args[@]}" | _fzf_decorate_icons
+  fd --hidden --follow --exclude .git --max-depth 1 --type d . "${root_args[@]}" | _fzf_decorate_icons
 }
 
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
