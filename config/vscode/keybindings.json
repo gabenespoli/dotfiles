@@ -1,0 +1,14 @@
+// Phase 2 will decide on vim-style bindings. Only the Databricks-style
+// cell running lives here for now.
+[
+  {
+    "key": "shift+enter",
+    "command": "jupyter.runcurrentcelladvance",
+    "when": "editorTextFocus && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "jupyter.runcurrentcell",
+    "when": "editorTextFocus && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
+  }
+]

@@ -1,0 +1,14 @@
+databricks.databricks
+ms-python.python
+ms-python.vscode-pylance
+ms-python.debugpy
+ms-toolsai.jupyter
+ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.datawrangler
+charliermarsh.ruff
+databricks.sqltools-databricks-driver
+mtxr.sqltools
+mechatroner.rainbow-csv
+redhat.vscode-yaml
+tamasfe.even-better-toml

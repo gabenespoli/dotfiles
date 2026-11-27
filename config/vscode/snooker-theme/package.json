@@ -1,0 +1,23 @@
+{
+  "name": "snooker-theme",
+  "displayName": "Snooker",
+  "description": "Snooker colour scheme, generated from vim/colors/snooker.vim",
+  "version": "1.0.0",
+  "publisher": "gabenespoli",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Snooker Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/snooker-dark-color-theme.json"
+      },
+      {
+        "label": "Snooker Light",
+        "uiTheme": "vs",
+        "path": "./themes/snooker-light-color-theme.json"
+      }
+    ]
+  }
+}

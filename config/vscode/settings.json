@@ -1,0 +1,61 @@
+{
+  // Theme
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Snooker Dark",
+  "workbench.preferredLightColorTheme": "Snooker Light",
+  "workbench.colorTheme": "Snooker Dark",
+
+  // Font
+  "editor.fontFamily": "MonoLisa, Menlo, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "terminal.integrated.fontFamily": "MonoLisa",
+  "notebook.output.fontFamily": "MonoLisa",
+  "notebook.markup.fontFamily": "MonoLisa",
+
+  // Editor
+  "editor.rulers": [88],
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "trailing",
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "workbench.startupEditor": "none",
+  "telemetry.telemetryLevel": "off",
+  "update.mode": "manual",
+  "extensions.autoUpdate": "off",
+
+  // Python
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": { "source.organizeImports": "explicit" }
+  },
+
+  // Notebooks: Databricks-like cell UI
+  "notebook.lineNumbers": "on",
+  "notebook.output.scrolling": true,
+  "notebook.output.textLineLimit": 200,
+  "notebook.output.wordWrap": true,
+  "notebook.cellToolbarLocation": { "default": "right" },
+  "notebook.globalToolbar": true,
+  "notebook.consolidatedRunButton": true,
+  "notebook.diff.ignoreMetadata": true,
+
+  // Databricks .py notebooks: "# COMMAND ----------" separates cells,
+  // and cells run in the Interactive Window against the cluster.
+  "jupyter.interactiveWindow.cellMarker.codeRegex": "^(# COMMAND ----------|#\\s*%%|#\\s*<codecell>|#\\s*In\\[\\d*?\\]|#\\s*In\\[ \\])",
+  "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------",
+  "jupyter.interactiveWindow.creationMode": "perFile",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.interactiveWindow.codeLens.enable": true,
+  "jupyter.askForKernelRestart": false,
+  "interactiveWindow.executeWithShiftEnter": true,
+
+  // Git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "python.analysis.extraPaths": []
+}

@@ -28,6 +28,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 elif [[ "$OSTYPE" == linux* ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+alias dbx-init="$HOME/dotfiles/misc/dbx-init"
 
 # main zsh options  {{{1
 export ZSH="$HOME/.oh-my-zsh"
@@ -346,6 +347,8 @@ sourcex "$HOME/.bash_local"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+[ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ] &&
+  export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,0 +1,74 @@
+#!/bin/bash
+set -euo pipefail
+
+# Set up the current repo to run Databricks .py notebooks from VS Code on an
+# all-purpose cluster via Databricks Connect.
+# usage: dbx-init <profile> [cluster-id]
+
+usage() { echo "usage: dbx-init <profile> [cluster-id]" >&2; exit 1; }
+[ $# -ge 1 ] || usage
+profile="$1"
+cluster_id="${2:-}"
+
+host=$(awk -v p="[$profile]" '$0==p{f=1;next} /^\[/{f=0} f && $1=="host"{print $3; exit}' "$HOME/.databrickscfg")
+[ -n "$host" ] || { echo "unknown profile: $profile (see ~/.databrickscfg)" >&2; exit 1; }
+
+if [ -z "$cluster_id" ]; then
+  cluster_id=$(databricks clusters list --profile "$profile" -o json \
+    | jq -r '.[] | "\(.cluster_id)\t\(.cluster_name)\t\(.spark_version)\t\(.state)"' \
+    | fzf --delimiter='\t' --with-nth=2,3,4 --prompt="cluster> " \
+    | cut -f1)
+  [ -n "$cluster_id" ] || exit 1
+fi
+
+spark_version=$(databricks clusters get "$cluster_id" --profile "$profile" -o json | jq -r '.spark_version')
+dbr=$(echo "$spark_version" | grep -oE '^[0-9]+\.[0-9]+')
+major=${dbr%%.*}
+
+if   [ "$major" -lt 13 ]; then echo "DBR $dbr is too old for Databricks Connect (needs 13.3+)" >&2; exit 1
+elif [ "$major" -le 14 ]; then python_version=3.10
+elif [ "$major" -eq 15 ]; then python_version=3.11
+else python_version=3.12
+fi
+
+echo "cluster $cluster_id: DBR $dbr -> python $python_version, databricks-connect==$dbr.*"
+
+# --seed installs pip; the Databricks extension runs `pip list` to check the env
+uv venv --seed --python "$python_version" .venv
+VIRTUAL_ENV=.venv uv pip install "databricks-connect==$dbr.*" ipykernel
+
+repo_name=$(basename "$PWD")
+if [ ! -f databricks.yml ]; then
+  cat > databricks.yml <<EOF
+bundle:
+  name: $repo_name
+
+targets:
+  $profile:
+    default: true
+    mode: development
+    workspace:
+      profile: $profile
+      host: $host
+    cluster_id: $cluster_id
+EOF
+  echo "wrote databricks.yml"
+else
+  echo "databricks.yml exists, not touching it (cluster_id: $cluster_id)"
+fi
+
+mkdir -p .vscode
+if [ ! -f .vscode/settings.json ]; then
+  cat > .vscode/settings.json <<EOF
+{
+  "python.defaultInterpreterPath": "\${workspaceFolder}/.venv/bin/python"
+}
+EOF
+  echo "wrote .vscode/settings.json"
+fi
+
+for entry in .venv/ .databricks/; do
+  grep -qxF "$entry" .gitignore 2>/dev/null || echo "$entry" >> .gitignore
+done
+
+echo "done. open with: code ."
